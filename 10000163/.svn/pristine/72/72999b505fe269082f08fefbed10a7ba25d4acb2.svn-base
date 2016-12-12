@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<languages>
+	<!-- English -->
+	<language code="en_UK"  name="English">
+		<string key="Loading..." value="Loading..." />
+		
+		<!--  Game  -->
+		<string key="Airport" value="Airport" />
+		<string key="BoostersText" value="Super Powers" />
+		<string key="Next" value="Next" />
+		<string key="Miles" value="Miles" />
+		<string key="Points" value="Points" />
+		<string key="Time left" value="Time left" />
+		<string key="Hint" value="Hint" />
+		<string key="Default" value="Default" />
+		<string key="Credits" value="Credits" />
+		<string key="Reset" value="Reset" />
+		<string key="Exit" value="Exit" />
+		<string key="Turn off music" value="Turn off music" />
+		<string key="Turn on music" value="Turn on music" />
+		<string key="InfiniteMode" value="Infinite" />
+		<string key="ConnectionProblem" value="Connection\nError" />
+		<string key="InternetProblem" value="Error while\ncollecting data" />
+		<string key="ChangeName" value="Login" />
+		<string key="ChangeName2" value="Set your data" />
+		<string key="Nick" value="Nick" />
+		<string key="Email" value="Email" />
+		<string key="Newsletter" value="Subscribe to\nNewsletter" />
+		<string key="Unlock" value="Unlock" />
+		<string key="YouHaveUnlocked" value="You have unlocked\n" />
+		<string key="UnlockItem1" value="a new airport" />
+		<string key="UnlockItem2" value="a new wallpaper" />
+		<string key="UnlockItem3" value="a new dress for your bags" />
+		<string key="UnlockItemInfinite" value="the infinite mode" />
+		<string key="UnlockPreviousAirport" value="You have to beat\nthe previous airport" />
+		<string key="UnlockInfinite" value="You have to beat\nthe three first levels" />
+		<string key="UnlockSomeElements" value="some elements" />
+		<string key="YouNeed" value="You need " />
+		<string key="MilesToUnlock" value=" miles to unlock" />
+		<string key="Buy" value="Buy" />
+		<string key="BoostersTip" value="Get more super powers now!" />
+		<string key="MustResetGameState" value="Found not compatible\ndata with this version.\nCurrent progress\nwill be lost." />
+		<string key="RateUs" value="Rate Us" />
+		<string key="ShareEarnMiles" value="Share and\nEarn Miles" />
+		<string key="Like" value="Like" />
+		<string key="Publish" value="Publish" />
+		
+		<!--  Menu  -->
+		<string key="Duty Free" value="Duty Free" />
+		<string key="Play" value="Play" />
+		<string key="Play!" value="PLAY!" />
+		<string key="Follow us" value="Follow us" />
+		<string key="Configuration" value="Options" />
+		<string key="MusicVolume" value="Music Volume" />
+		<string key="SoundsVolume" value="Sounds Volume" />
+		<string key="Level Selection" value="Select\nLevel" />
+		<string key="Airport Selection" value="Airport\nSelection" />
+		<string key="Duty Free2" value="Duty Free" />
+		<string key="Leaderboard Title" value="Leaderboard" />
+		<string key="Leaderboard Score" value="You got " />
+		<string key="AirportArrowTip" value="Use the arrows to\ntravel across the world!" />
+		<string key="AirportArrowTipMobile" value="Slide to\ntravel across the world!" />
+		<string key="ChangeLanguageNotice" value="New language\nwill apply\nthe next time\nyou restart\nthe game" />
+		<string key="Information" value="Information" />
+		<string key="ContactWithUs" value="Contact with us" />
+	
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="Would you like to\nreturn where you left?" />
+		<string key="TimeReason" value="Out of time!" />
+		<string key="LuggagesReason" value="You failed\n3 luggages!" />
+		<string key="VIPReason" value="You failed\na VIP luggage!" />
+		
+		<!-- Game Menus -->
+		<string key="Level Pause" value="Level\nPaused" />
+		<string key="Level Failed" value="Level Failed!" />
+		<string key="Level Completed" value="Level\nCompleted!" />
+		<string key="LuggageNumber" value="Luggages" />
+		<string key="Quit" value="Quit" />
+		<string key="WantToQuit" value="Do you want\nto quit?" />
+		<string key="Level" value="Level" />
+		<string key="Level Infinite" value="Completed!" />
+		<string key="RecordInfinite1" value="You collected" />
+		<string key="RecordInfinite2" value="luggages!" />
+		<string key="ResetTitle" value="Reset" />
+		<string key="ResetText" value="If you continue,\nyou will lose\nall your\ngame data" />
+		<string key="GameOver" value="Game Over" />
+		
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="Luggage drops from here"/>
+		<string key="Tutorial2" value="Drop luggage in the\ntube with the same color"/>
+		<string key="Tutorial3" value="The luggage that exits\nfrom one side..."/>
+		<string key="Tutorial4" value="...appears from the other!"/>
+		<string key="Tutorial5" value="Watch out the electric\nray!"/>
+		<string key="Tutorial6" value="Hurry Up!\nThe plane is\nabout to take off!"/>
+		<string key="TutorialBoosters" value="Explore the boosters"/>
+		<string key="TutorialVIP" value="VIP Luggage...\nYou shouldn't fail"/>
+		<string key="TutorialLeftover" value="Left over luggage"/>
+		<string key="TutorialBiohazard" value="When the metal\nluggage appears\nyou will know\nthe color"/>
+		<string key="TutorialJohnny" value="This super power increase\nyour game time!"/>
+		<string key="TutorialColor" value="This super power let you\nto put the bags\nin any tube!"/>
+		<string key="TutorialBullet" value="This super power slows\nthe time and let you\nmove the luggages!"/>
+		<string key="TutorialInfinite1" value="Try to handle\nthe biggest\n amount of bags"/>
+		<string key="TutorialInfinite2" value="No time limits,\nit's the infinite mode,\ndude!"/>
+		<string key="TutorialInfinite3" value="The global leaderboard\nwill showcase\nthe best players"/>
+		
+		<!-- Duty Free -->
+		<string key="buyMiles" value="Buy\nmiles!"/>
+		<string key="boosters" value="Super\npowers!"/>
+		<string key="customize" value="Customize"/>
+		<string key="wallpapers" value="Wallpapers"/>
+		<string key="NotEnoughMiles" value="Not enough\nmiles"/>
+		<string key="YouNeedMiles1" value="You need\n"/>
+		<string key="YouNeedMiles2" value="more miles"/>
+		<string key="BuyMiles" value="Buy Miles"/>
+		<string key="Dress" value="Dress"/>
+		<string key="BuyRemoveAds" value="If you buy any of\nthis packs,\nthe ads will disappear"/>
+		<string key="BlockedElement" value="Blocked element"/>
+		<string key="IsDressCorrect" value="Are you ok\nwith the\nlook of your\nluggages?"/>
+		
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="Connect and win\n"/>
+		<string key="FacebookLoginMiles2" value="miles!"/>
+		<string key="FacebookFriendsMiles" value="Invite your friends\nto play\nCrazy Belts"/>
+		<string key="Connect" value="Connect!"/>
+		<string key="Invite" value="Invite!"/>
+		<string key="Share" value="Share on"/>
+		
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="Performing Transaction..."/>
+		<string key="transactionCorrect" value="Transaction Completed!"/>
+		<string key="transactionFail" value="Transaction Failed!"/>
+		
+	</language>
+	
+	<!-- Spanish -->
+	<language code="es_ES" name="Español" >
+		<string key="Loading..." value="Cargando..." />
+		
+		<!-- Game -->
+		<string key="Airport" value="Aeropuerto" />
+		<string key="BoostersText" value="Super Poderes" />
+		<string key="Next" value="Seguir" />
+		<string key="Miles" value="Millas" />
+		<string key="Points" value="Puntos" />
+		<string key="Time left" value="Tiempo" />
+		<string key="Hint" value="Pista" />
+		<string key="Default" value="Default" />
+		<string key="Credits" value="Créditos" />
+		<string key="Reset" value="Reiniciar" />
+		<string key="Exit" value="Salir" />
+		<string key="Turn off music" value="Música off" />
+		<string key="Turn on music" value="Música on" />
+		<string key="InfiniteMode" value="Infinite" />
+		<string key="ConnectionProblem" value="Error de\nconexión" />
+		<string key="InternetProblem" value="Error al\nrecopilar datos" />
+		<string key="ChangeName" value="Login" />
+		<string key="ChangeName2" value="Introduzca sus datos" />
+		<string key="Nick" value="Nick" />
+		<string key="Email" value="Email" />
+		<string key="Newsletter" value="Suscribirse a la\nNewsletter" />
+		<string key="Unlock" value="Desbloquear" />
+		<string key="YouHaveUnlocked" value="Has desbloqueado\n" />
+		<string key="UnlockItem1" value="un nuevo aeropuerto" />
+		<string key="UnlockItem2" value="un nuevo fondo de escritorio" />
+		<string key="UnlockItem3" value="un nuevo disfraz para tus maletas" />
+		<string key="UnlockItemInfinite" value="el modo infinito" />
+		<string key="UnlockPreviousAirport" value="Tienes que terminar\nel aeropuerto anterior" />
+		<string key="UnlockInfinite" value="Tienes que terminar\nlos tres primeros niveles" />
+		<string key="UnlockSomeElements" value="varios elementos" />
+		<string key="YouNeed" value="Necesitas " />
+		<string key="MilesToUnlock" value=" millas para desbloquear" />
+		<string key="Buy" value="Comprar" />
+		<string key="BoostersTip" value="¡Consigue más super poderes ahora!" />
+		<string key="MustResetGameState" value="Se han encontrado datos\nantiguos no compatibles\ncon esta versión.\nSe perderá el\nprogreso actual" />
+		<string key="RateUs" value="Vótanos" />
+		<string key="ShareEarnMiles" value="Millas Gratis" />
+		<string key="Like" value="Me gusta" />
+		<string key="Publish" value="Publicar" />
+		
+		<!--  Menu  -->
+		<string key="Duty Free" value="Duty Free" />
+		<string key="Play" value="Jugar" />
+		<string key="Play!" value="¡JUGAR!" />
+		<string key="Follow us" value="Síguenos en" />
+		<string key="Configuration" value="Opciones" />
+		<string key="MusicVolume" value="Volumen de Música" />
+		<string key="SoundsVolume" value="Volumen de Sonidos" />
+		<string key="Level Selection" value="Elegir\nNivel" />
+		<string key="Airport Selection" value="Elegir\nAeropuerto" />
+		<string key="Duty Free2" value="Duty Free" />
+		<string key="Leaderboard Title" value="Tabla de\nRécords" />
+		<string key="Leaderboard Score" value="Conseguiste " />
+		<string key="AirportArrowTip" value="¡Usa las flechas para\nviajar por el mundo!" />
+		<string key="AirportArrowTipMobile" value="¡Desliza el dedo para\nviajar por el mundo!" />
+		<string key="ChangeLanguageNotice" value="La selección\nde idioma\nse aplicará\nal reiniciar" />
+		<string key="Information" value="Información" />
+		<string key="ContactWithUs" value="Contacta con nosotros" />
+
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="¿Quieres seguir donde\nlo has dejado?" />
+		<string key="TimeReason" value="¡Te quedaste\nsin tiempo!" />
+		<string key="LuggagesReason" value="¡Fallaste\n3 maletas!" />
+		<string key="VIPReason" value="¡Fallaste una\nmaleta VIP!" />
+		
+		<!-- Game Menus -->
+		<string key="Level Pause" value="Nivel\nPausado" />
+		<string key="Level Failed" value="¡Nivel Fallido!" />
+		<string key="Level Completed" value="¡Nivel\nCompletado!" />
+		<string key="LuggageNumber" value="Maletas" />
+		<string key="Quit" value="Salir" />
+		<string key="WantToQuit" value="¿Deseas salir?" />
+		<string key="Level" value="Nivel" />
+		<string key="Level Infinite" value="¡Completado!" />
+		<string key="RecordInfinite1" value="Has recogido" />
+		<string key="RecordInfinite2" value="maletas" />
+		<string key="ResetTitle" value="Reset" />
+		<string key="ResetText" value="Si continúas,\nperderás todos\ntus datos\nde juego" />
+		<string key="GameOver" value="Game Over" />
+		
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="Las maletas caen desde aquí"/>
+		<string key="Tutorial2" value="Introduce cada maleta\nen el tubo de su color"/>
+		<string key="Tutorial3" value="La maleta que desaparece\npor un lado..."/>
+		<string key="Tutorial4" value="¡Aparece por el otro!"/>
+		<string key="Tutorial5" value="¡Cuidado con el rayo!"/>
+		<string key="Tutorial6" value="¡Date prisa!\n¡El avión está\na punto de\ndespegar!"/>
+		<string key="TutorialBoosters" value="Explora los boosters disponibles"/>
+		<string key="TutorialVIP" value="Maleta VIP...\n No puedes fallar"/>
+		<string key="TutorialLeftover" value="Maleta perdida"/>
+		<string key="TutorialBiohazard" value="Cuando la maleta\nmetálica aparezca,\nsabrás el color"/>
+		<string key="TutorialJohnny" value="¡Este super poder incrementa\ntu tiempo de juego!"/>
+		<string key="TutorialColor" value="¡Este super poder te permite\nmeter las maletas\nen cualquier tubo!"/>
+		<string key="TutorialBullet" value="¡Este super poder enlentece\nel tiempo y te permite\nmover las maletas!"/>
+		<string key="TutorialInfinite1" value="Intenta manejar\nel mayor número\nde maletas"/>
+		<string key="TutorialInfinite2" value="¡No hay límite\nde tiempo,\nes el nivel infinito,\ncolega!"/>
+		<string key="TutorialInfinite3" value="La tabla mundial\nde récords muestra a\nlos mejores jugadores"/>
+		
+		<!-- Duty Free -->
+		<string key="buyMiles" value="¡Compra\nmillas!"/>
+		<string key="boosters" value="¡Super\npoderes!"/>
+		<string key="customize" value="Personaliza"/>
+		<string key="wallpapers" value="Fondos\nde pantalla"/>
+		<string key="NotEnoughMiles" value="No tienes\nsuficientes millas"/>
+		<string key="YouNeedMiles1" value="Necesitas\n"/>
+		<string key="YouNeedMiles2" value="millas más"/>
+		<string key="BuyMiles" value="Comprar Millas"/>
+		<string key="Dress" value="Disfrazar"/>
+		<string key="BuyRemoveAds" value="Si compras cualquiera de\nestos paquetes,\nla publicidad desaparecerá"/>
+		<string key="BlockedElement" value="Elemento bloqueado"/>
+		<string key="IsDressCorrect" value="¿Estás de\nacuerdo con el\naspecto de\ntus maletas?"/>
+		
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="¡Conéctate y gana\n"/>
+		<string key="FacebookLoginMiles2" value="millas!"/>
+		<string key="FacebookFriendsMiles" value="Invita a tus amigos\na jugar\nen Crazy Belts"/>
+		<string key="Connect" value="¡Conecta!"/>
+		<string key="Invite" value="¡Invitar!"/>
+		<string key="Share" value="Cuéntalo en"/>
+		
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="Realizando Transacción..."/>
+		<string key="transactionCorrect" value="¡Transacción Completada!"/>
+		<string key="transactionFail" value="¡Transacción Fallida!"/>
+		
+	</language>
+	
+	<!-- German -->
+	<language code="de_DE"  name="German">
+		<string key="Loading..." value="Loading..." />
+		
+		<!-- Game -->
+		<string key="Airport"  value="Flughafen"/>
+		<string key="BoostersText"  value="Superkräfte"/>
+		<string key="Next"  value="Weiter"/>
+		<string key="Miles"  value="Meilen"/>
+		<string key="Points"  value="Punkte"/>
+		<string key="Time"  value="Restzeit"/>
+		<string key="Hint"  value="Tipp!"/>
+		<string key="Default"  value="Voreinstellung"/>
+		<string key="Credits"  value="Credits"/>
+		<string key="Reset"  value="Neustart"/>
+		<string key="Exit"  value="Ende"/>
+		<string key="Turn off music"  value="Musik an"/>
+		<string key="Turn on music"  value="Musik aus"/>
+		<string key="InfiniteMode"  value="Unendlich"/>
+		<string key="ConnectionProblem"  value="Verbindungsfehler!"/>
+		<string key="InternetProblem"  value="Fehler bei der\nDatenübertragung!"/>
+		<string key="ChangeName"  value="Login"/>
+		<string key="ChangeName2"  value="Daten eingeben"/>
+		<string key="Nick"  value="Name"/>
+		<string key="Email"  value="Email"/>
+		<string key="Newsletter"  value="Abonniere\nden Newsletter!"/>
+		<string key="Unlock"  value="Freischalten"/>
+		<string key="YouHaveUnlocked"  value="Du hast freigeschaltet:\n"/>
+		<string key="UnlockItem1"  value="Neuer Flughafen"/>
+		<string key="UnlockItem2"  value="Neues Wallpaper"/>
+		<string key="UnlockItem3"  value="Neue Kofferverkleidung"/>
+		<string key="UnlockItemInfinite"  value="den Unendlich Modus"/>
+		<string key="UnlockPreviousAirport"  value="Du musst denn\vorherigen Airport schaffen!"/>
+		<string key="UnlockInfinite"  value="Du mussn\ndie ersten 3 Levels\nschaffen!"/>
+		<string key="UnlockSomeElements"  value="Mehr Elemente"/>
+		<string key="YouNeed"  value="Du brauchst "/>
+		<string key="MilesToUnlock"  value="Meilen zum Freischalten"/>
+		<string key="Buy"  value="Kaufen"/>
+		<string key="BoostersTip"  value="Hole dir jetzt mehr Supekräfte!"/>
+		<string key="MustResetGameState"  value="Inkompatible\nDaten für diese Version.\nBisherige Erfolge\ngehen verloren. "/>
+		<string key="RateUs"  value="Bewerte uns"/>
+		<string key="ShareEarnMiles"  value="Share und\nGewinne"/>
+		<string key="Like"  value="Like"/>
+		<string key="Publish"  value="Verkünden"/>
+		<string key="Duty Free"  value="Duty Free"/>
+		<string key="Play"  value="Spielen"/>
+		<string key="Play!"  value="SPIELEN!"/>
+		<string key="Follow"  value="Folge uns"/>
+		<string key="Configuration"  value="Optionen"/>
+		<string key="MusicVolume"  value="Musik Volumen "/>
+		<string key="SoundsVolume"  value="Sound Volumen"/>
+		<string key="Level Selection"  value="Level\nAuswahl"/>
+		<string key="Airport Selection"  value="Flughafen\nAuswahl"/>
+		<string key="Duty Free2"  value="Duty Free"/>
+		<string key="Leaderboard Title" value="Rangliste"/>
+		<string key="Leaderboard Score" value="Du hast"/>
+		<string key="AirportArrowTip"  value="Nutze die Pfeile\num durch die Welt\nzu reisen!"/>
+		<string key="AirportArrowTipMobile"  value="Wische um durch\ndie Welt zu reisen!"/>
+		<string key="ChangeLanguageNotice"  value="Die neue Sprache\nerscheint\nbeim Neustart\ndes Spiels!"/>
+		<string key="Information"  value="Information"/>
+		<string key="ContactWithUs"  value="Schreibe uns"/>
+		<string key="WantToRevive"  value="Dort weitermachen\n wo du aufgehört hast? "/>
+		<string key="TimeReason"  value="Zeit abgelaufen!"/>
+		<string key="LuggagesReason"  value="3 Gepäckstücke\n verloren!"/>
+		<string key="VIPReason"  value="VIP Gepäckstück\n verloren!"/>
+		<string key="Level Pause"  value="Level\nPause "/>
+		<string key="Level Failed"  value="Level\nnicht geschafft! "/>
+		<string key="Level Completed"  value="Level\nabgeschlossen!"/>
+		<string key="LuggageNumber"  value="Gepäckstücke"/>
+		<string key="Quit"  value="Ende"/>
+		<string key="WantToQuit"  value="Möchtest du\nbeenden?"/>
+		<string key="Level"  value="Level"/>
+		<string key="LevelInfinite"  value="Abgeschlossen!"/>
+		<string key="RecordInfinite1"  value="Eingesammelt:"/>
+		<string key="RecordInfinite2"  value="Stücke!"/>
+		<string key="ResetTitle"  value="Neustart"/>
+		<string key="ResetText"  value="Bei Weiter gehen\nalle Spieldaten\nverloren!"/>
+		<string key="GameOver"  value="Spiel vorbei"/>
+		<string key="Tutorial1"  value="Gepäck fällt von hier"/>
+		<string key="Tutorial2"  value="Gepäck in die Röhre\nmit der gleichen Farbe"/>
+		<string key="Tutorial3"  value="Gepäck nach hier…"/>
+		<string key="Tutorial4"  value="…kommt von dort!"/>
+		<string key="Tutorial5"  value="Achtung Hochspannung!"/>
+		<string key="Tutorial6"  value="Mach schnell!\nDer Flieger\n will starten!"/>
+		<string key="TutorialBoosters"  value="Entdecke die Booster"/>
+		<string key="TutorialVIP"  value="VIP Gepäck…\nNicht fallen lassen!"/>
+		<string key="TutorialLeftover"  value="Übrige Gepäckstücke!"/>
+		<string key="TutorialBiohazard"  value="Wenn die Metal Koffer\nerscheinen erkennst du\ndie Farbe!"/>
+		<string key="TutorialJohnny"  value="Diese Superkräfte erhöhen\ndeine Zeitlimit!"/>
+		<string key="TutorialColor"  value="Diese Superkräfte lassen\ndie Koffer\nin JEDE Röhre fallen!"/>
+		<string key="TutorialBullet"  value="Diese Superkräfte lassen\ndie Zeit\nlansamer ablaufen!"/>
+		<string key="TutorialInfinite1"  value="Versuche\ndie höchste Anzahl an\nKoffern zu befördern!"/>
+		<string key="TutorialInfinite2"  value="Kein Zeitlimit\nhier im Unendlich Modus,\nFreund!"/>
+		<string key="TutorialInfinite3"  value="Die Rangliste zeigt\ndie besten Spieler\nweltweit"/>
+		<string key="buyMiles"  value="Kaufe\nMeilen!"/>
+		<string key="boosters"  value="Superkräfte!"/>
+		<string key="customize"  value="Anpassen"/>
+		<string key="wallpapers"  value="Wallpapers"/>
+		<string key="NotEnoughMiles"  value="Nicht genug\nMeilen!"/>
+		<string key="YouNeedMiles1"  value="Du brauchst\n"/>
+		<string key="YouNeedMiles2"  value="weitere Meilen!"/>
+		<string key="BuyMiles"  value="Kaufe Meilen"/>
+		<string key="Dress"  value="Verkleidung"/>
+		<string key="BuyRemoveAds"  value="Wenn du einen\ndieser Packs kaufst\nwird die Werbung verschwinden!"/>
+		<string key="BlockedElement"  value="Gesperrt!"/>
+		<string key="IsDressCorrect"  value="Bist du zufrieden\nmit dem\nAussehen deines\nGepäcks?"/>
+		<string key="FacebookLoginMiles"  value="Share\nGewinne! "/>
+		<string key="FacebookLoginMiles2"  value="Meilen!"/>
+		<string key="FacebookFriendsMiles"  value="Lade Freunde ein um \nCrazy Belts zu spielen!"/>
+		<string key="Connect"  value="Verbinden!"/>
+		<string key="Invite"  value="Einladen!"/>
+		<string key="Share"  value="Teilen über"/>
+		<string key="transactionPerforming"  value="Transaktion läuft…"/>
+		<string key="transactionCorrect"  value="Transaktion erfolgreich!"/>
+		<string key="transactionFail"  value="Transaktion abgebrochen!"/>
+
+	</language>
+
+	<!--Italian -->
+	<language code="it_IT"  name="Italian">
+		<string key="Loading..." value="Loading..." />
+
+		<string key="Airport" value="Aeroporto"/>
+		<string key="BoostersText" value="Super\nPoteri"/>
+		<string key="Next" value="Prossimo"/>
+		<string key="Miles" value="Miglia"/>
+		<string key="Points" value="Punti"/>
+		<string key="Time left" value="Tempo rimasto"/>
+		<string key="Hint" value="Suggerimento"/>
+		<string key="Default" value="Default "/>
+		<string key="Credits" value="Crediti"/>
+		<string key="Reset" value="Reset "/>
+		<string key="Exit" value="Esci"/>
+		<string key="Turn off music" value="Spegni musica"/>
+		<string key="Turn on music" value="Accendi musica"/>
+		<string key="InfiniteMode" value="Infinito"/>
+		<string key="ConnectionProblem" value="Errore di\nConnessione"/>
+		<string key="InternetProblem" value="Errore durante il recupero dei dati"/>
+		<string key="ChangeName" value="Accesso"/>
+		<string key="ChangeName2" value="Imposta i tuoi dati"/>
+		<string key="Nick" value="Nickname"/>
+		<string key="Email" value="Email "/>
+		<string key="Newsletter" value="Iscriviti alla\nNewsletter "/>
+		<string key="Unlock" value="Sblocca"/>
+		<string key="YouHaveUnlocked" value="Hai sbloccato\n"/>
+		<string key="UnlockItem1" value="un nuovo aeroporto"/>
+		<string key="UnlockItem2" value="un nuovo wallpaper "/>
+		<string key="UnlockItem3" value="un nuovo vestito\nper le tue valigie"/>
+		<string key="UnlockItemInfinite" value="la modalità infinito"/>
+		<string key="UnlockPreviousAirport" value="Devi battere\nl'aeroporto precedente"/>
+		<string key="UnlockInfinite" value="Devi battere i primi tre livelli"/>
+		<string key="UnlockSomeElements" value="alcuni elementi"/>
+		<string key="YouNeed" value="Hai bisogno "/>
+		<string key="MilesToUnlock" value="miglia per sbloccare"/>
+		<string key="Buy" value="Acquista"/>
+		<string key="BoostersTip" value="Ottieni più super poteri adesso!"/>
+		<string key="MustResetGameState" value="Trovati dati non compatibili\ncon questa versione.\nI progressi attuali andranno perduti. "/>
+		<string key="RateUs" value="Dacci un Voto"/>
+		<string key="ShareEarnMiles" value="Condividi e\nVinci Miglia"/>
+		<string key="Like" value="Like "/>
+		<string key="Publish" value="Pubblica"/>
+
+		<!--  Menu  -->
+		<string key="Duty Free" value="Duty Free "/>
+		<string key="Play" value="Gioca"/>
+		<string key="Play!" value="GIOCA!"/>
+		<string key="Follow" value="Seguici"/>
+		<string key="Configuration" value="Opzioni"/>
+		<string key="MusicVolume" value="Volume Musica"/>
+		<string key="SoundsVolume" value="Volume Suoni"/>
+		<string key="Level Selection" value="Seleziona\nLivello"/>
+		<string key="Airport Selection" value="Selezione\n Aeroporto"/>
+		<string key="Duty Free2" value="Duty Free "/>
+		<string key="Leaderboard Title" value="Leaderboard"/>
+		<string key="Leaderboard Score" value="Hai ottenuto"/>
+		<string key="AirportArrowTip" value="Usa le frecce\nper viaggiare\nintorno al mondo!"/>
+		<string key="AirportArrowTipMobile" value="Scorri per viaggiare\nintorno al mondo! "/>
+		<string key="ChangeLanguageNotice" value="La nuova lingua\nverrà applicata\nal prossimo\navvio\ndel gioco"/>
+		<string key="Information" value="Informazioni"/>
+		<string key="ContactWithUs" value="Contattaci"/>
+
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="Deisderi riprendere\nda dove hai interrotto?"/>
+		<string key="TimeReason" value="Tempo scaduto!"/>
+		<string key="LuggagesReason" value="Hai sbagliato\nX valigie! "/>
+		<string key="VIPReason" value="Hai sbagliato la\nvaligia VIP! "/>
+
+		<!-- Game Menus -->
+		<string key="Level Pause" value="Livello\nin Pausa"/>
+		<string key="Level Failed" value="Livello\nFallito!"/>
+		<string key="Level Completed" value="Livello\nCompletato!"/>
+		<string key="LuggageNumber" value="Valigie"/>
+		<string key="Quit" value="Esci"/>
+		<string key="WantToQuit" value="Vuoi uscire?"/>
+		<string key="Level" value="Livello"/>
+		<string key="Level Infinite" value="Completato!"/>
+		<string key="RecordInfinite1" value="Hai raccolto"/>
+		<string key="RecordInfinite2" value="valigie!"/>
+		<string key="ResetTitle" value="Reset "/>
+		<string key="ResetText" value="Se continui,\nperderai tutti i\ndati di gioco."/>
+		<string key="GameOver" value="Game Over "/>
+
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="Le valigie cadono da qui"/>
+		<string key="Tutorial2" value="Fai cadere le\nvaligienel tubo\ndello stesso colore"/>
+		<string key="Tutorial3" value="La valigia che esce\nda un lato..."/>
+		<string key="Tutorial4" value="...appare dall'altro!"/>
+		<string key="Tutorial5" value="Attento al raggio\nelettrico!"/>
+		<string key="Tutorial6" value="Sbrigati! L'aereo\nsta per decollare!!"/>
+		<string key="TutorialBoosters" value="Esplora i booster"/>
+		<string key="TutorialVIP" value="Bagaglio VIP...\nNon puoi sbagliarlo"/>
+		<string key="TutorialLeftover" value="Valigie rimaste"/>
+		<string key="TutorialBiohazard" value="Quando apparirà\nla valgia in metallo\nsaprai il colore"/>
+		<string key="TutorialJohnny" value="Questo super potere aumenta\nil tuo tempo di gioco!"/>
+		<string key="TutorialColor" value="Questo super potere\nti permette di mettere le valigie\nin qualsiasi tubo!"/>
+		<string key="TutorialBullet" value="Questo super potere rallenta\nil tempo e ti permette\ndi spostarele valigie!"/>
+		<string key="TutorialInfinite1" value="Prova a gestire\nquante più valigie possibili"/>
+		<string key="TutorialInfinite2" value="Nessun limite\ndi tempo, è la modalità\ninfinito, amico!"/>
+		<string key="TutorialInfinite3" value="La leaderboard\nmondiale elencherà\ni giocatori migliori"/>
+
+		<!-- Duty Free -->
+		<string key="buyMiles" value="Acquista\nmiglia!"/>
+		<string key="boosters" value="Super poteri!"/>
+		<string key="customize" value="Personalizza"/>
+		<string key="wallpapers" value="Wallpaper"/>
+		<string key="NotEnoughMiles" value="Non hai\nabbastanza miglia"/>
+		<string key="YouNeedMiles1" value="Hai bisogno di\n"/>
+		<string key="YouNeedMiles2" value="più miglia"/>
+		<string key="BuyMiles" value="Acquista\nMiglia"/>
+		<string key="Dress" value="Vestito"/>
+		<string key="BuyRemoveAds" value="Se acquisti uno qualsiasi\ndi questi pacchetti,\ngli ads scompariranno"/>
+		<string key="BlockedElement" value="Elemento Bloccato"/>
+		<string key="IsDressCorrect" value="Ti piace il look\ndelle tue valigie?"/>
+
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="Connetti e vinci\n"/>
+		<string key="FacebookLoginMiles2" value="miglia!"/>
+		<string key="FacebookFriendsMiles" value="Invita i tuoi\namici a giocare\na Crazy Belts"/>
+		<string key="Connect" value="Connetti!"/>
+		<string key="Invite" value="Invita!"/>
+		<string key="Share" value="Condividi su"/>
+
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="Sto Effettuando la Transazione..."/>
+		<string key="transactionCorrect" value="Transazione Completata!"/>
+		<string key="transactionFail" value="Transazione Fallita!"/>
+		
+	</language>
+	
+	<!-- French -->
+    <language code="fr_FR"  name="French">
+		<string key="Loading..." value="Chargement..." />
+
+		<string key="Airport" value="Aéroport" />
+		<string key="BoostersText" value="Super Pouvoirs" />
+		<string key="Next" value="Suivant" />
+		<string key="Miles" value="Miles" />
+		<string key="Points" value="Points" />
+		<string key="Time left" value="Temps restant" />
+		<string key="Hint" value="Indice" />
+		<string key="Default" value="Défaut" />
+		<string key="Credits" value="Crédits" />
+		<string key="Reset" value="Réinitialiser" />
+		<string key="Exit" value="Quitter" />
+		<string key="Turn off music" value="Désactiver la musique" />
+		<string key="Turn on music" value="Activer la musique" />
+		<string key="InfiniteMode" value="Infini" />
+		<string key="ConnectionProblem" value="Erreur\n de Connexion" />
+		<string key="InternetProblem" value="Erreur lors de\nla récupération des données" />
+		<string key="ChangeName" value="Se connecter" />
+		<string key="ChangeName2" value="Entrer vos données" />
+		<string key="Nick" value="Surnom" />
+		<string key="Email" value="Email" />
+		<string key="Newsletter" value="S'inscrire à la\nNewsletter" />
+		<string key="Unlock" value="Débloquer" />
+		<string key="YouHaveUnlocked" value="Vous avez débloqué\n" />
+		<string key="UnlockItem1" value="un nouvel aéroport" />
+		<string key="UnlockItem2" value="un nouveau papier peint" />
+		<string key="UnlockItem3" value="un nouvel habillage pour vos sacs" />
+		<string key="UnlockItemInfinite" value="le mode infini" />
+		<string key="UnlockPreviousAirport" value="Vous devez passer\nl'aéroport précédent" />
+		<string key="UnlockInfinite" value="Vous devez passer\nles trois premiers niveaux" />
+		<string key="UnlockSomeElements" value="des éléments" />
+		<string key="YouNeed" value="Vous devez " />
+		<string key="MilesToUnlock" value="étapes à débloquer" />
+		<string key="Buy" value="Acheter" />
+		<string key="BoostersTip" value="Obtenez plus de\npouvoirs maintenant!" />
+		<string key="MustResetGameState" value="Données non compatibles avec\ncette version trouvées. La progression\nen cours sera perdue." />
+		<string key="RateUs" value="Évaluez-nous" />
+		<string key="ShareEarnMiles" value="Partagez et Gagnez\ndes Étapes" />
+		<string key="Like" value="Aimer" />
+		<string key="Publish" value="Publier" />
+		<string key="Duty Free" value="Sans Taxes" />
+		<string key="Play" value="Jouer" />
+		<string key="Play!" value="JOUEZ!" />
+		<string key="Follow us" value="Suivez-nous" />
+		<string key="Configuration" value="Options" />
+		<string key="MusicVolume" value="Volume de la Musique" />
+		<string key="SoundsVolume" value="Volume des Sons" />
+		<string key="Level Selection" value="Choisir\nun Niveau" />
+		<string key="Airport Selection" value="Sélection\nd'Aéroport" />
+		<string key="Duty Free2" value="Sans Taxes" />
+		<string key="Leaderboard Title" value="Classement" />
+		<string key="Leaderboard Score" value="Vous avez" />
+		<string key="AirportArrowTip" value="Utilisez les\nflèches pour\nvoyager dans le monde!" />
+		<string key="AirportArrowTipMobile" value="Faites glisser pour\nvoyager dans le monde!" />
+		<string key="ChangeLanguageNotice" value="Une nouvelle\nlangue\nsera utilisée\nau prochain\ndémarrage\ndu jeu" />
+		<string key="Information" value="Informations" />
+		<string key="ContactWithUs" value="Nous contacter" />
+		<string key="WantToRevive" value="Voulez-vous retourner\nlà où vous étiez?" />
+		<string key="TimeReason" value="Temps écoulé!" />
+		<string key="LuggagesReason" value="Vous avez perdu\nX bagages!" />
+		<string key="VIPReason" value="Vous avez perdu\nle bagage VIP!" />
+		<string key="Level Pause" value="Niveau\nen Pause" />
+		<string key="Level Failed" value="Niveau Perdu!" />
+		<string key="Level Completed" value="Niveau\nRéussi!" />
+		<string key="LuggageNumber" value="Bagages" />
+		<string key="Quit" value="Quitter" />
+		<string key="WantToQuit" value="Voulez-vous\nquitter?" />
+		<string key="Level" value="Niveau" />
+		<string key="Level Infinite" value="Réussi!" />
+		<string key="RecordInfinite1" value="Vous avez\nramassé" />
+		<string key="RecordInfinite2" value="bagages" />
+		<string key="ResetTitle" value="Réinitialiser" />
+		<string key="ResetText" value="Si vous continuer,\nvous perdrez\ntoutes vos\ndonnées\nde jeu" />
+		<string key="GameOver" value="Game Over" />
+		<string key="Tutorial1" value="Les bagages tombent d'ici" />
+		<string key="Tutorial2" value="Faites tomber les\nbagages dans le tube\nde la même couleur" />
+		<string key="Tutorial3" value="Le bagage existant\ndans un côté..." />
+		<string key="Tutorial4" value="… apparaît dans l'autre!" />
+		<string key="Tutorial5" value="Faites attention au\nrayon électrique!" />
+		<string key="Tutorial6" value="Dépêchez-vous!\nL'avion est\nsur le point de\ndécoller!" />
+		<string key="TutorialBoosters" value="Explorez les boosters" />
+		<string key="TutorialVIP" value="Les bagages VIP\nne doivent pas\nêtre perdus" />
+		<string key="TutorialLeftover" value="Bagages restants" />
+		<string key="TutorialBiohazard" value="Quand le bagage\nen métal apparaîtra\nvous connaîtrez la couleur" />
+		<string key="TutorialJohnny" value="Ce super-pouvoir augmente\nvotre temps de jeu!" />
+		<string key="TutorialColor" value="Ce super-pouvoir vous\n permet de mettre les sacs\n dans n'importe quel tuyau!" />
+		<string key="TutorialBullet" value="Ce super-pouvoir ralentit le\ntemps et vous permet de\ndéplacer les bagages!" />
+		<string key="TutorialInfinite1" value="Essayez de gérer\nles plus\ngrandes quantités\nde sacs" />
+		<string key="TutorialInfinite2" value="Pas de limites\nde temps,\nc'est le mon infini,\nmec!" />
+		<string key="TutorialInfinite3" value="Le classement\ngénéral présentera\nles meilleurs joueurs" />
+		<string key="buyMiles" value="Achetez\ndes étapes!" />
+		<string key="boosters" value="Super\npouvoirs!" />
+		<string key="customize" value="Personnaliser" />
+		<string key="wallpapers" value="Papiers\npaints" />
+		<string key="NotEnoughMiles" value="Pas assez\n d'étapes" />
+		<string key="YouNeedMiles1" value="Vous avez\n besoin de\n" />
+		<string key="YouNeedMiles2" value="plus d'étapes" />
+		<string key="BuyMiles" value="Acheter des Étapes" />
+		<string key="Dress" value="Habits" />
+		<string key="BuyRemoveAds" value="Si vous achetez\nl'un de ces packs,\nles publicités disparaîtront" />
+		<string key="BlockedElement" value="Élément bloqué" />
+		<string key="IsDressCorrect" value="Êtes-vous satisfait\nde l'aspect de vos bagages?" />
+		<string key="FacebookLoginMiles" value="Connectez-vous et\ngagnez " />
+		<string key="FacebookLoginMiles2" value="étapes!" />
+		<string key="FacebookFriendsMiles" value="Invitez vos amis\nà jouer à Crazy Belts" />
+		<string key="Connect" value="Connectez-vous!" />
+		<string key="Invite" value="Invitez!" />
+		<string key="Share" value="Partager sur" />
+		<string key="transactionPerforming" value="Transaction en Cours..." />
+		<string key="transactionCorrect" value="Transaction Réussie!" />
+		<string key="transactionFail" value="Transaction Échouée!" />
+	</language>
+
+	<!--Russian -->
+	<language code="ru_RU"  name="Russian">
+		<string key="Loading..." value="Loading..." />
+
+		<string key="Airport" value="Аэропорт"/>
+		<string key="BoostersText" value="Суперсила"/>
+		<string key="Next" value="Следующий"/>
+		<string key="Miles" value="Мили"/>
+		<string key="Points" value="Очки"/>
+		<string key="Time left" value="Времени осталось"/>
+		<string key="Hint" value="Подсказка"/>
+		<string key="Default" value="По умолчанию"/>
+		<string key="Credits" value="Кредиты"/>
+		<string key="Reset" value="Сброс"/>
+		<string key="Exit" value="Выход"/>
+		<string key="Turn off music" value="Выключить музыку"/>
+		<string key="Turn on music" value="Включить музыку"/>
+		<string key="InfiniteMode" value="Бесконечность"/>
+		<string key="ConnectionProblem" value="Ошибка\n соединения"/>
+		<string key="InternetProblem" value="Ошибка при сборе данных"/>
+		<string key="ChangeName" value="Войти"/>
+		<string key="ChangeName2" value="Установить свои настройки"/>
+		<string key="Nick" value="Имя"/>
+		<string key="Email" value="Эл. почта"/>
+		<string key="Newsletter" value="Подписаться на рассылку"/>
+		<string key="Unlock" value="Разблокировать"/>
+		<string key="YouHaveUnlocked" value="Вы разблокировали\n"/>
+		<string key="UnlockItem1" value="новый аэропорт"/>
+		<string key="UnlockItem2" value="новые обои"/>
+		<string key="UnlockItem3" value="новый вид Вашего багажа"/>
+		<string key="UnlockItemInfinite" value="режим бесконечности"/>
+		<string key="UnlockPreviousAirport" value="Вам нужно пройти\nпрошлый аэропорт"/>
+		<string key="UnlockInfinite" value="Вам нужно пройти\nтри первых уровня"/>
+		<string key="UnlockSomeElements" value="несколько элементов"/>
+		<string key="YouNeed" value="Вам нужно\n"/>
+		<string key="MilesToUnlock" value="милей, чтобы\nразблокировать"/>
+		<string key="Buy" value="Купить"/>
+		<string key="BoostersTip" value="Получить больше суперсилы сейчас!"/>
+		<string key="MustResetGameState" value="Найдено несоответствие данной версии.\nТекущий прогресс будет утерян."/>
+		<string key="RateUs" value="Оценить Нас"/>
+		<string key="ShareEarnMiles" value="Поделиться\nиВыиграть Мили"/>
+		<string key="Like" value="Нравится"/>
+		<string key="Publish" value="Опубликовать"/>
+
+		<!--  Menu  -->
+		<string key="Duty Free" value="Duty Free "/>
+		<string key="Play" value="Играть"/>
+		<string key="Play!" value="ИГРАТЬ!"/>
+		<string key="Follow" value="Читать"/>
+		<string key="Configuration" value="Настройки"/>
+		<string key="MusicVolume" value="Громкость музыки"/>
+		<string key="SoundsVolume" value="Громкость звуков"/>
+		<string key="Level Selection" value="Выбрать\nуровень"/>
+		<string key="Airport Selection" value="Выбор\nаэропорта"/>
+		<string key="Duty Free2" value="Duty Free "/>
+		<string key="Leaderboard Title" value="Список\nлидеров"/>
+		<string key="Leaderboard Score" value="Вы набрали"/>
+		<string key="AirportArrowTip" value="Используйте стрелки,\nчтобы путешествовать\nпо миру!"/>
+		<string key="AirportArrowTipMobile" value="Водите по экрану,\nчтобы путешествовать\nпо миру!"/>
+		<string key="ChangeLanguageNotice" value="Язык обновится\nпри перезагрузке\nигры"/>
+		<string key="Information" value="Информация"/>
+		<string key="ContactWithUs" value="Связаться с нами"/>
+
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="Хотите вернуться к тому, на чём остановились?"/>
+		<string key="TimeReason" value="Время закончилось!"/>
+		<string key="LuggagesReason" value="Вы провалили X багажа!"/>
+		<string key="VIPReason" value="Вы провалили VIP багаж!"/>
+
+		<!-- Game Menus -->
+		<string key="Level Pause" value="Уровень\nприостановлен"/>
+		<string key="Level Failed" value="Уровень\nпровален!"/>
+		<string key="Level Completed" value="Уровень\nпройден!"/>
+		<string key="LuggageNumber" value="Багаж"/>
+		<string key="Quit" value="Выход"/>
+		<string key="WantToQuit" value="Вы хотите\nвыйти?"/>
+		<string key="Level" value="Уровень"/>
+		<string key="Level Infinite" value="Пройдено!"/>
+		<string key="RecordInfinite1" value="Вы собрали"/>
+		<string key="RecordInfinite2" value="багаж!"/>
+		<string key="ResetTitle" value="Сброс"/>
+		<string key="ResetText" value="Если Вы продолжите,\nто прогресс будет потерян"/>
+		<string key="GameOver" value="Игра окончена"/>
+
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="Багаж падает отсюда"/>
+		<string key="Tutorial2" value="Отправляйте багаж\nв трубу того же цвета"/>
+		<string key="Tutorial3" value="Багаж, который исчезает с одной стороны…"/>
+		<string key="Tutorial4" value="появляется с другой!"/>
+		<string key="Tutorial5" value="Отстерегайтесь\nэлектрического луча!"/>
+		<string key="Tutorial6" value="Торопитесь!\nСамолёт готов\nк вылету!"/>
+		<string key="TutorialBoosters" value="Исследуйте помощников"/>
+		<string key="TutorialVIP" value="VIP багаж…Вы\nне должны провалиться"/>
+		<string key="TutorialLeftover" value="Оставшийся багаж"/>
+		<string key="TutorialBiohazard" value="Когда металлический\nбагаж появится,\nВы узнаете цвет"/>
+		<string key="TutorialJohnny" value="Эта суперсила увеличивает\nВаше время на игру!"/>
+		<string key="TutorialColor" value="Эта суперсила позволяет Вам\nотправлять багаж в любую трубу!"/>
+		<string key="TutorialBullet" value="Эта суперсила замедляет время\nи разрешает Вам перемещать багаж!"/>
+		<string key="TutorialInfinite1" value="Постарайтесь справиться с\nнаибольшим количеством багажа"/>
+		<string key="TutorialInfinite2" value="Нет ограниченийво времени, это режим\nбесконечности, чувак!"/>
+		<string key="TutorialInfinite3" value="Глобальная доска\nлидеров покажет\nлучших игроков"/>
+
+		<!-- Duty Free -->
+		<string key="buyMiles" value="Купить мили!"/>
+		<string key="boosters" value="Суперсилы!"/>
+		<string key="customize" value="Персонализировать"/>
+		<string key="wallpapers" value="Обои"/>
+		<string key="NotEnoughMiles" value="Недостаточно миль"/>
+		<string key="YouNeedMiles1" value="Вам нужно\n"/>
+		<string key="YouNeedMiles2" value="больше миль"/>
+		<string key="BuyMiles" value="Купить Мили"/>
+		<string key="Dress" value="Вид"/>
+		<string key="BuyRemoveAds" value="Если Вы купите какой-либо\nиз этих пакетов реклама исчезнет"/>
+		<string key="BlockedElement" value="Заблокированный элемент"/>
+		<string key="IsDressCorrect" value="Вы не против\nпосмотреть багаж?"/>
+
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="Присоединяйтесь и\nвыигрывайте "/>
+		<string key="FacebookLoginMiles2" value="мили!"/>
+		<string key="FacebookFriendsMiles" value="Пригласите своих друзей\nиграть в Crazy Belts"/>
+		<string key="Connect" value="Присоединиться!"/>
+		<string key="Invite" value="Пригласить!"/>
+		<string key="Share" value="Поделиться"/>
+
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="Выполняется трансакция…"/>
+		<string key="transactionCorrect" value="Трансакция завершёна!"/>
+		<string key="transactionFail" value="Трансакция не удалась!"/>
+
+	</language>
+
+	<!--Chinese -->
+	<language code="zh_HK"  name="Chinese">
+		<string key="Loading..." value="Loading..." />
+
+		<string key="Airport" value="机场"/>
+		<string key="BoostersText" value="超级能量"/>
+		<string key="Next" value="下一个"/>
+		<string key="Miles" value="英里数"/>
+		<string key="Points" value="积分"/>
+		<string key="Time left" value="剩余时间"/>
+		<string key="Hint" value="提示"/>
+		<string key="Default" value="默认"/>
+		<string key="Credits" value="得分"/>
+		<string key="Reset" value="清零"/>
+		<string key="Exit" value="退出"/>
+		<string key="Turn off music" value="关闭音乐"/>
+		<string key="Turn on music" value="打开音乐"/>
+		<string key="InfiniteMode" value="无限"/>
+		<string key="ConnectionProblem" value="连接错误"/>
+		<string key="InternetProblem" value="收集数\n据时出错"/>
+		<string key="ChangeName" value="登录"/>
+		<string key="ChangeName2" value="设置您的资料"/>
+		<string key="Nick" value="昵称"/>
+		<string key="Email" value="电子邮件"/>
+		<string key="Newsletter" value="订阅简报"/>
+		<string key="Unlock" value="解锁"/>
+		<string key="YouHaveUnlocked" value="您已解锁"/>
+		<string key="UnlockItem1" value="新机场"/>
+		<string key="UnlockItem2" value="新壁纸"/>
+		<string key="UnlockItem3" value="您的包包的新衣服"/>
+		<string key="UnlockItemInfinite" value="无限模式"/>
+		<string key="UnlockPreviousAirport" value="您必须在之前的\n机场取得胜利"/>
+		<string key="UnlockInfinite" value="您必须在三个一级\n中取得胜利"/>
+		<string key="UnlockSomeElements" value="一些要素"/>
+		<string key="YouNeed" value="您需要\n"/>
+		<string key="MilesToUnlock" value="解锁英里数"/>
+		<string key="Buy" value="购买"/>
+		<string key="BoostersTip" value="获得更多的超级能量！"/>
+		<string key="MustResetGameState" value="发现与此版本不兼\n容的数据。目前的\n进度将会丢失。"/>
+		<string key="RateUs" value="评价"/>
+		<string key="ShareEarnMiles" value="分享和赢得英里数"/>
+		<string key="Like" value="喜欢"/>
+		<string key="Publish" value="公布"/>
+
+		<!--  Menu  -->
+		<string key="Duty Free" value="免税"/>
+		<string key="Play" value="游戏"/>
+		<string key="Play!" value="游戏开始！"/>
+		<string key="Follow" value="关注我们"/>
+		<string key="Configuration" value="选项"/>
+		<string key="MusicVolume" value="音乐"/>
+		<string key="SoundsVolume" value="音效"/>
+		<string key="Level Selection" value="选择等级"/>
+		<string key="Airport Selection" value="选择机场"/>
+		<string key="Duty Free2" value="免税"/>
+		<string key="Leaderboard Title" value="排行榜"/>
+		<string key="Leaderboard Score" value="获得"/>
+		<string key="AirportArrowTip" value="用箭头就可以\n在世界各地旅行！"/>
+		<string key="AirportArrowTipMobile" value="滑动开始\n到世界各\n地旅行"/>
+		<string key="ChangeLanguageNotice" value="新的语言\n将在您\n重启游戏后生效"/>
+		<string key="Information" value="信息"/>
+		<string key="ContactWithUs" value="联系我们"/>
+
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="想在您离开时返回吗？"/>
+		<string key="TimeReason" value="没时间了！"/>
+		<string key="LuggagesReason" value="您失去了X件行李！"/>
+		<string key="VIPReason" value="您失去了VIP行李！"/>
+
+		<!-- Game Menus -->
+		<string key="Level Pause" value="暂停"/>
+		<string key="Level Failed" value="失败！"/>
+		<string key="Level Completed" value="通过"/>
+		<string key="LuggageNumber" value="行李"/>
+		<string key="Quit" value="退出"/>
+		<string key="WantToQuit" value="您想退出吗？"/>
+		<string key="Level" value="等级"/>
+		<string key="Level Infinite" value="完成！"/>
+		<string key="RecordInfinite1" value="您收集了"/>
+		<string key="RecordInfinite2" value="行李！"/>
+		<string key="ResetTitle" value="重置"/>
+		<string key="ResetText" value="如果继续，您将失去\n所有的游戏数据"/>
+		<string key="GameOver" value="游戏结束"/>
+
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="在这里丢下行李"/>
+		<string key="Tutorial2" value="将行李丢到相\n同颜色的管里"/>
+		<string key="Tutorial3" value="从另一面出现的行李"/>
+		<string key="Tutorial4" value="出现另一个！"/>
+		<string key="Tutorial5" value="小心电光！"/>
+		<string key="Tutorial6" value="快点！飞机就\n要起飞了！"/>
+		<string key="TutorialBoosters" value="寻找助推器"/>
+		<string key="TutorialVIP" value="VIP行李...您不可以失败"/>
+		<string key="TutorialLeftover" value="剩余行李"/>
+		<string key="TutorialBiohazard" value="当金属行李\n出现时，您会\n看到颜色"/>
+		<string key="TutorialJohnny" value="这种超级能量\n可以增加\n游戏时间！"/>
+		<string key="TutorialColor" value="这种超级能量可\n以让您把行李放\n到任意管中！"/>
+		<string key="TutorialBullet" value="这种超级能量可以\n减慢时间，让您\n移动行李！"/>
+		<string key="TutorialInfinite1" value="努力拿到最多包包"/>
+		<string key="TutorialInfinite2" value="没有时间限制，\n哥们，这是无\n限模式！"/>
+		<string key="TutorialInfinite3" value="全球排行榜上公布\n最厉害的玩家"/>
+		<string key="buyMiles" value="购买英里数"/>
+		<string key="boosters" value="超级能量"/>
+		<string key="customize" value="自定义"/>
+		<string key="wallpapers" value="壁纸"/>
+		<string key="NotEnoughMiles" value="英里数不够"/>
+		<string key="YouNeedMiles1" value="您需要\n"/>
+		<string key="YouNeedMiles2" value="更多英里数"/>
+
+		<!-- Duty Free -->
+		<string key="BuyMiles" value="购买英里数"/>
+		<string key="Dress" value="衣服 "/>
+		<string key="BuyRemoveAds" value="购买程序\n包中任一\n样，广告将会消失 "/>
+		<string key="BlockedElement" value="被阻挡的要素"/>
+		<string key="IsDressCorrect" value="您是否看好\n您的行李了？"/>
+
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="连接并赢得 "/>
+		<string key="FacebookLoginMiles2" value="英里数！"/>
+		<string key="FacebookFriendsMiles" value="邀请您的朋\n友一起玩Crazy Belts"/>
+		<string key="Connect" value="连接！"/>
+		<string key="Invite" value="邀请！"/>
+		<string key="Share" value="分享 "/>
+
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="交易中"/>
+		<string key="transactionCorrect" value="交易完成!"/>
+		<string key="transactionFail" value="交易失败!"/>
+	</language>
+
+	<!--Japanese-->
+	<language code="jp_JP"  name="Japanese">
+		<string key="Loading..." value="Loading..." />
+
+		<string key="Airport" value="空港"/>
+		<string key="BoostersText" value="スーパーパワー"/>
+		<string key="Next" value="次"/>
+		<string key="Miles" value="マイル"/>
+		<string key="Points" value="点数"/>
+		<string key="Time left" value="残された時間"/>
+		<string key="Hint" value="ヒント"/>
+		<string key="Default" value="デフォルト"/>
+		<string key="Credits" value="クレジット"/>
+		<string key="Reset" value="リセット"/>
+		<string key="Exit" value="終了"/>
+		<string key="Turn off music" value="音楽を消す"/>
+		<string key="Turn on music" value="音楽をつける"/>
+		<string key="InfiniteMode" value="無限"/>
+		<string key="ConnectionProblem" value="接続エラー"/>
+		<string key="InternetProblem" value="データを収集中\nにエラーが出ます"/>
+		<string key="ChangeName" value="ログイン"/>
+		<string key="ChangeName2" value="データを設定"/>
+		<string key="Nick" value="ニックネーム"/>
+		<string key="Email" value="メール"/>
+		<string key="Newsletter" value="ニュースレターを購読"/>
+		<string key="Unlock" value="ロックを解除"/>
+		<string key="YouHaveUnlocked" value="あなたがロッ\nクを解除した"/>
+		<string key="UnlockItem1" value="新空港"/>
+		<string key="UnlockItem2" value="新しい壁紙"/>
+		<string key="UnlockItem3" value="あなたのカバンの新しいドレス"/>
+		<string key="UnlockItemInfinite" value="無限モード"/>
+		<string key="UnlockPreviousAirport" value="以前の空港で勝た\nなければならない"/>
+		<string key="UnlockInfinite" value="3つレベル１で勝たなければならない"/>
+		<string key="UnlockSomeElements" value="いくつかの要素"/>
+		<string key="YouNeed" value="次が必要\n"/>
+		<string key="MilesToUnlock" value="マイルのロックを解除する"/>
+		<string key="Buy" value="購入"/>
+		<string key="BoostersTip" value="すぐもっとスーパーパワーを得る！"/>
+		<string key="MustResetGameState" value="このバージョンで利用可能のデ\nータが見つ\nからなかった。現在の進展は\n失われます。"/>
+		<string key="RateUs" value="評価"/>
+		<string key="ShareEarnMiles" value="シェア＆マ\nイルを勝つ"/>
+		<string key="Like" value="好き"/>
+		<string key="Publish" value="公開"/>
+
+		<!--  Menu  -->
+		<string key="Duty Free" value="免税"/>
+		<string key="Play" value="遊ぶ"/>
+		<string key="Play!" value="ゲームスタート！"/>
+		<string key="Follow" value="私たちをフォローする"/>
+		<string key="Configuration" value="オプション"/>
+		<string key="MusicVolume" value="音楽ボリューム"/>
+		<string key="SoundsVolume" value="音ボリューム"/>
+		<string key="Level Selection" value="レベルを選択"/>
+		<string key="Airport Selection" value="空港を選択"/>
+		<string key="Duty Free2" value="免税"/>
+		<string key="Leaderboard Title" value="リーダーボード"/>
+		<string key="Leaderboard Score" value="あなたが得た"/>
+		<string key="AirportArrowTip" value="矢印で世界中\nに旅をする！"/>
+		<string key="AirportArrowTipMobile" value="スライドで世\n界中に旅をする！"/>
+		<string key="ChangeLanguageNotice" value="ゲームを再開す\nる時に、新し\nい言語を\n適用されます"/>
+		<string key="Information" value="情報"/>
+		<string key="ContactWithUs" value="私たちに連絡"/>
+
+		<!-- Level Failed Reasons -->
+		<string key="WantToRevive" value="離したら、返しますか？"/>
+		<string key="TimeReason" value="時間がない！"/>
+		<string key="LuggagesReason" value="あなたはX荷物を\n失敗しました！"/>
+		<string key="VIPReason" value="あなたはVIP荷物\nを失敗しました！"/>
+
+		<!-- Game Menus -->
+		<string key="Level Pause" value="一時停止"/>
+		<string key="Level Failed" value="失敗！"/>
+		<string key="Level Completed" value="完了！"/>
+		<string key="LuggageNumber" value="荷物"/>
+		<string key="Quit" value="やめる"/>
+		<string key="WantToQuit" value="あなたはやめますか？"/>
+		<string key="Level" value="レベル"/>
+		<string key="Level Infinite" value="完成！"/>
+		<string key="RecordInfinite1" value="あなたが収集した"/>
+		<string key="RecordInfinite2" value="荷物！"/>
+		<string key="ResetTitle" value="リセット"/>
+		<string key="ResetText" value="続行すると、\nすべてのゲームデータを無くします"/>
+		<string key="GameOver" value="ゲームオーバー"/>
+
+		<!-- Tutorials -->
+		<string key="Tutorial1" value="ここに荷物を落とす"/>
+		<string key="Tutorial2" value="同じ色のチューブに\n荷物を落とす"/>
+		<string key="Tutorial3" value="片側から荷\n物がでる"/>
+		<string key="Tutorial4" value="他のどころからもでる！"/>
+		<string key="Tutorial5" value="電気の光線に気を付けろ！"/>
+		<string key="Tutorial6" value="急いで！飛行機\nは離\n陸寸前だった！"/>
+		<string key="TutorialBoosters" value="ブースターを探す"/>
+		<string key="TutorialVIP" value="VIP荷物...あなたが失\n敗\nしてはいかない"/>
+		<string key="TutorialLeftover" value="残された荷物"/>
+		<string key="TutorialBiohazard" value="金属の荷物が出たら、色を見えます"/>
+		<string key="TutorialJohnny" value="このスーパーパワーで、ゲ\nーム時間を増やす"/>
+		<string key="TutorialColor" value="このスーパーパワーで、任意の\nチューブにカバンを入れてもいい！"/>
+		<string key="TutorialBullet" value="このスーパーパワーで、時間を\n遅くして、荷物を移動できる！"/>
+		<string key="TutorialInfinite1" value="最も多いバッグ\nを処理する"/>
+		<string key="TutorialInfinite2" value="時間制限なし、おい、\nこれは無限モード！"/>
+		<string key="TutorialInfinite3" value="グローバルリーダーボード\nではベストプレイヤーを表示"/>
+
+		<!-- Duty Free -->
+		<string key="buyMiles" value="マイルを購入！"/>
+		<string key="boosters" value="スーパーパワー"/>
+		<string key="customize" value="カスタマイズ化"/>
+		<string key="wallpapers" value="壁紙"/>
+		<string key="NotEnoughMiles" value="マイルが足らない"/>
+		<string key="YouNeedMiles1" value="次のが必要\n"/>
+		<string key="YouNeedMiles2" value="より多くのマイル "/>
+		<string key="BuyMiles" value="マイルを購入"/>
+		<string key="Dress" value="ドレス"/>
+		<string key="BuyRemoveAds" value="このパックのいずれ\nかを購入したら、\n広告はなくなります "/>
+		<string key="BlockedElement" value="ブロックされた要素"/>
+		<string key="IsDressCorrect" value="荷物に準備ができましたか？"/>
+
+		<!-- Facebook -->
+		<string key="FacebookLoginMiles" value="接続して、勝つ "/>
+		<string key="FacebookLoginMiles2" value="マイル"/>
+		<string key="FacebookFriendsMiles" value="友達を招待して、\n一緒にCrazy Beltsを遊備ましょう "/>
+		<string key="Connect" value="接続！"/>
+		<string key="Invite" value="招待！"/>
+		<string key="Share" value="共有"/>
+
+		<!-- Transaction -->
+		<string key="transactionPerforming" value="取引を行う"/>
+		<string key="transactionCorrect" value="取引を完了！"/>
+		<string key="transactionFail" value="取引が失敗！"/>
+
+	</language>
+
+    <!-- Korean -->
+    <language code="ko_KO"  name="Korean">
+		<string key="Airport" value="공항" />
+		<string key="BoostersText" value="초능력" />
+		<string key="Next" value="다음" />
+		<string key="Miles" value="마일" />
+		<string key="Points" value="포인트" />
+		<string key="Time Left" value="좌측 시간" />
+		<string key="Hint" value="힌트" />
+		<string key="Default" value="디폴트 값" />
+		<string key="Credits" value="크레딧" />
+		<string key="Reset" value="재설정" />
+		<string key="Exit" value="출구" />
+		<string key="Turn off music" value="음악을 끄고" />
+		<string key="Turn on music" value="음악을 켭니다" />
+		<string key="InfiniteMode" value="무한의" />
+		<string key="ConnectionProblem" value="연결 오류" />
+		<string key="InternetProblem" value="오류 데이터를/n수집하는 동안" />
+		<string key="ChangeName" value="로그인" />
+		<string key="ChangeName2" value="데이터를 설정" />
+		<string key="Nick" value="별명" />
+		<string key="Email" value="이메일" />
+		<string key="Newsletter" value="뉴스 레터 구독" />
+		<string key="Unlock" value="잠금 해제" />
+		<string key="YouHaveUnlocked" value="당신은 잠금 해제\n" />
+		<string key="UnlockItem1" value="새 공항" />
+		<string key="UnlockItem2" value="새로운 바탕 화면" />
+		<string key="UnlockItem3" value="당신의 부대에\n대한 새로운 드레스" />
+		<string key="UnlockItemInfinite" value="무한 모드\n" />
+		<string key="UnlockPreviousAirport" value="당신은 이전\n공항을\n이길 수있다" />
+		<string key="UnlockInfinite" value="당신은\n이길 수있다\n처음 세 수준" />
+		<string key="UnlockSomeElements" value="일부 요소" />
+		<string key="YouNeed" value="당신이 필요합니다\n" />
+		<string key="MilesToUnlock" value="잠금을 해제 할 수 마일" />
+		<string key="Buy" value="구입할" />
+		<string key="BoostersTip" value="얻을 이제 더 초능력!" />
+		<string key="MustResetGameState" value="찾을 수\n없습니다 이 버전과\n호환되는 데이터.\n현재 진행 상황은 손실됩니다." />
+		<string key="RateUs" value="평가 회사 소개" />
+		<string key="ShareEarnMiles" value="공유 및\n승리 마일" />
+		<string key="Like" value="같은" />
+		<string key="Publish" value="게시를" />
+		<string key="Duty Free" value="면세점" />
+		<string key="Play" value="플레이" />
+		<string key="Play!" value="플레이!" />
+		<string key="Follow us" value="우리를 따라" />
+		<string key="Configuration" value="옵션" />
+		<string key="MusicVolume" value="음악 볼륨" />
+		<string key="SoundsVolume" value="볼륨 소리" />
+		<string key="Level Selection" value="레벨을 선택" />
+		<string key="Airport Selection" value="공항 선택" />
+		<string key="Duty Free2" value="면세점" />
+		<string key="Leaderboard Title" value="리더" />
+		<string key="Leaderboard Score" value="당신이있어" />
+		<string key="AirportArrowTip" value="화살표로 전 세계\n여행에 사용!" />
+		<string key="AirportArrowTipMobile" value="세계의\n여행으로 미십시오!" />
+		<string key="ChangeLanguageNotice" value="새로운 언어\n다음 시간에\n게임을 다시 적용게 됩니다" />
+		<string key="Information" value="정보" />
+		<string key="ContactWithUs" value="저희의 접촉" />
+		<string key="WantToRevive" value="반환하시겠습니까\n당신은 왼쪽 어디?" />
+		<string key="TimeReason" value="시간이 부족!" />
+		<string key="LuggagesReason" value="당신은 실패X 수화물!" />
+		<string key="VIPReason" value="당신은 실패 귀빈 수화물!" />
+		<string key="Level Pause" value="레벨\n일시 중지" />
+		<string key="Level Failed" value="레벨은\n실패!" />
+		<string key="Level Completed" value="레벨 완료!" />
+		<string key="LuggageNumber" value="\n수화물" />
+		<string key="Quit" value="종료" />
+		<string key="WantToQuit" value="당신이 종료\n하시겠습니까?" />
+		<string key="Level" value="수평" />
+		<string key="Level Infinite" value="완료!" />
+		<string key="RecordInfinite1" value="당신은 수집" />
+		<string key="RecordInfinite2" value="수화물!" />
+		<string key="ResetTitle" value="재설정" />
+		<string key="ResetText" value="계속하면 모든 게임\n데이터를\n잃게 됩니다" />
+		<string key="GameOver" value="게임 오버" />
+		<string key="Tutorial1" value="짐은 여기에 빠진다." />
+		<string key="Tutorial2" value="짐을관에 있는\n색상이\n같은 놓습니다." />
+		<string key="Tutorial3" value="한쪽에서 종료 짐 ..." />
+		<string key="Tutorial4" value="... 다른 등장!" />
+		<string key="Tutorial5" value="조심해 전기 레이!" />
+		<string key="Tutorial6" value="서둘러!. 비행기가\n이륙\n할 예정입니다!" />
+		<string key="TutorialBoosters" value="부스터를 탐험" />
+		<string key="TutorialVIP" value="VIP화물 ... 당신은 실패하지\n않아야합니다" />
+		<string key="TutorialLeftover" value="남은 짐" />
+		<string key="TutorialBiohazard" value="금속 수화물이 나타나면\n원하는 색상 알게 됩니다." />
+		<string key="TutorialJohnny" value="이 슈퍼 파워 게임\n시간이 증가!" />
+		<string key="TutorialColor" value="이 슈퍼 파워는 가방을 모든 튜브에\n넣을 수 있습니다!" />
+		<string key="TutorialBullet" value="이 슈퍼 파워는 시간이\n느려지는 경우 수하물료 이동하자!" />
+		<string key="TutorialInfinite1" value="가방이 가장 큰\n액수의 처리." />
+		<string key="TutorialInfinite2" value="시간 제한 없음,\n그것은 무한\n모드의 즐거움을\n만끽해 보세요!" />
+		<string key="TutorialInfinite3" value="그리고 전 세계 랭킹은\n최고의 선수 선보일 예정이다" />
+		<string key="buyMiles" value="마일 구매!" />
+		<string key="boosters" value="슈퍼 파워!" />
+		<string key="customize" value="사용자 지정" />
+		<string key="wallpapers" value="배경 화면" />
+		<string key="NotEnoughMiles" value="충분하지 마일" />
+		<string key="YouNeedMiles1" value="당신이 필요합니다\n" />
+		<string key="YouNeedMiles2" value="더 마일" />
+		<string key="BuyMiles" value="마일즈 구입" />
+		<string key="Dress" value="드레스" />
+		<string key="BuyRemoveAds" value="이 팩을 구입하는 경우,\n광고가 사라집니다" />
+		<string key="BlockedElement" value="차단 된 요소" />
+		<string key="IsDressCorrect" value="당신은 당신의 수화물의\n표정으로 괜찮아?" />
+		<string key="FacebookLoginMiles" value="연결\n승리 " />
+		<string key="FacebookLoginMiles2" value="마일!" />
+		<string key="FacebookFriendsMiles" value="(Crazy Belts) 를 재생하는 친구를 초대" />
+		<string key="Connect" value="연결!" />
+		<string key="Invite" value="초대!" />
+		<string key="Share" value="공유" />
+		<string key="transactionPerforming" value="트랜잭션 수행 ..." />
+		<string key="transactionCorrect" value="거래 완료!" />
+		<string key="transactionFail" value="트랜잭션 실패!" />
+	</language>
+
+</languages>

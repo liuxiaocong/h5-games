@@ -1,0 +1,194 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="-1">
+    <title>你吖找抽咩</title>
+    <link rel="stylesheet" type="text/css" href="css/m.min.css">
+</head>
+<body>
+    <div id="container">
+    </div>
+    <script language="javascript">
+        var mebtnopenurl = 'http://wx.jyc.17188.com/index.html';
+        window.shareData = {
+            "imgUrl": "http://wx.jyc.17188.com/h5/zc/img/fantrue.png",
+            "timeLineLink": "http://wx.jyc.17188.com/h5/zc/game.htm",
+            "tTitle": "皮子紧了就找抽，想抽就来抽！",
+            "tContent": "有时很欠揍，有时很找抽，<br/> 想抽就抽吧〒_〒 "
+        };
+
+        function goHome() {
+            window.location = mebtnopenurl;
+        }
+        function clickMore() {
+            if ((window.location + "").indexOf("zf", 1) > 0) {
+                window.location = "http://wx.jyc.17188.com/index.html";
+            }
+            else {
+                goHome();
+            }
+        }
+        function dp_share() {
+            document.title = "我在1分钟内被抽" + (myData.score) + "次，皮还是痒痒，一起来抽我吧！欠抽！欠抽！我欠抽！";
+            document.getElementById("share").style.display = "";
+            window.shareData.tTitle = document.title;
+        }
+        function dp_Ranking() {
+            window.location = mebtnopenurl;
+        }
+
+        function showAd() {
+        }
+        function hideAd() {
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "img_url": window.shareData.imgUrl,
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "img_url": window.shareData.imgUrl,
+                    "img_width": "640",
+                    "img_height": "640",
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+        }, false);
+    </script>
+    <div style="display: none;">
+        <script type="text/javascript">
+            var myData = { gameid: "qmxzfzm" };
+            window.shareData.timeLineLink = "http://wx.jyc.17188.com/h5/zc/game.htm";
+            function dp_submitScore(score) {
+                myData.score = parseInt(score);
+                myData.scoreName = "成功寻找" + score + "次“抽”字";
+                if (score > 1) {
+                    if (confirm("你一共被抽了" + score + "次，肿么样？累抽了吧？快让你的朋友也来试试吧！")) {
+                        dp_share();
+                    }
+                }
+            }
+            function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function () {
+                        if (confirm("集游策h5小游戏平台")) {
+                            window.location = "http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd";
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+                else {
+                    document.location.href = mebtnopenurl;
+                }
+            }
+        </script>
+        
+        <script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+    </div>
+    <div style="display:block">
+		<!--百度联盟
+		<script type="text/javascript">
+    /*集游策广告代码第二版*/
+    var cpro_id = "u1677893";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>-->
+	</div>        
+</body>
+</html>
+<script id="tpl" type="text/html">
+<div class="grid">
+        <div class="page hide" id="loading">
+            <div class="loading-txt"><%=loading%></div>
+        </div>
+        <div class="page hide" id="index">
+            <h1><%=title%></h1>
+
+            <div id="help"><%=help_txt%></div>
+            <div class="btns">
+                <button data-type="color" class="btn play-btn">
+                    <%=btn_start%>
+                </button>
+				<a href="javascript:void(0);"  onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+				</a>
+            </div>
+        </div>
+        <div class="page hide" id="room">
+            <header>
+                <span class="lv">
+                    <%=score%>
+                    <em>
+                        1
+                    </em>
+                </span>
+                <span class="time">
+                </span>
+               <!-- <span class="btn btn-pause">
+                    <%=btn_pause%>
+                </span>
+				-->
+            </header>
+            <div id="box" class="lv1">
+            </div>
+        </div>
+        <div class="page hide" id="dialog">
+        <div class="inner">
+                <div class="content gameover">
+                    <div class="inner-content">
+                        
+                        <h3></h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-restart">
+                                <%=btn_reTry%>
+                            </button>
+							<a href="javascript:void(0);" onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+							</a>
+                        </div>
+						
+						
+                    </div>
+                </div>
+                <div class="content pause">
+                    <div class="inner-content">
+                        
+                        <h3>
+                            <%=game_pause%>
+                        </h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-resume">
+                                <%=btn_resume%>
+                            </button>
+							<a href="javascript:void(0);" onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+							</a>
+                        </div>
+						
+                    </div>
+                </div>
+            </div>
+    </ins>
+        </div>
+    </div>
+	<div id=share style="display: none">
+			<img width=100% src="http://wx.jyc.17188.com/tupian/fenxiang.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+</script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min3.js"></script>

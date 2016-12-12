@@ -1,0 +1,53 @@
+dutyFree.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+booster_color
+  rotate: false
+  xy: 689, 2
+  size: 203, 400
+  orig: 203, 400
+  offset: 0, 0
+  index: -1
+luggageForCostume
+  rotate: false
+  xy: 330, 404
+  size: 258, 200
+  orig: 258, 200
+  offset: 0, 0
+  index: -1
+buyMiles
+  rotate: false
+  xy: 2, 2
+  size: 342, 400
+  orig: 342, 400
+  offset: 0, 0
+  index: -1
+booster_bullet
+  rotate: false
+  xy: 590, 404
+  size: 195, 400
+  orig: 195, 400
+  offset: 0, 0
+  index: -1
+booster_johnny
+  rotate: false
+  xy: 787, 404
+  size: 177, 400
+  orig: 177, 400
+  offset: 0, 0
+  index: -1
+wallpapers_unlocked
+  rotate: false
+  xy: 346, 2
+  size: 341, 400
+  orig: 341, 400
+  offset: 0, 0
+  index: -1
+shareAndWin
+  rotate: false
+  xy: 2, 404
+  size: 326, 400
+  orig: 326, 400
+  offset: 0, 0
+  index: -1

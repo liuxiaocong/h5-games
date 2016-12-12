@@ -1,0 +1,165 @@
+costumes.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+redSunglasses
+  rotate: false
+  xy: 199, 167
+  size: 167, 54
+  orig: 167, 54
+  offset: 0, 0
+  index: -1
+moustache2
+  rotate: false
+  xy: 378, 467
+  size: 70, 23
+  orig: 70, 23
+  offset: 0, 0
+  index: -1
+santaClausHat
+  rotate: false
+  xy: 172, 223
+  size: 138, 130
+  orig: 138, 130
+  offset: 0, 0
+  index: -1
+highPeakGlasses
+  rotate: false
+  xy: 309, 420
+  size: 134, 45
+  orig: 134, 45
+  offset: 0, 0
+  index: -1
+reindeerNose
+  rotate: false
+  xy: 312, 323
+  size: 31, 19
+  orig: 31, 19
+  offset: 0, 0
+  index: -1
+christmasDecoration
+  rotate: false
+  xy: 371, 204
+  size: 110, 90
+  orig: 110, 90
+  offset: 0, 0
+  index: -1
+santaClausBeard
+  rotate: false
+  xy: 392, 2
+  size: 106, 132
+  orig: 106, 132
+  offset: 0, 0
+  index: -1
+pinkHat
+  rotate: false
+  xy: 2, 305
+  size: 164, 106
+  orig: 164, 106
+  offset: 0, 0
+  index: -1
+lenslessGlasses
+  rotate: false
+  xy: 168, 355
+  size: 143, 48
+  orig: 143, 48
+  offset: 0, 0
+  index: -1
+strippedHat
+  rotate: false
+  xy: 373, 136
+  size: 129, 66
+  orig: 129, 66
+  offset: 0, 0
+  index: -1
+moustache1
+  rotate: false
+  xy: 309, 467
+  size: 67, 41
+  orig: 67, 41
+  offset: 0, 0
+  index: -1
+raybanSunglasses
+  rotate: false
+  xy: 371, 296
+  size: 131, 59
+  orig: 131, 59
+  offset: 0, 0
+  index: -1
+pinkRibbonHat
+  rotate: false
+  xy: 2, 96
+  size: 195, 91
+  orig: 195, 91
+  offset: 0, 0
+  index: -1
+circledGlasses
+  rotate: false
+  xy: 313, 357
+  size: 139, 61
+  orig: 139, 61
+  offset: 0, 0
+  index: -1
+rimmedGlasses
+  rotate: false
+  xy: 199, 105
+  size: 172, 60
+  orig: 172, 60
+  offset: 0, 0
+  index: -1
+topper
+  rotate: false
+  xy: 2, 189
+  size: 168, 114
+  orig: 168, 114
+  offset: 0, 0
+  index: -1
+moustache4
+  rotate: false
+  xy: 2, 488
+  size: 60, 19
+  orig: 60, 19
+  offset: 0, 0
+  index: -1
+moustache3
+  rotate: false
+  xy: 378, 492
+  size: 69, 16
+  orig: 69, 16
+  offset: 0, 0
+  index: -1
+reindeerHorns
+  rotate: false
+  xy: 2, 2
+  size: 210, 92
+  orig: 210, 92
+  offset: 0, 0
+  index: -1
+bowler
+  rotate: false
+  xy: 214, 2
+  size: 176, 101
+  orig: 176, 101
+  offset: 0, 0
+  index: -1
+peakedBeard
+  rotate: false
+  xy: 170, 405
+  size: 137, 98
+  orig: 137, 98
+  offset: 0, 0
+  index: -1
+scarf
+  rotate: false
+  xy: 2, 413
+  size: 166, 73
+  orig: 166, 73
+  offset: 0, 0
+  index: -1
+socks
+  rotate: false
+  xy: 312, 223
+  size: 57, 98
+  orig: 57, 98
+  offset: 0, 0
+  index: -1

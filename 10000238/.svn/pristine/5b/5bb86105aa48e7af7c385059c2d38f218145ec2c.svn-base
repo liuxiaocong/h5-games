@@ -1,0 +1,96 @@
+{
+	"missiles": [
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4.25,
+			"screenSide": "left",
+			"position": 0,
+			"delay": 0.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": 3000,
+			"delay": 0.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": 2400,
+			"delay": 0.2
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": 1800,
+			"delay": 0.4
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": 1200,
+			"delay": 0.6
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": 600,
+			"delay": 0.8
+		},
+		
+				{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": -3000,
+			"delay": 0.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": -2400,
+			"delay": 0.2
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": -1800,
+			"delay": 0.4
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": -1200,
+			"delay": 0.6
+		},
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4,
+			"screenSide": "left",
+			"position": -600,
+			"delay": 0.8
+		}
+
+	], 
+
+	"timeLength": 1.8
+}

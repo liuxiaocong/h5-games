@@ -1,0 +1,703 @@
+function getScrollTop() {
+    var scrollTop = 0;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+    } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+    }
+    return scrollTop;
+}
+
+function main() {
+    var ow = document.body.clientWidth;
+    if (ow > 360) {
+        ow = 360;
+    }else if (ow >=300)
+    {
+        ow = 300;
+    }
+    var oh = ow * 2;
+
+    var d = {
+        isShowClue1: !0,
+        isFirstInGame: !0,
+        init: function() {
+            //console.log(document.body.clientWidth);
+            d.width = ow;
+            jsGame.canvas.screen.setWidth(d.width);
+            jsGame.canvas.screen.setHeight(d.height);
+            d.width < d.height && (d.clue = !0);
+            if (360 <= d.height) {
+                d.isShowClue1 = !1
+            } else {
+                d.isFirstInGame && (d.isFirstInGame = !1, d.isShowClue1 = !0);
+            }
+        },
+        initCanvas: function() {
+            //console.log(jsGame.canvas.screen.getTouch());
+            if (jsGame.canvas.screen.getTouch()) {
+                d.height = oh,
+                d.width = ow,
+                jsGame.canvas.screen.setHeight(d.height),
+                d.top = 0,
+                d.left = 0
+            } else {
+                d.height = oh, 
+                d.width = ow, 
+                jsGame.canvas.screen.setHeight(d.height), 
+                jsGame.canvas.screen.setWidth(d.width), 
+                d.top = 0, 
+                d.left = (window.innerWidth - d.width) / 2
+            }
+
+            d.init();
+            d.canvas = document.getElementById("jsGameScreen");
+            d.ctx = d.canvas.getContext("2d")
+        }
+    };
+    d.initCanvas();
+    jsGame.initImage([{
+        id: "a",
+        src: "img/a.png"
+    }, {
+        id: "h",
+        src: "img/h.png"
+    }, {
+        id: "chinese",
+        src: "img/chinese.png"
+    }, {
+        id: "english",
+        src: "img/english.png"
+    }, {
+        id: "fm",
+        src: "img/fm.png"
+    }, {
+        id: "jianren",
+        src: "img/jianren.png"
+    }, {
+        id: "xue",
+        src: "img/xue.png"
+    }, {
+        id: "bl1",
+        src: "img/bl1.png"
+    }, {
+        id: "bl2",
+        src: "img/bl2.png"
+    }, {
+        id: "han1",
+        src: "img/img036.png"
+    }, {
+        id: "han2",
+        src: "img/img037.png"
+    }, {
+        id: "sb",
+        src: "img/sb.png"
+    }, {
+        id: "sz",
+        src: "img/sz.png"
+    }, {
+        id: "start",
+        src: "img/start.png"
+    }, {
+        id: "startE",
+        src: "img/startE.png"
+    }, {
+        id: "more",
+        src: "img/more.png"
+    }, {
+        id: "moreE",
+        src: "img/moreE.png"
+    }, {
+        id: "back",
+        src: "img/back.png"
+    }, {
+        id: "backE",
+        src: "img/backE.png"
+    }, {
+        id: "retry",
+        src: "img/retry.png"
+    }, {
+        id: "retryE",
+        src: "img/retryE.png"
+    }, {
+        id: "intro",
+        src: "img/intro.png"
+    }, {
+        id: "score",
+        src: "img/score.png"
+    }, {
+        id: "scoreE",
+        src: "img/scoreE.png"
+    }, {
+        id: "Hscore",
+        src: "img/Hscore.png"
+    }, {
+        id: "HscoreE",
+        src: "img/HscoreE.png"
+    }]);
+    jsGame.initImageCallBack(function(b, x) {
+        if (b >= x) jsGame.gameFlow.run();
+        else try {
+            var e = b / x,
+                e = 1 < e ? 1 : e;
+            d.ctx.fillStyle = "#FFFFFF";
+            d.ctx.fillRect(0, 0, d.width, d.height);
+            d.ctx.drawImage(jsGame.getImage("a"), 0, 0, 250, 81, (d.width - 250) / 2, (d.height - 81) / 2, 250, 81);
+            d.ctx.drawImage(jsGame.getImage("a"), 2, 86, 246 * e, 10, (d.width - 246) / 2, (d.height - 81) / 2 + 51, 246 * e, 10)
+        } catch (Q) {}
+    });
+    jsGame.pageLoad(function(b) {
+        function x(a, d, f, e, g, h, k, l, m, n) {
+            b.canvas.drawImage(a, d * e, f * g, e, g, h, k, l, m, n)
+        }
+
+        function e(a, b, d) {
+            return b > a.x && d > a.y && b < a.x + a.w && d < a.y + a.h ? !0 : !1
+        }
+
+        function Q(c) {
+            f == D ? e(p, c.x, c.y) ? p.isPressed = !0 : e(q, c.x, c.y) && (q.isPressed = !0) : f == y ? e(g, c.x, c.y) ? g.isPressed = !0 : e(h, c.x, c.y) && (h.isPressed = !0) : f == R ? (
+                console.log(c), ca(),
+                f = K
+            ) : f == K ? c.x >= b.canvas.screen.getWidth() / 2 ? a.jianren.state == m.jianRenStateType.normal && (a.jianren.index++, a.jianren.index >= a.wall.tiles.bottom.length && (a.jianren.index = 0), a.jianren.direction = m.jianRenDirection.right) : a.jianren.state == m.jianRenStateType.normal && (a.jianren.index--, 0 > a.jianren.index && (a.jianren.index = a.wall.tiles.bottom.length - 1), a.jianren.direction = m.jianRenDirection.left) : f == E && (e(k, c.x, c.y) ? k.isPressed = !0 : e(l, c.x, c.y) && (l.isPressed = !0))
+        }
+
+        function da(a) {
+            f == D ? (e(p, a.x, a.y) || (p.isPressed = !1), e(q, a.x, a.y) || (q.isPressed = !1)) : f == y ? (e(g, a.x, a.y) || (g.isPressed = !1), e(h, a.x, a.y) || (h.isPressed = !1)) : f == E && (e(k, a.x, a.y) || (k.isPressed = !1), e(l, a.x, a.y) || (l.isPressed = !1))
+        }
+
+        function ea(a) {
+            f == D ? p.isPressed && e(p, a.x, a.y) ? (f = y, t = "CHS", b.localStorage.setItem("language2", t), p.isPressed = !1) : q.isPressed && e(q, a.x, a.y) && (f = y, t = "ENG", b.localStorage.setItem("language2", t), q.isPressed = !1) : f == y ? g.isPressed && e(g, a.x, a.y) ? (f = R, g.isPressed = !1,
+                //pk: add one more touch event;
+                Q({
+                    x: 217,
+                    y: 418
+                })) : h.isPressed && e(h, a.x, a.y) && (dp_Ranking(), h.isPressed = !1) : f == E && (k.isPressed && e(k, a.x, a.y) ? (ca(), f = K, k.isPressed = !1) : l.isPressed && e(l, a.x, a.y) && (f = y, l.isPressed = !1))
+        }
+        d.showClue = function() {
+            //window.scrollTo(0, -5);
+            d.ctx.fillStyle = "#ffffff";
+            d.ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+            b.canvas.drawImage("h", (window.innerWidth - 153) / 2, (window.innerHeight - 122) / 2)
+        };
+        var p = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: 180,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            q = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: 260,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            g = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: ow * 198 / 240 + 30,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            h = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: 500,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            k = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: 420,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            l = {
+                x: (b.canvas.screen.getWidth() - 126) / 2,
+                y: 500,
+                w: 126,
+                h: 35,
+                isPressed: !1,
+                draw: x
+            },
+            m = {
+                jianRenStateType: {
+                    normal: 0,
+                    died: 1,
+                    stop: 2
+                },
+                jianRenDirection: {
+                    center: 0,
+                    left: 1,
+                    right: 2
+                }
+            },
+            a = {
+                baseY: 0,
+                mission: 0,
+                wall: {
+                    width: 30,
+                    topWallY: -150,
+                    bottomWallY: 0,
+                    timeout: 1E3,
+                    gapTimeout: 1E3,
+                    dropped: !1,
+                    tiles: {
+                        top: [],
+                        bottom: []
+                    }
+                },
+                jianren: {
+                    index: 0,
+                    y: 0,
+                    width: 30,
+                    height: 38,
+                    state: m.jianRenStateType.normal,
+                    direction: m.jianRenDirection.center,
+                    showAction: !1
+                }
+            },
+            S,
+            T,
+            F,
+            u,
+            L,
+            U,
+            A = [20, 35, 50, 25],
+            V,
+            fa = function(c) {
+                if (0 < c) {
+                    switch (c) {
+                        case 10:
+                            F = 3;
+                            a.wall.timeout = 500;
+                            break;
+                        case 20:
+                            F = 2;
+                            a.wall.timeout = 350;
+                            break;
+                        case 30:
+                            F = 1;
+                            a.wall.timeout = 225;
+                            break;
+                        case 40:
+                            a.wall.timeout = 100;
+                            break;
+                        case 50:
+                            a.wall.timeout = 50
+                    }
+                    for (u = []; u.length < F;)
+                        if (L = b.commandFuns.getRandom(0, parseInt(b.canvas.screen.getWidth() / 2 / a.wall.width) - 1), 0 == u.length) u.push(L);
+                        else {
+                            U = !0;
+                            for (c = 0; c < u.length; c++) L == u[c] && (U = !1);
+                            U && u.push(L)
+                        }
+                    var d;
+                    a.wall.tiles.top = [];
+                    a.wall.tiles.bottom = [];
+                    //pk: config tiles
+                    for (c = 0; c < parseInt(b.canvas.screen.getWidth() / 2 / a.wall.width); c++) d = b.commandFuns.getRandom(220, 280),
+                        a.wall.tiles.top.push({
+                            height: d
+                        }),
+                        a.wall.tiles.bottom.push({
+                            height: b.canvas.screen.getHeight() - d
+                        });
+                    for (c = 0; c < u.length; c++) a.wall.tiles.top[u[c]].height -= A[b.commandFuns.getRandom(0, A.length - 1)]
+                } else a.wall.tiles = {
+                    top: [{
+                        height: 250
+                    }, {
+                        height: 250
+                    }, {
+                        height: 250
+                    }, {
+                        height: 250
+                    }, {
+                        height: 215
+                    }, {
+                        height: 250
+                    }, {
+                        height: 250
+                    }, {
+                        height: 250
+                    }],
+                    bottom: [{
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }, {
+                        height: 70
+                    }]
+                };
+                S = [];
+                for (c = 0; c < a.wall.tiles.top.length; c++) S.push({
+                    sx: c * a.wall.width,
+                    sy: a.baseY + a.wall.tiles.top[c].height,
+                    ex: (c + 1) * a.wall.width,
+                    ey: a.baseY + a.wall.tiles.top[c].height
+                });
+                T = [];
+                for (c = 0; c < a.wall.tiles.bottom.length; c++) T.push({
+                    sx: c * a.wall.width,
+                    sy: a.baseY + b.canvas.screen.getHeight() - a.wall.tiles.bottom[c].height,
+                    ex: (c + 1) * a.wall.width,
+                    ey: a.baseY + b.canvas.screen.getHeight() - a.wall.tiles.bottom[c].height
+                });
+                a.wall.topWallY = -150;
+                a.wall.bottomWallY = 0;
+                a.wall.timeout = 1E3;
+                a.wall.gapTimeout = 800;
+                a.wall.dropped = !1;
+                a.jianren.index = 4;
+                a.jianren.y = 150;
+                a.jianren.state = m.jianRenStateType.normal;
+                a.jianren.showAction = !1;
+                V = b.commandFuns.getRandom(0, 1)
+            },
+            M = 0,
+            B,
+            z,
+            D = 5,
+            y = 0,
+            R = 1,
+            K = 2,
+            E = 3,
+            f = 0,
+            t = "",
+            r = 0,
+            t = b.localStorage.getItem("language2"),
+            f = null == t ? D : y,
+            r = b.localStorage.getItem("highScore2");
+        null == r && (r = 0);
+        var ca = function() {
+                M = 0;
+                a.mission = 1;
+                F = 3;
+                a.jianren.direction = m.jianRenDirection.center;
+                B = 0;
+                z = 105;
+                fa(a.mission)
+            },
+            W = function() {
+                b.canvas.drawImage("bl1", 0, 0, b.getImage("bl1").width, b.getImage("bl1").height, 0, 0, b.canvas.screen.getWidth(), b.canvas.screen.getHeight())
+            },
+            N = [],
+            X = 0,
+            O = [],
+            n,
+            G = 0,
+            Y = [{
+                sx: 0,
+                sy: 0
+            }, {
+                sx: 30,
+                sy: 0
+            }],
+            v = 0,
+            C = [{
+                sx: 60,
+                sy: 0
+            }, {
+                sx: 60,
+                sy: 0
+            }, {
+                sx: 90,
+                sy: 0
+            }, {
+                sx: 90,
+                sy: 0
+            }, {
+                sx: 120,
+                sy: 0
+            }, {
+                sx: 120,
+                sy: 0
+            }, {
+                sx: 150,
+                sy: 0
+            }, {
+                sx: 150,
+                sy: 0
+            }, {
+                sx: 180,
+                sy: 0
+            }, {
+                sx: 180,
+                sy: 0
+            }],
+            ga,
+            ia = [0, 1],
+            ja = [2, 3],
+            H = 0,
+            Z = [{
+                sx: 0,
+                sy: 0
+            }, {
+                sx: 30,
+                sy: 0
+            }, {
+                sx: 60,
+                sy: 0
+            }, {
+                sx: 90,
+                sy: 0
+            }, {
+                sx: 120,
+                sy: 0
+            }],
+            w = 0,
+            P = function(a, d) {
+                6 > w ? (b.canvas.drawImage("han1", 20 * parseInt(w), 0, 20, 17, 2 * (a + 15), 2 * d, 40, 34), w += 0.5) : 12 > w && (b.canvas.drawImage("han2", 20 * parseInt(w - 6), 0, 20, 17, 2 * (a - 5), 2 * d, 40, 34), w += 0.5, w %= 12)
+            },
+            I = [],
+            J = [],
+            $,
+            ha = function(a, d, e) {
+                b.canvas.beginPath();
+                b.canvas.lineWidth(2 * (d + 2)).strokeStyle("#000000");
+                for (var f = 0; f < a.length; f++) 0 == f ? b.canvas.moveTo(2 * a[f].sx, 2 * (e + a[f].sy)) : b.canvas.lineTo(2 * a[f].sx, 2 * (e + a[f].sy)),
+                    b.canvas.lineTo(2 * a[f].ex, 2 * (e + a[f].ey));
+                b.canvas.stroke();
+                b.canvas.lineWidth(2 * d).strokeStyle("#00FF00");
+                for (f = 0; f < a.length; f++) 0 == f ? b.canvas.moveTo(2 * a[f].sx, 2 * (e + a[f].sy)) : b.canvas.lineTo(2 * a[f].sx, 2 * (e + a[f].sy)),
+                    b.canvas.lineTo(2 * a[f].ex, 2 * (e + a[f].ey));
+                b.canvas.stroke().closePath().lineWidth(2)
+            },
+            aa = 0,
+            s = {
+                x: 0,
+                y: 0
+            };
+        b.events.touchStart(function(a) {
+            s = {
+                x: a.touches[0].clientX,
+                y: a.touches[0].clientY + getScrollTop()
+            };
+            Q(s)
+        }).touchMove(function(a) {
+            s = {
+                x: a.touches[0].clientX,
+                y: a.touches[0].clientY
+            };
+            da(s)
+        }).touchEnd(function(a) {
+            ea(s)
+        }).mouseMove(function(a) {
+            s = {
+                x: a.clientX - d.left,
+                y: a.clientY - d.top
+            };
+            da(s)
+        }).mouseDown(function(a) {
+            s = {
+                x: a.clientX - d.left,
+                y: a.clientY - d.top
+            };
+            Q(s)
+        }).mouseUp(function(a) {
+            s = {
+                x: a.clientX - d.left,
+                y: a.clientY - d.top
+            };
+            ea(s)
+        });
+        var ba = !1;
+        b.run(function() {
+
+            //window.scrollTo(0, -5);
+            // console.log(f);
+            if (window.innerHeight < window.innerWidth && jsGame.canvas.screen.getTouch()) d.showClue(),
+                ba = !0;
+            else if (ba && (ba = !1), f == D) d.ctx.fillStyle = "#000000",
+                d.ctx.fillRect(0, 0, d.width, d.height),
+                p.draw("chinese", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h),
+                q.draw("english", 0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h);
+            else if (f == y) {
+
+                d.ctx.fillStyle = "#000000";
+                d.ctx.fillRect(0, 0, d.width, d.height);
+                var c = b.canvas.screen.getWidth() / b.getImage("fm").width;
+                b.canvas.drawImage("fm", 0, 0, b.getImage("fm").width, b.getImage("fm").height, 0, 0, b.getImage("fm").width * c, b.getImage("fm").height * c);
+                "ENG" == t ?
+                //PK: remove more button
+                (
+                    g.draw("startE", 0, g.isPressed ? 1 : 0, g.w, g.h, g.x, g.y, g.w, g.h) //,
+                    //h.draw("moreE", 0, h.isPressed ? 1 : 0, h.w, h.h, h.x, h.y, h.w, h.h)
+                ) :
+                    (
+                    g.draw("start", 0, g.isPressed ? 1 : 0, g.w, g.h, g.x, g.y, g.w, g.h) //, 
+                    //h.draw("more", 0, h.isPressed ? 1 : 0, h.w, h.h, h.x, h.y, h.w, h.h)
+                )
+            } else if (f == R) {
+                console.log('here2');
+                W(),
+                b.canvas.drawImage("intro", (b.canvas.screen.getWidth() - b.getImage("intro").width) / 2, 60) //,console.log(f);
+            } else if (f == E) {
+                W();
+                b.canvas.drawImage("jianren", parseInt(B) * a.jianren.width, 2 * a.jianren.height, a.jianren.width, a.jianren.height, z, 30, 2 * a.jianren.width, 2 * a.jianren.height);
+                B += 0.2;
+                B %= 2;
+                260 == z ? aa = 1 : 80 == z && (aa = 0);
+                z = 0 == aa ? z + 1 : z - 1;
+                var e = b.getImage("sb"),
+                    c = e.width,
+                    e = e.height,
+                    c = parseInt((b.canvas.screen.getWidth() - c) / 2),
+                    e = parseInt((b.canvas.screen.getHeight() - e) / 2) - 40;
+                b.canvas.drawImage("sb", c, e);
+                "ENG" == t ? (b.canvas.drawImage("scoreE", c + 30, e + 200).drawNumber(a.mission, "sz", 8, 15, c + 124, e + 202, !1),
+                    b.canvas.drawImage("HscoreE", c + 30, e + 170).drawNumber(r, "sz", 8, 15, c + 124, e + 172, !1),
+                    k.draw("retryE", 0, k.isPressed ? 1 : 0, k.w, k.h, k.x, k.y, k.w, k.h)) : (b.canvas.drawImage("score", c + 30, e + 200).drawNumber(a.mission, "sz", 8, 15, c + 124, e + 202, !1),
+                    b.canvas.drawImage("Hscore", c + 30, e + 170).drawNumber(r, "sz", 8, 15, c + 124, e + 172, !1),
+                    k.draw("retry", 0, k.isPressed ? 1 : 0, k.w, k.h, k.x, k.y, k.w, k.h))
+
+            } else if (4 == f) "ENG" == t ? b.canvas.drawImage("isexitE", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300) : b.canvas.drawImage("isexit", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300);
+            else if (f == K) {
+                switch (M) {
+                    case 0:
+                        //pk: starting
+                        pkGame.reportStatus('start');
+                        //console.log('start');
+                        M = 1;
+                        break;
+                    case 1:
+                        //console.log('running');
+                        b.canvas.clearScreen();
+                        W();
+                        N = a.wall.tiles.top;
+                        b.canvas.fillStyle("#333333");
+                        
+                        for (c = 0; c < N.length; c++) {
+                            b.canvas.drawImage("bl2", c * a.wall.width, 0, a.wall.width, N[c].height, c * a.wall.width * 2, 2 * (a.baseY + a.wall.topWallY), 2 * a.wall.width, 2 * N[c].height);
+                        }
+                        ha(S, 2, a.wall.topWallY); - 150 >= a.wall.topWallY && 0 == a.mission && (X++, X %= 2);
+                        O = a.wall.tiles.bottom;
+                        b.canvas.fillStyle("#000000");
+                        for (c = 0; c < O.length; c++) b.canvas.fillRect(c * a.wall.width * 2, 2 * (a.baseY + b.canvas.screen.getHeight() - O[c].height + a.wall.bottomWallY), 2 * a.wall.width, 2 * O[c].height);
+                        ha(T, 2, a.wall.bottomWallY);
+                        n = a.baseY + b.canvas.screen.getHeight() - a.wall.tiles.bottom[a.jianren.index].height - a.jianren.height;
+                        if (a.jianren.y < n) n = a.jianren.y - a.jianren.height,
+                            a.jianren.y += 10,
+                            b.canvas.drawImage("jianren", Y[G].sx, Y[G].sy, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height),
+                            P(a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2), n),
+                            G++,
+                            G %= Y.length;
+                        else if (a.jianren.showAction)
+                            if (a.jianren.state != m.jianRenStateType.died) switch (ga = b.canvas.screen.getHeight() - (a.wall.tiles.top[a.jianren.index].height + a.wall.tiles.bottom[a.jianren.index].height), ga) {
+                                case A[0]:
+                                    b.canvas.drawImage("jianren", ia[V] * a.jianren.width, a.jianren.height, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height);
+                                    P(a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2), n + 10);
+                                    break;
+                                case A[1]:
+                                    b.canvas.drawImage("jianren", ja[V] * a.jianren.width, a.jianren.height, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height);
+                                    P(a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2), n);
+                                    break;
+                                case A[2]:
+                                    b.canvas.drawImage("jianren", C[v].sx, C[v].sy, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height);
+                                    v++;
+                                    v %= C.length;
+                                    break;
+                                case A[3]:
+                                    b.canvas.drawImage("jianren", 7 * a.jianren.width, 0, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height),
+                                    P(a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2), n)
+                            } else b.canvas.drawImage("xue", Z[H].sx, Z[H].sy, 30, 30, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * (a.baseY + b.canvas.screen.getHeight() - a.wall.tiles.bottom[a.jianren.index].height) + 2, 60, 60),
+                                H < Z.length - 1 && H++;
+                            else switch (a.jianren.direction) {
+                                case m.jianRenDirection.center:
+                                    b.canvas.drawImage("jianren", C[v].sx, C[v].sy, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height);
+                                    v++;
+                                    v %= C.length;
+                                    break;
+                                case m.jianRenDirection.left:
+                                    b.canvas.drawImage("jianren", (a.jianren.y < n ? 7 : 5) * a.jianren.width, a.jianren.height, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height);
+                                    break;
+                                case m.jianRenDirection.right:
+                                    b.canvas.drawImage("jianren", (a.jianren.y < n ? 6 : 4) * a.jianren.width, a.jianren.height, a.jianren.width, a.jianren.height, 2 * (a.jianren.index * a.wall.width + parseInt((a.wall.width - a.jianren.width) / 2)), 2 * n, 2 * a.jianren.width, 2 * a.jianren.height)
+                            }
+                            "ENG" == t ? (b.canvas.fillStyle("#000000").fillRect(0, 624, b.canvas.screen.getWidth(), 2).drawImage("scoreE", 360, 5).drawNumber(a.mission, "sz", 8, 15, 435, 5, !1), b.canvas.drawImage("HscoreE", 2, 5).drawNumber(r, "sz", 8, 15, 120, 5, !1)) : (b.canvas.fillStyle("#000000").fillRect(0, 624, b.canvas.screen.getWidth(), 2).drawImage("score", 360, 5).drawNumber(a.mission, "sz", 8, 15, 435, 5, !1), b.canvas.drawImage("Hscore", 2, 5).drawNumber(r, "sz", 8, 15, 120, 5, !1));
+                        0 < I.length ? a.wall.topWallY += I.shift().y : (0 < J.length && ($ = J.shift(), a.wall.topWallY += $.y, a.wall.bottomWallY += $.y), a.wall.dropped && (a.jianren.showAction = !0));
+                        0 < a.wall.timeout ? a.wall.timeout -= 50 : a.wall.dropped ? (0 == I.length && (a.jianren.state = m.jianRenStateType.stop), 0 == J.length && (c = a.jianren.index, a.wall.tiles.top[c].height + a.wall.tiles.bottom[c].height >= b.canvas.screen.getHeight() && (a.jianren.state = m.jianRenStateType.died), 0 < a.wall.gapTimeout ? a.wall.gapTimeout -= 50 : a.jianren.state != m.jianRenStateType.died ? fa(++a.mission) : M = 2)) : (0 == I.length && (H = 0, I = [{
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: 0
+                        }, {
+                            y: 10
+                        }, {
+                            y: 15
+                        }, {
+                            y: 25
+                        }, {
+                            y: 25
+                        }, {
+                            y: 30
+                        }, {
+                            y: 45
+                        }]), 0 == J.length && (J = [{
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: -2
+                        }, {
+                            y: 2
+                        }, {
+                            y: 0
+                        }]), a.wall.dropped = !0);
+                        b.keyPressed("a") && !a.wall.dropped && (a.wall.timeout = 0);
+                        b.keyPressed("left") && a.jianren.state == m.jianRenStateType.normal ? (a.jianren.index--, 0 > a.jianren.index && (a.jianren.index = a.wall.tiles.bottom.length - 1), a.jianren.direction = m.jianRenDirection.left) : b.keyPressed("right") && a.jianren.state == m.jianRenStateType.normal ? (a.jianren.index++, a.jianren.index >= a.wall.tiles.bottom.length && (a.jianren.index = 0), a.jianren.direction = m.jianRenDirection.right) : a.jianren.direction = m.jianRenDirection.center;
+                        b.keyPressed("menu") && (r < a.mission && (r = a.mission, b.localStorage.setItem("highScore2", r)), b.gameFlow.stop());
+                        break;
+                    case 2:
+                        //PK: Ending
+                        r < a.mission && (r = a.mission, b.localStorage.setItem("highScore2", r)),
+
+                        updateShareScore(a.mission);
+                        b.gameFlow.stop(),
+                        f = E
+                }
+            }
+        })
+    })
+};

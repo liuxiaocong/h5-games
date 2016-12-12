@@ -1,0 +1,157 @@
+#social_leaderboard_relative_container
+{
+	position: relative;
+}
+
+a#tgslb_close_button
+{
+	display: block;
+	position: absolute;
+}
+
+a#tgslb_close_button:hover
+{
+	cursor: pointer;
+}
+
+a#tgslb_action_button1
+{
+	display: block;
+	position: absolute;
+}
+
+a#tgslb_action_button1:hover
+{
+	cursor: pointer;
+}
+
+a#tgslb_action_button2
+{
+	display: block;
+	position: absolute;
+}
+
+a#tgslb_action_button2:hover
+{
+	cursor: pointer;
+}
+
+#tgslb_ad
+{
+	position: absolute;
+}
+
+#tgslb_rank_container
+{
+	position: absolute;
+}
+
+#tgslb_rank_title
+{
+	position: absolute;
+}
+
+#tgslb_rank_value
+{
+	position: absolute;
+}
+
+img#tgslb_rank_image
+{
+	display: block;
+	position: absolute;
+}
+
+#tgslb_rank_name
+{
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#tgslb_rank_location
+{
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#tgslb_rank_score
+{
+	position: absolute;
+}
+
+#tgslb_leaderboard_container
+{
+	position: absolute;
+}
+
+#tgslb_leaderboard_relative_container
+{
+	position: relative;
+}
+
+#tgslb_leaderboard_title
+{
+	position: absolute;
+}
+
+#tgslb_leaderboard_scroll_container
+{
+	position: absolute;
+	overflow: auto;
+}
+
+table#tgslb_leaderboard
+{
+	position: absolute;
+	width: 100%;
+	border-collapse: collapse;
+	border: 0;
+}
+
+table#tgslb_leaderboard td
+{
+	padding: 0;
+	border: 0;
+}
+
+.tgslb_leaderboard_row_relative_container
+{
+	position: relative;
+}
+
+.tgslb_leaderboard_row_position
+{
+	position: absolute;
+}
+
+img.tgslb_leaderboard_row_image
+{
+	display: block;
+	position: absolute;
+}
+
+.tgslb_leaderboard_row_name
+{
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.tgslb_leaderboard_row_location
+{
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.tgslb_leaderboard_row_score
+{
+	position: absolute;
+}
+
+.tgslb_leaderboard_row_border
+{
+	position: absolute;
+}

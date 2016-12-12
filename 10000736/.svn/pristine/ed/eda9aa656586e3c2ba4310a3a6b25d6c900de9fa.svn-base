@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>经典扫雷</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="js/bootstrap.min.css">
+    <link href="js/engine.css" rel="stylesheet" type="text/css">
+    <link href="js/game.css" rel="stylesheet" type="text/css">
+  </head>
+  <script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/sl/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+  <body>          
+    <div class="engine" style="margin-top: -10.5px;">
+      <div class="notice"></div>
+
+      <div class="status">
+          <div class="current panel">当前用时 <span>0.00</span> s</div> 
+          <div class="best panel">最快用时 <span>0.00</span> s</div>
+      </div>
+
+      <div class="game panel">
+        <div class="cell-container"></div>
+        <div class="ending">
+          <p></p>
+          <div class="btns">  
+            <button class="retry btn"></button>
+          </div>
+        </div>
+      </div>
+
+	  <div align="center" style="font-size:16;display:block;text-align:center;width:100%">
+	  	<br/><br/>
+		<a align="center" style="color:red" href="http://wx.jyc.17188.com/index.html?from=jdsl">更多游戏</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a align="center" style="color:red" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a>
+		<br/><br/>
+		<a align="center" style="text-decoration:underline;color:blue;font-size:14;" href="javascript:location.href=game_45_01_url"><script>document.write(game_45_01_txt);</script></a>
+	  </div>    
+	                
+    </div>
+                                  
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/game.js"></script>
+
+  <script type="text/javascript">
+  <!--
+var title   = "经典扫雷";
+var img_url = "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG91oXlPAYqCQySojbHiaXnOLMLPiaUM9NQqUZR5VkIrOUQXtHPxhF4pafYDxBzmlBib3uFWyGoLVmR2w/640";
+var link    = "http://"http://wx.jyc.17188.com/h5/sl/jdsl.html";
+var desc    = "不要羡慕我，我只是个扫雷界的传说";
+
+
+		function w596_rank(e){
+			 
+					if (confirm("不要羡慕我，我只是个扫雷界的传说, 成绩是"+e+"秒完工，不可能比这个成绩更好了吧！")){
+						w596_share(e);
+					}
+			 
+		}
+
+    	function w596_share(e){
+			document.title ="不要羡慕我，我只是个扫雷界的传说, 成绩是"+e+"秒完工，不可能比这个成绩更好了吧！";
+			document.getElementById("share").style.display="";
+			title = document.title;
+		}
+
+		
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    // 发送给好友
+    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+            // "appid": "0",
+            "img_url": img_url,
+            "img_width": "160",
+            "img_height": "160",
+            "link": link,
+            "desc":  desc,
+            "title": title
+        }, function (res) {
+            document.location.href = aboutus;
+        })
+    });
+
+    // 分享到朋友圈
+    WeixinJSBridge.on('menu:share:timeline', function (argv) {
+        WeixinJSBridge.invoke('shareTimeline', {
+            "img_url":img_url,
+            "img_width": "160",
+            "img_height": "160",
+            "link": link,
+            "desc":  desc,
+            "title": title
+        }, function (res) {
+           document.location.href = aboutus;
+        });
+    });
+}, false);
+
+  //-->
+  </script>
+
+  		<div id="share" style="display: none" onclick="document.getElementById('share').style.display='none';">
+			<img width="100%" src="http://game.9g.com/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';">
+		</div>
+
+<script type="text/javascript">
+
+</script>
+
+<input id="appid" name="appid" type="hidden" value="8596147" />
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

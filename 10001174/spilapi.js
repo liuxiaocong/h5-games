@@ -1,0 +1,1 @@
+$('head').append('<script src="./js/game.js">' + '<\/script>');

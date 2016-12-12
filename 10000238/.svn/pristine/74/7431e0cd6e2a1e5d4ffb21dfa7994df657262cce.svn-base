@@ -1,0 +1,108 @@
+{"frames": {
+
+"Cataclysm_Missile_Engine.png":
+{
+	"frame": {"x":606,"y":139,"w":259,"h":176},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":259,"h":176},
+	"sourceSize": {"w":259,"h":176}
+},
+"Cataclysm_Missile_Fuselage.png":
+{
+	"frame": {"x":360,"y":324,"w":268,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":268,"h":300},
+	"sourceSize": {"w":268,"h":300}
+},
+"Cataclysm_Missile_Warhead.png":
+{
+	"frame": {"x":260,"y":756,"w":102,"h":212},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":102,"h":212},
+	"sourceSize": {"w":102,"h":212}
+},
+"KIT10_Missile_Engine.png":
+{
+	"frame": {"x":630,"y":2,"w":327,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":327,"h":135},
+	"sourceSize": {"w":327,"h":135}
+},
+"KIT10_Missile_Fuselage.png":
+{
+	"frame": {"x":95,"y":2,"w":285,"h":320},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":285,"h":320},
+	"sourceSize": {"w":285,"h":320}
+},
+"KIT10_Missile_Warhead.png":
+{
+	"frame": {"x":2,"y":2,"w":91,"h":400},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":400},
+	"sourceSize": {"w":91,"h":400}
+},
+"MEOW_Missile_Engine.png":
+{
+	"frame": {"x":630,"y":317,"w":162,"h":192},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":162,"h":192},
+	"sourceSize": {"w":162,"h":192}
+},
+"MEOW_Missile_Fuselage.png":
+{
+	"frame": {"x":2,"y":756,"w":256,"h":257},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":257},
+	"sourceSize": {"w":256,"h":259}
+},
+"MEOW_Missile_Warhead.png":
+{
+	"frame": {"x":867,"y":139,"w":102,"h":201},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":102,"h":201},
+	"sourceSize": {"w":102,"h":201}
+},
+"PU55y_Missile_Engine.png":
+{
+	"frame": {"x":630,"y":511,"w":259,"h":201},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":259,"h":201},
+	"sourceSize": {"w":259,"h":201}
+},
+"PU55y_Missile_Fuselage.png":
+{
+	"frame": {"x":2,"y":404,"w":356,"h":350},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":356,"h":350},
+	"sourceSize": {"w":356,"h":350}
+},
+"PU55y_Missile_Warhead.png":
+{
+	"frame": {"x":382,"y":2,"w":222,"h":273},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":273},
+	"sourceSize": {"w":222,"h":273}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "desktop_parts_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7c24623b8a38aba65f422b2e97e6b1aa:8f20f7a8cb313227356facd92ffdc561:3b533e37bacb2325163acfd65ad381e6$"
+}
+}

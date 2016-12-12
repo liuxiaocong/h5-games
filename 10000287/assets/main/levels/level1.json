@@ -1,0 +1,8 @@
+{"level": [
+{"type":"box", "material":"ground", "x":324,"y":932,"rotation":0,"width":422,"height":422},
+{"type":"linelight", "material":"wood", "x":322,"y":687,"rotation":0,"width":340,"height":68},
+{"type":"box", "material":"wood", "x":320,"y":520,"rotation":0,"width":128,"height":128},
+{"type":"linelight", "material":"wood", "x":322,"y":620,"rotation":0,"width":255,"height":68},
+{"type":"chicken", "material":"blue", "x":323,"y":403,"rotation":0,"width":134,"height":120}
+]
+}

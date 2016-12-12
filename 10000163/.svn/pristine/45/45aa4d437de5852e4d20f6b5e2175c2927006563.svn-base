@@ -1,0 +1,18 @@
+panoramic_background_grinder.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+grinder_right
+  rotate: false
+  xy: 153, 2
+  size: 116, 800
+  orig: 116, 800
+  offset: 0, 0
+  index: -1
+grinder_left
+  rotate: false
+  xy: 2, 2
+  size: 149, 800
+  orig: 149, 800
+  offset: 0, 0
+  index: -1

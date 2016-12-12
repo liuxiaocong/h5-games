@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+
+    <script data-main="js/main" src="require.js?3"></script>
+    <title>一个都不能死</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+    </style>
+    <script language=javascript>
+
+        function dp_submitScore(m, t) {
+        }
+
+        function dp_share(t) {
+
+        }
+
+        function dp_share2(t) {
+
+        }
+        function dp_Ranking() {
+
+        }
+
+        function showAd() {
+        }
+        function hideAd() {
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+        }, false);
+    </script>
+
+</head>
+<body>
+<div style="text-align:center;">
+    <canvas id="linkScreen">
+        很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。
+    </canvas>
+</div>
+<script type="text/javascript" src="pk/PkApi.js"></script>
+<script type="text/javascript" src="pk/WeixinApi.js"></script>
+<script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+<script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = "强！你居然坚持了" + bestScore / 1000 + "秒！";
+        pkGame.updateResult(bestScore, bestScore, d, d);
+        console.log(d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+</script>
+</body>
+</html>

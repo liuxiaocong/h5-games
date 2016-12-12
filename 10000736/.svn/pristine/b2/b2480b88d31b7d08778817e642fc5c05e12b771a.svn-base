@@ -1,0 +1,52 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="js/hm.js"></script>
+  <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no,maximum-scale=1.0,initial-scale=1.0">
+    <title>史上最坑爹猜拳</title>
+    <link rel="icon" type="image/GIF" href="http://weixin.hortorgames.com/cycles/res/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+<style>
+body, canvas, div {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-height:320px) and (max-height:480px){
+	#Cocos2dGameContainer{ height:480px;}
+}
+@media screen and (min-height:481px) and (max-height:5000px){
+	#Cocos2dGameContainer{ height:568px;}
+}
+</style>
+</head>
+<body style="padding: 0px; margin: 0px; border: 0px; background: rgb(0, 0, 0);">
+
+<div align="center" style="z-index:10000;font-size:1.0em;display:block;position:absolute;top:480px;text-align:center;width:100%">
+	<a align="center" style="text-decoration:underline;color:blue;font-size:1.0em;" href="http://wd.koudai.com/s/896652">香港代购</a>
+</div>
+
+<div style='display:none'>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</div>
+<div id="Cocos2dGameContainer" style="width: 320px; margin: 0px auto; position: relative; overflow: hidden;">
+   <canvas id="gameCanvas" class="gameCanvas" tabindex="99" style="outline: none; width: 320px;  background-color: black;"></canvas>
+</div>
+<script>
+    var wx = {}, cc = {};
+    wx.production = true;
+    cc.OrbitCamera = cc.CatmullRomBy = cc.CatmullRomTo = cc.CardinalSplineBy = cc.CardinalSplineTo = {};
+</script>
+<script src="js/engine.js"></script><div style="font-family: 黑体; position: absolute; left: -100px; top: -100px; line-height: normal; font-size: 20px;"></div>
+<script src="js/game.min.js"></script><style type="text/css">body,canvas,div{ -moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}</style>
+
+
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+
+</body></html>

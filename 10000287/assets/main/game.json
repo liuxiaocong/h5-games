@@ -1,0 +1,299 @@
+{"frames": [
+
+{
+	"filename": "box_glass0000",
+	"frame": {"x":884,"y":301,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+}
+,{
+	"filename": "box_ground0000",
+	"frame": {"x":522,"y":0,"w":256,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
+	"sourceSize": {"w":256,"h":256}
+}
+,{
+	"filename": "box_ground_sand0000",
+	"frame": {"x":0,"y":0,"w":260,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":260,"h":260},
+	"sourceSize": {"w":260,"h":260}
+}
+,{
+	"filename": "box_ground_snow0000",
+	"frame": {"x":261,"y":0,"w":260,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":260,"h":260},
+	"sourceSize": {"w":260,"h":260}
+}
+,{
+	"filename": "box_stone0000",
+	"frame": {"x":849,"y":672,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+}
+,{
+	"filename": "box_tnt0000",
+	"frame": {"x":859,"y":430,"w":90,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":90},
+	"sourceSize": {"w":90,"h":90}
+}
+,{
+	"filename": "box_wood0000",
+	"frame": {"x":884,"y":171,"w":128,"h":129},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":129},
+	"sourceSize": {"w":128,"h":129}
+}
+,{
+	"filename": "brick_wood0000",
+	"frame": {"x":779,"y":171,"w":104,"h":188},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":188},
+	"sourceSize": {"w":104,"h":188}
+}
+,{
+	"filename": "chicken0000",
+	"frame": {"x":0,"y":794,"w":136,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":120},
+	"sourceSize": {"w":136,"h":120}
+}
+,{
+	"filename": "circle_glass0000",
+	"frame": {"x":393,"y":741,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+}
+,{
+	"filename": "circle_stone0000",
+	"frame": {"x":522,"y":741,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+}
+,{
+	"filename": "circle_wood0000",
+	"frame": {"x":213,"y":923,"w":82,"h":82},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82}
+}
+,{
+	"filename": "corner_wood0000",
+	"frame": {"x":522,"y":257,"w":256,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":146},
+	"sourceSize": {"w":256,"h":146}
+}
+,{
+	"filename": "cross_wood0000",
+	"frame": {"x":779,"y":0,"w":170,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":170},
+	"sourceSize": {"w":170,"h":170}
+}
+,{
+	"filename": "grass10000",
+	"frame": {"x":440,"y":880,"w":302,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":302,"h":52},
+	"sourceSize": {"w":302,"h":52}
+}
+,{
+	"filename": "grass20000",
+	"frame": {"x":456,"y":550,"w":454,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":454,"h":52},
+	"sourceSize": {"w":454,"h":52}
+}
+,{
+	"filename": "grass30000",
+	"frame": {"x":0,"y":923,"w":212,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":52},
+	"sourceSize": {"w":212,"h":52}
+}
+,{
+	"filename": "line_glass0000",
+	"frame": {"x":0,"y":568,"w":340,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":68},
+	"sourceSize": {"w":340,"h":68}
+}
+,{
+	"filename": "line_ground0000",
+	"frame": {"x":341,"y":603,"w":340,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":68},
+	"sourceSize": {"w":340,"h":68}
+}
+,{
+	"filename": "line_ground_sand0000",
+	"frame": {"x":514,"y":404,"w":344,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":344,"h":72},
+	"sourceSize": {"w":344,"h":72}
+}
+,{
+	"filename": "line_ground_snow0000",
+	"frame": {"x":514,"y":477,"w":344,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":344,"h":72},
+	"sourceSize": {"w":344,"h":72}
+}
+,{
+	"filename": "line_stone0000",
+	"frame": {"x":682,"y":603,"w":340,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":68},
+	"sourceSize": {"w":340,"h":68}
+}
+,{
+	"filename": "linedark_wood0000",
+	"frame": {"x":0,"y":637,"w":340,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":68},
+	"sourceSize": {"w":340,"h":68}
+}
+,{
+	"filename": "linelight_wood0000",
+	"frame": {"x":341,"y":672,"w":340,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":68},
+	"sourceSize": {"w":340,"h":68}
+}
+,{
+	"filename": "sand10000",
+	"frame": {"x":137,"y":794,"w":235,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":235,"h":52},
+	"sourceSize": {"w":235,"h":52}
+}
+,{
+	"filename": "sand20000",
+	"frame": {"x":0,"y":741,"w":392,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":392,"h":52},
+	"sourceSize": {"w":392,"h":52}
+}
+,{
+	"filename": "sand30000",
+	"frame": {"x":822,"y":801,"w":178,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":52},
+	"sourceSize": {"w":178,"h":52}
+}
+,{
+	"filename": "snow10000",
+	"frame": {"x":137,"y":870,"w":302,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":302,"h":52},
+	"sourceSize": {"w":302,"h":52}
+}
+,{
+	"filename": "snow20000",
+	"frame": {"x":0,"y":515,"w":455,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":455,"h":52},
+	"sourceSize": {"w":455,"h":52}
+}
+,{
+	"filename": "snow30000",
+	"frame": {"x":743,"y":880,"w":212,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":52},
+	"sourceSize": {"w":212,"h":52}
+}
+,{
+	"filename": "trapeze_glass0000",
+	"frame": {"x":259,"y":261,"w":256,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":128},
+	"sourceSize": {"w":256,"h":128}
+}
+,{
+	"filename": "trapeze_stone0000",
+	"frame": {"x":0,"y":261,"w":258,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":258,"h":128},
+	"sourceSize": {"w":258,"h":128}
+}
+,{
+	"filename": "triangle_glass0000",
+	"frame": {"x":257,"y":390,"w":256,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":124},
+	"sourceSize": {"w":256,"h":124}
+}
+,{
+	"filename": "triangle_stone0000",
+	"frame": {"x":0,"y":390,"w":256,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":124},
+	"sourceSize": {"w":256,"h":124}
+}
+,{
+	"filename": "triangle_wood0000",
+	"frame": {"x":682,"y":672,"w":166,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":110},
+	"sourceSize": {"w":166,"h":110}
+}
+,{
+	"filename": "tshape_wood0000",
+	"frame": {"x":651,"y":783,"w":170,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":96},
+	"sourceSize": {"w":170,"h":96}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.0.1.808",
+	"image": "game.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

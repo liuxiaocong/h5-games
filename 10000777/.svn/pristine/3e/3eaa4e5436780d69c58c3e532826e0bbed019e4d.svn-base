@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Lazy hippo</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="./js/game.js"></script>
+        <script src="phaser.min.js"></script>
+        <script src="game.min.js"></script>
+        <script type="text/javascript" src="pk/PkApi.js"></script>
+        <script type="text/javascript" src="pk/WeixinApi.js"></script>
+        <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+        <script type="text/javascript">
+            function updateShareScore(bestScore) {
+                var d = 'lazy hippo成功通过' + bestScore + '关，观望四周求挑战 ！';
+                pkGame.updateResult(bestScore, bestScore, d, d);
+                console.log(d);
+            }
+
+            pkGame.ready(function() {
+
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

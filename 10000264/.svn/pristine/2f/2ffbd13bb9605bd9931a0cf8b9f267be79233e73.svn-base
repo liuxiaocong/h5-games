@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jelly_violet.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="jelly0000" x="0" y="0" width="212" height="204" pivotX="95.65" pivotY="105.75" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0001" x="212" y="0" width="212" height="206" frameX="0" frameY="-4" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0002" x="424" y="0" width="212" height="208" frameX="0" frameY="-2" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0003" x="636" y="0" width="212" height="210"/>
+	<SubTexture name="jelly0004" x="0" y="210" width="212" height="210"/>
+	<SubTexture name="jelly0005" x="212" y="210" width="212" height="210"/>
+	<SubTexture name="jelly0006" x="424" y="210" width="212" height="209" frameX="0" frameY="-1" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0007" x="636" y="210" width="212" height="208" frameX="0" frameY="-2" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0008" x="0" y="420" width="212" height="207" frameX="0" frameY="-3" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0009" x="212" y="420" width="212" height="206" frameX="0" frameY="-4" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0010" x="424" y="420" width="212" height="205" frameX="0" frameY="-5" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0011" x="424" y="420" width="212" height="205" frameX="0" frameY="-5" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0012" x="424" y="420" width="212" height="205" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0013" x="424" y="420" width="212" height="205" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0014" x="0" y="0" width="212" height="204" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0015" x="0" y="0" width="212" height="204" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+	<SubTexture name="jelly0016" x="0" y="0" width="212" height="204" frameX="0" frameY="-6" frameWidth="212" frameHeight="210"/>
+</TextureAtlas>

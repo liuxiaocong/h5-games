@@ -1,0 +1,182 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache" /> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate" /> 
+<meta HTTP-EQUIV="expires" CONTENT="0" />
+<title>9G游戏</title>
+<meta name="keywords" content="" />
+<meta name="description" content="9G游戏频道为您提供。" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"/>
+<script src="http://game.9g.com/auth/jquery.min.js"></script>
+</head>
+<body>
+
+正在努力加载..
+
+<script type="text/javascript">
+
+// 已关注用户跳转地址，默认 => 去统计页
+var redirect = "http://game.9g.com/added.html";
+
+// 厂商 ID
+var spid = null;
+
+// Ready
+$(document).ready(function(){
+
+	// 指定已关注用户跳转地址
+	if (getParameter("redirect")) {
+		redirect = decodeURIComponent(getParameter("redirect"));
+	}
+
+	// 厂商 ID
+	spid = getParameter("spid");
+	// 关注
+	guanzhu();
+});
+
+// 关注页分流
+function guanzhu(){
+	
+	if (isWeixin()) {
+
+		// 2014-9-17：万游在线自加粉
+		if (spid == "wyzx") {
+			window.location = "gz_wyzx.html";
+			return;
+		}
+
+		// 概率分配
+		var r = Math.random();
+		
+		if (0 <= r && r < 1) {
+			// 9G
+			if (localStorage.myuid) {
+				// 有用户识别，验证是否已关注
+				check9gApiUser("gz_9g.html", redirect);
+			}
+			else {
+				// 直接去关注页
+				window.location = "gz_9g.html";
+			}
+		}
+		else if (0.2 <= r && r < 0.4) {
+			// 轻游戏
+			window.location = "gz_qyx.html";
+		}
+		else if (0.4 <= r && r < 0.6) {
+			// 万游在线
+			window.location = "gz_wyzx.html";
+		}
+		else if (0.6 <= r && r < 0.8) {
+			// 豌豆互动
+			window.location = "gz_wdhd.html";
+		}
+		else if (0.8 <= r && r < 0.9) {
+			// 全球游戏排行榜
+			window.location = "gz_qqyxphb.html";
+		}
+		else {
+			// 欢乐小游戏
+			window.location = "gz_hlxyx.html";
+		}
+	}
+	else {
+		// 非微信浏览器
+		window.location = "http://game.9g.com"+ (getParameter("spid") ? ("?spid=" + getParameter("spid")) : "");;
+	}
+}
+
+/** 
+ * JSONP 判断是否已关注 9G
+ * 未关注用户 => 去 url1（应为关注页地址）
+ * 已关注用户 => 去 url2
+ */
+function check9gApiUser(url1, url2) {
+	// alert("localStorage.myuid = " + localStorage.myuid);
+	// if (localStorage.is9gApiUser) {
+	// 	alert("已验证过是 9G 粉，直接跳转");
+	// 	window.location = url2;
+	// 	return;
+	// }
+	var isConnect;
+	setTimeout(function(){
+		if (isConnect == undefined) {
+			isConnect = false;
+			// alert("连接超过3秒");
+			window.location = url1;
+		}
+	}, 3000);
+	jQuery.ajax({
+		type: "GET",
+		async: true,
+		cache: false,
+		timeout: 5000,
+		url: "http://wx.9g.com/api/getuser?uid=" + localStorage.myuid,
+		dataType: "jsonp",
+		jsonp: "callback",
+		jsonpCallback: "getUserHandler",
+		success: function(data){
+			if (isConnect == undefined) {
+				isConnect = true;
+				if (data.errcode) {
+					// 返回错误
+					// alert(data.errmsg);
+					window.location = url1;
+				}
+				else {
+					if (data.subscribe == 1) {
+						// 已关注
+						// alert("已关注");
+						// alert("subscribe = " + data.subscribe + "\nsubscribe_time = " + data.subscribe_time + "\nopenid = " + data.openid + "\nnickname = " + data.nickname);
+						// 保存到 localStorage（暂时不用）
+						// localStorage.is9gApiUser = 1;
+						window.location = url2;
+					}
+					else {
+						// 未关注
+						// alert("未关注");
+						// alert("subscribe = " + data.subscribe + "\nsubscribe_time = " + data.subscribe_time + "\nopenid = " + data.openid + "\nnickname = " + data.nickname);
+						window.location = url1;
+					}
+				}
+			}
+		}
+	});
+}
+
+// 判断微信浏览器
+function isWeixin() {
+    var e = navigator.userAgent.toLowerCase();
+    if(e.match(/MicroMessenger/i) == "micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// 获取 QueryString 值
+function getParameter(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return r[2]; return null;
+}
+
+</script>
+
+<!-- 统计代码 -->
+<div style="display:none">
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+</body>
+</html>

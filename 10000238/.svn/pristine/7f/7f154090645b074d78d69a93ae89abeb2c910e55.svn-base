@@ -1,0 +1,78 @@
+{
+	"missiles": [
+		{
+			"type":"adjusting",
+			"rotation": 310,
+			"speed": 2,
+			"screenSide": "right",
+			"position": 3800,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 300,
+			"speed": 2,
+			"screenSide": "right",
+			"position": 2750,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 290,
+			"speed": 2,
+			"screenSide": "right",
+			"position": 1800,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 280,
+			"speed": 2,
+			"screenSide": "right",
+			"position": 900,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 270,
+			"speed": 2,
+			"screenSide": "right",
+			"position": 0,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 268,
+			"speed": 2,
+			"screenSide": "right",
+			"position": -900,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 265,
+			"speed": 2,
+			"screenSide": "right",
+			"position": -1800,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 260,
+			"speed": 2,
+			"screenSide": "right",
+			"position": -2750,
+			"delay": 0.0
+		},
+		{
+			"type":"adjusting",
+			"rotation": 255,
+			"speed": 2,
+			"screenSide": "right",
+			"position": -3800,
+			"delay": 0.0
+		}
+	], 
+
+	"timeLength": 1.8
+}

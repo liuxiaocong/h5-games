@@ -1,0 +1,24 @@
+﻿CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+assets/graphics/bg.png
+assets/graphics/block.png
+assets/graphics/buttons.png
+assets/graphics/fin.png
+assets/graphics/footer.png
+assets/graphics/levelbutton.png
+assets/graphics/lsmsg.png
+assets/graphics/shiftmsg.png
+assets/graphics/statsbutton.png
+assets/graphics/title.png
+assets/graphics/wall.png
+index.html
+manifest.mf
+Synchroshift_files/src.js
+Synchroshift_files/src.min.js
+
+
+NETWORK:
+*

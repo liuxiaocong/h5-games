@@ -1,0 +1,50 @@
+{
+  "door_open": {
+    "sx": 121,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 121,
+    "tileh": 130,
+    "frames": 1
+  },
+  "door_closed": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 121,
+    "tileh": 130,
+    "frames": 1
+  },
+  "key": {
+    "sx": 303,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 48,
+    "tileh": 22,
+    "frames": 1
+  },
+  "gun": {
+    "sx": 241,
+    "sy": 87,
+    "cols": 1,
+    "tilew": 61,
+    "tileh": 43,
+    "frames": 1
+  },
+  "health": {
+    "sx": 302,
+    "sy": 86,
+    "cols": 1,
+    "tilew": 61,
+    "tileh": 43,
+    "frames": 1
+  },
+  "exit_sign": {
+    "sx": 242,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 61,
+    "tileh": 61,
+    "frames": 1
+  }
+}

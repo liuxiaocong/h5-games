@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-startup-image" href="startup.png"> -->
+    <script language="javascript" type="text/javascript" src="js/jsgamemin.js?v=1"></script>
+    <script language="javascript" type="text/javascript" src="js/spaceman.min.js?v=2"></script>
+
+
+    <title>空间先生</title>
+
+    <style>
+    body {
+        margin: 0px;
+        background-color: #434243;
+        color: #6A6A6A;
+    }
+    .bandiv {
+        float: left;
+        width: 100%;
+        background-color: #DBD1BB;
+    }
+    .bandiv div {
+        padding: 10px;
+        text-align: left;
+    }
+    </style>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon-precomposed" href="imgs/icon.png" />
+    <link rel="apple-touch-startup-image" href="imgs/startup.png">
+    <script type="text/javascript">
+    // document.write('<script type="text/javascript" src="./resource_loader.js?ver=' + Math.random() + '"><\/script>')
+    </script>
+</head>
+
+<body onload="main()" id="0">
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+        function updateShareScore(bestScore) {
+            var d = '险中求胜到' + bestScore + '关，观望四周求挑战 ！';
+            pkGame && pkGame.updateResult(bestScore, bestScore, d, d);
+        }
+
+        pkGame && pkGame.ready(function() {});
+    </script>
+    <!--     <div style="position: fixed; bottom: 0; width:100%; background-color: red; height:100px">
+        
+    </div> -->
+
+
+    <div style="text-align:center;">
+        <canvas id="jsGameScreen"></canvas>
+    </div>
+
+   
+
+    
+</body>
+
+</html>

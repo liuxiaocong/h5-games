@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <title>方块连接 Connect Me</title>
+
+    <style type="text/css">
+    html {background: #4D2122}
+    body {
+        padding: 0;
+        margin: 0;
+        background: white;
+        color: white;
+        font: 1em/2em Arial, Helvetica;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    * {
+        user-select: none;
+        -webkit-tap-highlight-color: rgb(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    canvas {display: block}
+    </style>
+
+    <script src="lib/phaser.alf.min.js"></script>
+    <script src="scripts/game.min.js"></script>
+</head>
+
+<body>
+   <!--  <div id="ending_page" style="position:fixed;width:100%;height:100%;background-color:blue;z-index:9999;display:none;margin:-8px;padding:20px;">
+        分数：
+        <span class="finalScore"></span>
+        <button>Replay</button>
+    </div> -->
+    <div id="game"></div>
+
+    <script type="text/javascript" src="scripts/PkApi.js"></script>
+    <script type="text/javascript" src="scripts/WeixinApi.js"></script>
+    <script type="text/javascript" src="scripts/pkGame.js"></script>
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        //my result is: bestScore
+        var sd = '我已经冲破' + bestScore + '关';
+        //my result is: bestScore
+        var d = '我已经冲破' + bestScore + '关';
+        pkGame.updateResult(bestScore, bestScore, d, sd);
+    }
+
+    pkGame.ready(function() {
+        pkGame.gameInfo.title = "方块连接";
+        pkGame.gameInfo.imgUrl = 'http://pkleyou.com/logo.png';
+        pkGame.gameInfo.link = 'http://www.pkleyou.com';
+        pkGame.gameInfo.desc = '哈哈，我在玩<<方块连接>>';
+        pkGame.gameInfo.result_desc = '哈哈，我在玩<<方块连接>>';
+        pkGame.gameInfo.result_short_desc = '哈哈，我在玩<<方块连接>>';
+    })
+    </script>
+</body>
+
+</html>

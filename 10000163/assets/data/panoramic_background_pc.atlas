@@ -1,0 +1,18 @@
+panoramic_background_pc.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background_left
+  rotate: false
+  xy: 430, 2
+  size: 419, 800
+  orig: 419, 800
+  offset: 0, 0
+  index: -1
+background_right
+  rotate: false
+  xy: 2, 2
+  size: 426, 800
+  orig: 426, 800
+  offset: 0, 0
+  index: -1

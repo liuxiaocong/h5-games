@@ -1,0 +1,205 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=300dpi, initial-scale=0.5, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>脱光攻略 另类2048游戏</title>
+  <link href="http://m.durex.com.cn/qr/tuoguang/style/main-4.css?v=8" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/tggl/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+  <script type="text/javascript" src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js" ></script>
+	<script type="text/javascript">
+		var murl= "http://m.durex.com.cn/qr/tuoguang/"; //window.location.origin+window.location.pathname;
+		if($(window).width()<500){
+			var girdWidth=50;
+		}else{
+			girdWidth=90;
+		}
+		
+		//admaster
+		var _smq = _smq || [];
+		_smq.push(['_setAccount', '640c7df', new Date()]);
+		_smq.push(['pageview']);
+		
+		//ga
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-29156015-1']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_trackPageview']);
+      
+		//$("body").keydown(function() {
+		_smq.push(['custom', '首页', '脱光攻略', '游戏开始']);
+		_gaq.push(['_trackEvent', 'durex2048', '脱光攻略', '游戏开始']);
+		//});
+    </script>
+</head>
+<body>
+<br/>
+  <div class="container">
+  <div class="heading">
+      <h1 class="title">脱光攻略</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+    <div class="above-game">
+      <p class="game-intro">1024，你懂的！</p>
+      <a class="restart-button" onClick="_smq.push(['custom', '首页', '脱光攻略', '新游戏']);_gaq.push(['_trackEvent', 'durex2048', '脱光攻略', '新游戏']);">New Game</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+            <a style="font-size:1.6em;" class="keep-playing-button">Keep going</a>
+          	<a style="font-size:1.6em;" class="retry-button">Try again</a>
+        </div>
+        <div class="buy">
+          	<a style="font-size:1.6em;" href="http://wx.jyc.17188.com/index.html?from=tuoguang" target="_blank" onclick="_smq.push(['custom', 'durex2048', '购买', '游戏结束']);">更多游戏</a>
+        </div>
+        
+      </div>
+
+      <div class="grid-container">
+              <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+              <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+              <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+              <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+            </div>
+
+      <div class="tile-container">
+      </div>
+    </div>
+    <br/><p style="font-size:1.2em;">玩法说明：</p>
+<p style="font-size:1.2em;">a. 滑动方块，将两个带有相同文字的方块重合就可以生成新的方块，类似于2+2=4, 4+4=8.</p>
+<p style="font-size:1.2em;">b. 目前仅有5%的人玩到了“结婚”，不服来战！</p>
+<p style="font-size:1.2em;">c. 欲知后事如何，请继续下去！</p>
+<br/>
+<br/>
+<div align="center" style="font-size:1.6em;">
+	<a align="center" style="color:white" href="http://wx.jyc.17188.com/index.html?from=iqtest">更多游戏</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a align="center" style="color:white" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a>
+</div>
+
+
+<script type="text/javascript" >
+	/*
+	$(".jiathis_button_weixin").click(function(){
+	});
+	*/
+var jiathis_config={
+	url:murl,
+	summary:"",
+	title:"集游策小游戏＃脱光攻略＃我已脱光！你敢试试吗？",
+	pic:murl+"share.jpg",
+	shortUrl:false,
+	hideMore:true
+}
+
+var aboutus = "http://wx.jyc.17188.com/index.html";
+
+window.shareData = {
+		        "imgUrl": "http://appimg1.3g.qq.com/android_new/633/10050633/16531832/icon_72.png",
+		        "timeLineLink": "http://" + domain + "/h5/tggl/tuoguang.html?from=share",
+		        "tTitle": "脱光攻略＃我已脱光！你敢试试吗？",
+		        "tContent": "另类2048游戏, 目前仅有5%的人玩到了“结婚”，不服来战！"
+		};
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        document.location.href = aboutus;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": "脱光攻略 - 我已脱光，你敢试试吗? 目前仅有5%的人玩到了“结婚”，不服来战！"
+		        }, function(res) {
+		        document.location.href = aboutus;
+		        });
+		    });
+		}, false);
+
+
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</div>
+
+<div id="load"><img src="http://m.durex.com.cn/qr/tuoguang/1024.jpg">
+<img src="http://m.durex.com.cn/qr/tuoguang/2048.jpg">
+<img src="http://m.durex.com.cn/qr/tuoguang/4096.jpg">
+<img src="http://m.durex.com.cn/qr/tuoguang/8192.jpg">
+<img src="http://m.durex.com.cn/qr/tuoguang/16384.jpg"></div>
+  <script>
+    var my_list = {2:'单身',4:'搭讪',8:'约会',16:'表白',32:'恋爱',64:'牵手',128:'拥抱',256:'接吻',512:'前戏',1024:murl+'1024.jpg',2048:murl+'2048.jpg',4096:murl+'4096.jpg',8192:murl+'8192.jpg',16384:murl+'16384.jpg',32768:'32768',65536:'65536',131072:'131072',262144:'262144',524288:'524288',1048576:'1048576',2097152:'2097152',4194304:'4194304',8388608:'8388608',16777216:'16777216',33554432:'33554432',67108864:'67108864',134217728:'134217728',268435456:'268435456',536870912:'536870912',1073741824:'1073741824',2147483648:'2147483648'}
+    var my_mark = {2:'快和另一个单身合体吧！',4:'搭讪失败，下次搭讪不要用板砖当道具啦！',8:'约会失败，没主动买单吧？',16:'没关系，表白总要多试几次！',32:'止步恋爱，擦泪再来！',64:'牵手失败？太着急了~慢慢来',128:'折在拥抱上，该减肥了吧！',256:'想要再猛烈一些？再多学一点接吻技巧吧！',512:'有了按摩油怎么可能栽在前戏上！',1024:'太牛啦！爱爱要用杜蕾斯!',2048:'恭喜！Happy ending！一直性福哦！ ',4096:'强者！太伟大了！',8192:'审美疲劳时，可以试试震动棒！',16384:'相濡以沫，此生财富不过如此！',32768:'Game Over, HiScore: 32768',65536:'Game Over, HiScore: 65536',131072:'Game Over, HiScore: 131072',262144:'Game Over, HiScore: 262144',524288:'Game Over, HiScore: 524288',1048576:'Game Over, HiScore: 1048576',2097152:'Game Over, HiScore: 2097152',4194304:'Game Over, HiScore: 4194304',8388608:'Game Over, HiScore: 8388608',16777216:'Game Over, HiScore: 16777216',33554432:'Game Over, HiScore: 33554432',67108864:'Game Over, HiScore: 67108864',134217728:'Game Over, HiScore: 134217728',268435456:'Game Over, HiScore: 268435456',536870912:'Game Over, HiScore: 536870912',1073741824:'Game Over, HiScore: 1073741824',2147483648:'Game Over, HiScore: 2147483648'}
+    var my_goal = 1024;
+  </script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/bind_polyfill.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/classlist_polyfill.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/animframe_polyfill.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/keyboard_input_manager.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/html_actuator.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/grid.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/tile.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/local_storage_manager.js"></script>
+  <script src="http://m.durex.com.cn/qr/tuoguang/js/game_manager.js"></script>
+  <script>
+    // Wait till the browser is ready to render the game (avoids glitches)
+    window.requestAnimationFrame(function (){
+      var game = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+          });
+  //setInterval("ad();", 2000);
+  function ad(){
+  	if($("#ad0").is(":visible")==false){
+  		$("#ad0").show();
+  		$("#ad1").hide();
+  	}else{
+  		$("#ad1").show();
+  		$("#ad0").hide();
+  	}
+  }  
+  </script>
+  <script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

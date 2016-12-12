@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cocos2d-html5 KillYou</title>
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icons/icon152x152.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/icon144x144.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="icons/icon120x120.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/icon114x114.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="icons/icon76x76.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/icon72x72.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="icons/icon57x57.png">
+
+    <link rel="icon" type="image/GIF" href="icons/icon57x57.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+    body,
+    canvas,
+    div {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    </style>
+</head>
+
+<body style="padding:0; margin: 0; background: #000;">
+    <!--<script src="http: //connect.facebook.net/en_US/sdk.js"></script>-->
+
+    <!--<div id="fb-root"></div>-->
+    <!--<div class="fb-share-button" data-href="http://www.a10.com" data-type="icon"></div>-->
+
+
+
+
+    <canvas id="gameCanvas" width="640" height="400"></canvas>
+    <script src="./js/game.js"></script>
+
+    <script src="game.min.js"></script>
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '我砸中了' + bestScore + '次，不服你来试试！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+</body>
+
+</html>

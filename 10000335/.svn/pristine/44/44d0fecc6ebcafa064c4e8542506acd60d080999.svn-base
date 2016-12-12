@@ -1,0 +1,155 @@
+﻿
+body, canvas, #RotateScreen, #MainInterface, #MainInterfacePopup, #consolePanel, .console {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    background-color: black;
+}
+
+#RotateScreen {
+   width: 750px;
+   height: 500px;
+   background: url('../media/images/ui_images/common/gui_rotatescreen.jpg');
+   opacity: 0;
+   z-index: 5;
+}
+
+#consolePanel {
+    background: url('../media/images/ui_images/common/console_bg.png');
+    font-family: Arial;
+}
+
+.console {
+    width: 50px;
+    height: 30px;
+    background-color: blue;
+    border-style:solid;
+    border-width:1px;
+    display: inline-block;
+    vertical-align:middle;
+    line-height: 30px;
+    text-align:center;
+    color:white;
+    font-size:10px;
+}
+
+#consoleTextInfo {
+    width: 750px;
+    height: 20px;
+    background-color: black;
+    display: inline-block;
+    vertical-align:middle;
+    line-height: 20px;
+    color:yellow;
+    font-size:12px;
+}
+
+.console.toogle     { left: 0px; }
+.console.onlyfps    { left: 0px; }
+.console.fps        { left: 50px; }
+.console.play       { left: 100px; }
+.console.all        { left: 150px; }
+.console.infos      { left: 200px; }
+.console.logs       { left: 250px; }
+.console.warns      { left: 300px; }
+.console.errors     { left: 350px; }
+.console.clear      { left: 680px; }
+
+#MainInterface, #MainInterfacePopup {
+    z-index: 1;
+}
+
+/* Begin iOS 7 CSS */
+#ios7 {
+    display: none;
+}
+
+@media only screen and (max-device-width: 767px){
+    #ios7 {
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../media/images/ios7fix/ios7-bg-fill.png');
+        z-index: 1000;
+    }
+
+    #ios7 #box {
+        width: 86%;
+        height: 43%;
+        margin: 2%;
+        border: solid 1px white;
+        border-radius: 5px;
+        text-align: left;
+        padding: 5%;
+        overflow: hidden;
+        display: table;
+    }
+
+    #ios7 #box #message {
+        font-family: Matterhorn, Arial, Helvetica, sans-serif;
+        font-size: 13.8pt;
+        display: table-cell;
+        vertical-align: middle;
+        color: #ffffff;
+        width: 100%;
+        padding-top: 2%;
+        height: 100px;
+    }
+
+    #ios7 #icon {
+        float: left;
+        margin: 3% 4%;
+    }
+
+    #ios7 #add-button {
+        float: right;
+        margin: 3% 4% 3% 0;
+    }
+
+    #ios7 #close-button {
+        position: absolute;
+        right: 17px;
+        top: 18px;
+    }
+
+    #ios7 #options-button {
+        position: relative;
+        top: 2px;
+        margin-top: -2px;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-device-width: 767px){
+
+    #ios7 #box {
+        height: 90%;
+        text-align: center;
+    }
+
+    #ios7 #icon {
+        margin: -100% 40% 0%;
+        top: -10%;
+        float: none;
+        clear: both;
+    }
+
+    #ios7 #add-button {
+        margin: 30% 40% -60%;
+        float: none;
+        clear: both;
+    }
+}
+/* End iOS 7 CSS */

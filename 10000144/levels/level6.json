@@ -1,0 +1,478 @@
+{
+    "obstacles": [
+        {
+            "row": [
+                {
+                    "obstacle": 2
+                },
+                {
+                    "obstacle": 2
+                },
+                {
+                    "obstacle": 2
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('life')"
+                },
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('life')"
+                },
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('life')"
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 5
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('killer')"
+                },
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('killer')"
+                },
+                {
+                    "obstacle": 100,
+                    "extra": "showTutorial('killer')"
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": 6
+                },
+                {
+                    "obstacle": 6
+                },
+                {
+                    "obstacle": 6
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": 4
+                },
+                {
+                    "obstacle": 4
+                },
+                {
+                    "obstacle": 4
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 1
+                },
+                {
+                    "obstacle": 1
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 6
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": 9
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 9
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 6
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 1
+                },
+                {
+                    "obstacle": 1
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": 6
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        },
+        {
+            "row": [
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                },
+                {
+                    "obstacle": null
+                }
+            ]
+        }
+    ]
+}

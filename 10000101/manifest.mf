@@ -1,0 +1,28 @@
+﻿CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+assets/audio/music/mus_1.ogg
+assets/audio/sound/connect.ogg
+assets/audio/sound/mouse_1.ogg
+assets/audio/sound/rotate_1.ogg
+assets/audio/sound/StarMenu.ogg
+assets/audio/sound/StarUp_2.ogg
+assets/font/font.fnt
+assets/font/font.png
+assets/gameStyles.css
+assets/HelpAnim/allAnim.xml
+assets/imagesPack/BlockGame.json
+assets/imagesPack/BlockGame.png
+assets/img/rotate-phone.png
+assets/levels/bin/Levels.xml
+assets/text.json
+assets/zibbo/Zibbo_logo_rgb-01.png
+index_files/gameStyles.css
+index_files/rotate-phone.png
+logo_A10_202x50.png
+
+
+NETWORK:
+*

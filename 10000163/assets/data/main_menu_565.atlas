@@ -1,0 +1,11 @@
+main_menu_565.png
+format: RGB565
+filter: Nearest,Nearest
+repeat: none
+menu_background
+  rotate: false
+  xy: 0, 0
+  size: 480, 321
+  orig: 480, 321
+  offset: 0, 0
+  index: -1

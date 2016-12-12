@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta charset="utf-8">
+    <meta name="description" content="雷霆X战机-9G游戏">
+    <meta name="keywords" content="iPhone,Android,iPad,game,html5 game,puzzle game,puzzle,Puzzle,flick,card,postman,post,action,Flash,Flash for iPhone,html5,iPod touch,iPad">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta equiv="Expires" content="0">
+    <title>雷霆X战机</title>
+    <style type="text/css">
+    html,
+    body {
+        background-color: #000;
+        background-position: 54px 105px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: #fff;
+        font-family: helvetica, arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 12pt;
+        min-height: 416px;
+    }
+    #canvas {
+        background-color: #000;
+        display: none;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 480px;
+        height: 720px;
+        z-index: 80;
+    }
+    #making-of {
+        display: none;
+        position: absolute;
+        margin: auto;
+        left: 10px;
+        bottom: 10px;
+    }
+    #canvas.desktop {
+        bottom: 0;
+        cursor: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='), auto;
+    }
+    #rotate {
+        width: 125px;
+        height: 180px;
+        position: fixed;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 30px;
+        display: none;
+    }
+    #loading {
+        text-align: center;
+        margin-top: 40px;
+    }
+    #nocanvas {
+        width: 360px;
+        margin: 150px auto;
+    }
+    a {
+        color: #8BA7C4;
+    }
+    a:hover {
+        color: #fff;
+    }
+    img {
+        border: 0;
+    }
+    #scoreBox {
+        position: fixed;
+        /* wtf android? WTF? */
+        display: none;
+        width: 480px;
+        height: 100px;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        z-index: 100;
+        cursor: auto;
+    }
+    #tweetLink {
+        margin-top: 30px;
+        display: block;
+    }
+    #scores {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 410px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 0 20px;
+        z-index: 10;
+        color: #fff;
+        font-size: 10pt;
+        cursor: auto;
+        overflow: auto;
+        height: 720px;
+        z-index: 100;
+    }
+    #scores a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+    }
+    #scoreMenu a {
+        padding: 2px 5px;
+        margin: 0 1em;
+    }
+    #scores a.active {
+        background-color: #fff;
+        color: #000;
+    }
+    #scoresBack {
+        font-size: 140%;
+    }
+    #scores a:hover {
+        color: #ff7e00
+    }
+    #scoresTable {
+        /*margin: 3em 0 0 0;*/
+        width: 100%;
+    }
+    #scoresTable tr:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    #scoresTable .head {
+        font-weight: bold;
+        color: #aab5b9;
+    }
+    .score,
+    .stage {
+        width: 60px;
+        text-align: right;
+    }
+    .rank {
+        width: 20px;
+        text-align: right;
+    }
+    </style>
+    <meta name="description" content="大家一起来打飞机！">
+</head>
+
+<body id="0">
+
+    <div id="loading" style="display: none; ">加载中...</div>
+    <canvas id="canvas" style="display: block; cursor: auto; " class="desktop" width="480" height="720">
+
+    </canvas>
+    <div id="making-of" style="display: block; "></div>
+    <div id="scoreBox" style="bottom: 0px; display: none; z-index:9999">
+        <form id="scoreForm">
+        </form>
+        <div id="scoreResponse"></div>
+    </div>
+    <div id="scores" style="bottom: 0px; ">
+
+    </div>
+    <img id="rotate" src="media/ajaxrotate.png" alt="Rotate" style="display: none; ">
+    <script type="text/javascript" src="js/xtype.min.js?v=1"></script>
+    <script src="js/jquery.min.js"></script>
+    
+    
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = bestScore + '分！我去，这货比《雷霆战机》还爽啊，谁来一起玩? ！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+</body>
+
+</html>

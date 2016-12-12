@@ -1,0 +1,14 @@
+{"level": [
+{"type":"box", "material":"ground", "x":316,"y":866,"rotation":0,"width":256,"height":256},
+{"type":"chicken", "material":"blue", "x":261,"y":468,"rotation":0,"width":67,"height":59},
+{"type":"cross", "material":"wood", "x":261,"y":691,"rotation":42,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":362,"y":691,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":228,"y":625,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":396,"y":625,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":311,"y":599,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":194,"y":551,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":429,"y":559,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":266,"y":523,"rotation":45,"width":118,"height":118},
+{"type":"cross", "material":"wood", "x":362,"y":523,"rotation":45,"width":118,"height":118}
+]
+}

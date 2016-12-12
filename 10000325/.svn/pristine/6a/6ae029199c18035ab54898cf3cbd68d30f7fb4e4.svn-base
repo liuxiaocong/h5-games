@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href='' target='_blank'>
+
+	<title>Heal'em All. There's a cure for zombies</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=IE9" >
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="title" content="Heal'em All. There's a cure for zombies">
+	<meta name="description" content="Imagine, what if the cure exists? What if zombies plague can be stoped? Explore old, abandoned graveyard, heal as many zombies as you can, and find your way out. But be careful not to become one of them!">
+	<meta name="keywords" content="HTML5, cure, graveyard, heal'em, healing-gun, key, mobile-web, multi-level, platformer, zombie">
+	<link rel="canonical" href="https://healemall.tresensa.com/">
+
+	<link rel="shortcut icon" href="./favicon.ico">
+	<link rel="image_src" href="./banners/172x188.jpg">
+	<link rel="apple-touch-icon" href="./icons/144x144.png" />
+
+	<link rel="stylesheet" href="leaderboard/css/game_specific.css" type="text/css" media="screen">
+
+	<!-- Facebook meta-tags -->
+	<meta property="og:url" content="http://healemall.tresensa.com">
+	<meta property="og:title" content="Heal'em All. There's a cure for zombies">
+	<meta property="og:description" content="Imagine, what if the cure exists? What if zombies plague can be stoped? Explore old, abandoned graveyard, heal as many zombies as you can, and find your way out. But be careful not to become one of them!">
+	<meta property="og:image" content="web-image.jpg">
+
+	<!-- Twitter Card properties -->
+	<meta name="twitter:card" content="player">
+	<meta name="twitter:site" content="@tresensa">
+	<meta name="twitter:player" content="">
+	<meta name="twitter:player:width" content="960">
+	<meta name="twitter:player:height" content="536">
+	<meta name="twitter:title" content="Heal'em All. There's a cure for zombies">
+	<meta name="twitter:description" content="Imagine, what if the cure exists? What if zombies plague can be stoped? Explore old, abandoned graveyard, heal as many zombies as you can, and find your way out. But be careful not to become one of them!">
+	<meta name="twitter:image" content="web-image.jpg">
+
+	<!-- Kik properties -->
+	<meta name="kik-unsupported" content="android-2.2,ios-4">
+	<link rel="kik-icon" href="/icons/256x256.png">
+	<link rel="kik-icon-fallback" href="/banners/256x160.png"
+	<link rel="terms" href="http://www.tresensa.com/terms-of-use/">
+	<link rel="privacy" href="http://www.tresensa.com/privacy-policy/">
+	<!-- <meta name="kik-https" content="healemall.tresensa.com"> -->
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+	
+
+	<script src="./4399/tgl/tgl.boot.min.js"></script>
+
+	
+
+    <!-- all the icons -->
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link href="icons/icon60.png" rel="apple-touch-icon" />
+    <link href="icons/icon76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="icons/icon120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="icons/icon152.png" rel="apple-touch-icon" sizes="152x152" />
+
+    <!-- apple optimization -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- meta descriptions etc. -->
+    <meta content="Imagine, what if the cure exists? What if zombies plague can be stoped? Explore old, abandoned graveyard, heal as many zombies as you can, and find your way out. But be careful not to become one of them!" name="description">
+    <meta content="@krzysu" name="author">
+
+    <!-- fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+
+    
+</head>
+<body id="" class="">
+	
+	<div id="loading" class="screen">
+        <div class="screen-title">
+            <h1>Heal'em All</h1>
+            <h2>There's a cure for zombies</h2>
+        </div>
+        <div id="loading-container" class="screen-body">
+            <div class="screen-text">Loading...</div>
+            <div id="loading-progress"></div>
+        </div>
+    </div>
+
+    <div id="wrong-orientation" class="screen">
+        <div class="screen-title">
+            <h1>Heal'em All</h1>
+            <h2>There's a cure for zombies</h2>
+        </div>
+        <div class="screen-body">
+            <div class="screen-text">Rotate your device to play the game</div>
+        </div>
+    </div>
+
+    <canvas id="quintus"></canvas>
+</body>
+</html>

@@ -1,0 +1,31 @@
+paused = Paused
+
+credit = Created by \nkornushin.com
+
+level_select = Level select
+
+level = Level
+
+target = Target:
+
+moves = moves
+
+tutorial1 = Tap to break
+
+tutorial2 = Lift chicken\ndown\nto the grass
+
+tutorial3 = you can't\nbreak\nthe stone
+
+level_complete = You saved the chicken!
+
+score = Score:
+
+lose1 = Chicken fell down.\nTry to save chicken again.
+
+win = Congratulations!\nYou complete all levels!
+
+endless = Endless\ngame
+
+
+
+

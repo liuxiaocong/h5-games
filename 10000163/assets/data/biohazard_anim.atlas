@@ -1,0 +1,487 @@
+biohazard_anim.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+biohazard_hit
+  rotate: false
+  xy: 490, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 4
+biohazard_stand
+  rotate: false
+  xy: 124, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 53
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 43
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 35
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 50
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 28
+biohazard_stand
+  rotate: false
+  xy: 2, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 40
+biohazard_hit
+  rotate: false
+  xy: 368, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 8
+biohazard_falling
+  rotate: false
+  xy: 734, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 3
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 47
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 12
+biohazard_stand
+  rotate: false
+  xy: 246, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 2
+biohazard_stand
+  rotate: false
+  xy: 124, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 21
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 39
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 54
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 44
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 16
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 6
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 25
+biohazard_hit
+  rotate: false
+  xy: 612, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 3
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 48
+biohazard_stand
+  rotate: false
+  xy: 2, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 32
+biohazard_stand
+  rotate: false
+  xy: 124, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 51
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 29
+biohazard_stand
+  rotate: false
+  xy: 2, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 41
+biohazard_hit
+  rotate: false
+  xy: 368, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 7
+biohazard_falling
+  rotate: false
+  xy: 612, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 4
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 13
+biohazard_stand
+  rotate: false
+  xy: 246, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 3
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 36
+biohazard_hit
+  rotate: false
+  xy: 734, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 2
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 45
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 10
+biohazard_hit
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 11
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 17
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 7
+biohazard_stand
+  rotate: false
+  xy: 124, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 22
+biohazard_hit
+  rotate: false
+  xy: 490, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 6
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 49
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 14
+biohazard_stand
+  rotate: false
+  xy: 246, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 4
+biohazard_stand
+  rotate: false
+  xy: 2, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 33
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 26
+biohazard_hit
+  rotate: false
+  xy: 246, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 10
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 18
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 30
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 8
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 37
+biohazard_hit
+  rotate: false
+  xy: 612, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 1
+biohazard_stand
+  rotate: false
+  xy: 2, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 52
+biohazard_stand
+  rotate: false
+  xy: 124, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 42
+biohazard_falling
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 1
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 11
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 1
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 34
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 23
+biohazard_hit
+  rotate: false
+  xy: 490, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 5
+biohazard_falling
+  rotate: false
+  xy: 612, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 2
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 46
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 15
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 5
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 20
+biohazard_stand
+  rotate: false
+  xy: 2, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 38
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 27
+biohazard_hit
+  rotate: false
+  xy: 368, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 9
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 19
+biohazard_stand
+  rotate: false
+  xy: 124, 81
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 31
+biohazard_stand
+  rotate: false
+  xy: 734, 160
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 9
+biohazard_stand
+  rotate: false
+  xy: 124, 2
+  size: 120, 77
+  orig: 120, 77
+  offset: 0, 0
+  index: 24

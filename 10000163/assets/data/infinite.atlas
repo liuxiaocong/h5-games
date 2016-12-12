@@ -1,0 +1,74 @@
+infinite.png
+format: RGBA4444
+filter: Nearest,Nearest
+repeat: none
+moon
+  rotate: false
+  xy: 672, 365
+  size: 80, 78
+  orig: 80, 78
+  offset: 0, 0
+  index: -1
+planets2
+  rotate: false
+  xy: 672, 215
+  size: 270, 149
+  orig: 270, 149
+  offset: 0, 0
+  index: -1
+hornet
+  rotate: false
+  xy: 862, 365
+  size: 133, 200
+  orig: 133, 200
+  offset: 0, 0
+  index: -1
+rocks
+  rotate: false
+  xy: 862, 566
+  size: 100, 112
+  orig: 100, 112
+  offset: 0, 0
+  index: -1
+earth
+  rotate: false
+  xy: 461, 447
+  size: 400, 288
+  orig: 400, 288
+  offset: 0, 0
+  index: -1
+saturn
+  rotate: false
+  xy: 672, 0
+  size: 150, 214
+  orig: 150, 214
+  offset: 0, 0
+  index: -1
+infinite_background
+  rotate: false
+  xy: 0, 0
+  size: 460, 704
+  orig: 460, 704
+  offset: 0, 0
+  index: -1
+parachute
+  rotate: false
+  xy: 943, 200
+  size: 79, 150
+  orig: 79, 150
+  offset: 0, 0
+  index: -1
+jupiter
+  rotate: false
+  xy: 823, 0
+  size: 200, 199
+  orig: 200, 199
+  offset: 0, 0
+  index: -1
+moon2
+  rotate: false
+  xy: 461, 0
+  size: 210, 446
+  orig: 210, 446
+  offset: 0, 0
+  index: -1

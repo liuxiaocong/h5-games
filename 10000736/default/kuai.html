@@ -1,0 +1,864 @@
+﻿
+<html>
+<head>
+<title>别踩白块儿</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="mobile-agent" content="集游策小游戏，怎么都停不下来呀！">
+<style type="text/css">
+*{margin:0;padding:0;}
+</style>
+<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/bcbk/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</head>
+<body bgcolor=#000000  scroll="no"  style="overflow-x:hidden;overflow-y:hidden;">
+
+<script language=javascript>
+var GameTops = {
+	gameid:"bcbker",
+	name:"别踩白块儿",
+	count:5,
+	tops:['bcbker1','bcbker2','bcbker3','bcbker4','bcbker5'],
+	names:['经典模式','禅模式','街机模式','极速模式','接力模式'],
+	isPk:false,
+	pk:function(){
+		GameTops.isPk = true;
+		Game.mode=1;
+		Game.start();
+	}
+}
+</script>
+<div id=GameBox style="position:absolute;top:0;left:0">
+<canvas id="Canvas"  style="position:absolute;top:0;left:0" width=640 height=640></canvas>
+<input type=text name="Nickname" value="" id="Nickname"   style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;position:absolute;top:0;left:0;color:000000;display:none"> 
+</div>
+<script language=javascript>
+var Game = {
+	toplist:{},
+	myrank:100,
+	width:0,
+	height:0,
+	scale:1,
+	nickname:"",
+	FPS:30,
+	score:0,
+	mode:1,
+	best:0,
+	best1:0,
+	best2:0,
+	best3:0,
+	best4:0,
+	best5:0,
+	isDie:false,
+	isShowHelp:false,
+	isNewRecord:false,
+	status:"menu",
+	table:new Array(),
+	changes:new Array(),
+	news:new Array(),
+	speed:0,
+	tile:0,
+	startTime:0,
+	resize:function(){
+		var dw = Game.width = document.body.clientWidth;
+		var dh = Game.height = document.body.clientHeight;
+		var w=dw;
+		if(dh<dw){
+			w=dh;
+			$("GameBox").style.left = (dw-dh)/2;
+		}
+		else{
+			$("GameBox").style.top = (dh-dw)/2;
+		}
+		Game.scale = w/640;
+		$("Canvas").style.width=w;
+		$("Canvas").style.height=w;
+		
+		$("Nickname").style.left=240*Game.scale;
+		$("Nickname").style.top=390*Game.scale;
+		$("Nickname").style.width=150*Game.scale;
+		$("Nickname").style.height=42*Game.scale;
+		$("Canvas").style.display="";
+	}
+	,
+	init:function(){
+		Game.resize();
+		if(localStorage.getItem("GameBcbkerBest1")){Game.best1	= localStorage.getItem("GameBcbkerBest1");}
+		if(localStorage.getItem("GameBcbkerBest2")){Game.best2  = localStorage.getItem("GameBcbkerBest2");}
+		if(localStorage.getItem("GameBcbkerBest3")){Game.best3  = localStorage.getItem("GameBcbkerBest3");}
+		if(localStorage.getItem("GameBcbkerBest4")){Game.best4  = localStorage.getItem("GameBcbkerBest4");}
+		if(localStorage.getItem("GameBcbkerBest5")){Game.best5  = localStorage.getItem("GameBcbkerBest5");}
+		
+		if(localStorage.getItem("Game2048Nickname")){
+			Game.nickname  = localStorage.getItem("Game2048Nickname");
+			$("Nickname").value = Game.nickname;
+		}
+
+		Game.run();
+		if(Game.request("t")=="1"){Game.mode=1;Game.rank();return;}
+		if(Game.request("t")=="2"){Game.mode=2;Game.rank();return;}
+		if(Game.request("t")=="3"){Game.mode=3;Game.rank();return;}
+		if(Game.request("t")=="4"){Game.mode=4;Game.rank();return;}
+		if(Game.request("t")=="5"){Game.mode=5;Game.rank();return;}
+	}
+	,
+	rank:function(){
+		window.location="http://wx.jyc.17188.com/index.html?from=kuai";
+		//GameMenu.go(1);
+	}
+	,
+	run:function(){
+		setInterval(Game.draw,1000/Game.FPS);
+	}
+	,
+	menu:function(){
+		$("Nickname").style.display="none";
+		Game.status="menu";
+	}
+	,
+	pos:0,
+	start:function(){
+		Game.score=0;
+		Game.status = "start";
+		$("Nickname").style.display="none";
+		Game.table = new Array();
+		Game.tile=0;
+		Game.pos=0;
+		Game.speed=0;
+		Game.isDie=false;
+		for(var i=0;i<10000;i++){
+			Game.table[Game.table.length]=parseInt(Math.random()*4);
+		}
+	}
+	,
+	over:function(){
+	
+		Game.isNewRecord = false;
+		if(Game.mode==1&&!Game.isDie&&(Game.score<Game.best1||Game.best1==0)){
+			Game.isNewRecord = true;
+			Game.best1 = Game.score;
+			localStorage.setItem("GameBcbkerBest1",Game.score);
+		}
+		if(Game.mode==2&&Game.score>Game.best2){
+			Game.isNewRecord = true;
+			Game.best2 = Game.score;
+			localStorage.setItem("GameBcbkerBest2",Game.score);
+		}
+		if(Game.mode==3&&Game.score>Game.best3){
+			Game.isNewRecord = true;
+			Game.best3 = Game.score;
+			localStorage.setItem("GameBcbkerBest3",Game.score);
+		}
+		if(Game.mode==4&&Game.score>Game.best4){
+			Game.isNewRecord = true;
+			Game.best4 = Game.score;
+			localStorage.setItem("GameBcbkerBest4",Game.score);
+		}
+		if(Game.mode==5&&Game.score>Game.best5){
+			Game.isNewRecord = true;
+			Game.best5 = Game.score;
+			localStorage.setItem("GameBcbkerBest5",Game.score);
+		}
+		
+		
+		Game.status = "over";
+	}
+	,
+	helpStep:1,
+	help:function(){
+		Game.helpStep=1;
+		Game.status="help";
+	}
+	,
+	draw:function(){
+		var c=$("Canvas");
+		var ctx=c.getContext("2d");
+		
+		
+		if(Game.status=="menu"){
+			ctx.clearRect(0, 0, c.width, c.height);
+			ctx.fillStyle ='rgba(255,255,255,1)';//填充颜色：红色，半透明
+			ctx.strokeStyle ='hsl(0,0%,0%)';//线条颜色：绿色
+			ctx.lineWidth = 1;//设置线宽
+			ctx.beginPath();
+			ctx.moveTo(320,427);
+			ctx.lineTo(320,0);
+			ctx.lineTo(0,0);
+			ctx.lineTo(0,213);
+			ctx.lineTo(640,213);
+			ctx.lineTo(640,427);
+			ctx.lineTo(0,427);
+			ctx.lineTo(0,640);
+			ctx.lineTo(320,640);
+			ctx.closePath();//可以把这句注释掉再运行比较下不同
+			ctx.stroke();//画线框
+			ctx.fill();//填充颜色
+			ctx.textAlign="center";
+			ctx.font = '50px 黑体';
+			ctx.fillStyle = "#000000";
+			ctx.fillText("经典", 160,120);
+			ctx.fillText("接力", 160,550);
+
+			ctx.fillText("极速", 480,335);
+			
+			ctx.font = '50px 黑体';
+			ctx.fillStyle = "#FFFFFF";
+			ctx.fillText("街机", 480,120);
+			ctx.fillText("禅", 160,335);
+			ctx.fillText("更多", 480,550);
+			
+			return;
+		}
+		if(Game.status=="ranking"){
+		
+			ctx.clearRect(0, 0, c.width, c.height);
+			ctx.fillStyle ='rgba(0,0,0,1)';//填充颜色：红色，半透明
+			ctx.strokeStyle ='hsl(0,0%,0%)';//线条颜色：绿色
+			ctx.lineWidth = 1;//设置线宽
+			ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.lineTo(640,0);
+			ctx.lineTo(640,640);
+			ctx.lineTo(0,640);
+			ctx.closePath();//可以把这句注释掉再运行比较下不同
+			ctx.stroke();//画线框
+			ctx.fill();//填充颜色
+
+			ctx.font = '50px 黑体';
+			ctx.fillStyle = "#FFFFFF";
+			ctx.textAlign="center";
+			if(Game.mode==1)ctx.fillText("经典排行榜", 320,50);
+			if(Game.mode==2)ctx.fillText("禅排行榜", 320,50);
+			if(Game.mode==3)ctx.fillText("街机排行榜", 320,50);
+			ctx.font = '30px 黑体';
+			ctx.fillStyle = "#FFFFFF";
+			for(var i=0;i<10;i++){
+				ctx.fillText("第" + (i+1) + "名 ", 100, 110+40*i);
+				if(i<Game.toplist.length){
+					var score = Game.toplist[i].score;
+					ctx.fillText(Game.toplist[i].nickname, 300, 110+40*i);
+					ctx.fillText(score, 500, 110+40*i);
+				}
+				else{
+					ctx.fillText("--", 300, 110+40*i);
+					ctx.fillText("--", 500, 110+40*i);
+				}
+			}
+
+			var score = Game.best;
+
+			ctx.fillText("第" + Game.myrank + "名 ", 100, 110+40*10);
+			ctx.fillText(Game.nickname, 300, 110+40*10);
+			ctx.fillText(score, 500, 110+40*10);
+			ctx.font = '50px 黑体';
+			ctx.fillStyle = "#ffffff";
+			ctx.fillText("返回",200, 600);
+			ctx.fillText("挑战",440, 600);
+			return;
+		}		
+		
+		if(Game.status=="over"){
+			
+			if(Game.mode==1){
+				if(Game.tile<50){
+					ctx.clearRect(0, 0, c.width, c.height);
+					ctx.fillStyle ='rgba(255,33,0,1)';//填充颜色：红色
+					ctx.strokeStyle ='hsl(0,0%,0%)';//
+					ctx.lineWidth = 1;//设置线宽
+					ctx.beginPath();
+					ctx.moveTo(0,0);
+					ctx.lineTo(640,0);
+					ctx.lineTo(640,640);
+					ctx.lineTo(0,640);
+					ctx.closePath();//可以把这句注释掉再运行比较下不同
+					ctx.fill();//填充颜色
+					
+					ctx.font = '60px 黑体';
+					ctx.fillStyle = "#FFFFFF";
+					ctx.textAlign="center";
+					ctx.fillText("经典模式", 320, 120);
+					ctx.font = '120px 黑体';
+					ctx.fillStyle = "#000000";
+					ctx.fillText("败了", 320, 300);				
+				}
+				else{
+					ctx.clearRect(0, 0, c.width, c.height);
+					ctx.fillStyle ='rgba(50,190,50,1)';//填充颜色：红色
+					ctx.strokeStyle ='hsl(0,0%,0%)';//
+					ctx.lineWidth = 1;//设置线宽
+					ctx.beginPath();
+					ctx.moveTo(0,0);
+					ctx.lineTo(640,0);
+					ctx.lineTo(640,640);
+					ctx.lineTo(0,640);
+					ctx.closePath();//可以把这句注释掉再运行比较下不同
+					ctx.stroke();//画线框
+					ctx.fill();//填充颜色
+					
+					ctx.font = '60px 黑体';
+					ctx.fillStyle = "#FFFFFF";
+					ctx.textAlign="center";
+					ctx.fillText("经典模式", 320, 120);
+					ctx.font = '120px Arial';
+					ctx.fillStyle = "#000000";
+					ctx.fillText(Game.score/1000+"\"", 320, 260);
+				}
+			}
+			if(Game.mode==2){
+				ctx.clearRect(0, 0, c.width, c.height);
+				ctx.fillStyle ='rgba(50,190,50,1)';//填充颜色：红色
+				ctx.strokeStyle ='hsl(0,0%,0%)';//
+				ctx.lineWidth = 1;//设置线宽
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(640,0);
+				ctx.lineTo(640,640);
+				ctx.lineTo(0,640);
+				ctx.closePath();//可以把这句注释掉再运行比较下不同
+				ctx.stroke();//画线框
+				ctx.fill();//填充颜色
+				
+				ctx.font = '60px 黑体';
+				ctx.fillStyle = "#FFFFFF";
+				ctx.textAlign="center";
+				ctx.fillText("禅模式", 320, 120);
+				ctx.font = '120px Arial';
+				ctx.fillStyle = "#000000";
+				ctx.fillText(Game.score, 320, 260);
+			}
+			if(Game.mode==3){
+				ctx.clearRect(0, 0, c.width, c.height);
+				ctx.fillStyle ='rgba(255,33,0,1)';//填充颜色：红色
+				ctx.strokeStyle ='hsl(0,0%,0%)';//
+				ctx.lineWidth = 1;//设置线宽
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(640,0);
+				ctx.lineTo(640,640);
+				ctx.lineTo(0,640);
+				ctx.closePath();//可以把这句注释掉再运行比较下不同
+				ctx.stroke();//画线框
+				ctx.fill();//填充颜色
+				
+				ctx.font = '60px 黑体';
+				ctx.fillStyle = "#FFFFFF";
+				ctx.textAlign="center";
+				ctx.fillText("街机模式", 320, 120);
+				ctx.font = '120px Arial';
+				ctx.fillStyle = "#000000";
+				ctx.fillText(Game.score, 320, 260);
+			}
+			if(Game.mode==4){
+				ctx.clearRect(0, 0, c.width, c.height);
+				ctx.fillStyle ='rgba(255,33,0,1)';//填充颜色：红色
+				ctx.strokeStyle ='hsl(0,0%,0%)';//
+				ctx.lineWidth = 1;//设置线宽
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(640,0);
+				ctx.lineTo(640,640);
+				ctx.lineTo(0,640);
+				ctx.closePath();//可以把这句注释掉再运行比较下不同
+				ctx.stroke();//画线框
+				ctx.fill();//填充颜色
+				
+				ctx.font = '60px 黑体';
+				ctx.fillStyle = "#FFFFFF";
+				ctx.textAlign="center";
+				ctx.fillText("极速模式", 320, 120);
+				ctx.font = '120px Arial';
+				ctx.fillStyle = "#000000";
+				ctx.fillText( Game.getSecondString(Game.score).replace("\"","/s"), 320, 260);
+			}
+			if(Game.mode==5){
+				ctx.clearRect(0, 0, c.width, c.height);
+				ctx.fillStyle ='rgba(50,190,50,1)';//填充颜色：红色
+				ctx.strokeStyle ='hsl(0,0%,0%)';//
+				ctx.lineWidth = 1;//设置线宽
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(640,0);
+				ctx.lineTo(640,640);
+				ctx.lineTo(0,640);
+				ctx.closePath();//可以把这句注释掉再运行比较下不同
+				ctx.stroke();//画线框
+				ctx.fill();//填充颜色
+				
+				ctx.font = '60px 黑体';
+				ctx.fillStyle = "#FFFFFF";
+				ctx.textAlign="center";
+				ctx.fillText("接力模式", 320, 120);
+				ctx.font = '120px Arial';
+				ctx.fillStyle = "#000000";
+				ctx.fillText(Game.score, 320, 260);
+			}
+			
+			if(Game.isNewRecord&&false){
+
+				ctx.beginPath();
+				ctx.moveTo(440,410);
+				ctx.lineTo(570,410);
+				ctx.lineWidth=50;
+				ctx.strokeStyle='#911503';
+				ctx.lineCap='round';
+				ctx.stroke();  	
+ 
+				ctx.font = '40px 黑体';
+				ctx.fillStyle = "#FFFF00";
+				ctx.fillText("新纪录诞生了！", 320, 320);
+				ctx.font = '36px 黑体';
+				ctx.fillStyle = "#FFFFFF";
+				ctx.fillText("您的姓名", 150, 422);
+				ctx.fillText("提交纪录", 502, 422);
+				$("Nickname").style.display="";
+				if($("Nickname").value=="")$("Nickname").focus();
+				//$("Nickname").onblur=Game.submit; 
+			}
+			else{
+				ctx.font = '50px 黑体';
+				if(Game.mode==1&&!Game.isDie){ctx.fillText("最佳 "+Game.best1/1000+"\"", 320, 320);}
+				if(Game.mode==2){ctx.fillText("最佳 "+Game.best2, 320, 320);}
+				if(Game.mode==3){ctx.fillText("最佳 "+Game.best3, 320, 320);}
+				if(Game.mode==5){ctx.fillText("最佳 "+Game.best5, 320, 320);}
+			}
+			ctx.font = '50px 黑体';
+			ctx.fillStyle = "#ffffff";
+			ctx.fillText("返回",200, 580);
+			ctx.fillText("重来",440, 580);
+			return;
+		}
+	
+		if(Game.status=="start"){
+			for(var h=0;h<5;h++){
+				var dh  = parseInt(Game.pos/160)+h;
+				var table = Game.table[dh];
+				var fx = Game.pos%160-h*160+480;
+				for(var i=0;i<4;i++){
+				
+					if(Game.mode==1&&dh>=50){
+						ctx.fillStyle ='rgba(80,255,80,1)';//填充颜色：绿色
+					}
+					else{
+						if(table==i){
+							if(Game.tile>parseInt(Game.pos/160)+h){
+								ctx.fillStyle ='rgba(150,150,150,1)';//填充颜色：红色，半透明
+							}
+							else{
+								ctx.fillStyle ='rgba(20,20,20,1)';//填充颜色：红色，半透明
+							}
+						}
+						else{
+							ctx.fillStyle ='rgba(255,255,255,1)';//填充颜色：红色，半透明
+						}
+					}
+					ctx.strokeStyle ='hsl(0,0%,0%)';//线条颜色：绿色
+					ctx.lineWidth = 1;//设置线宽
+					ctx.beginPath();
+					ctx.moveTo(i*160,fx);
+					ctx.lineTo(i*160,fx+160);
+					ctx.lineTo(i*160+160,fx+160);
+					ctx.lineTo(i*160+160,fx);
+					ctx.closePath();//可以把这句注释掉再运行比较下不同
+					ctx.stroke();//画线框
+					ctx.fill();//填充颜色
+				}
+			}
+			
+					
+			if(Game.pos==0){
+				ctx.font = '50px 黑体';
+				ctx.fillStyle = "#ffffff";
+				ctx.fillText("开始", Game.table[0]*160+80,590);
+			}
+			if(Game.mode==1){
+				if(Game.pos==0){
+					if(Game.isShowHelp){
+						ctx.font = '50px 黑体';
+						ctx.fillStyle = "#FF0000";
+						ctx.fillText("不要点到白块儿噢", 320,300);
+						ctx.font = '40px 黑体';
+						ctx.fillStyle = "#20fa03";
+						ctx.fillText("点击最下面一行的黑块儿", 320, 380);
+						ctx.fillText("越快到达终点越棒", 320, 430);
+						ctx.font = '64px 黑体';
+						ctx.fillStyle = "#999999";
+						ctx.fillText("0.000\"", 322, 52);
+						ctx.fillStyle = "#FF0000";
+						ctx.fillText("0.000\"", 320, 50);
+					}
+				}
+				else{
+					Game.score = (new Date().getTime())-Game.startTime;
+					ctx.strokeStyle ='hsl(50,100%,60%)';//线条颜色：绿色
+					ctx.lineWidth = 20;//设置线宽
+					ctx.beginPath();
+					ctx.moveTo(0,10);
+					ctx.lineTo(parseInt(Game.pos/160)%50/50*640,10);
+					ctx.stroke();//画线框
+				}
+				var sc = Game.getSecondString(Game.score);
+				ctx.font = '64px 黑体';
+				ctx.fillStyle = "#999999";
+				ctx.fillText(sc, 322, 62);
+				ctx.fillStyle = "#FF0000";
+				ctx.fillText(sc, 320, 60);				
+			}
+			if(Game.mode==2){
+				var time=30000;
+				if(Game.pos==0){
+					if(Game.isShowHelp){
+						ctx.font = '50px 黑体';
+						ctx.fillStyle = "#FF0000";
+						ctx.fillText("不要点到白块儿噢", 320,300);
+						ctx.font = '40px 黑体';
+						ctx.fillStyle = "#20fa03";
+						ctx.fillText("点击最下面的黑块儿，30秒内看你", 320, 380);
+						ctx.fillText("能点击到多少个黑色块儿", 320, 430);
+						ctx.font = '64px 黑体';
+						ctx.fillStyle = "#999999";
+						ctx.fillText("30.000\"", 322, 52);
+						ctx.fillStyle = "#FF0000";
+						ctx.fillText("30.000\"", 320, 50);
+					}
+				}
+				else{
+					time = 30000-(new Date().getTime())+Game.startTime;
+					if(time<0)time=0;
+					if(time==0)Game.over();
+				}
+				var sc = Game.getSecondString(time);
+				ctx.font = '64px 黑体';
+				ctx.fillStyle = "#999999";
+				ctx.fillText(sc, 322, 62);
+				ctx.fillStyle = "#FF0000";
+				ctx.fillText(sc, 320, 60);
+			}
+			if(Game.mode==3){
+				if(Game.speed==0){
+					if(Game.isShowHelp){
+						ctx.font = '50px 黑体';
+						ctx.fillStyle = "#FF0000";
+						ctx.fillText("不要点到白块儿噢", 320,300);
+						ctx.font = '40px 黑体';
+						ctx.fillStyle = "#20fa03";
+						ctx.fillText("点击最下面一行的黑块儿", 320, 380);
+						ctx.fillText("不要错过任何黑块儿", 320, 430);
+					}
+				}
+				var time = (new Date().getTime())-Game.startTime;
+				Game.startTime = new Date().getTime();
+				Game.pos+=160*time/1000*Game.speed/1000;
+				
+				
+				ctx.font = '64px 黑体';
+				ctx.fillStyle = "#999999";
+				ctx.fillText(Game.score, 322, 52);
+				ctx.fillStyle = "#FF0000";
+				ctx.fillText(Game.score, 320, 50);
+			}
+			if(Game.mode==4){
+				if(Game.score>0){
+					var time = (new Date().getTime())-Game.startTime;
+					Game.startTime = new Date().getTime();
+					
+					Game.pos+=160*time/1000*Game.score/1000;
+				}
+
+				var sc = Game.getSecondString(Game.score).replace("\"","/s");
+				ctx.font = '64px 黑体';
+				ctx.fillStyle = "#999999";
+				ctx.fillText(sc, 322, 62);
+				ctx.fillStyle = "#FF0000";
+				ctx.fillText(sc, 320, 60);		
+			}
+			
+			if(Game.mode==5){
+				var time = 10000;
+				if(Game.pos>0){
+					time = 10000-(new Date().getTime())+Game.startTime;
+					if(time<0)time=0;
+					if(time==0)Game.over();
+					
+					ctx.strokeStyle ='hsl(50,100%,60%)';//线条颜色：绿色
+					ctx.lineWidth = 20;//设置线宽
+					ctx.beginPath();
+					ctx.moveTo(0,10);
+					ctx.lineTo(Game.score%50/50*640,10);
+					ctx.stroke();//画线框
+					
+					if(Game.score>20&&time>9500){
+						ctx.font =   parseInt((1-(100-time/100)*(100-time/100)*0.02)*150)   +'px 黑体';
+						ctx.fillStyle = "#999999";
+						ctx.fillText("10\"", 322, 252);
+						ctx.fillStyle = "#FFff00";
+						ctx.fillText("10\"", 320, 250);
+					}
+				}
+				var sc1 = parseInt(time/1000);
+				var sc2 = time%1000+"";
+				if(sc2.length==1)sc2="00"+sc2;
+				if(sc2.length==2)sc2="0"+sc2;
+				if(sc2.length!=3)sc2="000";
+				var sc = sc1 + "." + sc2+"\"";
+				ctx.font = '64px 黑体';
+				ctx.fillStyle = "#999999";
+				ctx.fillText(sc, 322, 62);
+				ctx.fillStyle = "#FF0000";
+				ctx.fillText(sc, 320, 60);
+				
+			}
+		}
+	}
+	,
+	getSecondString:function(time){
+		var sc1 = parseInt(time/1000);
+		var sc2 = time%1000+"";
+		if(sc2.length==1)sc2="00"+sc2;
+		if(sc2.length==2)sc2="0"+sc2;
+		if(sc2.length!=3)sc2="000";
+		return sc1 + "." + sc2+"\"";
+	}
+	,
+	moveFrame:0,
+	newsFrame:0,
+	hit:function(x,y){
+		var fx=Game.table[Game.tile]*160;
+		var fy=Game.pos%160+480-(Game.tile-parseInt(Game.pos/160))*160;
+		var tx=fx+160;
+		var ty=fy+160;
+		fx-=80;
+		tx+=80;
+		fy-=160;
+		ty+=160;
+		//alert(x+","+y+"\n"+fx+","+fy+"\n"+tx+","+ty+"\n")
+		if(x>fx&&x<tx&&y>fy&&y<ty){
+			if(Game.mode==3){
+				Game.score++;
+				Game.tile++;
+				if(Game.speed==0)
+					Game.speed=3000;
+				else
+					Game.speed+=22;
+			}
+			if(Game.mode==4){
+				Game.tile++;
+				if(Game.score==0){
+					Game.startTime = new Date().getTime();
+					Game.score=3800;
+				}
+				else{
+					Game.score+=10;
+				}
+			}
+			if(Game.mode==1||Game.mode==2||Game.mode==5){
+				if(Game.pos==0){
+					Game.startTime = new Date().getTime();
+					Game.pos+=40;
+				}
+				else{
+					Game.pos+=160;
+				}
+				Game.tile++;
+				if(Game.mode==1&&Game.tile==50)Game.over();
+				if(Game.mode==2)Game.score++;
+				if(Game.mode==5){
+					Game.score++;
+					if(Game.score%50==0)Game.startTime=new Date().getTime();					
+				}
+			}
+		}
+		else{
+			if(Game.mode==1||Game.mode==2||Game.mode==5)Game.isDie=true;
+			Game.over();
+		}
+	}
+	,	
+	move:function(z){
+
+	}
+	,
+	mouseX:0,
+	mouseY:0,
+	moveX:0,
+	moveY:0,
+	touchDown:function(x,y){
+		Game.mouseX = x;
+		Game.mouseY = y;
+		if(Game.status=="start"){Game.hit(x,y);return;}
+		if(Game.status=="menu"){
+			if(x>320&&y<213){
+				Game.mode=3;
+				Game.start();
+			}
+			if(x<320&&y<213){
+				Game.mode=1;
+				Game.start();
+			}
+			if(x<320&&y>213&&y<427){
+				Game.mode=2;
+				Game.start();
+			}
+			if(x>320&&y>213&&y<427){
+				Game.mode=4;
+				Game.start();
+			}
+			if(x<320&&y>427){
+				Game.mode=5;
+				Game.start();
+			}
+			if(x>320&&y>427){
+				Game.rank();
+			}
+			return;
+		}
+		if(Game.status=="over"){
+			if(x>320&&x<550&&y>520&&y<620){Game.start();return;}
+			if(x>80&&x<320&&y>520&&y<620){Game.menu();return;}
+			if(Game.isNewRecord&&x>410&&x<600&&y>385&&y<444){Game.submit();}
+			return;
+		}
+		
+		if(Game.status=="ranking"){
+			if(x<320&&y>550){Game.menu();}
+			if(x>320&&y>550){Game.start();}
+		}		
+	}
+	,
+	touchMove:function(x,y){
+	}
+	,
+	touchUp:function(x,y){
+
+	}
+	,
+	getUrl:function(url,callback){
+		var xmlHttp = false;  
+		try {  
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP"); // ie msxml3.0+（IE7.0及以上）  
+		} catch (e) {  
+			try {  
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); //ie msxml2.6（IE5/6）  
+			} catch (e2) {  
+				xmlHttp = false;  
+			}  
+		}  
+		if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {// Firefox, Opera 8.0+, Safari  
+			xmlHttp = new XMLHttpRequest();  
+		}  
+		if(!callback){
+			xmlHttp.open("GET",url,false);
+			xmlHttp.send();
+			return xmlHttp.responseText;
+		}
+		else{
+			xmlHttp.open("GET",url,true);
+			xmlHttp.onreadystatechange=function(){
+				if (xmlHttp.readyState==4 && xmlHttp.status==200){
+					callback(xmlHttp.responseText);
+				}
+			}
+			xmlHttp.send();
+		}
+	}
+	,
+	request:function(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+
+}
+
+var imgs=new Array();
+function $(s){return document.getElementById(s);}
+Game.init();
+
+$("Canvas").addEventListener('touchstart', function(event) {
+	event.preventDefault();// 阻止浏览器默认事件，重要
+	var touch = event.targetTouches[0];
+	var x = (touch.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (touch.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchDown(x,y);
+}, false);    
+
+
+Game.submit = function(){
+	if($("Nickname").value==""){
+		alert("您还没填写您的姓名");
+		return;
+	}
+	
+	if(!confirm("确定提交新纪录到全球排行榜？"))return;
+	
+	Game.nickname = $("Nickname").value;
+	localStorage.setItem("Game2048Nickname",Game.nickname);
+	$("Nickname").style.display="none";
+	
+	var score=0;
+	var orderscore=0;
+	if(Game.mode==1){
+		score = Game.getSecondString(Game.best1);
+		orderscore = 1000000-Game.best1;
+	}
+	if(Game.mode==2){
+		score = Game.best2;
+		orderscore = Game.best2;
+	}
+	if(Game.mode==3){
+		score = Game.best3;
+		orderscore = Game.best3;
+	}
+	if(Game.mode==4){
+		score = Game.getSecondString(Game.best4).replace("\"","/s");
+		orderscore = Game.best4;
+	}
+	if(Game.mode==5){
+		score = Game.best5;
+		orderscore = Game.best5;
+	}
+	Game.status="menu";
+	GameMenu.newRecord(Game.nickname,"bcbker" + Game.mode,score,orderscore);
+}
+
+		var mebtnopenurl = 'http://wx.jyc.17188.com/index.html';
+		
+		window.shareData = {
+		        "imgUrl": "http://game.9g.com/bcbker/icon.png",
+		        "timeLineLink": "http://" + domain + "/h5/bcbk/kuai.html",
+		        "tTitle": "别踩白块儿",
+		        "tContent": "非常接地气的超变态小游戏，尼玛还不快来挑战，不是谁都能玩得很好噢。"
+		};
+		
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle + " - " + window.shareData.tContent
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        });
+		    });
+		}, false);
+
+</script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</html>

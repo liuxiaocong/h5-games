@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no"/>
+    <title>步步惊心</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="320" height="480"></canvas>
+<script>
+  (function () {
+    function onBridgeReady() {
+      var onShare = function(action) {
+        var title = _.sprintf(
+            "我用%d步解开了迷局，被皇上赐封为【%s】，你的官职是什么？",
+            wx.chess.lastScore, wx.chess.getTitle()
+        );
+        if (wx.chess.lastScore == 0 || wx.chess.shareType == "help") {
+            title = "我在玩步步惊心的时候被难住了...求安抚！求帮助！";
+        }
+        WeixinJSBridge.invoke(action, {
+          "appid": "",
+          "img_url": "http://wx.jyc.17188.com/tupian/bbjx.jpg",
+          "img_width": "200",
+          "img_height": "200",
+          "link": "http://wx.jyc.17188.com/h5/bbjx/bbjx.html?u="+ Math.floor(Math.random()*10000000),
+          "desc": "集游策·脑残游戏《步步惊心》，等你来战！",
+          "title": title
+        }, function(res) {
+         onShareComplete(res)
+        });
+      };
+      WeixinJSBridge.on('menu:share:timeline', function() {
+        onShare("shareTimeline");
+      });
+      WeixinJSBridge.on('menu:share:appmessage', function() {
+        onShare('sendAppMessage');
+      });
+      WeixinJSBridge.call('showOptionMenu');
+    }
+function onShareComplete(res) {
+		        	document.location.href = "http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd";
+                }
+    //显示右边上方的分享按钮
+    var d = document;
+    if (d.addEventListener) {
+      d.addEventListener('WeixinJSBridgeReady', onBridgeReady);
+    } else if (d.attachEvent) {
+      d.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+      d.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+  })();
+</script>
+<script>
+    var wx = {}, cc = {};
+    wx.production = true;
+    cc.OrbitCamera = cc.CatmullRomBy = cc.CatmullRomTo = cc.CardinalSplineBy = cc.CardinalSplineTo = {};
+</script>
+<script src="js/cocos2d-html5-v3.0-rc1-core-min.js"></script>
+<script src="js/game.min.js?ts=201408061710"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+
+
+</body>
+</html>

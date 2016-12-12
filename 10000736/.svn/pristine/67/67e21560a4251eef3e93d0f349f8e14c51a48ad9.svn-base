@@ -1,0 +1,197 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>送女生过河</title>
+<meta name="viewport" content="width=device-width,maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+<link type="text/css" rel="stylesheet" href="http://wx.jyc.17188.com/h5/xxsl/style.css">
+<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/xxsl/js/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+<script src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js"></script>
+</head>
+<body>
+<div id="game">
+	<div class="land L">
+		<div class="line_boy p1"></div>
+		<div class="line_boy p2"></div>
+		<div class="line_boy p3"></div>
+		<div class="line_girl p1"></div>
+		<div class="line_girl p2"></div>
+		<div class="line_girl p3"></div>
+	</div>
+	<div class="land R">
+		<div class="line_boy p1"></div>
+		<div class="line_boy p2"></div>
+		<div class="line_boy p3"></div>
+		<div class="line_girl p1"></div>
+		<div class="line_girl p2"></div>
+		<div class="line_girl p3"></div>
+	</div>
+
+	<div class="land R">
+		<div class="line_boy p1"></div>
+		<div class="line_boy p2"></div>
+		<div class="line_boy p3"></div>
+		<div class="line_girl p1"></div>
+		<div class="line_girl p2"></div>
+		<div class="line_girl p3"></div>
+	</div>
+
+	<div class="land R">
+		<div class="line_boy p1"></div>
+		<div class="line_boy p2"></div>
+		<div class="line_boy p3"></div>
+		<div class="line_girl p1"></div>
+		<div class="line_girl p2"></div>
+		<div class="line_girl p3"></div>
+	</div>
+
+	<div class="boat">
+		<!-- <div class="boat_bg"></div> -->
+		<div class="boat_bg_1"></div>
+		<div class="boat_bg_2"></div>
+		<div class="boat_bg_3"></div>
+		<div class="seat p1"></div>
+		<div class="seat p2"></div>
+	</div>
+
+	<button class="start"></button>
+	<button class="more"></button>
+	<button class="go"></button>
+	<button class="reload"></button>
+	<button class="help"></button>
+	<button class="xuanyao"></button>
+
+	<div class="mask"></div>
+
+	<div class="failure"><img src="http://wx.jyc.17188.com/h5/xxsl/img/end1.png" /></div>
+	<div class="success"><img src="http://wx.jyc.17188.com/h5/xxsl/img/end3.png" /></div>
+	<div class="time"></div>
+	<div class="result"></div>
+	<div class="welcome">三个小女生和三个怪蜀黍要过河。船上最多只能坐两人，开船需要有人。如果男生数大于女生，会发生XXOO事件……请点击“开始游戏”计时</div>
+
+</div>
+<p>
+	
+</p>
+<script src="game.js"></script>
+
+<script language="javascript">
+
+var mebtnopenurl = 'http://wx.jyc.17188.com/h5/xxsl/xxsl.html';
+window.shareData = {
+		"imgUrl": "http://wx.jyc.17188.com/h5/xxsl/icon.png",
+		"timeLineLink": "http://" + domain + "/h5/xxsl/xxsl.html?from=share",
+		"tTitle": "送女生过河",
+		"tContent": "小女生和怪蜀黍一起出游发生的事情"
+};
+
+
+var helpCount=0;
+
+// 成功事件
+function successHandler(m,t){
+	// 这个页面弹窗去掉了
+	// if(confirm("不错哦！你只用"+(t/1000)+"秒完成了！这可是高智商的难题哦？只有1%的能做出来呢！要不要分享到朋友圈炫耀一下：）")){
+	// 	dp_share(t);
+	// }
+	helpCount = 0;
+	$("#share img").attr("src", "http://t2.qpic.cn/mblogpic/344d2d5516d8e206ea98/2000");
+	document.title = t/1000+"秒！《送女生过河》我刚通过了！你敢不敢和我比一下？";
+	window.shareData.tTitle = document.title;
+}
+
+// 失败事件
+function failHandler(t) {
+	helpCount++;
+	if(helpCount>2){
+		if(confirm("")){
+			location.href = mebtnopenurl;
+		}
+		helpCount = 0;
+	}
+}
+
+// 求助事件
+function helpHandler(t) {
+	if (confirm("是否转发给朋友，让朋友一起帮你解决这个难题？")) {
+		dp_shareHelp(t);
+	}
+}
+
+// 炫耀事件
+function xuanyaoHandler(t) {
+	dp_share(t);
+}
+
+// 更多游戏
+function moreHandler() {
+	window.location.href = "http://wx.jyc.17188.com/index.html?from=xxsl";
+}
+
+function dp_shareHelp(t){
+	$("#share img").attr("src", "http://game.9g.com/share.png");
+	document.title = "我花了" + t/1000 + "秒！《送女生过河》还没解开！快来帮帮我吧！";
+	document.getElementById("share").style.display="";
+	window.shareData.tTitle = document.title;
+}
+
+function dp_share(t){
+	$("#share img").attr("src", "http://t2.qpic.cn/mblogpic/344d2d5516d8e206ea98/2000");
+	document.title = t/1000+"秒！《送女生过河》我刚通过了！你敢不敢和我比一下？";
+	document.getElementById("share").style.display="";
+	window.shareData.tTitle = document.title;
+}
+function dp_Ranking(){
+	//alert("到更多");
+	window.location = "http://wx.jyc.17188.com/index.html?from=xxsl";
+}
+
+function showAd(){
+}
+function hideAd(){
+}
+
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	
+	WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		WeixinJSBridge.invoke('sendAppMessage', {
+			"img_url": window.shareData.imgUrl,
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function(res) {
+			document.location.href = mebtnopenurl;
+		})
+	});
+
+	WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle + " - " + window.shareData.tContent
+		}, function(res) {
+			document.location.href = mebtnopenurl;
+		});
+	});
+}, false);
+
+</script>
+<div align="center" style="font-size:1.2em;">
+	<br/<br/>
+	<!--
+	<a align="center" style="color:blue" href="http://wx.jyc.17188.com/index.html?from=xxsl">更多游戏</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	-->
+	<a align="center" style="color:blue" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a>
+	<br/><br/>
+</div>
+<div id=share style="display:none">
+<img  width=100% src="http://t2.qpic.cn/mblogpic/344d2d5516d8e206ea98/2000"  style="position:absolute;top:0;left:0;z-index:10000;display:" onclick="document.getElementById('share').style.display='none';">
+</div>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+		
+</body>
+</html>

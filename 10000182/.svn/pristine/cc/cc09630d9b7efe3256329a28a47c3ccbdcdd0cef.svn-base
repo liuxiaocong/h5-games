@@ -1,0 +1,32 @@
+﻿CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+CarrotCrave_files/index.js
+CarrotCrave_files/index.min.js
+CarrotCrave_files/loadingscreen.png
+CarrotCrave_files/tph_djs.js
+CarrotCrave_files/tph_djs.min.js
+html5game/index_texture_0.png
+html5game/loadingscreen.png
+html5game/particles/IDR_GIF10.png
+html5game/particles/IDR_GIF11.png
+html5game/particles/IDR_GIF12.png
+html5game/particles/IDR_GIF13.png
+html5game/particles/IDR_GIF14.png
+html5game/particles/IDR_GIF15.png
+html5game/particles/IDR_GIF2.png
+html5game/particles/IDR_GIF3.png
+html5game/particles/IDR_GIF4.png
+html5game/particles/IDR_GIF5.png
+html5game/particles/IDR_GIF6.png
+html5game/particles/IDR_GIF7.png
+html5game/particles/IDR_GIF8.png
+html5game/particles/IDR_GIF9.png
+index.html
+manifest.mf
+
+
+NETWORK:
+*

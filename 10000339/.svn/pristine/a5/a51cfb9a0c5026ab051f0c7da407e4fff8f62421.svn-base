@@ -1,0 +1,54 @@
+{ "height":8,
+ "layers":[
+        {
+         "data":[7, 7, 7, 7, 7, 7, 7, 7, 7, 9, 1, 1, 1, 1, 1, 7, 7, 1, 1, 1, 11, 1, 1, 7, 7, 1, 1, 10, 7, 3, 2, 7, 7, 1, 8, 1, 1, 1, 1, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
+         "height":8,
+         "name":"tiles",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":8,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "tileheight":81,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"..\/image\/editor_regular_tileset.png",
+         "imageheight":81,
+         "imagewidth":567,
+         "margin":0,
+         "name":"editor_regular_tileset",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":81,
+         "tilewidth":81
+        }, 
+        {
+         "firstgid":8,
+         "image":"..\/image\/editor_goal_tileset.png",
+         "imageheight":81,
+         "imagewidth":486,
+         "margin":0,
+         "name":"editor_goal_tileset",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":81,
+         "tilewidth":81
+        }],
+ "tilewidth":81,
+ "version":1,
+ "width":8
+}

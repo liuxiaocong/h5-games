@@ -1,0 +1,14 @@
+{
+	"missiles": [
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0,
+			"screenSide": "right",
+			"position": -700,
+			"delay": 0.0
+		}
+	], 
+
+	"timeLength": 2.5
+}

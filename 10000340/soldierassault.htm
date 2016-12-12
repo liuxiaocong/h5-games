@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>小小战士突击</title>
+    <meta name="viewport" content="user-scalable=no" />
+    <meta charset="utf-8" />
+    <meta property="og:title" content="Soldier Assault">
+    <meta property="game:id" content="576742227280291429">
+    <meta property="game:gid" content="157285">
+    <meta property="game:lid" content="1707">
+    <meta name="author" content="longames" />
+
+</head>
+
+<body style="background-color:#000000;position: relative;">
+    <canvas id="gameCanvas" width="640" height="960" style="position: absolute;z-index: 1"></canvas>
+    <script src="App-html5.js"></script>
+    <script type="text/javascript" src="PkApi.js"></script>
+    <script type="text/javascript" src="WeixinApi.js"></script>
+    <script type="text/javascript" src="pkGame.js"></script>
+
+    <script type="text/javascript">
+    //PK:
+    function updateShareScore(bestScore) {
+        var sd = '快来玩，老子的分数是:'+bestScore +'!';
+        var d = '快来玩，老子的分数是:'+bestScore +'! 已经远远超越你们了吧!';
+        pkGame.updateResult(bestScore, bestScore, d, sd);
+    }
+
+    pkGame.ready(function() {
+        pkGame.gameInfo.title = "小小战士突击";
+        pkGame.gameInfo.imgUrl = 'http://pkleyou.com/logo.png';
+        pkGame.gameInfo.link = 'http://www.pkleyou.com';
+        pkGame.gameInfo.desc = '哈哈，我在玩<<小小战士突击>>';
+        pkGame.gameInfo.result_desc = '哈哈，我在玩<<小小战士突击>>';
+        pkGame.gameInfo.result_short_desc = '哈哈，我在玩<<小小战士突击>>';
+    })
+    </script>
+
+</body>
+
+</html>

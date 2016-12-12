@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="jelly_splash.png">
+	<!-- Created with Adobe Flash CS6 version 12.0.0.481 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="jelly_splash0000" x="0" y="0" width="152" height="176" frameX="-65" frameY="-29" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0001" x="152" y="0" width="203" height="186" frameX="-45" frameY="-16" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0002" x="355" y="0" width="251" height="188" frameX="-25" frameY="0" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0003" x="606" y="0" width="265" height="176" frameX="-23" frameY="-13" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0004" x="0" y="188" width="275" height="190" frameX="-14" frameY="-14" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0005" x="275" y="188" width="284" height="181" frameX="-6" frameY="-28" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0006" x="559" y="188" width="288" height="177" frameX="-4" frameY="-34" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0007" x="0" y="378" width="296" height="145" frameX="0" frameY="-64" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0008" x="296" y="378" width="294" height="132" frameX="-1" frameY="-76" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0009" x="590" y="378" width="278" height="127" frameX="-9" frameY="-81" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0010" x="0" y="523" width="267" height="81" frameX="-16" frameY="-127" frameWidth="296" frameHeight="211"/>
+	<SubTexture name="jelly_splash0011" x="267" y="523" width="259" height="7" frameX="-21" frameY="-189" frameWidth="296" frameHeight="211"/>
+</TextureAtlas>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <title>看看你有多老</title>
+    <script type="text/javascript" src="js/cocos2d-3.0rc1.canvas.v2.min.js"></script>
+    <script type="text/javascript" src="js/PkApi.js"></script>
+    <script type="text/javascript" src="js/WeixinApi.js"></script>
+    <script type="text/javascript" src="js/pkGame.js"></script>
+
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="480" height="800" style="background:#fff"></canvas>
+
+    <script type="text/javascript">
+    window.onload = function() {
+        cc.game.onStart = function() {
+            cc.view.enableAutoFullScreen(false);
+            cc.view.setDesignResolutionSize(720, 1280, cc.ResolutionPolicy.SHOW_ALL);
+            cc.view.resizeWithBrowserSize(true);
+            cc.director.setDisplayStats(cc.game.config.showFPS);
+            //load resources
+            cc._loaderImage = "";
+            cc.LoaderScene.preload([], function() {
+                cc.director.runScene(new HelloWorldScene());
+            }, this);
+        };
+        cc.game.run("gameCanvas");
+    };
+    </script>
+
+    <script type="text/javascript">
+    //PK:
+    function updateShareScore(bestScore) {
+        var text = '';
+        if (bestScore < 1) {
+            text = '对你无语了，脑残片要按时吃，别过量，这样才能萌萌哒！';
+        } else if (bestScore < 2) {
+            text = 'ORZ……你就算有年轻的身体，也是一颗苍老的心，大脑年龄为90岁！';
+        } else if (bestScore < 3) {
+            text = '亲，你的大脑已经不年轻了，大概有70岁吧！';
+        } else if (bestScore < 4) {
+            text = '亲还不错，大脑年龄50岁左右吧！';
+        } else if (bestScore < 5) {
+            text = '你觉得自己年轻吗？要不要和别人比比？';
+        } else if (bestScore < 6) {
+            text = '妈妈说只有年轻人才能记住这些，还有谁要挑战一下？';
+        } else if (bestScore < 7) {
+            text = '记忆力超群有木有？谁来挑战谁知道！';
+        } else if (bestScore < 8) {
+            text = '好吧，这么厉害你是不是作弊了！';
+        } else {
+            text = '你就是神~偶崇拜你~分享出去让别人羡慕吧！';
+        }
+
+        pkGame.updateResult(null, null, text, text);
+    }
+
+    pkGame.ready(function() {
+        pkGame.gameInfo.title = "看看你有多老";
+        pkGame.gameInfo.imgUrl = 'http://pkleyou.com/logo.png';
+        pkGame.gameInfo.link = 'http://www.pkleyou.com';
+        pkGame.gameInfo.desc = '哈哈，我在玩<<看看你有多老>>';
+        pkGame.gameInfo.result_desc = '哈哈，我在玩<<看看你有多老>>';
+        pkGame.gameInfo.result_short_desc = '哈哈，我在玩<<看看你有多老>>';
+    })
+    </script>
+
+</body>
+
+</html>

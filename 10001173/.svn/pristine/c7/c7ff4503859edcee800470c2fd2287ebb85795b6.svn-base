@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en" manifest="manifest.mf">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="恶魔城堡">
+
+<title>恶魔城堡</title>   
+	<style>
+		html, body {
+			background: #000;
+			margin: 0;
+		}
+	</style>
+<script type="text/javascript"></script>
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+        function updateShareScore(bestScore) {
+            var d = '险中求胜到' + bestScore + '关，观望四周求挑战 ！';
+            pkGame.updateResult(bestScore, bestScore, d, d);
+        }
+
+        pkGame.ready(function() {
+
+        });
+    </script>
+	</head>
+<body>
+ 
+<script type="text/javascript">
+
+</script>
+
+<script type="text/javascript" src="./Defense_files/gamecore.min.js"></script>
+	
+<canvas width="320" height="480" style="position: absolute; -webkit-transform-origin-x: 0px; -webkit-transform-origin-y: 0px; -webkit-transform: scale(2.3875); left: 418px; top: 0px; "></canvas></body></html>

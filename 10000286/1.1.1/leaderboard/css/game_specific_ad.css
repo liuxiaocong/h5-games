@@ -1,0 +1,219 @@
+#social_leaderboard
+{
+	width: 960px;
+	height: 536px;
+	font-family: 'Lucidia Console';
+	background-image: url('../images/leaderboard_background.jpg');
+}
+
+#social_leaderboard_relative_container
+{
+	width: 960px;
+	height: 536px;
+}
+
+a#tgslb_close_button
+{
+	width: 239px;
+	height: 64px;
+	bottom: 10px;
+	right: 120px;
+	background-image: url('../images/leaderboard_playagain_button.png');
+}
+
+a#tgslb_action_button1
+{
+	width: 128px;
+	height: 64px;
+	bottom: 10px;
+	right: 479px;
+	background-image: url('../images/leaderboard_twitter_button.png');
+}
+
+a#tgslb_action_button2
+{
+	width: 128px;
+	height: 64px;
+	bottom: 10px;
+	right: 352px;
+	background-image: url('../images/leaderboard_facebook_button.png');
+}
+
+#tgslb_ad
+{
+    width: 300px;
+    height: 250px;
+    top: 189px;
+    right: 107px;
+}
+
+a#tgslb_no_ad
+{
+    width: 415px;
+    height: 300px;
+    bottom: 72px;
+    right: 38px;
+    background-image: url('../images/leaderboard_no_ad.png');
+}
+
+#tgslb_rank_container
+{
+	width: 440px;
+	height: 56px;
+	top: 102px;
+	right: 35px;
+	background: transparent url('../images/leaderboard_user_score.png') no-repeat left center;
+}
+
+#tgslb_rank_relative_container
+{
+	width: 425px;
+	height: 56px;
+}
+
+#tgslb_rank_title
+{
+	display: none;
+    -webkit-text-size-adjust: auto;
+}
+
+#tgslb_rank_value
+{
+	width: 82px;
+	height: 56px;
+	line-height: 56px;
+	left: 25px;
+	font-size: 52px;
+	text-align: center;
+	color: #6c3320;
+    -webkit-text-size-adjust: auto;
+}
+
+#tgslb_rank_value span
+{
+	display: inline-block;
+	vertical-align: top;
+    -webkit-text-size-adjust: auto;
+}
+
+img#tgslb_rank_image
+{
+	width: 52px;
+	height: 52px;
+	top: 2px;
+	left: 109px;
+	background: #d5c7aa;
+}
+
+#tgslb_rank_name
+{
+	left: 167px;
+	font-size: 23px;
+	font-weight: bold;
+	color: #6c3320;
+    -webkit-text-size-adjust: auto;
+}
+
+#tgslb_rank_score
+{
+	top: 21px;
+	left: 167px;
+	font-size: 30px;
+	font-weight: bold;
+    -webkit-text-size-adjust: auto;
+	color: #579a97;
+}
+
+#tgslb_leaderboard_container
+{
+	width: 440px;
+	height: 360px;
+	top: 104px;
+	left: 37px;
+}
+
+#tgslb_leaderboard_relative_container
+{
+	width: 440px;
+	height: 360px;
+}
+
+#tgslb_leaderboard_title
+{
+	display: none;
+}
+
+#tgslb_leaderboard_scroll_container
+{
+	width: 440px;
+	height: 360px;
+}
+
+table#tgslb_leaderboard td
+{
+	height: 56px;
+	padding: 2px 0;
+}
+
+table#tgslb_leaderboard td.tgslb_leaderboard_selected_row
+{
+	background: transparent url('../images/leaderboard_user_score.png') no-repeat left center;
+}
+
+.tgslb_leaderboard_row_relative_container
+{
+	height: 56px;
+}
+
+.tgslb_leaderboard_row_position
+{
+	width: 82px;
+	height: 56px;
+	line-height: 56px;
+	left: 25px;
+	font-size: 52px;
+	text-align: center;
+	color: #6c3320;
+    -webkit-text-size-adjust: auto;
+}
+
+.tgslb_leaderboard_row_position span
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+img.tgslb_leaderboard_row_image
+{
+	width: 52px;
+	height: 52px;
+	top: 2px;
+	left: 109px;
+	background: #d5c7aa;
+}
+
+.tgslb_leaderboard_row_name
+{
+	left: 167px;
+	font-size: 23px;
+	font-weight: bold;
+	color: #6c3320;
+    -webkit-text-size-adjust: auto;
+}
+
+.tgslb_leaderboard_row_score
+{
+	top: 21px;
+	left: 167px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #579a97;
+    -webkit-text-size-adjust: auto;
+}
+
+.tgslb_leaderboard_row_border
+{
+	width: 100%;
+	top: 57px;
+	border-bottom: 2px solid #f1ebdd;
+}

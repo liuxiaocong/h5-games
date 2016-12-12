@@ -1,0 +1,113 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>哥，挺住18秒！</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+		html,body{width:100%;height:100%;overflow:hidden;}
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+	<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/gtz18m/js/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</head>
+
+<body style="padding:0; margin: 0;background: #000 url(res/load.gif)  center no-repeat;position: relative">
+
+<canvas id="gameCanvas" width="640" height="1009"  ></canvas>
+<script type="text/javascript">
+  
+<div id="foot_ad"  align="center" class="ad_banner" style="display:none;position:absolute; bottom:20;text-align:center;width:100%">
+	<a align="center" style="text-decoration:underline;color:white;font-size:16;" href="javascript:location.href=game_49_01_url"><script>document.write(game_49_01_txt);</script></a>
+</div>
+
+<script src="js/cocos2d-html5.js"></script>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+<script language="JavaScript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideToolbar');
+    });
+
+</script>
+    <span style="display:none;">
+
+<script type="text/javascript" src="js/device.js"></script>
+
+<script type="text/javascript">
+    if(IsPC()){
+       //document.body.innerHTML = "";
+    }
+
+    //imgUrl:分享出去图片
+    //lineLink:分享出去的地址
+    //descContent：分享出去的内容；
+    //shareTitle：分享出去的标题
+    function getAbsolutePath(relativePath) {
+        var img=new Image();
+        img.src=relativePath;
+        var absolute=img.src;
+        return absolute;
+    }
+    var shareImg='http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG8cvbsSJCZIJDq9H9UYW7GczPIjRs7PZOhXcggSS5iauXdOmdUPXtvJYoE1UcEwnApVlrkopLob86Q/640';
+    var lineLink = "http://wx.jyc.17188.com/h5/gtz18m/bptz.html?v=" + Math.floor(Math.random()*10000000);
+    var shareTitle = '哥，挺住18秒！躲开条子。';
+    var shareCallback = "http://wx.jyc.17188.com/index.html?from=bptz";
+
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url":  "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG8cvbsSJCZIJDq9H9UYW7GczPIjRs7PZOhXcggSS5iauXdOmdUPXtvJYoE1UcEwnApVlrkopLob86Q/640",
+                "link":lineLink,
+                "desc":ShareWords,
+                "content":ShareWords,
+                "url":lineLink,
+                "title":shareTitle
+            }, function (res) {
+                document.location.href = aboutus;
+            })
+        });
+
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG8cvbsSJCZIJDq9H9UYW7GczPIjRs7PZOhXcggSS5iauXdOmdUPXtvJYoE1UcEwnApVlrkopLob86Q/640",
+                "link":lineLink,
+                "desc":ShareWords,
+                "content":ShareWords,
+                "url":lineLink,
+                "title":ShareWords
+            }, function (res) {
+                document.location.href = aboutus;
+            });
+        });
+
+
+        WeixinJSBridge.on('menu:share:weibo', function (argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "img_url": "http://wx.jyc.17188.com/tupian/gtz18micon.png",
+                "link":lineLink,
+                "desc":ShareWords,
+                "content":ShareWords,
+                "url":lineLink,
+                "title":shareTitle
+            }, function (res) {
+                document.location.href = aboutus;
+            });
+        });
+
+    }, false);
+
+</script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

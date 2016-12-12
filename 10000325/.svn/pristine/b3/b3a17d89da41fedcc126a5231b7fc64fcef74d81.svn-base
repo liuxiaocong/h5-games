@@ -1,0 +1,42 @@
+{
+  "player": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 6,
+    "tilew": 50,
+    "tileh": 100,
+    "frames": 6
+  },
+  "player_with_gun": {
+    "sx": 0,
+    "sy": 100,
+    "cols": 4,
+    "tilew": 50,
+    "tileh": 100,
+    "frames": 4
+  },
+  "zombie_player": {
+    "sx": 0,
+    "sy": 200,
+    "cols": 6,
+    "tilew": 50,
+    "tileh": 100,
+    "frames": 6
+  },
+  "human": {
+    "sx": 0,
+    "sy": 300,
+    "cols": 7,
+    "tilew": 50,
+    "tileh": 100,
+    "frames": 7
+  },
+  "zombie": {
+    "sx": 0,
+    "sy": 400,
+    "cols": 8,
+    "tilew": 50,
+    "tileh": 100,
+    "frames": 24
+  }
+}

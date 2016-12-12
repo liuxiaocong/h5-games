@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache" /> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate" /> 
+<meta HTTP-EQUIV="expires" CONTENT="0" />
+<title>9G游戏</title>
+<meta name="keywords" content="" />
+<meta name="description" content="9G游戏频道为您提供。" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"/>
+</head>
+<body>
+正在努力加载..
+<div style="display:none">
+<script type="text/javascript">
+function gogame9g(){
+	window.location="http://game.9g.com/index.html?f=added";
+}
+window.setTimeout("gogame9g()",100);
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>

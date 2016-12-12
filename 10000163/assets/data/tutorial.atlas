@@ -1,0 +1,39 @@
+tutorial.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+tap
+  rotate: false
+  xy: 2, 675
+  size: 335, 317
+  orig: 335, 317
+  offset: 0, 0
+  index: -1
+pointer
+  rotate: false
+  xy: 339, 675
+  size: 100, 108
+  orig: 100, 108
+  offset: 0, 0
+  index: -1
+finger
+  rotate: false
+  xy: 2, 2
+  size: 364, 671
+  orig: 364, 671
+  offset: 0, 0
+  index: -1
+arrow_normal
+  rotate: false
+  xy: 339, 785
+  size: 81, 64
+  orig: 81, 64
+  offset: 0, 0
+  index: -1
+arrow_rotated
+  rotate: false
+  xy: 339, 851
+  size: 78, 65
+  orig: 78, 65
+  offset: 0, 0
+  index: -1

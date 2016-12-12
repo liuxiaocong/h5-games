@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no"/>
+    <title>好色比拼-集游策游戏</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="320" height="480"></canvas>
+<script>
+  (function () {
+    function onBridgeReady() {
+      var onShare = function(action) {
+		var tmpl = "好色大比拼-想色就动手";
+		if(parseInt(wx.color.lastScore)>0){
+			tmpl = "我在好色比拼中，好色程度竟高达" + wx.color.lastScore + "%！介个feel倍儿爽，求超越！";
+		}
+        WeixinJSBridge.invoke(action, {
+          "appid": "",
+          "img_url": "http://wx.jyc.17188.com/tupian/8-140PGR24b50.png",
+          "img_width": "200",
+          "img_height": "200",
+          "link": "http://wx.jyc.17188.com/h5/hsbp/game2.html",
+          "desc": "集游策游戏《好色比拼》，等你来战！",
+          "title": tmpl
+        }, function(res) {onShareComplete(res);
+        });
+      };
+      WeixinJSBridge.on('menu:share:timeline', function() {
+        onShare("shareTimeline");
+      });
+      WeixinJSBridge.on('menu:share:appmessage', function() {
+        onShare('sendAppMessage');
+      });
+      WeixinJSBridge.call('showOptionMenu');
+    }
+
+    //显示右边上方的分享按钮
+    var d = document;
+    if (d.addEventListener) {
+      d.addEventListener('WeixinJSBridgeReady', onBridgeReady);
+    } else if (d.attachEvent) {
+      d.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+      d.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+  })();
+</script>
+<script type="text/javascript">
+			function onShareComplete(res) {
+		        	document.location.href = "http://wx.jyc.17188.com/h5/hsbp/game2.html";
+      }
+</script>
+<script>
+    var wx = {}, cc = {};
+    wx.production = true;
+    cc.OrbitCamera = cc.CatmullRomBy = cc.CatmullRomTo = cc.CardinalSplineBy = cc.CardinalSplineTo = {};
+</script>
+<script src="cocos2d-html5-v3.0-rc1-core-min.js"></script>
+<script src="game.min.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : "  http://");document.write(unescape("%3Cspan 
+id='cnzz_stat_icon_30098529'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol  + "w.cnzz.com/c.php%3Fid%3D30098529' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : "  http://");document.write(unescape("%3Cscript src='" + 
+_bdhmProtocol + "hm.baidu.com/h.js %3F2330ee0a702a2807b28bfe00eaeb5bbf' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+
+</body>
+</html>

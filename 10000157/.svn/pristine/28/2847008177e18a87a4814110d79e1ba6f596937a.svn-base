@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="SG-game-show" >
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">		
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="robots" content="index,follow"> 
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="description" content="猫咪的记忆!">		
+<title>猫咪的记忆</title>		
+<link href="./CuteKittyMatchup_files/spilgames.css" media="screen" rel="stylesheet" type="text/css">				
+<link href="./CuteKittyMatchup_files/core.css" media="all" rel="stylesheet" type="text/css">
+<link href="./CuteKittyMatchup_files/style.css" media="all" rel="stylesheet" type="text/css">		
+<meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=1.0">
+
+</head>
+
+<body class="game-show" style="height: 100%; font-size: 1.31em; ">
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '我已经达到' + bestScore + '关啦 ！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+<!-- style="background:none;background-color:transparent; width:100%;" -->
+
+<script type="text/javascript" src="./CuteKittyMatchup_files/gamecore.min.js"></script>
+
+<script id="loaderHtml" type="text/html">
+            <span id="loader">
+                Loading...<br />
+                <span id="percent">0</span>%
+            </span>
+        </script><script id="titleScreenHtml" type="text/html">
+            <img class="background" src="assets/titlebg.png" />
+			
+            <img class="title" src="assets/title.png" />
+            <img class="cat" src="assets/cat.png" />
+            <img class="playButton" src="assets/play.png" />
+            <img class="instructions" src="assets/instructions1.png" />
+           <img class="titlemusic" src="assets/music.png" />
+
+            
+        </script><script id="instructionScreenHtml" type="text/html">
+            <img class="background" src="assets/titlebg.png" />
+            <img class="instrbox" src="assets/instrbox.png" />
+            <img class="instrText" src="assets/instrtext.png" />
+            <img class="instrPlay" src="assets/play.png" />
+            <img class="instrMainmenu" src="assets/mainmenu.png" />
+            <div id="instructionText"> 
+                <p>
+                    Get ready to play with cute kitties. Click on a tile to reveal a picture and try to find it's match, but you can only flip 2 pictures at a time. Find all the matching pairs to  clear a level by remembering their positions. Finish the level before the score reaches zero. Meow!
+                </p>
+                
+                
+                <div>
+        </script><script id="testScreenHtml" type="text/html">
+            <img class="background" src="assets/titlebg.png" />
+            <img class="scorebox" src="assets/scorebox.png" />
+            <img class="levelbox" src="assets/levelbox.png" />
+            <div id="level"></div>
+            <img class="music" src="assets/music.png" />
+            <img class="pause" src="assets/pause.png" />
+            <div id="score"></div>
+            
+            <div id="positions">
+                <img id="pos1" class="pos" src="assets/empty.png" />
+                <img id="pos2" class="pos" src="assets/empty.png" />
+                <img id="pos3" class="pos" src="assets/empty.png"  />
+                <img id="pos4" class="pos" src="assets/empty.png"  />
+                <img id="pos5" class="pos" src="assets/empty.png"  />
+                <img id="pos6" class="pos" src="assets/empty.png" />
+                <img id="pos7" class="pos" src="assets/empty.png" />
+                <img id="pos8" class="pos" src="assets/empty.png"  />
+                <img id="pos9" class="pos" src="assets/empty.png"  />
+                <img id="pos10" class="pos" src="assets/empty.png"  />
+                <img id="pos11" class="pos" src="assets/empty.png" />
+                <img id="pos12" class="pos" src="assets/empty.png" />
+                <img id="pos13" class="pos" src="assets/empty.png"  />
+                <img id="pos14" class="pos" src="assets/empty.png"  />
+                <img id="pos15" class="pos" src="assets/empty.png"  />
+                <img id="pos16" class="pos" src="assets/empty.png" />
+                <img id="pos17" class="pos" src="assets/empty.png" />
+                <img id="pos18" class="pos" src="assets/empty.png"  />
+                <img id="pos19" class="pos" src="assets/empty.png"  />
+                <img id="pos20" class="pos" src="assets/empty.png"  />
+             </div>
+             <div id="masks">
+                 <img id="mask1" class="mask" src="assets/mask.png"   />
+                <img id="mask2" class="mask" src="assets/mask.png"    />
+                <img id="mask3" class="mask" src="assets/mask.png"    />
+                <img id="mask4" class="mask" src="assets/mask.png"    />
+                <img id="mask5" class="mask" src="assets/mask.png"    />
+                 <img id="mask6"class="mask"  src="assets/mask.png"    />
+                <img id="mask7" class="mask" src="assets/mask.png"    />
+                <img id="mask8" class="mask" src="assets/mask.png"    />
+                <img id="mask9" class="mask" src="assets/mask.png"    />
+                <img id="mask10" class="mask" src="assets/mask.png"    />
+                <img id="mask11" class="mask" src="assets/mask.png"   />
+                <img id="mask12" class="mask" src="assets/mask.png"    />
+                <img id="mask13" class="mask" src="assets/mask.png"    />
+                <img id="mask14" class="mask" src="assets/mask.png"    />
+                <img id="mask15" class="mask" src="assets/mask.png"    />
+                 <img id="mask16"class="mask"  src="assets/mask.png"    />
+                <img id="mask17" class="mask" src="assets/mask.png"    />
+                <img id="mask18" class="mask" src="assets/mask.png"    />
+                <img id="mask19" class="mask" src="assets/mask.png"    />
+                <img id="mask20" class="mask" src="assets/mask.png"    />
+             </div>
+            
+            <div class="pauseScreen" >
+                <img class="background" src="assets/titlebg.png" />
+                <img class="commonBg" src="assets/commonbg.png" />
+                 <img class="resume" src="assets/resume.png" />
+                 <img class="restart" src="assets/restart.png" />
+                 <img class="pauseMainmenu" src="assets/mainmenu.png" />
+                 <img class="pauseText" src="assets/pausetext.png" />
+            </div>
+            <div class="continueScreen" >
+                <img class="background" src="assets/titlebg.png" />
+                <img class="commonBg" src="assets/commonbg.png" />
+                 <img class="yes" src="assets/yes.png" />
+                 <img class="no" src="assets/no.png" />
+                 <div id="continueText">
+                     <p>MEOW MEOW!!</p><br />
+                     <p>Your progress will be lost!!</p><br />
+                     <p>Are you sure?</p>
+                 </div>
+            </div>
+
+        </script><script id="levelCompleteScreenHtml" type="text/html">
+             <img class="background" src="assets/titlebg.png" />
+            <img class="commonBg" src="assets/commonbg.png" />
+            <img class="nextlevel" src="assets/nextlevel.png" />
+            <!--img class="submitscore" src="assets/submitscore.png" /-->
+            <img class="levelCompleteText" src="assets/completetext.png" />
+            
+            <div id="winScore"></div>
+           
+        </script><script id="levelLoseScreenHtml" type="text/html">
+          <img class="background" src="assets/titlebg.png" />
+            <<img class="background" src="assets/titlebg.png" />
+            <img class="commonBg" src="assets/commonbg.png" />
+            <img class="retry" src="assets/retry.png" />
+            <img class="loseMainmenu" src="assets/mainmenu.png" />
+           <img class="losetext" src="assets/levellose.png" />
+        </script><script id="loadScoreScreenHtml" type="text/html">
+           <img class="background" src="assets/titlebg.png" />
+            <img class="commonBg" src="assets/commonbg.png" />
+            <img class="winmainmenu" src="assets/mainmenu.png" />
+            
+            <img class="wintext" src="assets/wintext.png" />
+            <div id="winScore"></div>
+        </script>
+        <div id="wrapper" style="display: table-cell; width: 1280px; height: 709px; "><div class="screen fadeIn">
+            <img class="background" src="./CuteKittyMatchup_files/titlebg.png" style="top: 0px; left: 0px; width: 1280px; height: 666px; "> 
+        </div></div><div id="portrait" style="display: none; "><img style="position: static" src="./CuteKittyMatchup_files/portrait.png"></div><div id="landscape" style="display: none;"><img style="position: static"></div>
+		    
+</body></html>

@@ -1,0 +1,37 @@
+﻿CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+Defense_files/gamecore.js
+Defense_files/gamecore.min.js
+index.html
+manifest.mf
+media/images/bar_filler.png
+media/images/battle_field.png
+media/images/button.png
+media/images/buttons_colored_narrow.png
+media/images/checkbox.png
+media/images/header_panel.png
+media/images/high_score_dragon.png
+media/images/lever.png
+media/images/modal.png
+media/images/monsters/bat.png
+media/images/monsters/cyclops.png
+media/images/monsters/demoblin.png
+media/images/monsters/flaming_skull.png
+media/images/monsters/gel.png
+media/images/monsters/goblin.png
+media/images/monsters/green_dragon.png
+media/images/monsters/owlbear.png
+media/images/monsters/wizard.png
+media/images/objects.png
+media/images/pause.png
+media/images/title.png
+media/images/title_bg.png
+media/images/title_monsters.png
+media/images/xam.png
+
+
+NETWORK:
+*

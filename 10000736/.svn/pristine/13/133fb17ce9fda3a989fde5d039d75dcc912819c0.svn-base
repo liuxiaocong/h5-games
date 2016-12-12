@@ -1,0 +1,672 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+<title>加法！</title>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script>document.domain = '4399.com';</script>
+<script>document.write("<script type='text/javascript' src='./config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+
+<script type="text/javascript">
+ 		window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	  }, 0);
+	});
+	
+	window.shareData = {
+		        "imgUrl": "http://wx.jyc.17188.com/h5/ssdr/icon.png",
+		        "timeLineLink": "http://" + domain + "/h5/ssdr/fkjj.html?u=" + Math.floor(Math.random()*10000000),
+		        "tTitle": document.title,
+		        "tContent": "学霸VS学渣:学渣的逆袭还是学霸的沉沦?"
+		};
+		
+	var aboutus = "http://wx.jyc.17188.com/h5/ssdr/fkjj.html";
+	
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        document.location.href = aboutus;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        document.location.href = aboutus;
+		        });
+		    });
+		}, false);
+		
+    var leval = 0;
+	var sumTotal = 0;
+    var sum = 0;
+    var tempindex = 0;
+    var numbers = new Array();
+	var timeUp   = 3500;
+	var sumtemp = 0;
+    var numtemp = new Array();
+	
+	function randomFromTo(from, to){
+        return Math.floor(Math.random() * (to - from + 1) + from);
+    }
+    
+    Array.prototype.clean = function(deleteValue) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == deleteValue) {         
+                this.splice(i, 1);
+                i--;
+            }
+        }
+        return this;
+    };
+    
+    function generateRandomSum() {
+        var looprand    = randomFromTo(2, 3);
+        var total       = 0;
+        var arrayIndex  = new Array();
+        
+        if (looprand > numbers.length) {
+            looprand = numbers.length;
+        }
+        
+        for (j=0; j<looprand; j++) {
+            var randindex = randomFromTo(0, numbers.length - 1);
+            randindex = getUnique(randindex, arrayIndex);
+
+            total = total + numbers[randindex];
+            arrayIndex[j] = randindex;
+        }
+        sum = total;
+        $("#nextsum").html(total);
+    }
+    
+    function getUnique(index, arrayIn) {
+        if ((jQuery.inArray(index, arrayIn) == -1)) {
+            return index;
+        } else {
+            rindex = randomFromTo(0, numbers.length - 1);
+            return getUnique(rindex, arrayIn);
+        }
+    }       
+    
+    
+    
+    // store temporary index in array
+    var arrIndex = new Array();
+    function boxClick(obj) {
+        if (!$(obj).hasClass("disable")) {
+            var clickedindex = parseInt($(obj).attr("id").replace("num", ""));
+            var temp = parseInt($(obj).find("p").html());
+
+            if (!$(obj).hasClass("selected")) {
+                $(obj).addClass("selected clicked");
+                // store clicked index in array
+                arrIndex[tempindex] = clickedindex;
+                sumtemp = sumtemp + temp;
+                tempindex++;
+
+                // temporary sum is match
+                if (sumtemp == sum) {
+					
+                    $(".clicked").unbind("click");
+                    $(".clicked").removeAttr("id");
+                    $(".clicked").addClass("disable");
+                    $(".clicked").animate({
+                       backgroundColor: "#32bebd",
+                       color: "#32bebd"
+                    }, 10, function() {
+                        $(".disable").removeClass("clicked");
+						$(".disable").css("visibility","hidden");
+                    });
+					
+					sumTotal += sum;
+					//window.shareData.tTitle = "尼玛根本反应不过来，哈哈！我玩了" + getSumTotal() + "分！过了" + getLevel() + " 关！你敢挑战吗？";
+					show_medal()
+                    // change each box id
+                    var y = 0;
+                    $("#game_contaner div.boxnum").each(function(index) {
+                        if (!$(this).hasClass("disable")) {
+                            $(this).attr("id", "num"+y);
+                            y++;
+                        }
+                    });
+
+                    // delete matched number
+                    for ( z = 0; z < arrIndex.length; z++) {
+                        delete numbers[arrIndex[z]];
+                    }
+
+                    // delete temporay index
+                    for ( e = 0; e <= arrIndex.length; e++) {
+                        delete arrIndex[e];
+                    }
+                    arrIndex.clean(undefined);
+                    numbers.clean(undefined);
+
+                    sum = 0;
+                    sumtemp = 0;
+                    // reset index
+                    tempindex = 0;
+                    
+                    generateRandomSum();
+                    
+                    // Game Finished
+                    if (numbers.length == 0) {
+						clearInterval(gameLoop);
+						leval = leval + 1;
+						timeUp = timeUp + 3000;
+						$(".time").css("display", "none");
+						$("#game_contaner").css("display", "none");
+						$("#addup_info").css("display", "none");
+						$("#nextsum").css("font-size", "24px");
+                        $("#nextsum").html("恭喜!<br />你解决了本局全部任务!<br /><br/><br/><a style='text-decoration:underline;' href='javascript:start" + leval +"();'>挑战下一关！</a><br/<br/>");
+                    } 
+                }
+
+                // temporary sum not match
+                if (sumtemp > sum) {
+                    $("#game_contaner").effect("shake", { times: 2 }, 100, function() {
+                        sumtemp = 0;
+                        $(".boxnum").removeClass("selected");
+                        $(".clicked").removeClass("clicked");
+                        $("#sum").html(sumtemp);
+
+                        // delete the temporary array & reset index
+                        numtemp = new Array();
+                        tempindex = 0;
+                    });
+                }
+            } else {
+                $(obj).removeClass("selected");
+                $(obj).removeClass("clicked");
+
+                // remove clicked index
+                for (x = 0; x < arrIndex.length; x++) {
+                    if (arrIndex[x] == clickedindex) {
+                        arrIndex.splice(x, 1);
+                    }
+                }
+                tempindex--;
+
+                sumtemp = sumtemp - temp;
+            }
+        }
+    }
+	
+	//check time up or not
+	function timeUpCount() {
+		if(timeUp >= 1) {
+			timeUp --;
+		} else {
+			clearInterval(gameLoop);
+			$(".time").css("display", "none");
+			$("#game_contaner").css("display", "none");
+			$("#addup_info").css("display", "none");
+			$(".share_tips").css("display","block");
+			$("#leval").html(leval);
+			$("#score").html(sumTotal);
+			$("#nextsum").css("font-size", "24px");
+			timeUp = timeUp + 3000;
+			$("#nextsum").html("失败了!<br />本局闯关结束! <br /><br/><br/><a style='text-decoration:underline;' href='javascript:start();'>重新挑战！</a><br/><br/>");
+			var str = "尼玛根本反应不过来，哈哈！我玩了" + sumTotal + "分！过了" + leval + " 关！你敢挑战吗？";
+try{parent.__4399finishgame(str);}catch(e){}
+			//alert("尼玛根本反应不过来，哈哈！我玩了" + sumTotal + "分！过了" + leval + " 关！你敢挑战吗？")
+			
+		}
+		$("#timeCount").html(timeUp);
+	}
+		
+    function start() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+        tempindex    = 0;
+		sumTotal     = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(1, 10);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+        generateRandomSum();
+		
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	    function start0() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+        tempindex    = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(1, 10);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	function start1() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(5, 15);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	function start2() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(5, 25);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+	
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	function start3() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(5, 35);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+	
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	
+		function start4() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(15, 35);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+		function start5() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(10, 45);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+	
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	
+		function start6() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+		$(".time").css("display", "block");
+		$("#game_contaner").css("display", "block");
+		$("#addup_info").css("display", "inline-block");
+		$("#nextsum").css("font-size", "55px");
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(20, 45);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+	
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+		function start7() {
+       $("#nextsum").html("通关了!<br />你是超神的人物，分享给你的好友让他们膜拜吧！<br /><br/><br/><a style='text-decoration:underline;' href='javascript:start();'>再次挑战！</a><br/><br/>");
+	   document.title = "如此艰难的游戏我居然通关了，完成了" + getSumTotal() + "分！过了" + getLevel() + " 关！敢来挑战吗？";
+	   var str = "如此艰难的游戏我居然通关了，完成了" + getSumTotal() + "分！过了" + getLevel() + " 关！敢来挑战吗？";
+try{parent.__4399finishgame(str);}catch(e){}
+	   window.shareData.tTitle = document.title;
+    }
+	
+	$(document).ready(function() {
+		
+		start();						 
+	});
+	$(document).ready(function(){
+	$(".start_again").click(function(){$(".share_tips").hide()});
+	$(".share_friends").click(function(){$(".share_wx").toggle()});
+	$(".share_wx").click(function(){$(".share_wx").toggle()});
+	});
+function show_medal()
+{
+	
+	var str = '';
+	if(sumTotal < 100)
+	{
+		str = '渣渣';
+	}
+	else if(sumTotal >= 100 && sumTotal<312)
+	{
+		str = '入门';
+	}
+	
+	else if(sumTotal >= 312 && sumTotal<824)
+	{
+		str = '高手';
+	}
+	else if(sumTotal >= 824 && sumTotal<1548)
+	{
+		str = '专家';
+	}
+	else if(sumTotal >= 1548)
+	{
+		str = '超神';
+	}
+	$('#result_content').html(str);
+	$('#infos').html("尼玛根本反应不过来，哈哈！我玩了" + sumTotal + "分！过了" + leval + " 关！你敢挑战吗？");
+	window.shareData.tTitle = "尼玛根本反应不过来，哈哈！我玩了" + sumTotal + "分！过了" + leval + " 关！你敢挑战吗？";
+		
+};
+
+      </script>
+	          <style type="text/css">
+        * {
+            font-family:'Open Sans Condensed', sans-serif;
+        }
+		p {
+			margin: 0;	
+		}
+        body {
+            background: #32bebd;
+			margin: 0;
+        }
+        #viewport {
+            margin: 0 auto;
+            text-align: center;
+			width: 324px;
+        }
+        #game_contaner {
+            padding: 2px;
+            margin: 0 auto;
+        }
+        .boxnum {
+            text-align: center;
+            cursor: pointer;
+            background: #fff;
+            width: 74px;
+            height: 50px;
+            margin: 3px;
+            float: left;
+            color: #104847;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .boxnum:hover {
+            background: #fff;
+        }
+        .boxnum p {
+            margin-top: 5px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .selected {
+            background: #1c4e4d;
+			color: #fff;
+        }
+        .selected:hover {
+            background: #1c4e4d !important;
+        }
+        #boxclear {
+            clear: both;
+        }
+    
+		.instruction {
+			color: #1c4e4d;	
+		}
+		#addup_info {
+			color: #fff;
+			font-size: 26px;
+		}
+		#nextsum { 
+            font-weight: bold;
+            font-size: 55px;
+
+        }
+		#nextsum a {
+			color: #fff;
+			text-decoration: none;
+		}
+		#next—tips { 
+            font-weight: bold;
+            font-size: 24px;
+
+        }
+		#next—tips a {
+			color: #fff;
+			text-decoration: none;
+		}
+		.time {
+			margin-bottom: 5px;	
+		}
+		.copyright {
+			margin: 5px;	
+		}
+		
+		.other_game {
+		background: #28AAA9;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 10px;
+		text-align: left;
+		width: 300px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		}
+		.other_game p {
+			color: #fff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: normal;
+			font-size: 14px;
+			margin: 0 0 10px;
+		}
+		.other_game ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.other_game ul li {
+			margin-top: 10px;	
+		}
+		
+		.other_game ul li:first-child {
+			margin: 0;	
+		}
+		
+		.other_game ul li img {
+			float: left;
+			margin-right: 10px;
+		}
+		.other_game a {
+			display:block;
+			color: #fff;	
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			overflow: hidden;
+			text-decoration: none;
+		}
+		.other_game a span {
+			font-size: 12px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #fff;
+		}
+		.share_tips {
+			background:rgba(0, 0, 0, 0.8);
+			width:100%;
+			height:100%;
+			left:0px;
+			top:0px;
+			position:absolute;
+			color:white;
+			font-size:24px;
+			z-index:10000;
+			display: none;
+			}
+		.buttom{margin:15px 0;}
+		.buttom span {
+			text-align:center;
+			background:#0F807F;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			font-size:18px;
+			padding:8px 10px;
+			cursor:pointer;
+			}
+		.share_wx {
+			display: none;
+			background: url("");
+			width: 480px;
+			height: 640px;
+			z-index: 10000;
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			z-index:100001;
+			}
+
+.game{
+display:inlineblock; 
+margin:5px 0px; 
+padding-left:20px;width:100%; 
+font-size:30px; 
+overflow:hidden; 
+border-bottom:1px solid #fff; 
+text-align:left;
+}
+</style>		
+
+</head>
+ <body style="">
+ <img src=>
+<div id="ceshuResult"></div>
+<div id="ad" style="display:none">
+</div>
+<div id="viewport">
+	<div class="share_wx"></div>
+	<p class="instruction"><span id="addup_info">相加等于: </span><span id="nextsum"></span></p>
+	<p class="time">倒计时: <span id="timeCount"></span></p>
+	<div class="wx_share"></div>
+	<div id="game_contaner">
+		<div id="boxclear" style="clear:both"></div>
+	</div>
+	<div class="share_tips">
+		<p style=" text-align:center;"><img src="" style="width:100%"></p>
+		<p><br>挑战终止！<br><br>
+		本局共通过<span id="leval" style="color:red;font-size:32px">0</span>关<br>积分<span id="score" style="color:red;font-size:32px"></span>分<br>
+		你属于<span id="result_content"></span>级别
+		<div class="buttom">
+			<span class="start_again">重新挑战</span>
+		</div>
+	</div>
+</div>
+
+<div id="infos" style="display:none"></div>
+<br/>
+<p align=center>游戏说明：点击数字满足相加条件即可消除<br><br>
+	<a style="color:#000;cursor: pointer;" onclick="parent.moregame();return flase;"><b>更多游戏</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a style="color:#000;cursor: pointer;" onclick="parent.moregame();return flase;"><b>关注我们</a>
+	<br/><br/>
+	<a style="color:#000;cursor: pointer;" onclick="parent.moregame();return flase;"><script>document.write(game_25_01_txt);</script></a>
+	
+</p>
+
+</body>
+</html>

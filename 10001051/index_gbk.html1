@@ -1,0 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>17yy html5游戏</title>
+	<meta content="text/html; charset=gb2312" http-equiv=Content-Type>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	</head>
+	<body>
+		<iframe scrolling="no" width="427" height="640" frameborder="0" align="center" marginheight="0" marginwidth="0" src="makethemfall.htm" charset="utf-8" id="flash_frame" name="flash_frame"></iframe>
+	</body>
+</html>

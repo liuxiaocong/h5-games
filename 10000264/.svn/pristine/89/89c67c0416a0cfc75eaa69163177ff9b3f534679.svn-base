@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=100%, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+    <title>Play Jelly Friend on A10.com</title>
+    <meta property="og:title" content="Jelly Friend">
+    <meta property="game:id" content="576742227280291524">
+    <meta property="game:gid" content="157380">
+    <meta property="game:lid" content="1675">
+    <style type="text/css">
+        * {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            padding: 0;
+            margin: 0;
+        }
+        body, html {    -webkit-touch-callout: none;    -webkit-text-size-adjust: none;    -webkit-user-select: none;    -webkit-tap-highlight-color: transparent;
+            overflow: hidden;padding: 0;margin: 0;
+        }
+    </style>
+    <script type="text/javascript" src="./game.js"></script>
+    <script src="game.min.js"></script>
+    <!--<script src="./play.js"></script>-->
+</head>
+<body bgcolor="#000000">
+
+<div id="gameHolder" style="position: absolute;">
+<div id="gameContainer" style="position: absolute;"  width="640" height="960"></div>
+</div>
+
+<script type="text/javascript">
+
+window.onload = function() {
+    GameAPI.loadAPI(function(API) {
+        var game = new JellyFriend.InitGame();
+    });
+};
+</script>
+<script type="text/javascript" src="pk/PkApi.js"></script>
+<script type="text/javascript" src="pk/WeixinApi.js"></script>
+<script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+<script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '果冻大战顺利通过' + bestScore + '关，观望四周求挑战 ！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+        console.log(d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+</script>
+
+<!--<script>a10.play.init();</script>-->
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+	"missiles": [
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": -2000,
+			"delay": 0.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": -1000,
+			"delay": 0.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 0,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 1000,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 2000,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 3000,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 4000,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 35,
+			"speed": 2,
+			"screenSide": "bottom",
+			"position": 5000,
+			"delay": 0.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": -2000,
+			"delay": 2.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": -1000,
+			"delay": 2.0
+		},
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 0,
+			"delay": 2.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 1000,
+			"delay": 2.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 2000,
+			"delay": 2.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 3000,
+			"delay": 2.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 4000,
+			"delay": 2.0
+		},
+		
+		{
+			"type":"dumb",
+			"rotation": 145,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 5000,
+			"delay": 2.0
+		}
+
+	], 
+
+	"timeLength": 1.4
+}

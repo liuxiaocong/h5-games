@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>逼死处女座</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="prerender" href="img/start_page.jpg">
+	<link rel="prerender" href="img/game_bg.jpg">
+	<link rel="prerender" href="img/score_bg.png">
+	<link rel="prerender" href="img/lovers_0.png">
+	<link rel="prerender" href="img/lovers_1.png">
+	<link rel="prerender" href="img/lovers_2.png">
+	<link rel="prerender" href="img/lovers_3.png">
+	<link rel="prerender" href="img/blood.png">
+	<link rel="prerender" href="img/single_0.png">
+	<link rel="prerender" href="img/single_1.png">
+	<link rel="prerender" href="img/single_2.png">
+	<link rel="prerender" href="img/single_3.png">
+	<link rel="prerender" href="img/time_over.png">
+	<link rel="prerender" href="img/share.png">
+	<link rel="prerender" href="audio/music.mp3">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/createjs.js"></script>
+	
+	<link rel="shortcut icon" href="icon.png">
+<link rel="icon" href="icon.png">
+<link type="text/css" href="./common/common.css" rel="stylesheet" />
+<script src="./common/common.js"></script>
+
+
+	
+    <script type="text/javascript">
+		var isDesktop = true;
+    </script>
+    <style type="text/css">
+    body {font-family: "微软雅黑"; margin: 0; padding: 0;position: relative;}
+    @media screen and (min-width:640px)
+	{
+		body{font-size: 36px;}
+	}
+	@media screen and (min-width:540px) and (max-width:639px)
+	{
+		body{font-size: 32px;}
+	}
+	@media screen and (min-width:480px) and (max-width:539px)
+	{
+		body{font-size: 28px;}
+	}
+	@media screen and (min-width:320px) and (max-width:479px)
+	{
+		body{font-size: 20px;}
+	}
+
+	#ready-btn,.loading{height:12.5%;bottom:0;width:58%;left:22%;position: absolute;z-index: 5;color:#b67f76;display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;box-align: center;box-pack: center;-webkit-box-align: center;-webkit-box-pack: center;-ms-flex-align: center;-ms-flex-pack: center;letter-spacing:6px;}
+	#ready-btn{bottom:31%;text-indent:-9999px;}
+    .SHADE {top: 0; left:0; width:100%; height: 100%; bottom:0; z-index: 11;}
+	.movegame{height:12.5%!important;bottom:0;width:25%;left:50%;font-size:20px;position: absolute;z-index: 5;color:#b67f76;display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;box-align: center;box-pack: center;-webkit-box-align: center;-webkit-box-pack: center;-ms-flex-align: center;-ms-flex-pack: center;letter-spacing:6px;}
+    #welcome {background:url(img/start_page.png) no-repeat;overflow: hidden;background-size: 100% 100%;}
+    .welcome-bg {position:absolute;top:0;left:0;right:0;bottom:0;}
+	#GameLayerBG {top:0;left:0;right:0;bottom:0;overflow:hidden;background:url(img/game_bg.png) repeat-y;background-size:100% auto;}
+	.animate{
+		-webkit-transition:all 200ms;
+		-moz-transition:all 200ms;
+		-ms-transition:all 200ms;
+		-o-transition:all 200ms;
+		transition:all 200ms;
+	}
+    .GameLayer {position:absolute;bottom:0;left:5%;height:100%;width:91%;}
+    .block{position:absolute; background-repeat: no-repeat; background-position: center bottom;background-size:90% auto;background-image: none;}
+    .t0{background-image:url(img/lovers_0.png);}
+    .t1{background-image:url(img/lovers_1.png);}
+    .t2{background-image:url(img/lovers_2.png);}
+    .t3{background-image:url(img/lovers_3.png);}
+    .tt0{ background-image:url(img/blood.png);background-size:100% auto;}
+    .s0{background-image:url(img/single_0.png);}
+    .s1{background-image:url(img/single_1.png);}
+    .s2{background-image:url(img/single_2.png);}
+    .s3{background-image:url(img/single_3.png);}
+    @-ms-keyframes flash {
+    	0% { opacity: 1; }
+    	50% { opacity: 0; }
+    	100% { opacity: 1; }
+    }
+    @-webkit-keyframes flash {
+    	0% { opacity: 1; } 
+    	50% { opacity: 0; }
+    	100% { opacity: 1; }
+    }
+  	.flash {-webkit-animation: flash .2s 3;animation: flash .2s 3;}
+    .bad {-webkit-animation: flash .2s 3;animation: flash .2s 3;background-image:url(img/blood.png);background-size:100% auto;}
+    *    {-webkit-tap-highlight-color: rgba(0,0,0,0);-ms-tap-highlight-color: rgba(0,0,0,0); tap-highlight-color: rgba(0,0,0,0); -ms-user-select: none;}
+    #GameScoreLayer {background-position:center .5em; background-size: auto 4em; font-weight: bold; color:#fff; text-align: center;overflow: hidden;background:url(img/score_bg.png?2) no-repeat #191a1e;background-size:100% 100%;}
+
+	#GameScoreLayer-btn{position: absolute;bottom:3%;height:20.5%;width:85%;left:7.5%;color:#b67f76;overflow: hidden;}
+    .btn{display: box; display: -webkit-box; display: -moz-box; display: -ms-flexbox;box-align: center;box-pack: center; -webkit-box-align: center; -webkit-box-pack: center; -ms-flex-align:center; -ms-flex-pack:center;width:46%;height:100%;float:left;font-weight: normal;cursor: pointer;}
+	.btn:nth-child(2){float:right;}
+    #landscape {display: none;}
+
+	#gameBody {position: relative; width:640px;height:913px;}
+	#share-wx {background:#191a1e;position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;z-index: 10000;display: none;}
+	#share-wx-img{width:100%;}
+	#scoreTotal{max-width:640px;padding-left:2%;position:absolute;top:0;height:50px;width:100%;overflow: hidden;background:#ec604d;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display:none;}
+	#titleBg{float:left;margin-right:20px;height:40px;z-index: 3;margin-top:5px;}
+	#number,#GameTimeLayer{line-height:50px;font-size: 24px;color:#ec604d;height:100%;}
+	#number{float:left;color:#fff;}
+	#GameTimeLayer {height:auto;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff;position: absolute;padding:0 2%;top:17%;right:2%;line-height:120%;background:#fff;}
+	#GameScoreLayer-text{color:#191a1e;text-align: center;font-size: 20px;font-weight: bold;padding:34% 0 0 0;display:none;}
+	#scoreLoading{height:232px;line-height: 232px;text-align: center;font-size: 28px;letter-spacing:6px;color:#b67f76;}
+	#GameScoreLayer-text p{padding:0;margin:0;}
+	#GameScoreLayer-text .text0{color:#666;font-size:30px;}
+	#GameScoreLayer-text .text1{position: relative;width:100%;}
+	#GameScoreLayer-text .text2{font-size: 20px;}
+	.positonP{position: absolute;right:0;bottom:16px;}
+	#timeOver{width:60%;position: absolute;height:17.5%;left:20%;top:16%;display:none;background:url(img/time_over.png) no-repeat;background-size: 100% 100%}
+	.againBtn,.shareBtn,.moreBtn{position:absolute;width:48%;height:13%;left:26%;text-indent:-9999px;}
+	.againBtn{top:55%;}
+	.shareBtn{top:40%;}
+	.moreBtn{top:70%;}
+	#welcome,#GameLayerBG,#GameScoreLayer.SHADE{position: absolute;}
+    </style>
+</head>
+<body onload="init()">
+	<script type="text/javascript">
+	if (isDesktop)
+		document.write('<div id="gameBody">');
+	var body, blockSize, GameLayer = [], GameLayerBG, touchArea = [], GameTimeLayer;
+	var transform, transitionDuration;
+	function init (argument) {
+		showWelcomeLayer();
+		body = document.getElementById('gameBody') || document.body;
+		blockSize = 145.5;
+		// body.style.height = window.innerHeight+'px';
+		transform = typeof(body.style.webkitTransform) != 'undefined' ? 'webkitTransform' : (typeof(body.style.msTransform) != 'undefined'?'msTransform':'transform');
+		transitionDuration = transform.replace(/ransform/g, 'ransitionDuration');
+
+		GameTimeLayer = document.getElementById('GameTimeLayer');
+		GameLayer.push( document.getElementById('GameLayer1') );
+		GameLayer[0].children = GameLayer[0].querySelectorAll('div');
+		GameLayer.push( document.getElementById( 'GameLayer2' ) );
+		GameLayer[1].children = GameLayer[1].querySelectorAll('div');
+		GameLayerBG = document.getElementById( 'GameLayerBG' );
+		if( GameLayerBG.ontouchstart === null ){
+			GameLayerBG.ontouchstart = gameTapEvent;
+		}else{
+			GameLayerBG.onmousedown = gameTapEvent;
+		}
+		gameInit();
+
+		var rtnMsg = "true";	
+				
+		setTimeout(function(){
+			if(rtnMsg){
+				var btn = document.getElementById('ready-btn');
+				btn.className = 'btn';
+				btn.innerHTML = '点击开始游戏'
+				btn.onclick = function(){
+					closeWelcomeLayer();
+				} 
+			}					
+		}, 500);
+	}
+	var _gameBBList = [], _gameBBListIndex = 0, _gameOver = false, _gameStart = false, _gameTime, _gameTimeNum, _gameScore;
+	function gameInit(){
+        createjs.Sound.registerSound( {src:"audio/music.mp3", id:"tap"} );
+		gameRestart();
+	}
+	function gameRestart(){
+		_gameBBList = [];
+		_gameBBListIndex = 0;
+		_gameScore = 0;
+		_gameOver = false;
+		_gameStart = false;
+		_gameTimeNum = 2000;
+		GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+		refreshGameLayer(GameLayer[0]);
+		refreshGameLayer(GameLayer[1], 1);
+	}
+	function gameStart(){
+		_gameStart = true;
+		_gameTime = setInterval(gameTime, 10);
+	}
+	function gameOver(){
+        updateShareScore(_gameScore)
+		_gameOver = true;
+		clearInterval(_gameTime);
+		setTimeout(function(){
+			GameLayerBG.className = '';
+			showGameScoreLayer();
+			dp_submitScore(_gameScore);
+		}, 1000);
+	}
+	function gameTime(){
+		_gameTimeNum --;
+		if( _gameTimeNum <= 0){
+			GameTimeLayer.innerHTML = "0'00''";
+			$('#timeOver').show();
+			gameOver();
+			GameLayerBG.className += ' flash';
+			createjs.Sound.play("tap");
+		}else{
+			GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+		}
+	}
+	function creatTimeText( n ){
+		var text = (100000+n+'').substr(-4,4);
+		text = ''+text.substr(0,2)+"'"+text.substr(2)+"''"
+		return text;
+	}
+	var _ttreg = / t{1,2}(\d+)/, _clearttClsReg = / t{1,2}\d+| bad/,_clears1ClsReg = / s\d/;
+	function refreshGameLayer( box, loop, offset ){
+		var i = Math.floor(Math.random()*1234)%4+(loop?0:4);
+		for( var j=0; j<box.children.length; j++){
+			var r = box.children[j],
+				rstyle = r.style;
+			rstyle.left = (j%4)*blockSize+'px';
+			rstyle.bottom = Math.floor(j/4)*blockSize+'px';
+			rstyle.width = blockSize+'px';
+			rstyle.height = blockSize+'px';
+			r.className = r.className.replace(_clearttClsReg, '');
+			r.className = r.className.replace(_clears1ClsReg, '');
+			if( i == j ){
+				_gameBBList.push( {cell:i%4, id:r.id} );
+				var random=Math.floor((Math.random()*1234)%4);
+				r.className += ' t'+random;
+
+				var random1=Math.floor((Math.random()*1234)%4);
+
+				if( loop ){
+					var x=j%4;
+					if(random1!=x)
+					{
+						var endNum=Math.floor(j/4)*4+random1;
+						box.children[endNum].className = box.children[endNum].className+' s'+Math.floor((Math.random()*1234)%4);
+					}
+				}else{
+					if(j>7){
+						var x=j%4;
+						if(random1!=x)
+						{
+							var endNum=Math.floor(j/4)*4+random1;
+							box.children[endNum].className = box.children[endNum].className+' s'+Math.floor((Math.random()*1234)%4);
+						}
+					}
+				}
+				r.notEmpty = true;
+				i = ( Math.floor(j/4)+1)*4+Math.floor((Math.random()*1234)%4);
+
+			}else{
+				r.notEmpty = false;
+			}
+		}
+		if( loop ){
+			box.style.webkitTransitionDuration = '0ms';
+			box.style.display          = 'none';
+			box.y                      = -blockSize*(Math.floor(box.children.length/4)+(offset||0))*loop;
+			setTimeout(function(){
+				box.style[transform] = 'translate3D(0,'+box.y+'px,0)';
+				setTimeout( function(){
+					box.style.display     = 'block';
+				}, 100 );
+			}, 200 );
+		} else {
+			box.y = 0;
+			box.style[transform] = 'translate3D(0,'+box.y+'px,0)';
+		}
+		box.style[transitionDuration] = '150ms';
+	}
+	function gameLayerMoveNextRow(){
+		for(var i=0; i<GameLayer.length; i++){
+			var g = GameLayer[i];
+			g.y += blockSize;
+			if( g.y > blockSize*(Math.floor(g.children.length/4)) ){
+				refreshGameLayer(g, 1, -1);
+			}else{
+				g.style[transform] = 'translate3D(0,'+parseInt(g.y)+'px,0)';
+			}
+		}
+	}
+	function gameTapEvent(e){
+		if (_gameOver) {
+			return false;
+		}
+		var tar = e.target;
+		var y = e.clientY || e.targetTouches[0].clientY,
+			x = (e.clientX || e.targetTouches[0].clientX)-body.offsetLeft,
+			cha=body.offsetWidth*0.95;
+			x=x+cha;
+			p = _gameBBList[_gameBBListIndex];
+		if ( y > touchArea[0] || y < touchArea[1]) {
+			return false;
+		}
+		if( (p.id==tar.id&&tar.notEmpty) || (p.cell==0&&x<blockSize+cha) || (p.cell==1&&x>blockSize+cha&&x<2*blockSize+cha) || (p.cell==2&&x>2*blockSize+cha&&x<3*blockSize+cha) || (p.cell==3&&x>3*blockSize+cha) ){
+			if( !_gameStart ){
+				gameStart();
+			}
+        	createjs.Sound.play("tap");
+			tar = document.getElementById(p.id);
+			tar.className = tar.className.replace(_ttreg, ' tt0');
+			_gameBBListIndex++;
+			_gameScore ++; 
+			$('#number span').html(_gameScore);
+			gameLayerMoveNextRow();
+		}else if( _gameStart && !tar.notEmpty && / s\d/.test(tar.className)){
+			createjs.Sound.play("tap");
+			tar.className += ' bad';
+			gameOver();
+		}
+		return false;
+	}
+	function createGameLayer(){
+		var html = '<div id="GameLayerBG" class="animate">';
+		for(var i=1; i<=2; i++){
+			var id = 'GameLayer'+i;
+			html += '<div id="'+id+'" class="GameLayer">';
+			for(var j=0; j<10; j++ ){
+				for(var k=0; k<4; k++){ 
+					html += '<div id="'+id+'-'+(k+j*4)+'" num="'+(k+j*4)+'" class="block"></div>';
+				}
+			}
+			html += '</div>';
+		}
+		html += '</div>';
+
+		return html;
+	}
+	function closeWelcomeLayer(){
+		var l = document.getElementById('welcome');
+		l.style.display = 'none';
+		$('#scoreTotal').show();
+	}
+	function showWelcomeLayer(){
+		var l = document.getElementById('welcome');
+		l.style.display = 'block';
+	}
+	function showGameScoreLayer(){
+		$('#scoreLoading').hide();
+		$('#GameScoreLayer-text').html(shareText(0,_gameScore)).show();
+		var l = document.getElementById('GameScoreLayer');
+		l.style.display = 'block';
+	}
+	function hideGameScoreLayer(){
+		var l = document.getElementById('GameScoreLayer');
+		l.style.display = 'none';
+		$('#timeOver').hide();
+		$('#score').html('0');
+		$('#scoreLoading').show();
+        $('#GameScoreLayer-text').html('').hide();
+	}
+	function replayBtn(){
+		gameRestart();
+		hideGameScoreLayer();
+	}
+	function backBtn(){
+		gameRestart();
+		hideGameScoreLayer();
+
+	}
+	var str0;
+	function shareText( data,score){
+	   // alert(score);
+		var str = score;
+		str0 = score;
+	    try{parent.__4399finishgame(str);}catch(e){}
+		return "<p class='text0'>呵呵！我点掉了<span id='scoreAll'>"+score+"</span>个已读通知，<br/>真是大快人心！！</p>";
+	}
+	
+	function toStr(obj) {
+		if ( typeof obj == 'object' ) {
+			return JSON.stringify(obj);
+		} else {
+			return obj;
+		}
+		return '';
+	}
+	document.write(createGameLayer());
+	
+	function share(){
+	     //alert("aaa");
+		// alert(str0);
+		 var str = str0;
+	     try{parent.__4399finishgame(str);}catch(e){}
+		//dp_share();
+		//btGame.playShareTip();
+	}
+	function moreGame(){
+		//location.href = btGame.URL.getMoreGame();
+		try{parent.moregame();}catch(e){}
+	}
+</script>
+	<div id="GameScoreLayer" class="BBOX SHADE" style="display:none;">
+		<div id="GameScoreLayer-text"></div>
+		<div id='scoreLoading'>加载中...</div>
+	</div>
+	<div id='scoreTotal'><span id='number'>已读头像:<span id='score'>0</span></span><div id="GameTimeLayer"></div></div>
+	<div id="welcome" class="SHADE BOX-M">
+		<div class="welcome-bg FILL"></div>
+		<div id="ready-btn" class="btn loading">加载中...</div>
+		<!-- <div onclick="goHome();" class="btn movegame">更多游戏</div> -->
+	</div>
+	<div id='timeOver'></div>
+	<div id="share-wx"><img src="img/share.png" id="share-wx-img"></div>
+	<input id="bt-game-id" type="hidden" value="8-cherry">
+
+<script type="text/javascript">
+	if (isDesktop)
+		document.write('</div>');
+</script>
+	<script>
+		var myscore=0;
+		function dp_share(){
+			btGame.setShare({title: "呵呵！我点掉了"+myscore+"个已读通知，心塞死…"});
+		}
+		var myData = {};
+		function dp_submitScore(score){
+			
+		}
+		/**** 屏幕自适应 ****/
+		;~function(btGame){
+			
+			function scaleGame(parent, gameWidth, gameHeight){
+				var $DOM = $("body,html"), $CONTENT = $(parent);
+				function resize(){
+					var width = gameWidth, maxWidth = window.innerWidth, maxHeight = window.innerHeight;
+					var rate = maxWidth / width;
+					if(rate > 1) rate = 1;
+					var scale = "scale(" + (rate) + ")";
+					var resetHeight = gameHeight * rate;
+					var resetWidth = gameWidth * rate;
+					$CONTENT.css({
+						 "-webkit-transform": scale
+						,"-moz-transform": scale
+						,"-o-transform": scale
+						,"transform": scale
+						,"-webkit-transform-origin": "0 0"
+						,"-moz-transform-origin": "0 0"
+						,"-o-transform-origin": "0 0"
+						,"transform-origin": "0 0"
+						,"left": (maxWidth - resetWidth) / 2
+						,"top": maxHeight > resetHeight ? (maxHeight - resetHeight) / 2 : 0
+					});
+					
+					if(rate < 1){
+						$DOM.css("height", gameHeight * rate);
+					}else{
+						$DOM.css("height", "100%");
+					}
+				
+				}
+				btGame.checkHScreen(resize, false);
+				// 防止微信自己抽了
+				$(function(){
+					setTimeout(resize, 1000);
+				});
+			}
+
+			btGame.scalePlayArea = scaleGame;
+			
+		}(btGame);
+		btGame.scalePlayArea("#gameBody", 640, 913);
+        $("#GameScoreLayer").bind("click",function(){
+            backBtn();
+        })
+	</script>
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+        function updateShareScore(bestScore) {
+            var d = '呵呵！我点掉了' + bestScore + '个已读通知，观望四周求挑战 ！';
+            pkGame.updateResult(bestScore, bestScore, d, d);
+            console.log(d);
+        }
+
+        pkGame.ready(function() {
+
+        });
+    </script>
+</body>
+
+</html>

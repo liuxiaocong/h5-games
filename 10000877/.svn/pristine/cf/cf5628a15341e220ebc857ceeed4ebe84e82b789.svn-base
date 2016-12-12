@@ -1,0 +1,1341 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache" /> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate" /> 
+<meta HTTP-EQUIV="expires" CONTENT="0" />
+<title>9G游戏</title>
+<meta name="keywords" content="" />
+<meta name="description" content="9G游戏频道为您提供。" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="css/comm.css" />
+<link rel="stylesheet" type="text/css" href="/css/info.css?1357845663" media="screen, projection" />
+<script>
+document.domain = 'game.9g.com';
+</script>
+</head>
+<body>
+<!--
+<header class="header">
+<nav id="j_head_nav" style="display:none;">
+<ul class="hd-sort" id="nav_type_container" style="">
+<li data-url="http://m.9g.com/go">关注公众号</li>
+</ul>
+</nav>
+
+<div class="top-bar">
+	<div class="fr"><span class="mod-tit1" data-url="#" ><i class="sign" id="nav_forum"></i></span></div>
+   	<div class="fl"><span class="get_back" onclick="window.location='http://m.9g.com/go/?from=app'">点这里关注9G，下次可以从微信进哦</span></div>
+</div> 
+</header>
+-->
+<article class="content">
+    <section class="app-intro">
+        <ul class="mod-app-intro game_list" id="j_game_list">
+		</ul>
+    </section>
+</article>
+
+
+
+<script language=javascript>
+var Game = {
+	request:function(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+}
+
+var i=0;
+var games = new Array();
+
+var i=0;
+var games = new Array();
+
+
+games[i]=new Array();
+games[i].name = "<b><font color=red>胸口碎大石</font></b>";
+games[i].type= "动作游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/xksds/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=xksds&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>狂摄iphone6</b>";
+games[i].type= "休闲游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/ksiphone6/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ksiphone6&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b><font color=red>刀塔传奇</font></b>";
+games[i].type= "动作游戏";
+games[i].score=95;
+games[i].icon = "http://game.9g.com/dtcq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/dtcq/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>焚寂</b>";
+games[i].type= "动作游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/fj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/fj/game.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b>贱鸟跳跳</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/jntt/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=jntt&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>疯狂猜水果</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/fkcsg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=fkcsg&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>尼玛快跑</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/nmkp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=nmkp&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>粉笔头儿</b>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/fbte/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=fbte&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>足球大狮</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/zqds/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zqds&f=9g";
+i++;
+
+
+games[i]=new Array();
+games[i].name = "9G斗地主二次内测";
+games[i].type= "棋牌游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/ddz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/gc.html?gameid=ddztest&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>植物大战僵尸</font></b>";
+games[i].type= "动作游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/zwdzjs/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zwdzjs&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>美女拼图</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/mspt/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mspt&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>纸飞机</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/zfj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zfj&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b><font color=red>最强大脑</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/zqdn/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zqdn&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>十滴水</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/sds/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=sds&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>随意门</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/symdsb/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=symdsb&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>搞定丈母娘</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/gdzmn/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=gdzmn&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>魁拔III·战神崛起</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/kuiba/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=kuiba&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>英雄难过美人关</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/yxngmrg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=yxngmrg&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>空中大作战</b>";
+games[i].type= "动作游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/djz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/djz/game.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b>别放过iphone6</b>";
+games[i].type= "动作游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/bfgiphone6/icon.png";
+games[i].ishot = true;
+games[i].src = "http://wx.gome.com.cn/live/service/oauth2userinfo.aspx?state=xiaoyouxi";
+i++;
+games[i]=new Array();
+games[i].name = "<b>疯狂打飞机</b>";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/fkdfj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/fkdfj/game.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b>粉蓝男女</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/flnu/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/flnu/game.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>摩天大楼</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/mtl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mtl&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >冰桶挑战加量版</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/bttz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=bttz&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "疯狂偷菜";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/fktc/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.mqbj.cn/fktc/index.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b>疯狂冰桶挑战</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/fkbttz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=fkbttz&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b><font color=red>空中拦截</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/sqs/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=sqs&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>宠物大营救</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/cwdyj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cwdyj&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>何静搞定2048</b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/hjgd2048/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=hjgd2048&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>五子棋</b>";
+games[i].type= "休闲游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/wzq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=wzq&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>转你妹</b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/znm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=znm&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>时空游侠</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/skyx/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=skyx&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>超级马里奥</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/cjmla/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cjmla&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>气球砰砰砰</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/qqppp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qqppp&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>色域迷惑人</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/symh/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=symh&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>都市谍影</b>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/dsdy/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=dsdy&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>接杯达人</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/jbdr/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=jbdr&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>反腐小王子</b>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/bljqzffxwz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=bljqzffxwz&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>萌娃在哪儿</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/mwzne/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mwzne&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>中秋传说</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/zqcs/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zqcs&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>嫦娥爱色兔</b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/ceast/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ceast&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>打我呀</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/dwy/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=dwy&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>糖果达人2</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/tgdr2/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=tgdr2&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>能打多少次</b>";
+games[i].type= "休闲游戏";
+games[i].score=94;
+games[i].icon = "http://game.9g.com/nddsc/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=nddsc&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>一线连</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/yxl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=yxl&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>史上最坑的猜拳</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/cq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cq&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>弹力小方块</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/dlxfk/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=dlxfk&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>你的童年让狗吃了吗</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/ndtnrgclm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ndtnrgclm/game.html";
+i++;
+games[i]=new Array();
+games[i].name = "<b>哥挺住18秒</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/gtz18m/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=gtz18m&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>全民寻找房祖名</b>";
+games[i].type= "休闲游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/qmxzfzm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qmxzfzm&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>明星冰桶挑战</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/mxbttz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mxbttz&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>樱木花道的主场</b>";
+games[i].type= "动作游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/ymhddzc/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ymhddzc&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>帮龙叔捞儿子</b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/blglez/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=blglez&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b><font color=red>步步惊心</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/bbjx/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=bbjx&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>挖鼻孔</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/wbk/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=wbk&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>淘金豆</b>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/tjd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=tjd&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>能接多少杯</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/njdsb/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=njdsb&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>监狱风云</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/jyfy/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=jyfy&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>记忆大师</b>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/jyds/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=jyds&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>扫雷</b>";
+games[i].type= "休闲游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/sl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=sl&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>堆木头</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/dmt/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=dmt&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>路边的野花不要采</b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/lbyhbyc/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=lbyhbyc&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>跳跳狗</b>";
+games[i].type= "休闲游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/ttg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ttg&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>摇摆直升机</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/ybzsj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ybzsj&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>放开房祖名</b>";
+games[i].type= "休闲游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/fkfzm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=fkfzm&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>挑战憋屁</b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/tzbp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=tzbp&f=9g";
+i++;
+
+//games[i]=new Array();
+//games[i].name = "<b>涨姿势</b>";
+//games[i].type= "休闲游戏";
+//games[i].score=89;
+//games[i].icon = "http://game.9g.com/zzs/icon.png";
+//games[i].ishot = true;
+//games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zzs&f=9g";
+//i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>寻找120C|H明星</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/xz120/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=xz120&f=9g";
+i++;
+
+//games[i]=new Array();
+//games[i].name = "<b><font color=red>测试你出轨概率</font></b>";
+//games[i].type= "测试游戏";
+//games[i].score=89;
+//games[i].icon = "http://game.9g.com/cscg/icon.png";
+//games[i].ishot = true;
+//games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cscg&f=9g";
+//i++;
+games[i]=new Array();
+games[i].name = "<b>木乃伊来了</b>";
+games[i].type= "动作游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/mnygl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mnygl&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b>数钱数到手抽筋</b>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/sqsdscj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=sqsdscj&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font color=>抛鸡蛋</font>";
+games[i].type= "休闲游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/pjd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=pjd&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font color=red>全民摇可乐</font>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/qmykl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qmykl&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font color=>戳泡泡</font>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/cpp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cpp&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font color=>吃豆豆</font>";
+games[i].type= "休闲游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/cdd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=cdd&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "围住小鬼子";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/wzxgz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/wzxgz/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font >青蛙跳</font>";
+games[i].type= "休闲游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/qwt/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qwt&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<font >萝莉来了</font>";
+games[i].type= "动作游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/llll/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=llll&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >飞越天空之城</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/zb/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zb&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >强迫症患者</font></b>";
+games[i].type= "休闲游戏";
+games[i].score=86;
+games[i].icon = "http://game.9g.com/qpzhz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qpzhz&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>激射神经猫</font></b>";
+games[i].type= "动作游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/jssjm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=jssjm&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font >拯救精子</font>";
+games[i].type= "休闲游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/zjjz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zjjz&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >蜘蛛侠</font></b>";
+games[i].type= "动作游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/zzx/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zzx&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>企鹅打笨熊</font></b>";
+games[i].type= "动作游戏";
+games[i].score=91;
+games[i].icon = "http://game.9g.com/qedbx/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=qedbx&f=9g";
+i++;
+
+//games[i]=new Array();
+//games[i].name = "<b><font color=#cd0e5e>美女啵一个</font></b>";
+//games[i].type= "休闲游戏";
+//games[i].score=85;
+//games[i].icon = "http://game.9g.com/mnbyg/icon.png";
+//games[i].ishot = true;
+//games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=mnbyg&f=9g";
+//i++;
+games[i]=new Array();
+games[i].name = "<b><font >神经猫打棒球</font></b>";
+games[i].type= "动作游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/sjmdbq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=sjmdbq&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>疯狂打企鹅</font></b>";
+games[i].type= "动作游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/dqe/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=dqe&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >上山打老虎</font></b>";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/ssdlh/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=ssdlh&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >大家一起来找妹子</font></b>";
+games[i].type= "智力游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/djyqlzmz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=djyqlzmz&f=9g";
+i++;
+
+games[i]=new Array();
+games[i].name = "<b><font >比谁更持久</font></b>";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/bsgcj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=bsgcj&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >捏泡泡</font></b>";
+games[i].type= "动作游戏";
+games[i].score=83;
+games[i].icon = "http://game.9g.com/npp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=npp&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>心跳连连看</b>";
+games[i].type= "智力游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/xtllk/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=xtllk&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font >是男人就下100层</font></b>";
+games[i].type= "动作游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/snrjx100c/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=snrjx100c&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font ><b>远古孔明棋</b></font>";
+games[i].type= "棋牌游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/kmq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=kmq&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "疯狂踩蚂蚁";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/fkcmy/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=fkcmy&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "真屌丝鉴定";
+games[i].type= "动作游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/zdsjd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zdsjd&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b>挑战火眼金睛</b>";
+games[i].type= "智力游戏";
+games[i].score=83;
+games[i].icon = "http://game.9g.com/tzhyjj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=tzhyjj&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<font ><b>最强电灯泡</b></font>";
+games[i].type= "智力游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/zqddp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://9g.game6.cn/gamecenter.html?gameid=zqddp&f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "你能XXOO几下";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/xxoo/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/xxoo/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "看你有多色(双飞版)";
+games[i].type= "测试游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/ssss2/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ssss2/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "一根筋玩到底";
+games[i].type= "智力游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/ygjwdd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ygjwdd/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "伐木工";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/fmg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/fmg/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>炸屎奇遇记</font></b>";
+games[i].type= "策略游戏";
+games[i].score=90;
+games[i].icon = "http://game.9g.com/zsqyj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/zsqyj/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "超级染色体";
+games[i].type= "策略游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/cjrst/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/cjrst/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>疯狂手指</font></b>";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/fksz/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/fksz/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>看你有多色</font></b>";
+games[i].type= "测试游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/ssss/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ssss/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "七夕拆情侣";
+games[i].type= "动作游戏";
+games[i].score=81;
+games[i].icon = "http://game.9g.com/esql/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/esql/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "贱人配对";
+games[i].type= "智力游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/jrpd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/jrpd/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "一个都别掉";
+games[i].type= "动作游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/ygdbd/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ygdbd/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "节奏大湿";
+games[i].type= "音乐竞技";
+games[i].score=95;
+games[i].icon = "http://game.9g.com/jzds/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/jzds/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>大力射手</font></b>";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/dlss/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/dlss/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "神经猫III-功夫猫";
+games[i].type= "动作游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/gfm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/gfm/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "神经猫II-基友猫";
+games[i].type= "智力游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/sjm2/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/sjm2/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "围住神经猫";
+games[i].type= "智力游戏";
+games[i].score=93;
+games[i].icon = "http://game.9g.com/sjm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/sjm/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "小呀小苹果";
+games[i].type= "动作游戏";
+games[i].score=83;
+games[i].icon = "http://game.9g.com/xpg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/xpg/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "滑你妹";
+games[i].type= "动作游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/hnm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/hnm/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "雷霆X战机";
+games[i].type= "射击游戏";
+games[i].score=92;
+games[i].icon = "http://game.9g.com/ltzj/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ltzj/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "切了个瓜";
+games[i].type= "动作游戏";
+games[i].score=83;
+games[i].icon = "http://game.9g.com/qlgg/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/qlgg/game.html?f=9g&v=0.1";
+i++;
+games[i]=new Array();
+games[i].name = "大丈夫是我";
+games[i].type= "嘿咻游戏";
+games[i].score=88;
+games[i].icon = "http://game.9g.com/dzf/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/dzf/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "<b><font color=red>全民快跑</font></b>";
+games[i].type= "体育竞技";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/qmkp/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/qmkp/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "影子传说";
+games[i].type= "动作游戏";
+games[i].score=81;
+games[i].icon = "http://game.9g.com/yzcs/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/yzcs/game.html?f=9g";
+i++;
+
+//games[i]=new Array();
+//games[i].name = "小心色狼";
+//games[i].type= "智力游戏";
+//games[i].score=85;
+//games[i].icon = "http://game.9g.com/xxsl/icon.png";
+//games[i].ishot = true;
+//games[i].src = "http://game.9g.com/xxsl/game.html?f=9g";
+//i++;
+games[i]=new Array();
+games[i].name = "命悬一线";
+games[i].type= "动作游戏";
+games[i].score=89;
+games[i].icon = "http://game.9g.com/mxyx/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/mxyx/game.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "你是什么蛋";
+games[i].type= "测试专区";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/iq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://wx.9g.com/egg/welcome.jsp?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "3D熊出没";
+games[i].type= "动作游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/xcm/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/xcm/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "一个都不能死【噩梦版】";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/nodie/icon.png";
+games[i].ishot = true;
+games[i].src = "http://m.9g.com/bns3/game.html?f=9g&r="+Math.random();
+i++;
+games[i]=new Array();
+games[i].name = "疯转千万次的那些测试";
+games[i].type= "测试专区";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/iq/icon.png";
+games[i].ishot = true;
+games[i].src = "http://mp.weixin.qq.com/s?__biz=MzA4OTYyMzYxNQ==&mid=200436726&idx=1&sn=10437a4cf05208e52f6cd18a4174317f&scene=1&from=singlemessage&isappinstalled=0#rd&r="+Math.random();
+i++;
+games[i]=new Array();
+games[i].name = "像素小鸟";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/xsxn/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/xsxn/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "密室逃生";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/kjxs/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/msts/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "青蛙过河";
+games[i].type= "智力游戏";
+games[i].score=87;
+games[i].icon = "http://game.9g.com/qingwa/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/qingwa/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "最强眼力";
+games[i].type= "智力游戏";
+games[i].score=85;
+games[i].icon = "http://game.9g.com/zqyl/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/zqyl/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "一夜N次郎";
+games[i].type= "动作游戏";
+games[i].score=81;
+games[i].icon = "http://game.9g.com/jcl/icon.jpg";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/jcl/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "一个都不能死";
+games[i].type= "动作游戏";
+games[i].score=82;
+games[i].icon = "http://game.9g.com/nodie/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/bns/wx.html?f=9g&r="+Math.random();
+i++;
+games[i]=new Array();
+games[i].name = "我要飞的更高";
+games[i].type= "动作游戏";
+games[i].score=78;
+games[i].icon = "http://game.9g.com/ttt/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/ttt/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "算数达人";
+games[i].score=76;
+games[i].ishot = true;
+games[i].type= "休闲益智";
+games[i].icon = "http://game.9g.com/jiafa/icon.png";
+games[i].src = "http://game.9g.com/jiafa/wx.html?f=9g";
+i++;
+games[i]=new Array();
+games[i].name = "别踩白块儿";
+games[i].type= "动作游戏";
+games[i].score=80;
+games[i].icon = "http://game.9g.com/bcbker/icon.png";
+games[i].ishot = true;
+games[i].src = "http://game.9g.com/bcbker/index.html";
+i++;
+games[i]=new Array();
+games[i].name = "2048微信版";
+games[i].score=76;
+games[i].ishot = true;
+games[i].type= "休闲益智";
+games[i].icon = "http://game.9g.com/2048/icon.png";
+games[i].src = "http://game.9g.com/2048/wx.html";
+
+
+
+var startpos=0;
+var endpos=0;
+var isload=false;
+function draw(){
+	var sr="";
+	
+	var backtop=document.getElementById('backtop');
+	var loading=document.getElementById('loading');
+	if(endpos!=games.length){
+		endpos+=20;
+		if(backtop){
+			backtop.style.display="none";
+		}
+	}else{
+		if(backtop){
+			backtop.style.display="block";
+		}
+		if(loading){
+			
+			loading.style.display="none";
+		}
+	}
+	if(endpos>games.length){
+		endpos=games.length;
+	}
+	var gamelist=document.getElementById("j_game_list");
+	for(var i=startpos;i<endpos;i++){
+		var gtype=games[i].type;
+		if(!gtype)gtype="休闲竞技";
+		var score=games[i].score;
+		if(!score)score=60;		
+		var li=document.createElement("li");
+		li.setAttribute("data-url",games[i].src);
+		li.innerHTML="<figure><img src='" + games[i].icon + "'/><figcaption><h3 class='tit'>" + games[i].name + "</h3><p>"+gtype+" 好评" + score + "%</p><p><span>" + (100000+parseInt(Math.random()*1000000)) + "人玩过</span></p></figcaption><span class='btn btn-g' data-url='" + games[i].src + "'>开始玩</span></figure>";
+		gamelist.appendChild(li);
+	}
+	startpos=endpos;
+	isload=true;
+	//if(t==1)document.getElementById("menu").innerHTML='<a href="/?ver=0.3&' +  ((Game.request("uid"))?("uid="+Game.request("uid")):"")  + '" class="nav_firstItem"><span class="common_icon_favor"></span>即点即玩</a><a href="/?t=2&ver=0.3&' +  ((Game.request("uid"))?("uid="+Game.request("uid")):"")  + '" class="nav_lastItem"><span class="common_icon_catalog" ></span>热门游戏下载</a>';
+	//if(t==2)document.getElementById("menu").innerHTML='<a href="/?ver=0.3&' +  ((Game.request("uid"))?("uid="+Game.request("uid")):"")  + '" class="nav_lastItem"><span class="common_icon_favor"></span>即点即玩</a><a href="/?t=2&ver=0.3&' +  ((Game.request("uid"))?("uid="+Game.request("uid")):"")  + '" class="nav_firstItem"><span class="common_icon_catalog" ></span>热门游戏下载</a>';
+
+}
+window.addEventListener ("scroll",function(e){
+	
+	var sctop=document.body.scrollTop;
+	var footnav=document.getElementById("j_foot_nav");
+	if(!footnav){
+		return;
+	}
+	var btop=footnav.offsetTop;
+	if(btop-sctop<1000){
+		if(isload){
+			
+			isload=false;
+			draw();
+			
+		}
+	}
+})
+draw();
+document.body.scrollTop=0;
+</script>
+	  
+
+	
+<script src="base.js"></script>
+
+<script>
+seajs.use('common.js', function(init){
+	init();
+});
+</script>
+<footer class='footer' id='j_foot_nav'>
+	<div id="loading">正在加载...</div>
+	<menu class='d-menu' style='display:none;'></menu>
+    <div class='ft-copy'>
+    	<p><span>&copy;2014 9G游戏</span></p>
+        <div class='btn-top' id="backtop" style='display:none;'><a id='j_back_top' data-pvtag='foot.back' data-nogo='1'>回顶部</a></div>
+    </div>
+</footer>
+<a id="appdowload" href="http://fusion.qq.com/cgi-bin/qzapps/unified_jump?appid=10636335&from=wx&isTimeline=false&actionFlag=0&params=pname%3Dcom.example.game9g%26versioncode%3D2%26actionflag%3D0%26channelid%3D"><img src=/images/adapp.png style="width:100%;height:45px;"></a>
+<div style="display:none">
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+</div> 
+<br>
+<br>
+<br>
+<style>
+#fix_footer {
+	-moz-box-shadow:0px 0px 11px #191919;
+	-webkit-box-shadow:0px 0px 11px #191919;
+	box-shadow:0px 0px 11px #191919;
+}
+#fix_footer_menu{
+	border-right:1px solid rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.1);
+	font-family: 黑体;
+}
+#fix_footer_menu_on {
+	border-right:1px solid rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.3);
+	font-family: 黑体;
+	background:#202020; /* Fallback color for old browsers */
+}
+#loading{
+	text-align: center;
+	height: 25px;
+	font-size: 18px;
+	color: rgb(0, 0, 0);
+	padding: 10px;
+	display: block;
+	background-color: rgb(250, 249, 248);
+	margin: 5px;
+	border-radius: 5px;
+}
+#appdowload{
+	color: #333;
+	text-decoration: none;
+	position: fixed;
+	bottom: 55px;
+	width: 100%;
+	height: 45px;
+}
+.footer{
+	padding-bottom: 60px;
+}
+</style>
+
+<div class="fix_footer" id="fix_footer" style="left:0;background-color:#191919;color:#ffffff;height:55px;width:100%;position:fixed;bottom:0%;font-size:14px;">
+<table width=100% height=100% border=0 style="border-collapse: collapse;">
+<tr>
+<td id="fix_footer_menu_on" onclick="window.location='http://9g.game6.cn/index.html?r='+Math.random();" align=center><img src=http://game.9g.com/images/nav_7.png height=25><br>玩游戏</td>
+<td id="fix_footer_menu" onclick="window.location='http://9g.game6.cn/top.html?r='+Math.random();" align=center><img src=http://game.9g.com/images/nav_5.png height=25><br>排片榜</td>
+<td id="fix_footer_menu" onclick="window.location='http://wx.wsq.qq.com/235003789'"  align=center><img src=http://game.9g.com/images/nav_2.png height=25><br>微社区</td>
+</tr>
+</table>
+</div>
+<script>
+	function getParameter(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return r[2]; return null;
+	}
+	var spid=getParameter("spid");
+	if(spid=="uc"){
+		window.location.href="index_uc.html";
+	}
+</script>
+</body>
+</html>

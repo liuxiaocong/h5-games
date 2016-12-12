@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html manifest="manifest.mf">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript"></script>
+    <title>换位思考</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<script src="./Synchroshift_files/src.js"></script>
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+        function updateShareScore(bestScore) {
+            var d = '险中求胜到' + bestScore + '关，观望四周求挑战 ！';
+            pkGame.updateResult(bestScore, bestScore, d, d);
+        }
+
+        pkGame.ready(function() {
+
+        });
+    </script>
+	</head>
+	<body style="margin: 0; padding: 0; border: 0; background-color: black; color: white;">
+
+<script type="text/javascript">
+
+
+function onBridgeReady(){
+ WeixinJSBridge.call('hideOptionMenu');
+}
+
+if (typeof WeixinJSBridge == "undefined"){
+    if( document.addEventListener ){
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    }else if (document.attachEvent){
+        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+}else{
+    onBridgeReady();
+}
+</script>
+		<canvas id="gameCanvas" style="-webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: absolute; width: 611px; height: 916px; top: 0px; left: 534.5px; " width="320" height="480">您的浏览器不支持 HTML5 canvas.</canvas>
+	
+</body></html>

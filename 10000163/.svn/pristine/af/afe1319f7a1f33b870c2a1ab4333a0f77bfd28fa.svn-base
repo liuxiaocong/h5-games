@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assets>
+	<!-- Name of the class where the files will be loaded-->
+	<class name="initial">
+		<!-- Path of the file and type of the asset -->
+		<file path="data/splash.atlas" class="TextureAtlas"/>
+		<file path="data/scalableElements.atlas" class="TextureAtlas"/>
+	</class>
+	<class name="common">
+		<!--TextureAtlas-->
+		<file path="data/common.atlas" class="TextureAtlas"/>
+		<file path="data/common_dithering.atlas" class="TextureAtlas"/>
+		<file path="data/common_565.atlas" class="TextureAtlas"/>
+		<file path="data/buyMiles.atlas" class="TextureAtlas"/>
+		<file path="data/airportsStamps.atlas" class="TextureAtlas"/>
+		<file path="data/costumes.atlas" class="TextureAtlas"/>
+		<file path="data/wallpapers.atlas" class="TextureAtlas"/>
+		<!--Sounds-->
+		<file path="data/sounds/airport_selection_click.mp3" class="Sound"/>
+		<file path="data/sounds/band_ouch.mp3" class="Sound"/>
+		<file path="data/sounds/biohazard_ouch.mp3" class="Sound"/>
+		<file path="data/sounds/button_click.mp3" class="Sound"/>
+		<file path="data/sounds/dog_ouch.mp3" class="Sound"/>
+		<file path="data/sounds/fall_mixed.mp3" class="Sound"/>
+		<file path="data/sounds/fall_voice.mp3" class="Sound"/>
+		<file path="data/sounds/fling.mp3" class="Sound"/>
+		<file path="data/sounds/in_game_click.mp3" class="Sound"/>
+		<file path="data/sounds/level_selection_click.mp3" class="Sound"/>
+		<file path="data/sounds/luxury_ouch.mp3" class="Sound"/>
+		<file path="data/sounds/miles_counting.mp3" class="Sound"/>
+		<file path="data/sounds/standard_ouch.mp3" class="Sound"/>
+		<file path="data/sounds/stars_counting.mp3" class="Sound"/>
+		<file path="data/sounds/successfull_delivery.mp3" class="Sound"/>
+		<file path="data/sounds/unsuccessfull_delivery.mp3" class="Sound"/>
+		<file path="data/sounds/preElectric.mp3" class="Sound"/>
+		<file path="data/sounds/electric.mp3" class="Sound"/>
+		<!--Music-->
+		<file path="data/music/failure.mp3" class="Music"/>
+		<file path="data/music/success.mp3" class="Music"/>
+		<file path="data/music/intro.mp3" class="Music"/>
+		<file path="data/music/menu.mp3" class="Music"/>
+		<file path="data/music/in_game.mp3" class="Music"/>
+	</class>
+	<class name="menus">
+		<!--TextureAtlas-->
+		<file path="data/main_menu.atlas" class="TextureAtlas"/>
+		<file path="data/main_menu_565.atlas" class="TextureAtlas"/>
+		<file path="data/main_menu_dithering.atlas" class="TextureAtlas"/>
+		<file path="data/dutyFree.atlas" class="TextureAtlas"/>
+	</class>
+	<class name="intro">
+		<!--TextureAtlas-->
+		<file path="data/intro/intro_screen.atlas" class="TextureAtlas"/>
+	</class>
+	<class name="normal">
+		<!--TextureAtlas-->
+		<file path="data/game_level.atlas" class="TextureAtlas"/>
+		<file path="data/standard_anim.atlas" class="TextureAtlas"/>
+		<file path="data/dog_anim.atlas" class="TextureAtlas"/>
+		<file path="data/band_anim.atlas" class="TextureAtlas"/>
+		<file path="data/surf_anim.atlas" class="TextureAtlas"/>
+		<file path="data/luxury_anim.atlas" class="TextureAtlas"/>
+		<file path="data/biohazard_anim.atlas" class="TextureAtlas"/>
+		<file path="data/newAssets.atlas" class="TextureAtlas"/>
+		<file path="data/tutorial.atlas" class="TextureAtlas"/>
+		<file path="data/panoramic_background_grinder.atlas" class="TextureAtlas"/>
+		<file path="data/panoramic_background_pc.atlas" class="TextureAtlas"/>
+	</class>
+	<class name="infinite">
+		<file path="data/game_level.atlas" class="TextureAtlas"/>
+		<file path="data/standard_anim.atlas" class="TextureAtlas"/>
+		<file path="data/dog_anim.atlas" class="TextureAtlas"/>
+		<file path="data/band_anim.atlas" class="TextureAtlas"/>
+		<file path="data/surf_anim.atlas" class="TextureAtlas"/>
+		<file path="data/luxury_anim.atlas" class="TextureAtlas"/>
+		<file path="data/biohazard_anim.atlas" class="TextureAtlas"/>
+		<file path="data/newAssets.atlas" class="TextureAtlas"/>
+		<file path="data/infinite.atlas" class="TextureAtlas"/>
+		<file path="data/tutorial.atlas" class="TextureAtlas"/>
+		<file path="data/panoramic_background_grinder.atlas" class="TextureAtlas"/>
+		<file path="data/panoramic_background_pc.atlas" class="TextureAtlas"/>
+	</class>
+	<class name="panoramicPC">
+	    <!--TextureAtlas-->
+	    <file path="data/panoramic_background_pc.atlas" class="TextureAtlas"/>
+	</class>
+</assets>

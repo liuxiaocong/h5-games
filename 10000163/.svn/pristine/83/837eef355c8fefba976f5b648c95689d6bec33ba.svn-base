@@ -1,0 +1,11 @@
+common_dithering.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+information_box
+  rotate: false
+  xy: 2, 2
+  size: 500, 620
+  orig: 500, 620
+  offset: 0, 0
+  index: -1

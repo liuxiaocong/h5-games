@@ -1,0 +1,276 @@
+.screen{
+    -webkit-transition: opacity 0.5s;
+}
+
+#clickme{
+    -webkit-transition: -webkit-transform 1s;
+}
+
+.demo1Animate{
+    -webkit-transform: translate(500px) scale(1.5);
+}
+
+.heart{
+    -webkit-animation: pumping 0.75s infinite;
+}
+
+@-webkit-keyframes pumping{
+    0% {-webkit-transform: scale(1);}
+    
+    50% {-webkit-transform: scale(1.2);}
+    
+    100% {-webkit-transform: scale(1);}
+}
+.heart1{
+    -webkit-animation: pumping 0.75s infinite;
+}
+
+@-webkit-keyframes pumping{
+    0% {-webkit-transform: scale(1);}
+    25% {-webkit-transform: scale(1.2);}
+    50% {-webkit-transform: scale(1.5);}
+    75% {-webkit-transform: scale(1.2);}
+    100% {-webkit-transform: scale(1);}
+}
+.zoom{
+    -webkit-animation: pump 2s linear  ;
+    
+}
+@-webkit-keyframes pump{
+    0% {-webkit-transform: scale(0.5);}
+    
+/*    50% {-webkit-transform: scale(0.7);}*/
+    
+    100% {-webkit-transform: scale(1);}
+}
+
+.screen .pinkbug{
+    top: 100px;
+    left: 770px;
+    height: 85px;
+    width: 70px;
+    overflow: hidden;
+    background-image: url(assets/pinkbug.png);
+    -webkit-animation: pinkbugAnimation 0.5s linear infinite alternate;
+}
+
+@-webkit-keyframes pinkbugAnimation{
+    0% {background-position: 0px;}
+    16.66% {background-position: 0px 0px;}
+    16.67% {background-position: -70px 0px;}
+    33.32% {background-position: -70px 0px;}
+    33.33% {background-position: -140px 0px;}
+    49.99% {background-position: -140px 0px;}
+    50% {background-position: -210px 0px;}
+    66.66% {background-position: -210px 0px;}
+    66.67% {background-position: -280px 0px;}
+    83.32% {background-position: -280px 0px;}
+    83.33% {background-position: -350px 0px;}
+    100% {background-position: -350px 0px;}
+}
+
+.unclickable{
+	pointer-events: none;
+}
+
+.burritoMsgs{
+     -webkit-animation: messageAnimation 1.0s 1;
+}
+
+@-webkit-keyframes messageAnimation{
+    0% {-webkit-transform: scale(0.1);}
+    35% {-webkit-transform: scale(1);}
+    65% {-webkit-transform: scale(1);}
+    100% {-webkit-transform: scale(0.1);}
+}
+
+.Circular_border{
+    height: 20px;
+    width: 20px;
+    -webkit-border-radius: 10px;
+    border: 1px solid black;
+}
+
+.buttonPress{
+    -webkit-animation: buttonAnimation 0.25s 1;
+}
+
+@-webkit-keyframes buttonAnimation{
+    0% {-webkit-transform: scale(1);}
+    35% {-webkit-transform: scale(1.2);}
+    100% {-webkit-transform: scale(1.5);}
+}
+
+
+.hold{
+    position: absolute;
+    
+    
+    -webkit-transition: all 0.75s;
+}
+.hold1{
+    position: absolute;
+    
+    
+    -webkit-transition: all  1s;
+    
+}
+#tray{
+    width:590px;
+    height:402px;
+    left:30px;
+    top:451px;
+    
+}
+.popupScreen{
+    position: absolute;
+    width: 960px;
+    height: 540px;
+    z-index: 2000;
+    top: 0px;
+    left: 0px;
+    -webkit-transform: translateX(-3000px);
+    -webkit-transition: -webkit-transform 0.5s;
+}
+.pauseScreendiv {
+     position: absolute;
+    width: 640px;
+    height: 860px;
+    z-index: 550;
+    top: 0px;
+    left: 0px;
+    -webkit-transform: translateY(-3000px);
+    -webkit-transition: -webkit-transform 1s;
+}
+.popupScreen{
+    position: absolute;
+    width: 640px;
+    height: 860px;
+    z-index: 600;
+    top: 0px;
+    left: 0px;
+    -webkit-transform: translateY(-3000px);
+    -webkit-transition: -webkit-transform 1s;
+}
+.slideIn{
+    -webkit-transform: translateY(0);
+}
+
+
+#star9{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ 
+#star10{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star11{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star12{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star13{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star14{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star15{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ #star16{
+    -webkit-animation: cloud1 5s infinite linear;
+    position: absolute;
+    top: 90px;
+    left: -490px;
+    overflow: hidden;
+
+ }
+ 
+@-webkit-keyframes cloud1{
+    0% {-webkit-transform: scale(1) rotate(360deg);}
+    50% {-webkit-transform: scale(0.5) rotate(180deg);}
+    100%{-webkit-transform: scale(1) roatate(360deg);}
+}
+#section{
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+.scan{
+    opacity: 0;
+    z-index: 9;
+    -webkit-animation: scoreAnimation 0.5s 1 ease-out;
+    
+}
+@-webkit-keyframes scoreAnimation{
+    from {
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+.instructions{
+    position: absolute;
+    left:0px;
+    top:0px;
+/*    -webkit-transform: translatX(900px);
+    -webkit-transition: -webkit-transform 1s;*/
+}
+.insslide{
+    -webkit-transform: translateX(0);
+}
+#scoreCard{
+    position:absolute;
+    left:55px;
+    
+}
+.flash{
+    -webkit-animation:flashingRedAnimation 1s linear infinite;
+
+}
+@-webkit-keyframes flashingRedAnimation{
+    0% { color:transparent;}
+    49.99% {color:transparent;}
+    50% { color: #ff0000;}
+    100% { color: #ff0000;}
+}

@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "FailPopup",
+	"frame": {"x":1,"y":366,"w":540,"h":363},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":540,"h":363},
+	"sourceSize": {"w":540,"h":363}
+},
+{
+	"filename": "PausePopup",
+	"frame": {"x":542,"y":366,"w":381,"h":160},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":381,"h":160},
+	"sourceSize": {"w":381,"h":160}
+},
+{
+	"filename": "WinPopup",
+	"frame": {"x":1,"y":1,"w":552,"h":364},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":552,"h":364},
+	"sourceSize": {"w":552,"h":364}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "game_screen_gui_assets2.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4d35eaa73818d9245a3b3d0298dd5d62:02a4133191633cfffddbef70aa7530e4:fc982c237900d0821f6701c308ee219d$"
+}
+}

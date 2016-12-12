@@ -1,0 +1,60 @@
+airportsStamps.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+locked_stamp
+  rotate: false
+  xy: 335, 302
+  size: 258, 98
+  orig: 258, 98
+  offset: 0, 0
+  index: -1
+syd_unlocked
+  rotate: false
+  xy: 474, 402
+  size: 234, 276
+  orig: 234, 276
+  offset: 0, 0
+  index: -1
+infinite_unlocked
+  rotate: false
+  xy: 335, 2
+  size: 244, 298
+  orig: 244, 298
+  offset: 0, 0
+  index: -1
+pek_unlocked
+  rotate: false
+  xy: 710, 2
+  size: 234, 276
+  orig: 234, 276
+  offset: 0, 0
+  index: -1
+boosters_unlocked
+  rotate: false
+  xy: 2, 2
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1
+lhr_unlocked
+  rotate: false
+  xy: 2, 404
+  size: 234, 271
+  orig: 234, 271
+  offset: 0, 0
+  index: -1
+jfk_unlocked
+  rotate: false
+  xy: 238, 404
+  size: 234, 263
+  orig: 234, 263
+  offset: 0, 0
+  index: -1
+mad_unlocked
+  rotate: false
+  xy: 710, 280
+  size: 234, 276
+  orig: 234, 276
+  offset: 0, 0
+  index: -1

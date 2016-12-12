@@ -1,0 +1,14 @@
+{
+	"missiles": [
+		{
+			"type":"adjusting",
+			"rotation": 270,
+			"speed": 0.4,
+			"screenSide": "right",
+			"position": 0,
+			"delay": 0.0
+		}
+	], 
+
+	"timeLength": 3.5
+}

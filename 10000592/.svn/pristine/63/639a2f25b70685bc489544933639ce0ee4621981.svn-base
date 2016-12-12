@@ -1,0 +1,642 @@
+{
+    "metadata": {
+        "textureFileName": "UI.png",
+        "realTextureFileName": "UI.png",
+        "format": 2,
+        "size": "{1024,2048}"
+    },
+    "frames": {
+        "UI_000022": {
+            "frame": "{{644,219},{170,76}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{166,72}"
+        },
+        "UI_000023": {
+            "frame": "{{672,404},{158,63}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{154,59}"
+        },
+        "UI_000018": {
+            "frame": "{{807,295},{159,63}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{159,63}"
+        },
+        "UI_000024": {
+            "frame": "{{513,404},{159,63}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{159,63}"
+        },
+        "UI_000017": {
+            "frame": "{{644,0},{330,76}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{326,72}"
+        },
+        "UI_000014": {
+            "frame": "{{830,404},{144,63}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{144,63}"
+        },
+        "UI_000025": {
+            "frame": "{{644,295},{163,67}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{159,63}"
+        },
+        "UI_000019": {
+            "frame": "{{853,148},{163,67}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{159,63}"
+        },
+        "UI_000030": {
+            "frame": "{{661,467},{66,67}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{62,63}"
+        },
+        "UI_000013": {
+            "frame": "{{0,0},{644,404}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{640,400}"
+        },
+        "UI_000012": {
+            "frame": "{{0,769},{513,348}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{509,344}"
+        },
+        "UI_000010": {
+            "frame": "{{757,467},{30,42}}",
+            "offset": "{3.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000007": {
+            "frame": "{{872,467},{27,42}}",
+            "offset": "{3.50,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000002": {
+            "frame": "{{966,295},{30,42}}",
+            "offset": "{3.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000006": {
+            "frame": "{{974,0},{32,42}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000004": {
+            "frame": "{{787,467},{29,42}}",
+            "offset": "{2.50,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000001": {
+            "frame": "{{644,362},{60,28}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{56,24}"
+        },
+        "UI_000003": {
+            "frame": "{{996,295},{27,42}}",
+            "offset": "{3.50,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000027": {
+            "frame": "{{970,112},{37,36}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{33,32}"
+        },
+        "UI_000005": {
+            "frame": "{{845,467},{27,42}}",
+            "offset": "{2.50,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000009": {
+            "frame": "{{727,467},{30,42}}",
+            "offset": "{3.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000020": {
+            "frame": "{{0,404},{513,365}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{509,361}"
+        },
+        "UI_000011": {
+            "frame": "{{816,467},{29,42}}",
+            "offset": "{2.50,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000000": {
+            "frame": "{{644,148},{209,71}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{205,67}"
+        },
+        "UI_000015": {
+            "frame": "{{513,467},{148,67}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{144,63}"
+        },
+        "UI_000021": {
+            "frame": "{{814,219},{166,72}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{166,72}"
+        },
+        "UI_000029": {
+            "frame": "{{980,255},{37,36}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{33,32}"
+        },
+        "UI_000028": {
+            "frame": "{{980,219},{37,36}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{33,32}"
+        },
+        "UI_000008": {
+            "frame": "{{974,404},{30,42}}",
+            "offset": "{3.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{28,38}"
+        },
+        "UI_000016": {
+            "frame": "{{644,76},{326,72}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{326,72}"
+        },
+        "UI_000026": {
+            "frame": "{{970,76},{37,36}}",
+            "offset": "{2.00,-2.00}",
+            "rotated": false,
+            "sourceSize": "{33,32}"
+        }
+    },
+    "displays": {
+        "元件28": {
+            "anchorY": 1,
+            "start": 30,
+            "end": 30,
+            "anchorX": 0,
+            "type": "元件28"
+        },
+        "saf6poo": {
+            "anchorY": 1,
+            "start": 28,
+            "end": 28,
+            "anchorX": 0,
+            "type": "saf6poo"
+        },
+        "mmm": {
+            "start": 16,
+            "anchorY": 0.97,
+            "labels": {
+                "down": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "end": 17,
+            "anchorX": 0,
+            "type": "mmm"
+        },
+        "sbeddlm": {
+            "anchorY": 1,
+            "start": 29,
+            "end": 29,
+            "anchorX": 0,
+            "type": "sbeddlm"
+        },
+        "rree": {
+            "start": 24,
+            "anchorY": 0.97,
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "end": 25,
+            "anchorX": 0.01,
+            "type": "rree"
+        },
+        "k": {
+            "anchorY": 1,
+            "start": 13,
+            "end": 13,
+            "anchorX": 0,
+            "type": "k"
+        },
+        "fceyiuo": {
+            "anchorY": 1.08,
+            "start": 1,
+            "end": 1,
+            "anchorX": -0.05,
+            "type": "fceyiuo"
+        },
+        "m": {
+            "start": 14,
+            "anchorY": 0.97,
+            "labels": {
+                "down": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "end": 15,
+            "anchorX": 0.01,
+            "type": "m"
+        },
+        "s18": {
+            "anchorY": 1,
+            "start": 26,
+            "end": 26,
+            "anchorX": 0,
+            "type": "s18"
+        },
+        "pp": {
+            "start": 21,
+            "anchorY": 0.97,
+            "labels": {
+                "down": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "end": 22,
+            "anchorX": 0.01,
+            "type": "pp"
+        },
+        "asf3cc3": {
+            "anchorY": 1.17,
+            "start": 0,
+            "end": 0,
+            "anchorX": -0.24,
+            "type": "asf3cc3"
+        },
+        "p": {
+            "start": 18,
+            "anchorY": 0.97,
+            "labels": {
+                "down": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "end": 19,
+            "anchorX": 0.01,
+            "type": "p"
+        },
+        "s19": {
+            "anchorY": 1,
+            "start": 27,
+            "end": 27,
+            "anchorX": 0,
+            "type": "s19"
+        },
+        "h": {
+            "anchorY": 1,
+            "start": 12,
+            "end": 12,
+            "anchorX": 0,
+            "type": "h"
+        },
+        "pppoo00": {
+            "anchorY": 1,
+            "start": 23,
+            "end": 23,
+            "anchorX": 0,
+            "type": "pppoo00"
+        },
+        "pause": {
+            "anchorY": 1,
+            "start": 20,
+            "end": 20,
+            "anchorX": 0,
+            "type": "pause"
+        }
+    },
+    "fonts": {
+        "ScoreFont": {
+            "chars": "0123456789",
+            "start": 2,
+            "anchorY": 1.39,
+            "end": 11,
+            "anchorX": -0.07,
+            "size": 45
+        }
+    },
+    "mcs": {
+        "Start": {
+            "rect": "0,0,640.5,401.55",
+            "anchorX": 0,
+            "anchorY": 1,
+            "children": {
+                "instance818": {
+                    "zIndex": 1,
+                    "frames": "1.20,401.00,0.00,1.00,1.00,1.00",
+                    "class": "k"
+                },
+                "plays": {
+                    "zIndex": 3,
+                    "frames": "471.20,141.50,0.00,1.00,1.00,1.00",
+                    "class": "Play"
+                },
+                "playGame": {
+                    "zIndex": 0,
+                    "frames": "463.15,155.50,0.00,1.00,1.00,1.00",
+                    "class": "Play"
+                }
+            },
+            "totalFrames": 1,
+            "type": "Start"
+        },
+        "Replays": {
+            "rect": "0,0,159,63",
+            "anchorX": 0.01,
+            "anchorY": 0.97,
+            "children": {
+                "instance641": {
+                    "zIndex": 0,
+                    "frames": "2.00,61.00,0.00,1.00,1.00,1.00",
+                    "class": "p"
+                }
+            },
+            "totalFrames": 1,
+            "type": "button"
+        },
+        "mbtn1": {
+            "rect": "0,0,326,76.3",
+            "anchorX": 0,
+            "anchorY": 0.97,
+            "children": {
+                "instance511": {
+                    "zIndex": 0,
+                    "frames": "2.00,74.30,0.00,1.00,1.00,1.00",
+                    "class": "mmm"
+                }
+            },
+            "totalFrames": 1,
+            "type": "MoreGameButton"
+        },
+        "ControlBar": {
+            "rect": "0,0,651.9,397.75",
+            "anchorX": 0.79,
+            "anchorY": 0.99,
+            "children": {
+                "pauseBtn": {
+                    "zIndex": 0,
+                    "frames": "583.05,396.00,0.00,1.00,1.00,1.00",
+                    "class": "PauseBtn"
+                },
+                "instance724": {
+                    "zIndex": 2,
+                    "frames": "516.45,395.75,0.00,1.00,1.00,1.00",
+                    "class": "fceyiuo"
+                },
+                "sendBtn": {
+                    "zIndex": 3,
+                    "frames": "618.90,397.75,0.00,1.00,1.00,1.00",
+                    "class": "SendBtn"
+                }
+            },
+            "totalFrames": 1,
+            "type": "ControlBar"
+        },
+        "End": {
+            "rect": "0,0,509,344",
+            "anchorX": 0,
+            "anchorY": 1,
+            "children": {
+                "preplay1": {
+                    "zIndex": 2,
+                    "frames": "17.00,83.50,0.00,1.00,1.00,1.00",
+                    "class": "Replays"
+                },
+                "scoreTxt": {
+                    "align": "center",
+                    "zIndex": 4,
+                    "text": "999",
+                    "class": "ScoreFont",
+                    "height": 63.4,
+                    "frames": "296.95,181.75,0.00,1.00,1.00,1.00",
+                    "width": 132
+                },
+                
+                "instance752": {
+                    "zIndex": 0,
+                    "frames": "0.00,344.00,0.00,1.00,1.00,1.00",
+                    "class": "h"
+                },
+                "scoreTxt2": {
+                    "align": "center",
+                    "zIndex": 3,
+                    "text": "999",
+                    "class": "ScoreFont",
+                    "height": 63.4,
+                    "frames": "296.95,246.15,0.00,1.00,1.00,1.00",
+                    "width": 132
+                },
+                "fb": {
+                    "zIndex": 6,
+                    "frames": "82.45,245.75,0.00,1.00,1.00,1.00",
+                    "class": "fb"
+                },
+                "Menu1": {
+                    "zIndex": 1,
+                    "frames": "185.95,83.50,0.00,1.00,1.00,1.00",
+                    "class": "Menus"
+                }
+            },
+            "totalFrames": 1,
+            "type": "End"
+        },
+        "Menus": {
+            "rect": "0,0,144,63",
+            "anchorX": 0.01,
+            "anchorY": 0.97,
+            "children": {
+                "instance563": {
+                    "zIndex": 0,
+                    "frames": "2.00,61.00,0.00,1.00,1.00,1.00",
+                    "class": "m"
+                }
+            },
+            "totalFrames": 1,
+            "type": "button"
+        },
+        "SendBtn": {
+            "labels": {
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "dwon": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,37,36",
+            "anchorX": 0.05,
+            "anchorY": 0.94,
+            "children": {
+                "instance1414": {
+                    "zIndex": 0,
+                    "frames": "null||2.00,34.00,0.00,1.00,1.00,1.00",
+                    "class": "sbeddlm"
+                },
+                "instance1355": {
+                    "zIndex": 0,
+                    "frames": "2.00,34.00,0.00,1.00,1.00,1.00|0.00,36.00,0.00,1.12,1.13,1.00|null",
+                    "class": "saf6poo"
+                }
+            },
+            "totalFrames": 3,
+            "type": "button"
+        },
+        "mbtn2": {
+            "rect": "0,0,154,59",
+            "anchorX": 0,
+            "anchorY": 1,
+            "children": {
+                "instance537": {
+                    "zIndex": 0,
+                    "frames": "0.00,59.00,0.00,1.00,1.00,1.00",
+                    "class": "pppoo00"
+                }
+            },
+            "totalFrames": 1,
+            "type": "MoreGameButton"
+        },
+        "PauseBtn": {
+            "labels": {
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            },
+            "rect": "0,0,39.95,38.4",
+            "anchorX": 0.12,
+            "anchorY": 0.86,
+            "children": {
+                "instance1357": {
+                    "zIndex": 0,
+                    "frames": "3.40,34.95,0.00,1.00,1.00,1.00|0.35,38.40,0.00,1.20,1.20,1.00|null",
+                    "class": "s18"
+                },
+                "instance1412": {
+                    "zIndex": 0,
+                    "frames": "null||0.00,34.75,0.00,1.00,1.00,1.00",
+                    "class": "s19"
+                }
+            },
+            "totalFrames": 3,
+            "type": "button"
+        },
+        "Pause": {
+            "rect": "0,0,509,361",
+            "anchorX": 0,
+            "anchorY": 1,
+            "children": {
+                "Resume2": {
+                    "zIndex": 2,
+                    "frames": "172.05,76.50,0.00,1.00,1.00,1.00",
+                    "class": "rree"
+                },
+                "Menu2": {
+                    "zIndex": 1,
+                    "frames": "17.05,76.50,0.00,1.00,1.00,1.00",
+                    "class": "m"
+                },
+                "instance786": {
+                    "zIndex": 0,
+                    "frames": "0.00,361.00,0.00,1.00,1.00,1.00",
+                    "class": "pause"
+                }
+            },
+            "totalFrames": 1,
+            "type": "Pause"
+        },
+        "fb": {
+            "rect": "0,0,64,64",
+            "anchorX": 0,
+            "anchorY": 1,
+            "children": {
+                "instance693": {
+                    "zIndex": 0,
+                    "frames": "0.00,64.00,0.00,1.00,1.00,1.00",
+                    "class": "元件28"
+                }
+            },
+            "totalFrames": 1,
+            "type": "button"
+        },
+        "Play": {
+            "rect": "0,0,166,76.3",
+            "anchorX": 0.01,
+            "anchorY": 0.97,
+            "children": {
+                "instance615": {
+                    "zIndex": 0,
+                    "frames": "2.00,74.30,0.00,1.00,1.00,1.00",
+                    "class": "pp"
+                }
+            },
+            "totalFrames": 1,
+            "type": "button"
+        }
+    }
+}

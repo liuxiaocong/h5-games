@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="description" content="Help Quacky climb the buildings as high as he can!">
+    <meta name="keywords" content="quacky, quacky mcfly, html5, html5 mobile, alectora, game, mobile game, mcfly, android game, ios game">
+    <meta name="author" content="Alectora, www.alectora.com, Arly Rampen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>小鸭子往上飞-</title>
+
+    <link rel="icon" type="image/png" href="asset/texture/icon.png">
+    <link rel="stylesheet" href="asset/at.quacky-mcfly.css?1.1.2.5738" />
+
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="asset/ext_script/js/howler.min.js"></script>
+    <script type="text/javascript" src="asset/at.quacky-mcfly.js?1.1.2.5738"></script>
+    <script>
+    // (function(i, s, o, g, r, a, m) {
+    //     i['GoogleAnalyticsObject'] = r;
+    //     i[r] = i[r] || function() {
+    //         (i[r].q = i[r].q || []).push(arguments)
+    //     }, i[r].l = 1 * new Date();
+    //     a = s.createElement(o),
+    //     m = s.getElementsByTagName(o)[0];
+    //     a.async = 1;
+    //     a.src = g;
+    //     m.parentNode.insertBefore(a, m)
+    // })(window, document, 'script', './analytics.js', 'ga');
+
+    // ga('create', 'UA-43487648-6', 'alectora.com');
+    // ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="orientationUI">
+            <img src="asset/texture/flip_orientation_portrait.png" />
+        </div>
+        <div id="loadingUILayer">
+            <div id="spilGamesAPILogoContainer">
+                <a id="spilGamesAPILogoLink">
+                    <img id="spilGamesAPILogo" src="" />
+                </a>
+            </div>
+            <div id="spilGamesSplashScreenContainer">
+                <a id="spilGamesAPISplashScreenLink">
+                    <div class="splashScreen"></div>
+                </a>
+            </div>
+            <p id="loadingText">Loading game...</p>
+        </div>
+        <div id="hud">
+            <div id="spilGamesAPILogoContainerHud">
+                <a id="spilGamesAPILogoLinkHud">
+                    <img id="spilGamesAPILogoHud" src="" />
+                </a>
+                <br />
+                <a id="spilGamesAPIMoreGamesLink">More games</a>
+            </div>
+            <div id="inGameHud">
+                <em id="distance">0</em>
+                <em>m</em>
+                <br />
+                <br />
+                <em class="yellow">Best record</em>
+                <br />
+                <em id="bestDistance" class="yellow">0</em>
+                <em class="yellow">m</em>
+            </div>
+            <div id="gameOver">
+                <h1>Game Over</h1>
+                <p>
+                    <br />
+                    <em class="distance"></em>m
+                    <br />
+                    <br />
+                    <em class="highlight">Best Record</em>
+                    <br />
+                    <br />
+                    <em class="longestDistance"></em>m
+                    <br />
+                </p>
+                <br />
+                <br />
+                <h2>Tap screen to replay</h2>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="text/javascript"></script>
+    <script type="text/javascript" src='./zepto.min.js'></script>
+
+    <script type="text/javascript" src='./fx.js'></script>
+
+    <script type="text/javascript" src='./click.js'></script>
+
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '小鸭子跑了' + bestScore + '米高啦！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>Play68.com | 最好玩的免费手机网页小游戏</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+<link type="text/css" rel="stylesheet" href="http://play68.com/resources/css/site_min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="http://play68.com/favicon.ico" />
+<link rel="icon" type="image/png" href="http://play68.com/favicon.png" />
+
+</head>
+<body>
+	
+<div class="header">
+	<div class="header_content">
+		<a href="http://play68.com/" class="header_backBtn"><span class="common_icon_back"></span> 返回</a>
+		<span class="header_commonToolBar">
+			<a href="#" class="common_icon_search">&nbsp;</a>
+		</span>
+		<div class="header_title">出错啦！</div>
+	</div>
+	<div class="header_bottomBorder"></div>
+</div>
+<div class="content_info">
+	<div style="position:relative; width:200px; margin:0 auto;"><a href="http://play68.com/"><img src="http://play68.com/resources/images/404.png" style="position:relative; width:200px;"></a></div>
+	<p class="common_title"><b>抱歉，您所请求的页面不存在！</b></p><br>
+	<p><a href="#" onClick="history.go(-1); return false;">< 返回到之前的页面</a></p><br>
+	<p><a href="http://play68.com/">< 返回到Play68.com继续玩游戏！</a></p><br>
+</div>
+
+	<div class="footer">
+		<!-- <p><a href="http://play68.com/help.html">帮助</a> | <a href="mailto:contact@play68.com?Subject=商务合作">合作</a> | <a href="mailto:contact@play68.com">联系</a> | <a href="#" onClick="addToHome.show(true); return false">收藏</a></p> -->
+		<p>Copyright &copy; 2014  Play68.com</p>
+	</div>
+</body>
+</html>
+
+

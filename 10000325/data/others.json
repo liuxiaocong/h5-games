@@ -1,0 +1,82 @@
+{
+  "ui_level_button": {
+    "sx": 0,
+    "sy": 167,
+    "cols": 1,
+    "tilew": 171,
+    "tileh": 171,
+    "frames": 1
+  },
+  "ui_level_button_locked": {
+    "sx": 170,
+    "sy": 167,
+    "cols": 1,
+    "tilew": 175,
+    "tileh": 184,
+    "frames": 1
+  },
+  "ui_controls_1": {
+    "sx": 0,
+    "sy": 55,
+    "cols": 1,
+    "tilew": 175,
+    "tileh": 97,
+    "frames": 1
+  },
+  "ui_controls_2": {
+    "sx": 175,
+    "sy": 55,
+    "cols": 1,
+    "tilew": 118,
+    "tileh": 112,
+    "frames": 1
+  },
+  "ui_controls_3": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 297,
+    "tileh": 55,
+    "frames": 1
+  },
+  "ui_controls_1_mobile": {
+    "sx": 199,
+    "sy": 352,
+    "cols": 1,
+    "tilew": 146,
+    "tileh": 142,
+    "frames": 1
+  },
+  "ui_controls_3_mobile": {
+    "sx": 0,
+    "sy": 440,
+    "cols": 1,
+    "tilew": 92,
+    "tileh": 93,
+    "frames": 1
+  },
+  "ui_level_score_small": {
+    "sx": 159,
+    "sy": 353,
+    "cols": 1,
+    "tilew": 30,
+    "tileh": 30,
+    "frames": 1
+  },
+  "ui_level_score": {
+    "sx": 0,
+    "sy": 350,
+    "cols": 1,
+    "tilew": 80,
+    "tileh": 90,
+    "frames": 1
+  },
+  "ui_level_score_empty": {
+    "sx": 80,
+    "sy": 350,
+    "cols": 1,
+    "tilew": 79,
+    "tileh": 90,
+    "frames": 1
+  }
+}

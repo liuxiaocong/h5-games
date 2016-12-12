@@ -1,0 +1,99 @@
+<html>
+	
+	<head>
+	
+		<meta charset="utf-8">
+		<!-- <title>Such Tortilla Game</title> -->
+		
+		<!-- Prevent caching of this page -->
+		<meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="apple-touch-icon" href="app-icon.png?v=1398696902879" />
+		<link rel="shortcut icon" href="app-icon.png?v=1398696902879" />
+	
+		<style>
+			body {
+				margin: 0;
+				background: black;
+			}
+			canvas {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}	
+		</style>
+		<script type="text/javascript" src="pk/PkApi.js"></script>
+		<script type="text/javascript" src="pk/WeixinApi.js"></script>
+		<script type="text/javascript" src="pk/PkGame.js"></script>
+		<script type="text/javascript">
+			function updateShareScore(bestScore) {
+				var d = '哈哈！我总共吃了' + bestScore + '个蛋，看谁吃蛋蛋更多！';
+				pkGame.updateResult(bestScore, bestScore, d, d);
+			}
+
+			pkGame.ready(function() {
+
+		});
+		</script>
+		
+		
+		<script src='script/tortilla/_lib/fpsmeter.min_fec43a13a522dafe9c28.js'></script>
+		<script src='script/tortilla/_lib/jquery-2.1.0_0fa7752926a95e3ab6b5.js'></script>
+		<script src='script/tortilla/_lib/screenfull.min_0a267302bb0ba34160e0.js'></script>
+		<script src='script/tortilla/_lib/visibility_93b6666fddb58a15db67.js'></script>
+		<script src='script/tortilla/_lib/webfont_a45c6f609a3b2175685c.js'></script>
+		<script src='script/tortilla/_polyfill/requestAnimationFrame_336b9a20daf31220715d.js'></script>
+		<script src='script/tortilla/tortilla_6458c3bc2311a0b75932.js'></script>
+		<script src='script/game/1libs/1greensock/1TweenMax_f5143f02700af5fa83ac.js'></script>
+		<script src='script/game/1libs/1greensock/2TweenLite_3f50ab1907c2aea935f8.js'></script>
+		<script src='script/game/1libs/hammer/hammer_0c922cd8e0a54949c773.js'></script>
+		<script src='script/game/1libs/howler/howler_a093429aa0c24867c74a.js'></script>
+		<script src='script/game/2utils/y_transform_52e9cc124d62c6d07673.js'></script>
+		<script src='script/game/2utils/z_point_c4d056b9115750b88d8f.js'></script>
+		<script src='script/game/2utils/z_utils_852bb3405e564523d7d4.js'></script>
+		<script src='script/game/3language_64246a0ecb6bebb28bff.js'></script>
+		<script src='script/game/4config_7c521189d61b7093968c.js'></script>
+		<script src='script/game/a_game_fa10a9e6cba2846facb7.js'></script>
+		<script src='script/game/a_gameobject_57ced69c5ca80b8edf84.js'></script>
+		<script src='script/game/a_level_03c7240dafa4b2071f65.js'></script>
+		<script src='script/game/key_status_f791fe4accdfc0608afb.js'></script>
+		<script src='script/game/screens/a_screen_6ecc7b2a3cd44487d097.js'></script>
+		<script src='script/game/screens/z_button_41e2eeffc718b3e21aaa.js'></script>
+		<script src='script/game/screens/z_endscreen_bd3329dfc025a1ce37f0.js'></script>
+		<script src='script/game/screens/z_gameoverlay_9920d694705706916e4f.js'></script>
+		<script src='script/game/screens/z_hitbox_434f7008958b546ce2ef.js'></script>
+		<script src='script/game/screens/z_loadingscreen_e0337153f43cf44cf111.js'></script>
+		<script src='script/game/screens/z_mapbutton_0f57f6a90f140167b174.js'></script>
+		<script src='script/game/screens/z_mapscreen_25a15e8ebec0d07881d9.js'></script>
+		<script src='script/game/screens/z_prelevelscreen_f3bf872b842bcab4be5a.js'></script>
+		<script src='script/game/screens/z_screenmanager_3baffb491f5477cd2a07.js'></script>
+		<script src='script/game/screens/z_shopscreen_60983c09d6e3b0ffc3a2.js'></script>
+		<script src='script/game/screens/z_startscreen_7f2d39571171b811c182.js'></script>
+		<script src='script/game/z_backgroundobject_6017b525cdeab6d3747f.js'></script>
+		<script src='script/game/z_backgroundobjectmanager_970b8a8161f32ea7c0a7.js'></script>
+		<script src='script/game/z_gameobjectimagedata_70136562ce08f2f16c28.js'></script>
+		<script src='script/game/z_hud_ca4ba9bbd18832e7760a.js'></script>
+		<script src='script/game/z_lane_b8d7c3fac9b3e61ccad5.js'></script>
+		<script src='script/game/z_movingbackground_4fb026dc49921a8decc0.js'></script>
+		<script src='script/game/z_obstacle_28e3beca27282d147350.js'></script>
+		<script src='script/game/z_obstacledata_10e2cba38013ef08d7e0.js'></script>
+		<script src='script/game/z_obstacledatamanager_997ae8957ed1ce35f9bc.js'></script>
+		<script src='script/game/z_obstaclemanager_b3984e017520008a4055.js'></script>
+		<script src='script/game/z_player_206c6633bd27acb4d09e.js'></script>
+		<script src='script/game/z_road_0a8013a3ee63f6599628.js'></script>
+		<script src='script/game/z_scorepopup_baaa09dd1bfea169e38c.js'></script>
+		<script src='script/game/z_settings_3c0a586b7a48ca5c14ec.js'></script>
+		
+		
+	</head>
+	<body>
+	</body>
+	
+</html>

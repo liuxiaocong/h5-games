@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="hats.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="viking" x="0" y="0" width="179" height="104" pivotX="121.25" pivotY="87.45" frameX="-22" frameY="-8" frameWidth="245" frameHeight="179"/>
+	<SubTexture name="mex" x="179" y="0" width="245" height="110" frameX="0" frameY="-4" frameWidth="245" frameHeight="179"/>
+	<SubTexture name="king" x="424" y="0" width="83" height="92" frameX="-41" frameY="0" frameWidth="245" frameHeight="179"/>
+	<SubTexture name="sushi" x="0" y="110" width="178" height="56" frameX="-49" frameY="-51" frameWidth="245" frameHeight="179"/>
+	<SubTexture name="nose" x="178" y="110" width="122" height="78" frameX="-54" frameY="-101" frameWidth="245" frameHeight="179"/>
+	<SubTexture name="hat" x="300" y="110" width="175" height="90" frameX="-42" frameY="-11" frameWidth="245" frameHeight="179"/>
+</TextureAtlas>

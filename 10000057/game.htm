@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>墨西哥餐厅</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+        <link rel="stylesheet" href="./index_files/core.css" media="all">
+        <link rel="stylesheet" href="./index_files/style.css" media="all">
+        <script src="./index_files/jquery.js"></script>
+        <script src="./index_files/core.js"></script>
+        <script src="./index_files/game.js"></script>
+		 </head>
+    <body>
+        <script id="loaderHtml" type="text/html">
+            <span id="loader">
+                Loading...<br />
+                <span id="percent">0</span>%
+            </span>
+        </script>
+ 
+ 
+
+		
+        <script id="titleScreenHtml" type="text/html">
+            <img id="blank" class="background zoomable" style="z-index: 100;" src="assets/blank.png" />
+            <img class="background zoomable" style="width:640px;height:860px;"src="assets/titlebg.png" />
+             <div id="titlediv">
+            <img id="title" style="width:622px;height:615px;left:11px;top:18px;" src="assets/title.png" />
+            <img id="star1" style="width:110px;height:110px;left:497px;top:186px;" src="assets/star.png" />
+            <img id="star2" style="width:110px;height:110px;left:511px;top:316px;" src="assets/star.png" />
+            <img id="star3" style="width:110px;height:110px;left:90px;top:431px;" src="assets/star.png" />
+            <img id="star4" style="width:110px;height:110px;left:0px;top:237px;" src="assets/star.png" />
+            <img id="star5" style="width:110px;height:110px;left:259px;top:392px;" src="assets/star.png" />
+<!--            <img id="star6" style="width:110px;height:110px;left:394px;top:29px;" src="assets/star.png" />-->
+            <img id="star7" style="width:110px;height:110px;left:300px;top:536px;" src="assets/star.png" />
+<!--            <img id="star8" style="width:110px;height:110px;left:124px;top:37px;" src="assets/star.png" />-->
+            <img id="music" style="width:63px;height:60px; left:516px;top:25px" src="assets/music.png"/>
+<!--            <img id="splash" style="left: 10px; top: 10px; width: 935.0px; height: 529.0px;" src="assets/splash_screen-bgpatch.png" />-->
+<!--            <img id="title" style="width: 620.0px; height: 275.0px; left: 142px; top: 119px;" src="assets/restaurante_mexicana.png" />-->
+            <img id="play"  style="left: 257px; top: 630px; width: 136px; height: 87px;" src="assets/play.png" />
+            <img id="howto"  style="left: 62px; top: 729px; width: 229px; height: 87px;" src="assets/howtoplay.png" />
+            <img id="highScore" style="display:none;width:229px;height:87px;left:354px;top:729px;" src="assets/highscore.png"/>
+            </div>
+        </script>
+        <script id="instructionScreenHtml" type="text/html">
+            <img id="blank" class="background zoomable" style="z-index: 1000;" src="assets/blank.png" />
+            <img class="background zoomable" src="assets/Main.png" />
+            <div id="instructions">
+            <img class="how_text" style="left: 86px; top: 100px; width: 466px; height:121px;" src="assets/How_to_play.png" />
+            <img id="howtotext" style="width:517px;height: 338px;left:59px;top:266px;" src="assets/Text.png" />
+            <img id="mainmenu" style="left: 209px; top: 659px; width: 229px; height: 87px;" src="assets/mainmenu.png" />
+            </div>
+<!--            <img id="star11" style="width:110px;height:110px;left:53px;top:56px;z-index: 50;" src="assets/star.png" />-->
+<!--            <div class="instructions">
+            <img src="assets/Uibg.png" />
+            <img id="star11" style="width:110px;height:110px;left:53px;top:56px;z-index: 50;" src="assets/star.png" />
+            <img id="star12" style="width:110px;height:110px;left:468px;top:162px;z-index: 50;" src="assets/star.png" />
+            <img class="how_text" style="left: 86px; top: 100px; width: 466px; height:121px;" src="assets/How_to_play.png" />
+            <img id="howtotext" style="width:517px;height: 338px;left:59px;top:266px;" src="assets/Text.png" />
+            <img id="mainmenu" style="left: 209px; top: 659px; width: 229px; height: 87px;" src="assets/mainmenu.png" />
+            </div>-->
+<!--            
+            </div>-->
+        </script>
+        <script id="gameScreenHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 1000;" src="assets/blank.png" />
+            <img id="bg" class="background zoomable"style="width:640px;height:870px;" src="assets/bg_main.png" />
+            <img id="minus" class="zoomable" src="assets/minus.png" />
+            <img id="plus" class="zoomable" src="assets/plus.png" />
+            <div id="section">
+            <div id = "UI">
+            
+            <img id="tray"  src="assets/Tray.png"/>
+            <img id="orders" style="width:420px;height:48px;left:10px;top:79px;" src="assets/orders.png" />
+            <div id="orderstext" style="left:389px;top:84px;font-size: 2em;font-weight: bold; color: white;"></div>
+            <img class="dish" style="left: 138px; top: 281px; width: 279px; height: 142px;" src="assets/Dish.png" />
+            <img class="burrito" style="left: 150px; top: 281px; width: 251px; height: 118px;" src="assets/Tortilla.png" />
+            <img class="chicken1" style="left: 79px; top: 415px; width: 148px; height: 129px; " src="assets/chicken.png"/>
+            <img class="chicken" style="left: 99px; top: 432px; width: 111px; height: 71px; " src="assets/chicken1.png"/>
+            <img class="meat1" 	 style="left: 248px; top: 415px; width: 148px; height: 129px; " src="assets/meat.png" />
+            <img class="meat" 	 style="left: 272px; top: 432px; width: 111px; height: 71px; " src="assets/meat1.png" />
+            <img class="money" 	 style="left: 205px; top: 5px; width: 236px; height: 55px; " src="assets/money_window.png" />
+            <div id = "moneyText"  style="left: 223px; top: 12px; width: 200px; height: 42px; font-size:40px; font-weight: bold; color: white"></div>
+            <img class="cheese1"  style="left: 428px; top: 691px; width: 148px; height: 129px; " src="assets/cheese.png" />
+            <img class="cheese"  style="left: 452px; top: 713px; width: 111px; height: 71px; " src="assets/cheese1.png" />
+            <img class="tomato1"  style="left: 410px; top: 415px; width: 148px; height: 129px; " src="assets/Tomato.png" />
+            <img class="tomato"  style="left: 438px; top: 436px; width: 111px; height: 71px; " src="assets/tomato1.png" />
+            <img class="onion1"	 style="left: 244px; top: 554px; width: 148px; height: 129px; " src="assets/Onion.png" />
+            <img class="onion"	 style="left: 268px; top: 575px; width: 111px; height: 71px; " src="assets/onion1.png" />
+            <img class="olive1"	 style="left: 244px; top: 691px; width: 148px; height: 129px;" src="assets/olive.png" />
+            <img class="olive"	 style="left: 269px; top: 713px; width: 111px; height:71px;" src="assets/olive1.png" />
+            <img class="beans1"	 style="left: 73px; top: 554px; width: 148px; height: 129px; " src="assets/Beans.png" />
+            <img class="beans"	 style="left:98px; top: 578px; width: 111px; height: 71px; " src="assets/beans1.png" />
+            <img class="peppers1" style="left: 60px; top: 691px; width: 148px; height: 129px; " src="assets/peppers.png" />
+            <img class="peppers" style="left: 84px; top: 709px; width: 111px; height: 71px; " src="assets/pepper1.png" />
+            <img class="chsauce1" style="left: 423px; top:554px; width: 148px; height: 129px; " src="assets/sour_cream.png" />
+            <img class="chsauce" style="left: 454px; top: 549px; width: 111px; height: 71px; " src="assets/cream1.png" />
+            <img class="tmsauce" style="left: 22px; top: 250px; width: 61px; height: 160px; " src="assets/chilli_sauce.png" />
+            <img class="sound" style="left: 12px; top: 7px; width:63px; height: 60px; " src="assets/music.png" />
+            <img class="pause" style="left: 87px; top: 7px; width: 63px; height: 60px; " src="assets/pause_hover.png" />
+            <img id="border" style="width:110px;height:110px;left:515px;top:-3px;" src="assets/border.png" />
+            </div>
+            <div style="width: 100px; height: 100px;  top:1px; left: 520px; overflow: hidden" id ="clock">
+                <img class ="myClock" style="left: 0px; top: 0px; width: 1300px; height: 100px;" src="assets/Time_sprite.png">
+                
+            </div>  
+                 </div>
+            <div class="pauseScreendiv">
+            <img id="pausesc"class="background zoomable" style="z-index: 500;" src="assets/Main.png" />
+            <div id="pausediv">
+             <img class="pause_text"  style="left: 119px; top: 134px; width: 408px; height: 137px;z-index: 501;" src="assets/pause_text.png" /> 
+             <img id="br1" style="width:349px;height:229px;left:141px;top:293px;z-index: 600;" src="assets/Burrito.png" />
+            <img id="resume"  style="left: 235px; top: 543px; width: 163px; height: 87px;z-index: 501;" src="assets/resume.png" /> 
+            <img id="mainmenu"  style="left: 204px; top: 663px; width: 229px; height: 87px;z-index: 501" src="assets/mainmenu.png" />
+            </div> 
+            </div>
+            <div class="popupScreen">
+                   <img id="pop" class="background zoomable" style="z-index: 600;" src="assets/Main.png"/>
+                   <div id="pausemenudiv">
+                   
+                   <img id="warn" style="width:449px;height:131px;left:94px;top:167px;z-index: 600;" src="assets/warning.png" />
+                   <img id="progress" style="width:379px;height:74px;left:134px;top:407px;z-index: 600;" src="assets/progress.png"/>
+            <img id="yes_btn"  style="left: 126px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/yes.png" /> 
+            <img id="no_btn"  style="left: 410px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/no.png" />
+                   </div>
+                   </div>
+           
+            
+        </script>
+<!--        <script id="scoreScreenHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 10000;" src="assets/blank.png" />
+            <img class="background zoomable" src="assets/Main.png" />
+            <div id="scoreCardDiv">
+            <img id="burritoImg" style="width:349px;height:229px;left:135px;top:88px;" src="assets/Burrito.png"/> 
+            <div id="scoreCard">
+            <img id="timeTakenImg" style="width:194px;height:32px;left:100px;top:350px;" src="assets/timetaken.png"/>
+            <img id="colon1" style="width:7px;height:21px;left:330px;top:360px;" src="assets/colon.png"/>
+            <img id="bonusScoreImg" style="width:213px;height:32px;left:100px;top:425px;" src="assets/bonusscore.png"/>
+            <img id="colon2" style="width:7px;height:21px;left:330px;top:434px;" src="assets/colon.png"/>
+            <img id="totalScoreImg" style="width:193px;height:32px;left:100px;top:500px;" src="assets/totalscore.png"/>
+            <img id="colon3" style="width:7px;height:21px;left:330px;top:509px;" src="assets/colon.png"/>
+            
+            <div id="timeTaken" style="left: 374px; top: 344px;  height: 80.0px; font-size:2.5em; font-weight: bold; color: #79444b;"></div>
+            <div id="bonusScore" style="left: 374px; top: 420px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>
+            <div id="totalScore" style="left: 374px; top: 495px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>
+            </div>
+            <img id="next" style="width:136px;height:87px;left:249px;top: 630px;" src="assets/next.png" />
+            </div>
+            </script>-->
+        <script id="finishScreenHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 1000;" src="assets/blank.png" />
+            <img class="background zoomable" src="assets/Main.png" />
+<!--            <img class="innerbackground" src="assets/Uibg.png" style="width: 960.0px; height: 540.0px;"/>-->
+<!--            <img class="innerbackground" style="top: 120.0px; left: 170.0px; width: 595.0px; height: 289.0px;" src="assets/bgdesign.png" />-->
+<!--            <img class="burrito_win" style="left: 80.0px; top: 170.0px; width: 385.0px; height: 263.0px;" src="assets/Burrito.png" />-->
+            <div id="finalScreendiv">   
+                <img id="scoreText" style="width:187px;height:32px;left:179px;top:536px;z-index: 500;" src="assets/score.png" />
+<!--            <div id = "levelScoreText"  style="left: 154px; top: 570px; width: 200.0px; height: 80.0px; font-size:2em; font-weight: bold; color: black">Your Score: </div>-->
+            <div id = "levelScore"  style="left: 396px; top: 533px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b">0</div>
+            <img class="win_text" style="left: 59px; top: 75px; width: 504px; height: 431px;" src="assets/youwin.png" />
+<!--            <img id="title" style="width:622px;height:615px;left:11px;top:59px;" src="assets/title.png" />-->
+            <img id="star1" style="width:110px;height:110px;left:264px;top:238px;" src="assets/star.png" />
+            <img id="star2" style="width:110px;height:110px;left:495px;top:260px;" src="assets/star.png" />
+            <img id="star3" style="width:110px;height:110px;left:101px;top:290px;" src="assets/star.png" />
+            <img id="star4" style="width:110px;height:110px;left:20px;top:146px;" src="assets/star.png" />
+            <img id="star5" style="width:110px;height:110px;left:170px;top:442px;" src="assets/star.png" />
+            <img id="star6" style="width:110px;height:110px;left:394px;top:286px;" src="assets/star.png" />
+<!--            <img id="star7" style="width:110px;height:110px;left:300px;top:579px;" src="assets/star.png" />-->
+            <img id="star8" style="width:110px;height:110px;left:276px;top:139px;" src="assets/star.png" />
+            <img id="mainmenu" style="left: 207px; top: 593px; width: 229px; height: 87px;" src="assets/mainmenu.png" />
+            <img id="highScore1" style="width:229px;height:87px;left:207px;top:690px;" src="assets/highscore.png"/>
+            </div>
+        </script>
+        <script id="loseScreenHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 1000;" src="assets/blank.png" />
+            
+            <img class="background zoomable" src="assets/Main.png" />
+            <div id="losediv">
+<!--            <img class="innerbackground" src="assets/Uibg.png" style="width: 960.0px; height: 540.0px;"/>-->
+<!--            <img class="burrito_lose" style="left: 121px; top: 323px; width:377px; height: 194px;" src="assets/lose_Burrito.png" />-->
+<!--            <div id = "levelScoreText"  style="left: 130px; top: 260px; width: 200.0px; height: 80.0px; font-size:2em; font-weight: bold; color: black">Your Score: </div>-->
+<!--            <div id = "levelScore"  style="left: 313px; top: 262px; width: 100.0px; height: 80.0px; font-size:2em; font-weight: bold; color: black">0</div>-->
+            <img class="lose_text" style="left: 121px; top: 77px; width: 400px; height: 350px;" src="assets/you_lose_new.png" />
+            <div id="scoreCard">
+<!--            <img id="timeTakenImg" style="width:194px;height:32px;left:100px;top:439px;" src="assets/timetaken.png"/>
+            <img id="colon1" style="width:7px;height:21px;left:330px;top:449px;" src="assets/colon.png"/>
+            <img id="bonusScoreImg" style="width:213px;height:32px;left:100px;top:486px;" src="assets/bonusscore.png"/>
+            <img id="colon2" style="width:7px;height:21px;left:330px;top:495px;" src="assets/colon.png"/>-->
+            <img id="totalScoreImg" style="width:193px;height:32px;left:100px;top:474px;" src="assets/totalscore.png"/>
+            <img id="colon3" style="width:7px;height:21px;left:330px;top:483px;" src="assets/colon.png"/>
+            
+<!--            <div id="timeTaken" style="left: 374px; top: 433px;  height: 80.0px; font-size:2.5em; font-weight: bold; color: #79444b;"></div>
+            <div id="bonusScore" style="left: 374px; top: 481px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>-->
+            <div id="totalScore" style="left: 374px; top: 469px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>
+            </div>
+             <img id="retry_btn" style="left: 253px; top: 566px; width: 136px; height: 87px;" src="assets/retry.png" />
+            <img id="mainmenu" style="left: 208px; top: 680px; width: 226px; height:87px;" src="assets/mainmenu.png" />
+            </div>
+            <div class="popupScreen">
+                   <img id="pop" class="background zoomable" style="z-index: 600;" src="assets/Main.png"/>
+                   <div id="pausemenudiv">
+                   
+                   <img id="warn" style="width:449px;height:131px;left:94px;top:167px;z-index: 600;" src="assets/warning.png" />
+                   <img id="progress" style="width:379px;height:74px;left:134px;top:407px;z-index: 600;" src="assets/progress.png"/>
+            <img id="yes_btn"  style="left: 126px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/yes.png" /> 
+            <img id="no_btn"  style="left: 410px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/no.png" />
+                   </div>
+                   </div>
+        </script>
+        <script id="winScreenHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 1000;" src="assets/blank.png" />
+            <img class="background zoomable" src="assets/Main.png" />
+            <div>
+<!--            <img class="innerbackground" src="assets/Uibg.png" style="width: 960.0px; height: 540.0px;"/>-->
+<!--            <img class="innerbackground" style="top: 120.0px; left: 170.0px; width: 595.0px; height: 289.0px;" src="assets/bgdesign.png" />-->
+            </div>
+            <div id="winscreendiv">
+<!--            <img class="burrito_win" style="left: 150px; top: 393px; width: 349px; height: 229px;" src="assets/Burrito.png" />-->
+            <img class="win_text" style="left: 132px; top: 40px; width: 400px; height: 385px;" src="assets/Level_complete.png" />
+            <img id="star1" style="width:110px;height:110px;left:368px;top:38px;" src="assets/star.png" />
+            <img id="star2" style="width:110px;height:110px;left:459px;top:141px;" src="assets/star.png" />
+<!--            <img id="star14" style="width:110px;height:110px;left:101px;top:467px;" src="assets/star.png" />-->
+            <img id="star4" style="width:110px;height:110px;left:107px;top:121px;" src="assets/star.png" />
+<!--            <img id="star13" style="width:110px;height:110px;left:242px;top:236px;" src="assets/star.png" />-->
+<!--            <img id="star6" style="width:110px;height:110px;left:394px;top:29px;" src="assets/star.png" />-->
+            <img id="star7" style="width:110px;height:110px;left:300px;top:358px;" src="assets/star.png" />
+            <div id="scoreCard">
+            <img id="timeTakenImg" style="width:194px;height:32px;left:100px;top:439px;" src="assets/timetaken.png"/>
+            <img id="colon1" style="width:7px;height:21px;left:330px;top:449px;" src="assets/colon.png"/>
+            <img id="bonusScoreImg" style="width:213px;height:32px;left:100px;top:486px;" src="assets/bonusscore.png"/>
+            <img id="colon2" style="width:7px;height:21px;left:330px;top:495px;" src="assets/colon.png"/>
+            <img id="totalScoreImg" style="width:193px;height:32px;left:100px;top:533px;" src="assets/totalscore.png"/>
+            <img id="colon3" style="width:7px;height:21px;left:330px;top:542px;" src="assets/colon.png"/>
+            
+            <div id="timeTaken" style="left: 374px; top: 433px;  height: 80.0px; font-size:2.5em; font-weight: bold; color: #79444b;"></div>
+            <div id="bonusScore" style="left: 374px; top: 481px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>
+            <div id="totalScore" style="left: 374px; top: 528px;  height: 80.0px; font-size:2.5em; font-weight: bold; color:  #79444b;"></div>
+            </div>
+<!--            <img id="star8" style="width:110px;height:110px;left:124px;top:37px;" src="assets/star.png" />-->
+<!--            <div id = "levelScoreText"  style="left: 430.00px; top: 250.00px; width: 200.0px; height: 80.0px; font-size:2em; font-weight: bold; color: black">Your Score: </div>-->
+<!--            <div id = "levelScore"  style="left: 600.00px; top: 250.00px; width: 100.0px; height: 80.0px; font-size:2em; font-weight: bold; color: black">0</div>-->
+            <img id="next_btn" style="left: 255px; top:596px; width: 136px; height: 70px;" src="assets/next.png" />
+            <img id="mainmenu" style="left: 208px; top: 680px; width: 229px; height:70px;" src="assets/mainmenu.png" />
+            </div>
+            <div class="popupScreen">
+                   <img id="pop" class="background zoomable" style="z-index: 600;" src="assets/Main.png"/>
+                   <div id="pausemenudiv">
+                   
+                   <img id="warn" style="width:449px;height:131px;left:94px;top:167px;z-index: 600;" src="assets/warning.png" />
+                   <img id="progress" style="width:379px;height:74px;left:134px;top:407px;z-index: 600;" src="assets/progress.png"/>
+            <img id="yes_btn"  style="left: 126px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/yes.png" /> 
+            <img id="no_btn"  style="left: 410px; top: 586px; width: 106px; height: 87px;z-index: 601;" src="assets/no.png" />
+                   </div>
+            </div>
+        </script>
+<!--        <script id="confirmHtml" type="text/html">
+            <img class="background zoomable" src="assets/Main.png"/>
+             <div id ="ins_text" style="top: 170px; left: 28px; width: 584px; height: 350px; z-index: 601;font-size:2.2em; font-weight: bold;">
+                Your progress will be lost.<br />
+                Are you sure? <br />
+            </div>
+            <img id="yes_btn"  style="left: 111px; top: 499px; width: 101px; height: 53px;z-index: 601;" src="assets/yes.png" /> 
+            <img id="no_btn"  style="left: 417px; top: 499px; width: 101px; height: 53px;z-index: 601;" src="assets/no.png" />
+        </script>-->
+<!--        <script id="pauseHtml" type="text/html">
+            <img class="background zoomable"src="assets/Main.png" />
+             <img class="pause_text"  style="left: 119px; top: 88px; width: 408px; height: 137px;z-index: 501;" src="assets/pause_text.png" /> 
+            <img id="resume"  style="left: 264px; top: 571px; width: 107px; height: 53px;z-index: 501;" src="assets/resume.png" /> 
+            <img id="mainmenu"  style="left: 242px; top: 654px; width: 156px; height: 53px;z-index: 501" src="assets/mainmenu.png" />
+        </script>-->
+         <script id="targetHtml" type="text/html">
+            <img id="blank" class="background" style="z-index: 1000;" src="assets/blank.png" />
+            <img class="background zoomable" src="assets/Main.png" />
+            <div id="targetdiv">
+
+<!--            <img class="innerbackground" src="assets/Uibg.png" style="width: 960.0px; height: 540.0px;"/>-->
+            <img class="targettext"  style="left: 138px; top: 85px; width: 363px; height: 218px;" src="assets/Level_target.png" /> 
+            <img id="levelnum" style="width:30px;height: 54px;left:425px;top:116px;" src="assets/none.png"/>
+            <img id="br1" style="width:349px;height:229px;left:141px;top:325px;" src="assets/Burrito.png" />
+<!--            <img id="star9" style="width:110px;height:110px;left:339px;top:449px;" src="assets/star.png" />-->
+<!--            <img id="star10" style="width:110px;height:110px;left:114px;top:49px;" src="assets/star.png" />-->
+            <img id="tgt" src="assets/none.png"/>
+            <img id="ttext" style="width:340px; height:28px;left:153px;top:532px;" src="assets/butext.png" />
+            <img id="playbtn"  style="left: 256px; top:664px; width: 136px; height: 87px;" src="assets/play.png" /> 
+            </div>
+<!--            <div id ="targetScr" style="top: 555px; left: 247px; font-size:4em; font-weight: bold; color: black"></div>-->
+        </script>
+        
+        <div id="wrapper" style="display: none;">
+            <div class="screen fadeIn"></div>
+        </div>
+        <div id="portrait" style="display: none;"><img style="position: static;width: 100px;" src="./index_files/loading.gif?v=2"></div>
+        <div id="landscape" style="display: table-cell; width: 1680px; height: 914px;"><img style="position: static" src="./index_files/landscape.png"></div>
+		<script type="text/javascript" charset="UTF-8" src="./index_files/loader.js"></script>
+        <script type="text/javascript" src="pk/PkApi.js"></script>
+        <script type="text/javascript" src="pk/WeixinApi.js"></script>
+        <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+        <script type="text/javascript">
+            function updateShareScore(bestScore) {
+                var d = '在美食比赛中获得' + bestScore + '资金，观望四周求挑战 ！';
+                pkGame.updateResult(bestScore, bestScore, d, d);
+                console.log(d);
+            }
+            pkGame.ready(function() {
+
+            });
+        </script>
+</body></html>

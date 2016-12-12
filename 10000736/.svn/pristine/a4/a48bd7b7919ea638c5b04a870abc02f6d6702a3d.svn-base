@@ -1,0 +1,173 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>围住神经猫</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        .sbgshow{display:block;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:30px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbgshow .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(img/arron.png) no-repeat; background-size:100px 100px;}
+        .sbgshow p{padding-top:78px;}
+        .sbg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:26px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbg .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(img/arron.png) no-repeat; background-size:100px 100px;}
+        .sbg p{padding-top:78px;}
+    </style>
+    <script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/wzsjm/js/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+    
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
+</div>
+
+<div id="sbg" class="sbg">
+    <div class="arron"></div>
+    <p id="msg">请点击右上角<br />点击【分享到朋友圈】<br />测测好友的神经指数吧！</p>
+</div>
+
+<div class="ads" style="display:none;width: 100%; height: 69px; margin: 0px; margin-top: -60px; padding: 0px; border: none; background: none; ">
+	<a align="center" style="color:white" href="http://wx.jyc.17188.com/index.html?from=cat">更多游戏</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a align="center" style="color:white" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a>
+</div>
+
+
+<script>var document_class = "GameApp";</script>
+<script src="js/egret_loader.js"></script>
+<script src="js/game-min-0722.js?1"></script>
+<script type="text/javascript">
+    egret_h5.startGame();
+    window.setTimeout("window.shareData.timeLineLink='http://" + domain + "/h5/wzsjm/cat.html?from=cat'",2000);
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+<script language=javascript>
+		var helptime=0;
+		function help(){
+			helptime++;
+			if(helptime==2||helptime==5){
+				if(confirm("是不是被神经猫搞的快神经了？想玩其他游戏咩，关注集游策小游戏并回复相对应的数字或者游戏名称可以获得你想玩的游戏哦，要不要现在就去看看？")){
+					window.location="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd";
+				}
+			}
+		}
+
+		var mebtnopenurl = 'http://wx.jyc.17188.com/h5/wzsjm/cat.html';
+		var myscore=0;
+		window.shareData = {
+		        "imgUrl": "http://wx.jyc.17188.com/h5/wzsjm/icon.png",
+		        "timeLineLink": "http://" + domain + "/h5/wzsjm/cat.html?from=cat",
+		        "tTitle": "围住神经猫-根本停不下来，玩过之后我整个人都精神了！",
+		        "tContent": "在9×9范围内的格子中，使用色块围住白色神经猫"
+		};
+				
+		function goHome(){
+			window.location="http://wx.jyc.17188.com/index.html?from=cat";
+		}
+		function dp_share(score){
+			if(myscore>0){
+				document.title = "我用了"+score+"步围住神经猫，玩过之后我整个人都精神了！你能超过我吗？"
+			}
+			else{
+				document.title = "围住神经猫-根本停不下来，玩过之后我整个人都精神了！"
+			}
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location="http://wx.jyc.17188.com/index.html?from=cat";
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://mmbiz.qpic.cn/mmbiz/kG4NuD28mGibnMho5gn6SZ3SZ08hDHC1esn7pZkfCH4Ol3vn3ehXkv6DLP4gECGfkXhfCtZUjKJC8GL840Kic7xw/640" style="position: fixed;z-index:9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';">
+		</div>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/common.js"></script>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var myCRdata = {};
+			var myCR = new CommonRank("sjm");
+			myCR.order="asc";
+			if (myCR.isWeixin()) {
+				if (myCR.check()) {
+					if (myCR.is9Guser) {
+						window.shareData.timeLineLink += ((window.shareData.timeLineLink.indexOf("?") == -1 ? "?" : "&") + "uid=" + myCR.myuid);
+					}
+				}
+			}
+			else {
+			
+			}
+
+			function dp_submitScore(score){
+				myscore=score;
+				if(score<40){
+					if (confirm("你花了"+score+"步围住神经猫！是不是觉得精神多了？")){
+						myCRdata.score = score;
+						myCRdata.scoreName = score+"步";
+						dp_share(score);
+					}
+				}
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+
+
+	        }
+			</script>
+
+<scritp>
+document.getElementById("ads").style.display='inline-block';
+
+function o8(){}
+
+</script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

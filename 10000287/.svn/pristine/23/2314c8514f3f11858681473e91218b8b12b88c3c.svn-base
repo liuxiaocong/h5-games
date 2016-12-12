@@ -1,0 +1,12 @@
+{"level": [
+{"type":"box", "material":"ground", "x":298,"y":913,"rotation":0,"width":256,"height":256},
+{"type":"chicken", "material":"blue", "x":306,"y":126,"rotation":0,"width":67,"height":59},
+{"type":"line", "material":"stone", "x":299,"y":681,"rotation":-90,"width":210,"height":34},
+{"type":"box", "material":"tnt", "x":241,"y":745,"rotation":0,"width":63,"height":63},
+{"type":"box", "material":"glass", "x":301,"y":401,"rotation":0,"width":90,"height":90},
+{"type":"box", "material":"wood", "x":300,"y":491,"rotation":0,"width":90,"height":90},
+{"type":"linedark", "material":"wood", "x":302,"y":556,"rotation":0,"width":248,"height":40},
+{"type":"linedark", "material":"wood", "x":302,"y":337,"rotation":0,"width":248,"height":40},
+{"type":"cross", "material":"wood", "x":304,"y":240,"rotation":0,"width":170,"height":170}
+]
+}

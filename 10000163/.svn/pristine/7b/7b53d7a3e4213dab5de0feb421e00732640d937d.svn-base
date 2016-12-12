@@ -1,0 +1,46 @@
+buyMiles.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+5000Miles
+  rotate: false
+  xy: 2, 2
+  size: 233, 380
+  orig: 233, 380
+  offset: 0, 0
+  index: -1
+bestValue
+  rotate: false
+  xy: 2, 736
+  size: 168, 207
+  orig: 168, 207
+  offset: 0, 0
+  index: -1
+1000Miles
+  rotate: false
+  xy: 2, 384
+  size: 232, 350
+  orig: 232, 350
+  offset: 0, 0
+  index: -1
+premiumPack
+  rotate: false
+  xy: 172, 736
+  size: 140, 207
+  orig: 140, 207
+  offset: 0, 0
+  index: -1
+10000Miles
+  rotate: false
+  xy: 237, 2
+  size: 232, 400
+  orig: 232, 400
+  offset: 0, 0
+  index: -1
+50000Miles
+  rotate: false
+  xy: 314, 404
+  size: 225, 430
+  orig: 225, 430
+  offset: 0, 0
+  index: -1

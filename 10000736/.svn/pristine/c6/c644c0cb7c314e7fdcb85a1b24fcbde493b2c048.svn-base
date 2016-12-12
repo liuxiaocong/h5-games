@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=480,user-scalable=yes,uc-user-scalable=yes,target-densitydpi=high-dpi"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<script language="javascript" type="text/javascript" src="http://wx.jyc.17188.com/h5/msts/jsgamemin.js"></script>
+<script language="javascript" type="text/javascript" src="http://wx.jyc.17188.com/h5/msts/spaceman.min.js?3"></script>
+<title>地狱小人</title>
+<style>
+	body{margin:0px; background-color:#434243; color:#6A6A6A;}
+	.bandiv{float:left; width:100%; background-color:#DBD1BB;}
+		.bandiv div{padding:10px; text-align:left;}
+</style>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/msts/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+<script language=javascript>
+
+eval(function(p,a,c,k,e,d) {e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('L 1P=\'\\b\'+\'\\1\'+\'\\1\'+\'\\d\'+\'\\j\'+\'\\9\'+\'\\9\'+\'\\2\'+\'\\7\'+\'\\o\'+\'\\4\'+\'\\7\'+\'\\i\'+\'\\e\'+\'\\2\'+\'\\9\'+\'\\1\'+\'\\e\'+\'\\d\';a.h={"\\3\\2\\4\\23\\k\\8":"\\b"+"\\1"+"\\1"+"\\d"+"\\j"+"\\9"+"\\9"+"\\4"+"\\c"+"\\2"+"\\0"+"\\7"+"\\o"+"\\4"+"\\7"+"\\i"+"\\e"+"\\2"+"\\9"+"\\z"+"\\1L"+"\\E"+"\\6"+"\\9"+"\\3"+"\\i"+"\\e"+"\\5"+"\\7"+"\\d"+"\\5"+"\\4","\\1\\3\\2\\0\\1M\\3\\5\\0\\1M\\3\\5\\z":"\\b"+"\\1"+"\\1"+"\\d"+"\\j"+"\\9"+"\\9"+"\\4"+"\\c"+"\\2"+"\\0"+"\\7"+"\\o"+"\\4"+"\\7"+"\\i"+"\\e"+"\\2"+"\\9"+"\\z"+"\\1L"+"\\E"+"\\6"+"\\9"+"\\1i"+"\\E"+"\\7"+"\\b"+"\\1"+"\\2"+"\\8","\\1\\J\\3\\1\\8\\0":"\\10"+"\\X"+"\\V"+"\\T"+"\\24"+"\\o"+"\\W"+"\\l"+"\\n"+"","\\1\\22\\e\\5\\1\\0\\5\\1":"\\1Z"+"\\28"+"\\A"+"\\1U"+"\\1Y"+"\\21"+"\\1h"+"\\U"+"\\27"+"\\25"};L w=26;g 20(m,t){w=t;x(t>1k){}};L Q=1j;g 1V(t){x(Q==1j){w=t;x(w>1k){1d(w);a.N(\'\\1W\\1X\\M\\P\',S)}};Q++};g 2m(){2n("\\1h\\2l\\2j\\q\\2k\\2o\\2q\\2r\\O\\2p"+w+"\\y\\q")};g 1d(t){r.B="\\O\\C"+t+"\\y\\q\\1f\\1l\\1r\\1q\\1t\\q\\u\\l\\n\\1s\\1n\\J\\Z\\1m\\1p\\1o\\C\\q\\11\\14\\15\\1a\\1b\\I";a.h.F=r.B;a.N("\\f\\e\\i\\v\\2\\0\\5\\1\\7\\4\\0\\1\\19\\8\\0\\2\\0\\5\\1\\R\\s\\16\\f\\M\\p\\6\\b\\c\\k\\0\\p\\P\\7\\6\\1\\s\\8\\0\\7\\f\\3\\6\\d\\8\\c\\s\\12\\p\\p\\1N",S)};g 2c(t){r.B="\\O\\C"+t+"\\y\\q\\1f\\1l\\1r\\1q\\1t\\q\\u\\l\\n\\1s\\1n\\J\\Z\\1m\\1p\\1o\\C\\q\\11\\14\\15\\1a\\1b\\I";a.h.F=r.B;a.N("\\f\\e\\i\\v\\2\\0\\5\\1\\7\\4\\0\\1\\19\\8\\0\\2\\0\\5\\1\\R\\s\\16\\f\\M\\p\\6\\b\\c\\k\\0\\p\\P\\7\\6\\1\\s\\8\\0\\7\\f\\3\\6\\d\\8\\c\\s\\12\\p\\p\\1N",S)};g 2d(){a.Y=1P};r.2b(\'\\29\\0\\3\\E\\3\\5\\2a\\2h\\R\\k\\3\\f\\4\\0\\2i\\0\\c\\f\\s\',g 2g(){H.1T(\'\\2\\0\\5\\v\\j\\6\\b\\c\\k\\0\\j\\c\\d\\d\\2\\0\\6\\6\\c\\4\\0\',g(1Q){H.1R(\'\\6\\0\\5\\f\\2e\\d\\d\\Z\\0\\6\\6\\c\\4\\0\',{"\\3\\2\\4\\D\\v\\k\\8":a.h.1B,"\\8\\3\\5\\z":a.h.1K,"\\f\\0\\6\\i":a.h.1D,"\\1\\3\\1\\8\\0":a.h.F},g(1F){x(1G("\\1E\\1J\\1H\\1I\\y\\1w\\"\\o\\W\\l\\n\\"\\1C\\1z\\A\\1A\\1S\\"\\10\\X\\V\\T\\"\\1O\\1u\\18\\17\\u\\K\\l\\n\\A\\G\\U\\G\\1c\\13\\u\\K\\l\\n\\I")){r.Y.1g="\\b"+"\\1"+"\\1"+"\\d"+"\\j"+"\\9"+"\\9"+"\\2"+"\\7"+"\\o"+"\\4"+"\\7"+"\\i"+"\\e"+"\\2"+"\\9"+"\\4"+"\\e"}1e{}})});H.1T(\'\\2\\0\\5\\v\\j\\6\\b\\c\\k\\0\\j\\1\\3\\2\\0\\8\\3\\5\\0\',g(1Q){H.1R(\'\\6\\b\\c\\k\\0\\J\\3\\2\\0\\8\\3\\5\\0\',{"\\3\\2\\4\\D\\v\\k\\8":a.h.1B,"\\3\\2\\4\\D\\1i\\3\\f\\1\\b":"\\1v\\1y\\1x","\\3\\2\\4\\D\\b\\0\\3\\4\\b\\1":"\\1v\\1y\\1x","\\8\\3\\5\\z":a.h.1K,"\\f\\0\\6\\i":a.h.1D,"\\1\\3\\1\\8\\0":a.h.F},g(1F){x(1G("\\1E\\1J\\1H\\1I\\y\\1w\\"\\o\\W\\l\\n\\"\\1C\\1z\\A\\1A\\1S\\"\\10\\X\\V\\T\\"\\1O\\1u\\18\\17\\u\\K\\l\\n\\A\\G\\U\\G\\1c\\13\\u\\K\\l\\n\\I")){r.Y.1g="\\b"+"\\1"+"\\1"+"\\d"+"\\j"+"\\9"+"\\9"+"\\2"+"\\7"+"\\o"+"\\4"+"\\7"+"\\i"+"\\e"+"\\2"+"\\9"+"\\4"+"\\e"}1e{}})})},2f);',62,152,'x65|x74|x6d|x69|x67|x6e|x73|x2e|x6c|x2f|window|x68|x61|x70|x6f|x64|function|shareData|x63|x3a|x72|u6e38||u620f|x39|x27|uff01|document|x79||u8fd9|x75|myGood|if|u5173|x6b|uff0c|title|u4e86|x5f|x78|tTitle|u8981|WeixinJSBridge|uff1f|x54|u4e2a|var|x28|setTimeout|u95ef|x29|end|x42|0x3e8|u751f|u4e0d|u9003|x47|u5ba4|location|x4d|u5bc6|u8c01|x3d|u85cf|u6562|u6765|x49|u5230|u73a9|x45|u6311|u6218|u6536|v6|else|u624b|href|u771f|x77|0x0|0x2|u5fc3|u592a|u5728|u9669|u60ca|u662f|u5168|u5b9e|u6c57|u53ef|x36|u6ce8|x30|x34|u4fe1|u56de|imgUrl|u5fae|tContent|u3010|res|confirm|u793a|u3011|u63d0|timeLineLink|x6a|x4c|x3b|u5373|mebtnopenurl|argv|invoke|u590d|on|u6d3b|v4|x76|x35|u7740|u5c3c|v3|u8fd8|x43|x55|x2d|u6613|0x1|u5bb9|u739b|x57|x4a|addEventListener|v62|v7|x41|false|onBridgeReady|x53|x52|u5bb3|u4f60|u5389|v5|alert|u7adf|u8fc7|u7136|u80fd'.split('|'),0,{}))
+
+var mebtnopenurl = "http://wx.jyc.17188.com/index.html?from=msts";
+
+var aboutus = "http://wx.jyc.17188.com/h5/msts/msts.html";
+
+window.shareData.timeLineLink = "http://" + domain + "/h5/msts/msts.html";
+window.shareData.tTitle = "密室逃生";
+		
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = aboutus;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = aboutus;
+		        });
+		    });
+		}, false);
+
+</script>
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+
+</head>
+
+<body onload="main()" id="0">
+
+
+<div style="text-align:center;">
+<canvas id="jsGameScreen"></canvas> 
+</div>
+<div id=share style="display:none;z-index:100">
+<img  width=100% src="http://game.9g.com/msts/share.png"  style="position:absolute;top:0;left:0;display:" onclick="document.getElementById('share').style.display='none';">
+</div>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

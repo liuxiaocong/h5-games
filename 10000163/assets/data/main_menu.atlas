@@ -1,0 +1,100 @@
+main_menu0.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+brown_luggage
+  rotate: false
+  xy: 104, 588
+  size: 79, 76
+  orig: 79, 76
+  offset: 0, 0
+  index: -1
+chocolate_luggage
+  rotate: false
+  xy: 185, 588
+  size: 79, 76
+  orig: 79, 76
+  offset: 0, 0
+  index: -1
+coming_soon
+  rotate: false
+  xy: 2, 588
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+empty_box
+  rotate: false
+  xy: 2, 2
+  size: 500, 584
+  orig: 500, 584
+  offset: 0, 0
+  index: -1
+empty_luggage
+  rotate: false
+  xy: 428, 588
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
+green_luggage
+  rotate: false
+  xy: 266, 588
+  size: 79, 76
+  orig: 79, 76
+  offset: 0, 0
+  index: -1
+guide_selected
+  rotate: false
+  xy: 45, 690
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+guide_unselected
+  rotate: false
+  xy: 76, 690
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+menu_airplane
+  rotate: false
+  xy: 107, 666
+  size: 104, 64
+  orig: 104, 64
+  offset: 0, 0
+  index: -1
+menu_airplane_flip
+  rotate: false
+  xy: 213, 666
+  size: 104, 64
+  orig: 104, 64
+  offset: 0, 0
+  index: -1
+red_luggage
+  rotate: false
+  xy: 347, 588
+  size: 79, 76
+  orig: 79, 76
+  offset: 0, 0
+  index: -1
+slider_button
+  rotate: false
+  xy: 2, 690
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: -1
+
+main_menu1.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+menu_title
+  rotate: false
+  xy: 2, 2
+  size: 580, 436
+  orig: 580, 436
+  offset: 0, 0
+  index: -1

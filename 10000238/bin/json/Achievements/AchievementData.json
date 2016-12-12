@@ -1,0 +1,96 @@
+{
+	"achievements" : 
+	[
+		{
+			"name": "DumbSurvive",
+			"text": "Survived a Rocket hit!",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 1
+		},
+		{
+			"name": "MineSurvive",
+			"text": "Survived a Mine hit!",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 1
+		},
+		{
+			"name": "HomingSurvive",
+			"text": "Survived a Homing Missile hit!",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 1
+		},
+		{
+			"name": "GuidedSurvive",
+			"text": "Survived a Guided Missile hit!",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 1
+		},
+		{
+			"name": "TargetDestroyed",
+			"text": "Destroyed an enemy Target",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 1
+		},
+		{
+			"name": "TenCollected",
+			"text": "Collected 10 Coins in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 10
+		},
+		{
+			"name": "FiftyCollected",
+			"text": "Collected 50 Coins in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 50
+		},
+		{
+			"name": "HundredCollected",
+			"text": "Collected 100 Coins in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 100
+		},
+		{
+			"name": "FiveThousandTravelled",
+			"text": "Travelled 5000m in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 5000
+		},
+		{
+			"name": "TenThousandTravelled",
+			"text": "Travelled 10000m in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 10000
+		},
+		{
+			"name": "TwentyThousandTravelled",
+			"text": "Travelled 20000m in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 20000
+		},
+		{
+			"name": "FortyThousandTravelled",
+			"text": "Travelled 40000m in a single flight",
+			"isUnlocked": false,
+			"persistantLock": true,
+			"maxValue": 40000
+		},
+		{
+			"name": "FurthestTravelled",
+			"text": "New Distance Record!",
+			"isUnlocked": false,
+			"persistantLock": false,
+			"maxValue": ""
+		}
+	]
+}

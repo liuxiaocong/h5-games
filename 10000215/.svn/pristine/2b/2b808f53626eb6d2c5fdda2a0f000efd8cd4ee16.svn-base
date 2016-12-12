@@ -1,0 +1,2666 @@
+{
+    "fonts": {
+        "ScoreFont1": {
+            "size": 32,
+            "anchorY": 1.41,
+            "start": 74,
+            "anchorX": -0.17,
+            "chars": "0123456789",
+            "end": 83
+        },
+        "LevelFont": {
+            "size": 62,
+            "anchorY": 1.34,
+            "start": 44,
+            "anchorX": -0.08,
+            "chars": "0123456789",
+            "end": 53
+        },
+        "ScoreFont": {
+            "size": 50,
+            "anchorY": 1.41,
+            "start": 64,
+            "anchorX": -0.16,
+            "chars": "0123456789",
+            "end": 73
+        },
+        "PriceFont": {
+            "size": 20,
+            "anchorY": 1.45,
+            "start": 54,
+            "anchorX": -0.24,
+            "chars": "0123456789",
+            "end": 63
+        }
+    },
+    "displays": {
+        "youwin": {
+            "start": 192,
+            "anchorY": 1.27,
+            "type": "youwin",
+            "anchorX": 0,
+            "end": 192
+        },
+        "gold": {
+            "start": 84,
+            "anchorY": 0.12,
+            "type": "gold",
+            "anchorX": -0.75,
+            "end": 91
+        },
+        "s28": {
+            "start": 120,
+            "anchorY": 1.05,
+            "type": "s28",
+            "anchorX": -0.02,
+            "end": 120
+        },
+        "sprite255": {
+            "anchorY": 0.23,
+            "start": 31,
+            "anchorX": -0.75,
+            "type": "btn",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "over": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "end": 33
+        },
+        "topbar": {
+            "start": 191,
+            "anchorY": -3.47,
+            "type": "topbar",
+            "anchorX": 0.41,
+            "end": 191
+        },
+        "buttonBack": {
+            "start": 34,
+            "anchorY": 0.92,
+            "type": "buttonBack",
+            "anchorX": 0.25,
+            "end": 34
+        },
+        "symbol0006": {
+            "start": 183,
+            "anchorY": 1.22,
+            "type": "symbol0006",
+            "anchorX": 0.29,
+            "end": 190
+        },
+        "GameBack": {
+            "start": 0,
+            "anchorY": 0,
+            "type": "GameBack",
+            "anchorX": 0,
+            "end": 0
+        },
+        "s35": {
+            "start": 127,
+            "anchorY": 1.24,
+            "type": "s35",
+            "anchorX": -0.03,
+            "end": 127
+        },
+        "s11210": {
+            "start": 112,
+            "anchorY": 0.46,
+            "type": "s11210",
+            "anchorX": 0.25,
+            "end": 119
+        },
+        "rightBar": {
+            "start": 111,
+            "anchorY": 1.68,
+            "type": "rightBar",
+            "anchorX": -0.45,
+            "end": 111
+        },
+        "symbol0005": {
+            "start": 175,
+            "anchorY": 1.07,
+            "type": "symbol0005",
+            "anchorX": 0.36,
+            "end": 182
+        },
+        "s34": {
+            "start": 126,
+            "anchorY": 1.3,
+            "type": "s34",
+            "anchorX": -0.07,
+            "end": 126
+        },
+        "sprite252": {
+            "anchorY": 0.24,
+            "start": 28,
+            "anchorX": -0.73,
+            "type": "btn",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "over": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "end": 30
+        },
+        "symbol0004": {
+            "start": 167,
+            "anchorY": 1.3,
+            "type": "symbol0004",
+            "anchorX": 0.24,
+            "end": 174
+        },
+        "ItemIcon1_0": {
+            "start": 1,
+            "anchorY": 1.19,
+            "type": "ItemIcon1_0",
+            "anchorX": 0,
+            "end": 1
+        },
+        "helpBtn": {
+            "start": 27,
+            "anchorY": 1.29,
+            "type": "btn",
+            "anchorX": 0.02,
+            "end": 27
+        },
+        "buyBtn": {
+            "anchorY": 0.07,
+            "start": 25,
+            "anchorX": 0.06,
+            "type": "btn",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "end": 26
+        },
+        "symbol0003": {
+            "start": 159,
+            "anchorY": 1.33,
+            "type": "symbol0003",
+            "anchorX": 0.21,
+            "end": 166
+        },
+        "back2": {
+            "start": 24,
+            "anchorY": 3.96,
+            "type": "back2",
+            "anchorX": 0.01,
+            "end": 24
+        },
+        "panelHead": {
+            "start": 109,
+            "anchorY": 0,
+            "type": "panelHead",
+            "anchorX": 0,
+            "end": 109
+        },
+        "Symbol26": {
+            "start": 23,
+            "anchorY": -0.02,
+            "type": "Symbol26",
+            "anchorX": 0,
+            "end": 23
+        },
+        "sasfdf": {
+            "start": 139,
+            "anchorY": 1.29,
+            "type": "sasfdf",
+            "anchorX": 0.02,
+            "end": 139
+        },
+        "s33": {
+            "start": 125,
+            "anchorY": 1.31,
+            "type": "s33",
+            "anchorX": -0.05,
+            "end": 125
+        },
+        "hjx88783_57918": {
+            "start": 106,
+            "anchorY": 1.29,
+            "type": "hjx88783_57918",
+            "anchorX": 0.02,
+            "end": 106
+        },
+        "panelFoot": {
+            "start": 108,
+            "anchorY": -0.01,
+            "type": "panelFoot",
+            "anchorX": 0,
+            "end": 108
+        },
+        "symbol0002": {
+            "start": 151,
+            "anchorY": 1.14,
+            "type": "symbol0002",
+            "anchorX": -0.07,
+            "end": 158
+        },
+        "s98765": {
+            "start": 131,
+            "anchorY": 1.36,
+            "type": "s98765",
+            "anchorX": 0.08,
+            "end": 138
+        },
+        "Symbol12": {
+            "start": 10,
+            "anchorY": 0.68,
+            "type": "Symbol12",
+            "anchorX": 0.58,
+            "end": 10
+        },
+        "hjx83401_83794": {
+            "start": 105,
+            "anchorY": 1.12,
+            "type": "hjx83401_83794",
+            "anchorX": 0.01,
+            "end": 105
+        },
+        "Symbol111000": {
+            "start": 2,
+            "anchorY": 0.39,
+            "type": "Symbol111000",
+            "anchorX": 1.37,
+            "end": 9
+        },
+        "s31": {
+            "start": 123,
+            "anchorY": 1.11,
+            "type": "s31",
+            "anchorX": -0.06,
+            "end": 123
+        },
+        "s32": {
+            "start": 124,
+            "anchorY": 1.3,
+            "type": "s32",
+            "anchorX": -0.05,
+            "end": 124
+        },
+        "hjx78300_93578": {
+            "start": 104,
+            "anchorY": 1.83,
+            "type": "hjx78300_93578",
+            "anchorX": 0.36,
+            "end": 104
+        },
+        "symbol0001": {
+            "start": 143,
+            "anchorY": 1.21,
+            "type": "symbol0001",
+            "anchorX": 0.09,
+            "end": 150
+        },
+        "panelBody": {
+            "start": 107,
+            "anchorY": -0.03,
+            "type": "panelBody",
+            "anchorX": 0,
+            "end": 107
+        },
+        "s37": {
+            "start": 129,
+            "anchorY": 1.31,
+            "type": "s37",
+            "anchorX": -0.06,
+            "end": 129
+        },
+        "hjx77870_23864": {
+            "start": 103,
+            "anchorY": 1,
+            "type": "hjx77870_23864",
+            "anchorX": 0,
+            "end": 103
+        },
+        "s5": {
+            "start": 130,
+            "anchorY": 0.97,
+            "type": "s5",
+            "anchorX": 0,
+            "end": 130
+        },
+        "daichu": {
+            "start": 43,
+            "anchorY": 0.38,
+            "type": "daichu",
+            "anchorX": 1.11,
+            "end": 43
+        },
+        "Symbol20": {
+            "start": 22,
+            "anchorY": 0.18,
+            "type": "Symbol20",
+            "anchorX": 0.07,
+            "end": 22
+        },
+        "s30": {
+            "start": 122,
+            "anchorY": 1.27,
+            "type": "s30",
+            "anchorX": -0.01,
+            "end": 122
+        },
+        "cont0": {
+            "start": 35,
+            "anchorY": 0.85,
+            "type": "cont0",
+            "anchorX": 0.03,
+            "end": 42
+        },
+        "TimeBar": {
+            "start": 110,
+            "anchorY": 1,
+            "type": "progress",
+            "anchorX": 0,
+            "end": 110
+        },
+        "hjx74686_17155": {
+            "start": 102,
+            "anchorY": 5.08,
+            "type": "hjx74686_17155",
+            "anchorX": 0.35,
+            "end": 102
+        },
+        "Symbol14": {
+            "start": 21,
+            "anchorY": -0.03,
+            "type": "Symbol14",
+            "anchorX": 0,
+            "end": 21
+        },
+        "s36": {
+            "start": 128,
+            "anchorY": 1.27,
+            "type": "s36",
+            "anchorX": -0.03,
+            "end": 128
+        },
+        "hjx60336_74612": {
+            "start": 101,
+            "anchorY": -0.15,
+            "type": "hjx60336_74612",
+            "anchorX": 1.19,
+            "end": 101
+        },
+        "Symbol13": {
+            "start": 20,
+            "anchorY": 0,
+            "type": "Symbol13",
+            "anchorX": 0,
+            "end": 20
+        },
+        "Symbol1211222": {
+            "start": 11,
+            "anchorY": 0.45,
+            "type": "Symbol1211222",
+            "anchorX": 1.87,
+            "end": 18
+        },
+        "stars3": {
+            "start": 141,
+            "anchorY": 0.6,
+            "type": "stars3",
+            "anchorX": 0.4,
+            "end": 142
+        },
+        "hjx57703_62660": {
+            "start": 93,
+            "anchorY": 0.93,
+            "type": "hjx57703_62660",
+            "anchorX": 0.09,
+            "end": 100
+        },
+        "Symbol12345": {
+            "start": 19,
+            "anchorY": 0,
+            "type": "Symbol12345",
+            "anchorX": -0.03,
+            "end": 19
+        },
+        "s29": {
+            "start": 121,
+            "anchorY": 1.06,
+            "type": "s29",
+            "anchorX": 0.01,
+            "end": 121
+        },
+        "hjx20506_83436": {
+            "start": 92,
+            "anchorY": -0.13,
+            "type": "hjx20506_83436",
+            "anchorX": -1.73,
+            "end": 92
+        },
+        "shadow": {
+            "start": 140,
+            "anchorY": 1.02,
+            "type": "shadow",
+            "anchorX": -0.11,
+            "end": 140
+        }
+    },
+    "frames": {
+        "game1_000107": {
+            "rotated": false,
+            "frame": "{{140,626},{414,117}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{410,113}"
+        },
+        "game1_000069": {
+            "rotated": false,
+            "frame": "{{350,1616},{35,45}}",
+            "offset": "{1.50,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000144": {
+            "rotated": false,
+            "frame": "{{711,707},{165,32}}",
+            "offset": "{1.00,-2.50}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000025": {
+            "rotated": false,
+            "frame": "{{147,1096},{134,124}}",
+            "offset": "{2.50,-1.50}",
+            "sourceSize": "{143,135}"
+        },
+        "game1_000184": {
+            "rotated": false,
+            "frame": "{{1622,1096},{107,37}}",
+            "offset": "{-0.10,2.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000180": {
+            "rotated": false,
+            "frame": "{{879,1000},{179,65}}",
+            "offset": "{-2.50,-3.50}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000000": {
+            "rotated": false,
+            "frame": "{{0,0},{804,504}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{800,500}"
+        },
+        "game1_000182": {
+            "rotated": false,
+            "frame": "{{1099,816},{198,60}}",
+            "offset": "{1.00,-6.00}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000186": {
+            "rotated": false,
+            "frame": "{{611,1559},{61,37}}",
+            "offset": "{0.90,2.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000059": {
+            "rotated": false,
+            "frame": "{{1727,1166},{19,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000149": {
+            "rotated": false,
+            "frame": "{{936,1235},{141,34}}",
+            "offset": "{1.00,-0.50}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000020": {
+            "rotated": false,
+            "frame": "{{445,1422},{77,63}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{73,59}"
+        },
+        "game1_000076": {
+            "rotated": false,
+            "frame": "{{837,1559},{26,33}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000154": {
+            "rotated": false,
+            "frame": "{{908,1306},{124,29}}",
+            "offset": "{2.00,1.00}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000028": {
+            "rotated": false,
+            "frame": "{{290,1559},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{47.99999999999999,45}"
+        },
+        "game1_000037": {
+            "rotated": false,
+            "frame": "{{485,743},{349,69}}",
+            "offset": "{4.50,-5.00}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000009": {
+            "rotated": false,
+            "frame": "{{1379,1306},{58,24}}",
+            "offset": "{8.00,-1.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000083": {
+            "rotated": false,
+            "frame": "{{941,1559},{26,32}}",
+            "offset": "{2.50,-2.50}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000092": {
+            "rotated": false,
+            "frame": "{{522,1422},{69,62}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{65,58}"
+        },
+        "game1_000143": {
+            "rotated": false,
+            "frame": "{{1276,1166},{144,35}}",
+            "offset": "{2.50,0.00}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000034": {
+            "rotated": false,
+            "frame": "{{442,1000},{201,81}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{197,77}"
+        },
+        "game1_000148": {
+            "rotated": false,
+            "frame": "{{876,707},{175,30}}",
+            "offset": "{2.00,-0.50}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000190": {
+            "rotated": false,
+            "frame": "{{194,1525},{87,30}}",
+            "offset": "{1.05,-1.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000156": {
+            "rotated": false,
+            "frame": "{{122,1371},{101,36}}",
+            "offset": "{0.50,-0.50}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000074": {
+            "rotated": false,
+            "frame": "{{1719,816},{27,33}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000005": {
+            "rotated": false,
+            "frame": "{{1666,417},{77,22}}",
+            "offset": "{4.50,-3.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000065": {
+            "rotated": false,
+            "frame": "{{1716,743},{27,45}}",
+            "offset": "{1.50,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000187": {
+            "rotated": false,
+            "frame": "{{672,1559},{61,37}}",
+            "offset": "{0.90,2.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000132": {
+            "rotated": false,
+            "frame": "{{140,895},{294,76}}",
+            "offset": "{6.50,9.05}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000112": {
+            "rotated": false,
+            "frame": "{{182,1235},{154,63}}",
+            "offset": "{5.50,-2.50}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000179": {
+            "rotated": false,
+            "frame": "{{477,1096},{150,70}}",
+            "offset": "{-13.00,-2.00}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000093": {
+            "rotated": false,
+            "frame": "{{1497,816},{222,48}}",
+            "offset": "{-0.50,2.00}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000053": {
+            "rotated": false,
+            "frame": "{{92,1616},{46,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000101": {
+            "rotated": false,
+            "frame": "{{1623,189},{91,73}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{87,69}"
+        },
+        "game1_000155": {
+            "rotated": false,
+            "frame": "{{0,1496},{113,29}}",
+            "offset": "{0.50,0.00}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000192": {
+            "rotated": false,
+            "frame": "{{473,504},{480,105}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{476,101}"
+        },
+        "game1_000050": {
+            "rotated": false,
+            "frame": "{{46,1616},{46,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000051": {
+            "rotated": false,
+            "frame": "{{150,1559},{48,56}}",
+            "offset": "{2.00,-2.50}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000169": {
+            "rotated": false,
+            "frame": "{{681,1422},{118,28}}",
+            "offset": "{3.43,-3.50}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000029": {
+            "rotated": false,
+            "frame": "{{342,1559},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{47.99999999999999,45}"
+        },
+        "game1_000060": {
+            "rotated": false,
+            "frame": "{{1540,1306},{20,24}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000030": {
+            "rotated": false,
+            "frame": "{{1664,743},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{47.99999999999999,45}"
+        },
+        "game1_000173": {
+            "rotated": false,
+            "frame": "{{223,1371},{114,32}}",
+            "offset": "{6.58,-0.90}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000002": {
+            "rotated": false,
+            "frame": "{{113,1496},{75,29}}",
+            "offset": "{3.50,-2.00}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000079": {
+            "rotated": false,
+            "frame": "{{863,1559},{26,33}}",
+            "offset": "{1.50,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000045": {
+            "rotated": false,
+            "frame": "{{138,1616},{33,56}}",
+            "offset": "{-1.50,-2.50}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000176": {
+            "rotated": false,
+            "frame": "{{0,1306},{145,65}}",
+            "offset": "{-5.50,2.50}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000048": {
+            "rotated": false,
+            "frame": "{{0,1559},{52,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000133": {
+            "rotated": false,
+            "frame": "{{0,1000},{228,96}}",
+            "offset": "{9.50,11.95}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000066": {
+            "rotated": false,
+            "frame": "{{420,1616},{34,45}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000012": {
+            "rotated": false,
+            "frame": "{{1615,574},{70,20}}",
+            "offset": "{0.50,-1.50}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000191": {
+            "rotated": false,
+            "frame": "{{953,504},{696,70}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{692,66}"
+        },
+        "game1_000094": {
+            "rotated": false,
+            "frame": "{{784,1166},{177,44}}",
+            "offset": "{-7.00,-2.00}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000130": {
+            "rotated": false,
+            "frame": "{{643,1000},{236,68}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{232,64}"
+        },
+        "game1_000115": {
+            "rotated": false,
+            "frame": "{{1244,1000},{190,57}}",
+            "offset": "{7.50,-1.50}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000026": {
+            "rotated": false,
+            "frame": "{{0,1096},{147,139}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{143,135}"
+        },
+        "game1_000153": {
+            "rotated": false,
+            "frame": "{{1500,1235},{136,30}}",
+            "offset": "{2.00,1.50}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000054": {
+            "rotated": false,
+            "frame": "{{1437,1306},{21,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000021": {
+            "rotated": false,
+            "frame": "{{804,285},{501,168}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{497,164}"
+        },
+        "game1_000001": {
+            "rotated": false,
+            "frame": "{{488,1616},{38,39}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{34,35}"
+        },
+        "game1_000131": {
+            "rotated": false,
+            "frame": "{{0,504},{473,122}}",
+            "offset": "{2.00,-2.95}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000070": {
+            "rotated": false,
+            "frame": "{{243,1616},{36,45}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000006": {
+            "rotated": false,
+            "frame": "{{1585,417},{81,22}}",
+            "offset": "{2.50,-2.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000111": {
+            "rotated": false,
+            "frame": "{{0,626},{140,374}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{136,370}"
+        },
+        "game1_000135": {
+            "rotated": false,
+            "frame": "{{441,816},{314,73}}",
+            "offset": "{7.50,4.55}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000035": {
+            "rotated": false,
+            "frame": "{{727,895},{317,64}}",
+            "offset": "{4.50,-4.50}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000052": {
+            "rotated": false,
+            "frame": "{{102,1559},{48,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000102": {
+            "rotated": false,
+            "frame": "{{370,1422},{75,68}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{71,64}"
+        },
+        "game1_000174": {
+            "rotated": false,
+            "frame": "{{1353,1235},{147,30}}",
+            "offset": "{1.78,-3.25}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000095": {
+            "rotated": false,
+            "frame": "{{1361,453},{239,44}}",
+            "offset": "{-7.00,-2.00}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000010": {
+            "rotated": false,
+            "frame": "{{1099,453},{262,44}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{258,40}"
+        },
+        "game1_000147": {
+            "rotated": false,
+            "frame": "{{1463,1096},{159,37}}",
+            "offset": "{2.00,-1.00}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000015": {
+            "rotated": false,
+            "frame": "{{1646,707},{71,21}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000061": {
+            "rotated": false,
+            "frame": "{{1580,1306},{19,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000109": {
+            "rotated": false,
+            "frame": "{{804,0},{463,285}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{459,281}"
+        },
+        "game1_000067": {
+            "rotated": false,
+            "frame": "{{315,1616},{35,45}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000185": {
+            "rotated": false,
+            "frame": "{{550,1559},{61,37}}",
+            "offset": "{0.90,2.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000134": {
+            "rotated": false,
+            "frame": "{{554,626},{360,81}}",
+            "offset": "{5.50,3.55}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000105": {
+            "rotated": false,
+            "frame": "{{1623,0},{117,110}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{113,106}"
+        },
+        "game1_000082": {
+            "rotated": false,
+            "frame": "{{810,1559},{27,33}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000178": {
+            "rotated": false,
+            "frame": "{{281,1096},{196,70}}",
+            "offset": "{4.00,0.00}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000177": {
+            "rotated": false,
+            "frame": "{{1058,1000},{186,62}}",
+            "offset": "{6.00,-7.00}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000189": {
+            "rotated": false,
+            "frame": "{{591,1422},{90,37}}",
+            "offset": "{1.40,4.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000152": {
+            "rotated": false,
+            "frame": "{{1636,1235},{104,30}}",
+            "offset": "{3.00,-0.50}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000031": {
+            "rotated": false,
+            "frame": "{{446,1559},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,45}"
+        },
+        "game1_000162": {
+            "rotated": false,
+            "frame": "{{1166,1306},{129,25}}",
+            "offset": "{5.45,-0.85}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000013": {
+            "rotated": false,
+            "frame": "{{779,1141},{65,23}}",
+            "offset": "{6.00,-1.00}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000168": {
+            "rotated": false,
+            "frame": "{{791,1306},{117,31}}",
+            "offset": "{7.68,-4.45}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000022": {
+            "rotated": false,
+            "frame": "{{228,1000},{214,81}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{210,77}"
+        },
+        "game1_000027": {
+            "rotated": false,
+            "frame": "{{0,1422},{74,74}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{70,70}"
+        },
+        "game1_000041": {
+            "rotated": false,
+            "frame": "{{1344,895},{264,64}}",
+            "offset": "{0.00,0.50}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000003": {
+            "rotated": false,
+            "frame": "{{1636,673},{74,22}}",
+            "offset": "{4.00,-2.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000055": {
+            "rotated": false,
+            "frame": "{{1729,1096},{17,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000110": {
+            "rotated": false,
+            "frame": "{{1429,707},{217,22}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{213,18}"
+        },
+        "game1_000136": {
+            "rotated": false,
+            "frame": "{{434,895},{293,75}}",
+            "offset": "{7.00,3.55}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000114": {
+            "rotated": false,
+            "frame": "{{145,1306},{139,48}}",
+            "offset": "{1.00,0.00}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000018": {
+            "rotated": false,
+            "frame": "{{1540,574},{75,20}}",
+            "offset": "{2.00,-2.50}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000016": {
+            "rotated": false,
+            "frame": "{{844,1141},{52,23}}",
+            "offset": "{1.50,-3.00}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000078": {
+            "rotated": false,
+            "frame": "{{783,1559},{27,33}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000014": {
+            "rotated": false,
+            "frame": "{{591,971},{69,20}}",
+            "offset": "{2.00,-1.50}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000075": {
+            "rotated": false,
+            "frame": "{{967,1559},{21,32}}",
+            "offset": "{2.00,-2.50}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000007": {
+            "rotated": false,
+            "frame": "{{948,1371},{62,26}}",
+            "offset": "{7.00,-1.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000151": {
+            "rotated": false,
+            "frame": "{{92,1525},{102,30}}",
+            "offset": "{-2.00,2.10}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000163": {
+            "rotated": false,
+            "frame": "{{1032,1306},{134,26}}",
+            "offset": "{1.45,-0.35}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000087": {
+            "rotated": false,
+            "frame": "{{785,1235},{151,44}}",
+            "offset": "{4.50,-9.00}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000106": {
+            "rotated": false,
+            "frame": "{{74,1422},{74,74}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{70,70}"
+        },
+        "game1_000122": {
+            "rotated": false,
+            "frame": "{{1051,707},{196,27}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{192,23}"
+        },
+        "game1_000118": {
+            "rotated": false,
+            "frame": "{{1462,743},{202,53}}",
+            "offset": "{1.50,0.50}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000044": {
+            "rotated": false,
+            "frame": "{{52,1559},{50,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000032": {
+            "rotated": false,
+            "frame": "{{498,1559},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,45}"
+        },
+        "game1_000023": {
+            "rotated": false,
+            "frame": "{{896,1141},{23,23}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{19,19}"
+        },
+        "game1_000108": {
+            "rotated": false,
+            "frame": "{{1305,285},{433,132}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{429,128}"
+        },
+        "game1_000166": {
+            "rotated": false,
+            "frame": "{{288,971},{166,22}}",
+            "offset": "{2.00,0.65}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000170": {
+            "rotated": false,
+            "frame": "{{693,1371},{101,27}}",
+            "offset": "{1.58,-3.70}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000047": {
+            "rotated": false,
+            "frame": "{{0,1616},{46,57}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000161": {
+            "rotated": false,
+            "frame": "{{140,971},{148,27}}",
+            "offset": "{0.75,1.40}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000123": {
+            "rotated": false,
+            "frame": "{{804,453},{295,47}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{291,43}"
+        },
+        "game1_000142": {
+            "rotated": false,
+            "frame": "{{222,1422},{74,71}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{70,67}"
+        },
+        "game1_000038": {
+            "rotated": false,
+            "frame": "{{755,816},{344,61}}",
+            "offset": "{1.00,-4.00}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000043": {
+            "rotated": false,
+            "frame": "{{1714,189},{25,66}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{21,62}"
+        },
+        "game1_000017": {
+            "rotated": false,
+            "frame": "{{521,971},{70,21}}",
+            "offset": "{1.50,-2.00}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000088": {
+            "rotated": false,
+            "frame": "{{961,1166},{162,42}}",
+            "offset": "{2.00,-8.00}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000183": {
+            "rotated": false,
+            "frame": "{{733,1559},{50,33}}",
+            "offset": "{2.10,4.10}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000068": {
+            "rotated": false,
+            "frame": "{{207,1616},{36,45}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000158": {
+            "rotated": false,
+            "frame": "{{543,1306},{112,39}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000124": {
+            "rotated": false,
+            "frame": "{{576,1371},{117,27}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{113,23}"
+        },
+        "game1_000127": {
+            "rotated": false,
+            "frame": "{{1305,417},{280,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{276,20}"
+        },
+        "game1_000071": {
+            "rotated": false,
+            "frame": "{{454,1616},{34,45}}",
+            "offset": "{1.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000081": {
+            "rotated": false,
+            "frame": "{{559,1616},{25,33}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000159": {
+            "rotated": false,
+            "frame": "{{0,1525},{92,34}}",
+            "offset": "{0.95,-2.00}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000042": {
+            "rotated": false,
+            "frame": "{{834,743},{357,59}}",
+            "offset": "{1.50,-4.00}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000128": {
+            "rotated": false,
+            "frame": "{{1247,707},{182,27}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{178,23}"
+        },
+        "game1_000011": {
+            "rotated": false,
+            "frame": "{{877,1371},{71,27}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{71,23}"
+        },
+        "game1_000126": {
+            "rotated": false,
+            "frame": "{{794,1371},{83,27}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{79,23}"
+        },
+        "game1_000146": {
+            "rotated": false,
+            "frame": "{{1123,1166},{153,37}}",
+            "offset": "{0.00,-3.00}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000140": {
+            "rotated": false,
+            "frame": "{{1623,262},{32,10}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{28,6}"
+        },
+        "game1_000188": {
+            "rotated": false,
+            "frame": "{{284,1306},{132,47}}",
+            "offset": "{2.00,-3.00}",
+            "sourceSize": "{128,45}"
+        },
+        "game1_000172": {
+            "rotated": false,
+            "frame": "{{1077,1235},{142,33}}",
+            "offset": "{4.73,0.40}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000024": {
+            "rotated": false,
+            "frame": "{{1600,453},{133,42}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{129,38}"
+        },
+        "game1_000145": {
+            "rotated": false,
+            "frame": "{{554,707},{157,35}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000119": {
+            "rotated": false,
+            "frame": "{{1608,895},{137,56}}",
+            "offset": "{4.00,1.00}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000019": {
+            "rotated": false,
+            "frame": "{{1267,0},{356,278}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{352,274}"
+        },
+        "game1_000157": {
+            "rotated": false,
+            "frame": "{{337,1371},{115,30}}",
+            "offset": "{0.50,0.50}",
+            "sourceSize": "{132,35}"
+        },
+        "game1_000057": {
+            "rotated": false,
+            "frame": "{{1520,1306},{20,24}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000008": {
+            "rotated": false,
+            "frame": "{{1295,1306},{84,25}}",
+            "offset": "{2.00,-4.00}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000084": {
+            "rotated": false,
+            "frame": "{{501,1235},{131,53}}",
+            "offset": "{0.50,2.50}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000085": {
+            "rotated": false,
+            "frame": "{{632,1235},{153,44}}",
+            "offset": "{5.50,-9.00}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000175": {
+            "rotated": false,
+            "frame": "{{0,1235},{182,71}}",
+            "offset": "{-3.00,-0.50}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000098": {
+            "rotated": false,
+            "frame": "{{1434,1000},{229,45}}",
+            "offset": "{-7.00,-0.50}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000097": {
+            "rotated": false,
+            "frame": "{{281,1166},{161,52}}",
+            "offset": "{-4.00,-1.00}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000033": {
+            "rotated": false,
+            "frame": "{{394,1559},{52,49}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{48,45}"
+        },
+        "game1_000077": {
+            "rotated": false,
+            "frame": "{{889,1559},{26,32}}",
+            "offset": "{2.50,-2.50}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000103": {
+            "rotated": false,
+            "frame": "{{526,1616},{33,39}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{29,35}"
+        },
+        "game1_000104": {
+            "rotated": false,
+            "frame": "{{1649,504},{87,70}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{83,66}"
+        },
+        "game1_000099": {
+            "rotated": false,
+            "frame": "{{1003,1096},{234,43}}",
+            "offset": "{0.50,-0.50}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000086": {
+            "rotated": false,
+            "frame": "{{416,1306},{127,46}}",
+            "offset": "{2.50,-6.00}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000125": {
+            "rotated": false,
+            "frame": "{{1259,574},{281,20}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{277,16}"
+        },
+        "game1_000089": {
+            "rotated": false,
+            "frame": "{{1636,626},{110,47}}",
+            "offset": "{2.00,-8.50}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000056": {
+            "rotated": false,
+            "frame": "{{1500,1306},{20,24}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000160": {
+            "rotated": false,
+            "frame": "{{1573,1166},{154,31}}",
+            "offset": "{2.70,-0.75}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000113": {
+            "rotated": false,
+            "frame": "{{336,1235},{165,55}}",
+            "offset": "{4.00,-0.50}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000164": {
+            "rotated": false,
+            "frame": "{{655,1306},{136,31}}",
+            "offset": "{5.90,-1.50}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000004": {
+            "rotated": false,
+            "frame": "{{454,971},{67,22}}",
+            "offset": "{4.50,-2.50}",
+            "sourceSize": "{80,25}"
+        },
+        "game1_000040": {
+            "rotated": false,
+            "frame": "{{1044,895},{300,64}}",
+            "offset": "{-1.00,1.50}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000058": {
+            "rotated": false,
+            "frame": "{{1458,1306},{21,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000150": {
+            "rotated": false,
+            "frame": "{{1420,1166},{153,32}}",
+            "offset": "{0.00,1.50}",
+            "sourceSize": "{171,35}"
+        },
+        "game1_000141": {
+            "rotated": false,
+            "frame": "{{296,1422},{74,71}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{70,67}"
+        },
+        "game1_000064": {
+            "rotated": false,
+            "frame": "{{171,1616},{36,45}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000117": {
+            "rotated": false,
+            "frame": "{{0,1371},{122,51}}",
+            "offset": "{-2.50,2.50}",
+            "sourceSize": "{199,60}"
+        },
+        "game1_000137": {
+            "rotated": false,
+            "frame": "{{140,816},{301,79}}",
+            "offset": "{7.00,7.55}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000096": {
+            "rotated": false,
+            "frame": "{{779,1096},{224,45}}",
+            "offset": "{0.50,0.50}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000063": {
+            "rotated": false,
+            "frame": "{{1560,1306},{20,24}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000073": {
+            "rotated": false,
+            "frame": "{{385,1616},{35,45}}",
+            "offset": "{2.50,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000129": {
+            "rotated": false,
+            "frame": "{{953,574},{306,20}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{302,16}"
+        },
+        "game1_000181": {
+            "rotated": false,
+            "frame": "{{627,1096},{152,69}}",
+            "offset": "{-17.00,-4.50}",
+            "sourceSize": "{196,70}"
+        },
+        "game1_000036": {
+            "rotated": false,
+            "frame": "{{140,743},{345,73}}",
+            "offset": "{5.50,-1.00}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000171": {
+            "rotated": false,
+            "frame": "{{1219,1235},{134,33}}",
+            "offset": "{3.38,-4.40}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000100": {
+            "rotated": false,
+            "frame": "{{1191,743},{271,53}}",
+            "offset": "{2.00,-3.50}",
+            "sourceSize": "{267,52}"
+        },
+        "game1_000121": {
+            "rotated": false,
+            "frame": "{{1623,110},{108,79}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{104,75}"
+        },
+        "game1_000039": {
+            "rotated": false,
+            "frame": "{{914,626},{360,72}}",
+            "offset": "{2.00,-0.50}",
+            "sourceSize": "{356,71}"
+        },
+        "game1_000139": {
+            "rotated": false,
+            "frame": "{{148,1422},{74,74}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{70,70}"
+        },
+        "game1_000046": {
+            "rotated": false,
+            "frame": "{{198,1559},{46,56}}",
+            "offset": "{2.00,-1.50}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000062": {
+            "rotated": false,
+            "frame": "{{1479,1306},{21,24}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{17,20}"
+        },
+        "game1_000049": {
+            "rotated": false,
+            "frame": "{{244,1559},{46,56}}",
+            "offset": "{2.00,-2.50}",
+            "sourceSize": "{48,53}"
+        },
+        "game1_000167": {
+            "rotated": false,
+            "frame": "{{1663,1000},{73,32}}",
+            "offset": "{3.18,0.10}",
+            "sourceSize": "{143.45,33.8}"
+        },
+        "game1_000165": {
+            "rotated": false,
+            "frame": "{{452,1371},{124,27}}",
+            "offset": "{5.30,-1.85}",
+            "sourceSize": "{162,30}"
+        },
+        "game1_000080": {
+            "rotated": false,
+            "frame": "{{915,1559},{26,32}}",
+            "offset": "{2.50,-2.50}",
+            "sourceSize": "{23,29}"
+        },
+        "game1_000138": {
+            "rotated": false,
+            "frame": "{{1274,626},{362,69}}",
+            "offset": "{8.50,-2.45}",
+            "sourceSize": "{469,119.9}"
+        },
+        "game1_000090": {
+            "rotated": false,
+            "frame": "{{442,1166},{170,47}}",
+            "offset": "{4.00,-7.50}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000091": {
+            "rotated": false,
+            "frame": "{{612,1166},{172,46}}",
+            "offset": "{1.00,-10.00}",
+            "sourceSize": "{170,58}"
+        },
+        "game1_000120": {
+            "rotated": false,
+            "frame": "{{1237,1096},{226,38}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{222,34}"
+        },
+        "game1_000072": {
+            "rotated": false,
+            "frame": "{{279,1616},{36,45}}",
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{32,41}"
+        },
+        "game1_000116": {
+            "rotated": false,
+            "frame": "{{1297,816},{200,56}}",
+            "offset": "{3.50,2.00}",
+            "sourceSize": "{199,60}"
+        }
+    },
+    "mcs": {
+        "Symbol41": {
+            "children": {
+                "instance1623": {
+                    "zIndex": 0,
+                    "frames": "47.90,61.85,0.00,1.00,1.00,1.00|47.90,62.35,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                },
+                "label__0": {
+                    "zIndex": 1,
+                    "frames": "22.10,49.85,0.00,1.00,1.00,1.00|",
+                    "class": "symbol0002"
+                }
+            },
+            "anchorY": 0.57,
+            "totalFrames": 2,
+            "anchorX": 0.5,
+            "type": "button",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,185.75,66.25"
+        },
+        "ResultPanel": {
+            "children": {
+                "back": {
+                    "zIndex": 0,
+                    "frames": "0.00,26.75,0.00,11.03,8.51,1.00",
+                    "class": "Symbol13"
+                },
+                "scoreTxt": {
+                    "frames": "359.60,244.00,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "ScoreFont",
+                    "zIndex": 10,
+                    "width": 244,
+                    "align": "center",
+                    "height": 74
+                },
+                "instance2356": {
+                    "zIndex": 3,
+                    "frames": "286.45,33.00,0.00,1.00,1.00,1.00",
+                    "class": "Symbol1copy"
+                },
+                "instance2368": {
+                    "zIndex": 6,
+                    "frames": "163.75,288.50,0.00,1.00,1.00,1.00",
+                    "class": "Symbol14"
+                },
+                "label__1": {
+                    "zIndex": 9,
+                    "frames": "217.95,514.35,0.00,1.00,1.00,1.00",
+                    "class": "s98765"
+                },
+                "returnBtn": {
+                    "zIndex": 2,
+                    "frames": "37.80,85.50,0.00,1.00,1.00,1.00",
+                    "class": "hjx88783_57918"
+                },
+                "instance2374": {
+                    "zIndex": 7,
+                    "frames": "366.65,237.00,0.00,1.02,1.00,1.00",
+                    "class": "s5"
+                },
+                "label__0": {
+                    "zIndex": 8,
+                    "frames": "243.85,205.60,0.00,0.80,0.81,1.00",
+                    "class": "s11210"
+                },
+                "instance2175": {
+                    "zIndex": 1,
+                    "frames": "405.95,365.50,0.00,1.00,1.00,1.00",
+                    "class": "Symbol9"
+                },
+                "retryBtn": {
+                    "zIndex": 4,
+                    "frames": "519.10,33.00,0.00,1.00,1.00,1.00",
+                    "class": "RetryButton1"
+                }
+            },
+            "anchorY": -0.04,
+            "totalFrames": 1,
+            "rect": "0,0,800,656.1",
+            "type": "ResultPanel",
+            "anchorX": 0.03
+        },
+        "helpPanel": {
+            "children": {
+                "instance3231": {
+                    "zIndex": 6,
+                    "frames": "196.30,362.20,0.00,1.00,1.00,1.00",
+                    "class": "panelHead"
+                },
+                "instance3185": {
+                    "zIndex": 4,
+                    "frames": "230.75,192.65,0.00,1.00,1.00,1.00",
+                    "class": "panelBody"
+                },
+                "instance3208": {
+                    "zIndex": 5,
+                    "frames": "230.75,272.65,0.00,1.00,1.00,1.00",
+                    "class": "panelBody"
+                },
+                "instance3365": {
+                    "zIndex": 12,
+                    "frames": "346.55,86.25,0.00,0.90,0.90,1.00",
+                    "class": "s37"
+                },
+                "instance3378": {
+                    "zIndex": 18,
+                    "frames": "356.50,298.90,0.00,0.90,0.90,1.00",
+                    "class": "s32"
+                },
+                "instance3375": {
+                    "zIndex": 17,
+                    "frames": "346.75,360.30,0.00,0.90,0.90,1.00",
+                    "class": "s31"
+                },
+                "instance3363": {
+                    "zIndex": 11,
+                    "frames": "356.50,174.95,0.00,0.90,0.90,1.00",
+                    "class": "s35"
+                },
+                "instance3373": {
+                    "zIndex": 16,
+                    "frames": "360.40,387.15,0.00,0.90,0.90,1.00",
+                    "class": "s30"
+                },
+                "instance3408": {
+                    "zIndex": 25,
+                    "frames": "160.60,225.30,0.00,1.00,1.00,1.00",
+                    "class": "hjx20506_83436"
+                },
+                "instance3380": {
+                    "zIndex": 19,
+                    "frames": "351.50,264.50,0.00,0.90,0.90,1.00",
+                    "class": "s33"
+                },
+                "instance3156": {
+                    "zIndex": 2,
+                    "frames": "234.75,0.00,0.00,1.00,1.00,1.00",
+                    "class": "panelFoot"
+                },
+                "instance3357": {
+                    "zIndex": 8,
+                    "frames": "260.30,303.95,0.00,0.90,0.90,1.00",
+                    "class": "s29"
+                },
+                "back": {
+                    "zIndex": 0,
+                    "frames": "0.00,56.95,0.00,11.03,8.51,1.00",
+                    "class": "Symbol13"
+                },
+                "instance3382": {
+                    "zIndex": 20,
+                    "frames": "355.85,210.85,0.00,0.90,0.90,1.00",
+                    "class": "s34"
+                },
+                "instance3162": {
+                    "zIndex": 3,
+                    "frames": "230.75,102.65,0.00,1.00,1.00,1.00",
+                    "class": "panelBody"
+                },
+                "instance3359": {
+                    "zIndex": 9,
+                    "frames": "260.30,216.15,0.00,0.90,0.90,1.00",
+                    "class": "s29"
+                },
+                "instance3371": {
+                    "zIndex": 15,
+                    "frames": "331.40,436.70,0.00,0.90,0.90,1.00",
+                    "class": "s28"
+                },
+                "instance3384": {
+                    "zIndex": 21,
+                    "frames": "356.50,122.80,0.00,0.90,0.90,1.00",
+                    "class": "s36"
+                },
+                "instance3401": {
+                    "zIndex": 24,
+                    "frames": "295.45,378.75,0.00,1.00,1.00,1.00",
+                    "class": "hjx74686_17155"
+                },
+                "instance3396": {
+                    "zIndex": 23,
+                    "frames": "359.30,306.40,0.00,1.00,1.00,1.00",
+                    "class": "hjx60336_74612"
+                },
+                "instance3355": {
+                    "zIndex": 7,
+                    "frames": "259.40,389.85,0.00,0.90,0.90,1.00",
+                    "class": "s29"
+                },
+                "instance3361": {
+                    "zIndex": 10,
+                    "frames": "260.30,125.75,0.00,0.90,0.90,1.00",
+                    "class": "s29"
+                },
+                "instance3386": {
+                    "zIndex": 22,
+                    "frames": "293.85,265.50,0.00,1.00,1.00,1.00",
+                    "class": "hjx78300_93578"
+                },
+                "closeBtn": {
+                    "zIndex": 26,
+                    "frames": "590.15,476.50,0.00,1.00,1.00,1.00",
+                    "class": "sasfdf"
+                }
+            },
+            "anchorY": 0.02,
+            "totalFrames": 1,
+            "rect": "0,0,800,642.9",
+            "type": "helpPanel",
+            "anchorX": 0.04
+        },
+        "Symbol19": {
+            "children": {
+                "txt": {
+                    "frames": "56.75,38.40,0.00,1.00,1.00,1.00",
+                    "text": "0",
+                    "class": "ScoreFont1",
+                    "zIndex": 2,
+                    "width": 22,
+                    "align": "center",
+                    "height": 36
+                },
+                "instance1590": {
+                    "zIndex": 0,
+                    "frames": "24.60,275.35,0.00,0.80,0.80,1.00",
+                    "class": "hjx74686_17155"
+                },
+                "instance1597": {
+                    "zIndex": 1,
+                    "frames": "53.95,34.50,0.00,1.00,1.00,0.70",
+                    "class": "hjx77870_23864"
+                }
+            },
+            "anchorY": -0.9,
+            "totalFrames": 1,
+            "rect": "0,0,82.95,66.3",
+            "type": "button",
+            "anchorX": -0.31
+        },
+        "StartPanel": {
+            "children": {
+                "instance2660": {
+                    "zIndex": 16,
+                    "frames": "373.70,507.35,0.00,1.00,1.00,1.00",
+                    "class": "back2"
+                },
+                "instance2668": {
+                    "zIndex": 20,
+                    "frames": "263.55,141.55,0.00,1.00,1.01,1.00",
+                    "class": "ItemIcon1_0"
+                },
+                "gold": {
+                    "frames": "374.35,402.50,0.00,1.00,1.00,1.00",
+                    "text": "999",
+                    "class": "ScoreFont1",
+                    "zIndex": 26,
+                    "width": 124,
+                    "align": "center",
+                    "height": 52
+                },
+                "levelTxt": {
+                    "frames": "456.40,497.55,8.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "LevelFont",
+                    "zIndex": 27,
+                    "width": 116,
+                    "align": "center",
+                    "height": 87
+                },
+                "instance2631": {
+                    "zIndex": 11,
+                    "frames": "267.45,160.00,0.00,2.74,2.74,1.00",
+                    "class": "shadow"
+                },
+                "label__0": {
+                    "zIndex": 3,
+                    "frames": "370.75,485.45,0.00,1.00,1.00,1.00",
+                    "class": "symbol0005"
+                },
+                "instance2666": {
+                    "zIndex": 19,
+                    "frames": "459.45,141.50,0.00,1.00,1.00,1.00",
+                    "class": "ItemIcon1_0"
+                },
+                "num1": {
+                    "frames": "540.80,305.30,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "PriceFont",
+                    "zIndex": 35,
+                    "width": 45,
+                    "align": "center",
+                    "height": 28
+                },
+                "buy3": {
+                    "zIndex": 5,
+                    "frames": "465.75,99.40,0.00,1.00,1.00,1.00",
+                    "class": "buyBtn"
+                },
+                "num2": {
+                    "frames": "348.20,173.30,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "PriceFont",
+                    "zIndex": 28,
+                    "width": 44,
+                    "align": "center",
+                    "height": 28
+                },
+                "buy2": {
+                    "zIndex": 6,
+                    "frames": "271.75,99.40,0.00,1.00,1.00,1.00",
+                    "class": "buyBtn"
+                },
+                "price2": {
+                    "frames": "266.20,142.55,0.00,0.90,0.90,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 31,
+                    "width": 146,
+                    "align": "center",
+                    "height": 58
+                },
+                "instance2408": {
+                    "zIndex": 1,
+                    "frames": "416.25,371.25,0.00,1.09,1.09,1.00",
+                    "class": "Symbol9"
+                },
+                "instance2655": {
+                    "zIndex": 15,
+                    "frames": "368.75,271.15,0.00,1.00,1.00,1.00",
+                    "class": "hjx20506_83436"
+                },
+                "instance2629": {
+                    "zIndex": 10,
+                    "frames": "459.45,160.00,0.00,2.74,2.74,1.00",
+                    "class": "shadow"
+                },
+                "instance2648": {
+                    "zIndex": 14,
+                    "frames": "495.40,470.25,0.00,1.00,1.00,1.00",
+                    "class": "hjx74686_17155"
+                },
+                "price0": {
+                    "frames": "267.45,274.55,0.00,0.90,0.90,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 29,
+                    "width": 142,
+                    "align": "center",
+                    "height": 54
+                },
+                "buy0": {
+                    "zIndex": 7,
+                    "frames": "272.75,231.40,0.00,1.00,1.00,1.00",
+                    "class": "buyBtn"
+                },
+                "helpBtn": {
+                    "zIndex": 22,
+                    "frames": "null",
+                    "class": "helpBtn"
+                },
+                "instance2664": {
+                    "zIndex": 18,
+                    "frames": "459.45,273.15,0.00,1.00,1.00,1.00",
+                    "class": "ItemIcon1_0"
+                },
+                "buy1": {
+                    "zIndex": 4,
+                    "frames": "465.75,231.40,0.00,1.00,1.00,1.00",
+                    "class": "buyBtn"
+                },
+                "returnBtn": {
+                    "zIndex": 24,
+                    "frames": "611.05,494.85,0.00,1.00,1.00,1.00",
+                    "class": "sasfdf"
+                },
+                "instance2662": {
+                    "zIndex": 17,
+                    "frames": "263.55,273.15,0.00,1.00,1.00,1.00",
+                    "class": "ItemIcon1_0"
+                },
+                "num3": {
+                    "frames": "542.00,173.30,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "PriceFont",
+                    "zIndex": 33,
+                    "width": 43,
+                    "align": "center",
+                    "height": 28
+                },
+                "instance2643": {
+                    "zIndex": 13,
+                    "frames": "376.05,263.40,0.00,1.00,1.00,1.00",
+                    "class": "hjx60336_74612"
+                },
+                "instance2670": {
+                    "zIndex": 21,
+                    "frames": "355.80,400.05,0.00,1.00,1.01,1.00",
+                    "class": "ItemIcon1_0"
+                },
+                "instance2627": {
+                    "zIndex": 9,
+                    "frames": "465.75,295.35,0.00,2.74,2.74,1.00",
+                    "class": "shadow"
+                },
+                "price1": {
+                    "frames": "459.95,273.30,0.00,0.90,0.90,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 30,
+                    "width": 142,
+                    "align": "center",
+                    "height": 54
+                },
+                "num0": {
+                    "frames": "348.30,304.30,0.00,1.02,1.00,1.00",
+                    "text": "00",
+                    "class": "PriceFont",
+                    "zIndex": 34,
+                    "width": 43,
+                    "align": "center",
+                    "height": 28
+                },
+                "instance2585": {
+                    "zIndex": 2,
+                    "frames": "195.10,509.30,0.00,1.00,1.00,1.00",
+                    "class": "youwin"
+                },
+                "back": {
+                    "zIndex": 0,
+                    "frames": "0.00,9.55,0.00,11.03,8.51,1.00",
+                    "class": "Symbol13"
+                },
+                "startBtn": {
+                    "zIndex": 23,
+                    "frames": "428.75,42.45,0.00,1.00,1.00,1.00",
+                    "class": "Symbol41"
+                },
+                "instance2633": {
+                    "zIndex": 12,
+                    "frames": "299.00,264.25,0.00,1.00,1.00,1.00",
+                    "class": "hjx78300_93578"
+                },
+                "instance2625": {
+                    "zIndex": 8,
+                    "frames": "267.45,292.35,0.00,2.74,2.74,1.00",
+                    "class": "shadow"
+                },
+                "price3": {
+                    "frames": "459.95,141.30,0.00,0.90,0.90,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 32,
+                    "width": 146,
+                    "align": "center",
+                    "height": 58
+                }
+            },
+            "anchorY": -0.03,
+            "totalFrames": 1,
+            "rect": "0,0,800,688",
+            "type": "StartPanel",
+            "anchorX": 0.04
+        },
+        "BuyTimePanel": {
+            "children": {
+                "back": {
+                    "zIndex": 0,
+                    "frames": "0.00,1.85,0.00,11.03,8.51,1.00",
+                    "class": "Symbol13"
+                },
+                "instance1892": {
+                    "zIndex": 3,
+                    "frames": "165.10,695.85,0.00,1.00,1.00,1.00",
+                    "class": "hjx88273_27770"
+                },
+                "instance1715": {
+                    "zIndex": 2,
+                    "frames": "402.80,374.65,0.00,1.00,1.00,1.00",
+                    "class": "Symbol9"
+                },
+                "cancelBtn": {
+                    "zIndex": 4,
+                    "frames": "288.10,33.35,0.00,1.00,1.00,1.00",
+                    "class": "noButton"
+                },
+                "buyBtn": {
+                    "zIndex": 5,
+                    "frames": "446.20,1.85,0.00,1.00,1.00,1.00",
+                    "class": "buyButton"
+                },
+                "label__0": {
+                    "zIndex": 6,
+                    "frames": "306.85,446.15,0.00,1.00,1.00,1.00",
+                    "class": "hjx57703_62660"
+                }
+            },
+            "anchorY": -0.06,
+            "totalFrames": 1,
+            "rect": "0,0,800,665.25",
+            "type": "BuyTimePanel",
+            "anchorX": 0.03
+        },
+        "ControlBar0": {
+            "children": {
+                "soundBtn": {
+                    "zIndex": 1,
+                    "frames": "21.55,4.10,0.00,1.00,1.00,1.00",
+                    "class": "sprite255"
+                },
+                "pauseBtn": {
+                    "zIndex": 0,
+                    "frames": "-35.10,4.60,0.00,1.00,1.00,1.00",
+                    "class": "sprite252"
+                }
+            },
+            "anchorY": 0.5,
+            "totalFrames": 1,
+            "rect": "0,0,99.35,39",
+            "type": "ControlBar",
+            "anchorX": 0.54
+        },
+        "PowerUpBar": {
+            "children": {
+                "p2": {
+                    "zIndex": 3,
+                    "frames": "null|26.25,55.90,0.00,1.00,1.00,1.00",
+                    "class": "Symbol18"
+                },
+                "p1": {
+                    "zIndex": 2,
+                    "frames": "null|26.25,159.60,0.00,1.00,1.00,1.00",
+                    "class": "Symbol17"
+                },
+                "instance16268": {
+                    "zIndex": 0,
+                    "frames": "null|-56.40,614.85,0.00,1.00,1.00,1.00",
+                    "class": "rightBar"
+                },
+                "p3": {
+                    "zIndex": 4,
+                    "frames": "null|26.25,-47.80,0.00,1.00,1.00,1.00",
+                    "class": "Symbol19"
+                },
+                "p0": {
+                    "zIndex": 1,
+                    "frames": "null|23.95,263.30,0.00,1.00,1.00,1.00",
+                    "class": "Symbol16"
+                },
+                "instance15763": {
+                    "zIndex": 0,
+                    "frames": "139.60,181.25,0.00,1.00,1.00,1.00|null",
+                    "class": "daichu"
+                }
+            },
+            "anchorY": -0.13,
+            "totalFrames": 2,
+            "rect": "0,0,145.45,365.1",
+            "type": "PowerUpBar",
+            "anchorX": 0.16
+        },
+        "Symbol18": {
+            "children": {
+                "txt": {
+                    "frames": "61.05,38.40,0.00,1.00,1.00,1.00",
+                    "text": "0",
+                    "class": "ScoreFont1",
+                    "zIndex": 2,
+                    "width": 22,
+                    "align": "center",
+                    "height": 36
+                },
+                "instance1554": {
+                    "zIndex": 0,
+                    "frames": "28.45,112.85,0.00,0.80,0.80,1.00",
+                    "class": "hjx78300_93578"
+                },
+                "instance1564": {
+                    "zIndex": 1,
+                    "frames": "58.25,34.50,0.00,1.00,1.00,0.70",
+                    "class": "hjx77870_23864"
+                }
+            },
+            "anchorY": -0.54,
+            "totalFrames": 1,
+            "rect": "0,0,87.25,69.95",
+            "type": "button",
+            "anchorX": -0.25
+        },
+        "WinPanel": {
+            "children": {
+                "instance3108": {
+                    "zIndex": 10,
+                    "frames": "236.45,33.00,0.00,1.00,1.00,1.00",
+                    "class": "Symbol1copy"
+                },
+                "scoreTxt": {
+                    "frames": "377.45,268.25,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "ScoreFont",
+                    "zIndex": 16,
+                    "width": 244,
+                    "align": "center",
+                    "height": 74
+                },
+                "instance3086": {
+                    "zIndex": 2,
+                    "frames": "391.80,171.30,0.00,1.02,1.00,1.00",
+                    "class": "s5"
+                },
+                "label__2": {
+                    "zIndex": 8,
+                    "frames": "270.40,429.40,0.00,1.00,1.00,1.00",
+                    "class": "cont0"
+                },
+                "instance3098": {
+                    "zIndex": 6,
+                    "frames": "194.20,468.65,0.00,1.00,1.00,1.00",
+                    "class": "youwin"
+                },
+                "goldTxt": {
+                    "frames": "377.45,179.25,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "ScoreFont",
+                    "zIndex": 17,
+                    "width": 244,
+                    "align": "center",
+                    "height": 74
+                },
+                "star3": {
+                    "zIndex": 15,
+                    "frames": "539.20,322.05,0.00,1.00,1.00,1.00",
+                    "class": "stars3"
+                },
+                "label__1": {
+                    "zIndex": 5,
+                    "frames": "117.85,130.15,0.00,0.89,0.93,1.00",
+                    "class": "gold"
+                },
+                "instance2909": {
+                    "zIndex": 1,
+                    "frames": "424.80,360.75,0.00,1.00,1.00,1.00",
+                    "class": "Symbol9"
+                },
+                "star1": {
+                    "zIndex": 13,
+                    "frames": "306.50,320.55,0.00,1.00,1.00,1.00",
+                    "class": "stars3"
+                },
+                "label__8": {
+                    "zIndex": 4,
+                    "frames": "266.65,228.05,0.00,0.80,0.81,1.00",
+                    "class": "s11210"
+                },
+                "star2": {
+                    "zIndex": 14,
+                    "frames": "421.90,321.45,0.00,1.00,1.00,1.00",
+                    "class": "stars3"
+                },
+                "nextBtn": {
+                    "zIndex": 12,
+                    "frames": "680.95,33.00,0.00,1.00,1.00,1.00",
+                    "class": "NextButton3"
+                },
+                "back": {
+                    "zIndex": 0,
+                    "frames": "0.00,16.10,0.00,11.03,8.51,1.00",
+                    "class": "Symbol13"
+                },
+                "returnBtn": {
+                    "zIndex": 9,
+                    "frames": "45.80,84.50,0.00,1.00,1.00,1.00",
+                    "class": "hjx88783_57918"
+                },
+                "retryBtn": {
+                    "zIndex": 11,
+                    "frames": "458.10,33.00,0.00,1.00,1.00,1.00",
+                    "class": "RetryButton1"
+                },
+                "instance3088": {
+                    "zIndex": 3,
+                    "frames": "389.45,259.45,0.00,1.02,1.00,1.00",
+                    "class": "s5"
+                }
+            },
+            "anchorY": -0.05,
+            "totalFrames": 1,
+            "rect": "0,0,800,651.35",
+            "type": "WinPanel",
+            "anchorX": 0.04
+        },
+        "noButton": {
+            "children": {
+                "instance1685": {
+                    "zIndex": 0,
+                    "frames": "47.90,62.35,0.00,1.00,1.00,1.00|51.45,58.75,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                },
+                "label__0": {
+                    "zIndex": 1,
+                    "frames": "69.15,61.40,0.00,1.00,1.00,1.00|",
+                    "class": "symbol0006"
+                }
+            },
+            "anchorY": 0.49,
+            "totalFrames": 2,
+            "anchorX": 0.5,
+            "type": "button",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,185.75,66.5"
+        },
+        "Symbol17": {
+            "children": {
+                "txt": {
+                    "frames": "50.10,38.40,0.00,1.00,1.00,1.00",
+                    "text": "0",
+                    "class": "ScoreFont1",
+                    "zIndex": 2,
+                    "width": 22,
+                    "align": "center",
+                    "height": 36
+                },
+                "instance1523": {
+                    "zIndex": 0,
+                    "frames": "-85.90,12.05,0.00,0.80,0.80,1.00",
+                    "class": "hjx20506_83436"
+                },
+                "instance1528": {
+                    "zIndex": 1,
+                    "frames": "47.30,34.50,0.00,1.00,1.00,0.70",
+                    "class": "hjx77870_23864"
+                }
+            },
+            "anchorY": -0.28,
+            "totalFrames": 1,
+            "rect": "0,0,76.3,64.5",
+            "type": "button",
+            "anchorX": -0.39
+        },
+        "NextButton3": {
+            "children": {
+                "instance1434": {
+                    "zIndex": 0,
+                    "frames": "47.90,61.85,0.00,1.00,1.00,1.00|47.90,61.85,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                },
+                "label__0": {
+                    "zIndex": 1,
+                    "frames": "54.50,58.35,0.00,1.00,1.00,1.00|",
+                    "class": "symbol0004"
+                }
+            },
+            "anchorY": 0.5,
+            "totalFrames": 2,
+            "anchorX": 0.49,
+            "type": "button",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,189.6,66"
+        },
+        "Symbol9": {
+            "children": {
+                "instance2737": {
+                    "zIndex": 2,
+                    "frames": "37.45,205.10,0.00,1.10,1.06,1.00",
+                    "class": "panelBody"
+                },
+                "instance2708": {
+                    "zIndex": 0,
+                    "frames": "41.85,-0.00,0.00,1.10,1.06,1.00",
+                    "class": "panelFoot"
+                },
+                "instance2714": {
+                    "zIndex": 1,
+                    "frames": "37.45,108.95,0.00,1.10,1.06,1.00",
+                    "class": "panelBody"
+                },
+                "instance2760": {
+                    "zIndex": 3,
+                    "frames": "-0.45,300.20,0.00,1.10,1.06,1.00",
+                    "class": "panelHead"
+                }
+            },
+            "anchorY": 0.51,
+            "totalFrames": 1,
+            "rect": "0,0,517.45,598.05",
+            "type": "Symbol9",
+            "anchorX": 0.5
+        },
+        "buyButton": {
+            "children": {
+                "price": {
+                    "frames": "74.70,72.40,0.00,1.00,1.00,1.00|",
+                    "text": "99",
+                    "class": "ScoreFont",
+                    "zIndex": 1,
+                    "width": 83,
+                    "align": "center",
+                    "height": 74
+                },
+                "instance1657": {
+                    "zIndex": 2,
+                    "frames": "11.25,56.50,0.00,1.00,1.00,1.00|",
+                    "class": "ItemIcon1_0"
+                },
+                "instance1659": {
+                    "zIndex": 3,
+                    "frames": "52.15,21.60,0.00,1.00,1.00,1.00|",
+                    "class": "Symbol26"
+                },
+                "instance1653": {
+                    "zIndex": 0,
+                    "frames": "47.90,61.85,0.00,1.00,1.00,1.00|48.45,60.30,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                }
+            },
+            "anchorY": 0.03,
+            "totalFrames": 2,
+            "anchorX": -0.04,
+            "type": "button",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,185.75,72.4"
+        },
+        "Symbol16": {
+            "children": {
+                "txt": {
+                    "frames": "60.40,38.40,0.00,1.00,1.00,1.00",
+                    "text": "0",
+                    "class": "ScoreFont1",
+                    "zIndex": 2,
+                    "width": 22,
+                    "align": "center",
+                    "height": 36
+                },
+                "instance1492": {
+                    "zIndex": 0,
+                    "frames": "57.60,34.50,0.00,1.00,1.00,0.70",
+                    "class": "hjx77870_23864"
+                },
+                "instance1494": {
+                    "zIndex": 1,
+                    "frames": "87.90,6.75,0.00,0.80,0.80,1.00",
+                    "class": "hjx60336_74612"
+                }
+            },
+            "anchorY": 0.03,
+            "totalFrames": 1,
+            "rect": "0,0,86.6,74.25",
+            "type": "button",
+            "anchorX": -0.21
+        },
+        "RetryButton1": {
+            "children": {
+                "label__0": {
+                    "zIndex": 1,
+                    "frames": "45.20,56.35,0.00,1.00,1.00,1.00|",
+                    "class": "symbol0003"
+                },
+                "instance1463": {
+                    "zIndex": 0,
+                    "frames": "47.90,61.85,0.00,1.00,1.00,1.00|47.90,61.85,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                }
+            },
+            "anchorY": 0.5,
+            "totalFrames": 2,
+            "anchorX": 0.5,
+            "type": "button",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,185.75,66"
+        },
+        "hjx88273_27770": {
+            "children": {
+                "instance3562": {
+                    "zIndex": 1,
+                    "frames": "99.25,17.45,0.00,1.00,1.00,1.00",
+                    "class": "Symbol20"
+                },
+                "instance3440": {
+                    "zIndex": 0,
+                    "frames": "0.05,1.45,0.00,1.00,1.00,1.00",
+                    "class": "Symbol12345"
+                }
+            },
+            "anchorY": 1.99,
+            "totalFrames": 1,
+            "rect": "0,0,368.4,287.95",
+            "type": "hjx88273_27770",
+            "anchorX": -0.16
+        },
+        "GameBoard": {
+            "children": {
+                "instance2071": {
+                    "zIndex": 2,
+                    "frames": "284.30,205.50,0.00,1.00,1.00,1.00",
+                    "class": "topbar"
+                },
+                "scoreTxt": {
+                    "frames": "97.65,503.00,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 9,
+                    "width": 114,
+                    "align": "center",
+                    "height": 45
+                },
+                "instance2086": {
+                    "zIndex": 4,
+                    "frames": "556.90,485.55,0.00,1.00,1.00,1.00",
+                    "class": "Symbol12"
+                },
+                "instance2062": {
+                    "zIndex": 1,
+                    "frames": "759.50,470.65,0.00,1.00,1.00,1.00",
+                    "class": "ControlBar0"
+                },
+                "back": {
+                    "zIndex": 0,
+                    "frames": "20.95,0.00,0.00,1.00,1.00,1.00",
+                    "class": "GameBack"
+                },
+                "timeBar": {
+                    "zIndex": 3,
+                    "frames": "450.65,493.45,0.00,1.00,1.00,1.00",
+                    "class": "TimeBar"
+                },
+                "label__1": {
+                    "zIndex": 6,
+                    "frames": "347.80,477.30,0.00,1.00,1.00,1.00",
+                    "class": "Symbol1211222"
+                },
+                "goldTxt": {
+                    "frames": "281.25,503.45,0.00,1.00,1.00,1.00",
+                    "text": "00",
+                    "class": "ScoreFont1",
+                    "zIndex": 8,
+                    "width": 114,
+                    "align": "center",
+                    "height": 45
+                },
+                "label__0": {
+                    "zIndex": 5,
+                    "frames": "131.95,475.65,0.00,1.00,1.00,1.00",
+                    "class": "Symbol111000"
+                },
+                "powerUpBar": {
+                    "zIndex": 10,
+                    "frames": "708.65,16.20,0.00,1.00,1.00,1.00",
+                    "class": "PowerUpBar"
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "0,0,822.2,503.45",
+            "type": "GameBoard",
+            "anchorX": 0.03
+        },
+        "Symbol1copy": {
+            "children": {
+                "label__0": {
+                    "zIndex": 1,
+                    "frames": "21.40,52.60,0.00,1.00,1.00,1.00|",
+                    "class": "symbol0001"
+                },
+                "instance1404": {
+                    "zIndex": 0,
+                    "frames": "47.90,61.85,0.00,1.00,1.00,1.00|47.90,61.85,0.00,0.95,0.95,1.00",
+                    "class": "buttonBack"
+                }
+            },
+            "anchorY": 5,
+            "totalFrames": 2,
+            "anchorX": 5,
+            "type": "MoreGameButton",
+            "labels": {
+                "up": {
+                    "start": 0,
+                    "end": 0
+                },
+                "down": {
+                    "start": 1,
+                    "end": 1
+                }
+            },
+            "rect": "0,0,185.75,66"
+        }
+    },
+    "metadata": {
+        "size": "{1746,1746}",
+        "realTextureFileName": "game1.png",
+        "textureFileName": "game1.png",
+        "format": 2
+    }
+}

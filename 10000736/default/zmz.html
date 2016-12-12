@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+			<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+			<meta http-equiv="pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+			<link rel="shortcut icon" href="assets/img/favicon.ico?ver=1.1.61"><link rel="icon" href="assets/img/favicon.ico?ver=1.1.61">
+			<meta http-equiv="expires" content="-1">
+			<title>找妹子</title>
+			<link rel="stylesheet" type="text/css" href="m.min.css?v=201408011050">
+			<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/zmz/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+			<script>
+				document.addEventListener("WeixinJSBridgeReady",function(){if(window.WeixinJSBridge){var a=WeixinJSBridge.invoke;WeixinJSBridge.invoke=function(){arguments[2]=function(){window.location.href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd"},a.apply(WeixinJSBridge,arguments)}}});
+				var adv_str = '<div style="position:absolute;text-align: center;width:85%;left:7.5%; bottom:20px;color:#b67f76;"><br/><a align="center" style="color:blue;font-size:18" href="http://wx.jyc.17188.com/index.html?from=zmz">更多游戏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a align="center" style="color:blue;font-size:18" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a><br/><br/><a align="center" style="color:white;font-size:14" href="' + game_28_01_url + '">' + game_28_01_txt + '</a></div>';
+				var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src='';var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+			</script>
+			<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+		</head>
+<body>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+
+</body></html>
+
+
+<script id="tpl" type="text/html">
+
+<div class="grid">
+        <div class="page hide" id="loading">
+            <div class="loading-txt"><%=loading%></div>
+        </div>
+        <div class="page hide" id="index">
+            <h1><%=title%></h1>
+
+            <div id="help"><%=help_txt%></div>
+            <div class="btns">
+                <button data-type="color" class="btn play-btn">
+                    <%=btn_start%>
+                </button>
+            </div>
+        </div>
+        <div class="page hide" id="room">
+            <header>
+                <span class="lv">
+                    <%=score%>
+                    <em>
+                        1
+                    </em>
+                </span>
+                <span class="time">
+                </span>
+                <span class="btn btn-pause">
+                    <%=btn_pause%>
+                </span>
+            </header>
+            <div id="box" class="lv1">
+            </div>
+			<%=adv_str%>
+        </div>
+        <div class="page hide" id="dialog">
+    <div id="share-wx" style=""><p style="text-align: right; padding-left: 10px;"><img src="http://wx.jyc.17188.com/h5/zmz/161516_5197.png" id="share-wx-img" style="max-width: 280px; padding-right: 25px;"></p></div>
+            <div class="inner">
+                <div class="content gameover">
+                    <div class="inner-content">
+                        
+                        <h3></h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-restart">
+                                <%=btn_reTry%>
+                            </button>
+                        </div>
+						
+						<%=adv_str%>
+						
+                    </div>
+                </div>
+                <div class="content pause">
+                    <div class="inner-content">
+                        
+                        <h3>
+                            <%=game_pause%>
+                        </h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-resume">
+                                <%=btn_resume%>
+                            </button>
+                        </div>
+						
+						<%=adv_str%>
+                    </div>
+                </div>
+            </div>
+    </ins>
+        </div>
+    </div>
+
+</script><script src="js/libs.min.js"></script>
+    <script src="js/main.min3.js"></script>
+
+

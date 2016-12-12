@@ -1,0 +1,55 @@
+{
+	"missiles": [
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 2000,
+			"delay": 1.0
+		},
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 3000,
+			"delay": 0.8
+		},
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 4000,
+			"delay": 0.6
+		},
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 5000,
+			"delay": 0.4
+		},
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 6000,
+			"delay": 0.2
+		},
+		{
+			"type":"bomb",
+			"rotation": 90,
+			"speed": 2,
+			"screenSide": "top",
+			"position": 7000,
+			"delay": 0.0
+		}
+
+	], 
+
+	"timeLength": 1.8
+}

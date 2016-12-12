@@ -1,0 +1,201 @@
+﻿<html>
+  
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="robots" content="index,follow"> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<title>最强眼力</title>	
+	<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/zqyl/js/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+    <link href="http://wx.jyc.17188.com/h5/zqyl/style.css" media="screen" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    <style type="text/css">
+      * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+		-webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+		-webkit-focus-ring-color: rgba(0, 0, 0, 0) !important; 
+		outline: none !important;
+      }
+      body{
+        background:#222222;
+
+      }
+      .main{
+        text-align: center;
+        padding:0;margin:0 auto;
+        background:#222222;
+        width:320px;
+        height:420px;
+      }
+      #frame {
+        width:320px;
+        height:420px;
+        margin:0;
+        padding:0;
+        border-top:solid 1px #222222;
+      }
+      #canvas {
+        margin:100px 0 0 0;
+        width:320px;
+        height:240px;
+		z-index: -1;
+      }
+      #logo {
+        width:260px;
+        height:40px;
+        margin:210px 0 0 30px;
+        background:url(http://game.9g.com/zqyl/2000.png) no-repeat 0 0;
+      }
+      #playButton {
+        width:145px;
+        height:60px;
+        margin:200px 0 0 87px;
+        background:transparent url(http://game.9g.com/zqyl/2000.png) no-repeat 0 -40px;
+      }
+      #playButton:hover {
+        cursor:pointer;
+      }
+      #level,#lives {
+        font-size:18px;
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+        color:#fff;
+      }
+      #level {
+        text-align:left;
+        position:absolute;
+        padding:5px;
+      }
+      #lives {
+        padding:5px;
+        text-align:right;
+        position:absolute;
+        width:310px;
+      }
+      #hearts {
+        float:right;
+        margin-left:10px;
+      }
+      .heart {
+        background:url(2000.png) no-repeat -216px -46px;
+        width:28px;
+        height:24px;
+        display:block;
+        float:left;
+      }
+      #livesLabel {
+        float:right;
+      }
+      @font-face {
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+      }
+      #msg {
+        font-size:18px;
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+        color:#fff;
+        width:100%;
+        text-align:center;
+      }
+      #b1,#b2,#b3 {
+        position:absolute;
+        width:88px;
+        height:100px;
+        background: transparent;
+        display:none;
+		z-index: 500;
+      }
+      #b1 {
+        margin:140px 0 0 16px;
+      }
+      #b2 {
+        margin:140px 0 0 115px;
+      }
+      #b3 {
+        margin:140px 0 0 216px;
+      }
+      #b1:hover,#b2:hover,#b3:hover {
+        cursor:pointer;
+      }
+	  
+	  #tab {
+		margin-top: 100;
+	}
+	
+    </style>
+    <script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    	WeixinJSBridge.call('showOptionMenu');
+    });
+//new Image().src = '/game/action.php?id=12';
+
+var moreGamesLocation = 'http://wx.jyc.17188.com/h5/zqyl/eye.html';
+
+function play68_init() {
+	updateShare(0);
+}
+
+function updateShare(bestScore) {
+	imgUrl = 'http://wx.jyc.17188.com/tupian/eye.png';
+	lineLink = 'http://' + domain + '/h5/zqyl/eye.html';
+	descContent = "考考你的眼力！你的眼睛跟得上吗？";
+	updateShareScore(bestScore);
+	appid = '';
+}
+
+function updateShareScore(bestScore) {
+	if(bestScore > 0) {
+		shareTitle = "我玩《最强眼力》过了" + bestScore + "关，眼都花了！";
+	}
+	else{
+		shareTitle = "不玩《最强眼力》怎么知道自己的眼力原来那么好？";
+	}
+}
+
+
+</script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</head>
+
+<body style='background: #222; margin: 0 auto;' onorientationchange='window.scrollTo(0, 1);'>
+  </head>
+
+  <body class="os-windows osv-6_1 osmv-6" onorientationchange="orentationChanged()">    
+    <DIV class="main">
+      <div id="frame">
+        <div id="logo" style="display: none; opacity: 0;"></div>
+        <div id="playButton" style="display: none; opacity: 1;"></div>
+        <div id="level" style="display: none;">
+                     <span id="levelLabel">关卡：</span>
+          <span id="levelNum">1</span>
+        </div>
+        <div id="lives" style="display: none;">
+          <div id="hearts"><div class="heart">&nbsp;</div><div class="heart">&nbsp;</div><div class="heart">&nbsp;</div></div>
+                <div id="livesLabel">命：</div>
+        </div>
+        <div id="b" style="display: block;">
+          <div style="display: block;" id="b1"></div>
+          <div id="b2"></div>
+          <div id="b3"></div>
+        </div>
+        <canvas height="240" width="320" id="canvas" style="display: block;"></canvas><div id="msg" style="position:relative;display: block; opacity: 1;bottom:50px;"></div>
+		
+      </div>
+   <div style="font-size:1.6em;"><a style="font-size: 1.2em;color:#fff" href="http://wx.jyc.17188.com/index.html"><u>更多游戏</u></a></div></br>
+		<div style="font-size:1.6em;"><a style="font-size: 1.2em;color:#fff" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd"><u>关注我们</u></a></div></div>
+      <script type="text/javascript" src="http://game.9g.com/zqyl/js/tween.js"></script>
+      <script type="text/javascript" src="http://game.9g.com/zqyl/js/zqyl.js?v"></script>
+    </DIV>
+<script type="text/javascript">
+  if (typeof StartGame == 'function') {
+    StartGame();
+  }
+  window.scrollTo(0, 1);
+</script>
+
+<link type="text/css" rel="stylesheet" href="http://game.9g.com/zqyl/sidebar.css">
+<script type="text/javascript" src="js/play68bar.js"></script>
+<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

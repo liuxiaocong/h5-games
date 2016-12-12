@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:08a4e792596e5276818c7350f80046f0:c44afe402d16c987e904d2cadd28d9ba:34748ce413c470180f2a836b0e188d29$ -->
+<TextureAtlas imagePath="sh2.png">
+    <SubTexture name="ME" x="2" y="982" width="270" height="328"/>
+    <SubTexture name="center_stripe" x="2" y="2" width="14" height="978"/>
+    <SubTexture name="tr_coolfinger" x="2" y="1312" width="142" height="201"/>
+    <SubTexture name="tr_coolmatcher" x="696" y="982" width="217" height="216"/>
+    <SubTexture name="tr_cooltimer" x="915" y="982" width="223" height="204"/>
+    <SubTexture name="tr_cubie" x="498" y="982" width="196" height="246"/>
+    <SubTexture name="tr_hearts" x="657" y="1312" width="278" height="144"/>
+    <SubTexture name="tr_jellypad" x="393" y="1312" width="262" height="157"/>
+    <SubTexture name="tr_mistersir" x="274" y="982" width="222" height="270"/>
+    <SubTexture name="tr_starmaster" x="146" y="1312" width="245" height="180"/>
+    <SubTexture name="trophies_back1" x="18" y="2" width="567" height="693"/>
+    <SubTexture name="trophies_back2" x="587" y="2" width="576" height="621"/>
+    <SubTexture name="trophies_logo" x="2" y="1515" width="312" height="84"/>
+</TextureAtlas>

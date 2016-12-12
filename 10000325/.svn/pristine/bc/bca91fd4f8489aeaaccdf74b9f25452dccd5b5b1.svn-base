@@ -1,0 +1,10 @@
+{
+  "bullet": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 11,
+    "tileh": 8,
+    "frames": 6
+  }
+}

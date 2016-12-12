@@ -1,0 +1,11 @@
+common_565.png
+format: RGB565
+filter: Linear,Linear
+repeat: none
+level_overlay
+  rotate: false
+  xy: 2, 2
+  size: 113, 200
+  orig: 113, 200
+  offset: 0, 0
+  index: -1

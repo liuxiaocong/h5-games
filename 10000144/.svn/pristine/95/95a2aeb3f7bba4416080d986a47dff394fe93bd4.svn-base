@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'dimboitalic';
+  src: url('fonts/dimboitalic.woff');
+}
+
+@font-face {
+  font-family: 'dimboregular';
+  src: url('fonts/dimboregular.woff');
+}
+

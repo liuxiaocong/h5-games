@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+
+    <script type="text/javascript" src="./nodie/require.js"></script>
+
+    <title>一个都不能死</title>
+    <style type="text/css">
+    body {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+    </style>
+    <!-- <link rel="stylesheet" href="./html5/1758.css"> -->
+    <script src="./kiss/jquery.min.js"></script>
+    <!--  <script src="./html5/util.js"></script> -->
+    <script language="javascript">
+    // var isCount = 0;
+    // if (isCount == 1) {
+    //     openCount(9);
+    // }
+    // var mebtnopenurl = 'http://www.1758.com/hlmy/games.htm';
+    // window.shareData = {
+    //     "appId": "",
+    //     "imgUrl": "http://www.1758.com/hlmy/nodie/3.jpg",
+    //     "timeLineLink": "http://www.1758.com/hlmy/nodie.htm",
+    //     "tTitle": "一个都不能死",
+    //     "tContent": "玩起来怎么都停不下来的啊！"
+    // };
+
+
+    // function dp_submitScore(m, t) {}
+
+    // function dp_share(t) {
+    //     if (isCount == 1) {
+    //         clickCount(9);
+    //     }
+    //     document.title = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    //     document.getElementById("share").style.display = "";
+    //     window.shareData.tTitle = document.title;
+    // }
+
+    // function dp_share2(t) {
+    //     document.title = t / 1000 + "秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    //     document.getElementById("share").style.display = "";
+    //     window.shareData.tTitle = document.title;
+    // }
+
+    // function dp_Ranking() {
+    //     window.location = mebtnopenurl;
+    // }
+
+    // function showAd() {}
+
+    // function hideAd() {}
+    // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+    //     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+    //         if (isCount == 1) {
+    //             shareCount(9);
+    //         }
+    //         WeixinJSBridge.invoke('sendAppMessage', {
+    //             "appid": window.shareData.appId,
+    //             "img_url": window.shareData.imgUrl,
+    //             "link": window.shareData.timeLineLink + '?f=wx_hy_bb',
+    //             "desc": window.shareData.tContent,
+    //             "title": window.shareData.tTitle
+    //         }, function(res) {
+    //             document.location.href = mebtnopenurl;
+    //         })
+    //     });
+
+    //     WeixinJSBridge.on('menu:share:timeline', function(argv) {
+    //         if (isCount == 1) {
+    //             shareCount(9);
+    //         }
+    //         WeixinJSBridge.invoke('shareTimeline', {
+    //             "appid": window.shareData.appId,
+    //             "img_url": window.shareData.imgUrl,
+    //             "link": window.shareData.timeLineLink + '?f=wx_pyq_bb',
+    //             "desc": window.shareData.tContent,
+    //             "title": window.shareData.tTitle
+    //         }, function(res) {
+    //             document.location.href = mebtnopenurl;
+    //         });
+    //     });
+    // }, false);
+    </script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./nodie/main.js"></script>
+    <script>
+    // var _hmt = _hmt || [];
+    // (function() {
+    //     var hm = document.createElement("script");
+    //     hm.src = "//hm.baidu.com/hm.js?7f70df09d6dc5f12842a518bf47a9e14";
+    //     var s = document.getElementsByTagName("script")[0];
+    //     s.parentNode.insertBefore(hm, s);
+    // })();
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <canvas id="linkScreen" width="1024" height="634" style="width: 1024px; height: 634px;">
+            很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。
+        </canvas>
+    </div>
+    <!-- <div id="share" style="display:none">
+        <img id="logo" width="100%" src="./nodie/460.jpg" style="position:absolute;top:0;left:0;">
+        <img width="100%" src="./nodie/2000.jpg" style="position:absolute;top:0;left:0;display:" ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+    </div> -->
+    <div align="center" id="bai" style="position:absolute;bottom:3px;text-align:center;overflow:hidden;margin:0 auto;">
+        <div style="display: inline;float: left;">
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = "强！你居然坚持了" + bestScore / 1000 + "秒！";
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+
+</html>

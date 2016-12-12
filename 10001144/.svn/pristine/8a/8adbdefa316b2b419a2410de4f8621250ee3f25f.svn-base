@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>官场2048</title>
+	<link href="js/main2.css" rel="stylesheet" type="text/css">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<script>
+var highestMergedValue = 0;
+function updateShare(bestScore) {
+  imgUrl = 'http://i5.7k7kimg.cn/cms/cms10/20140709/202549_4364.png';
+  lineLink = 'http://flash.7k7k.com/h5/20140708/guan2048/index.html';
+  descContent = "7k7k游戏！不玩你就OUT啦！";
+  updateShareScore(bestScore);
+  appid = '';
+}
+function updateShareScore(bestScore) {
+  if(bestScore > 0) {
+    shareTitle = "哈哈，我在7K7K游戏玩《官场2048》得了" + bestScore +"分, 升迁为《" + coverttoname(highestMergedValue) + "》！你能赢得过我吗？";
+  }
+  else {
+    shareTitle = "最考验脑力的游戏！你能升迁到国级干部吗？";
+  }
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+  WeixinJSBridge.call('showOptionMenu');
+});
+//new Image().src = 'http://115.29.44.52/game/action.php?id=14';
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="heading">
+			<h1 class="title">2048</h1>
+			<div class="score-container"><div class="score-addition"></div></div>
+		</div>
+		<p class="game-intro">迁升为 <strong>国</strong> 级干部！</p>
+
+		<div class="game-container">
+			<div class="game-message">
+				<p></p>
+				<div class="lower">
+					<a class="retry-button">再试一次</a>
+				</div>
+			</div>
+
+			<div class="grid-container">
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+			</div>
+
+			<div class="tile-container"></div>
+			<div id="succ" style="visibility:hidden"></div>
+		</div>
+		<p class="game-explanation">
+			<strong class="important">玩法:</strong> 使用 <strong>方向键或ASWD</strong> 来移动不同级别的人. 当两个相同级别的人一起可以介绍你认识一个 <strong>更高级别</strong> 的人。
+		</p>
+		<hr>
+	</div>
+	<script src="js/animframe_polyfill.js"></script>
+	<script src="js/keyboard_input_manager.js"></script>
+	<script src="js/html_actuator.js"></script>
+	<script src="js/grid.js"></script>
+	<script src="js/tile.js"></script>
+	<script src="js/game_manager.js"></script>
+	<script src="js/application.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30098529'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30098529' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

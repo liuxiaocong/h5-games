@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache" /> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate" /> 
+<meta HTTP-EQUIV="expires" CONTENT="0" />
+<title>9G游戏</title>
+<meta name="keywords" content="" />
+<meta name="description" content="9G游戏频道为您提供。" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"/>
+<script src="http://game.9g.com/auth/jquery.min.js"></script>
+</head>
+<body>
+正在转到公众号……
+<div style="display:none">
+<script type="text/javascript">
+
+function isWeixin() {
+    var e = navigator.userAgent.toLowerCase();
+    if(e.match(/MicroMessenger/i) == "micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function gogame9g(){
+
+	if (isWeixin()) {
+
+		var url = "http://mp.weixin.qq.com/s?__biz=MzA4OTYyMzYxNQ==&mid=205890351&idx=1&sn=f2d04f3bdf32442f9b784ec521b1ad36#rd";
+		var r = Math.random();
+
+		if (0 <= r && r < 1) {
+			// 9G：100%
+			if (localStorage.myuid) {
+				// 未关注用户 => 去关注页
+				var url1 = "http://mp.weixin.qq.com/s?__biz=MzA4OTYyMzYxNQ==&mid=205890351&idx=1&sn=f2d04f3bdf32442f9b784ec521b1ad36#rd";
+				// 已关注用户 => 去统计页
+				var url2 = "http://game.9g.com/added.html";
+				// 验证
+				check9gApiUser(url1, url2);
+				// 返回
+				return;
+			}
+			else {
+				url = "http://mp.weixin.qq.com/s?__biz=MzA4OTYyMzYxNQ==&mid=205890351&idx=1&sn=f2d04f3bdf32442f9b784ec521b1ad36#rd";
+			}
+		}
+		else if (0.2 <= r && r < 0.2) {
+		
+			// 全球游戏排行榜：5%
+			url = "http://mp.weixin.qq.com/s?__biz=MzA5MjY4MDAwNA==&mid=200774598&idx=1&sn=1453e0421a7b1a4a678f00afc60b82c2#rd";
+		
+		}
+		
+		else if (0.2 <= r && r < 0.8) {
+			// 轻游戏：40%
+			url = "http://mp.weixin.qq.com/s?__biz=MzA4ODUxMjkzNg==&mid=201435353&idx=1&sn=3cee89145613bfb96ea9335d69b77ec3#rd";
+		}
+		
+		else if (0.8 <= r && r < 0.8) {
+			// 欢乐小游戏：20%
+			url = "http://mp.weixin.qq.com/s?__biz=MzA5MzkwNTcyNA==&mid=200657183&idx=1&sn=32d2b0b0474003a2a2d2034d2f56880d#rd";		
+		}
+		
+		else if (0.8 <= r && r < 0.85) {
+			// 万游在线：5%
+			url = "http://mp.weixin.qq.com/s?__biz=MzA4ODY4MTAxMg==&mid=200422021&idx=1&sn=4f2afacfa26c6e0cef4d29dc4427eacf#rd";
+		}
+		else {
+			// 豌豆互动：15%
+			// url = "http://mp.weixin.qq.com/s?__biz=MzA3NTY4ODcxOQ==&mid=200683624&idx=1&sn=cd33dc8b8823facce88a8b3ca09ecc0f#rd";
+			// 豌豆互动被举报，新的素材页地址
+			url = "http://mp.weixin.qq.com/s?__biz=MzA3NTY4ODcxOQ==&mid=201549157&idx=1&sn=4bfdf614d10695429ef8d5e18f4d8901#rd";
+		}
+		
+		window.location = url;
+
+	}
+	else {
+		window.location = "http://game.9g.com/";
+	}
+}
+
+// window.setTimeout("gogame9g()",500);
+window.setTimeout(function(){
+	window.location = "http://game.9g.com/";
+}, 500);
+
+function check9gApiUser(url1, url2) {
+	// alert("localStorage.myuid = " + localStorage.myuid);
+	// if (localStorage.is9gApiUser) {
+	// 	alert("已验证过是 9G 粉，直接跳转");
+	// 	window.location = url2;
+	// 	return;
+	// }
+	var isConnect;
+	setTimeout(function(){
+		if (isConnect == undefined) {
+			isConnect = false;
+			// alert("连接超过3秒");
+			window.location = url1;
+		}
+	}, 3000);
+	jQuery.ajax({
+		type: "GET",
+		async: true,
+		cache: false,
+		timeout: 5000,
+		url: "http://wx.9g.com/api/getuser?uid=" + localStorage.myuid,
+		dataType: "jsonp",
+		jsonp: "callback",
+		jsonpCallback: "getUserHandler",
+		success: function(data){
+			if (isConnect == undefined) {
+				isConnect = true;
+				if (data.errcode) {
+					// 返回错误
+					// alert(data.errmsg);
+					window.location = url1;
+				}
+				else {
+					if (data.subscribe == 1) {
+						// 已关注
+						// alert("已关注");
+						// alert("subscribe = " + data.subscribe + "\nsubscribe_time = " + data.subscribe_time + "\nopenid = " + data.openid + "\nnickname = " + data.nickname);
+						// 保存到 localStorage（暂时不用）
+						// localStorage.is9gApiUser = 1;
+						window.location = url2;
+					}
+					else {
+						// 未关注
+						// alert("未关注");
+						// alert("subscribe = " + data.subscribe + "\nsubscribe_time = " + data.subscribe_time + "\nopenid = " + data.openid + "\nnickname = " + data.nickname);
+						window.location = url1;
+					}
+				}
+			}
+		}
+	});
+}
+
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>

@@ -1,0 +1,1485 @@
+{
+  "data": {
+    "levels": [
+      {
+        "id": "0",
+        "title": "#1",
+        "scores": "5000, 8000, 10000",
+        "randomize": "0",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "3",
+            "y": "2"
+          },
+          "endPipe": {
+            "x": "7",
+            "y": "3"
+          }
+        },
+        "bonuses": "",
+        "obstacles": "",
+        "userPipes": {
+          "horizontalPipe": { "count": "7" },
+          "verticalPipe": { "count": "0" },
+          "swPipe": { "count": "2" },
+          "sePipe": { "count": "0" },
+          "nwPipe": { "count": "0" },
+          "nePipe": { "count": "0" }
+        }
+      },
+      {
+        "id": "1",
+        "title": "#2",
+        "scores": "7000, 10000, 12000",
+        "randomize": "0",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "7",
+            "y": "5"
+          },
+          "endPipe": {
+            "x": "3",
+            "y": "1"
+          }
+        },
+        "bonuses": "",
+        "obstacles": {
+          "lifebuoy": {
+            "x": "3",
+            "y": "3"
+          },
+          "sponge": {
+            "x": "6",
+            "y": "4"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "5" },
+          "verticalPipe": { "count": "5" },
+          "swPipe": { "count": "2" },
+          "sePipe": { "count": "0" },
+          "nwPipe": { "count": "0" },
+          "nePipe": { "count": "2" }
+        }
+      },
+      {
+        "id": "2",
+        "title": "#3",
+        "mission": "orange",
+        "scores": "8000, 11000, 14500",
+        "randomize": "0",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "1",
+            "y": "3"
+          },
+          "endPipe": {
+            "x": "8",
+            "y": "1"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "4",
+            "y": "4"
+          }
+        },
+        "obstacles": {
+          "sponge": {
+            "x": "6",
+            "y": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "9" },
+          "verticalPipe": { "count": "3" },
+          "swPipe": { "count": "0" },
+          "sePipe": { "count": "2" },
+          "nwPipe": { "count": "2" },
+          "nePipe": { "count": "2" }
+        }
+      },
+      {
+        "id": "3",
+        "title": "#4",
+        "mission": "orange, banana",
+        "scores": "12000, 17000, 21000",
+        "randomize": "0",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "1",
+            "y": "3"
+          },
+          "endPipe": {
+            "x": "9",
+            "y": "5"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "5",
+            "y": "0"
+          },
+          "banana": {
+            "x": "6",
+            "y": "4"
+          }
+        },
+        "obstacles": {
+          "pail": {
+            "x": "3",
+            "y": "4"
+          },
+          "lifebuoy": {
+            "x": "5",
+            "y": "2"
+          },
+          "sponge": {
+            "x": "8",
+            "y": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "8" },
+          "verticalPipe": { "count": "8" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "2" },
+          "nwPipe": { "count": "2" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "4",
+        "title": "#5",
+        "mission": "orange, strawberry",
+        "scores": "13000, 15000, 19000",
+        "randomize": "1",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "4",
+            "y": "4"
+          },
+          "endPipe": {
+            "x": "6",
+            "y": "3"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "1",
+            "y": "2"
+          },
+          "strawberry": {
+            "x": "9",
+            "y": "1"
+          }
+        },
+        "obstacles": {
+          "sponge": {
+            "x": "2",
+            "y": "3"
+          },
+          "lifebuoy": {
+            "x": "6",
+            "y": "1"
+          },
+          "pail": {
+            "x": "8",
+            "y": "4"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "14" },
+          "verticalPipe": { "count": "4" },
+          "swPipe": { "count": "2" },
+          "sePipe": { "count": "3" },
+          "nwPipe": { "count": "3" },
+          "nePipe": { "count": "2" }
+        }
+      },
+      {
+        "id": "5",
+        "title": "#6",
+        "mission": "cherry, strawberry",
+        "scores": "9000, 11000, 15000",
+        "randomize": "2",
+        "remove": "0",
+        "pipes": {
+          "startPipe": {
+            "x": "8",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "7",
+            "y": "3"
+          }
+        },
+        "bonuses": {
+          "cherry": {
+            "x": "3",
+            "y": "5"
+          },
+          "strawberry": {
+            "x": "1",
+            "y": "2"
+          }
+        },
+        "obstacles": {
+          "sponge": [
+            {
+              "x": "1",
+              "y": "5"
+            },
+            {
+              "x": "5",
+              "y": "4"
+            }
+          ],
+          "lifebuoy": [
+            {
+              "x": "3",
+              "y": "1"
+            },
+            {
+              "x": "9",
+              "y": "3"
+            }
+          ]
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "11" },
+          "verticalPipe": { "count": "3" },
+          "swPipe": { "count": "2" },
+          "sePipe": { "count": "4" },
+          "nwPipe": { "count": "3" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "6",
+        "title": "#7",
+        "mission": "orange, kiwi, banana",
+        "scores": "3000, 7000, 10000",
+        "randomize": "1",
+        "remove": "1",
+        "pipes": {
+          "startPipe": {
+            "x": "4",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "6",
+            "y": "0"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "0",
+            "y": "2"
+          },
+          "kiwi": {
+            "x": "4",
+            "y": "6"
+          },
+          "banana": {
+            "x": "9",
+            "y": "3"
+          }
+        },
+        "obstacles": {
+          "lifebuoy": {
+            "x": "1",
+            "y": "3"
+          },
+          "sponge": {
+            "x": "6",
+            "y": "5"
+          },
+          "pail": {
+            "x": "8",
+            "y": "1"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "14" },
+          "verticalPipe": { "count": "6" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "3" },
+          "nwPipe": { "count": "3" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "7",
+        "title": "#8",
+        "mission": "strawberry, banana",
+        "scores": "5000, 8000, 10000",
+        "randomize": "2",
+        "remove": "1",
+        "pipes": {
+          "startPipe": {
+            "x": "1",
+            "y": "4"
+          },
+          "endPipe": {
+            "x": "8",
+            "y": "5"
+          }
+        },
+        "bonuses": {
+          "strawberry": {
+            "x": "5",
+            "y": "4"
+          },
+          "banana": {
+            "x": "9",
+            "y": "2"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "3",
+              "y": "2"
+            },
+            {
+              "x": "3",
+              "y": "3"
+            },
+            {
+              "x": "3",
+              "y": "4"
+            },
+            {
+              "x": "3",
+              "y": "5"
+            },
+            {
+              "x": "6",
+              "y": "0"
+            },
+            {
+              "x": "6",
+              "y": "1"
+            },
+            {
+              "x": "6",
+              "y": "2"
+            },
+			{
+              "x": "3",
+              "y": "6"
+            }
+          ],
+          "sponge": {
+            "x": "1",
+            "y": "1"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "7" },
+          "verticalPipe": { "count": "7" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "4" },
+          "nwPipe": { "count": "3" },
+          "nePipe": { "count": "2" }
+        }
+      },
+      {
+        "id": "8",
+        "title": "#9",
+        "mission": "kiwi, cherry",
+        "scores": "5000, 8000, 10000",
+        "randomize": "3",
+        "remove": "1",
+        "pipes": {
+          "startPipe": {
+            "x": "6",
+            "y": "0"
+          },
+          "endPipe": {
+            "x": "3",
+            "y": "6"
+          }
+        },
+        "bonuses": {
+          "cherry": {
+            "x": "1",
+            "y": "2"
+          },
+          "kiwi": {
+            "x": "8",
+            "y": "4"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "4",
+              "y": "0"
+            },
+            {
+              "x": "4",
+              "y": "1"
+            },
+            {
+              "x": "8",
+              "y": "0"
+            },
+            {
+              "x": "8",
+              "y": "1"
+            }
+          ],
+          "fence_horizontal": [
+            {
+              "x": "5",
+              "y": "2"
+            },
+            {
+              "x": "7",
+              "y": "2"
+            },
+            {
+              "x": "2",
+              "y": "5"
+            },
+            {
+              "x": "3",
+              "y": "5"
+            },
+            {
+              "x": "4",
+              "y": "5"
+            }
+          ],
+          "pail": {
+            "x": "10",
+            "y": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "7" },
+          "verticalPipe": { "count": "6" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "2" },
+          "nwPipe": { "count": "2" },
+          "nePipe": { "count": "4" }
+        }
+      },
+      {
+        "id": "9",
+        "title": "#10",
+        "mission": "strawberry, orange, kiwi",
+        "scores": "5000, 8000, 10000",
+        "randomize": "2",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "0",
+            "y": "3"
+          },
+          "endPipe": {
+            "x": "10",
+            "y": "2"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "4",
+            "y": "1"
+          },
+          "kiwi": {
+            "x": "7",
+            "y": "3"
+          },
+          "strawberry": {
+            "x": "10",
+            "y": "4"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "2",
+              "y": "0"
+            },
+            {
+              "x": "2",
+              "y": "1"
+            },
+            {
+              "x": "2",
+              "y": "3"
+            },
+            {
+              "x": "2",
+              "y": "4"
+            },
+            {
+              "x": "2",
+              "y": "5"
+            },
+            {
+              "x": "5",
+              "y": "0"
+            },
+            {
+              "x": "5",
+              "y": "1"
+            },
+            {
+              "x": "5",
+              "y": "2"
+            },
+            {
+              "x": "5",
+              "y": "3"
+            },
+            {
+              "x": "5",
+              "y": "5"
+            },
+            {
+              "x": "8",
+              "y": "1"
+            },
+            {
+              "x": "8",
+              "y": "2"
+            },
+            {
+              "x": "8",
+              "y": "3"
+            },
+            {
+              "x": "8",
+              "y": "4"
+            },
+            {
+              "x": "8",
+              "y": "5"
+            },
+			{
+              "x": "8",
+              "y": "6"
+            },
+			{
+              "x": "5",
+              "y": "6"
+            },
+            {
+              "x": "2",
+              "y": "6"
+            }
+          ]
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "6" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "4" },
+          "nwPipe": { "count": "4" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "10",
+        "title": "#11",
+        "mission": "cherry, banana, strawberry",
+        "scores": "5000, 8000, 10000",
+        "randomize": "3",
+        "remove": "1",
+        "pipes": {
+          "startPipe": {
+            "x": "8",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "2",
+            "y": "3"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "0",
+            "y": "5"
+          },
+          "cherry": {
+            "x": "8",
+            "y": "6"
+          },
+          "strawberry": {
+            "x": "2",
+            "y": "0"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "0",
+              "y": "3"
+            },
+            {
+              "x": "5",
+              "y": "0"
+            },
+            {
+              "x": "10",
+              "y": "2"
+            }
+          ],
+          "fence_horizontal": [
+            {
+              "x": "1",
+              "y": "1"
+            },
+            {
+              "x": "2",
+              "y": "1"
+            },
+            {
+              "x": "3",
+              "y": "1"
+            },
+            {
+              "x": "7",
+              "y": "5"
+            },
+            {
+              "x": "8",
+              "y": "5"
+            },
+            {
+              "x": "9",
+              "y": "5"
+            }
+          ],
+          "lifebuoy": {
+            "x": "6",
+            "y": "2"
+          },
+          "sponge": {
+            "x": "3",
+            "y": "5"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "12" },
+          "verticalPipe": { "count": "11" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "3" },
+          "nwPipe": { "count": "3" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "11",
+        "title": "#12",
+        "scores": "18000, 25000, 30000",
+		"mission": "cherry, kiwi, orange",
+        "randomize": "2",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "4",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "6",
+            "y": "6"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "2",
+            "y": "2"
+          },
+          "cherry": {
+            "x": "3",
+            "y": "6"
+          },
+          "kiwi": {
+            "x": "9",
+            "y": "3"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "7",
+              "y": "6"
+            },
+            {
+              "x": "5",
+              "y": "6"
+            }
+          ],
+          "lifebuoy": {
+            "x": "6",
+            "y": "2"
+          },
+          "pail": {
+            "x": "3",
+            "y": "4"
+          }
+        },
+		"hotspots": {
+          "blue": {
+            "x": "6",
+            "y": "5",
+            "buttonX": "5",
+            "buttonY": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "12",
+        "title": "#13",
+        "scores": "18000, 25000, 31000",
+		"mission": "banana, kiwi, strawberry",
+        "randomize": "2",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "5",
+            "y": "4"
+          },
+          "endPipe": {
+            "x": "5",
+            "y": "2"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "5",
+            "y": "0"
+          },
+          "strawberry": {
+            "x": "7",
+            "y": "6"
+          },
+          "kiwi": {
+            "x": "3",
+            "y": "6"
+          }
+        },
+        "obstacles": {
+          "fence_horizontal": [
+            {
+              "x": "4",
+              "y": "1"
+            },
+			{
+              "x": "5",
+              "y": "1"
+            },
+			{
+              "x": "6",
+              "y": "1"
+            },
+			{
+              "x": "4",
+              "y": "3"
+            },
+			{
+              "x": "5",
+              "y": "3"
+            },
+            {
+              "x": "6",
+              "y": "3"
+            }
+          ],
+          "sponge": {
+            "x": "2",
+            "y": "3"
+          },
+          "pail": {
+            "x": "8",
+            "y": "3"
+          }
+        },
+		"hotspots": {
+          "green": {
+            "x": "6",
+            "y": "2",
+            "buttonX": "1",
+            "buttonY": "5"
+          },
+		  "red": {
+            "x": "4",
+            "y": "2",
+            "buttonX": "9",
+            "buttonY": "5"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "13",
+        "title": "#14",
+        "scores": "32000, 37000, 45000",
+		"mission": "cherry, banana, orange",
+        "randomize": "3",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "9",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "4",
+            "y": "2"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "7",
+            "y": "2"
+          },
+          "cherry": {
+            "x": "8",
+            "y": "3"
+          },
+          "banana": {
+            "x": "7",
+            "y": "4"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "1",
+              "y": "2"
+            },
+			{
+              "x": "1",
+              "y": "3"
+            },
+			{
+              "x": "1",
+              "y": "4"
+            },
+            {
+              "x": "5",
+              "y": "2"
+            }
+          ],
+          "fence_horizontal": [
+            {
+              "x": "2",
+              "y": "1"
+            },
+			{
+              "x": "3",
+              "y": "1"
+            },
+			{
+              "x": "4",
+              "y": "1"
+            },
+			{
+              "x": "4",
+              "y": "1"
+            },
+			{
+              "x": "3",
+              "y": "3"
+            },
+			{
+              "x": "4",
+              "y": "3"
+            },
+			{
+              "x": "4",
+              "y": "5"
+            },
+			{
+              "x": "3",
+              "y": "5"
+            },
+            {
+              "x": "2",
+              "y": "5"
+            }
+          ]
+        },
+		"hotspots": {
+          "blue": {
+            "x": "4",
+            "y": "4",
+            "buttonX": "8",
+            "buttonY": "5"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "14",
+        "title": "#15",
+        "scores": "13000, 19000, 24000",
+		"mission": "orange, cherry, banana",
+        "randomize": "2",
+        "remove": "3",
+        "pipes": {
+          "startPipe": {
+            "x": "9",
+            "y": "2"
+          },
+          "endPipe": {
+            "x": "1",
+            "y": "1"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "3",
+            "y": "3"
+          },
+          "cherry": {
+            "x": "1",
+            "y": "4"
+          },
+          "orange": {
+            "x": "7",
+            "y": "0"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "5",
+              "y": "0"
+            },
+			{
+              "x": "5",
+              "y": "2"
+            },
+			{
+              "x": "5",
+              "y": "3"
+            },
+			{
+              "x": "5",
+              "y": "4"
+            },
+			{
+              "x": "5",
+              "y": "6"
+            }
+          ],
+          "sponge": {
+            "x": "3",
+            "y": "5"
+          },
+          "lifebuoy": {
+            "x": "7",
+            "y": "6"
+          }
+        },
+		"hotspots": {
+          "green": {
+            "x": "5",
+            "y": "1",
+            "buttonX": "8",
+            "buttonY": "4"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "5" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "3" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "3" }
+        }
+      },
+      {
+        "id": "15",
+        "title": "#16",
+        "scores": "14000, 19000, 24500",
+		"mission": "cherry, kiwi, strawberry",
+        "randomize": "2",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "5",
+            "y": "4"
+          },
+          "endPipe": {
+            "x": "5",
+            "y": "2"
+          }
+        },
+        "bonuses": {
+          "strawberry": {
+            "x": "1",
+            "y": "2"
+          },
+          "cherry": {
+            "x": "9",
+            "y": "3"
+          },
+          "kiwi": {
+            "x": "5",
+            "y": "6"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "3",
+              "y": "1"
+            },
+			{
+              "x": "3",
+              "y": "2"
+            },
+			{
+              "x": "3",
+              "y": "3"
+            },
+			{
+              "x": "3",
+              "y": "5"
+            },
+			{
+              "x": "7",
+              "y": "1"
+            },
+			{
+              "x": "7",
+              "y": "3"
+            },
+			{
+              "x": "7",
+              "y": "4"
+            },
+            {
+              "x": "7",
+              "y": "5"
+            }
+          ],
+          "pail": {
+            "x": "5",
+            "y": "0"
+          }
+        },
+		"hotspots": {
+          "blue": {
+            "x": "6",
+            "y": "2",
+            "buttonX": "7",
+            "buttonY": "2"
+          },
+		  "red": {
+            "x": "4",
+            "y": "2",
+            "buttonX": "3",
+            "buttonY": "4"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "16",
+        "title": "#17",
+        "scores": "24000, 30000, 37500",
+		"mission": "banana, orange, kiwi",
+        "randomize": "2",
+        "remove": "2",
+        "pipes": {
+          "startPipe": {
+            "x": "2",
+            "y": "2"
+          },
+          "endPipe": {
+            "x": "5",
+            "y": "6"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "4",
+            "y": "1"
+          },
+          "kiwi": {
+            "x": "7",
+            "y": "3"
+          },
+          "orange": {
+            "x": "8",
+            "y": "1"
+          }
+        },
+        "obstacles": {
+          "fence_horizontal": [
+            {
+              "x": "0",
+              "y": "4"
+            },
+			{
+              "x": "2",
+              "y": "4"
+            },
+			{
+              "x": "3",
+              "y": "4"
+            },
+			{
+              "x": "5",
+              "y": "4"
+            },
+			{
+              "x": "7",
+              "y": "4"
+            },
+			{
+              "x": "8",
+              "y": "4"
+            },
+			{
+              "x": "10",
+              "y": "4"
+            },
+            {
+              "x": "6",
+              "y": "4"
+            }
+          ],
+          "sponge": {
+            "x": "7",
+            "y": "5"
+          },
+          "pail": {
+            "x": "1",
+            "y": "0"
+          }
+        },
+		"hotspots": {
+		  "red": {
+            "x": "4",
+            "y": "4",
+            "buttonX": "6",
+            "buttonY": "2"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "6" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "17",
+        "title": "#18",
+        "scores": "26000, 32000, 38000",
+		"mission": "cherry, kiwi, banana",
+        "randomize": "2",
+        "remove": "3",
+        "pipes": {
+          "startPipe": {
+            "x": "3",
+            "y": "1"
+          },
+          "endPipe": {
+            "x": "9",
+            "y": "2"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "1",
+            "y": "5"
+          },
+          "cherry": {
+            "x": "3",
+            "y": "3"
+          },
+          "kiwi": {
+            "x": "7",
+            "y": "5"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "3",
+              "y": "0"
+            },
+			{
+              "x": "3",
+              "y": "2"
+            },
+            {
+              "x": "3",
+              "y": "4"
+            }
+          ],
+		  "fence_horizontal": [
+            {
+              "x": "4",
+              "y": "5"
+            },
+			{
+              "x": "6",
+              "y": "5"
+            },
+			{
+              "x": "8",
+              "y": "5"
+            },
+            {
+              "x": "10",
+              "y": "5"
+            }
+          ],
+          "lifebuoy": {
+            "x": "0",
+            "y": "2"
+          },
+          "pail": {
+            "x": "7",
+            "y": "1"
+          }
+        },
+		"hotspots": {
+          "blue": {
+            "x": "5",
+            "y": "5",
+            "buttonX": "6",
+            "buttonY": "3"
+          },
+		  "red": {
+            "x": "6",
+            "y": "6",
+            "buttonX": "5",
+            "buttonY": "1"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "10" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "18",
+        "title": "#19",
+        "scores": "20000, 27000, 33000",
+		"mission": "orange, cherry, strawberry",
+        "randomize": "3",
+        "remove": "3",
+        "pipes": {
+          "startPipe": {
+            "x": "9",
+            "y": "4"
+          },
+          "endPipe": {
+            "x": "0",
+            "y": "6"
+          }
+        },
+        "bonuses": {
+          "orange": {
+            "x": "5",
+            "y": "1"
+          },
+          "strawberry": {
+            "x": "7",
+            "y": "2"
+          },
+          "cherry": {
+            "x": "4",
+            "y": "5"
+          }
+        },
+        "obstacles": {
+          "fence_horizontal": [
+            {
+              "x": "0",
+              "y": "2"
+            },
+			{
+              "x": "1",
+              "y": "2"
+            },
+			{
+              "x": "0",
+              "y": "5"
+            },
+            {
+              "x": "1",
+              "y": "5"
+            }
+          ],
+          "sponge": {
+            "x": "7",
+            "y": "5"
+          },
+          "pail": {
+            "x": "8",
+            "y": "0"
+          }
+        },
+		"hotspots": {
+          "green": {
+            "x": "2",
+            "y": "6",
+            "buttonX": "0",
+            "buttonY": "0"
+          },
+		  "red": {
+            "x": "2",
+            "y": "1",
+            "buttonX": "3",
+            "buttonY": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "10" },
+          "verticalPipe": { "count": "15" },
+          "swPipe": { "count": "5" },
+          "sePipe": { "count": "5" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "5" }
+        }
+      },
+      {
+        "id": "19",
+        "title": "#20",
+        "scores": "20000, 26000, 33000",
+		"mission": "strawberry, kiwi, banana",
+        "randomize": "3",
+        "remove": "3",
+        "pipes": {
+          "startPipe": {
+            "x": "5",
+            "y": "0"
+          },
+          "endPipe": {
+            "x": "7",
+            "y": "5"
+          }
+        },
+        "bonuses": {
+          "banana": {
+            "x": "8",
+            "y": "1"
+          },
+          "strawberry": {
+            "x": "0",
+            "y": "2"
+          },
+          "kiwi": {
+            "x": "5",
+            "y": "6"
+          }
+        },
+        "obstacles": {
+          "fence_vertical": [
+            {
+              "x": "2",
+              "y": "0"
+            },
+			{
+              "x": "2",
+              "y": "1"
+            },
+			{
+              "x": "2",
+              "y": "2"
+            },
+			{
+              "x": "4",
+              "y": "5"
+            },
+            {
+              "x": "4",
+              "y": "6"
+            }
+          ],
+		  "fence_horizontal": [
+            {
+              "x": "8",
+              "y": "2"
+            },
+			{
+              "x": "9",
+              "y": "2"
+            },
+            {
+              "x": "10",
+              "y": "2"
+            }
+          ],
+          "lifebuoy": {
+            "x": "5",
+            "y": "3"
+          },
+          "pail": {
+            "x": "1",
+            "y": "5"
+          }
+        },
+		"hotspots": {
+          "blue": {
+            "x": "2",
+            "y": "4",
+            "buttonX": "8",
+            "buttonY": "3"
+          }
+        },
+        "userPipes": {
+          "horizontalPipe": { "count": "15" },
+          "verticalPipe": { "count": "6" },
+          "swPipe": { "count": "6" },
+          "sePipe": { "count": "6" },
+          "nwPipe": { "count": "5" },
+          "nePipe": { "count": "7" }
+        }
+      }
+    ]
+  }
+}

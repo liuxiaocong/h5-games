@@ -1,0 +1,322 @@
+var json = {"totalClick":0,"totalClickUV":0,"totalClickIP":0,"data":[]};
+
+var __ua=navigator.userAgent.toLowerCase();
+var __isIE  = (__ua.indexOf("msie") != -1);
+var __isMoz  = (navigator.appName.indexOf("Netscape") != -1);
+var lzcm = 'http://tongji.linezing.com';
+
+window.onload = function() {
+	var __ph = Math.max(document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight);
+	var __pw = document.body.clientWidth;
+	add_overlay(__ph, __pw);
+	add_frame(__ph, __pw);
+}
+
+var topdiv = add_top_div();
+var popupbox = add_popup();
+var link_list = document.links;
+//alert(link_list.length);
+var ln = link_list.length;
+for(var i=0; i<ln; i++) {
+	var t_pos = getPosition(link_list[i]);
+	var subdiv = add_sub_div(topdiv, t_pos.absoluteTop, t_pos.absoluteLeft, json.data[i+1]);
+	if(subdiv != undefined)
+		subdiv.onmousedown = function() { handle_pop(this) };
+}
+
+function add_top_div() {
+	var oDiv = document.createElement('div');
+	oDiv.setAttribute('id', "lzcm_links");
+	return document.body.insertBefore(oDiv, document.body.firstChild);
+}
+
+function get_lzcm_div_color(rank) {
+	return rank<10 ? '#FF0000' : ( rank<20 ? '#fea606' : ( rank<30 ? '#8bba00' : '#ddd6d6' ) );
+}
+function get_lzcm_font_color(rank) {
+	//return rank>=30 ? '#000000' : '#ffffff';
+	return '#ffffff';
+}
+
+function add_sub_div(parent, top, left, data) {
+	if(data == undefined)
+		return;
+	var width = 60 * data.clickpercent/100;
+	var color = get_lzcm_div_color(data.rank);
+	var fontcolor = get_lzcm_font_color(data.rank);
+	if(left+60>document.body.clientWidth)
+		left = document.body.clientWidth-65;
+
+	var oDiv = document.createElement('div');
+	oDiv.setAttribute('id', 'lzcmlk'+data.linkno);
+	oDiv.setAttribute('url', data.linkurl);
+	oDiv.setAttribute('clickuv', data.clickuv);
+	oDiv.setAttribute('clickip', data.clickip);
+	oDiv.setAttribute('click', data.click);
+	oDiv.style.position = 'absolute';
+	oDiv.style.zIndex = 200000;
+	oDiv.style.background = '#333333';
+	oDiv.style.filter = 'alpha(opacity=80)';
+	oDiv.style.opacity = '0.8';
+	oDiv.style.border = '1px solid #000000';
+	oDiv.style.cursor = 'pointer';
+	oDiv.style.height = '15px';
+	oDiv.style.width = '60px';
+	oDiv.style.top = top+'px';
+	oDiv.style.left = left+'px';
+
+	var oDivImg = document.createElement('div');
+	oDivImg.style.position = 'relative';
+	oDivImg.style.textAlign = 'left';
+	oDivImg.style.styleFloat = 'left';
+	oDivImg.style.background = color;
+	oDivImg.style.width = width+'px';
+	oDivImg.style.height = '15px';
+
+	var oSpan = document.createElement('span');
+	oSpan.style.position = 'absolute';
+	oSpan.style.color = fontcolor;
+	oSpan.style.styleFloat = 'left';
+	oSpan.style.fontFamily = 'Verdana,Arial,Helvetica,sans-serif';
+	oSpan.style.fontSize = __isIE ? '9px' : '12px';
+	oSpan.style.height = '15px';
+	oSpan.style.lineHeight = '15px';
+	oSpan.innerHTML = data.percent+'%';
+
+	oDivImg.appendChild(oSpan);
+	oDiv.appendChild(oDivImg);
+
+	//alert(oDiv.id);
+	return parent.appendChild(oDiv);
+	//document.getElementById('lzcm_links').appendChild(oDiv);
+	//document.body.(oDiv, document.body.firstChild);
+}
+
+function add_popup() {
+	var oDiv = document.createElement('div');
+	oDiv.setAttribute('id', 'lzcm_popup');
+	oDiv.style.position = 'absolute';
+	oDiv.style.zIndex = 200001;
+	oDiv.style.width = '233px';
+	oDiv.style.height = '72px';
+	oDiv.style.top = 0;
+	oDiv.style.left = 0;
+	oDiv.style.border = '1px solid #000000';
+	oDiv.style.background = 'url('+lzcm+'/clickmap/images/popupbox_bg.gif) repeat-x';
+	oDiv.style.fontFamily = 'Verdana, Arial, Helvetica, sans-serif';
+	oDiv.style.display = 'none';
+	oDiv.innerHTML = '<div style="width:233px;height: 15px;line-height: 15px;">'
++ '<span style="cursor:pointer;height: 15px; font-size: 10px; line-height: 15px; color: #ffffff; float: left;margin-left: 2px;font-weight:normal;"></span><span onclick="close_pop(this)" style="float: right;margin:3px 2px 0 0;cursor:pointer;"><img src="'+lzcm+'/clickmap/images/close_icon.gif" width="9" height="9" /></span></div>'
++ '<div style="margin: 0pt 2px 2px;display:inline; background: rgb(255, 255, 255) none repeat scroll 0% 0%; width: 229px; text-align: left; float: left; height: 54px;"><ul style="margin: 0pt; padding: 0pt; float: left; width: 60px;"> <li style="border-bottom: 1px solid rgb(204, 204, 204); overflow: hidden; list-style-type: none; font-weight: bold; height: 18px; line-height: 18px; text-align: left; margin-top: -1px; padding-left: 10px; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);">Click:</li> <li style="border-bottom: 1px solid rgb(204, 204, 204); overflow: hidden; list-style-type: none; font-weight: bold; height: 18px; line-height: 18px; text-align: left; margin-top: -1px; padding-left: 10px; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);">UV:</li> <li style="border: medium none ; overflow: hidden; list-style-type: none; font-weight: bold; height: 18px; line-height: 18px; text-align: left; margin-top: -1px; padding-left: 10px; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);">IP:</li> </ul><ul style="margin: 0pt; padding: 0pt; float: left; width: 165px;"><li style="border-bottom: 1px solid rgb(204, 204, 204); overflow: hidden; list-style-type: none; height: 18px; line-height: 18px; margin-top: -1px; padding-left: 5px; text-align: left; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);"></li><li style="border-bottom: 1px solid rgb(204, 204, 204); overflow: hidden; list-style-type: none; height: 18px; line-height: 18px; margin-top: -1px; padding-left: 5px; text-align: left; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);"></li><li style="border: medium none ; overflow: hidden; height: 18px; line-height: 18px; list-style-type: none; margin-top: -1px; padding-left: 5px; text-align: left; font-size: 9px; font-family: Verdana; color: rgb(51, 51, 51);"></li></ul></div>'
+	return document.body.insertBefore(oDiv, document.body.childNodes[0]);
+}
+
+function handle_pop (self) {
+	var p = getPosition(self);
+	var pop = document.getElementById('lzcm_popup');
+
+	var pLeft = p.absoluteLeft;
+	var pTop = p.absoluteTop;
+	var pWidth = p.offsetWidth;
+	var pHeight = p.offsetHeight;
+	var popWidth = parseInt(pop.style.width);
+	var popHeight = parseInt(pop.style.height);
+
+	if( parseInt(pLeft + pWidth + popWidth) > parseInt(document.body.offsetWidth) )
+		pop.style.left = pLeft + pWidth - popWidth + "px";  
+	else
+		pop.style.left = pLeft + "px"; 
+
+	if( parseInt(pTop + pHeight + popHeight) > parseInt(document.body.offsetHeight) )
+		pop.style.top = pTop - popHeight - 7 + "px";
+	else
+		pop.style.top = pTop + pHeight + 2 + "px";
+
+	//pop.offsetTop = p.absoluteTop+20;
+	//pop.offsetLeft = p.absoluteLeft;
+
+	var popsubid = pop.getAttribute('subid');
+	//alert(pop.top+' - ' + pop.left + ' - ' + pop.style.display);
+	if(pop.style.display == 'none') {
+		pop.style.display = 'block';
+		//alert(pop.style.display);
+	}else {
+		if( popsubid == self.id )
+			pop.style.display = 'none';
+	}
+	
+	var link = self.getAttribute('url');
+	var linkdisp = link.length>30 ? link.substr(0, 30)+"..." : link;
+	pop.childNodes[0].childNodes[0].innerHTML = "<a style='color:#FFFFFF' target='_blank' title='"+link+"' href='"+link+"'>"+linkdisp+"</a>";
+	
+	var click = self.getAttribute('click');
+	pop.childNodes[1].childNodes[1].childNodes[0].innerHTML = click;
+	var clickuv = self.getAttribute('clickuv');
+	pop.childNodes[1].childNodes[1].childNodes[1].innerHTML = clickuv;
+	var clickip = self.getAttribute('clickip');
+	pop.childNodes[1].childNodes[1].childNodes[2].innerHTML = clickip;
+
+	pop.setAttribute('subid', self.id);
+}
+
+function close_pop(self) {
+	self.parentNode.parentNode.style.display = 'none';
+}
+function add_overlay(height, width) {
+	var oOverlay = document.createElement('div');
+	oOverlay.setAttribute('id', "lzcm_overlay");
+	oOverlay.style.position = "absolute";
+	oOverlay.style.height = height+'px';
+	oOverlay.style.width = width+'px';
+	oOverlay.style.top = "0px";
+	oOverlay.style.left = "0px";
+	oOverlay.style.backgroundColor = "#000000";
+	oOverlay.style.filter = "alpha(opacity=40)";
+	oOverlay.style.opacity = "0.4";
+	oOverlay.style.zIndex = 100000;
+
+	//oOverlay.setAttribute('style', "height: 1853px;width:963px;background-color:#000000;position:absolute;top:0;left:0;filter:alpha(opacity=50);opacity:0.4;z-index:1000;");
+
+	document.body.insertBefore(oOverlay, document.body.firstChild);
+	//document.body.appendChild(oOverlay);
+}
+
+function add_frame(ph, pw) {
+	var oFrame = document.createElement('iframe');
+	oFrame.style.height = 0;
+	oFrame.style.width = 0;
+	oFrame.style.display = 'none';
+	oFrame.src = lzcm+'/clickmap/proxy.html#'+pw+'|'+ph;
+	document.body.appendChild(oFrame);
+}
+
+
+function getPosition(element) { 
+	if ( arguments.length != 1) { 
+		return false; 
+	} 
+
+	var offsetTop = element.offsetTop; 
+	var offsetLeft = element.offsetLeft; 
+	var offsetWidth = element.offsetWidth; 
+	var offsetHeight = element.offsetHeight; 
+
+	while( element.offsetParent ) { 
+		element = element.offsetParent;
+		offsetTop += element.offsetTop;
+		offsetLeft += element.offsetLeft; 
+	} 
+
+	return { absoluteTop: offsetTop, absoluteLeft: offsetLeft, offsetWidth: offsetWidth, offsetHeight: offsetHeight }; 
+}
+
+var Drag = {
+	obj : null,
+	init : function(o, oRoot, minX, maxX, minY, maxY, bSwapHorzRef, bSwapVertRef, fXMapper, fYMapper) {
+		o.onmousedown	= Drag.start;
+
+		o.hmode			= bSwapHorzRef ? false : true ;
+		o.vmode			= bSwapVertRef ? false : true ;
+
+		o.root = oRoot && oRoot != null ? oRoot : o ;
+
+		if (o.hmode  && isNaN(parseInt(o.root.style.left  ))) o.root.style.left   = "0px";
+		if (o.vmode  && isNaN(parseInt(o.root.style.top   ))) o.root.style.top    = "0px";
+		if (!o.hmode && isNaN(parseInt(o.root.style.right ))) o.root.style.right  = "0px";
+		if (!o.vmode && isNaN(parseInt(o.root.style.bottom))) o.root.style.bottom = "0px";
+
+		o.minX	= typeof minX != 'undefined' ? minX : null;
+		o.minY	= typeof minY != 'undefined' ? minY : null;
+		o.maxX	= typeof maxX != 'undefined' ? maxX : null;
+		o.maxY	= typeof maxY != 'undefined' ? maxY : null;
+
+		o.xMapper = fXMapper ? fXMapper : null;
+		o.yMapper = fYMapper ? fYMapper : null;
+
+		o.root.onDragStart	= new Function();
+		o.root.onDragEnd	= new Function();
+		o.root.onDrag		= new Function();
+	},
+
+	start : function(e) {
+		var o = Drag.obj = this;
+		e = Drag.fixE(e);
+		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
+		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
+		o.root.onDragStart(x, y);
+
+		o.lastMouseX	= e.clientX;
+		o.lastMouseY	= e.clientY;
+
+		if (o.hmode) {
+			if (o.minX != null)	o.minMouseX	= e.clientX - x + o.minX;
+			if (o.maxX != null)	o.maxMouseX	= o.minMouseX + o.maxX - o.minX;
+		} else {
+			if (o.minX != null) o.maxMouseX = -o.minX + e.clientX + x;
+			if (o.maxX != null) o.minMouseX = -o.maxX + e.clientX + x;
+		}
+
+		if (o.vmode) {
+			if (o.minY != null)	o.minMouseY	= e.clientY - y + o.minY;
+			if (o.maxY != null)	o.maxMouseY	= o.minMouseY + o.maxY - o.minY;
+		} else {
+			if (o.minY != null) o.maxMouseY = -o.minY + e.clientY + y;
+			if (o.maxY != null) o.minMouseY = -o.maxY + e.clientY + y;
+		}
+
+		document.onmousemove	= Drag.drag;
+		document.onmouseup		= Drag.end;
+
+		return false;
+	},
+
+	drag : function(e) {
+		e = Drag.fixE(e);
+		var o = Drag.obj;
+
+		var ey	= e.clientY;
+		var ex	= e.clientX;
+		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
+		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
+		var nx, ny;
+
+		if (o.minX != null) ex = o.hmode ? Math.max(ex, o.minMouseX) : Math.min(ex, o.maxMouseX);
+		if (o.maxX != null) ex = o.hmode ? Math.min(ex, o.maxMouseX) : Math.max(ex, o.minMouseX);
+		if (o.minY != null) ey = o.vmode ? Math.max(ey, o.minMouseY) : Math.min(ey, o.maxMouseY);
+		if (o.maxY != null) ey = o.vmode ? Math.min(ey, o.maxMouseY) : Math.max(ey, o.minMouseY);
+
+		nx = x + ((ex - o.lastMouseX) * (o.hmode ? 1 : -1));
+		ny = y + ((ey - o.lastMouseY) * (o.vmode ? 1 : -1));
+
+		if (o.xMapper)		nx = o.xMapper(y)
+		else if (o.yMapper)	ny = o.yMapper(x)
+
+		Drag.obj.root.style[o.hmode ? "left" : "right"] = nx + "px";
+		Drag.obj.root.style[o.vmode ? "top" : "bottom"] = ny + "px";
+		Drag.obj.lastMouseX	= ex;
+		Drag.obj.lastMouseY	= ey;
+
+		Drag.obj.root.onDrag(nx, ny);
+		return false;
+	},
+
+	end : function() {
+		document.onmousemove = null;
+		document.onmouseup   = null;
+		Drag.obj.root.onDragEnd(	parseInt(Drag.obj.root.style[Drag.obj.hmode ? "left" : "right"]), 
+									parseInt(Drag.obj.root.style[Drag.obj.vmode ? "top" : "bottom"]));
+		Drag.obj = null;
+	},
+
+	fixE : function(e) {
+		if (typeof e == 'undefined') e = window.event;
+		if (typeof e.layerX == 'undefined') e.layerX = e.offsetX;
+		if (typeof e.layerY == 'undefined') e.layerY = e.offsetY;
+		return e;
+	}
+}
+
+Drag.init(popupbox.firstChild, popupbox); 
+
+// iframe parent function
+//parent.document.getElementById('lzcm_frame').style.width = document.body.clientWidth;

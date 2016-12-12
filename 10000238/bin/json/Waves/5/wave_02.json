@@ -1,0 +1,33 @@
+{
+	"missiles": [
+		{
+			"type":"guided",
+			"rotation": 90,
+			"speed": 1.25,
+			"screenSide": "left",
+			"position": 500,
+			"delay": 0.0
+		},
+
+		{
+			"type":"dumb",
+			"rotation": 90,
+			"speed": 4.0,
+			"screenSide": "left",
+			"position": 0,
+			"delay": 0.3
+		},
+
+		{
+			"type":"guided",
+			"rotation": 90,
+			"speed": 1.25,
+			"screenSide": "left",
+			"position": -500,
+			"delay": 0.0
+		}
+
+	], 
+
+	"timeLength": 1.8
+}

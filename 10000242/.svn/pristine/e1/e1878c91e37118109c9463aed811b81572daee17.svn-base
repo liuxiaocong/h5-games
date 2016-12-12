@@ -1,0 +1,3689 @@
+(window._gsQueue || (window._gsQueue = [])).push(function () {
+    "use strict";
+    window._gsDefine("easing.Back", ["easing.Ease"], function (t) {
+        var e, i, s, r = window.GreenSockGlobals || window,
+            n = r.com.greensock,
+            a = 2 * Math.PI,
+            o = Math.PI / 2,
+            h = n._class,
+            l = function (e, i) {
+                var s = h("easing." + e, function () {}, !0),
+                    r = s.prototype = new t;
+                return r.constructor = s, r.getRatio = i, s
+            },
+            _ = t.register || function () {},
+            u = function (t, e, i, s) {
+                var r = h("easing." + t, {
+                    easeOut: new e,
+                    easeIn: new i,
+                    easeInOut: new s
+                }, !0);
+                return _(r, t), r
+            },
+            c = function (t, e, i) {
+                this.t = t, this.v = e, i && (this.next = i, i.prev = this, this.c = i.v - e, this.gap = i.t - t)
+            },
+            p = function (e, i) {
+                var s = h("easing." + e, function (t) {
+                        this._p1 = t || 0 === t ? t : 1.70158, this._p2 = 1.525 * this._p1
+                    }, !0),
+                    r = s.prototype = new t;
+                return r.constructor = s, r.getRatio = i, r.config = function (t) {
+                    return new s(t)
+                }, s
+            },
+            f = u("Back", p("BackOut", function (t) {
+                return (t -= 1) * t * ((this._p1 + 1) * t + this._p1) + 1
+            }), p("BackIn", function (t) {
+                return t * t * ((this._p1 + 1) * t - this._p1)
+            }), p("BackInOut", function (t) {
+                return 1 > (t *= 2) ? .5 * t * t * ((this._p2 + 1) * t - this._p2) : .5 * ((t -= 2) * t * ((this._p2 + 1) * t + this._p2) + 2)
+            })),
+            m = h("easing.SlowMo", function (t, e, i) {
+                e = e || 0 === e ? e : .7, null == t ? t = .7 : t > 1 && (t = 1), this._p = 1 !== t ? e : 0, this._p1 = (1 - t) / 2, this._p2 = t, this._p3 = this._p1 + this._p2, this._calcEnd = i === !0
+            }, !0),
+            d = m.prototype = new t;
+        return d.constructor = m, d.getRatio = function (t) {
+            var e = t + (.5 - t) * this._p;
+            return this._p1 > t ? this._calcEnd ? 1 - (t = 1 - t / this._p1) * t : e - (t = 1 - t / this._p1) * t * t * t * e : t > this._p3 ? this._calcEnd ? 1 - (t = (t - this._p3) / this._p1) * t : e + (t - e) * (t = (t - this._p3) / this._p1) * t * t * t : this._calcEnd ? 1 : e
+        }, m.ease = new m(.7, .7), d.config = m.config = function (t, e, i) {
+            return new m(t, e, i)
+        }, e = h("easing.SteppedEase", function (t) {
+            t = t || 1, this._p1 = 1 / t, this._p2 = t + 1
+        }, !0), d = e.prototype = new t, d.constructor = e, d.getRatio = function (t) {
+            return 0 > t ? t = 0 : t >= 1 && (t = .999999999), (this._p2 * t >> 0) * this._p1
+        }, d.config = e.config = function (t) {
+            return new e(t)
+        }, i = h("easing.RoughEase", function (e) {
+            e = e || {};
+            for (var i, s, r, n, a, o, h = e.taper || "none", l = [], _ = 0, u = 0 | (e.points || 20), p = u, f = e.randomize !== !1, m = e.clamp === !0, d = e.template instanceof t ? e.template : null, g = "number" == typeof e.strength ? .4 * e.strength : .4; --p > -1;) i = f ? Math.random() : 1 / u * p, s = d ? d.getRatio(i) : i, "none" === h ? r = g : "out" === h ? (n = 1 - i, r = n * n * g) : "in" === h ? r = i * i * g : .5 > i ? (n = 2 * i, r = .5 * n * n * g) : (n = 2 * (1 - i), r = .5 * n * n * g), f ? s += Math.random() * r - .5 * r : p % 2 ? s += .5 * r : s -= .5 * r, m && (s > 1 ? s = 1 : 0 > s && (s = 0)), l[_++] = {
+                x: i,
+                y: s
+            };
+            for (l.sort(function (t, e) {
+                return t.x - e.x
+            }), o = new c(1, 1, null), p = u; --p > -1;) a = l[p], o = new c(a.x, a.y, o);
+            this._prev = new c(0, 0, 0 !== o.t ? o : o.next)
+        }, !0), d = i.prototype = new t, d.constructor = i, d.getRatio = function (t) {
+            var e = this._prev;
+            if (t > e.t) {
+                for (; e.next && t >= e.t;) e = e.next;
+                e = e.prev
+            } else
+                for (; e.prev && e.t >= t;) e = e.prev;
+            return this._prev = e, e.v + (t - e.t) / e.gap * e.c
+        }, d.config = function (t) {
+            return new i(t)
+        }, i.ease = new i, u("Bounce", l("BounceOut", function (t) {
+            return 1 / 2.75 > t ? 7.5625 * t * t : 2 / 2.75 > t ? 7.5625 * (t -= 1.5 / 2.75) * t + .75 : 2.5 / 2.75 > t ? 7.5625 * (t -= 2.25 / 2.75) * t + .9375 : 7.5625 * (t -= 2.625 / 2.75) * t + .984375
+        }), l("BounceIn", function (t) {
+            return 1 / 2.75 > (t = 1 - t) ? 1 - 7.5625 * t * t : 2 / 2.75 > t ? 1 - (7.5625 * (t -= 1.5 / 2.75) * t + .75) : 2.5 / 2.75 > t ? 1 - (7.5625 * (t -= 2.25 / 2.75) * t + .9375) : 1 - (7.5625 * (t -= 2.625 / 2.75) * t + .984375)
+        }), l("BounceInOut", function (t) {
+            var e = .5 > t;
+            return t = e ? 1 - 2 * t : 2 * t - 1, t = 1 / 2.75 > t ? 7.5625 * t * t : 2 / 2.75 > t ? 7.5625 * (t -= 1.5 / 2.75) * t + .75 : 2.5 / 2.75 > t ? 7.5625 * (t -= 2.25 / 2.75) * t + .9375 : 7.5625 * (t -= 2.625 / 2.75) * t + .984375, e ? .5 * (1 - t) : .5 * t + .5
+        })), u("Circ", l("CircOut", function (t) {
+            return Math.sqrt(1 - (t -= 1) * t)
+        }), l("CircIn", function (t) {
+            return -(Math.sqrt(1 - t * t) - 1)
+        }), l("CircInOut", function (t) {
+            return 1 > (t *= 2) ? -.5 * (Math.sqrt(1 - t * t) - 1) : .5 * (Math.sqrt(1 - (t -= 2) * t) + 1)
+        })), s = function (e, i, s) {
+            var r = h("easing." + e, function (t, e) {
+                    this._p1 = t || 1, this._p2 = e || s, this._p3 = this._p2 / a * (Math.asin(1 / this._p1) || 0)
+                }, !0),
+                n = r.prototype = new t;
+            return n.constructor = r, n.getRatio = i, n.config = function (t, e) {
+                return new r(t, e)
+            }, r
+        }, u("Elastic", s("ElasticOut", function (t) {
+            return this._p1 * Math.pow(2, -10 * t) * Math.sin((t - this._p3) * a / this._p2) + 1
+        }, .3), s("ElasticIn", function (t) {
+            return -(this._p1 * Math.pow(2, 10 * (t -= 1)) * Math.sin((t - this._p3) * a / this._p2))
+        }, .3), s("ElasticInOut", function (t) {
+            return 1 > (t *= 2) ? -.5 * this._p1 * Math.pow(2, 10 * (t -= 1)) * Math.sin((t - this._p3) * a / this._p2) : .5 * this._p1 * Math.pow(2, -10 * (t -= 1)) * Math.sin((t - this._p3) * a / this._p2) + 1
+        }, .45)), u("Expo", l("ExpoOut", function (t) {
+            return 1 - Math.pow(2, -10 * t)
+        }), l("ExpoIn", function (t) {
+            return Math.pow(2, 10 * (t - 1)) - .001
+        }), l("ExpoInOut", function (t) {
+            return 1 > (t *= 2) ? .5 * Math.pow(2, 10 * (t - 1)) : .5 * (2 - Math.pow(2, -10 * (t - 1)))
+        })), u("Sine", l("SineOut", function (t) {
+            return Math.sin(t * o)
+        }), l("SineIn", function (t) {
+            return -Math.cos(t * o) + 1
+        }), l("SineInOut", function (t) {
+            return -.5 * (Math.cos(Math.PI * t) - 1)
+        })), h("easing.EaseLookup", {
+            find: function (e) {
+                return t.map[e]
+            }
+        }, !0), _(r.SlowMo, "SlowMo", "ease,"), _(i, "RoughEase", "ease,"), _(e, "SteppedEase", "ease,"), f
+    }, !0)
+}), window._gsDefine && window._gsQueue.pop()();
+this.createjs = this.createjs || {},
+function () {
+    var a = createjs.SoundJS = createjs.SoundJS || {};
+    a.version = "0.5.2", a.buildDate = "Thu, 12 Dec 2013 23:33:37 GMT"
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+    var a = function () {},
+        b = a.prototype;
+    a.initialize = function (a) {
+        a.addEventListener = b.addEventListener, a.on = b.on, a.removeEventListener = a.off = b.removeEventListener, a.removeAllEventListeners = b.removeAllEventListeners, a.hasEventListener = b.hasEventListener, a.dispatchEvent = b.dispatchEvent, a._dispatchEvent = b._dispatchEvent, a.willTrigger = b.willTrigger
+    }, b._listeners = null, b._captureListeners = null, b.initialize = function () {}, b.addEventListener = function (a, b, c) {
+        var d;
+        d = c ? this._captureListeners = this._captureListeners || {} : this._listeners = this._listeners || {};
+        var e = d[a];
+        return e && this.removeEventListener(a, b, c), e = d[a], e ? e.push(b) : d[a] = [b], b
+    }, b.on = function (a, b, c, d, e, f) {
+        return b.handleEvent && (c = c || b, b = b.handleEvent), c = c || this, this.addEventListener(a, function (a) {
+            b.call(c, a, e), d && a.remove()
+        }, f)
+    }, b.removeEventListener = function (a, b, c) {
+        var d = c ? this._captureListeners : this._listeners;
+        if (d) {
+            var e = d[a];
+            if (e)
+                for (var f = 0, g = e.length; g > f; f++)
+                    if (e[f] == b) {
+                        1 == g ? delete d[a] : e.splice(f, 1);
+                        break
+                    }
+        }
+    }, b.off = b.removeEventListener, b.removeAllEventListeners = function (a) {
+        a ? (this._listeners && delete this._listeners[a], this._captureListeners && delete this._captureListeners[a]) : this._listeners = this._captureListeners = null
+    }, b.dispatchEvent = function (a, b) {
+        if ("string" == typeof a) {
+            var c = this._listeners;
+            if (!c || !c[a]) return !1;
+            a = new createjs.Event(a)
+        }
+        if (a.target = b || this, a.bubbles && this.parent) {
+            for (var d = this, e = [d]; d.parent;) e.push(d = d.parent);
+            var f, g = e.length;
+            for (f = g - 1; f >= 0 && !a.propagationStopped; f--) e[f]._dispatchEvent(a, 1 + (0 == f));
+            for (f = 1; g > f && !a.propagationStopped; f++) e[f]._dispatchEvent(a, 3)
+        } else this._dispatchEvent(a, 2);
+        return a.defaultPrevented
+    }, b.hasEventListener = function (a) {
+        var b = this._listeners,
+            c = this._captureListeners;
+        return !!(b && b[a] || c && c[a])
+    }, b.willTrigger = function (a) {
+        for (var b = this; b;) {
+            if (b.hasEventListener(a)) return !0;
+            b = b.parent
+        }
+        return !1
+    }, b.toString = function () {
+        return "[EventDispatcher]"
+    }, b._dispatchEvent = function (a, b) {
+        var c, d = 1 == b ? this._captureListeners : this._listeners;
+        if (a && d) {
+            var e = d[a.type];
+            if (!e || !(c = e.length)) return;
+            a.currentTarget = this, a.eventPhase = b, a.removed = !1, e = e.slice();
+            for (var f = 0; c > f && !a.immediatePropagationStopped; f++) {
+                var g = e[f];
+                g.handleEvent ? g.handleEvent(a) : g(a), a.removed && (this.off(a.type, g, 1 == b), a.removed = !1)
+            }
+        }
+    }, createjs.EventDispatcher = a
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+    var a = function (a, b, c) {
+            this.initialize(a, b, c)
+        },
+        b = a.prototype;
+    b.type = null, b.target = null, b.currentTarget = null, b.eventPhase = 0, b.bubbles = !1, b.cancelable = !1, b.timeStamp = 0, b.defaultPrevented = !1, b.propagationStopped = !1, b.immediatePropagationStopped = !1, b.removed = !1, b.initialize = function (a, b, c) {
+        this.type = a, this.bubbles = b, this.cancelable = c, this.timeStamp = (new Date).getTime()
+    }, b.preventDefault = function () {
+        this.defaultPrevented = !0
+    }, b.stopPropagation = function () {
+        this.propagationStopped = !0
+    }, b.stopImmediatePropagation = function () {
+        this.immediatePropagationStopped = this.propagationStopped = !0
+    }, b.remove = function () {
+        this.removed = !0
+    }, b.clone = function () {
+        return new a(this.type, this.bubbles, this.cancelable)
+    }, b.toString = function () {
+        return "[Event (type=" + this.type + ")]"
+    }, createjs.Event = a
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+    createjs.indexOf = function (a, b) {
+        for (var c = 0, d = a.length; d > c; c++)
+            if (b === a[c]) return c;
+        return -1
+    }
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+    createjs.proxy = function (a, b) {
+        var c = Array.prototype.slice.call(arguments, 2);
+        return function () {
+            return a.apply(b, Array.prototype.slice.call(arguments, 0).concat(c))
+        }
+    }
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+
+    function a() {
+        throw "Sound cannot be instantiated"
+    }
+
+    function b(a, b) {
+        this.init(a, b)
+    }
+
+    function c() {
+        this.isDefault = !0, this.addEventListener = this.removeEventListener = this.removeAllEventListeners = this.dispatchEvent = this.hasEventListener = this._listeners = this._interrupt = this._playFailed = this.pause = this.resume = this.play = this._beginPlaying = this._cleanUp = this.stop = this.setMasterVolume = this.setVolume = this.mute = this.setMute = this.getMute = this.setPan = this.getPosition = this.setPosition = this.playFailed = function () {
+            return !1
+        }, this.getVolume = this.getPan = this.getDuration = function () {
+            return 0
+        }, this.playState = a.PLAY_FAILED, this.toString = function () {
+            return "[Sound Default Sound Instance]"
+        }
+    }
+
+    function d() {}
+    var e = a;
+    e.DELIMITER = "|", e.INTERRUPT_ANY = "any", e.INTERRUPT_EARLY = "early", e.INTERRUPT_LATE = "late", e.INTERRUPT_NONE = "none", e.PLAY_INITED = "playInited", e.PLAY_SUCCEEDED = "playSucceeded", e.PLAY_INTERRUPTED = "playInterrupted", e.PLAY_FINISHED = "playFinished", e.PLAY_FAILED = "playFailed", e.SUPPORTED_EXTENSIONS = ["mp3", "ogg", "mpeg", "wav", "m4a", "mp4", "aiff", "wma", "mid"], e.EXTENSION_MAP = {
+        m4a: "mp4"
+    }, e.FILE_PATTERN = /^(?:(\w+:)\/{2}(\w+(?:\.\w+)*\/?))?([/.]*?(?:[^?]+)?\/)?((?:[^/?]+)\.(\w+))(?:\?(\S+)?)?$/, e.defaultInterruptBehavior = e.INTERRUPT_NONE, e.alternateExtensions = [], e._lastID = 0, e.activePlugin = null, e._pluginsRegistered = !1, e._masterVolume = 1, e._masterMute = !1, e._instances = [], e._idHash = {}, e._preloadHash = {}, e._defaultSoundInstance = null, e.addEventListener = null, e.removeEventListener = null, e.removeAllEventListeners = null, e.dispatchEvent = null, e.hasEventListener = null, e._listeners = null, createjs.EventDispatcher.initialize(e), e._sendFileLoadEvent = function (a) {
+        if (e._preloadHash[a])
+            for (var b = 0, c = e._preloadHash[a].length; c > b; b++) {
+                var d = e._preloadHash[a][b];
+                if (e._preloadHash[a][b] = !0, e.hasEventListener("fileload")) {
+                    var f = new createjs.Event("fileload");
+                    f.src = d.src, f.id = d.id, f.data = d.data, e.dispatchEvent(f)
+                }
+            }
+    }, e.getPreloadHandlers = function () {
+        return {
+            callback: createjs.proxy(e.initLoad, e),
+            types: ["sound"],
+            extensions: e.SUPPORTED_EXTENSIONS
+        }
+    }, e.registerPlugin = function (a) {
+        try {
+            console.log("createjs.Sound.registerPlugin has been deprecated. Please use registerPlugins.")
+        } catch (b) {}
+        return e._registerPlugin(a)
+    }, e._registerPlugin = function (a) {
+        return e._pluginsRegistered = !0, null == a ? !1 : a.isSupported() ? (e.activePlugin = new a, !0) : !1
+    }, e.registerPlugins = function (a) {
+        for (var b = 0, c = a.length; c > b; b++) {
+            var d = a[b];
+            if (e._registerPlugin(d)) return !0
+        }
+        return !1
+    }, e.initializeDefaultPlugins = function () {
+        return null != e.activePlugin ? !0 : e._pluginsRegistered ? !1 : e.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin]) ? !0 : !1
+    }, e.isReady = function () {
+        return null != e.activePlugin
+    }, e.getCapabilities = function () {
+        return null == e.activePlugin ? null : e.activePlugin._capabilities
+    }, e.getCapability = function (a) {
+        return null == e.activePlugin ? null : e.activePlugin._capabilities[a]
+    }, e.initLoad = function (a, b, c, d, f) {
+        a = a.replace(f, "");
+        var g = e.registerSound(a, c, d, !1, f);
+        return null == g ? !1 : g
+    }, e.registerSound = function (a, c, d, f, g) {
+        if (!e.initializeDefaultPlugins()) return !1;
+        if (a instanceof Object && (g = c, c = a.id, d = a.data, a = a.src), e.alternateExtensions.length) var h = e._parsePath2(a, "sound", c, d);
+        else var h = e._parsePath(a, "sound", c, d); if (null == h) return !1;
+        null != g && (a = g + a, h.src = g + h.src), null != c && (e._idHash[c] = h.src);
+        var i = null;
+        null != d && (isNaN(d.channels) ? isNaN(d) || (i = parseInt(d)) : i = parseInt(d.channels));
+        var j = e.activePlugin.register(h.src, i);
+        if (null != j && (null != j.numChannels && (i = j.numChannels), b.create(h.src, i), null != d && isNaN(d) ? d.channels = h.data.channels = i || b.maxPerChannel() : d = h.data = i || b.maxPerChannel(), null != j.tag ? h.tag = j.tag : j.src && (h.src = j.src), null != j.completeHandler && (h.completeHandler = j.completeHandler), j.type && (h.type = j.type)), 0 != f)
+            if (e._preloadHash[h.src] || (e._preloadHash[h.src] = []), e._preloadHash[h.src].push({
+                src: a,
+                id: c,
+                data: d
+            }), 1 == e._preloadHash[h.src].length) e.activePlugin.preload(h.src, j);
+            else if (1 == e._preloadHash[h.src][0]) return !0;
+        return h
+    }, e.registerManifest = function (a, b) {
+        for (var c = [], d = 0, e = a.length; e > d; d++) c[d] = createjs.Sound.registerSound(a[d].src, a[d].id, a[d].data, a[d].preload, b);
+        return c
+    }, e.removeSound = function (a, c) {
+        if (null == e.activePlugin) return !1;
+        if (a instanceof Object && (a = a.src), a = e._getSrcById(a), e.alternateExtensions.length) var d = e._parsePath2(a);
+        else var d = e._parsePath(a); if (null == d) return !1;
+        null != c && (d.src = c + d.src), a = d.src;
+        for (var f in e._idHash) e._idHash[f] == a && delete e._idHash[f];
+        return b.removeSrc(a), delete e._preloadHash[a], e.activePlugin.removeSound(a), !0
+    }, e.removeManifest = function (a, b) {
+        for (var c = [], d = 0, e = a.length; e > d; d++) c[d] = createjs.Sound.removeSound(a[d].src, b);
+        return c
+    }, e.removeAllSounds = function () {
+        e._idHash = {}, e._preloadHash = {}, b.removeAll(), e.activePlugin.removeAllSounds()
+    }, e.loadComplete = function (a) {
+        if (e.alternateExtensions.length) var b = e._parsePath2(a, "sound");
+        else var b = e._parsePath(a, "sound");
+        return a = b ? e._getSrcById(b.src) : e._getSrcById(a), 1 == e._preloadHash[a][0]
+    }, e._parsePath = function (a, b, c, d) {
+        "string" != typeof a && (a = a.toString());
+        var f = a.split(e.DELIMITER);
+        if (f.length > 1) try {
+            console.log('createjs.Sound.DELIMITER "|" loading approach has been deprecated. Please use the new alternateExtensions property.')
+        } catch (g) {}
+        for (var h = {
+            type: b || "sound",
+            id: c,
+            data: d
+        }, i = e.getCapabilities(), j = 0, k = f.length; k > j; j++) {
+            var l = f[j],
+                m = l.match(e.FILE_PATTERN);
+            if (null == m) return !1;
+            var n = m[4],
+                o = m[5];
+            if (i[o] && createjs.indexOf(e.SUPPORTED_EXTENSIONS, o) > -1) return h.name = n, h.src = l, h.extension = o, h
+        }
+        return null
+    }, e._parsePath2 = function (a, b, c, d) {
+        "string" != typeof a && (a = a.toString());
+        var f = a.match(e.FILE_PATTERN);
+        if (null == f) return !1;
+        for (var g = f[4], h = f[5], i = e.getCapabilities(), j = 0; !i[h];)
+            if (h = e.alternateExtensions[j++], j > e.alternateExtensions.length) return null;
+        a = a.replace("." + f[5], "." + h);
+        var k = {
+            type: b || "sound",
+            id: c,
+            data: d
+        };
+        return k.name = g, k.src = a, k.extension = h, k
+    }, e.play = function (a, b, c, d, f, g, h) {
+        var i = e.createInstance(a),
+            j = e._playInstance(i, b, c, d, f, g, h);
+        return j || i.playFailed(), i
+    }, e.createInstance = function (c) {
+        if (!e.initializeDefaultPlugins()) return e._defaultSoundInstance;
+        if (c = e._getSrcById(c), e.alternateExtensions.length) var d = e._parsePath2(c, "sound");
+        else var d = e._parsePath(c, "sound");
+        var f = null;
+        return null != d && null != d.src ? (b.create(d.src), f = e.activePlugin.create(d.src)) : f = a._defaultSoundInstance, f.uniqueId = e._lastID++, f
+    }, e.setVolume = function (a) {
+        if (null == Number(a)) return !1;
+        if (a = Math.max(0, Math.min(1, a)), e._masterVolume = a, !this.activePlugin || !this.activePlugin.setVolume || !this.activePlugin.setVolume(a))
+            for (var b = this._instances, c = 0, d = b.length; d > c; c++) b[c].setMasterVolume(a)
+    }, e.getVolume = function () {
+        return e._masterVolume
+    }, e.setMute = function (a) {
+        if (null == a || void 0 == a) return !1;
+        if (this._masterMute = a, !this.activePlugin || !this.activePlugin.setMute || !this.activePlugin.setMute(a))
+            for (var b = this._instances, c = 0, d = b.length; d > c; c++) b[c].setMasterMute(a);
+        return !0
+    }, e.getMute = function () {
+        return this._masterMute
+    }, e.stop = function () {
+        for (var a = this._instances, b = a.length; b--;) a[b].stop()
+    }, e._playInstance = function (a, b, c, d, f, g, h) {
+        if (b instanceof Object && (c = b.delay, d = b.offset, f = b.loop, g = b.volume, h = b.pan, b = b.interrupt), b = b || e.defaultInterruptBehavior, null == c && (c = 0), null == d && (d = a.getPosition()), null == f && (f = 0), null == g && (g = a.volume), null == h && (h = a.pan), 0 == c) {
+            var i = e._beginPlaying(a, b, d, f, g, h);
+            if (!i) return !1
+        } else {
+            var j = setTimeout(function () {
+                e._beginPlaying(a, b, d, f, g, h)
+            }, c);
+            a._delayTimeoutId = j
+        }
+        return this._instances.push(a), !0
+    }, e._beginPlaying = function (a, c, d, e, f, g) {
+        if (!b.add(a, c)) return !1;
+        var h = a._beginPlaying(d, e, f, g);
+        if (!h) {
+            var i = createjs.indexOf(this._instances, a);
+            return i > -1 && this._instances.splice(i, 1), !1
+        }
+        return !0
+    }, e._getSrcById = function (a) {
+        return null == e._idHash || null == e._idHash[a] ? a : e._idHash[a]
+    }, e._playFinished = function (a) {
+        b.remove(a);
+        var c = createjs.indexOf(this._instances, a);
+        c > -1 && this._instances.splice(c, 1)
+    }, createjs.Sound = a, b.channels = {}, b.create = function (a, c) {
+        var d = b.get(a);
+        return null == d ? (b.channels[a] = new b(a, c), !0) : !1
+    }, b.removeSrc = function (a) {
+        var c = b.get(a);
+        return null == c ? !1 : (c.removeAll(), delete b.channels[a], !0)
+    }, b.removeAll = function () {
+        for (var a in b.channels) b.channels[a].removeAll();
+        b.channels = {}
+    }, b.add = function (a, c) {
+        var d = b.get(a.src);
+        return null == d ? !1 : d.add(a, c)
+    }, b.remove = function (a) {
+        var c = b.get(a.src);
+        return null == c ? !1 : (c.remove(a), !0)
+    }, b.maxPerChannel = function () {
+        return f.maxDefault
+    }, b.get = function (a) {
+        return b.channels[a]
+    };
+    var f = b.prototype;
+    f.src = null, f.max = null, f.maxDefault = 100, f.length = 0, f.init = function (a, b) {
+        this.src = a, this.max = b || this.maxDefault, -1 == this.max && (this.max = this.maxDefault), this._instances = []
+    }, f.get = function (a) {
+        return this._instances[a]
+    }, f.add = function (a, b) {
+        return this.getSlot(b, a) ? (this._instances.push(a), this.length++, !0) : !1
+    }, f.remove = function (a) {
+        var b = createjs.indexOf(this._instances, a);
+        return -1 == b ? !1 : (this._instances.splice(b, 1), this.length--, !0)
+    }, f.removeAll = function () {
+        for (var a = this.length - 1; a >= 0; a--) this._instances[a].stop()
+    }, f.getSlot = function (b) {
+        for (var c, d, e = 0, f = this.max; f > e; e++) {
+            if (c = this.get(e), null == c) return !0;
+            (b != a.INTERRUPT_NONE || c.playState == a.PLAY_FINISHED) && (0 != e ? c.playState == a.PLAY_FINISHED || c.playState == a.PLAY_INTERRUPTED || c.playState == a.PLAY_FAILED ? d = c : (b == a.INTERRUPT_EARLY && c.getPosition() < d.getPosition() || b == a.INTERRUPT_LATE && c.getPosition() > d.getPosition()) && (d = c) : d = c)
+        }
+        return null != d ? (d._interrupt(), this.remove(d), !0) : !1
+    }, f.toString = function () {
+        return "[Sound SoundChannel]"
+    }, a._defaultSoundInstance = new c, d.init = function () {
+        var a = window.navigator.userAgent;
+        d.isFirefox = a.indexOf("Firefox") > -1, d.isOpera = null != window.opera, d.isChrome = a.indexOf("Chrome") > -1, d.isIOS = a.indexOf("iPod") > -1 || a.indexOf("iPhone") > -1 || a.indexOf("iPad") > -1, d.isAndroid = a.indexOf("Android") > -1, d.isBlackberry = a.indexOf("Blackberry") > -1
+    }, d.init(), createjs.Sound.BrowserDetect = d
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+
+    function a() {
+        this._init()
+    }
+    var b = a;
+    b._capabilities = null, b.isSupported = function () {
+        var a = createjs.Sound.BrowserDetect.isIOS || createjs.Sound.BrowserDetect.isAndroid || createjs.Sound.BrowserDetect.isBlackberry;
+        return "file:" != location.protocol || a || this._isFileXHRSupported() ? (b._generateCapabilities(), null == b.context ? !1 : !0) : !1
+    }, b._isFileXHRSupported = function () {
+        var a = !0,
+            b = new XMLHttpRequest;
+        try {
+            b.open("GET", "fail.fail", !1)
+        } catch (c) {
+            return a = !1
+        }
+        b.onerror = function () {
+            a = !1
+        }, b.onload = function () {
+            a = 404 == this.status || 200 == this.status || 0 == this.status && "" != this.response
+        };
+        try {
+            b.send()
+        } catch (c) {
+            a = !1
+        }
+        return a
+    }, b._generateCapabilities = function () {
+        if (null == b._capabilities) {
+            var a = document.createElement("audio");
+            if (null == a.canPlayType) return null;
+            if (window.webkitAudioContext) b.context = new webkitAudioContext;
+            else {
+                if (!window.AudioContext) return null;
+                b.context = new AudioContext
+            }
+            b._compatibilitySetUp(), b.playEmptySound(), b._capabilities = {
+                panning: !0,
+                volume: !0,
+                tracks: -1
+            };
+            for (var c = createjs.Sound.SUPPORTED_EXTENSIONS, d = createjs.Sound.EXTENSION_MAP, e = 0, f = c.length; f > e; e++) {
+                var g = c[e],
+                    h = d[g] || g;
+                b._capabilities[g] = "no" != a.canPlayType("audio/" + g) && "" != a.canPlayType("audio/" + g) || "no" != a.canPlayType("audio/" + h) && "" != a.canPlayType("audio/" + h)
+            }
+            b.context.destination.numberOfChannels < 2 && (b._capabilities.panning = !1), b.dynamicsCompressorNode = b.context.createDynamicsCompressor(), b.dynamicsCompressorNode.connect(b.context.destination), b.gainNode = b.context.createGain(), b.gainNode.connect(b.dynamicsCompressorNode)
+        }
+    }, b._compatibilitySetUp = function () {
+        if (!b.context.createGain) {
+            b.context.createGain = b.context.createGainNode;
+            var a = b.context.createBufferSource();
+            a.__proto__.start = a.__proto__.noteGrainOn, a.__proto__.stop = a.__proto__.noteOff, this._panningModel = 0
+        }
+    }, b.playEmptySound = function () {
+        var a = this.context.createBuffer(1, 1, 22050),
+            b = this.context.createBufferSource();
+        b.buffer = a, b.connect(this.context.destination), b.start(0, 0, 0)
+    };
+    var c = a.prototype;
+    c._capabilities = null, c._volume = 1, c.context = null, c._panningModel = "equalpower", c.dynamicsCompressorNode = null, c.gainNode = null, c._arrayBuffers = null, c._init = function () {
+        this._capabilities = b._capabilities, this._arrayBuffers = {}, this.context = b.context, this.gainNode = b.gainNode, this.dynamicsCompressorNode = b.dynamicsCompressorNode
+    }, c.register = function (a) {
+        this._arrayBuffers[a] = !0;
+        var b = new createjs.WebAudioPlugin.Loader(a, this);
+        return {
+            tag: b
+        }
+    }, c.isPreloadStarted = function (a) {
+        return null != this._arrayBuffers[a]
+    }, c.isPreloadComplete = function (a) {
+        return !(null == this._arrayBuffers[a] || 1 == this._arrayBuffers[a])
+    }, c.removeSound = function (a) {
+        delete this._arrayBuffers[a]
+    }, c.removeAllSounds = function () {
+        this._arrayBuffers = {}
+    }, c.addPreloadResults = function (a, b) {
+        this._arrayBuffers[a] = b
+    }, c._handlePreloadComplete = function () {
+        createjs.Sound._sendFileLoadEvent(this.src)
+    }, c.preload = function (a) {
+        this._arrayBuffers[a] = !0;
+        var b = new createjs.WebAudioPlugin.Loader(a, this);
+        b.onload = this._handlePreloadComplete, b.load()
+    }, c.create = function (a) {
+        return this.isPreloadStarted(a) || this.preload(a), new createjs.WebAudioPlugin.SoundInstance(a, this)
+    }, c.setVolume = function (a) {
+        return this._volume = a, this._updateVolume(), !0
+    }, c._updateVolume = function () {
+        var a = createjs.Sound._masterMute ? 0 : this._volume;
+        a != this.gainNode.gain.value && (this.gainNode.gain.value = a)
+    }, c.getVolume = function () {
+        return this._volume
+    }, c.setMute = function () {
+        return this._updateVolume(), !0
+    }, c.toString = function () {
+        return "[WebAudioPlugin]"
+    }, createjs.WebAudioPlugin = a
+}(),
+function () {
+    "use strict";
+
+    function a(a, b) {
+        this._init(a, b)
+    }
+    var b = a.prototype = new createjs.EventDispatcher;
+    b.src = null, b.uniqueId = -1, b.playState = null, b._owner = null, b._offset = 0, b._delay = 0, b._volume = 1;
+    try {
+        Object.defineProperty(b, "volume", {
+            get: function () {
+                return this._volume
+            },
+            set: function (a) {
+                return null == Number(a) ? !1 : (a = Math.max(0, Math.min(1, a)), this._volume = a, this._updateVolume(), void 0)
+            }
+        })
+    } catch (c) {}
+    b._pan = 0;
+    try {
+        Object.defineProperty(b, "pan", {
+            get: function () {
+                return this._pan
+            },
+            set: function (a) {
+                return this._owner._capabilities.panning && null != Number(a) ? (a = Math.max(-1, Math.min(1, a)), this._pan = a, this.panNode.setPosition(a, 0, -.5), void 0) : !1
+            }
+        })
+    } catch (c) {}
+    b._duration = 0, b._remainingLoops = 0, b._delayTimeoutId = null, b._soundCompleteTimeout = null, b.gainNode = null, b.panNode = null, b.sourceNode = null, b._sourceNodeNext = null, b._muted = !1, b._paused = !1, b._startTime = 0, b._endedHandler = null, b._sendEvent = function (a) {
+        var b = new createjs.Event(a);
+        this.dispatchEvent(b)
+    }, b._init = function (a, b) {
+        this._owner = b, this.src = a, this.gainNode = this._owner.context.createGain(), this.panNode = this._owner.context.createPanner(), this.panNode.panningModel = this._owner._panningModel, this.panNode.connect(this.gainNode), this._owner.isPreloadComplete(this.src) && (this._duration = 1e3 * this._owner._arrayBuffers[this.src].duration), this._endedHandler = createjs.proxy(this._handleSoundComplete, this)
+    }, b._cleanUp = function () {
+        this.sourceNode && this.playState == createjs.Sound.PLAY_SUCCEEDED && (this.sourceNode = this._cleanUpAudioNode(this.sourceNode), this._sourceNodeNext = this._cleanUpAudioNode(this._sourceNodeNext)), 0 != this.gainNode.numberOfOutputs && this.gainNode.disconnect(0), clearTimeout(this._delayTimeoutId), clearTimeout(this._soundCompleteTimeout), this._startTime = 0, null != window.createjs && createjs.Sound._playFinished(this)
+    }, b._cleanUpAudioNode = function (a) {
+        return a && (a.stop(0), a.disconnect(this.panNode), a = null), a
+    }, b._interrupt = function () {
+        this._cleanUp(), this.playState = createjs.Sound.PLAY_INTERRUPTED, this._paused = !1, this._sendEvent("interrupted")
+    }, b._handleSoundReady = function () {
+        if (null != window.createjs) {
+            if (1e3 * this._offset > this.getDuration()) return this.playFailed(), void 0;
+            this._offset < 0 && (this._offset = 0), this.playState = createjs.Sound.PLAY_SUCCEEDED, this._paused = !1, this.gainNode.connect(this._owner.gainNode);
+            var a = this._owner._arrayBuffers[this.src].duration;
+            this.sourceNode = this._createAndPlayAudioNode(this._owner.context.currentTime - a, this._offset), this._duration = 1e3 * a, this._startTime = this.sourceNode.startTime - this._offset, this._soundCompleteTimeout = setTimeout(this._endedHandler, 1e3 * (a - this._offset)), 0 != this._remainingLoops && (this._sourceNodeNext = this._createAndPlayAudioNode(this._startTime, 0))
+        }
+    }, b._createAndPlayAudioNode = function (a, b) {
+        var c = this._owner.context.createBufferSource();
+        return c.buffer = this._owner._arrayBuffers[this.src], c.connect(this.panNode), this._owner.context.currentTime, c.startTime = a + c.buffer.duration, c.start(c.startTime, b, c.buffer.duration - b), c
+    }, b.play = function (a, b, c, d, e, f) {
+        this._cleanUp(), createjs.Sound._playInstance(this, a, b, c, d, e, f)
+    }, b._beginPlaying = function (a, b, c, d) {
+        return null != window.createjs && this.src ? (this._offset = a / 1e3, this._remainingLoops = b, this.volume = c, this.pan = d, this._owner.isPreloadComplete(this.src) ? (this._handleSoundReady(null), this._sendEvent("succeeded"), 1) : (this.playFailed(), void 0)) : void 0
+    }, b.pause = function () {
+        return this._paused || this.playState != createjs.Sound.PLAY_SUCCEEDED ? !1 : (this._paused = !0, this._offset = this._owner.context.currentTime - this._startTime, this._cleanUpAudioNode(this.sourceNode), this._cleanUpAudioNode(this._sourceNodeNext), 0 != this.gainNode.numberOfOutputs && this.gainNode.disconnect(), clearTimeout(this._delayTimeoutId), clearTimeout(this._soundCompleteTimeout), !0)
+    }, b.resume = function () {
+        return this._paused ? (this._handleSoundReady(null), !0) : !1
+    }, b.stop = function () {
+        return this._cleanUp(), this.playState = createjs.Sound.PLAY_FINISHED, this._offset = 0, !0
+    }, b.setVolume = function (a) {
+        return this.volume = a, !0
+    }, b._updateVolume = function () {
+        var a = this._muted ? 0 : this._volume;
+        return a != this.gainNode.gain.value ? (this.gainNode.gain.value = a, !0) : !1
+    }, b.getVolume = function () {
+        return this.volume
+    }, b.setMute = function (a) {
+        return null == a || void 0 == a ? !1 : (this._muted = a, this._updateVolume(), !0)
+    }, b.getMute = function () {
+        return this._muted
+    }, b.setPan = function (a) {
+        return this.pan = a, this.pan != a ? !1 : void 0
+    }, b.getPan = function () {
+        return this.pan
+    }, b.getPosition = function () {
+        if (this._paused || null == this.sourceNode) var a = this._offset;
+        else var a = this._owner.context.currentTime - this._startTime;
+        return 1e3 * a
+    }, b.setPosition = function (a) {
+        return this._offset = a / 1e3, this.sourceNode && this.playState == createjs.Sound.PLAY_SUCCEEDED && (this._cleanUpAudioNode(this.sourceNode), this._cleanUpAudioNode(this._sourceNodeNext), clearTimeout(this._soundCompleteTimeout)), this._paused || this.playState != createjs.Sound.PLAY_SUCCEEDED || this._handleSoundReady(null), !0
+    }, b.getDuration = function () {
+        return this._duration
+    }, b._handleSoundComplete = function () {
+        return this._offset = 0, 0 != this._remainingLoops ? (this._remainingLoops--, this._sourceNodeNext ? (this._cleanUpAudioNode(this.sourceNode), this.sourceNode = this._sourceNodeNext, this._startTime = this.sourceNode.startTime, this._sourceNodeNext = this._createAndPlayAudioNode(this._startTime, 0), this._soundCompleteTimeout = setTimeout(this._endedHandler, this._duration)) : this._handleSoundReady(null), this._sendEvent("loop"), void 0) : (null != window.createjs && (this._cleanUp(), this.playState = createjs.Sound.PLAY_FINISHED, this._sendEvent("complete")), void 0)
+    }, b.playFailed = function () {
+        null != window.createjs && (this._cleanUp(), this.playState = createjs.Sound.PLAY_FAILED, this._sendEvent("failed"))
+    }, b.toString = function () {
+        return "[WebAudioPlugin SoundInstance]"
+    }, createjs.WebAudioPlugin.SoundInstance = a
+}(),
+function () {
+    "use strict";
+
+    function a(a, b) {
+        this._init(a, b)
+    }
+    var b = a.prototype;
+    b.request = null, b.owner = null, b.progress = -1, b.src = null, b.originalSrc = null, b.result = null, b.onload = null, b.onprogress = null, b.onError = null, b._init = function (a, b) {
+        this.src = a, this.originalSrc = a, this.owner = b
+    }, b.load = function (a) {
+        null != a && (this.src = a), this.request = new XMLHttpRequest, this.request.open("GET", this.src, !0), this.request.responseType = "arraybuffer", this.request.onload = createjs.proxy(this.handleLoad, this), this.request.onError = createjs.proxy(this.handleError, this), this.request.onprogress = createjs.proxy(this.handleProgress, this), this.request.send()
+    }, b.handleProgress = function (a, b) {
+        this.progress = a / b, null != this.onprogress && this.onprogress({
+            loaded: a,
+            total: b,
+            progress: this.progress
+        })
+    }, b.handleLoad = function () {
+        this.owner.context.decodeAudioData(this.request.response, createjs.proxy(this.handleAudioDecoded, this), createjs.proxy(this.handleError, this))
+    }, b.handleAudioDecoded = function (a) {
+        this.progress = 1, this.result = a, this.src = this.originalSrc, this.owner.addPreloadResults(this.src, this.result), this.onload && this.onload()
+    }, b.handleError = function (a) {
+        this.owner.removeSound(this.src), this.onerror && this.onerror(a)
+    }, b.toString = function () {
+        return "[WebAudioPlugin Loader]"
+    }, createjs.WebAudioPlugin.Loader = a
+}(), this.createjs = this.createjs || {},
+function () {
+    "use strict";
+
+    function a() {
+        this._init()
+    }
+    var b = a;
+    b.MAX_INSTANCES = 30, b._AUDIO_READY = "canplaythrough", b._AUDIO_ENDED = "ended", b._AUDIO_SEEKED = "seeked", b._AUDIO_STALLED = "stalled", b._capabilities = null, b.enableIOS = !1, b.isSupported = function () {
+        if (createjs.Sound.BrowserDetect.isIOS && !b.enableIOS) return !1;
+        b._generateCapabilities();
+        var a = b.tag;
+        return null == a || null == b._capabilities ? !1 : !0
+    }, b._generateCapabilities = function () {
+        if (null == b._capabilities) {
+            var a = b.tag = document.createElement("audio");
+            if (null == a.canPlayType) return null;
+            b._capabilities = {
+                panning: !0,
+                volume: !0,
+                tracks: -1
+            };
+            for (var c = createjs.Sound.SUPPORTED_EXTENSIONS, d = createjs.Sound.EXTENSION_MAP, e = 0, f = c.length; f > e; e++) {
+                var g = c[e],
+                    h = d[g] || g;
+                b._capabilities[g] = "no" != a.canPlayType("audio/" + g) && "" != a.canPlayType("audio/" + g) || "no" != a.canPlayType("audio/" + h) && "" != a.canPlayType("audio/" + h)
+            }
+        }
+    };
+    var c = a.prototype;
+    c._capabilities = null, c._audioSources = null, c.defaultNumChannels = 2, c.loadedHandler = null, c._init = function () {
+        this._capabilities = b._capabilities, this._audioSources = {}
+    }, c.register = function (a, b) {
+        this._audioSources[a] = !0;
+        for (var c = createjs.HTMLAudioPlugin.TagPool.get(a), d = null, e = b || this.defaultNumChannels, f = 0; e > f; f++) d = this._createTag(a), c.add(d);
+        if (d.id = a, this.loadedHandler = createjs.proxy(this._handleTagLoad, this), d.addEventListener && d.addEventListener("canplaythrough", this.loadedHandler), null == d.onreadystatechange) d.onreadystatechange = this.loadedHandler;
+        else {
+            var g = d.onreadystatechange;
+            d.onreadystatechange = function () {
+                g(), this.loadedHandler()
+            }
+        }
+        return {
+            tag: d,
+            numChannels: e
+        }
+    }, c._handleTagLoad = function (a) {
+        a.target.removeEventListener && a.target.removeEventListener("canplaythrough", this.loadedHandler), a.target.onreadystatechange = null, a.target.src != a.target.id && createjs.HTMLAudioPlugin.TagPool.checkSrc(a.target.id)
+    }, c._createTag = function (a) {
+        var b = document.createElement("audio");
+        return b.autoplay = !1, b.preload = "none", b.src = a, b
+    }, c.removeSound = function (a) {
+        delete this._audioSources[a], createjs.HTMLAudioPlugin.TagPool.remove(a)
+    }, c.removeAllSounds = function () {
+        this._audioSources = {}, createjs.HTMLAudioPlugin.TagPool.removeAll()
+    }, c.create = function (a) {
+        if (!this.isPreloadStarted(a)) {
+            var b = createjs.HTMLAudioPlugin.TagPool.get(a),
+                c = this._createTag(a);
+            c.id = a, b.add(c), this.preload(a, {
+                tag: c
+            })
+        }
+        return new createjs.HTMLAudioPlugin.SoundInstance(a, this)
+    }, c.isPreloadStarted = function (a) {
+        return null != this._audioSources[a]
+    }, c.preload = function (a, b) {
+        this._audioSources[a] = !0, new createjs.HTMLAudioPlugin.Loader(a, b.tag)
+    }, c.toString = function () {
+        return "[HTMLAudioPlugin]"
+    }, createjs.HTMLAudioPlugin = a
+}(),
+function () {
+    "use strict";
+
+    function a(a, b) {
+        this._init(a, b)
+    }
+    var b = a.prototype = new createjs.EventDispatcher;
+    b.src = null, b.uniqueId = -1, b.playState = null, b._owner = null, b.loaded = !1, b._offset = 0, b._delay = 0, b._volume = 1;
+    try {
+        Object.defineProperty(b, "volume", {
+            get: function () {
+                return this._volume
+            },
+            set: function (a) {
+                null != Number(a) && (a = Math.max(0, Math.min(1, a)), this._volume = a, this._updateVolume())
+            }
+        })
+    } catch (c) {}
+    b.pan = 0, b._duration = 0, b._remainingLoops = 0, b._delayTimeoutId = null, b.tag = null, b._muted = !1, b._paused = !1, b._endedHandler = null, b._readyHandler = null, b._stalledHandler = null, b.loopHandler = null, b._init = function (a, b) {
+        this.src = a, this._owner = b, this._endedHandler = createjs.proxy(this._handleSoundComplete, this), this._readyHandler = createjs.proxy(this._handleSoundReady, this), this._stalledHandler = createjs.proxy(this._handleSoundStalled, this), this.loopHandler = createjs.proxy(this.handleSoundLoop, this)
+    }, b._sendEvent = function (a) {
+        var b = new createjs.Event(a);
+        this.dispatchEvent(b)
+    }, b._cleanUp = function () {
+        var a = this.tag;
+        if (null != a) {
+            a.pause(), a.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_ENDED, this._endedHandler, !1), a.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_READY, this._readyHandler, !1), a.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_SEEKED, this.loopHandler, !1);
+            try {
+                a.currentTime = 0
+            } catch (b) {}
+            createjs.HTMLAudioPlugin.TagPool.setInstance(this.src, a), this.tag = null
+        }
+        clearTimeout(this._delayTimeoutId), null != window.createjs && createjs.Sound._playFinished(this)
+    }, b._interrupt = function () {
+        null != this.tag && (this.playState = createjs.Sound.PLAY_INTERRUPTED, this._cleanUp(), this._paused = !1, this._sendEvent("interrupted"))
+    }, b.play = function (a, b, c, d, e, f) {
+        this._cleanUp(), createjs.Sound._playInstance(this, a, b, c, d, e, f)
+    }, b._beginPlaying = function (a, b, c, d) {
+        if (null == window.createjs) return -1;
+        var e = this.tag = createjs.HTMLAudioPlugin.TagPool.getInstance(this.src);
+        return null == e ? (this.playFailed(), -1) : (e.addEventListener(createjs.HTMLAudioPlugin._AUDIO_ENDED, this._endedHandler, !1), this._offset = a, this.volume = c, this.pan = d, this._updateVolume(), this._remainingLoops = b, 4 !== e.readyState ? (e.addEventListener(createjs.HTMLAudioPlugin._AUDIO_READY, this._readyHandler, !1), e.addEventListener(createjs.HTMLAudioPlugin._AUDIO_STALLED, this._stalledHandler, !1), e.preload = "auto", e.load()) : this._handleSoundReady(null), this._sendEvent("succeeded"), 1)
+    }, b._handleSoundStalled = function () {
+        this._cleanUp(), this._sendEvent("failed")
+    }, b._handleSoundReady = function () {
+        if (null != window.createjs) {
+            if (this._duration = 1e3 * this.tag.duration, this.playState = createjs.Sound.PLAY_SUCCEEDED, this._paused = !1, this.tag.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_READY, this._readyHandler, !1), this._offset >= this.getDuration()) return this.playFailed(), void 0;
+            this._offset > 0 && (this.tag.currentTime = .001 * this._offset), -1 == this._remainingLoops && (this.tag.loop = !0), 0 != this._remainingLoops && (this.tag.addEventListener(createjs.HTMLAudioPlugin._AUDIO_SEEKED, this.loopHandler, !1), this.tag.loop = !0), this.tag.play()
+        }
+    }, b.pause = function () {
+        return this._paused || this.playState != createjs.Sound.PLAY_SUCCEEDED || null == this.tag ? !1 : (this._paused = !0, this.tag.pause(), clearTimeout(this._delayTimeoutId), !0)
+    }, b.resume = function () {
+        return this._paused && null != this.tag ? (this._paused = !1, this.tag.play(), !0) : !1
+    }, b.stop = function () {
+        return this._offset = 0, this.pause(), this.playState = createjs.Sound.PLAY_FINISHED, this._cleanUp(), !0
+    }, b.setMasterVolume = function () {
+        return this._updateVolume(), !0
+    }, b.setVolume = function (a) {
+        return this.volume = a, !0
+    }, b._updateVolume = function () {
+        if (null != this.tag) {
+            var a = this._muted || createjs.Sound._masterMute ? 0 : this._volume * createjs.Sound._masterVolume;
+            return a != this.tag.volume && (this.tag.volume = a), !0
+        }
+        return !1
+    }, b.getVolume = function () {
+        return this.volume
+    }, b.setMasterMute = function () {
+        return this._updateVolume(), !0
+    }, b.setMute = function (a) {
+        return null == a || void 0 == a ? !1 : (this._muted = a, this._updateVolume(), !0)
+    }, b.getMute = function () {
+        return this._muted
+    }, b.setPan = function () {
+        return !1
+    }, b.getPan = function () {
+        return 0
+    }, b.getPosition = function () {
+        return null == this.tag ? this._offset : 1e3 * this.tag.currentTime
+    }, b.setPosition = function (a) {
+        if (null == this.tag) this._offset = a;
+        else {
+            this.tag.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_SEEKED, this.loopHandler, !1);
+            try {
+                this.tag.currentTime = .001 * a
+            } catch (b) {
+                return !1
+            }
+            this.tag.addEventListener(createjs.HTMLAudioPlugin._AUDIO_SEEKED, this.loopHandler, !1)
+        }
+        return !0
+    }, b.getDuration = function () {
+        return this._duration
+    }, b._handleSoundComplete = function () {
+        this._offset = 0, null != window.createjs && (this.playState = createjs.Sound.PLAY_FINISHED, this._cleanUp(), this._sendEvent("complete"))
+    }, b.handleSoundLoop = function () {
+        this._offset = 0, this._remainingLoops--, 0 == this._remainingLoops && (this.tag.loop = !1, this.tag.removeEventListener(createjs.HTMLAudioPlugin._AUDIO_SEEKED, this.loopHandler, !1)), this._sendEvent("loop")
+    }, b.playFailed = function () {
+        null != window.createjs && (this.playState = createjs.Sound.PLAY_FAILED, this._cleanUp(), this._sendEvent("failed"))
+    }, b.toString = function () {
+        return "[HTMLAudioPlugin SoundInstance]"
+    }, createjs.HTMLAudioPlugin.SoundInstance = a
+}(),
+function () {
+    "use strict";
+
+    function a(a, b) {
+        this._init(a, b)
+    }
+    var b = a.prototype;
+    b.src = null, b.tag = null, b.preloadTimer = null, b.loadedHandler = null, b._init = function (a, b) {
+        if (this.src = a, this.tag = b, this.preloadTimer = setInterval(createjs.proxy(this.preloadTick, this), 200), this.loadedHandler = createjs.proxy(this.sendLoadedEvent, this), this.tag.addEventListener && this.tag.addEventListener("canplaythrough", this.loadedHandler), null == this.tag.onreadystatechange) this.tag.onreadystatechange = createjs.proxy(this.sendLoadedEvent, this);
+        else {
+            var c = this.tag.onreadystatechange;
+            this.tag.onreadystatechange = function () {
+                c(), this.tag.onreadystatechange = createjs.proxy(this.sendLoadedEvent, this)
+            }
+        }
+        this.tag.preload = "auto", this.tag.load()
+    }, b.preloadTick = function () {
+        var a = this.tag.buffered,
+            b = this.tag.duration;
+        a.length > 0 && a.end(0) >= b - 1 && this.handleTagLoaded()
+    }, b.handleTagLoaded = function () {
+        clearInterval(this.preloadTimer)
+    }, b.sendLoadedEvent = function () {
+        this.tag.removeEventListener && this.tag.removeEventListener("canplaythrough", this.loadedHandler), this.tag.onreadystatechange = null, createjs.Sound._sendFileLoadEvent(this.src)
+    }, b.toString = function () {
+        return "[HTMLAudioPlugin Loader]"
+    }, createjs.HTMLAudioPlugin.Loader = a
+}(),
+function () {
+    "use strict";
+
+    function a(a) {
+        this._init(a)
+    }
+    var b = a;
+    b.tags = {}, b.get = function (c) {
+        var d = b.tags[c];
+        return null == d && (d = b.tags[c] = new a(c)), d
+    }, b.remove = function (a) {
+        var c = b.tags[a];
+        return null == c ? !1 : (c.removeAll(), delete b.tags[a], !0)
+    }, b.removeAll = function () {
+        for (var a in b.tags) b.tags[a].removeAll();
+        b.tags = {}
+    }, b.getInstance = function (a) {
+        var c = b.tags[a];
+        return null == c ? null : c.get()
+    }, b.setInstance = function (a, c) {
+        var d = b.tags[a];
+        return null == d ? null : d.set(c)
+    }, b.checkSrc = function (a) {
+        var c = b.tags[a];
+        return null == c ? null : (c.checkSrcChange(), void 0)
+    };
+    var c = a.prototype;
+    c.src = null, c.length = 0, c.available = 0, c.tags = null, c._init = function (a) {
+        this.src = a, this.tags = []
+    }, c.add = function (a) {
+        this.tags.push(a), this.length++, this.available++
+    }, c.removeAll = function () {
+        for (; this.length--;) delete this.tags[this.length];
+        this.src = null, this.tags.length = 0
+    }, c.get = function () {
+        if (0 == this.tags.length) return null;
+        this.available = this.tags.length;
+        var a = this.tags.pop();
+        return null == a.parentNode && document.body.appendChild(a), a
+    }, c.set = function (a) {
+        var b = createjs.indexOf(this.tags, a); - 1 == b && this.tags.push(a), this.available = this.tags.length
+    }, c.checkSrcChange = function () {
+        for (var a = this.tags.length - 1, b = this.tags[a].src; a--;) this.tags[a].src = b
+    }, c.toString = function () {
+        return "[HTMLAudioPlugin TagPool]"
+    }, createjs.HTMLAudioPlugin.TagPool = a
+}();
+(function (t) {
+    "use strict";
+    var e = t.GreenSockGlobals || t;
+    if (!e.TweenLite) {
+        var i, s, r, n, a, o = function (t) {
+                var i, s = t.split("."),
+                    r = e;
+                for (i = 0; s.length > i; i++) r[s[i]] = r = r[s[i]] || {};
+                return r
+            },
+            l = o("com.greensock"),
+            h = 1e-10,
+            _ = [].slice,
+            u = function () {},
+            m = function () {
+                var t = Object.prototype.toString,
+                    e = t.call([]);
+                return function (i) {
+                    return i instanceof Array || "object" == typeof i && !!i.push && t.call(i) === e
+                }
+            }(),
+            f = {},
+            p = function (i, s, r, n) {
+                this.sc = f[i] ? f[i].sc : [], f[i] = this, this.gsClass = null, this.func = r;
+                var a = [];
+                this.check = function (l) {
+                    for (var h, _, u, m, c = s.length, d = c; --c > -1;)(h = f[s[c]] || new p(s[c], [])).gsClass ? (a[c] = h.gsClass, d--) : l && h.sc.push(this);
+                    if (0 === d && r)
+                        for (_ = ("com.greensock." + i).split("."), u = _.pop(), m = o(_.join("."))[u] = this.gsClass = r.apply(r, a), n && (e[u] = m, "function" == typeof define && define.amd ? define((t.GreenSockAMDPath ? t.GreenSockAMDPath + "/" : "") + i.split(".").join("/"), [], function () {
+                            return m
+                        }) : "undefined" != typeof module && module.exports && (module.exports = m)), c = 0; this.sc.length > c; c++) this.sc[c].check()
+                }, this.check(!0)
+            },
+            c = t._gsDefine = function (t, e, i, s) {
+                return new p(t, e, i, s)
+            },
+            d = l._class = function (t, e, i) {
+                return e = e || function () {}, c(t, [], function () {
+                    return e
+                }, i), e
+            };
+        c.globals = e;
+        var v = [0, 0, 1, 1],
+            g = [],
+            T = d("easing.Ease", function (t, e, i, s) {
+                this._func = t, this._type = i || 0, this._power = s || 0, this._params = e ? v.concat(e) : v
+            }, !0),
+            w = T.map = {},
+            P = T.register = function (t, e, i, s) {
+                for (var r, n, a, o, h = e.split(","), _ = h.length, u = (i || "easeIn,easeOut,easeInOut").split(","); --_ > -1;)
+                    for (n = h[_], r = s ? d("easing." + n, null, !0) : l.easing[n] || {}, a = u.length; --a > -1;) o = u[a], w[n + "." + o] = w[o + n] = r[o] = t.getRatio ? t : t[o] || new t
+            };
+        for (r = T.prototype, r._calcEnd = !1, r.getRatio = function (t) {
+            if (this._func) return this._params[0] = t, this._func.apply(null, this._params);
+            var e = this._type,
+                i = this._power,
+                s = 1 === e ? 1 - t : 2 === e ? t : .5 > t ? 2 * t : 2 * (1 - t);
+            return 1 === i ? s *= s : 2 === i ? s *= s * s : 3 === i ? s *= s * s * s : 4 === i && (s *= s * s * s * s), 1 === e ? 1 - s : 2 === e ? s : .5 > t ? s / 2 : 1 - s / 2
+        }, i = ["Linear", "Quad", "Cubic", "Quart", "Quint,Strong"], s = i.length; --s > -1;) r = i[s] + ",Power" + s, P(new T(null, null, 1, s), r, "easeOut", !0), P(new T(null, null, 2, s), r, "easeIn" + (0 === s ? ",easeNone" : "")), P(new T(null, null, 3, s), r, "easeInOut");
+        w.linear = l.easing.Linear.easeIn, w.swing = l.easing.Quad.easeInOut;
+        var y = d("events.EventDispatcher", function (t) {
+            this._listeners = {}, this._eventTarget = t || this
+        });
+        r = y.prototype, r.addEventListener = function (t, e, i, s, r) {
+            r = r || 0;
+            var o, l, h = this._listeners[t],
+                _ = 0;
+            for (null == h && (this._listeners[t] = h = []), l = h.length; --l > -1;) o = h[l], o.c === e && o.s === i ? h.splice(l, 1) : 0 === _ && r > o.pr && (_ = l + 1);
+            h.splice(_, 0, {
+                c: e,
+                s: i,
+                up: s,
+                pr: r
+            }), this !== n || a || n.wake()
+        }, r.removeEventListener = function (t, e) {
+            var i, s = this._listeners[t];
+            if (s)
+                for (i = s.length; --i > -1;)
+                    if (s[i].c === e) return s.splice(i, 1), void 0
+        }, r.dispatchEvent = function (t) {
+            var e, i, s, r = this._listeners[t];
+            if (r)
+                for (e = r.length, i = this._eventTarget; --e > -1;) s = r[e], s.up ? s.c.call(s.s || i, {
+                    type: t,
+                    target: i
+                }) : s.c.call(s.s || i)
+        };
+        var b = t.requestAnimationFrame,
+            k = t.cancelAnimationFrame,
+            A = Date.now || function () {
+                return (new Date).getTime()
+            },
+            S = A();
+        for (i = ["ms", "moz", "webkit", "o"], s = i.length; --s > -1 && !b;) b = t[i[s] + "RequestAnimationFrame"], k = t[i[s] + "CancelAnimationFrame"] || t[i[s] + "CancelRequestAnimationFrame"];
+        d("Ticker", function (t, e) {
+            var i, s, r, o, l, h = this,
+                _ = A(),
+                m = e !== !1 && b,
+                f = function (t) {
+                    S = A(), h.time = (S - _) / 1e3;
+                    var e, n = h.time - l;
+                    (!i || n > 0 || t === !0) && (h.frame++, l += n + (n >= o ? .004 : o - n), e = !0), t !== !0 && (r = s(f)), e && h.dispatchEvent("tick")
+                };
+            y.call(h), h.time = h.frame = 0, h.tick = function () {
+                f(!0)
+            }, h.sleep = function () {
+                null != r && (m && k ? k(r) : clearTimeout(r), s = u, r = null, h === n && (a = !1))
+            }, h.wake = function () {
+                null !== r && h.sleep(), s = 0 === i ? u : m && b ? b : function (t) {
+                    return setTimeout(t, 0 | 1e3 * (l - h.time) + 1)
+                }, h === n && (a = !0), f(2)
+            }, h.fps = function (t) {
+                return arguments.length ? (i = t, o = 1 / (i || 60), l = this.time + o, h.wake(), void 0) : i
+            }, h.useRAF = function (t) {
+                return arguments.length ? (h.sleep(), m = t, h.fps(i), void 0) : m
+            }, h.fps(t), setTimeout(function () {
+                m && (!r || 5 > h.frame) && h.useRAF(!1)
+            }, 1500)
+        }), r = l.Ticker.prototype = new l.events.EventDispatcher, r.constructor = l.Ticker;
+        var x = d("core.Animation", function (t, e) {
+            if (this.vars = e = e || {}, this._duration = this._totalDuration = t || 0, this._delay = Number(e.delay) || 0, this._timeScale = 1, this._active = e.immediateRender === !0, this.data = e.data, this._reversed = e.reversed === !0, Q) {
+                a || n.wake();
+                var i = this.vars.useFrames ? G : Q;
+                i.add(this, i._time), this.vars.paused && this.paused(!0)
+            }
+        });
+        n = x.ticker = new l.Ticker, r = x.prototype, r._dirty = r._gc = r._initted = r._paused = !1, r._totalTime = r._time = 0, r._rawPrevTime = -1, r._next = r._last = r._onUpdate = r._timeline = r.timeline = null, r._paused = !1;
+        var C = function () {
+            a && A() - S > 2e3 && n.wake(), setTimeout(C, 2e3)
+        };
+        C(), r.play = function (t, e) {
+            return arguments.length && this.seek(t, e), this.reversed(!1).paused(!1)
+        }, r.pause = function (t, e) {
+            return arguments.length && this.seek(t, e), this.paused(!0)
+        }, r.resume = function (t, e) {
+            return arguments.length && this.seek(t, e), this.paused(!1)
+        }, r.seek = function (t, e) {
+            return this.totalTime(Number(t), e !== !1)
+        }, r.restart = function (t, e) {
+            return this.reversed(!1).paused(!1).totalTime(t ? -this._delay : 0, e !== !1, !0)
+        }, r.reverse = function (t, e) {
+            return arguments.length && this.seek(t || this.totalDuration(), e), this.reversed(!0).paused(!1)
+        }, r.render = function () {}, r.invalidate = function () {
+            return this
+        }, r.isActive = function () {
+            var t, e = this._timeline,
+                i = this._startTime;
+            return !e || !this._gc && !this._paused && e.isActive() && (t = e.rawTime()) >= i && i + this.totalDuration() / this._timeScale > t
+        }, r._enabled = function (t, e) {
+            return a || n.wake(), this._gc = !t, this._active = this.isActive(), e !== !0 && (t && !this.timeline ? this._timeline.add(this, this._startTime - this._delay) : !t && this.timeline && this._timeline._remove(this, !0)), !1
+        }, r._kill = function () {
+            return this._enabled(!1, !1)
+        }, r.kill = function (t, e) {
+            return this._kill(t, e), this
+        }, r._uncache = function (t) {
+            for (var e = t ? this : this.timeline; e;) e._dirty = !0, e = e.timeline;
+            return this
+        }, r._swapSelfInParams = function (t) {
+            for (var e = t.length, i = t.concat(); --e > -1;) "{self}" === t[e] && (i[e] = this);
+            return i
+        }, r.eventCallback = function (t, e, i, s) {
+            if ("on" === (t || "").substr(0, 2)) {
+                var r = this.vars;
+                if (1 === arguments.length) return r[t];
+                null == e ? delete r[t] : (r[t] = e, r[t + "Params"] = m(i) && -1 !== i.join("").indexOf("{self}") ? this._swapSelfInParams(i) : i, r[t + "Scope"] = s), "onUpdate" === t && (this._onUpdate = e)
+            }
+            return this
+        }, r.delay = function (t) {
+            return arguments.length ? (this._timeline.smoothChildTiming && this.startTime(this._startTime + t - this._delay), this._delay = t, this) : this._delay
+        }, r.duration = function (t) {
+            return arguments.length ? (this._duration = this._totalDuration = t, this._uncache(!0), this._timeline.smoothChildTiming && this._time > 0 && this._time < this._duration && 0 !== t && this.totalTime(this._totalTime * (t / this._duration), !0), this) : (this._dirty = !1, this._duration)
+        }, r.totalDuration = function (t) {
+            return this._dirty = !1, arguments.length ? this.duration(t) : this._totalDuration
+        }, r.time = function (t, e) {
+            return arguments.length ? (this._dirty && this.totalDuration(), this.totalTime(t > this._duration ? this._duration : t, e)) : this._time
+        }, r.totalTime = function (t, e, i) {
+            if (a || n.wake(), !arguments.length) return this._totalTime;
+            if (this._timeline) {
+                if (0 > t && !i && (t += this.totalDuration()), this._timeline.smoothChildTiming) {
+                    this._dirty && this.totalDuration();
+                    var s = this._totalDuration,
+                        r = this._timeline;
+                    if (t > s && !i && (t = s), this._startTime = (this._paused ? this._pauseTime : r._time) - (this._reversed ? s - t : t) / this._timeScale, r._dirty || this._uncache(!1), r._timeline)
+                        for (; r._timeline;) r._timeline._time !== (r._startTime + r._totalTime) / r._timeScale && r.totalTime(r._totalTime, !0), r = r._timeline
+                }
+                this._gc && this._enabled(!0, !1), (this._totalTime !== t || 0 === this._duration) && this.render(t, e, !1)
+            }
+            return this
+        }, r.progress = r.totalProgress = function (t, e) {
+            return arguments.length ? this.totalTime(this.duration() * t, e) : this._time / this.duration()
+        }, r.startTime = function (t) {
+            return arguments.length ? (t !== this._startTime && (this._startTime = t, this.timeline && this.timeline._sortChildren && this.timeline.add(this, t - this._delay)), this) : this._startTime
+        }, r.timeScale = function (t) {
+            if (!arguments.length) return this._timeScale;
+            if (t = t || h, this._timeline && this._timeline.smoothChildTiming) {
+                var e = this._pauseTime,
+                    i = e || 0 === e ? e : this._timeline.totalTime();
+                this._startTime = i - (i - this._startTime) * this._timeScale / t
+            }
+            return this._timeScale = t, this._uncache(!1)
+        }, r.reversed = function (t) {
+            return arguments.length ? (t != this._reversed && (this._reversed = t, this.totalTime(this._totalTime, !0)), this) : this._reversed
+        }, r.paused = function (t) {
+            if (!arguments.length) return this._paused;
+            if (t != this._paused && this._timeline) {
+                a || t || n.wake();
+                var e = this._timeline,
+                    i = e.rawTime(),
+                    s = i - this._pauseTime;
+                !t && e.smoothChildTiming && (this._startTime += s, this._uncache(!1)), this._pauseTime = t ? i : null, this._paused = t, this._active = this.isActive(), !t && 0 !== s && this._initted && this.duration() && this.render(e.smoothChildTiming ? this._totalTime : (i - this._startTime) / this._timeScale, !0, !0)
+            }
+            return this._gc && !t && this._enabled(!0, !1), this
+        };
+        var R = d("core.SimpleTimeline", function (t) {
+            x.call(this, 0, t), this.autoRemoveChildren = this.smoothChildTiming = !0
+        });
+        r = R.prototype = new x, r.constructor = R, r.kill()._gc = !1, r._first = r._last = null, r._sortChildren = !1, r.add = r.insert = function (t, e) {
+            var i, s;
+            if (t._startTime = Number(e || 0) + t._delay, t._paused && this !== t._timeline && (t._pauseTime = t._startTime + (this.rawTime() - t._startTime) / t._timeScale), t.timeline && t.timeline._remove(t, !0), t.timeline = t._timeline = this, t._gc && t._enabled(!0, !0), i = this._last, this._sortChildren)
+                for (s = t._startTime; i && i._startTime > s;) i = i._prev;
+            return i ? (t._next = i._next, i._next = t) : (t._next = this._first, this._first = t), t._next ? t._next._prev = t : this._last = t, t._prev = i, this._timeline && this._uncache(!0), this
+        }, r._remove = function (t, e) {
+            return t.timeline === this && (e || t._enabled(!1, !0), t.timeline = null, t._prev ? t._prev._next = t._next : this._first === t && (this._first = t._next), t._next ? t._next._prev = t._prev : this._last === t && (this._last = t._prev), this._timeline && this._uncache(!0)), this
+        }, r.render = function (t, e, i) {
+            var s, r = this._first;
+            for (this._totalTime = this._time = this._rawPrevTime = t; r;) s = r._next, (r._active || t >= r._startTime && !r._paused) && (r._reversed ? r.render((r._dirty ? r.totalDuration() : r._totalDuration) - (t - r._startTime) * r._timeScale, e, i) : r.render((t - r._startTime) * r._timeScale, e, i)), r = s
+        }, r.rawTime = function () {
+            return a || n.wake(), this._totalTime
+        };
+        var D = d("TweenLite", function (e, i, s) {
+                if (x.call(this, i, s), this.render = D.prototype.render, null == e) throw "Cannot tween a null target.";
+                this.target = e = "string" != typeof e ? e : D.selector(e) || e;
+                var r, n, a, o = e.jquery || e.length && e !== t && e[0] && (e[0] === t || e[0].nodeType && e[0].style && !e.nodeType),
+                    l = this.vars.overwrite;
+                if (this._overwrite = l = null == l ? j[D.defaultOverwrite] : "number" == typeof l ? l >> 0 : j[l], (o || e instanceof Array || e.push && m(e)) && "number" != typeof e[0])
+                    for (this._targets = a = _.call(e, 0), this._propLookup = [], this._siblings = [], r = 0; a.length > r; r++) n = a[r], n ? "string" != typeof n ? n.length && n !== t && n[0] && (n[0] === t || n[0].nodeType && n[0].style && !n.nodeType) ? (a.splice(r--, 1), this._targets = a = a.concat(_.call(n, 0))) : (this._siblings[r] = B(n, this, !1), 1 === l && this._siblings[r].length > 1 && q(n, this, null, 1, this._siblings[r])) : (n = a[r--] = D.selector(n), "string" == typeof n && a.splice(r + 1, 1)) : a.splice(r--, 1);
+                else this._propLookup = {}, this._siblings = B(e, this, !1), 1 === l && this._siblings.length > 1 && q(e, this, null, 1, this._siblings);
+                (this.vars.immediateRender || 0 === i && 0 === this._delay && this.vars.immediateRender !== !1) && this.render(-this._delay, !1, !0)
+            }, !0),
+            E = function (e) {
+                return e.length && e !== t && e[0] && (e[0] === t || e[0].nodeType && e[0].style && !e.nodeType)
+            },
+            I = function (t, e) {
+                var i, s = {};
+                for (i in t) F[i] || i in e && "x" !== i && "y" !== i && "width" !== i && "height" !== i && "className" !== i && "border" !== i || !(!N[i] || N[i] && N[i]._autoCSS) || (s[i] = t[i], delete t[i]);
+                t.css = s
+            };
+        r = D.prototype = new x, r.constructor = D, r.kill()._gc = !1, r.ratio = 0, r._firstPT = r._targets = r._overwrittenProps = r._startAt = null, r._notifyPluginsOfEnabled = !1, D.version = "1.11.2", D.defaultEase = r._ease = new T(null, null, 1, 1), D.defaultOverwrite = "auto", D.ticker = n, D.autoSleep = !0, D.selector = t.$ || t.jQuery || function (e) {
+            return t.$ ? (D.selector = t.$, t.$(e)) : t.document ? t.document.getElementById("#" === e.charAt(0) ? e.substr(1) : e) : e
+        };
+        var O = D._internals = {
+                isArray: m,
+                isSelector: E
+            },
+            N = D._plugins = {},
+            L = D._tweenLookup = {},
+            U = 0,
+            F = O.reservedProps = {
+                ease: 1,
+                delay: 1,
+                overwrite: 1,
+                onComplete: 1,
+                onCompleteParams: 1,
+                onCompleteScope: 1,
+                useFrames: 1,
+                runBackwards: 1,
+                startAt: 1,
+                onUpdate: 1,
+                onUpdateParams: 1,
+                onUpdateScope: 1,
+                onStart: 1,
+                onStartParams: 1,
+                onStartScope: 1,
+                onReverseComplete: 1,
+                onReverseCompleteParams: 1,
+                onReverseCompleteScope: 1,
+                onRepeat: 1,
+                onRepeatParams: 1,
+                onRepeatScope: 1,
+                easeParams: 1,
+                yoyo: 1,
+                immediateRender: 1,
+                repeat: 1,
+                repeatDelay: 1,
+                data: 1,
+                paused: 1,
+                reversed: 1,
+                autoCSS: 1
+            },
+            j = {
+                none: 0,
+                all: 1,
+                auto: 2,
+                concurrent: 3,
+                allOnStart: 4,
+                preexisting: 5,
+                "true": 1,
+                "false": 0
+            },
+            G = x._rootFramesTimeline = new R,
+            Q = x._rootTimeline = new R;
+        Q._startTime = n.time, G._startTime = n.frame, Q._active = G._active = !0, x._updateRoot = function () {
+            if (Q.render((n.time - Q._startTime) * Q._timeScale, !1, !1), G.render((n.frame - G._startTime) * G._timeScale, !1, !1), !(n.frame % 120)) {
+                var t, e, i;
+                for (i in L) {
+                    for (e = L[i].tweens, t = e.length; --t > -1;) e[t]._gc && e.splice(t, 1);
+                    0 === e.length && delete L[i]
+                }
+                if (i = Q._first, (!i || i._paused) && D.autoSleep && !G._first && 1 === n._listeners.tick.length) {
+                    for (; i && i._paused;) i = i._next;
+                    i || n.sleep()
+                }
+            }
+        }, n.addEventListener("tick", x._updateRoot);
+        var B = function (t, e, i) {
+                var s, r, n = t._gsTweenID;
+                if (L[n || (t._gsTweenID = n = "t" + U++)] || (L[n] = {
+                    target: t,
+                    tweens: []
+                }), e && (s = L[n].tweens, s[r = s.length] = e, i))
+                    for (; --r > -1;) s[r] === e && s.splice(r, 1);
+                return L[n].tweens
+            },
+            q = function (t, e, i, s, r) {
+                var n, a, o, l;
+                if (1 === s || s >= 4) {
+                    for (l = r.length, n = 0; l > n; n++)
+                        if ((o = r[n]) !== e) o._gc || o._enabled(!1, !1) && (a = !0);
+                        else if (5 === s) break;
+                    return a
+                }
+                var _, u = e._startTime + h,
+                    m = [],
+                    f = 0,
+                    p = 0 === e._duration;
+                for (n = r.length; --n > -1;)(o = r[n]) === e || o._gc || o._paused || (o._timeline !== e._timeline ? (_ = _ || $(e, 0, p), 0 === $(o, _, p) && (m[f++] = o)) : u >= o._startTime && o._startTime + o.totalDuration() / o._timeScale + h > u && ((p || !o._initted) && 2e-10 >= u - o._startTime || (m[f++] = o)));
+                for (n = f; --n > -1;) o = m[n], 2 === s && o._kill(i, t) && (a = !0), (2 !== s || !o._firstPT && o._initted) && o._enabled(!1, !1) && (a = !0);
+                return a
+            },
+            $ = function (t, e, i) {
+                for (var s = t._timeline, r = s._timeScale, n = t._startTime; s._timeline;) {
+                    if (n += s._startTime, r *= s._timeScale, s._paused) return -100;
+                    s = s._timeline
+                }
+                return n /= r, n > e ? n - e : i && n === e || !t._initted && 2 * h > n - e ? h : (n += t.totalDuration() / t._timeScale / r) > e + h ? 0 : n - e - h
+            };
+        r._init = function () {
+            var t, e, i, s, r = this.vars,
+                n = this._overwrittenProps,
+                a = this._duration,
+                o = r.immediateRender,
+                l = r.ease;
+            if (r.startAt) {
+                if (this._startAt && this._startAt.render(-1, !0), r.startAt.overwrite = 0, r.startAt.immediateRender = !0, this._startAt = D.to(this.target, 0, r.startAt), o)
+                    if (this._time > 0) this._startAt = null;
+                    else if (0 !== a) return
+            } else if (r.runBackwards && 0 !== a)
+                if (this._startAt) this._startAt.render(-1, !0), this._startAt = null;
+                else {
+                    i = {};
+                    for (s in r) F[s] && "autoCSS" !== s || (i[s] = r[s]);
+                    if (i.overwrite = 0, i.data = "isFromStart", this._startAt = D.to(this.target, 0, i), r.immediateRender) {
+                        if (0 === this._time) return
+                    } else this._startAt.render(-1, !0)
+                }
+            if (this._ease = l ? l instanceof T ? r.easeParams instanceof Array ? l.config.apply(l, r.easeParams) : l : "function" == typeof l ? new T(l, r.easeParams) : w[l] || D.defaultEase : D.defaultEase, this._easeType = this._ease._type, this._easePower = this._ease._power, this._firstPT = null, this._targets)
+                for (t = this._targets.length; --t > -1;) this._initProps(this._targets[t], this._propLookup[t] = {}, this._siblings[t], n ? n[t] : null) && (e = !0);
+            else e = this._initProps(this.target, this._propLookup, this._siblings, n); if (e && D._onPluginEvent("_onInitAllProps", this), n && (this._firstPT || "function" != typeof this.target && this._enabled(!1, !1)), r.runBackwards)
+                for (i = this._firstPT; i;) i.s += i.c, i.c = -i.c, i = i._next;
+            this._onUpdate = r.onUpdate, this._initted = !0
+        }, r._initProps = function (e, i, s, r) {
+            var n, a, o, l, h, _;
+            if (null == e) return !1;
+            this.vars.css || e.style && e !== t && e.nodeType && N.css && this.vars.autoCSS !== !1 && I(this.vars, e);
+            for (n in this.vars) {
+                if (_ = this.vars[n], F[n]) _ && (_ instanceof Array || _.push && m(_)) && -1 !== _.join("").indexOf("{self}") && (this.vars[n] = _ = this._swapSelfInParams(_, this));
+                else if (N[n] && (l = new N[n])._onInitTween(e, this.vars[n], this)) {
+                    for (this._firstPT = h = {
+                        _next: this._firstPT,
+                        t: l,
+                        p: "setRatio",
+                        s: 0,
+                        c: 1,
+                        f: !0,
+                        n: n,
+                        pg: !0,
+                        pr: l._priority
+                    }, a = l._overwriteProps.length; --a > -1;) i[l._overwriteProps[a]] = this._firstPT;
+                    (l._priority || l._onInitAllProps) && (o = !0), (l._onDisable || l._onEnable) && (this._notifyPluginsOfEnabled = !0)
+                } else this._firstPT = i[n] = h = {
+                    _next: this._firstPT,
+                    t: e,
+                    p: n,
+                    f: "function" == typeof e[n],
+                    n: n,
+                    pg: !1,
+                    pr: 0
+                }, h.s = h.f ? e[n.indexOf("set") || "function" != typeof e["get" + n.substr(3)] ? n : "get" + n.substr(3)]() : parseFloat(e[n]), h.c = "string" == typeof _ && "=" === _.charAt(1) ? parseInt(_.charAt(0) + "1", 10) * Number(_.substr(2)) : Number(_) - h.s || 0;
+                h && h._next && (h._next._prev = h)
+            }
+            return r && this._kill(r, e) ? this._initProps(e, i, s, r) : this._overwrite > 1 && this._firstPT && s.length > 1 && q(e, this, i, this._overwrite, s) ? (this._kill(i, e), this._initProps(e, i, s, r)) : o
+        }, r.render = function (t, e, i) {
+            var s, r, n, a, o = this._time,
+                l = this._duration;
+            if (t >= l) this._totalTime = this._time = l, this.ratio = this._ease._calcEnd ? this._ease.getRatio(1) : 1, this._reversed || (s = !0, r = "onComplete"), 0 === l && (a = this._rawPrevTime, (0 === t || 0 > a || a === h) && a !== t && (i = !0, a > h && (r = "onReverseComplete")), this._rawPrevTime = a = !e || t ? t : h);
+            else if (1e-7 > t) this._totalTime = this._time = 0, this.ratio = this._ease._calcEnd ? this._ease.getRatio(0) : 0, (0 !== o || 0 === l && this._rawPrevTime > h) && (r = "onReverseComplete", s = this._reversed), 0 > t ? (this._active = !1, 0 === l && (this._rawPrevTime >= 0 && (i = !0), this._rawPrevTime = a = !e || t ? t : h)) : this._initted || (i = !0);
+            else if (this._totalTime = this._time = t, this._easeType) {
+                var _ = t / l,
+                    u = this._easeType,
+                    m = this._easePower;
+                (1 === u || 3 === u && _ >= .5) && (_ = 1 - _), 3 === u && (_ *= 2), 1 === m ? _ *= _ : 2 === m ? _ *= _ * _ : 3 === m ? _ *= _ * _ * _ : 4 === m && (_ *= _ * _ * _ * _), this.ratio = 1 === u ? 1 - _ : 2 === u ? _ : .5 > t / l ? _ / 2 : 1 - _ / 2
+            } else this.ratio = this._ease.getRatio(t / l); if (this._time !== o || i) {
+                if (!this._initted) {
+                    if (this._init(), !this._initted || this._gc) return;
+                    this._time && !s ? this.ratio = this._ease.getRatio(this._time / l) : s && this._ease._calcEnd && (this.ratio = this._ease.getRatio(0 === this._time ? 0 : 1))
+                }
+                for (this._active || !this._paused && this._time !== o && t >= 0 && (this._active = !0), 0 === o && (this._startAt && (t >= 0 ? this._startAt.render(t, e, i) : r || (r = "_dummyGS")), this.vars.onStart && (0 !== this._time || 0 === l) && (e || this.vars.onStart.apply(this.vars.onStartScope || this, this.vars.onStartParams || g))), n = this._firstPT; n;) n.f ? n.t[n.p](n.c * this.ratio + n.s) : n.t[n.p] = n.c * this.ratio + n.s, n = n._next;
+                this._onUpdate && (0 > t && this._startAt && this._startTime && this._startAt.render(t, e, i), e || i && 0 === this._time && 0 === o || this._onUpdate.apply(this.vars.onUpdateScope || this, this.vars.onUpdateParams || g)), r && (this._gc || (0 > t && this._startAt && !this._onUpdate && this._startTime && this._startAt.render(t, e, i), s && (this._timeline.autoRemoveChildren && this._enabled(!1, !1), this._active = !1), !e && this.vars[r] && this.vars[r].apply(this.vars[r + "Scope"] || this, this.vars[r + "Params"] || g), 0 === l && this._rawPrevTime === h && a !== h && (this._rawPrevTime = 0)))
+            }
+        }, r._kill = function (t, e) {
+            if ("all" === t && (t = null), null == t && (null == e || e === this.target)) return this._enabled(!1, !1);
+            e = "string" != typeof e ? e || this._targets || this.target : D.selector(e) || e;
+            var i, s, r, n, a, o, l, h;
+            if ((m(e) || E(e)) && "number" != typeof e[0])
+                for (i = e.length; --i > -1;) this._kill(t, e[i]) && (o = !0);
+            else {
+                if (this._targets) {
+                    for (i = this._targets.length; --i > -1;)
+                        if (e === this._targets[i]) {
+                            a = this._propLookup[i] || {}, this._overwrittenProps = this._overwrittenProps || [], s = this._overwrittenProps[i] = t ? this._overwrittenProps[i] || {} : "all";
+                            break
+                        }
+                } else {
+                    if (e !== this.target) return !1;
+                    a = this._propLookup, s = this._overwrittenProps = t ? this._overwrittenProps || {} : "all"
+                } if (a) {
+                    l = t || a, h = t !== s && "all" !== s && t !== a && ("object" != typeof t || !t._tempKill);
+                    for (r in l)(n = a[r]) && (n.pg && n.t._kill(l) && (o = !0), n.pg && 0 !== n.t._overwriteProps.length || (n._prev ? n._prev._next = n._next : n === this._firstPT && (this._firstPT = n._next), n._next && (n._next._prev = n._prev), n._next = n._prev = null), delete a[r]), h && (s[r] = 1);
+                    !this._firstPT && this._initted && this._enabled(!1, !1)
+                }
+            }
+            return o
+        }, r.invalidate = function () {
+            return this._notifyPluginsOfEnabled && D._onPluginEvent("_onDisable", this), this._firstPT = null, this._overwrittenProps = null, this._onUpdate = null, this._startAt = null, this._initted = this._active = this._notifyPluginsOfEnabled = !1, this._propLookup = this._targets ? {} : [], this
+        }, r._enabled = function (t, e) {
+            if (a || n.wake(), t && this._gc) {
+                var i, s = this._targets;
+                if (s)
+                    for (i = s.length; --i > -1;) this._siblings[i] = B(s[i], this, !0);
+                else this._siblings = B(this.target, this, !0)
+            }
+            return x.prototype._enabled.call(this, t, e), this._notifyPluginsOfEnabled && this._firstPT ? D._onPluginEvent(t ? "_onEnable" : "_onDisable", this) : !1
+        }, D.to = function (t, e, i) {
+            return new D(t, e, i)
+        }, D.from = function (t, e, i) {
+            return i.runBackwards = !0, i.immediateRender = 0 != i.immediateRender, new D(t, e, i)
+        }, D.fromTo = function (t, e, i, s) {
+            return s.startAt = i, s.immediateRender = 0 != s.immediateRender && 0 != i.immediateRender, new D(t, e, s)
+        }, D.delayedCall = function (t, e, i, s, r) {
+            return new D(e, 0, {
+                delay: t,
+                onComplete: e,
+                onCompleteParams: i,
+                onCompleteScope: s,
+                onReverseComplete: e,
+                onReverseCompleteParams: i,
+                onReverseCompleteScope: s,
+                immediateRender: !1,
+                useFrames: r,
+                overwrite: 0
+            })
+        }, D.set = function (t, e) {
+            return new D(t, 0, e)
+        }, D.getTweensOf = function (t, e) {
+            if (null == t) return [];
+            t = "string" != typeof t ? t : D.selector(t) || t;
+            var i, s, r, n;
+            if ((m(t) || E(t)) && "number" != typeof t[0]) {
+                for (i = t.length, s = []; --i > -1;) s = s.concat(D.getTweensOf(t[i], e));
+                for (i = s.length; --i > -1;)
+                    for (n = s[i], r = i; --r > -1;) n === s[r] && s.splice(i, 1)
+            } else
+                for (s = B(t).concat(), i = s.length; --i > -1;)(s[i]._gc || e && !s[i].isActive()) && s.splice(i, 1);
+            return s
+        }, D.killTweensOf = D.killDelayedCallsTo = function (t, e, i) {
+            "object" == typeof e && (i = e, e = !1);
+            for (var s = D.getTweensOf(t, e), r = s.length; --r > -1;) s[r]._kill(i, t)
+        };
+        var M = d("plugins.TweenPlugin", function (t, e) {
+            this._overwriteProps = (t || "").split(","), this._propName = this._overwriteProps[0], this._priority = e || 0, this._super = M.prototype
+        }, !0);
+        if (r = M.prototype, M.version = "1.10.1", M.API = 2, r._firstPT = null, r._addTween = function (t, e, i, s, r, n) {
+            var a, o;
+            return null != s && (a = "number" == typeof s || "=" !== s.charAt(1) ? Number(s) - i : parseInt(s.charAt(0) + "1", 10) * Number(s.substr(2))) ? (this._firstPT = o = {
+                _next: this._firstPT,
+                t: t,
+                p: e,
+                s: i,
+                c: a,
+                f: "function" == typeof t[e],
+                n: r || e,
+                r: n
+            }, o._next && (o._next._prev = o), o) : void 0
+        }, r.setRatio = function (t) {
+            for (var e, i = this._firstPT, s = 1e-6; i;) e = i.c * t + i.s, i.r ? e = 0 | e + (e > 0 ? .5 : -.5) : s > e && e > -s && (e = 0), i.f ? i.t[i.p](e) : i.t[i.p] = e, i = i._next
+        }, r._kill = function (t) {
+            var e, i = this._overwriteProps,
+                s = this._firstPT;
+            if (null != t[this._propName]) this._overwriteProps = [];
+            else
+                for (e = i.length; --e > -1;) null != t[i[e]] && i.splice(e, 1);
+            for (; s;) null != t[s.n] && (s._next && (s._next._prev = s._prev), s._prev ? (s._prev._next = s._next, s._prev = null) : this._firstPT === s && (this._firstPT = s._next)), s = s._next;
+            return !1
+        }, r._roundProps = function (t, e) {
+            for (var i = this._firstPT; i;)(t[this._propName] || null != i.n && t[i.n.split(this._propName + "_").join("")]) && (i.r = e), i = i._next
+        }, D._onPluginEvent = function (t, e) {
+            var i, s, r, n, a, o = e._firstPT;
+            if ("_onInitAllProps" === t) {
+                for (; o;) {
+                    for (a = o._next, s = r; s && s.pr > o.pr;) s = s._next;
+                    (o._prev = s ? s._prev : n) ? o._prev._next = o : r = o, (o._next = s) ? s._prev = o : n = o, o = a
+                }
+                o = e._firstPT = r
+            }
+            for (; o;) o.pg && "function" == typeof o.t[t] && o.t[t]() && (i = !0), o = o._next;
+            return i
+        }, M.activate = function (t) {
+            for (var e = t.length; --e > -1;) t[e].API === M.API && (N[(new t[e])._propName] = t[e]);
+            return !0
+        }, c.plugin = function (t) {
+            if (!(t && t.propName && t.init && t.API)) throw "illegal plugin definition.";
+            var e, i = t.propName,
+                s = t.priority || 0,
+                r = t.overwriteProps,
+                n = {
+                    init: "_onInitTween",
+                    set: "setRatio",
+                    kill: "_kill",
+                    round: "_roundProps",
+                    initAll: "_onInitAllProps"
+                },
+                a = d("plugins." + i.charAt(0).toUpperCase() + i.substr(1) + "Plugin", function () {
+                    M.call(this, i, s), this._overwriteProps = r || []
+                }, t.global === !0),
+                o = a.prototype = new M(i);
+            o.constructor = a, a.API = t.API;
+            for (e in n) "function" == typeof t[e] && (o[n[e]] = t[e]);
+            return a.version = t.version, M.activate([a]), a
+        }, i = t._gsQueue) {
+            for (s = 0; i.length > s; s++) i[s]();
+            for (r in f) f[r].func || t.console.log("GSAP encountered missing dependency: com.greensock." + r)
+        }
+        a = !1
+    }
+})(window);
+
+function Sprite(key) {
+    this.z = 0;
+    this.x = 0;
+    this.y = 0;
+    this.image = AssetsLoader.assets[key].data;
+    this.angle = 0;
+    this.scaleX = 1;
+    this.scaleY = 1;
+    this.width = this.image.width;
+    this.height = this.image.height;
+    this.alpha = 1;
+    this.mouseOver = false;
+    this.mouseDown = false;
+    this.mouseEnabled = false;
+    this.onDown = null;
+    this.onClick = null;
+    this.onMouseOver = null;
+    this.onMouseOut = null;
+    this.totalFrames = AssetsLoader.assets[key].type == "image" ? 1 : AssetsLoader.assets[key].info.frames;
+    this.playing = true;
+    this.currentFrame = 1;
+    this.visible = true;
+    if (this.totalFrames > 0) {
+        this.frameStep = this.width / this.totalFrames;
+        this.width = this.frameStep
+    }
+    this.stop = function () {
+        this.playing = false
+    };
+    this.play = function () {
+        this.playing = true
+    };
+    this.gotoAndStop = function (frame) {
+        this.playing = false;
+        this.currentFrame = frame
+    };
+    this.gotoAndPlay = function (frame) {
+        this.playing = true;
+        this.currentFrame = frame
+    };
+    this.render = function (context) {
+        if (this.visible) {
+            context.save();
+            context.translate(this.x, this.y);
+            context.rotate(this.angle);
+            if (this.scaleX != 1 || this.scaleY != 1) context.scale(this.scaleX, this.scaleY);
+            context.translate(-this.width * .5, -this.height * .5);
+            context.globalAlpha = this.alpha;
+            if (this.totalFrames > 1) context.drawImage(this.image, (this.currentFrame - 1) * this.frameStep, 0, this.frameStep, this.height, 0, 0, this.frameStep, this.height);
+            else context.drawImage(this.image, 0, 0);
+            context.restore()
+        }
+        if (this.playing) {
+            if (this.currentFrame == this.totalFrames) this.currentFrame = 1;
+            else this.currentFrame++
+        }
+    };
+    this.hitTest = function (sprite) {
+        var aabb1 = this.getAABB();
+        var aabb2 = sprite.getAABB();
+        var max1 = {
+            x: aabb1.x + aabb1.width,
+            y: aabb1.y + aabb1.height
+        };
+        var min1 = {
+            x: aabb1.x - aabb1.width,
+            y: aabb1.y - aabb1.height
+        };
+        var max2 = {
+            x: aabb2.x + aabb2.width,
+            y: aabb2.y + aabb2.height
+        };
+        var min2 = {
+            x: aabb2.x - aabb2.width,
+            y: aabb2.y - aabb2.height
+        };
+        if (max1.x < min2.x || max1.y < min2.y || min1.x > max2.x || min1.y > max2.y) {
+            return false
+        }
+        return true
+    };
+    this.getAABB = function () {
+        var aabb = {};
+        var cos = Math.abs(Math.cos(this.angle));
+        var sin = Math.abs(Math.sin(this.angle));
+        var aabbWidth = (this.height * sin + this.width * cos) * .5 * this.scaleX;
+        var aabbHeight = (this.height * cos + this.width * sin) * .5 * this.scaleY;
+        aabb.width = aabbWidth;
+        aabb.height = aabbHeight;
+        aabb.x = this.x;
+        aabb.y = this.y;
+        return aabb
+    };
+    this.checkMouse = function (mouseX, mouseY) {
+        var aabb = this.getAABB();
+        var aabbWidth = aabb.width;
+        var aabbHeight = aabb.height;
+        if (mouseX > this.x - aabbWidth && mouseX < this.x + aabbWidth && mouseY > this.y - aabbHeight && mouseY < this.y + aabbHeight) {
+            return true
+        }
+        return false
+    };
+    this.loseFocus = function () {
+        this.mouseOver = false;
+        this.mouseDown = false;
+        if (this.onMouseOut) this.onMouseOut()
+    };
+    this.interactMouse = function (type) {
+        if (!this.mouseOver && type != "release") {
+            this.mouseOver = true;
+            if (this.onMouseOver) this.onMouseOver()
+        }
+        if (type == "release") {
+            if (this.mouseDown && this.onClick) this.onClick();
+            this.loseFocus()
+        }
+        if (!this.mouseDown && type == "push") {
+            if (this.onDown) this.onDown();
+            this.mouseDown = true
+        }
+    }
+}
+
+function TextField(font, x, y, text) {
+    this.x = x ? x : 0;
+    this.y = y ? y : 0;
+    this.text = text;
+    this.charsList = AssetsLoader.assets[font].info.chars;
+    this.bitmap = AssetsLoader.assets[font].data;
+    this.height = this.bitmap.height;
+    this.charStep = this.bitmap.width / this.charsList.length;
+    this.mouseEnabled = false;
+    this.visible = true;
+    this.alpha = 1;
+    this.render = function (context) {
+        if (!this.visible) return;
+        var textLen = this.text.length;
+        var currentChar;
+        var sheetIndex;
+        context.save();
+        context.globalAlpha = this.alpha;
+        for (var i = 0; i < textLen; i++) {
+            currentChar = this.text.charAt(i);
+            sheetIndex = this.charsList.indexOf(currentChar);
+            context.drawImage(this.bitmap, sheetIndex * this.charStep, 0, this.charStep, this.height, this.x + i * this.charStep * .8, this.y, this.charStep, this.height)
+        }
+        context.restore()
+    }
+}
+
+function Layer(id, width, height) {
+    this.canvasHolder = document.createElement("div");
+    this.canvasHolder.setAttribute("id", "canvasHolder");
+    this.canvasHolder.style.width = width + "px";
+    this.canvasHolder.style.height = height + "px";
+    this.canvasHolder.style.position = "absolute";
+    this.canvas = document.createElement("canvas");
+    this.canvas.id = id;
+    this.canvas.width = width;
+    this.canvas.height = height;
+    this.canvas.style.position = "absolute";
+    this.context = this.canvas.getContext("2d");
+    this.width = width;
+    this.height = height;
+    document.body.appendChild(this.canvasHolder);
+    this.canvasHolder.appendChild(this.canvas);
+    this.children = [];
+    this.numChildren = 0;
+    this.addChild = function (child) {
+        if (this.children.indexOf(child) == -1) {
+            this.numChildren++;
+            child.z = this.numChildren;
+            this.children.push(child)
+        } else {
+            alert("ERROR: Already have this object in the displaylist")
+        }
+    };
+    this.addChildAt = function (child, index) {
+        var firstCut = this.children.splice(0, index);
+        firstCut.push(child);
+        var secondCut = this.children;
+        firstCut.concat(secondCut);
+        this.children = firstCut;
+        this.numChildren++
+    };
+    this.removeChild = function (child) {
+        if (this.children.indexOf(child) > -1) {
+            this.numChildren--;
+            this.children.splice(this.children.indexOf(child), 1)
+        } else {
+            alert("ERROR: Can't remove because we don't have it in the displaylist")
+        }
+    };
+    this.draw = function () {
+        this.context.restore();
+        this.context.clearRect(0, 0, this.width, this.height);
+        for (var i = 0; i < this.numChildren; i++) {
+            this.children[i].render(this.context)
+        }
+    };
+    this.globalMouseX = 0;
+    this.globalMouseY = 0;
+    this.scale = 1;
+    this.handleMouse = function (e, type) {
+        var useGlobal = type == "release";
+        var mouseX = useGlobal ? this.globalMouseX : e.pageX;
+        var mouseY = useGlobal ? this.globalMouseY : e.pageY;
+        if (e.touches) {
+            mouseX = useGlobal ? this.globalMouseX : e.touches[0].pageX;
+            mouseY = useGlobal ? this.globalMouseY : e.touches[0].pageY
+        }
+        if (!useGlobal) {
+            mouseX -= this.canvasHolder.offsetLeft;
+            mouseY -= this.canvasHolder.offsetTop;
+            mouseX *= this.scale;
+            mouseY *= this.scale
+        }
+        this.globalMouseX = mouseX;
+        this.globalMouseY = mouseY;
+        var currSprite;
+        var underMouse = [];
+        for (var i = 0; i < this.numChildren; i++) {
+            currSprite = this.children[i];
+            if (!currSprite.mouseEnabled || !currSprite.visible) continue;
+            if (currSprite.checkMouse(mouseX, mouseY)) {
+                underMouse.push(currSprite)
+            } else if (currSprite.mouseOver) {
+                currSprite.loseFocus()
+            }
+        }
+        if (underMouse.length > 0) {
+            underMouse = underMouse.sort(function (obj1, obj2) {
+                return obj1.z < obj2.z
+            });
+            underMouse[0].interactMouse(type);
+            underMouse.splice(0, 1);
+            while (underMouse.length > 0) {
+                if (underMouse[0].mouseOver) underMouse[0].loseFocus();
+                underMouse.splice(0, 1)
+            }
+        }
+        underMouse = null
+    }
+}
+
+function FPSCounter() {
+    this.fps = 0;
+    this.timer = 0;
+    this.prev_timer = 0;
+    this.lastFps = 0;
+    this.update = function (context) {
+        this.timer = Date.now();
+        if (this.timer - 1e3 > this.prev_timer) {
+            this.prev_timer = this.timer;
+            this.lastFps = this.fps;
+            this.fps = 0
+        }
+        context.font = "bold 20pt Arial";
+        context.fillStyle = "#ff0000";
+        context.fillText("FPS:" + this.lastFps, 0, 22);
+        context.fillStyle = "black";
+        this.fps++
+    }
+}
+
+function AssetsLoader(paths, progress, finished) {
+    AssetsLoader.assets = {};
+    this.paths = paths;
+    AssetsLoader.prototype.progress = progress;
+    AssetsLoader.prototype.finished = finished;
+    AssetsLoader.totalAssets = paths.length;
+    AssetsLoader.loaded = 0
+}
+AssetsLoader.prototype.load = function () {
+    var manifest = [];
+    var soundEnabled = createjs.Sound.initializeDefaultPlugins();
+    createjs.Sound.alternateExtensions = ["ogg"];
+    for (var i = 0; i < this.paths.length; i++) {
+        var type = this.paths[i].type;
+        var name = this.paths[i].name;
+        var src = this.paths[i].src;
+        if (type != "sound") {
+            var img = new Image;
+            img.src = src;
+            img.onload = assetLoaded;
+            img.onerror = function () {
+                alert("Unable to load assets. Check your Internet connection or try to refresh the page.")
+            };
+            AssetsLoader.assets[name] = {};
+            AssetsLoader.assets[name].data = img;
+            AssetsLoader.assets[name].type = type;
+            if (type == "spritesheet") {
+                AssetsLoader.assets[name].info = this.paths[i].info
+            }
+        } else {
+            if (soundEnabled) {
+                manifest.push({
+                    id: name,
+                    src: src
+                })
+            } else {
+                assetLoaded()
+            }
+        }
+    }
+    createjs.Sound.addEventListener("fileload", assetLoaded);
+    createjs.Sound.registerManifest(manifest, "assets/sounds/");
+
+    function assetLoaded() {
+        AssetsLoader.loaded++;
+        AssetsLoader.prototype.progress(AssetsLoader.loaded, AssetsLoader.totalAssets);
+        if (AssetsLoader.loaded == AssetsLoader.totalAssets) {
+            AssetsLoader.prototype.finished()
+        }
+    }
+};
+var preloader = document.createElement("div");
+preloader.style.background = "url('assets/preloader.gif') no-repeat 50% 50%";
+preloader.style.position = "absolute";
+preloader.style.width = "100%";
+preloader.style.height = "80px";
+preloader.style.marginTop = "180px";
+preloader.style.textAlign = "center";
+document.body.appendChild(preloader);
+var preloaderText = document.createElement("div");
+preloaderText.innerHTML = "LOADING";
+preloaderText.style.position = "absolute";
+preloaderText.style.font = "bold 20pt Arial";
+preloaderText.style.color = "black";
+preloaderText.style.textAlign = "center";
+preloaderText.style.width = "100%";
+preloaderText.style.marginTop = "260px";
+document.body.appendChild(preloaderText);
+var splashLogo = document.createElement("div");
+splashLogo.style.background = "url('assets/sponsor.png') no-repeat 50% 50%";
+splashLogo.style.position = "absolute";
+splashLogo.style.width = "100%";
+splashLogo.style.height = "150px";
+splashLogo.style.marginTop = "50px";
+splashLogo.addEventListener("click", function () {
+    //window.open("http://m.softgames.de")
+    SG.redirectToPortal();
+});
+splashLogo.addEventListener("touchstart", function () {
+    //window.open("http://m.softgames.de")
+    SG.redirectToPortal();
+});
+var rotateDevice = document.createElement("div");
+rotateDevice.style.background = "url('assets/rotate.png') no-repeat 50% 50%";
+rotateDevice.style.position = "absolute";
+rotateDevice.style.width = "100%";
+rotateDevice.style.height = "100%";
+rotateDevice.style.zIndex = 100;
+document.body.appendChild(rotateDevice);
+var WIDTH = 640;
+var HEIGHT = 720;
+onProgress = function (curr, total) {
+    console.log("Loaded asset " + curr + " of " + total);
+    preloaderText.innerHTML = Math.round(curr / total * 100) + "%"
+};
+var lang;
+var assetsLoader;
+var SPIL_API;
+document.body.onload = function () {
+    console.log("preloader gif loaded, lets load stuff");
+    lang = SG_Hooks.getLanguage(["en", "es", "de", "fr", "it", "pt", "ru", "tr"]);
+    assetsLoader = new AssetsLoader([{
+        src: "assets/bg1.png",
+        name: "Bg1",
+        type: "image"
+    }, {
+        src: "assets/bg2.png",
+        name: "Bg2",
+        type: "image"
+    }, {
+        src: "assets/baker.png",
+        name: "Baker",
+        type: "image"
+    }, {
+        src: "assets/logo.png",
+        name: "Logo",
+        type: "image"
+    }, {
+        src: "assets/play_button.png",
+        name: "PlayButton",
+        type: "spritesheet",
+        info: {
+            frames: 2
+        }
+    }, {
+        src: "assets/table.png",
+        name: "Table",
+        type: "image"
+    }, {
+        src: "assets/arm.png",
+        name: "Arm",
+        type: "image"
+    }, {
+        src: "assets/cake.png",
+        name: "Cake",
+        type: "spritesheet",
+        info: {
+            frames: 11
+        }
+    }, {
+        src: "assets/clouds.png",
+        name: "Clouds",
+        type: "spritesheet",
+        info: {
+            frames: 6
+        }
+    }, {
+        src: "assets/font.png",
+        name: "GameFont",
+        type: "spritesheet",
+        info: {
+            chars: "0123456789:"
+        }
+    }, {
+        src: "assets/clock.png",
+        name: "Clock",
+        type: "image"
+    }, {
+        src: "assets/gameover_" + lang + ".png",
+        name: "GameOver",
+        type: "image"
+    }, {
+        src: "assets/timeup_" + lang + ".png",
+        name: "TimeUp",
+        type: "image"
+    }, {
+        src: "assets/plate.png",
+        name: "Plate",
+        type: "image"
+    }, {
+        src: "assets/pause_button.png",
+        name: "PauseButton",
+        type: "spritesheet",
+        info: {
+            frames: 2
+        }
+    }, {
+        src: "assets/exit_button.png",
+        name: "ExitButton",
+        type: "spritesheet",
+        info: {
+            frames: 2
+        }
+    }, {
+        src: "assets/restart_button.png",
+        name: "RestartButton",
+        type: "spritesheet",
+        info: {
+            frames: 2
+        }
+    }, {
+        src: "assets/more_button_" + lang + ".png",
+        name: "MoreButton",
+        type: "spritesheet",
+        info: {
+            frames: 2
+        }
+    }, {
+        src: "assets/sponsor.png",
+        name: "SponsorButton",
+        type: "image"
+    }, {
+        src: "assets/sound_button.png",
+        name: "SoundButton",
+        type: "spritesheet",
+        info: {
+            frames: 4
+        }
+    }, /*{
+        src: "assets/about_button.png",
+        name: "AboutButton",
+        type: "spritesheet",
+        info: {
+            frames: 4
+        }
+    },*/ {
+        src: "assets/cake_bonus.png",
+        name: "CakeBonus",
+        type: "spritesheet",
+        info: {
+            frames: 4
+        }
+    }, {
+        src: "assets/shouts_" + lang + ".png",
+        name: "Shouts",
+        type: "spritesheet",
+        info: {
+            frames: 5
+        }
+    }, {
+        src: "assets/about_screen.png",
+        name: "AboutScreen",
+        type: "image"
+    }, {
+        src: "assets/tutorial_" + lang + ".png",
+        name: "Tutorial",
+        type: "image"
+    }, {
+        name: "Click",
+        src: "click.mp3",
+        type: "sound"
+    }, {
+        name: "Window",
+        src: "window.mp3",
+        type: "sound"
+    }, {
+        name: "Clock",
+        src: "clock.mp3",
+        type: "sound"
+    }, {
+        name: "ClockRing",
+        src: "clock_ring.mp3",
+        type: "sound"
+    }, {
+        name: "Bonus",
+        src: "bonus.mp3",
+        type: "sound"
+    }, {
+        name: "Drop1",
+        src: "cake_down_new1.mp3",
+        type: "sound"
+    }, {
+        name: "Drop2",
+        src: "cake_down_new2.mp3",
+        type: "sound"
+    }, {
+        name: "Drop3",
+        src: "cake_down_new3.mp3",
+        type: "sound"
+    }, {
+        name: "Nature",
+        src: "nature_sound.mp3",
+        type: "sound"
+    }, {
+        name: "Miss",
+        src: "miss.mp3",
+        type: "sound"
+    }], onProgress, ready);
+    assetsLoader.load()
+};
+
+function onAPILoaded(API) {
+    console.log("api loaded")
+}
+document.body.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+    return false
+});
+document.body.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    return false
+});
+document.body.addEventListener("selectstart", function (e) {
+    e.preventDefault();
+    return false
+});
+document.body.addEventListener("dragstart", function (e) {
+    e.preventDefault();
+    return false
+});
+document.body.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    return false
+});
+var gameLayer = new Layer("stage", WIDTH, HEIGHT);
+var landscape = Math.abs(window.orientation) == 90;
+var showSplash = true;
+rotateDevice.style.display = "none";
+gameLayer.canvasHolder.style.display = "block";
+
+function resizeGame() {
+    landscape = Math.abs(window.orientation) == 90;
+    if (!showSplash) {
+        if (landscape) {
+            rotateDevice.style.display = "block";
+            gameLayer.canvasHolder.style.display = "none"
+        } else {
+            rotateDevice.style.display = "none";
+            gameLayer.canvasHolder.style.display = "block"
+        }
+    }
+    window.scrollTo(0, 1);
+    resize(gameLayer)
+}
+var touch = "ontouchstart" in window;
+
+function resize(layer) {
+    var ratio = WIDTH / HEIGHT;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
+    if (newWidth > newHeight) {
+        layer.canvas.style.height = newHeight + "px";
+        layer.canvasHolder.style.height = newHeight + "px";
+        newWidth = newHeight * ratio;
+        layer.canvas.style.width = newWidth + "px";
+        layer.canvasHolder.style.width = newWidth + "px";
+        layer.scale = WIDTH / (newHeight * ratio)
+    } else {
+        newHeight = newWidth / ratio;
+        layer.canvas.style.height = newHeight + "px";
+        layer.canvasHolder.style.height = newHeight + "px";
+        layer.canvas.style.width = newWidth + "px";
+        layer.canvasHolder.style.width = newWidth + "px";
+        layer.scale = WIDTH / newWidth
+    }
+    layer.canvasHolder.style.left = window.innerWidth * .5 - newWidth * .5 + "px";
+    layer.canvasHolder.style.top = window.innerHeight * .5 - newHeight * .5 + "px"
+}
+window.addEventListener("resize", resizeGame, false);
+window.addEventListener("orientationchange", resizeGame, false);
+SG_Hooks.setOrientationHandler(resizeGame);
+SG_Hooks.setResizeHandler(resizeGame);
+resizeGame();
+var fps = new FPSCounter;
+var bg1, bg2, logo, table, baker, play_button, arm, timeField, scoreField, pause_button, clock, exit_button, restart_button, time_up, game_over, /*about_button,*/ about_screen, sound_button, plate, tutorial, bestField, sponsorLogo, more_button, bestHeightField;
+var dir = 1;
+var speed = 5;
+var cakeAmount = 6;
+var cakesToDrop = [];
+var cakes = [];
+var falling = [];
+var lastCakeY = 630;
+var cakeSize = 80;
+var dropping = false;
+var dropSpeed = 0;
+var totalHeight = 0;
+var scrollTime = 0;
+var scrollSpeed = 0;
+var playing = false;
+var clouds = [];
+var timeLeft = 60;
+var dt = 60;
+var score = 0;
+var gameOver = false;
+var tweeningScore = 0;
+var bonusTime = 0;
+var bonus;
+var gotBonus = false;
+var angle = 0;
+var showTutorial = true;
+var currentDropSound = 1;
+var availableCakes = 5;
+var soundEnabled = true;
+var clockSound;
+var nature_sound;
+var soundSupported = createjs.Sound.initializeDefaultPlugins();
+
+function isLocalStorageAvailable() {
+    try {
+        return "localStorage" in window && window["localStorage"] !== null
+    } catch (e) {
+        return false
+    }
+}
+var bestScore = localStorage.getItem("bestscore1") == null ? "0" : localStorage.getItem("bestscore1");
+var bestHeight = localStorage.getItem("bestheight1") == null ? "0" : localStorage.getItem("bestheight1");
+if (bestScore == "0" || bestHeight == "0") {
+    saveScore(0, 0)
+} else {
+    console.log("savedata loaded")
+}
+
+function saveScore(s, h) {
+    try {
+        localStorage.setItem("bestscore1", "" + s);
+        localStorage.setItem("bestheight1", "" + h)
+    } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+            alert("Can't save game data, local storage is full.")
+        }
+    }
+}
+
+function loopNature() {
+    nature_sound.setPosition(0);
+    nature_sound.play()
+}
+document.body.appendChild(splashLogo);
+
+function ready() {
+    if (showSplash) {
+        document.body.removeChild(preloaderText);
+        document.body.removeChild(preloader);
+        splashLogo.style.marginTop = "0px";
+        splashLogo.style.height = "100%";
+        showSplash = false;
+        setTimeout(ready, 1e3);
+        return
+    }
+    document.body.removeChild(splashLogo);
+    if (soundSupported) {
+        nature_sound = createjs.Sound.play("Nature", createjs.Sound.INTERRUPT_ANY);
+        nature_sound.addEventListener("complete", loopNature)
+    }
+    gameLayer.canvas.style.boxShadow = "0 0 30px rgba(0,0,0,0.5)";
+    console.log("Let's start the game!");
+    resizeGame();
+    var PUSH = touch ? "touchstart" : "mousedown";
+    var RELEASE = touch ? "touchend" : "mouseup";
+    var MOVE = touch ? "touchmove" : "mousemove";
+    window.requestAnimationFrame = function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 1e3 / 60)
+        }
+    }();
+    gameLayer.canvas.addEventListener(PUSH, function (e) {
+        e.preventDefault();
+        gameLayer.handleMouse(e, "push")
+    });
+    gameLayer.canvas.addEventListener(MOVE, function (e) {
+        e.preventDefault();
+        gameLayer.handleMouse(e, "move")
+    });
+    gameLayer.canvas.addEventListener(RELEASE, function (e) {
+        e.preventDefault();
+        gameLayer.handleMouse(e, "release");
+        if (arm.alpha == 1 && playing && !gameOver && !dropping && falling.length == 0) {
+            if (tutorial.visible) {
+                TweenLite.to(tutorial, .3, {
+                    alpha: 0,
+                    y: tutorial.y + 20,
+                    onComplete: function () {
+                        tutorial.visible = false;
+                        gameLayer.removeChild(tutorial)
+                    }
+                })
+            }
+            dropping = true;
+            dropSpeed = 5;
+            lastCakeY -= cakeSize
+        }
+    });
+    bg1 = new Sprite("Bg1");
+    bg1.x = 320;
+    bg1.y = 360;
+    gameLayer.addChild(bg1);
+    bg2 = new Sprite("Bg2");
+    bg2.x = 320;
+    bg2.y = 426;
+    gameLayer.addChild(bg2);
+    TweenLite.to(bg2, .5, {
+        scaleX: 1.2,
+        scaleY: 1.2
+    });
+    plate = new Sprite("Plate");
+    plate.x = 1040;
+    plate.y = 635;
+    baker = new Sprite("Baker");
+    baker.x = 320;
+    baker.y = 1030;
+    baker.angle = .7;
+    TweenLite.to(baker, .5, {
+        y: 466,
+        angle: 0
+    });
+    logo = new Sprite("Logo");
+    logo.x = 190;
+    logo.y = 150;
+    logo.scaleX = logo.scaleY = 0;
+    gameLayer.addChild(logo);
+    TweenLite.to(logo, .6, {
+        scaleX: 1,
+        scaleY: 1,
+        delay: .4,
+        ease: Elastic.easeOut
+    });
+    play_button = new Sprite("PlayButton");
+    play_button.x = 321;
+    play_button.y = 870;
+    play_button.mouseEnabled = true;
+    play_button.gotoAndStop(1);
+    play_button.onDown = function () {
+        this.gotoAndStop(2)
+    };
+    play_button.onMouseOut = function () {
+        this.gotoAndStop(1)
+    };
+    play_button.onClick = function () {
+        playSound("Click");
+        play_button.mouseEnabled = false;
+        if (play_button.x > 320) {
+            TweenLite.to(sponsorLogo, .5, {
+                x: 90,
+                ease: Back.easeOut
+            });
+            hideMoreGames();
+            playSound("Window");
+            TweenLite.to(bg2, .5, {
+                scaleX: 1,
+                scaleY: 1
+            });
+            TweenLite.to(baker, .5, {
+                x: -300,
+                angle: .9,
+                onComplete: function () {
+                    baker.visible = false
+                }
+            });
+            TweenLite.to(logo, .5, {
+                y: -200,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    logo.visible = false
+                }
+            });
+            TweenLite.killTweensOf(play_button);
+            TweenLite.to(play_button, .5, {
+                y: 870,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    play_button.visible = false;
+                    play_button.scaleX = 1
+                }
+            });
+            TweenLite.to(sound_button, .5, {
+                y: -80,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    sound_button.visible = false
+                }
+            });
+            /*TweenLite.to(about_button, .5, {
+                y: 870,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    //about_button.visible = false
+                }
+            });*/
+            startGame()
+        } else if (play_button.y == 360) {
+            if (clockSound != null) clockSound.resume();
+            playing = true;
+            hideMoreGames();
+            setGameplayAlpha(1);
+            exit_button.mouseEnabled = false;
+            restart_button.mouseEnabled = false;
+            hidePauseButtons()
+        }
+    };
+
+    function hidePauseButtons() {
+        TweenLite.to(restart_button, .5, {
+            scaleX: 0,
+            scaleY: 0,
+            delay: .2,
+            angle: Math.PI * .5,
+            ease: Back.easeIn,
+            onComplete: function () {
+                restart_button.visible = false
+            }
+        });
+        TweenLite.to(play_button, .5, {
+            scaleX: 0,
+            scaleY: 0,
+            delay: .1,
+            angle: Math.PI * .5,
+            ease: Back.easeIn,
+            onComplete: function () {
+                play_button.visible = false;
+                pause_button.mouseEnabled = true
+            }
+        });
+        TweenLite.to(exit_button, .5, {
+            scaleX: 0,
+            scaleY: 0,
+            angle: Math.PI * .5,
+            ease: Back.easeIn,
+            onComplete: function () {
+                exit_button.visible = false
+            }
+        });
+        TweenLite.to(sound_button, .5, {
+            y: -80,
+            ease: Back.easeIn,
+            onComplete: function () {
+                sound_button.visible = false
+            }
+        })
+    }
+    TweenLite.to(play_button, .5, {
+        y: 620,
+        delay: .6,
+        ease: Back.easeOut,
+        onComplete: tweenUp
+    });
+    table = new Sprite("Table");
+    table.x = 320;
+    table.y = 690;
+    gameLayer.addChild(table);
+    gameLayer.addChild(baker);
+    gameLayer.addChild(plate);
+    gameLayer.addChild(play_button);
+    arm = new Sprite("Arm");
+    arm.visible = false;
+    gameLayer.addChild(arm);
+    timeField = new TextField("GameFont", 75, 800, "60:00");
+    gameLayer.addChild(timeField);
+    timeField.visible = false;
+    scoreField = new TextField("GameFont", 450, 800, "0000000");
+    gameLayer.addChild(scoreField);
+    scoreField.visible = false;
+    bestField = new TextField("GameFont", 210, -200, "0000000");
+    gameLayer.addChild(bestField);
+    bestField.visible = false;
+    bestHeightField = new TextField("GameFont", 250, -200, "0000");
+    gameLayer.addChild(bestHeightField);
+    bestHeightField.visible = false;
+    clock = new Sprite("Clock");
+    clock.x = 40;
+    clock.y = 800;
+    clock.visible = false;
+    gameLayer.addChild(clock);
+    pause_button = new Sprite("PauseButton");
+    pause_button.mouseEnabled = true;
+    pause_button.gotoAndStop(1);
+    pause_button.onDown = function () {
+        this.gotoAndStop(2)
+    };
+    pause_button.onMouseOut = function () {
+        this.gotoAndStop(1)
+    };
+    pause_button.onClick = function () {
+        showMoreGames();
+        playSound("Click");
+        playing = false;
+        if (clockSound != null) clockSound.pause();
+        pause_button.mouseEnabled = false;
+        setGameplayAlpha(.2);
+        play_button.x = 320;
+        play_button.y = 360;
+        restart_button.x = 180;
+        restart_button.y = 360;
+        exit_button.x = 460;
+        exit_button.y = 360;
+        prepareButton(play_button);
+        prepareButton(exit_button);
+        prepareButton(restart_button);
+        TweenLite.to(restart_button, .6, {
+            scaleX: 1,
+            scaleY: 1,
+            delay: .2,
+            ease: Elastic.easeOut
+        });
+        TweenLite.to(play_button, .6, {
+            scaleX: 1,
+            scaleY: 1,
+            delay: .3,
+            ease: Elastic.easeOut
+        });
+        TweenLite.to(exit_button, .6, {
+            scaleX: 1,
+            scaleY: 1,
+            delay: .4,
+            ease: Elastic.easeOut
+        });
+        sound_button.visible = true;
+        gameLayer.removeChild(sound_button);
+        gameLayer.addChild(sound_button);
+        TweenLite.to(sound_button, .6, {
+            y: 50,
+            ease: Back.easeOut
+        })
+    };
+    pause_button.x = 590;
+    pause_button.y = -200;
+    pause_button.visible = false;
+    gameLayer.addChild(pause_button);
+    exit_button = new Sprite("ExitButton");
+    exit_button.gotoAndStop(1);
+    exit_button.onDown = function () {
+        this.gotoAndStop(2)
+    };
+    exit_button.onMouseOut = function () {
+        this.gotoAndStop(1)
+    };
+    exit_button.onClick = function () {
+        playSound("Click");
+        exit_button.mouseEnabled = false;
+        restart_button.mouseEnabled = false;
+        play_button.mouseEnabled = false;
+        hidePauseButtons();
+        if (!play_button.visible) {
+            hideGameOver();
+            showMoreGames();
+            TweenLite.to(sponsorLogo, .5, {
+                x: 440,
+                ease: Back.easeOut
+            });
+            playing = false;
+            TweenLite.to(bg2, .5, {
+                x: 320,
+                y: 426
+            });
+            TweenLite.to(bg2, .5, {
+                scaleX: 1.2,
+                scaleY: 1.2,
+                delay: .4
+            });
+            baker.x = 320;
+            baker.y = 1030;
+            baker.angle = .7;
+            baker.visible = true;
+            table.visible = true;
+            if (table.y > 780) table.y = 1200;
+            TweenLite.to(table, .5, {
+                y: 690,
+                delay: .2
+            });
+            TweenLite.to(baker, .5, {
+                y: 466,
+                angle: 0,
+                delay: .4
+            });
+            playSound("Window");
+            logo.x = 190;
+            logo.y = 150;
+            logo.scaleX = logo.scaleY = 0;
+            logo.visible = true;
+            TweenLite.to(logo, .6, {
+                scaleX: 1,
+                scaleY: 1,
+                delay: .8,
+                ease: Elastic.easeOut
+            });
+            TweenLite.to(sound_button, .5, {
+                y: 50,
+                delay: 1.2,
+                ease: Back.easeOut,
+                onStart: function () {
+                    sound_button.visible = true
+                }
+            });
+            play_button.x = 321;
+            play_button.y = 870;
+            TweenLite.to(play_button, .5, {
+                y: 620,
+                delay: 1,
+                onComplete: tweenUp,
+                ease: Back.easeOut,
+                onStart: function () {
+                    play_button.visible = true;
+                    play_button.angle = 0;
+                    play_button.mouseEnabled = true;
+                    play_button.scaleX = play_button.scaleY = 1
+                }
+            });
+           /* TweenLite.to(about_button, .5, {
+                y: 640,
+                delay: 1.1,
+                ease: Back.easeOut
+            });*/
+            //about_button.visible = true
+        } else {
+            playing = true;
+            setGameplayAlpha(1);
+            gameOver = true;
+            if (!dropping) {
+                finishGame()
+            }
+            hideMoreGames()
+        }
+    };
+    exit_button.visible = false;
+    gameLayer.addChild(exit_button);
+    restart_button = new Sprite("RestartButton");
+    restart_button.gotoAndStop(1);
+    restart_button.onDown = function () {
+        this.gotoAndStop(2)
+    };
+    restart_button.onMouseOut = function () {
+        this.gotoAndStop(1)
+    };
+    restart_button.onClick = function () {
+        playSound("Click");
+        bg2.scaleX = bg2.scaleY = 1.2;
+        TweenLite.to(bg2, .5, {
+            x: 320,
+            y: 426,
+            scaleX: 1,
+            scaleY: 1
+        });
+        hideMoreGames();
+        if (!play_button.visible) {
+            hideGameOver();
+            playSound("Window")
+        } else {
+            resetGame();
+            scoreField.text = "0000000";
+            scoreField.y = 800
+        }
+        restart_button.mouseEnabled = false;
+        exit_button.mouseEnabled = false;
+        play_button.mouseEnabled = false;
+        hidePauseButtons();
+        startGame()
+    };
+    restart_button.visible = false;
+    gameLayer.addChild(restart_button);
+    time_up = new Sprite("TimeUp");
+    time_up.scaleX = time_up.scaleY = 0;
+    time_up.x = 320;
+    time_up.y = 360;
+    time_up.visible = false;
+    gameLayer.addChild(time_up);
+    game_over = new Sprite("GameOver");
+    game_over.x = 320;
+    game_over.y = -320;
+    game_over.visible = false;
+    gameLayer.addChild(game_over);
+    /*about_button = new Sprite("AboutButton");
+    about_button.x = 120;
+    about_button.y = 870;
+    gameLayer.addChild(about_button);
+    about_button.mouseEnabled = true;
+    about_button.gotoAndStop(1);
+    about_button.onDown = function () {
+        this.gotoAndStop(about_screen.y > 0 ? 4 : 3)
+    };
+    about_button.onMouseOut = function () {
+        this.gotoAndStop(about_screen.y > 0 ? 2 : 1)
+    };
+    about_button.onClick = function () {
+        playSound("Click");
+        about_button.mouseEnabled = false;
+        playSound("Window");
+        if (!about_screen.visible) {
+            TweenLite.to(bg2, .5, {
+                scaleX: 1,
+                scaleY: 1
+            });
+            about_screen.visible = true;
+            TweenLite.to(about_screen, 1, {
+                y: 360,
+                delay: .3,
+                ease: Elastic.easeOut
+            });
+            TweenLite.killTweensOf(play_button);
+            play_button.mouseEnabled = false;
+            TweenLite.to(play_button, .5, {
+                y: 870,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    play_button.visible = false;
+                    play_button.scaleX = 1
+                }
+            });
+            TweenLite.to(about_button, .5, {
+                y: 870,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    about_button.gotoAndStop(2);
+                    about_button.mouseEnabled = true;
+                    TweenLite.to(about_button, .5, {
+                        y: 640,
+                        ease: Back.easeOut
+                    })
+                }
+            });
+            TweenLite.to(baker, .5, {
+                x: -300,
+                angle: .9,
+                onComplete: function () {
+                    baker.visible = false
+                }
+            });
+            TweenLite.to(logo, .5, {
+                y: -200,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    logo.visible = false
+                }
+            })
+        } else {
+            baker.x = 320;
+            baker.y = 1030;
+            baker.angle = .7;
+            baker.visible = true;
+            TweenLite.to(baker, .5, {
+                y: 466,
+                angle: 0,
+                delay: .4
+            });
+            logo.x = 190;
+            logo.y = 150;
+            logo.scaleX = logo.scaleY = 0;
+            logo.visible = true;
+            TweenLite.to(logo, .6, {
+                scaleX: 1,
+                scaleY: 1,
+                delay: .8,
+                ease: Elastic.easeOut
+            });
+            TweenLite.to(bg2, .5, {
+                scaleX: 1.2,
+                scaleY: 1.2
+            });
+            TweenLite.to(about_screen, .5, {
+                y: -260,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    about_screen.visible = false;
+                    about_button.mouseEnabled = true;
+                    play_button.mouseEnabled = true
+                }
+            });
+            play_button.visible = true;
+            TweenLite.to(play_button, .5, {
+                y: 620,
+                delay: .5,
+                ease: Back.easeOut,
+                onComplete: tweenUp
+            });
+            TweenLite.to(about_button, .5, {
+                y: 870,
+                ease: Back.easeIn,
+                onComplete: function () {
+                    about_button.gotoAndStop(1);
+                    TweenLite.to(about_button, .5, {
+                        y: 640,
+                        ease: Back.easeOut
+                    })
+                }
+            })
+        }
+    };
+    TweenLite.to(about_button, .5, {
+        y: 640,
+        delay: .7,
+        ease: Back.easeOut
+    });
+    about_screen = new Sprite("AboutScreen");
+    about_screen.x = 320;
+    about_screen.y = -260;
+    about_screen.visible = false;
+    gameLayer.addChild(about_screen);
+    about_screen.mouseEnabled = true;
+    about_screen.onClick = function () {
+        playSound("Click");
+        window.open("mailto:yurezz@yahoo.com", "_self");
+        window.open("http://sanachev.com", "_blank")
+    };*/
+    bonus = new Sprite("CakeBonus");
+    bonus.y = 320;
+    bonus.x = -100;
+    bonus.visible = false;
+    gameLayer.addChild(bonus);
+    sound_button = new Sprite("SoundButton");
+    sound_button.x = 590;
+    sound_button.y = -80;
+    sound_button.gotoAndStop(1);
+    sound_button.mouseEnabled = true;
+    sound_button.onDown = function () {
+        this.gotoAndStop(soundEnabled ? 2 : 4)
+    };
+    sound_button.onMouseOut = function () {
+        this.gotoAndStop(soundEnabled ? 1 : 3)
+    };
+    sound_button.onClick = function () {
+        playSound("Click");
+        soundEnabled = !soundEnabled;
+        sound_button.gotoAndStop(soundEnabled ? 1 : 2);
+        createjs.Sound.setVolume(soundEnabled ? 1 : 0)
+    };
+    TweenLite.to(sound_button, .5, {
+        y: 50,
+        delay: .8,
+        ease: Back.easeOut
+    });
+    gameLayer.addChild(sound_button);
+    more_button = new Sprite("MoreButton");
+    more_button.x = 520;
+    more_button.y = 870;
+    more_button.mouseEnabled = true;
+    more_button.onDown = function () {
+        this.gotoAndStop(2)
+    };
+    more_button.onMouseOut = function () {
+        this.gotoAndStop(1)
+    };
+    more_button.onClick = function () {
+        playSound("Click");
+        //window.open("http://m.softgames.de")
+        SG.redirectToPortal();
+    };
+    gameLayer.addChild(more_button);
+    more_button.stop();
+    TweenLite.to(more_button, .5, {
+        y: 640,
+        delay: .9,
+        ease: Back.easeOut
+    });
+    sponsorLogo = new Sprite("SponsorButton");
+    sponsorLogo.mouseEnabled = true;
+    sponsorLogo.scaleX = sponsorLogo.scaleY = .8;
+    sponsorLogo.onDown = function () {
+        sponsorLogo.scaleX = sponsorLogo.scaleY = .7
+    };
+    sponsorLogo.onMouseOut = function () {
+        sponsorLogo.scaleX = sponsorLogo.scaleY = .8
+    };
+    sponsorLogo.onClick = function () {
+        playSound("Click");
+        //window.open("http://m.softgames.de")
+        SG.redirectToPortal();
+    };
+    sponsorLogo.x = 440;
+    sponsorLogo.y = -80;
+    gameLayer.addChild(sponsorLogo);
+    TweenLite.to(sponsorLogo, .5, {
+        y: 50,
+        delay: 1,
+        ease: Back.easeOut
+    });
+    tutorial = new Sprite("Tutorial");
+    tutorial.x = 320;
+    tutorial.y = 420;
+    tutorial.visible = false;
+    gameLayer.addChild(tutorial);
+    update()
+}
+var lastSeen;
+var loop = function () {
+    if (Date.now() - lastSeen > 60) {
+        console.log("focus lost, mute");
+        createjs.Sound.setVolume(0)
+    } else {
+        console.log("focus obtained, resume(if possible)");
+        createjs.Sound.setVolume(soundEnabled ? 1 : 0)
+    }
+    setTimeout(loop, 50)
+};
+loop();
+
+function hideMoreGames() {
+    TweenLite.to(more_button, .5, {
+        angle: Math.PI / 2,
+        scaleX: 0,
+        scaleY: 0,
+        ease: Back.easeIn
+    })
+}
+
+function showMoreGames() {
+    TweenLite.to(more_button, .5, {
+        angle: 0,
+        scaleX: 1,
+        scaleY: 1,
+        ease: Back.easeOut
+    })
+}
+
+function playSound(key) {
+    if (soundSupported) {
+        if (key == "Clock") clockSound = createjs.Sound.play(key, createjs.Sound.INTERRUPT_ANY);
+        else createjs.Sound.play(key, createjs.Sound.INTERRUPT_ANY)
+    }
+}
+
+function tweenUp() {
+    TweenLite.to(play_button, .5, {
+        scaleX: 1.2,
+        y: play_button.y + 5,
+        ease: Cubic.easeOut,
+        onComplete: tweenDown
+    })
+}
+
+function tweenDown() {
+    TweenLite.to(play_button, .5, {
+        scaleX: 1,
+        y: play_button.y - 5,
+        ease: Cubic.easeIn,
+        onComplete: tweenUp
+    })
+}
+
+function hideGameOver() {
+    TweenLite.to(game_over, .5, {
+        y: -320,
+        ease: Back.easeIn
+    });
+    TweenLite.killTweensOf(scoreField);
+    TweenLite.killTweensOf(bestField);
+    TweenLite.killTweensOf(bestHeightField);
+    scoreField.alpha = 1;
+    scoreField.text = "" + score;
+    var zeros = 7 - scoreField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        scoreField.text = "0" + scoreField.text
+    }
+    bestField.text = "" + bestScore;
+    zeros = 7 - bestField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        bestField.text = "0" + bestField.text
+    }
+    bestHeightField.text = "" + bestHeight;
+    zeros = 4 - bestHeightField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        bestHeightField.text = "0" + bestHeightField.text
+    }
+    TweenLite.to(bestField, .5, {
+        y: -100,
+        delay: .2,
+        ease: Back.easeIn,
+        onComplete: function () {
+            bestField.visible = false
+        }
+    });
+    TweenLite.to(bestHeightField, .5, {
+        y: -100,
+        delay: .2,
+        ease: Back.easeIn,
+        onComplete: function () {
+            bestHeightField.visible = false
+        }
+    });
+    TweenLite.to(scoreField, .5, {
+        y: -100,
+        delay: .1,
+        ease: Back.easeIn,
+        onComplete: function () {
+            game_over.visible = false;
+            scoreField.text = "0000000";
+            scoreField.x = 400;
+            scoreField.y = 800;
+            console.log("I'M READY (gameover)")
+        }
+    });
+    resetGame()
+}
+
+function startGame() {
+    SG_Hooks.start();
+    table.visible = true;
+    if (table.y > 780) table.y = 800;
+    plate.x = 1040;
+    plate.y = 635;
+    plate.visible = true;
+    clock.visible = true;
+    TweenLite.to(clock, .5, {
+        y: 680,
+        delay: .6
+    });
+    timeField.visible = true;
+    TweenLite.to(timeField, .5, {
+        y: 650,
+        delay: .7
+    });
+    pause_button.visible = true;
+    pause_button.mouseEnabled = true;
+    TweenLite.to(pause_button, .5, {
+        y: 50,
+        delay: .8
+    });
+    scoreField.visible = true;
+    if (!game_over.visible) {
+        scoreField.x = 400;
+        scoreField.y = 800
+    }
+    TweenLite.to(scoreField, .5, {
+        y: 650,
+        delay: .9,
+        onStart: function () {
+            scoreField.visible = true;
+            console.log("from down started")
+        }
+    });
+    TweenLite.to(plate, .5, {
+        x: 320,
+        delay: .5,
+        onComplete: function () {
+            playing = true;
+            arm.visible = true;
+            arm.y = 80;
+            makeNewCake();
+            if (showTutorial) {
+                showTutorial = false;
+                tutorial.alpha = 0;
+                tutorial.visible = true;
+                TweenLite.to(tutorial, .3, {
+                    alpha: 1,
+                    y: tutorial.y - 20
+                })
+            }
+        }
+    });
+    TweenLite.to(table, .5, {
+        y: 690
+    })
+}
+
+function resetGame() {
+    if (clockSound != null) {
+        clockSound.stop();
+        clockSound.removeEventListener("complete", loopClock);
+        clockSound = null
+    }
+    if (tutorial.visible) {
+        tutorial.visible = false;
+        tutorial.alpha = 0;
+        showTutorial = true
+    }
+    scoreField.alpha = 1;
+    timeField.alpha = 1;
+    clock.alpha = 1;
+    pause_button.alpha = 1;
+    arm.alpha = 1;
+    arm.visible = false;
+    clock.y = timeField.y = 800;
+    pause_button.y = -200;
+    playing = false;
+    gameOver = false;
+    score = 0;
+    cakeAmount = 6;
+    tweeningScore = 0;
+    speed = 5;
+    lastCakeY = 630;
+    dropping = false;
+    dt = 60;
+    timeLeft = 60;
+    totalHeight = 0;
+    scrollSpeed = 0;
+    scrollTime = 0;
+    bonusTime = 0;
+    gotBonus = false;
+    TweenLite.killTweensOf(bonus);
+    bonus.visible = false;
+    bonus.alpha = 1;
+    bonus.scaleX = bonus.scaleY = 1;
+    bonus.x = -100;
+    availableCakes = 5;
+    while (cakes.length > 0) {
+        var toRemove = cakes.splice(0, 1)[0];
+        while (toRemove.length > 0) {
+            TweenLite.killTweensOf(toRemove[0]);
+            gameLayer.removeChild(toRemove[0]);
+            toRemove[0] = null;
+            toRemove.splice(0, 1)
+        }
+        toRemove = null
+    }
+    while (clouds.length > 0) {
+        gameLayer.removeChild(clouds[0]);
+        clouds[0] = null;
+        clouds.splice(0, 1)
+    }
+    while (cakesToDrop.length > 0) {
+        TweenLite.killTweensOf(cakesToDrop[0]);
+        gameLayer.removeChild(cakesToDrop[0]);
+        cakesToDrop[0] = null;
+        cakesToDrop.splice(0, 1)
+    }
+    while (falling.length > 0) {
+        TweenLite.killTweensOf(falling[0]);
+        gameLayer.removeChild(falling[0]);
+        falling[0] = null;
+        falling.splice(0, 1)
+    }
+}
+
+function prepareButton(button) {
+    TweenLite.killTweensOf(button);
+    button.scaleX = button.scaleY = 0;
+    button.angle = 0;
+    button.visible = true;
+    button.mouseEnabled = true;
+    gameLayer.removeChild(button);
+    gameLayer.addChild(button)
+}
+
+function setGameplayAlpha(val) {
+    for (var c = 0; c < cakes.length; c++) {
+        for (var cc = 0; cc < cakes[c].length; cc++) {
+            TweenLite.to(cakes[c][cc], .5, {
+                alpha: val
+            })
+        }
+    }
+    for (c = 0; c < cakesToDrop.length; c++) {
+        TweenLite.to(cakesToDrop[c], .5, {
+            alpha: val
+        })
+    }
+    for (c = 0; c < falling.length; c++) {
+        TweenLite.to(falling[c], .5, {
+            alpha: val
+        })
+    }
+    if (bonus.visible && !gotBonus) TweenLite.to(bonus, .5, {
+        alpha: val
+    });
+    TweenLite.to(arm, .5, {
+        alpha: val
+    });
+    TweenLite.to(pause_button, .5, {
+        alpha: val
+    });
+    TweenLite.to(scoreField, .5, {
+        alpha: val
+    });
+    TweenLite.to(timeField, .5, {
+        alpha: val
+    });
+    TweenLite.to(clock, .5, {
+        alpha: val
+    });
+    if (tutorial.visible) TweenLite.to(tutorial, .5, {
+        alpha: val
+    })
+}
+
+function addCloud() {
+    console.log("cloud added");
+    var cloud = clouds.length > 8 ? clouds.shift() : new Sprite("Clouds");
+    cloud.gotoAndStop(Math.round(Math.random() * 3) + 1);
+    cloud.scaleX = cloud.scaleY = 1;
+    if (Math.random() > .5 && totalHeight > 40) {
+        cloud.gotoAndStop(Math.random() > .5 ? 5 : 6);
+        cloud.scaleX = cloud.scaleY = 1.3
+    }
+    cloud.y = -80 - Math.random() * 30;
+    if (clouds.length == 0 || clouds[clouds.length - 1].x < 320) {
+        cloud.x = Math.random() * 100 + 490;
+        if (cloud.currentFrame >= 5) cloud.x += 100
+    } else {
+        cloud.x = Math.random() * 100 + 75;
+        if (cloud.currentFrame >= 5) cloud.x -= 100
+    } if (gameLayer.children.indexOf(cloud) == -1) gameLayer.addChild(cloud);
+    clouds.push(cloud);
+    updateDepth()
+}
+
+function updateDepth() {
+    for (var i = 0; i < cakes.length; i++) {
+        for (var j = 0; j < cakes[i].length; j++) {
+            gameLayer.removeChild(cakes[i][j])
+        }
+    }
+    for (i = cakes.length - 1; i >= 0; i--) {
+        for (j = 0; j < cakes[i].length; j++) {
+            gameLayer.addChild(cakes[i][j])
+        }
+    }
+    for (i = 0; i < clouds.length; i++) {
+        if (clouds[i].currentFrame >= 5) {
+            gameLayer.removeChild(clouds[i]);
+            gameLayer.addChild(clouds[i])
+        }
+    }
+    gameLayer.removeChild(timeField);
+    gameLayer.addChild(timeField);
+    gameLayer.removeChild(scoreField);
+    gameLayer.addChild(scoreField);
+    gameLayer.removeChild(clock);
+    gameLayer.addChild(clock);
+    gameLayer.removeChild(pause_button);
+    gameLayer.addChild(pause_button);
+    gameLayer.removeChild(sponsorLogo);
+    gameLayer.addChild(sponsorLogo);
+    gameLayer.removeChild(more_button);
+    gameLayer.addChild(more_button);
+    if (tutorial.visible) {
+        gameLayer.removeChild(tutorial);
+        gameLayer.addChild(tutorial)
+    }
+}
+
+function makeNewCake() {
+    makeFallCheck();
+    if (gotBonus) {
+        gotBonus = false;
+        cakeAmount++
+    }
+    if (cakesToDrop.length > 0) {
+        currentDropSound++;
+        if (currentDropSound == 4) currentDropSound = 1;
+        playSound("Drop" + currentDropSound);
+        var newCake = cakesToDrop.splice(0, cakesToDrop.length);
+        cakes.push(newCake);
+        newCake[0].offsetY = 0;
+        newCake[0].lastY = newCake[0].y;
+        TweenLite.to(newCake[0], .2, {
+            scaleX: 1.1,
+            scaleY: .8,
+            offsetY: 10,
+            onUpdate: updateVals
+        });
+        TweenLite.to(newCake[0], .2, {
+            scaleX: 1,
+            scaleY: 1,
+            delay: .2,
+            offsetY: 0,
+            onUpdate: updateVals
+        });
+        totalHeight++;
+        score += 70 * cakeAmount * speed;
+        if (availableCakes < 11 && score > 6e4 * (availableCakes - 4)) {
+            console.log("New Cake Unlocked!");
+            availableCakes++
+        }
+        if (totalHeight == 1) scoreField.tweenVar = 0;
+        TweenLite.killTweensOf(scoreField);
+        scoreField.alpha = 1;
+        TweenLite.to(scoreField, 1, {
+            tweenVar: score,
+            onUpdate: updateTextTween
+        });
+        if (totalHeight > 2) {
+            if (totalHeight % 3 == 0) addCloud();
+            scrollSpeed = 5;
+            scrollTime = cakeSize / scrollSpeed;
+            lastCakeY += cakeSize
+        }
+        if (speed < 25) speed += .5;
+        if (totalHeight > 5) {
+            var toRemove = cakes.shift();
+            while (toRemove.length > 0) {
+                gameLayer.removeChild(toRemove[0]);
+                toRemove[0] = null;
+                toRemove.splice(0, 1)
+            }
+            if (table.visible) {
+                table.visible = false
+            }
+        }
+    }
+    while (cakesToDrop.length > 0) {
+        cakesToDrop.splice(0, 1)
+    }
+    arm.x = Math.random() > .5 ? -15 : 625;
+    for (var i = 0; i < cakeAmount; i++) {
+        var cakePart = new Sprite("Cake");
+        cakePart.gotoAndStop(Math.round(Math.random() * (availableCakes - 1)) + 1);
+        cakePart.y = arm.y + 90;
+        var startX = arm.x - cakeSize * .5 - (cakeAmount * .5 - 1) * cakeSize;
+        cakePart.offsetY = 0;
+        cakePart.lastY = 0;
+        if (cakeAmount % 2 != 0) {
+            startX = arm.x - (cakeAmount - 1) * .5 * cakeSize
+        }
+        startX += 30;
+        cakePart.x = startX + i * cakeSize;
+        cakesToDrop.push(cakePart);
+        gameLayer.addChild(cakePart)
+    }
+    updateDepth();
+    if (gameOver) finishGame()
+}
+
+function updateVals() {
+    var len = cakes[cakes.length - 1].length;
+    var cakePart;
+    var firstCake = cakes[cakes.length - 1][0];
+    if (scrollTime == 0) firstCake.y = firstCake.lastY + firstCake.offsetY;
+    for (var i = 1; i < len; i++) {
+        cakePart = cakes[cakes.length - 1][i];
+        cakePart.scaleX = firstCake.scaleX;
+        cakePart.scaleY = firstCake.scaleY;
+        cakePart.offsetY = firstCake.offsetY;
+        if (scrollTime == 0) cakePart.y = firstCake.y
+    }
+}
+
+function addShout(x, y, type) {
+    var shout = new Sprite("Shouts");
+    shout.gotoAndStop(type);
+    shout.x = x;
+    shout.y = y;
+    shout.scaleX = shout.scaleY = 0;
+    gameLayer.addChild(shout);
+    TweenLite.to(shout, 1, {
+        scaleX: 1.2,
+        scaleY: 1.2,
+        angle: Math.random() > .5 ? -.1 : .1,
+        ease: Elastic.easeOut
+    });
+    TweenLite.to(shout, 1, {
+        y: y - 90,
+        delay: .2
+    });
+    TweenLite.to(shout, .3, {
+        alpha: 0,
+        delay: .8,
+        onComplete: function () {
+            TweenLite.killTweensOf(shout);
+            gameLayer.removeChild(shout);
+            shout = null
+        }
+    })
+}
+
+function makeFallCheck() {
+    var leftCheck = cakes.length > 0 ? cakes[cakes.length - 1][0].x : 80;
+    var rightCheck = cakes.length > 0 ? cakes[cakes.length - 1][cakes[cakes.length - 1].length - 1].x : 560;
+    var len = cakesToDrop.length;
+    var toRemove = [];
+    for (var i = 0; i < len; i++) {
+        var cakeX = cakesToDrop[i].x;
+        if (!(leftCheck - cakeX <= cakeSize && rightCheck - cakeX >= -cakeSize)) {
+            toRemove.push(cakesToDrop[i]);
+            falling.push(cakesToDrop[i])
+        }
+    }
+    if (toRemove.length == 0 && cakesToDrop.length > 0) {
+        var randomShout = Math.round(Math.random() * 3) + 1;
+        if (Math.random() > .5) {
+            randomShout = 5;
+            timeLeft++;
+            if (clockSound != null && timeLeft >= 10) {
+                clockSound.stop();
+                clockSound.removeEventListener("complete", loopClock);
+                clockSound = null;
+                timeField.visible = true;
+                clock.visible = true
+            }
+        }
+        addShout(arm.x, cakesToDrop[0].y - 50, randomShout)
+    }
+    if (toRemove.length == cakesToDrop.length) {
+        if (cakes.length > 0) {
+            playSound("Miss");
+            lastCakeY += cakeSize
+        }
+    } else {
+        cakeAmount = cakesToDrop.length - toRemove.length
+    }
+    while (toRemove.length > 0) {
+        var id = cakesToDrop.indexOf(toRemove[0]);
+        cakesToDrop.splice(id, 1);
+        toRemove.splice(0, 1)
+    }
+}
+
+function finishGame() {
+    console.log("let's finish it!");
+    SG_Hooks.gameOver(1, score);
+    if (bestScore < score) {
+        bestScore = score;
+        if (totalHeight > bestHeight) {
+            bestHeight = totalHeight
+        }
+        saveScore(bestScore, bestHeight)
+    }
+    gameLayer.removeChild(time_up);
+    gameLayer.addChild(time_up);
+    time_up.visible = true;
+    time_up.alpha = 1;
+    time_up.scaleX = time_up.scaleY = 0;
+    if (tutorial.visible) {
+        tutorial.visible = false;
+        TweenLite.to(tutorial, .5, {
+            alpha: 0
+        });
+        showTutorial = true
+    }
+    if (clockSound != null) {
+        clockSound.stop();
+        clockSound.removeEventListener("complete", loopClock);
+        clockSound = null
+    }
+    playSound("ClockRing");
+    TweenLite.to(time_up, 1, {
+        scaleX: 1.2,
+        scaleY: 1.2,
+        ease: Elastic.easeOut
+    });
+    TweenLite.to(time_up, .5, {
+        alpha: 0,
+        delay: 2.5,
+        onComplete: function () {
+            time_up.visible = false;
+            showMoreGames();
+            for (var i = 0; i < cakes.length; i++) {
+                for (var c = 0; c < cakes[i].length; c++) {
+                    TweenLite.to(cakes[i][c], .5, {
+                        y: cakes[i][c].y + 360
+                    })
+                }
+            }
+            TweenLite.to(table, .5, {
+                y: table.y + 360,
+                onComplete: function () {
+                    for (var i = 0; i < cakes.length; i++) {
+                        for (var c = 0; c < cakes[i].length; c++) {
+                            cakes[i][c].visible = false
+                        }
+                    }
+                }
+            });
+            TweenLite.to(plate, .5, {
+                y: plate.y + 460,
+                onComplete: function () {
+                    plate.visible = false
+                }
+            });
+            TweenLite.to(bg2, 1, {
+                y: bg2.y + 160,
+                delay: .1,
+                ease: Expo.easeOut,
+                onStart: function () {
+                    playSound("Window")
+                }
+            });
+            for (i = 0; i < clouds.length; i++) {
+                if (clouds[i].x > 320) TweenLite.to(clouds[i], .5, {
+                    x: 800,
+                    delay: i * .05,
+                    ease: Expo.easeInOut
+                });
+                else TweenLite.to(clouds[i], .5, {
+                    x: -180,
+                    delay: i * .05,
+                    ease: Expo.easeInOut
+                })
+            }
+            scoreField.x = 210;
+            scoreField.y = -200;
+            scoreField.visible = true;
+            bestField.visible = true;
+            gameLayer.removeChild(bestField);
+            gameLayer.addChild(bestField);
+            bestHeightField.visible = true;
+            gameLayer.removeChild(bestHeightField);
+            gameLayer.addChild(bestHeightField);
+            game_over.visible = true;
+            TweenLite.to(game_over, 1, {
+                y: 300,
+                ease: Elastic.easeOut,
+                delay: .5
+            });
+            TweenLite.to(scoreField, 1, {
+                y: 275,
+                ease: Elastic.easeOut,
+                delay: .4
+            });
+            TweenLite.to(bestField, 1, {
+                y: 370,
+                ease: Elastic.easeOut,
+                delay: .3
+            });
+            TweenLite.to(bestHeightField, 1, {
+                y: 465,
+                ease: Elastic.easeOut,
+                delay: .2
+            });
+            restart_button.x = 190;
+            restart_button.y = 525;
+            prepareButton(restart_button);
+            exit_button.x = 445;
+            exit_button.y = 525;
+            prepareButton(exit_button);
+            TweenLite.to(restart_button, .6, {
+                scaleX: 1,
+                scaleY: 1,
+                delay: .6,
+                ease: Elastic.easeOut
+            });
+            TweenLite.to(exit_button, .6, {
+                scaleX: 1,
+                scaleY: 1,
+                delay: .7,
+                ease: Elastic.easeOut
+            });
+            scoreField.text = "0000000";
+            scoreField.tweenVar = 0;
+            TweenLite.to(scoreField, 3, {
+                tweenVar: score,
+                delay: 1,
+                onUpdate: updateTextTween
+            });
+            bestField.text = "0000000";
+            bestField.tweenVar = 0;
+            TweenLite.to(bestField, 3, {
+                tweenVar: bestScore,
+                delay: 1,
+                onUpdate: updateBestTextTween
+            });
+            bestHeightField.text = "0000";
+            bestHeightField.tweenVar = 0;
+            TweenLite.to(bestHeightField, 1, {
+                tweenVar: bestHeight,
+                delay: 1,
+                onUpdate: updateBestHeightTween
+            })
+        }
+    });
+    for (var i = 0; i < cakesToDrop.length; i++) {
+        TweenLite.to(cakesToDrop[i], .3, {
+            y: -90
+        })
+    }
+    TweenLite.to(arm, .3, {
+        y: -180,
+        onComplete: function () {
+            arm.visible = false
+        }
+    });
+    TweenLite.to(clock, .5, {
+        y: 800,
+        delay: .3,
+        onComplete: function () {
+            clock.visible = timeField.visible = pause_button.visible = scoreField.visible = false
+        }
+    });
+    TweenLite.to(timeField, .5, {
+        y: 800,
+        delay: .2
+    });
+    pause_button.mouseEnabled = false;
+    TweenLite.to(pause_button, .5, {
+        y: -200,
+        delay: .1
+    });
+    TweenLite.to(scoreField, .5, {
+        y: 800
+    })
+}
+
+function loopClock(e) {
+    clockSound.setPosition(0);
+    clockSound.play()
+}
+
+function updateTextTween() {
+    scoreField.text = "" + Math.round(scoreField.tweenVar);
+    var zeros = 7 - scoreField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        scoreField.text = "0" + scoreField.text
+    }
+}
+
+function updateBestTextTween() {
+    bestField.text = "" + Math.round(bestField.tweenVar);
+    var zeros = 7 - bestField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        bestField.text = "0" + bestField.text
+    }
+}
+
+function updateBestHeightTween() {
+    bestHeightField.text = "" + Math.round(bestHeightField.tweenVar);
+    var zeros = 4 - bestHeightField.text.length;
+    while (zeros > 0) {
+        zeros--;
+        bestHeightField.text = "0" + bestHeightField.text
+    }
+}
+
+function updateTime() {
+    if (dt == 60) {
+        bonusTime++;
+        if (bonusTime == 5) {
+            bonusTime = 0;
+            if (Math.random() > .5 && Math.random() > .5 && totalHeight > 20 && !bonus.visible) {
+                bonus.visible = true;
+                bonus.alpha = 1;
+                gameLayer.removeChild(bonus);
+                gameLayer.addChild(bonus)
+            }
+        }
+        dt = 0;
+        if (timeLeft > 10 && !timeField.visible) timeField.visible = clock.visible = true;
+        if (timeLeft > -1) {
+            timeLeft--;
+            if (timeLeft == -1) {
+                gameOver = true;
+                if (!dropping) {
+                    finishGame()
+                }
+            }
+        }
+    }
+    dt++;
+    if (timeLeft < 10 && dt % 15 == 0) {
+        if (clockSound == null) {
+            playSound("Clock");
+            if (!clockSound.hasEventListener("complete")) clockSound.addEventListener("complete", loopClock)
+        }
+        timeField.visible = !timeField.visible;
+        clock.visible = !clock.visible
+    }
+    timeField.text = playing ? (timeLeft < 10 ? "0" + timeLeft : timeLeft) + ":" + (60 - dt < 10 ? "0" + (60 - dt) : 60 - dt) : "00:00";
+    if (gameOver) timeField.text = "00:00"
+}
+
+function update() {
+    requestAnimationFrame(update);
+    lastSeen = Date.now();
+    if (playing) {
+        angle += .1;
+        if (angle > Math.PI * 2) angle = 0;
+        if (bonus.scaleX == 1 && bonus.visible) {
+            bonus.y = 320 + 30 * Math.sin(angle);
+            bonus.x += 6;
+            if (bonus.x > 740) {
+                bonus.visible = false;
+                bonus.scaleX = bonus.scaleY = 1;
+                bonus.alpha = 1;
+                bonus.x = -100
+            }
+        }
+        if (!gameOver) {
+            updateTime()
+        }
+        if (scrollTime > 0) {
+            var len = cakes.length;
+            var len2;
+            for (var c = 0; c < len; c++) {
+                len2 = cakes[c].length;
+                for (var cc = 0; cc < len2; cc++) {
+                    if (c == len - 1) {
+                        cakes[c][cc].lastY += scrollSpeed;
+                        cakes[c][cc].y = cakes[c][cc].lastY + cakes[c][cc].offsetY
+                    } else {
+                        cakes[c][cc].y += scrollSpeed
+                    }
+                }
+            }
+            var cloudsLen = clouds.length;
+            for (c = 0; c < cloudsLen; c++) {
+                clouds[c].y += scrollSpeed * .5
+            }
+            bg2.y += scrollSpeed / 8;
+            table.y += scrollSpeed;
+            plate.y += scrollSpeed;
+            scrollTime--
+        }
+        if (!dropping && !gameOver) {
+            if (arm.x > 625 || arm.x < -15) {
+                dir *= -1
+            }
+            arm.x += dir * speed;
+            for (var i = 0; i < cakeAmount; i++) {
+                cakesToDrop[i].x += dir * speed
+            }
+        } else if (dropping) {
+            arm.y -= 10;
+            for (i = 0; i < cakeAmount; i++) {
+                if (bonus.visible && bonus.scaleX == 1 && cakesToDrop[i].hitTest(bonus) && !gotBonus) {
+                    gotBonus = true
+                }
+                if (cakesToDrop[i].y == lastCakeY) {
+                    dropping = false;
+                    arm.y = 80;
+                    gameLayer.removeChild(arm);
+                    gameLayer.addChild(arm);
+                    makeNewCake();
+                    break
+                }
+                if (lastCakeY - cakesToDrop[i].y < dropSpeed) {
+                    cakesToDrop[i].y = lastCakeY
+                } else {
+                    cakesToDrop[i].y += dropSpeed
+                }
+                cakesToDrop[i].lastY = cakesToDrop[i].y;
+                cakesToDrop[i].scaleY -= .005;
+                cakesToDrop[i].scaleX -= .01
+            }
+            if (gotBonus && bonus.scaleX == 1) applyBonus()
+        }
+        var len = falling.length - 1;
+        while (len >= 0) {
+            falling[len].y += dropSpeed;
+            if (falling[len].y > 750 + cakeSize) {
+                gameLayer.removeChild(falling[len]);
+                TweenLite.killTweensOf(falling[len]);
+                falling[len] = null;
+                falling.splice(len, 1)
+            }
+            len--
+        }
+        dropSpeed++
+    }
+    gameLayer.draw()
+}
+
+function applyBonus() {
+    console.log("apply bonus!!!1");
+    gameLayer.removeChild(bonus);
+    gameLayer.addChild(bonus);
+    playSound("Bonus");
+    TweenLite.to(bonus, .5, {
+        scaleX: 1.5,
+        scaleY: 1.5,
+        ease: Elastic.easeOut
+    });
+    TweenLite.to(bonus, .2, {
+        alpha: 0,
+        delay: .5,
+        onComplete: function () {
+            bonus.visible = false;
+            bonus.alpha = 1;
+            bonus.scaleX = bonus.scaleY = 1;
+            bonus.x = -100
+        }
+    })
+}

@@ -1,0 +1,5165 @@
+<game>
+<!-- Global Variables -->
+<globalConfig> 
+    <!-- Duty Free Unlockables -->
+    <dutyFreeUnlockables>
+        <!-- Christmas --> 
+        <unlockable>
+            <key>socks</key>
+            <miles>1000</miles>
+            <level>45</level>
+            <carrotObject>group6</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>reindeerNose</key>
+            <miles>750</miles>
+            <level>27</level>
+            <carrotObject>group3</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>reindeerHorns</key>
+            <miles>1000</miles> 
+            <level>27</level>
+            <carrotObject>group3</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>scarf</key>
+            <miles>750</miles>
+            <level>21</level>
+            <carrotObject>group2</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>christmasDecoration</key>
+            <miles>1000</miles>
+            <level>21</level>
+            <carrotObject>group2</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>strippedHat</key>
+            <miles>1000</miles>
+            <level>51</level>
+            <carrotObject>group7</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>santaClausHat</key>
+            <miles>1250</miles>
+            <level>45</level>
+            <carrotObject>group6</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>santaClausBeard</key>
+            <miles>1000</miles>
+            <level>45</level>
+            <carrotObject>group6</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>peakedBeard</key>
+            <miles>750</miles>
+            <level>21</level>
+            <carrotObject>group2</carrotObject>
+        </unlockable>
+        <!-- Summer -->
+        <unlockable>
+            <key>raybanSunglasses</key>
+            <miles>1250</miles>
+            <level>39</level>
+            <carrotObject>group5</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>rimmedGlasses</key>
+            <miles>1000</miles>
+            <level>39</level>
+            <carrotObject>group5</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>redSunglasses</key>
+            <miles>750</miles>
+            <level>39</level>
+            <carrotObject>group5</carrotObject>
+        </unlockable>
+        <!-- Vintage -->
+        <unlockable>
+            <key>moustache1</key>
+            <miles>1250</miles>
+            <level>15</level>
+            <carrotObject>group1</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>moustache2</key>
+            <miles>1000</miles>
+            <level>33</level>
+            <carrotObject>group4</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>moustache3</key>
+            <miles>750</miles>
+            <level>15</level>
+            <carrotObject>group1</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>moustache4</key>
+            <miles>1000</miles>
+            <level>33</level>
+            <carrotObject>group4</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>topper</key>
+            <miles>1000</miles>
+            <level>33</level>
+            <carrotObject>group4</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>bowler</key>
+            <miles>1250</miles>
+            <level>15</level>
+            <carrotObject>group1</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>pinkRibbonHat</key>
+            <miles>750</miles>
+            <level>51</level>
+            <carrotObject>group7</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>pinkHat</key>
+            <miles>1000</miles>
+            <level>51</level>
+            <carrotObject>group7</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>circledGlasses</key>
+            <miles>750</miles>
+            <level>57</level>
+            <carrotObject>group8</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>lenslessGlasses</key>
+            <miles>750</miles>
+            <level>57</level>
+            <carrotObject>group8</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>highPeakGlasses</key>
+            <miles>1000</miles>
+            <level>57</level> 
+            <carrotObject>group8</carrotObject>
+        </unlockable>
+        <!-- Wallpapers -->
+        <unlockable>
+            <key>spaceWallpaper</key>
+            <miles>1500</miles>
+            <level>59</level>
+            <urlMobile>http://www.jemchicomac.com/wp-content/uploads/2014/01/wall_smartphone_space.jpg</urlMobile>
+            <urlDesktop>http://tap.jemchicomac.com/kmww</urlDesktop>
+            <urlTablet></urlTablet>
+            <carrotObject>InfiniteWallpaper</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>londonWallpaper</key>
+            <miles>1500</miles>
+            <level>13
+			</level>
+            <urlMobile>http://www.jemchicomac.com/wp-content/uploads/2014/01/wall_smartphone_london.jpg</urlMobile>
+            <urlDesktop>http://tap.jemchicomac.com/km2a</urlDesktop>
+            <urlTablet></urlTablet>
+            <carrotObject>LondonWallpaper</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>newYorkWallpaper</key>
+            <miles>1500</miles>
+            <level>25</level>
+            <urlMobile>http://www.jemchicomac.com/wp-content/uploads/2014/01/wall_smartphone_NY.jpg</urlMobile>
+            <urlDesktop>http://tap.jemchicomac.com/kmza</urlDesktop>
+            <urlTablet></urlTablet>
+            <carrotObject>NYWallpaper</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>sidneyWallpaper</key>
+            <miles>1500</miles>
+            <level>49</level>
+            <urlMobile>http://www.jemchicomac.com/wp-content/uploads/2014/01/wall_smartphone_sidney.jpg</urlMobile>
+            <urlDesktop>http://tap.jemchicomac.com/kmvq</urlDesktop>
+            <urlTablet></urlTablet>
+            <carrotObject>SidneyWallpaper</carrotObject>
+        </unlockable>
+        <unlockable>
+            <key>madridWallpaper</key>
+            <miles>1500</miles>
+            <level>37</level>
+            <urlMobile>http://www.jemchicomac.com/wp-content/uploads/2014/01/wall_smartphone_madrid.jpg</urlMobile>
+            <urlDesktop>http://tap.jemchicomac.com/km0g</urlDesktop>
+            <urlTablet></urlTablet>
+            <carrotObject>MadridWallpaper</carrotObject>
+        </unlockable>
+    </dutyFreeUnlockables>
+    <!-- Duty Free Miles per Airport -->
+    <milesPerLHR>0</milesPerLHR>
+    <milesPerJFK>7500</milesPerJFK>
+    <milesPerMAD>10000</milesPerMAD>
+    <milesPerSYD>12500</milesPerSYD>
+    <milesPerPEK>15000</milesPerPEK>
+    <!-- Boosters and miles -->
+	<milesPerFacebookInvitation>0</milesPerFacebookInvitation>
+    <milesPerLike>500</milesPerLike>
+    <milesPerFacebookLogin>3000</milesPerFacebookLogin>
+    <milesPerStar>5</milesPerStar>
+    <milesPerSecond>1</milesPerSecond>
+    <milesPerJohnny>400</milesPerJohnny>
+    <milesPerColor>700</milesPerColor> 
+    <milesPerBullet>550</milesPerBullet>
+    <timeForJohnny>20.0</timeForJohnny>
+    <timeForColor>13.0</timeForColor>
+    <colorIterationsColor>7</colorIterationsColor>
+    <timeForBullet>7.0</timeForBullet>
+    <deltaMultiplierForBullet>0.25</deltaMultiplierForBullet>
+    <!-- End of Boosters and miles -->
+	<globalGravity> 
+		<x>0.0</x>
+		<y>-175.0</y>   
+	</globalGravity>
+	<globalSpeed>3.5</globalSpeed>
+	<globalRestitution>0.0</globalRestitution>
+	<globalLuggageDamping>
+		<!-- First luggage damping must be default -->
+		<default>
+			<linear>1.0</linear> 
+			<angular>5.0</angular> 
+		</default>
+		<standard>
+			<linear>1.0</linear>
+			<angular>5.0</angular>
+		</standard>
+		<dog>
+			<linear>1.2</linear>
+			<angular>5.5</angular>
+		</dog>
+		<band>
+			<linear>1.0</linear>
+			<angular>5.0</angular> 
+		</band>
+		<surf> 
+			<linear>1.0</linear>
+			<angular>5.0</angular>
+		</surf>
+		<luxury>
+			<linear>1.0</linear>
+			<angular>5.0</angular>
+		</luxury>
+		<biohazard>
+			<linear>1.0</linear>
+			<angular>5.0</angular>
+		</biohazard>
+	</globalLuggageDamping>	
+</globalConfig>
+
+<!-- Level LHR-1 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>3</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>1</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>  
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>
+		</tube>
+	</tubes>
+	<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>9</nbElements>
+		<xPos>-9</xPos>
+		<yPos>30</yPos>
+	</belt>
+</belts>
+<boards>
+</boards>
+<cubes></cubes>
+<circles></circles>
+<engines></engines>
+<movingBoards></movingBoards>
+<!-- Node that indicates tutorials -->
+<tutorial>
+	<!-- Each action happens with it content at the same time and in writing order -->
+	<action>
+	    <!-- Define if this action stops the level -->
+	    <gameStop>true</gameStop>
+		<!-- Time in seconds that the action wait to begin respect the end of the last action (first action initial time is the beginning of the level) -->
+		<delay>0.0</delay>
+		<!-- Time in seconds that action wait to the end after every object complete it's appearance -->
+		<duration>4.0</duration>
+		<texts>
+			<text>
+				<!-- Position in game's resolution (450x800) -->
+				<x>25</x>
+				<y>735</y>
+				<!-- String key name in language manager -->
+				<string>Tutorial1</string>
+				<!-- Font -->
+				<font>data/Lavos48.fnt</font>
+				<!-- Text Scale -->
+				<scale>0.55</scale>
+			</text>
+		</texts>
+		<arrows>
+			<!-- Arrow ("normal" or "rotated") with direction ("left" or "right") -->
+			<arrow mode="normal" direction="left">
+				<x>290</x>
+				<y>730</y>
+			</arrow>
+		</arrows>
+	</action>
+	<!-- Second Action -->
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>2.0</duration>
+		<arrows>
+				<arrow mode="normal" direction="right">
+					<x>190</x>
+					<y>300</y>
+				</arrow>
+		</arrows>
+		<!-- Specific the position where the finger goes to tap; interpolating from the last action's position -->
+		<finger>
+			<x>220</x>
+			<y>300</y>
+		</finger>
+	</action>
+	<!-- Third Action -->
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>2.0</duration>
+		<arrows>
+			<arrow mode="normal" direction="left">
+				<x>190</x>
+				<y>300</y>
+			</arrow>
+		</arrows>
+		<finger>
+			<x>220</x>
+			<y>300</y>
+		</finger>
+	</action>
+	<!-- Fourth Action -->
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>4.5</duration>
+		<arrows>
+			<!-- Left Tube -->
+			<arrow mode="normal" direction="left">
+				<x>130</x>
+				<y>20</y>
+			</arrow>
+			<!-- Right Tube -->
+			<arrow mode="normal" direction="right">
+				<x>240</x>
+				<y>20</y>
+			</arrow>
+		</arrows>
+		<texts>
+			<text>
+				<x>45</x>
+				<y>170</y>
+				<string>Tutorial2</string>
+				<font>data/Lavos48.fnt</font>
+				<scale>0.7</scale>
+			</text>
+		</texts>
+	</action>
+</tutorial>
+<!-- Tutorials end -->
+</levelmap>
+<!-- Level LHR-2 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>4</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>2</luggageUpTo>
+		<dropTime>7</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>16</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>8</nbElements>
+			<xPos>-31</xPos>
+			<yPos>35</yPos>
+		</belt>	
+		<belt><groupID>1</groupID>
+			<nbElements>10</nbElements>
+			<xPos>15</xPos>
+			<yPos>35</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>20</yPos>
+		</belt>
+</belts>
+	<boards>
+	</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards></movingBoards>
+	<tutorial>
+		<!-- Finger taps in launcher -->
+		<action>
+		    <gameStop>true</gameStop>
+			<delay>0.0</delay>
+			<duration>2.0</duration>
+			<finger>
+				<x>220</x>
+				<y>780</y>
+			</finger>
+		</action>
+		<!-- Luggage exits from one side... -->
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>1.5</delay>
+			<duration>3.0</duration>
+			<arrows>
+				<arrow mode="normal" direction="left">
+					<x>20</x>
+					<y>600</y>
+				</arrow>
+			</arrows>
+			<texts>
+				<text>
+					<x>85</x>
+					<y>620</y>
+					<string>Tutorial3</string>
+					<font>data/Lavos48.fnt</font>
+					<scale>0.55</scale>
+				</text>
+			</texts>
+		</action>
+		<!-- Appears from the other -->
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>0.0</delay>
+			<duration>3.0</duration>
+			<arrows>
+				<arrow mode="normal" direction="right">
+					<x>350</x>
+					<y>600</y>
+				</arrow>
+			</arrows>
+			<texts>
+				<text>
+					<x>100</x>
+					<y>610</y>
+					<string>Tutorial4</string>
+					<font>data/Lavos48.fnt</font>
+					<scale>0.55</scale>
+				</text>
+			</texts>
+		</action>
+	</tutorial>
+</levelmap>
+<!-- Level LHR-3 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>5</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-6.5</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>6.5</xPos>
+		</tube>
+	</tubes>
+<belts>
+ <belt>
+     <groupID>0</groupID>
+	<nbElements>12</nbElements>
+	<xPos>-39</xPos>
+	<yPos>20</yPos>
+</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>12</nbElements>
+		<xPos>14</xPos>
+		<yPos>20</yPos>
+	</belt>
+</belts>
+<boards></boards>
+<cubes>
+</cubes>
+<circles></circles>
+<engines>
+    <engine>
+        <xCenter>0</xCenter>
+        <yCenter>50</yCenter>
+        <size>34</size>
+    </engine>
+</engines>
+<movingBoards></movingBoards>
+<tutorial>
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>2.0</duration>
+		<arrows>
+				<arrow mode="rotated" direction="right">
+					<x>190</x>
+					<y>500</y>
+				</arrow>
+		</arrows>
+		<!-- Specific the position where the finger goes to tap; interpolating from the last action's position -->
+		<finger>
+			<x>220</x>
+			<y>500</y>
+		</finger>
+	</action>
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>2.0</duration>
+		<arrows>
+				<arrow mode="rotated" direction="left">
+					<x>190</x>
+					<y>500</y>
+				</arrow>
+		</arrows>
+		<!-- Specific the position where the finger goes to tap; interpolating from the last action's position -->
+		<finger>
+			<x>220</x>
+			<y>500</y>
+		</finger>
+	</action>
+</tutorial>
+</levelmap>
+<!-- Level LHR-4 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>-12</xCenter>
+		</launcher>
+		<luggageUpTo>5</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-2</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+<belts>
+</belts>
+<boards>
+    <board>
+        <node>
+            <xPos>-24</xPos>
+            <yPos>67</yPos>
+        </node>
+        <node>
+            <xPos>6</xPos>
+            <yPos>60</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>24</xPos>
+            <yPos>50</yPos>
+        </node>
+        <node>
+            <xPos>-4</xPos>
+            <yPos>42</yPos>
+        </node>
+    </board>
+    <board>
+     	<node>
+            <xPos>-24</xPos>
+            <yPos>32</yPos>
+        </node>
+        <node>
+            <xPos>-2</xPos>
+            <yPos>28.5</yPos>
+        </node>
+    </board>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>8</size>
+	 	   <velocity>10</velocity>
+	 	   <xFrom>8</xFrom>
+	 	   <yFrom>17</yFrom>
+	 	   <xTo>8</xTo>
+	 	   <yTo>17</yTo>
+	    </movingBoard>
+	</movingBoards>
+	<tutorial>
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>0.0</delay>
+			<duration>2.0</duration>
+			<arrows>
+					<arrow mode="rotated" direction="left">
+						<x>220</x>
+						<y>170</y>
+					</arrow>
+			</arrows>
+			<finger>
+				<x>260</x>
+				<y>152</y>
+			</finger>
+		</action>
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>0.0</delay>
+			<duration>2.0</duration>
+			<arrows>
+					<arrow mode="rotated" direction="right">
+						<x>300</x>
+						<y>170</y>
+					</arrow>
+			</arrows>
+			<finger>
+				<x>335</x>
+				<y>152</y>
+			</finger>
+		</action>
+	</tutorial>
+</levelmap>
+<!-- Level LHR-5 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>5</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>
+		</tube>
+	</tubes>
+<belts>
+    	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>-7</xPos>
+		<yPos>40</yPos>
+		</belt>
+</belts>
+<electricShocks>
+		<electricShock>
+			<xPos1>-24</xPos1>
+			<yPos1>30</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>-9</xPos2>
+			<yPos2>30</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+			<electricShock>
+			<xPos1>9</xPos1>
+			<yPos1>30</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>24</xPos2>
+			<yPos2>30</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+	<tutorial>
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>0.0</delay>
+			<duration>4.0</duration>
+			<arrows>
+				<arrow mode="normal" direction="left">
+					<x>150</x>
+					<y>250</y>
+				</arrow>
+				<arrow mode="normal" direction="right">
+					<x>220</x>
+					<y>250</y>
+				</arrow>
+			</arrows>
+			<texts>
+				<text>
+					<x>80</x>
+					<y>230</y> 
+					<string>Tutorial5</string>
+					<font>data/Lavos48.fnt</font>
+					<scale>0.6</scale>
+				</text>
+			</texts>
+		</action>
+	</tutorial>
+</levelmap>
+<!-- Level LHR-6 -->
+<levelmap>
+	<configuration>
+		<timer>35</timer>
+		<successTarget>9</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-4</xCenter>
+		</launcher>
+		<luggageUpTo>5</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+	 	   <groupID>0</groupID>
+	 	   <nbElements>4</nbElements>
+	 	   <xPos>-8</xPos>
+	 	   <yPos>45</yPos>
+	    </belt>
+	    <belt>
+	 	   <groupID>2</groupID>
+	 	   <nbElements>4</nbElements>
+	 	    <xPos>5</xPos>
+	 	    <yPos>25</yPos>
+	    </belt>
+</belts>
+<boards>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+</movingBoards>
+	<tutorial>
+		<action>
+		    <gameStop>false</gameStop>
+			<delay>1.0</delay>
+			<duration>4.0</duration>
+			<arrows>
+				<arrow mode="normal" direction="left">
+					<x>82</x> 
+					<y>665</y>
+				</arrow>
+			</arrows>
+			<texts>
+				<text>
+					<x>180</x> 
+					<y>730</y>
+					<string>Tutorial6</string>
+					<font>data/Lavos48.fnt</font>
+					<scale>0.6</scale>
+				</text>
+			</texts>
+		</action>
+	</tutorial>
+</levelmap>
+<!-- Level LHR-7 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>9</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>12</xCenter>
+		</launcher>
+		<luggageUpTo>5</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+	 	   <groupID>0</groupID>
+	 	   <nbElements>4</nbElements>
+	 	   <xPos>-9</xPos>
+	 	   <yPos>40</yPos>
+	    </belt>
+	    <belt>
+	 	   <groupID>2</groupID>
+	 	   <nbElements>4</nbElements>
+	 	    <xPos>5</xPos>
+	 	    <yPos>25</yPos>
+	    </belt>
+</belts>
+<boards>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines>
+	    <engine>
+	    	<xCenter>12</xCenter>
+       		<yCenter>58</yCenter>
+        	<size>22</size>
+        </engine>
+	</engines>
+	<movingBoards>
+</movingBoards>
+<tutorial>
+    <action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>3.0</duration>
+		<arrows>
+			<arrow mode="normal" direction="right">
+				<x>200</x>
+				<y>7</y>
+			</arrow>
+		</arrows>
+		<texts>
+			<text>
+				<x>50</x>
+				<y>150</y>
+				<string>TutorialJohnny</string>
+				<font>data/Lavos48.fnt</font>
+				<scale>0.55</scale>
+			</text>
+		</texts>
+	</action>
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>3.0</duration>
+		<arrows>
+			<arrow mode="normal" direction="right">
+				<x>250</x>
+				<y>7</y>
+			</arrow>
+		</arrows>
+		<texts>
+			<text>
+				<x>50</x>
+				<y>200</y>
+				<string>TutorialColor</string>
+				<font>data/Lavos48.fnt</font>
+				<scale>0.55</scale>
+			</text>
+		</texts>
+	</action>
+	<action>
+	    <gameStop>true</gameStop>
+		<delay>0.0</delay>
+		<duration>3.0</duration>
+		<arrows>
+			<arrow mode="normal" direction="right">
+				<x>320</x>
+				<y>7</y>
+			</arrow>
+		</arrows>
+		<texts>
+			<text>
+				<x>50</x>
+				<y>200</y>
+				<string>TutorialBullet</string>
+				<font>data/Lavos48.fnt</font>
+				<scale>0.55</scale>
+			</text>
+		</texts>
+	</action>
+</tutorial>
+</levelmap>
+
+<!-- Level LHR-8 -->
+<levelmap>
+	<configuration>
+		<timer>45</timer>
+		<successTarget>9</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2.25</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-8</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>8</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>35</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>8</nbElements>
+			<xPos>-31</xPos>
+			<yPos>20</yPos>
+		</belt>	
+		<belt><groupID>1</groupID>
+			<nbElements>10</nbElements>
+			<xPos>15</xPos>
+			<yPos>20</yPos>
+		</belt>
+			<belt>
+			<groupID>2</groupID>
+			<nbElements>10</nbElements>
+			<xPos>-31</xPos>
+			<yPos>50</yPos>
+		</belt>	
+			<belt>
+			<groupID>2</groupID>
+			<nbElements>10</nbElements>
+			<xPos>10.5</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>65</yPos>
+		</belt>
+</belts>
+	<boards>
+	    <board>
+	        <node>
+	            <xPos>0</xPos>
+	            <yPos>15</yPos>
+	        </node>
+	    </board>
+	</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards></movingBoards>
+</levelmap>
+<!-- Level LHR-9 -->
+<levelmap>
+	<configuration>
+		<timer>40</timer> 
+		<successTarget>9</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>16</xPos>
+		</tube>
+	</tubes>
+<belts></belts>
+<boards>
+    <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+</boards>
+<cubes>
+    <cube>
+        <xCenter>0</xCenter>
+        <yCenter>55</yCenter>
+        <size>26</size>
+    </cube>
+</cubes>
+<circles></circles>   
+<engines></engines>
+<movingBoards></movingBoards>
+</levelmap>
+<!-- Level LHR-10 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>19</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+<tubes>	
+		<tube>
+			<color>1</color>
+			<xPos>17</xPos>
+		</tube>
+	</tubes>
+<belts>
+    	<belt>
+	    <groupID>0</groupID>
+		<nbElements>13</nbElements>
+		<xPos>-20</xPos>
+		<yPos>40</yPos>
+		</belt>
+</belts>
+<electricShocks> 
+		<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>25</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>0</xPos2>
+			<yPos2>55</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>6</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+	<boards>
+	    <board>
+	        <node>
+	            <xPos>-23</xPos>
+	            <yPos>46</yPos>
+	        </node>
+	    </board>
+	</boards>
+</levelmap>
+<!-- Level LHR-11 -->  
+<levelmap>
+	<configuration>
+		<timer>40</timer>
+		<successTarget>15</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed> 
+		<launchers>
+		<launcher>
+		    <xCenter>-12</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>12</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>19</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-17</xPos> 
+			<yPos>60</yPos>
+		</belt>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>7</xPos> 
+			<yPos>60</yPos>
+		</belt>
+</belts>
+	<boards>
+	</boards>
+	<cubes></cubes>
+	<circles></circles>
+	
+	<engines>
+    <engine>
+        <xCenter>0</xCenter>
+        <yCenter>30</yCenter>
+        <size>22</size>
+    </engine>
+</engines>
+	<movingBoards></movingBoards>
+</levelmap>
+
+
+<!-- Level LHR-12 --> 
+<levelmap>
+	<configuration>
+		<timer>75</timer>
+		<successTarget>15</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>4.5</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>19</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>4</nbElements>
+			<xPos>-4</xPos>
+			<yPos>65</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>4</nbElements>
+			<xPos>-18</xPos>
+			<yPos>45</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>4</nbElements>
+			<xPos>10</xPos>
+			<yPos>45</yPos>
+		</belt>
+</belts>
+<boards>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards></movingBoards>
+</levelmap>
+
+<!-- Level JFK-1 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>15</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-13</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>	 
+		<tube>
+			<color>3</color>
+			<xPos>0</xPos>
+		</tube>		
+	</tubes>
+<belts>
+	<belt>
+		 <groupID>0</groupID>
+			<nbElements>12</nbElements>
+			<xPos>-22</xPos>
+			<yPos>70</yPos>
+	</belt>
+</belts>
+<boards>
+	<board>
+		<node>
+			<xPos>-23</xPos>
+			<yPos>75</yPos>
+		</node>
+	</board>
+</boards>
+<cubes>
+	<cube> 
+		<xCenter>35</xCenter>
+		<yCenter>40</yCenter>
+		<size>50</size>
+	</cube>
+</cubes>
+<engines>
+</engines>
+<circles>
+</circles>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+<!-- Level JFK-2 -->
+<levelmap>
+	<configuration>
+		<timer>55</timer>
+		<successTarget>13</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-8</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+</belts>
+	<boards>
+        <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>18</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>18</yPos>
+        </node>
+    </board>
+	
+	<board>
+	
+	  <node>
+            <xPos>-9.5</xPos>
+            <yPos>15</yPos>
+        </node>
+	</board>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>12</size>
+	 	   <velocity>5</velocity>
+	 	   <xFrom>-8</xFrom>
+	 	   <yFrom>55</yFrom>
+	 	   <xTo>-8</xTo>
+	 	   <yTo>55</yTo>
+	    </movingBoard>
+	    <movingBoard>
+	 	   <size>9</size>
+	 	   <velocity>5</velocity>
+	 	   <xFrom>9</xFrom>
+	 	   <yFrom>30</yFrom>
+	 	   <xTo>9</xTo>
+	 	   <yTo>30</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+
+
+<!-- Level JFK-3 -->
+<levelmap> 
+	<configuration>
+		<timer>90</timer>
+		<successTarget>14</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>1</luggageUpTo>
+		<dropTime>4.5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+<belts></belts>
+<boards>
+    <board>
+        <node>
+            <xPos>24</xPos>
+            <yPos>50</yPos>
+        </node>
+        <node>
+            <xPos>18</xPos>
+            <yPos>40</yPos>
+        </node>
+    </board>
+    <board>
+        <node>
+            <xPos>-24</xPos>
+            <yPos>50</yPos>
+        </node>
+        <node>
+            <xPos>-18</xPos>
+            <yPos>40</yPos>
+        </node>
+    </board>
+       <board>
+        <node>
+            <xPos>25</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+       <board>
+        <node>
+            <xPos>-25</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+	<board>
+        <node>
+            <xPos>-9.5</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+	<board>
+        <node>
+            <xPos>9.5</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+</boards>
+<cubes>
+    <cube>
+        <xCenter>0</xCenter>
+        <yCenter>55</yCenter>
+        <size>16</size>
+    </cube>
+ </cubes>
+<circles></circles>
+<engines></engines>
+<movingBoards>
+    <movingBoard>
+	 	   <size>9</size>
+	 	   <velocity>5</velocity>
+	 	   <xFrom>-10</xFrom>
+	 	   <yFrom>25</yFrom>
+	 	   <xTo>-10</xTo>
+	 	   <yTo>25</yTo>
+	    </movingBoard>
+	    <movingBoard>
+	 	   <size>9</size>
+	 	   <velocity>5</velocity>
+	 	   <xFrom>10</xFrom>
+	 	   <yFrom>25</yFrom>
+	 	   <xTo>10</xTo>
+	 	   <yTo>25</yTo>
+	    </movingBoard>
+</movingBoards>
+</levelmap>
+<!-- Level JFK-4 -->
+<levelmap>
+    <configuration>
+		<timer>100</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>18</xCenter>
+		</launcher>
+		<luggageUpTo>1</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	
+<boards>
+<board>
+	<node>
+		<xPos>-26.9</xPos>
+		<yPos>1</yPos>
+	</node>
+     <node>
+		<xPos>-26.5</xPos>
+		<yPos>35</yPos>
+     </node>
+</board>
+<board>
+	<node>
+		<xPos>26.5</xPos>
+		<yPos>1</yPos>
+	</node>
+     <node>
+		<xPos>26.5</xPos>
+		<yPos>35</yPos>
+     </node>
+</board>
+
+</boards>
+<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>9</xPos>
+		<yPos>70</yPos> 
+	</belt>
+</belts>
+    <tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>
+		<tube>
+		    <color>3</color>
+			<xPos>0</xPos>
+	    </tube>
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos> 
+		</tube>
+		
+	</tubes>
+<engines>	
+	<engine>
+        <xCenter>2</xCenter>
+        <yCenter>50</yCenter>
+        <size>20</size>
+    </engine>
+</engines>
+
+<movingBoards>
+	<movingBoard>
+	 	   <size>12</size>
+	 	   <velocity>15</velocity>
+	 	   <xFrom>-11</xFrom>
+	 	   <yFrom>28</yFrom>
+	 	   <xTo>-11</xTo>
+	 	   <yTo>28</yTo>
+	</movingBoard>
+</movingBoards>
+<electricShocks>
+	<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>17</yPos1>
+			<xTo1>-9</xTo1>
+			<yTo1>17</yTo1>
+			<velocity1>12</velocity1>
+			<xPos2>9</xPos2>
+			<yPos2>17</yPos2>
+			<xTo2>-24</xTo2>
+			<yTo2>17</yTo2> 
+			<velocity2>12</velocity2>
+			<frequency>4</frequency>
+			<timespan>3</timespan>
+	</electricShock>
+</electricShocks>
+</levelmap>
+<!-- Level JFK-5 -->
+<levelmap>
+	<configuration>
+		<timer>40</timer>
+		<successTarget>16</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>1</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>15</xPos>
+		</tube>
+	</tubes>
+<belts></belts>
+<boards>
+    <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+</boards>
+<cubes></cubes>
+<circles>
+    <circle>
+        <xCenter>0</xCenter>
+        <yCenter>60</yCenter>
+        <size>15</size>
+    </circle>
+</circles>
+<engines></engines>
+<movingBoards></movingBoards>
+</levelmap>
+
+<!-- Level JFK-6 -->
+<levelmap>
+    <configuration>
+		<timer>48</timer>
+		<successTarget>15</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+				<launchers>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+				</launchers>
+		<luggageUpTo>4</luggageUpTo>
+		<dropTime>1000</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	
+<tubes>
+	<tube>
+		<color>1</color>
+		<xPos>17</xPos>
+	</tube>
+	<tube>
+		<color>2</color>
+		<xPos>-17</xPos>
+	</tube>
+</tubes>
+
+<electricShocks>
+		<electricShock>
+			<xPos1>-10</xPos1>
+			<yPos1>50</yPos1>
+			<xPos2>10</xPos2>
+			<yPos2>50</yPos2>
+			<timespan>1.5</timespan> 
+			<frequency>2</frequency>
+			
+		</electricShock>
+</electricShocks>
+
+
+<engines>
+
+		<engine>
+		<xCenter>0</xCenter>
+        <yCenter>30</yCenter>
+        <size>20</size>
+		</engine>
+</engines>
+</levelmap>
+
+<!-- Level JFK-7 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-10</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>12</xPos>
+		</tube>			
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>16</nbElements>
+			<xPos>-13</xPos>
+			<yPos>45</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>16</nbElements>
+			<xPos>-22</xPos>
+			<yPos>65</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-26</xPos>
+			<yPos>25</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>10</nbElements>
+			<xPos>20</xPos>
+			<yPos>25</yPos>
+		</belt>
+	</belts>
+		<electricShocks>
+		<!--passage 1 -->
+		<electricShock>
+			<xPos1>-5</xPos1>
+			<yPos1>78</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>-5</xPos2>
+			<yPos2>65</yPos2>
+			<velocity2>7</velocity2>
+			<frequency>3</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>11</xPos1>
+			<yPos1>78</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>11</xPos2>
+			<yPos2>65</yPos2>
+			<velocity2>7</velocity2>
+			<frequency>3</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+	<board>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>70</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>24</xPos>
+			<yPos>50</yPos>
+		</node>
+	</board>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+<!-- Level JFK-8 -->
+<levelmap>
+	<configuration>
+		<timer>45</timer>
+		<successTarget>12</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-7</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>-2</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>3</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-12</xPos>
+			<yPos>65</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>5</nbElements>
+			<xPos>3</xPos>
+			<yPos>20</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-12</xPos>
+			<yPos>35</yPos>
+		</belt>
+</belts>
+<boards>
+ <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>35</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+	<board>
+        <node>
+            <xPos>26.5</xPos>
+            <yPos>35</yPos>
+        </node>
+        <node>
+            <xPos>26.5</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+ </boards>
+<cubes></cubes>
+<circles></circles>
+<engines></engines>
+<movingBoards></movingBoards>
+</levelmap>
+
+
+<!-- Level JFK-9 -->
+<levelmap>
+	<configuration>
+		<timer>40</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-12</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>12</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>		
+
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>  
+		</tube>
+	</tubes>
+<engines>
+    <engine>
+        <xCenter>-12</xCenter>
+        <yCenter>60</yCenter>
+        <size>18</size>
+    </engine>
+	<engine>
+        <xCenter>12</xCenter>
+        <yCenter>60</yCenter>
+        <size>18</size>
+    </engine>
+</engines>
+<circles>
+    <circle>
+        <xCenter>0</xCenter>
+        <yCenter>33</yCenter> 
+        <size>12</size>
+    </circle>
+</circles>
+
+</levelmap>
+
+<!-- Level JFK-10 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>16</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed> 
+    <launcher> 
+        <xCenter>0</xCenter> 
+    </launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-10</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>10</xPos>
+		</tube>
+	</tubes>
+<belts>
+ <belt>
+     <groupID>0</groupID>
+	<nbElements>10</nbElements>
+	<xPos>-39</xPos>
+	<yPos>16</yPos>
+</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>12</nbElements>
+		<xPos>18</xPos>
+		<yPos>16</yPos>
+	</belt>
+	
+	<belt>
+	    <groupID>1</groupID>
+		<nbElements>10</nbElements>
+		<xPos>-10</xPos>
+		<yPos>29</yPos>
+	</belt>
+	
+</belts>
+<boards>
+	<board>
+        <node>
+            <xPos>0</xPos>
+            <yPos>70</yPos>
+        </node>
+	</board>
+	<board>
+        <node>
+            <xPos>10</xPos>
+            <yPos>55</yPos>
+        </node>
+	</board>
+	<board>
+        <node>
+            <xPos>-10</xPos>
+            <yPos>55</yPos>
+        </node>
+	</board>
+	<board>
+        <node> 
+            <xPos>0</xPos>
+            <yPos>40</yPos>
+        </node>
+	</board>
+</boards>
+<cubes>
+</cubes>
+<circles></circles>
+</levelmap>
+<!-- Level JFK-11 -->
+<levelmap>
+	<configuration>
+		<timer>70</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+			<launcher>
+				<xCenter>-12</xCenter>
+			</launcher>
+			<launcher>
+				<xCenter>12</xCenter>
+			</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>8</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>	
+		<tube>
+			<color>3</color>
+			<xPos>16</xPos>
+		</tube>			
+	</tubes>
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-18</xPos>
+			<yPos>62</yPos>
+		</belt>
+		<belt>
+			<groupID>1</groupID>
+			<nbElements>5</nbElements>
+			<xPos>7</xPos>
+			<yPos>62</yPos>
+		</belt>
+	</belts>
+	<electricShocks> 
+		<electricShock>
+			<xPos1>-13</xPos1>
+			<yPos1>60</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>-29</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>-13</xTo1>
+			<yTo1>60</yTo1>
+			<xTo2>-7</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>0</frequency>
+			<timespan>2.5</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>13</xPos1>
+			<yPos1>60</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>7</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>13</xTo1>
+			<yTo1>60</yTo1>
+			<xTo2>29</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>0</frequency>
+			<timespan>2.5</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines>
+	<engine> 
+		<xCenter>0</xCenter>
+		<yCenter>25</yCenter>
+		<size>25</size>
+	</engine>
+	</engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+<!-- Level JFK-12 -->
+<levelmap>
+	<configuration>
+		<timer>85</timer>
+		<successTarget>17</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-8</xCenter>
+		</launcher>
+		<luggageUpTo>4</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>15</xPos>
+		</tube>
+	</tubes>
+<belts>
+ <belt>
+     <groupID>0</groupID>
+	<nbElements>8</nbElements>
+	<xPos>-35</xPos>
+	<yPos>18</yPos>
+</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>12</nbElements>
+		<xPos>18</xPos>
+		<yPos>18</yPos>
+	</belt>
+</belts>
+<boards>
+    <board>
+        <node>
+            <xPos>-10</xPos>
+            <yPos>35</yPos>
+        </node>
+        <node>
+             <xPos>-6.5</xPos>
+            <yPos>25</yPos>
+        </node>
+    </board> 
+</boards>
+<cubes>
+</cubes>
+<circles></circles>
+<engines>
+    <engine>
+        <xCenter>-8</xCenter>
+        <yCenter>58</yCenter>
+        <size>20</size>
+    </engine>
+       <engine>
+        <xCenter>10</xCenter>
+        <yCenter>38</yCenter>
+        <size>20</size>
+    </engine>
+</engines>
+<movingBoards></movingBoards>
+</levelmap>
+
+<!-- Level MAD-1 -->
+<levelmap>
+	<configuration>
+		<timer>65</timer> 
+		<successTarget>12</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+			<launcher>
+				<xCenter>-8</xCenter>
+			</launcher>
+			<launcher> 
+				<xCenter>8</xCenter>
+			</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>lhr</prefix> 
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>	
+		<tube>
+			<color>3</color>
+			<xPos>19</xPos>
+		</tube>			
+	</tubes>
+	<belts> 
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>15</nbElements>
+			<xPos>-17</xPos>
+			<yPos>62</yPos>
+		</belt>
+	</belts>
+	<electricShocks> 
+	</electricShocks>
+<boards>  
+	<board>
+		<node>
+			<xPos>0</xPos>
+			<yPos>80</yPos>
+		</node>
+		<node>
+			<xPos>0</xPos>
+			<yPos>20</yPos>
+		</node>
+	</board> 
+</boards>
+<cubes>
+	<cube> 
+		<xCenter>0</xCenter>
+		<yCenter>10</yCenter>
+		<size>30</size>
+	</cube>
+</cubes>
+<circles>   
+</circles>
+<engines>
+	<engine> 
+		<xCenter>-28</xCenter>
+		<yCenter>35</yCenter>
+		<size>30</size>
+	</engine>
+	<engine> 
+		<xCenter>28</xCenter>
+		<yCenter>35</yCenter>
+		<size>30</size>
+	</engine>
+	</engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+<!-- Level MAD-2 -->
+<levelmap>
+    <configuration>
+		<timer>60</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+				<launchers>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+				</launchers>
+		<luggageUpTo>4</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	
+<tubes>
+	<tube>
+		<color>1</color>
+		<xPos>17</xPos>
+	</tube>
+	<tube>
+		<color>2</color>
+		<xPos>-17</xPos>
+	</tube>
+</tubes>
+
+
+<belts> 
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>-7</xPos>
+		<yPos>70</yPos>
+	</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>-27</xPos>
+		<yPos>55</yPos>
+	</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>13</xPos>
+		<yPos>55</yPos> 
+	</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>9</nbElements>
+		<xPos>-9</xPos>
+		<yPos>40</yPos>
+	</belt>
+</belts>
+<boards>
+	<board>
+     	<node>
+            <xPos>0</xPos>
+            <yPos>52</yPos>
+        </node>
+        <node>
+            <xPos>0</xPos>
+            <yPos>28.5</yPos>
+        </node>
+	</board>
+</boards>
+<electricShocks> 
+		<electricShock>
+			<xPos1>-29</xPos1>
+			<yPos1>30</yPos1>
+			<xPos2>-5</xPos2>
+			<yPos2>30</yPos2>
+			<frequency>4</frequency>
+			<timespan>3</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>29</xPos1>
+			<yPos1>30</yPos1>
+			<xPos2>5</xPos2>
+			<yPos2>30</yPos2>
+			<frequency>4</frequency>
+			<timespan>3</timespan>
+		</electricShock>
+</electricShocks>
+</levelmap>
+
+
+<!-- Level MAD-3 -->
+<levelmap>
+	<configuration>
+		<timer>45</timer>
+		<successTarget>18</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-7</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>16</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>3</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-12</xPos>
+			<yPos>64</yPos>
+		</belt>
+</belts>
+<boards>
+        <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>65</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>-8</xPos>
+            <yPos>40</yPos>
+        </node>
+        <node>
+            <xPos>-8</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>8</xPos>
+            <yPos>40</yPos>
+        </node>
+        <node>
+            <xPos>8</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+</boards>
+<cubes></cubes>
+<circles></circles>
+<engines></engines>
+<movingBoards></movingBoards>
+</levelmap>
+<!-- Level MAD-4 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>15</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-4</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+	 	   <groupID>0</groupID>
+	 	   <nbElements>4</nbElements>
+	 	   <xPos>-8</xPos>
+	 	   <yPos>45</yPos>
+	    </belt>
+	    <belt>
+	 	   <groupID>2</groupID>
+	 	   <nbElements>4</nbElements>
+	 	    <xPos>5</xPos>
+	 	    <yPos>25</yPos>
+	    </belt>
+</belts>
+<boards>
+</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+</movingBoards>
+<electricShocks>
+		<electricShock> 
+			<xPos1>-26</xPos1>
+			<yPos1>16</yPos1>
+			<velocity1>3</velocity1> 
+			<xPos2>-10</xPos2> 
+			<yPos2>16</yPos2>
+			<velocity2>4</velocity2> 
+			<frequency>2</frequency>
+			<timespan>1</timespan> 
+		</electricShock> 
+		<electricShock> 
+			<xPos1>-10</xPos1>
+			<yPos1>16</yPos1>
+			<velocity1>3</velocity1>  
+			<xPos2>10</xPos2>
+			<yPos2>16</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+			<electricShock> 
+			<xPos1>10</xPos1>
+			<yPos1>16</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>26</xPos2>
+			<yPos2>16</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+</levelmap>
+<!-- Level MAD-5 -->
+ <levelmap>
+        <configuration>
+		<timer>20</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-18</xCenter>
+		</launcher>
+		<luggageUpTo>4</luggageUpTo>
+		<dropTime>1.6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<electricShocks>    
+		<electricShock>
+			<xPos1>8</xPos1>
+			<yPos1>40</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>29</xPos2>
+			<yPos2>40</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>0.5</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>-8</xPos1>
+			<yPos1>10</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>-29</xPos2>
+			<yPos2>10</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>0.5</timespan>
+		</electricShock>
+	</electricShocks>
+	
+	
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos> 
+		</tube>
+		
+	</tubes>
+	<belts>
+	     <belt>
+	          <groupID>0</groupID>
+		      <nbElements>4</nbElements>
+		      <xPos>-22</xPos> 
+		      <yPos>60</yPos> 
+	     </belt>
+	</belts>
+	<boards>
+   
+  	<board>
+		<node>
+            <xPos>-4</xPos>
+            <yPos>28</yPos>
+        </node>
+		<node> 
+            <xPos>2</xPos>
+            <yPos>41</yPos>
+        </node>
+	</board>
+	</boards>
+
+ 
+ </levelmap>
+<!-- Level MAD-6 -->
+<levelmap>
+	<configuration>
+		<timer>55</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-15</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>15</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>9</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>	
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>	
+		<tube>
+			<color>3</color>
+			<xPos>16</xPos>
+		</tube>		
+	</tubes>
+<belts>
+	
+</belts>
+<boards>
+	<board>
+		<node>
+			<xPos>-26</xPos>
+			<yPos>70</yPos>
+		</node>
+		<node>
+			<xPos>-26</xPos>
+			<yPos>20</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>26</xPos>
+			<yPos>70</yPos>
+		</node>
+		<node>
+			<xPos>26</xPos>
+			<yPos>20</yPos>
+		</node>
+	</board>
+</boards>
+<cubes> 
+</cubes>
+<engines>
+</engines>
+<circles>
+</circles>
+<movingBoards>
+		<movingBoard>
+	 	   <size>12</size>
+	 	   <velocity>6</velocity>
+	 	   <xFrom>-15</xFrom>
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>-15</xTo>
+	 	   <yTo>55</yTo>
+	    </movingBoard>
+		<movingBoard>
+	 	   <size>12</size>
+	 	   <velocity>6</velocity>
+	 	   <xFrom>15</xFrom>
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>15</xTo>
+	 	   <yTo>55</yTo>
+	    </movingBoard>
+		<movingBoard>
+	 	   <size>14</size>
+	 	   <velocity>6</velocity>
+	 	   <xFrom>0</xFrom>
+	 	   <yFrom>45</yFrom>
+	 	   <xTo>0</xTo>
+	 	   <yTo>40</yTo>
+	    </movingBoard>
+	    <movingBoard>
+	 	   <size>14</size>
+	 	   <velocity>5</velocity>
+	 	   <xFrom>15</xFrom>
+	 	   <yFrom>22</yFrom>
+	 	   <xTo>-15</xTo>
+	 	   <yTo>22</yTo>
+	    </movingBoard>
+</movingBoards>
+</levelmap>
+<!-- Level MAD-7 -->
+<levelmap>
+	<configuration>
+		<timer>24</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher> 
+		    <xCenter>-17</xCenter>
+		</launcher>
+		<luggageUpTo>2</luggageUpTo>
+		<dropTime>1.9</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>17</xPos>
+		</tube>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>
+	</tubes>
+	<boards>
+		<board>
+			<node>
+				<xPos>-28</xPos>
+				<yPos>72</yPos>
+			</node>
+			<node>
+				<xPos>-24</xPos>
+				<yPos>63.5</yPos>
+			</node>
+			<node>
+				<xPos>-12</xPos> 
+				<yPos>58.4</yPos> 
+			</node>
+		</board>
+		<board>
+			<node>
+				<xPos>-14</xPos>
+				<yPos>74</yPos>
+			</node>
+		</board>
+	</boards>
+	<circles>
+		<circle>
+			<xCenter>0</xCenter>
+			<yCenter>41</yCenter>
+			<size>10</size>
+		</circle>
+	</circles>
+	<electricShocks>
+		<electricShock>
+			<xPos1>-24</xPos1>
+			<yPos1>40</yPos1>
+			<xPos2>0</xPos2>
+			<yPos2>40</yPos2>
+			<frequency>3</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>40</yPos1>
+			<xPos2>0</xPos2>
+			<yPos2>40</yPos2>
+			<frequency>3</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+</levelmap>
+
+<!-- Level MAD-8 -->
+<levelmap> 
+	<configuration>
+		<timer>70</timer> 
+		<successTarget>21</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-8</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>8</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix> 
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>-2</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>3</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-12</xPos>
+			<yPos>65</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>5</nbElements>
+			<xPos>3</xPos>
+			<yPos>20</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-12</xPos>
+			<yPos>35</yPos>
+		</belt>
+</belts>
+<boards>
+ <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>35</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+	<board>
+        <node>
+            <xPos>26.5</xPos>
+            <yPos>35</yPos>
+        </node>
+        <node>
+            <xPos>26.5</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+ </boards>
+<cubes></cubes>
+<circles></circles>
+<engines></engines>
+<movingBoards></movingBoards>
+</levelmap>
+<!-- Level MAD-9 --> 
+<levelmap>
+	<configuration>
+		<timer>90</timer>
+		<successTarget>14</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>8</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>
+				<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>19</xPos>
+		</tube>
+		
+	</tubes>
+
+	<cubes></cubes>
+	<circles></circles>
+	<engines>
+    <engine>
+        <xCenter>0</xCenter>
+        <yCenter>65</yCenter>
+        <size>16</size> 
+    </engine>
+	   <engine>
+        <xCenter>-16</xCenter>
+        <yCenter>48</yCenter>
+        <size>16</size>
+    </engine>
+	   <engine>
+        <xCenter>5</xCenter>
+        <yCenter>45</yCenter> 
+        <size>16</size>
+    </engine>
+		   <engine>
+        <xCenter>-7</xCenter>
+        <yCenter>28</yCenter>  
+        <size>15</size> 
+    </engine>
+		   <engine>
+        <xCenter>12</xCenter> 
+        <yCenter>24</yCenter> 
+        <size>14</size>
+    </engine>
+</engines>
+<boards>
+    <board>
+        <node>
+            <xPos>27</xPos>
+            <yPos>40</yPos>
+        </node>
+        <node>
+            <xPos>27</xPos> 
+            <yPos>20</yPos>
+        </node>
+    </board>
+	    <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>40</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos> 
+            <yPos>20</yPos>
+        </node>
+    </board>
+ </boards> 
+</levelmap>
+
+<!-- Level MAD-10 -->
+<levelmap>
+
+	<configuration>
+		<timer>35</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>17</xPos>
+		</tube>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>
+	</tubes>
+	
+	<circles>
+		<circle>
+			<xCenter>0</xCenter>
+			<yCenter>60</yCenter>
+			<size>10</size>
+		</circle>
+		<circle>
+			<xCenter>0</xCenter>
+			<yCenter>30</yCenter>
+			<size>10</size>
+		</circle>
+		<circle>
+			<xCenter>-24.5</xCenter>
+			<yCenter>45</yCenter>
+			<size>10</size>
+		</circle>
+		<circle>
+			<xCenter>24.5</xCenter>
+			<yCenter>45</yCenter>
+			<size>10</size>
+		</circle>
+	</circles>
+	<electricShocks>
+		<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>30</yPos1>
+			<xPos2>0</xPos2>
+			<yPos2>60</yPos2>
+			<frequency>4</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>45</yPos1>
+			<xPos2>-24</xPos2> 
+			<yPos2>45</yPos2>
+			<frequency>4</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+	</electricShocks>
+</levelmap>
+
+<!-- Level MAD-11 -->
+<levelmap>
+	<configuration>
+		<timer>90</timer>
+		<successTarget>11</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>1</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4.5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>15</xPos>
+		</tube>
+	</tubes>
+<belts></belts>
+<boards>
+    <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>15</yPos>
+        </node>
+    </board>
+</boards>
+<cubes></cubes>
+<circles>
+    <circle>
+        <xCenter>0</xCenter> 
+        <yCenter>60</yCenter>
+        <size>15</size>
+    </circle>
+</circles>
+<electricShocks>   
+		<electricShock>
+			<xPos1>-26</xPos1> 
+			<yPos1>28</yPos1>  
+			<xTo1>11</xTo1>  
+			<yTo1>28</yTo1> 
+			<velocity1>4</velocity1>
+			<xPos2>-11</xPos2>
+			<yPos2>28</yPos2>
+			<xTo2>26</xTo2>
+			<yTo2>28</yTo2>
+			<velocity2>4</velocity2>
+			<frequency>0</frequency>
+			<timespan>5</timespan>
+		</electricShock>
+</electricShocks>
+</levelmap>
+
+<!-- Level MAD-12 -->  
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>12</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>15</xPos>
+		</tube>
+	</tubes>
+<cubes>
+    <cube>
+        <xCenter>0</xCenter>
+        <yCenter>55</yCenter>
+        <size>24</size>
+    </cube>
+</cubes>
+<boards>
+    <board>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>-26</xPos>
+            <yPos>12</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>26</xPos>
+            <yPos>60</yPos>
+        </node>
+        <node>
+            <xPos>26</xPos>
+            <yPos>12</yPos> 
+        </node>
+    </board>
+</boards>
+<cubes>
+    <cube>
+        <xCenter>0</xCenter>
+        <yCenter>55</yCenter>
+        <size></size>
+    </cube>
+</cubes>
+<electricShocks>
+		<electricShock> 
+			<xPos1>-26</xPos1>
+			<yPos1>30</yPos1>
+			<velocity1>3</velocity1> 
+			<xPos2>-6</xPos2> 
+			<yPos2>30</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+			<electricShock>
+			<xPos1>6</xPos1>
+			<yPos1>30</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>26</xPos2>
+			<yPos2>30</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>2</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+</levelmap>
+
+
+<!-- Level SYD-1 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-10</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>10</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-10</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>10</xPos>
+		</tube>
+	</tubes>
+	<belts>
+</belts>
+	<boards>
+	</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>10</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>-10</xFrom>
+	 	   <yFrom>60</yFrom>
+	 	   <xTo>-10</xTo>
+	 	   <yTo>30</yTo>
+	    </movingBoard> 
+	    
+	   	<movingBoard>
+	 	   <size>10</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>10</xFrom>
+	 	   <yFrom>30</yFrom>
+	 	   <xTo>10</xTo>
+	 	   <yTo>60</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+<!-- Level SYD-2 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>	
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>
+		</tube>	
+	</tubes>
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>7</nbElements>
+			<xPos>-7</xPos>
+			<yPos>65</yPos>
+		</belt>
+	</belts>
+	<electricShocks>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>55</yPos1>
+			<velocity1>22</velocity1>
+			<xPos2>0</xPos2>
+			<yPos2>55</yPos2>
+			<xTo1>0</xTo1>
+			<yTo1>55</yTo1>
+			<xTo2>-24</xTo2>
+			<yTo2>55</yTo2>
+			<velocity2>22</velocity2>
+			<frequency>0</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>20</yPos1>
+			<velocity1>22</velocity1>
+			<xPos2>0</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>0</xTo1>
+			<yTo1>20</yTo1>
+			<xTo2>-24</xTo2> 
+			<yTo2>20</yTo2>
+			<velocity2>22</velocity2>
+			<frequency>0</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>55</yPos1>
+			<velocity1>22</velocity1>
+			<xPos2>24</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>0</xTo1>
+			<yTo1>55</yTo1>
+			<xTo2>0</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>22</velocity2>
+			<frequency>0</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>55</yPos1>
+			<velocity1>22</velocity1>
+			<xPos2>0</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>-24</xTo1>
+			<yTo1>55</yTo1> 
+			<xTo2>-24</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>22</velocity2>
+			<frequency>0</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+	</movingBoards>
+</levelmap>
+
+<!-- Level SYD-3 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>7</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>3</xPos>
+		</tube>		
+	</tubes>
+<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>7</nbElements>
+			<xPos>-18</xPos>
+			<yPos>65</yPos>
+		</belt>
+		</belts>
+		<electricShocks>
+		<!--passage 1 -->
+		<electricShock>
+			<xPos1>-20</xPos1>
+			<yPos1>55</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>-20</xPos2>
+			<yPos2>40</yPos2>
+			<xTo1>0</xTo1>
+			<yTo1>55</yTo1>
+			<xTo2>0</xTo2>
+			<yTo2>40</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>2</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>2</xPos1>
+			<yPos1>55</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>2</xPos2>
+			<yPos2>40</yPos2>
+			<xTo1>22</xTo1>
+			<yTo1>55</yTo1>
+			<xTo2>22</xTo2>
+			<yTo2>40</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>2</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+		<!--passage 2 -->
+		<electricShock>
+			<xPos1>20</xPos1>
+			<yPos1>35</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>20</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>0</xTo1>
+			<yTo1>35</yTo1>
+			<xTo2>0</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>2</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>-2</xPos1>
+			<yPos1>35</yPos1>
+			<velocity1>7</velocity1>
+			<xPos2>-2</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>-22</xTo1>
+			<yTo1>35</yTo1>
+			<xTo2>-22</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>7</velocity2>
+			<frequency>2</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+<!-- Level SYD-4 -->
+<levelmap>
+	<configuration>
+		<timer>70</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-20</xPos>
+		</tube>		
+	</tubes>
+	<belts> 
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>17</nbElements>
+			<xPos>-24</xPos>
+			<yPos>60</yPos>
+		</belt>
+		<belt>
+			<groupID>1</groupID>
+			<nbElements>16</nbElements>
+			<xPos>-9</xPos>
+			<yPos>30</yPos>
+		</belt>
+	</belts>
+	<electricShocks>
+		<electricShock>
+			<xPos1>-7</xPos1>
+			<yPos1>80</yPos1>
+			<velocity1>16</velocity1>
+			<xPos2>7</xPos2>
+			<yPos2>80</yPos2>
+			<xTo1>-7</xTo1>
+			<yTo1>19</yTo1>
+			<xTo2>7</xTo2>
+			<yTo2>19</yTo2>
+			<velocity2>16</velocity2>
+			<frequency>0</frequency>
+			<timespan>2.5</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+	<board>
+		<node>
+			<xPos>-23</xPos>
+			<yPos>66</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>25</xPos>
+			<yPos>30</yPos>
+		</node>
+		<node>
+			<xPos>28</xPos>
+			<yPos>50</yPos>
+		</node>
+		<node>
+			<xPos>28</xPos>
+			<yPos>70</yPos>
+		</node>
+	</board>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+	</movingBoards>
+</levelmap>
+
+
+<!-- Level SYD-5 --> 
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-10</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>0</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>19</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>-19</xPos>
+		</tube>
+	</tubes>
+	<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>6</nbElements>
+		<xPos>0</xPos>
+		<yPos>30</yPos>
+	</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>10</nbElements>
+		<xPos>0</xPos>
+		<yPos>50</yPos>
+	</belt>
+</belts>
+<boards>
+</boards>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>6</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>-10</xFrom>
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>-10</xTo>
+	 	   <yTo>15</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+<!-- Level SYD-6 --> 
+<levelmap>
+	<configuration>
+		<timer>35</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+				</launchers>
+		<luggageUpTo>2</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	
+<electricShocks> 
+		<electricShock>
+			<xPos1>8</xPos1>
+			<yPos1>12</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>-8</xPos2>
+			<yPos2>12</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>3</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+</electricShocks>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+			
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>0</xPos>
+		</tube>
+	</tubes>
+	<belts> 
+	
+</belts>
+<boards>
+         <board>
+	        <node>
+	            <xPos>-27</xPos>
+	            <yPos>30</yPos>
+	        </node>
+			<node>
+			    <xPos>-27</xPos>
+				<yPos>0</yPos> 
+		    </node>
+	     </board>
+		 <board>
+	        <node>
+	            <xPos>27</xPos>
+	            <yPos>30</yPos> 
+	        </node>
+			<node>
+			    <xPos>27</xPos>
+				<yPos>0</yPos>
+		    </node>
+	     </board>
+		 <board>
+		     <node>
+			    <xPos>-21</xPos>
+				<yPos>38</yPos>
+			 </node>
+			 <node>
+			    <xPos>-23</xPos>
+				<yPos>40</yPos>
+			 </node>
+	     </board>
+		  <board>
+		     <node>
+			    <xPos>21</xPos>
+				<yPos>38</yPos>
+			 </node>
+			 <node>
+			    <xPos>23</xPos>
+				<yPos>40</yPos>
+			 </node>
+		 </board>
+         <board>
+		     <node>
+			    <xPos>8</xPos>
+				<yPos>8</yPos>
+			 </node>
+	     </board>
+		 <board>
+		     <node>
+			    <xPos>-8</xPos>
+				<yPos>8</yPos>
+			 </node>
+	     </board>
+</boards>
+<cubes></cubes>
+<circles></circles>
+<engines>
+    <engine>
+        <xCenter>0</xCenter>
+        <yCenter>55</yCenter>
+        <size>28</size>
+    </engine>
+</engines>
+<movingBoards>
+		<movingBoard>
+	 	   <size>10</size>
+	 	   <velocity>10</velocity>
+	 	   <xFrom>11</xFrom>
+	 	   <yFrom>30</yFrom>
+	 	   <xTo>11</xTo>
+	 	   <yTo>30</yTo>
+	    </movingBoard> 
+		<movingBoard>
+	 	   <size>10</size>
+	 	   <velocity>10</velocity>
+	 	   <xFrom>-11</xFrom>
+	 	   <yFrom>30</yFrom>
+	 	   <xTo>-11</xTo>
+	 	   <yTo>30</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+<!-- Level SYD-7 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4.5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes> 
+		<tube>
+			<color>1</color>
+			<xPos>-10</xPos>
+		</tube>		
+	</tubes>
+	<belts>
+	</belts>
+	<electricShocks>
+		<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>45</yPos1>
+			<velocity1>20</velocity1>
+			<xPos2>15</xPos2>
+			<yPos2>35</yPos2>
+			<velocity2>20</velocity2>
+			<frequency>1.5</frequency>
+			<timespan>2.5</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+	<board>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>71</yPos>
+		</node>
+		<node>
+			<xPos>24</xPos>
+			<yPos>26</yPos>
+		</node>
+	</board>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+		<movingBoard>
+	 	   <size>15</size>
+	 	   <velocity>15</velocity>
+	 	   <xFrom>-8</xFrom>
+	 	   <yFrom>57</yFrom>
+	 	   <xTo>-8</xTo>
+	 	   <yTo>57</yTo>
+	    </movingBoard> 
+	</movingBoards>
+</levelmap>
+
+<!-- Level SYD-8 -->
+<levelmap> 
+	<configuration>
+		<timer>24</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>15</xPos>
+		</tube>
+		<tube>
+			<color>1</color>
+			<xPos>-15</xPos>
+		</tube>
+	</tubes>
+	<boards>
+		<board>
+			<node>
+				<xPos>-5</xPos>
+				<yPos>10</yPos>
+			</node>
+			<node>
+				<xPos>0</xPos>
+				<yPos>14</yPos>
+			</node>
+			<node>
+				<xPos>5</xPos>
+				<yPos>10</yPos>
+			</node>
+		</board>
+		<board>
+			<node>
+				<xPos>-26</xPos>
+				<yPos>60</yPos>
+			</node>
+			<node>
+				<xPos>-26</xPos>
+				<yPos>12</yPos>
+			</node>
+		</board>
+		<board>
+			<node>
+				<xPos>26</xPos>
+				<yPos>60</yPos>
+			</node>
+			<node>
+				<xPos>26</xPos>
+				<yPos>12</yPos>
+			</node>
+		</board>
+	</boards>
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-5</xPos>
+			<yPos>70</yPos>
+		</belt> 
+	</belts>
+	<electricShocks>
+		<electricShock>
+			<xPos1>-22</xPos1>
+			<yPos1>20</yPos1>
+			<velocity1>14</velocity1>
+			<xPos2>-7</xPos2>
+			<yPos2>20</yPos2>
+			<xTo1>7</xTo1>
+			<yTo1>20</yTo1>
+			<xTo2>22</xTo2>
+			<yTo2>20</yTo2>
+			<velocity2>14</velocity2>
+			<frequency>2.4</frequency>
+			<timespan>1.2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>-22</xPos1>
+			<yPos1>50</yPos1>
+			<velocity1>14</velocity1>
+			<xPos2>-7</xPos2>
+			<yPos2>50</yPos2>
+			<xTo1>7</xTo1>
+			<yTo1>50</yTo1>
+			<xTo2>22</xTo2>
+			<yTo2>50</yTo2>
+			<velocity2>14</velocity2>
+			<frequency>2.4</frequency>
+			<timespan>1.2</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>22</xPos1>
+			<yPos1>35</yPos1>
+			<velocity1>14</velocity1>
+			<xPos2>7</xPos2>
+			<yPos2>35</yPos2>
+			<xTo1>-7</xTo1>
+			<yTo1>35</yTo1>
+			<xTo2>-22</xTo2> 
+			<yTo2>35</yTo2>
+			<velocity2>14</velocity2>
+			<frequency>2.4</frequency>
+			<timespan>1.2</timespan>
+		</electricShock>
+		
+	</electricShocks>
+
+
+</levelmap>
+<!-- Level SYD-9 --> 
+<levelmap>
+	<configuration>
+		<timer>75</timer>
+		<successTarget>14</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>4.5</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>19</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>4</nbElements>
+			<xPos>-4</xPos>
+			<yPos>65</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>4</nbElements>
+			<xPos>-18</xPos>
+			<yPos>45</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>4</nbElements>
+			<xPos>10</xPos>
+			<yPos>45</yPos> 
+		</belt>
+</belts>
+<electricShocks>   
+		<electricShock>
+			<xPos1>-26</xPos1> 
+			<yPos1>28</yPos1>  
+			<xTo1>11</xTo1>  
+			<yTo1>28</yTo1> 
+			<velocity1>4</velocity1>
+			<xPos2>-11</xPos2>
+			<yPos2>28</yPos2>
+			<xTo2>26</xTo2>
+			<yTo2>28</yTo2>
+			<velocity2>4</velocity2>
+			<frequency>0</frequency>
+			<timespan>5</timespan>
+		</electricShock>
+</electricShocks>
+</levelmap>
+
+<!-- Level SYD-10 --> 
+<levelmap>
+	<configuration> 
+		<timer>60</timer>
+		<successTarget>4</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-10</xCenter>
+		</launcher>
+		<luggageUpTo>2</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-18</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>18</xPos>
+		</tube>
+	</tubes>
+
+	<boards>
+	</boards>
+	<cubes></cubes>
+	<circles></circles>
+	<engines></engines>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>6</size>
+	 	   <velocity>15</velocity>
+	 	   <xFrom>-10</xFrom>
+	 	   <yFrom>55</yFrom>
+	 	   <xTo>-10</xTo>
+	 	   <yTo>55</yTo>
+	    </movingBoard>
+		<movingBoard>
+	 	   <size>16</size>
+	 	   <velocity>10</velocity>
+	 	   <xFrom>12</xFrom>
+	 	   <yFrom>35</yFrom>
+	 	   <xTo>-12</xTo>
+	 	   <yTo>35</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap> 
+
+<!-- Level SYD-11 --> 
+<levelmap>
+	<configuration>
+		<timer>75</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-7</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>7</xPos>
+		</tube>
+	</tubes>
+	<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>6</nbElements>
+		<xPos>-6</xPos>
+		<yPos>30</yPos>
+	</belt>
+</belts>
+<boards>
+</boards>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>6</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>-14</xFrom>
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>-14</xTo>
+	 	   <yTo>15</yTo>
+	    </movingBoard>
+		<movingBoard>
+	 	   <size>6</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>14</xFrom> 
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>14</xTo>
+	 	   <yTo>15</yTo>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+<!-- Level SYD-12 -->
+<levelmap>
+	<configuration>
+		<timer>60</timer> 
+		<successTarget>5</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+			<launcher> 
+				<xCenter>15</xCenter>
+			</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>8</dropTime>
+		<prefix>lhr</prefix> 
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>14</xPos>
+		</tube>			
+	</tubes>
+	<belts> 
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>13</nbElements>
+			<xPos>-9</xPos>
+			<yPos>65</yPos>
+		</belt>
+	</belts>
+	<electricShocks> 
+		<electricShock>
+			<xPos1>3</xPos1>
+			<yPos1>4</yPos1>
+			<velocity1>12</velocity1>
+			<xPos2>11</xPos2>
+			<yPos2>26</yPos2>
+			<velocity2>12</velocity2>
+			<frequency>2</frequency>
+			<timespan>3.5</timespan>
+		</electricShock> 
+	</electricShocks>
+<boards>
+	<board>
+		<node>
+			<xPos>22</xPos>
+			<yPos>70</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>65</yPos>
+		</node>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>55</yPos>
+		</node>
+		<node>
+			<xPos>4</xPos>
+			<yPos>45</yPos>
+		</node>
+		<node>
+			<xPos>8</xPos>
+			<yPos>45</yPos>
+		</node>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>39</yPos>
+		</node>
+		<node>
+			<xPos>-22</xPos>
+			<yPos>18</yPos>
+		</node>
+		<node>
+			<xPos>7</xPos>
+			<yPos>8</yPos>
+		</node>
+	</board> 
+	<board>
+		<node>
+			<xPos>22</xPos>
+			<yPos>65</yPos>
+		</node>
+		<node>
+			<xPos>22</xPos>
+			<yPos>35</yPos>
+		</node>
+		<node>
+			<xPos>-10</xPos>
+			<yPos>28</yPos>
+		</node>
+		<node>
+			<xPos>22</xPos>
+			<yPos>17</yPos>
+		</node>
+		<node>
+			<xPos>22</xPos>
+			<yPos>8</yPos>
+		</node>
+	</board> 
+</boards>
+<cubes>
+</cubes>
+<circles>
+</circles>
+<engines>
+</engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+
+<!-- Level PEK-1 -->  
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-10</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>0</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>19</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>-19</xPos>
+		</tube>
+	</tubes>
+	<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>6</nbElements>
+		<xPos>0</xPos>
+		<yPos>30</yPos>
+	</belt>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>10</nbElements>
+		<xPos>0</xPos>
+		<yPos>50</yPos>
+	</belt>
+</belts>
+<boards>
+</boards>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>6</size>
+	 	   <velocity>12</velocity>
+	 	   <xFrom>-10</xFrom>
+	 	   <yFrom>65</yFrom>
+	 	   <xTo>-10</xTo> 
+	 	   <yTo>18</yTo>
+	    </movingBoard>
+	</movingBoards>	 
+	<electricShocks> 
+		<electricShock>
+			<xPos1>-26</xPos1>
+			<yPos1>17</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>26</xPos2>
+			<yPos2>17</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>6</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+</levelmap>
+<!-- Level PEK-2 -->
+<levelmap>
+	<configuration>
+		<timer>70</timer> 
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+			<launcher> 
+				<xCenter>0</xCenter>
+			</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>6</dropTime>
+		<prefix>lhr</prefix> 
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-20</xPos>
+		</tube>	
+		<tube>
+			<color>3</color>
+			<xPos>20</xPos>
+		</tube>			
+	</tubes>
+	<belts>
+	</belts>
+	<electricShocks>
+		<electricShock>
+			<xPos1>-8</xPos1>
+			<yPos1>70</yPos1>
+			<velocity1>12</velocity1>
+			<xPos2>-8</xPos2>
+			<yPos2>51</yPos2>
+			<xTo1>-26</xTo1>
+			<yTo1>70</yTo1>
+			<xTo2>-26</xTo2>
+			<yTo2>51</yTo2>
+			<velocity2>12</velocity2>
+			<frequency>0</frequency>
+			<timespan>2.5</timespan>
+		</electricShock> 
+		<electricShock>
+			<xPos1>8</xPos1>
+			<yPos1>70</yPos1>
+			<velocity1>12</velocity1>
+			<xPos2>8</xPos2>
+			<yPos2>51</yPos2> 
+			<xTo1>26</xTo1>
+			<yTo1>70</yTo1>
+			<xTo2>26</xTo2>
+			<yTo2>51</yTo2>
+			<velocity2>12</velocity2>
+			<frequency>0</frequency>
+			<timespan>2.5</timespan>
+		</electricShock>
+	</electricShocks>
+<boards>
+</boards>
+<cubes>
+	<cube> 
+		<xCenter>0</xCenter>
+		<yCenter>47</yCenter>
+		<size>20</size>
+	</cube>
+</cubes>
+<circles>
+</circles>
+<engines>
+</engines>
+<movingBoards>
+</movingBoards>
+</levelmap>
+
+<!-- Level PEK-3 -->
+<levelmap>  
+     <configuration>
+		<timer>30</timer>
+		<successTarget>5</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>1</luggageUpTo>
+		<dropTime>2</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<electricShocks>    
+		<electricShock>
+			<xPos1>-8</xPos1>
+			<yPos1>12</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>-27</xPos2>
+			<yPos2>12</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>3</frequency>
+			<timespan>1</timespan> 
+		</electricShock>
+		<electricShock>
+			<xPos1>8</xPos1>
+			<yPos1>12</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>27</xPos2>
+			<yPos2>12</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>3</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>-8</xPos1>
+			<yPos1>20</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>8</xPos2>
+			<yPos2>20</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>3</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-17</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>17</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>0</xPos>
+		</tube>
+	</tubes>
+	<belts>
+	     <belt>
+	          <groupID>0</groupID>
+		      <nbElements>5</nbElements>
+		      <xPos>-5</xPos> 
+		      <yPos>60</yPos> 
+	     </belt>
+	</belts>
+	<boards>
+    <board>
+		<node>
+            <xPos>-28</xPos>
+            <yPos>24</yPos>
+        </node>
+		<node>
+            <xPos>-28</xPos>
+            <yPos>67</yPos>
+        </node>
+	</board>
+	<board>
+		<node>
+            <xPos>28</xPos>
+            <yPos>24</yPos>
+        </node>
+		<node>
+            <xPos>28</xPos>
+            <yPos>67</yPos>
+        </node>
+	</board>
+	</boards>
+<engines>
+    <engine>
+        <xCenter>-11</xCenter>
+        <yCenter>34</yCenter>
+        <size>16</size>
+    </engine>
+	<engine>
+        <xCenter>11</xCenter>
+        <yCenter>34</yCenter>
+        <size>16</size>
+    </engine>
+</engines>
+
+</levelmap>
+
+<!-- Level PEK-4 -->  
+<levelmap> 
+	<configuration>
+		<timer>25</timer>
+		<timer>25</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>2.2</dropTime>
+		<prefix>jfk</prefix> 
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color> 
+			<xPos>-17</xPos>
+		</tube>
+		<tube>
+			<color>1</color> 
+			<xPos>17</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>70</yPos>
+		</belt>
+	</belts>
+	
+	<cubes>
+		<cube> 
+			<xCenter>-20</xCenter>
+			<yCenter>50</yCenter>
+			<size>18</size>
+		</cube>
+	</cubes>
+	
+	<boards>
+		<board>
+			<node>
+				<xPos>10</xPos>
+				<yPos>45</yPos>
+			</node>
+			<node>
+				<xPos>-5</xPos>
+				<yPos>20</yPos>
+			</node>
+		</board>
+	</boards>
+	
+	<electricShocks>
+		<electricShock>
+			<xPos1>-27</xPos1>
+			<yPos1>20</yPos1>
+			<xPos2>-5</xPos2>
+			<yPos2>20</yPos2>
+			<frequency>2.5</frequency>
+			<timespan>2.5</timespan> 
+		</electricShock>
+		<electricShock>
+			<xPos1>27</xPos1>
+			<yPos1>20</yPos1>
+			<xPos2>5</xPos2>
+			<yPos2>20</yPos2>
+			<frequency>2.5</frequency>
+			<timespan>2.5</timespan> 
+		</electricShock>
+	</electricShocks>
+</levelmap>
+
+<!-- Level PEK-5 -->
+<levelmap>
+	<configuration>
+		<timer>110</timer>
+		<successTarget>18</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-8</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>16</xPos>
+		</tube>
+	</tubes>
+<belts>
+</belts>
+<boards>
+        <board>
+        <node>
+            <xPos>-27</xPos>
+            <yPos>70</yPos>
+        </node>
+        <node>
+            <xPos>-27</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>27</xPos>
+            <yPos>70</yPos>
+        </node>
+        <node>
+            <xPos>27</xPos>
+            <yPos>22</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>-13</xPos>
+            <yPos>51</yPos>
+        </node>
+        <node>
+            <xPos>-13</xPos>
+            <yPos>42</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>10</xPos>
+            <yPos>30</yPos>
+        </node>
+        <node>
+            <xPos>10</xPos>
+            <yPos>23</yPos>
+        </node>
+    </board>
+    <board>
+     <node>
+            <xPos>10</xPos>
+            <yPos>70</yPos>
+        </node>
+        <node>
+            <xPos>10</xPos>
+            <yPos>63</yPos>
+        </node>
+    </board>
+</boards>
+<cubes></cubes>
+<circles>
+    <circle>
+        <xCenter>-8</xCenter>
+        <yCenter>64</yCenter>
+        <size>8</size>
+    </circle>
+    <circle>
+        <xCenter>5</xCenter>
+        <yCenter>44</yCenter>
+        <size>8</size>
+    </circle>
+    <circle>
+        <xCenter>-8</xCenter>
+        <yCenter>24</yCenter>
+        <size>7</size>
+    </circle>
+</circles>
+<engines>
+</engines>
+<movingBoards></movingBoards>
+</levelmap>
+<!-- Level PEK-6 -->
+<levelmap> 
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-8</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>8</xPos>
+		</tube>
+	</tubes>
+	<belts>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>35</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>8</nbElements>
+			<xPos>-31</xPos>
+			<yPos>20</yPos>
+		</belt>	
+		<belt><groupID>1</groupID>
+			<nbElements>10</nbElements>
+			<xPos>15</xPos>
+			<yPos>20</yPos>
+		</belt>
+			<belt>
+			<groupID>2</groupID>
+			<nbElements>10</nbElements>
+			<xPos>-31</xPos>
+			<yPos>50</yPos>
+		</belt>	
+			<belt>
+			<groupID>2</groupID>
+			<nbElements>10</nbElements>
+			<xPos>10.5</xPos>
+			<yPos>50</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>9</nbElements>
+			<xPos>-9</xPos>
+			<yPos>65</yPos>
+		</belt>
+</belts>
+	<boards>
+	    <board>
+	        <node>
+	            <xPos>0</xPos>
+	            <yPos>15</yPos>
+	        </node>
+	    </board>
+	</boards>
+<electricShocks>   
+		<electricShock>
+			<xPos1>-15</xPos1> 
+			<yPos1>29</yPos1>  
+			<xTo1>-15</xTo1>  
+			<yTo1>41</yTo1> 
+			<velocity1>2</velocity1>
+			<xPos2>16</xPos2>
+			<yPos2>29</yPos2>
+			<xTo2>16</xTo2>
+			<yTo2>41</yTo2>
+			<velocity2>2</velocity2>
+			<frequency>0</frequency>
+			<timespan>5</timespan>
+		</electricShock>
+</electricShocks>
+</levelmap>
+
+<!-- Level PEK-7  -->
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>-14</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+<tubes>	
+		<tube>
+			<color>1</color>
+			<xPos>13</xPos>
+		</tube>
+	</tubes>
+<belts>
+    	<belt>
+	    <groupID>0</groupID>
+		<nbElements>10</nbElements>
+		<xPos>-20</xPos>
+		<yPos>60</yPos>
+		</belt>
+</belts>
+<electricShocks> 
+		<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>50</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>24</xPos2>
+			<yPos2>50</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>5</frequency>
+			<timespan>3</timespan>
+		</electricShock>
+				<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>35</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>24</xPos2>
+			<yPos2>35</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>5</frequency>
+			<timespan>2</timespan>
+		</electricShock>
+				<electricShock>
+			<xPos1>0</xPos1>
+			<yPos1>20</yPos1>
+			<velocity1>3</velocity1>
+			<xPos2>24</xPos2>
+			<yPos2>20</yPos2>
+			<velocity2>4</velocity2>
+			<frequency>5</frequency>
+			<timespan>1</timespan>
+		</electricShock>
+	</electricShocks>
+	<boards>
+	    <board>
+	        <node>
+	            <xPos>-23</xPos>
+	            <yPos>66</yPos>
+	        </node>
+	    </board>
+	</boards>
+</levelmap>
+
+
+
+<!-- Level PEK-8 -->
+<levelmap>
+	<configuration>
+		<timer>70</timer>
+		<successTarget>8</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launcher>
+		    <xCenter>-16</xCenter>
+		</launcher>
+		<luggageUpTo>3</luggageUpTo>
+		<dropTime>8</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-16</xPos>
+		</tube>	
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>	
+		<tube>
+			<color>3</color>
+			<xPos>16</xPos>
+		</tube>			
+	</tubes>
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>7</nbElements>
+			<xPos>10</xPos>
+			<yPos>42</yPos>
+		</belt>
+	</belts>
+	<electricShocks> 
+	</electricShocks>
+<boards>
+	<board>
+		<node>
+			<xPos>-8</xPos>
+			<yPos>76</yPos>
+		</node>
+		<node>
+			<xPos>-8</xPos>
+			<yPos>36</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>24</xPos>
+			<yPos>80</yPos>
+		</node>
+		<node>
+			<xPos>24</xPos>
+			<yPos>65</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>-24</xPos>
+			<yPos>40</yPos>
+		</node>
+		<node>
+			<xPos>-24</xPos>
+			<yPos>5</yPos>
+		</node>
+	</board>
+	<board>
+		<node>
+			<xPos>24</xPos>
+			<yPos>40</yPos>
+		</node>
+		<node>
+			<xPos>24</xPos>
+			<yPos>5</yPos>
+		</node>
+	</board>
+</boards>
+<cubes>
+ </cubes>
+<circles>
+</circles>
+<engines></engines>
+<movingBoards>
+		<movingBoard>
+	 	   <size>13</size>
+	 	   <velocity>15</velocity>
+	 	   <xFrom>-16</xFrom>
+	 	   <yFrom>66</yFrom>
+	 	   <xTo>-16</xTo>
+	 	   <yTo>16</yTo>
+	    </movingBoard> 
+		<movingBoard>
+	 	   <size>13</size>
+	 	   <velocity>21</velocity>
+	 	   <xFrom>0</xFrom>
+	 	   <yFrom>76</yFrom>
+	 	   <xTo>0</xTo>
+	 	   <yTo>6</yTo>
+	    </movingBoard> 
+</movingBoards>
+</levelmap>
+
+<!-- Level PEK-9 --> 
+<levelmap>
+	<configuration>
+		<timer>60</timer>
+		<successTarget>20</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed> 
+		<launchers>
+		<launcher>
+		    <xCenter>-15</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>15</xCenter>
+		</launcher>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>3</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-19</xPos>
+		</tube>		
+		<tube>
+			<color>2</color>
+			<xPos>0</xPos>
+		</tube>
+		<tube>
+			<color>3</color>
+			<xPos>19</xPos>
+		</tube>
+	</tubes> 
+	<belts> 
+		<belt>
+		    <groupID>0</groupID> 
+			<nbElements>8</nbElements>
+			<xPos>-25</xPos> 
+			<yPos>60</yPos> 
+		</belt>
+		<belt>
+		    <groupID>0</groupID>
+			<nbElements>7</nbElements>
+			<xPos>10</xPos> 
+			<yPos>60</yPos>
+		</belt>
+		<belt>
+		    <groupID>1</groupID>
+			<nbElements>5</nbElements>
+			<xPos>-5</xPos> 
+			<yPos>40</yPos>
+		</belt>
+		<belt>
+		    <groupID>2</groupID>
+			<nbElements>3</nbElements>
+			<xPos>-15</xPos> 
+			<yPos>25</yPos>
+		</belt>
+		<belt>
+		    <groupID>3</groupID>
+			<nbElements>3</nbElements>
+			<xPos>9</xPos> 
+			<yPos>25</yPos>
+		</belt>
+		
+</belts>
+
+<boards>
+    <board>
+        <node>
+            <xPos>-28</xPos>
+            <yPos>20</yPos>
+        </node>
+    </board>
+	    <board>
+        <node>
+            <xPos>28</xPos>
+            <yPos>20</yPos>
+        </node>
+    </board>
+</boards>
+
+</levelmap>
+
+
+
+<!-- Level PEK-10 -->
+<levelmap>
+	<configuration>
+		<timer>35</timer>
+		<successTarget>10</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+				<launchers>
+		<launcher>
+		    <xCenter>0</xCenter>
+		</launcher>
+				</launchers>
+		<luggageUpTo>4</luggageUpTo>
+		<dropTime>2.8</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+<belts>
+	<belt>
+	    <groupID>0</groupID>
+		<nbElements>7</nbElements>
+		<xPos>-7</xPos>
+		<yPos>60</yPos> 
+	</belt>
+</belts>
+
+<boards>
+<board>
+	<node>
+		<xPos>-24.5</xPos>
+		<yPos>30</yPos>
+	</node>
+     <node>
+		<xPos>-7.5</xPos>
+		<yPos>54</yPos>
+     </node>
+</board>
+<board>
+	<node>
+		<xPos>-2.5</xPos>
+		<yPos>4</yPos>
+	 </node>
+	<node>
+		<xPos>-2.5</xPos>
+		<yPos>30</yPos>
+	</node>
+     <node>
+		<xPos>25.5</xPos>
+		<yPos>54</yPos>
+     </node>
+	 
+</board>
+
+</boards>
+<tubes>
+	
+	<tube>
+		<color>1</color>
+		<xPos>-17</xPos>
+	</tube>
+	<tube>
+		<color>2</color>
+		<xPos>17</xPos>
+	</tube>
+</tubes>
+
+<electricShocks>
+	<electricShock>
+			<xPos1>24</xPos1>
+			<yPos1>17</yPos1>
+			<xPos2>9</xPos2>
+			<yPos2>17</yPos2>
+			<frequency>2</frequency>
+			<timespan>1.5</timespan>
+	</electricShock>
+	<electricShock>
+			<xPos1>-24</xPos1>
+			<yPos1>17</yPos1>
+			<xPos2>-9</xPos2>
+			<yPos2>17</yPos2>
+			<frequency>2</frequency>
+			<timespan>2</timespan>
+	</electricShock>
+</electricShocks>	
+
+</levelmap>
+
+<!-- Level PEK-11 -->
+<levelmap>
+	<configuration>
+		<timer>30</timer>
+		<successTarget>3</successTarget>
+		<failTarget>3</failTarget>
+		<speed>0.7</speed>
+		<launchers>
+		<launcher>
+		    <xCenter>-10</xCenter>
+		</launcher>
+		</launchers>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>5</dropTime>
+		<prefix>lhr</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+			<color>1</color>
+			<xPos>-6</xPos>
+		</tube>	 
+			
+	</tubes> 
+<belts>
+</belts>
+<boards>
+	<board>
+	        <node>
+	            <xPos>22</xPos>
+	            <yPos>10</yPos>
+	        </node>
+	 		<node>
+	            <xPos>19</xPos>
+	            <yPos>30</yPos>
+	        </node>
+	</board>
+</boards>
+<cubes>
+	<cube> 
+		<xCenter>-10</xCenter>
+		<yCenter>57</yCenter>
+		<size>18</size>
+	</cube>
+</cubes>
+<engines>
+</engines>
+<circles>
+</circles>
+<movingBoards>
+	<movingBoard>
+	 	   <size>13</size>
+	 	   <velocity>30</velocity>
+	 	   <xFrom>14</xFrom>
+	 	   <yFrom>50</yFrom>
+	 	   <xTo>-6</xTo>
+	 	   <yTo>30</yTo>
+	    </movingBoard>
+</movingBoards>
+</levelmap>
+
+<!-- Level PEK-12 -->
+<levelmap>
+	<configuration>
+		<timer>50</timer>
+		<successTarget>8</successTarget> 
+		<failTarget>3</failTarget>
+		<speed>0.1</speed>
+		<launcher>
+		    <xCenter>17</xCenter>
+		</launcher>
+		<luggageUpTo>6</luggageUpTo>
+		<dropTime>4</dropTime>
+		<prefix>jfk</prefix>
+	</configuration>
+	<tubes>
+		<tube>
+		<color>1</color>
+		<xPos>-15</xPos>
+		</tube>
+		<tube>
+		<color>2</color>
+		<xPos>15</xPos>
+		</tube>
+	</tubes> 
+	<belts>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>15</nbElements>
+			<xPos>-6</xPos>
+			<yPos>70</yPos>
+		</belt>
+		<belt>
+			<groupID>0</groupID>
+			<nbElements>7</nbElements>
+			<xPos>-24</xPos>
+			<yPos>50</yPos>
+		</belt>
+	</belts>
+	<boards>
+		<board>
+			<node>
+				<xPos>25</xPos>
+				<yPos>75.3</yPos>
+			</node>
+		</board>
+		<board>
+			<node>
+				<xPos>-25</xPos>
+				<yPos>55.3</yPos>
+			</node>
+		</board>
+		<board>
+			<node> 
+				<xPos>23</xPos>
+				<yPos>10</yPos>
+			</node>
+		</board>
+		<board>
+			<node>
+				<xPos>-23</xPos>
+				<yPos>10</yPos>
+			</node>
+		</board>
+	</boards> 
+	<electricShocks>
+		<electricShock>
+			<xPos1>-25</xPos1>
+			<yPos1>45</yPos1>
+			<velocity1>4</velocity1>
+			<xPos2>-9</xPos2>
+			<yPos2>45</yPos2> 
+			<xTo1>-25</xTo1>
+			<yTo1>55</yTo1>
+			<xTo2>-9</xTo2>
+			<yTo2>55</yTo2>
+			<velocity2>4</velocity2>
+			<frequency>0</frequency>
+			<timespan>10000</timespan>
+		</electricShock>
+		<electricShock>
+			<xPos1>5</xPos1>
+			<yPos1>90</yPos1>
+			<velocity1>4</velocity1>
+			<xPos2>5</xPos2>
+			<yPos2>70</yPos2>
+			<xTo1>5</xTo1>
+			<yTo1>90</yTo1>
+			<xTo2>5</xTo2>
+			<yTo2>70</yTo2>
+			<velocity2>4</velocity2>
+			<frequency>6</frequency>
+			<timespan>2</timespan> 
+		</electricShock>
+	</electricShocks>
+	<movingBoards>
+		<movingBoard>
+	 	   <size>18</size>
+	 	   <velocity>14</velocity>
+	 	   <xFrom>0</xFrom>
+	 	   <yFrom>30</yFrom>
+	    </movingBoard>
+	</movingBoards>
+</levelmap>
+
+
+</game>
+

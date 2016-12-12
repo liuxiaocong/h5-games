@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tutors.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="tutors0000" x="0" y="0" width="271" height="266" pivotX="264.55" pivotY="241.3" frameX="-149" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0001" x="271" y="0" width="493" height="316" frameX="-21" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0002" x="764" y="0" width="314" height="328" frameX="-120" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0003" x="1078" y="0" width="457" height="384" frameX="-39" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0004" x="1535" y="0" width="313" height="326" frameX="-119" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0005" x="0" y="384" width="342" height="344" frameX="-97" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0006" x="342" y="384" width="532" height="234" frameX="-2" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0007" x="874" y="384" width="483" height="365" frameX="-26" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0008" x="1357" y="384" width="443" height="386" frameX="-46" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0009" x="0" y="771" width="443" height="387" frameX="-46" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0010" x="443" y="771" width="436" height="417" frameX="-50" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0011" x="879" y="771" width="402" height="400" frameX="-67" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0012" x="1281" y="771" width="402" height="309" frameX="-61" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0013" x="1683" y="771" width="289" height="326" frameX="-116" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0014" x="0" y="1188" width="388" height="279" frameX="-81" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0015" x="388" y="1188" width="537" height="230" frameX="0" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0016" x="925" y="1188" width="513" height="334" frameX="-15" frameY="0" frameWidth="545" frameHeight="423"/>
+	<SubTexture name="tutors0017" x="1438" y="1188" width="529" height="259" frameX="-4" frameY="0" frameWidth="545" frameHeight="423"/>
+</TextureAtlas>

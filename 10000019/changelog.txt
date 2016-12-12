@@ -1,0 +1,6 @@
+_super.call(this, game), this.game.stage.scaleMode = this.game.device.desktop ? Phaser.StageScaleMode.SHOW_ALL : Phaser.StageScaleMode.EXACT_FIT, this.game.stage.scale.maxWidth = null, this.game.stage.scale.maxHeight = null, this.game.stage.disableVisibilityChange = !0, this.game.input.maxPointers = 1, this.game.stage.disablePauseScreen = !0, this.game.stage.scale.pageAlignHorizontally = !0, game.stage.scale.setScreenSize()
+
+
+to
+
+_super.call(this, game), this.game.stage.scaleMode = this.game.device.desktop ? Phaser.StageScaleMode.SHOW_ALL : Phaser.StageScaleMode.SHOW_ALL, this.game.stage.scale.maxWidth = null, this.game.stage.scale.maxHeight = null, this.game.stage.disableVisibilityChange = !0, this.game.input.maxPointers = 1, this.game.stage.disablePauseScreen = !0, this.game.stage.scale.pageAlignHorizontally = !0, game.stage.scale.setScreenSize()

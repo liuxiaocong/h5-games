@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta id="viewport" name="viewport" content="width=540,user-scalable=no,target-densitydpi=high-dpi" />
+
+    <script data-main="js/main" src="require.js?32"></script>
+    <title>一个都不能死</title>
+    <style type="text/css">
+    body {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+    </style>
+
+
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <canvas id="linkScreen">
+            抱歉，本游戏暂时无法正常显示（可能您是通过快照或抓取方式浏览，导致脚本错误），请尝试直接点击 <a href=http://m.9g.com/bns3/game.html>http://m.9g.com/bns3/game.html</a>，或使用微信搜索并添加【9G游戏】进行游戏，给您带来不便非常抱歉。
+        </canvas>
+    </div>
+
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = "强！你居然坚持了" + bestScore / 1000 + "秒！";
+        pkGame.updateResult(bestScore, bestScore, d, d);
+        console.log(d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+
+</body>
+
+</html>

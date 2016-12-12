@@ -1,0 +1,263 @@
+game_level.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ray_middle
+  rotate: false
+  xy: 432, 846
+  size: 56, 22
+  orig: 56, 22
+  offset: 0, 0
+  index: -1
+curved_chain_new
+  rotate: false
+  xy: 510, 518
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+detail
+  rotate: false
+  xy: 2, 505
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: 4
+board_segment_double_tack
+  rotate: false
+  xy: 456, 505
+  size: 52, 64
+  orig: 52, 64
+  offset: 0, 0
+  index: -1
+linear_chain_double_new
+  rotate: false
+  xy: 499, 776
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+board_segment_single_tack
+  rotate: false
+  xy: 810, 398
+  size: 52, 64
+  orig: 52, 64
+  offset: 0, 0
+  index: -1
+alarm_background
+  rotate: false
+  xy: 390, 886
+  size: 95, 96
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+electro_left_source
+  rotate: false
+  xy: 432, 704
+  size: 66, 39
+  orig: 66, 39
+  offset: 0, 0
+  index: -1
+ray_left
+  rotate: false
+  xy: 456, 665
+  size: 51, 24
+  orig: 51, 24
+  offset: 0, 0
+  index: -1
+detail
+  rotate: false
+  xy: 768, 704
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 3
+gear1
+  rotate: false
+  xy: 774, 464
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+ray_middle_flip
+  rotate: false
+  xy: 432, 822
+  size: 56, 22
+  orig: 56, 22
+  offset: 0, 0
+  index: -1
+engine
+  rotate: false
+  xy: 516, 260
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+wires
+  rotate: false
+  xy: 260, 704
+  size: 170, 180
+  orig: 170, 180
+  offset: 0, 0
+  index: -1
+board_limit_single
+  rotate: false
+  xy: 822, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+board_segment
+  rotate: false
+  xy: 456, 571
+  size: 52, 64
+  orig: 52, 64
+  offset: 0, 0
+  index: -1
+gear2
+  rotate: false
+  xy: 757, 834
+  size: 143, 140
+  orig: 143, 140
+  offset: 0, 0
+  index: -1
+detail
+  rotate: false
+  xy: 260, 886
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 2
+booster_button
+  rotate: false
+  xy: 823, 200
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+booster_color
+  rotate: false
+  xy: 456, 637
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1
+booster_bullet
+  rotate: false
+  xy: 774, 260
+  size: 46, 48
+  orig: 46, 48
+  offset: 0, 0
+  index: -1
+alarm_bulb
+  rotate: false
+  xy: 774, 360
+  size: 34, 39
+  orig: 34, 39
+  offset: 0, 0
+  index: -1
+board_limit
+  rotate: false
+  xy: 816, 332
+  size: 84, 64
+  orig: 84, 64
+  offset: 0, 0
+  index: -1
+circle
+  rotate: false
+  xy: 2, 763
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+detail
+  rotate: false
+  xy: 768, 574
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 5
+electro_right_source
+  rotate: false
+  xy: 432, 745
+  size: 65, 39
+  orig: 65, 39
+  offset: 0, 0
+  index: -1
+launcher
+  rotate: false
+  xy: 487, 906
+  size: 112, 63
+  orig: 112, 63
+  offset: 0, 0
+  index: -1
+detail
+  rotate: false
+  xy: 823, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+floor
+  rotate: false
+  xy: 889, 2
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+alarm_bloom
+  rotate: false
+  xy: 516, 2
+  size: 305, 256
+  orig: 305, 256
+  offset: 0, 0
+  index: -1
+booster_johnny
+  rotate: false
+  xy: 774, 310
+  size: 40, 48
+  orig: 40, 48
+  offset: 0, 0
+  index: -1
+ray_right
+  rotate: false
+  xy: 432, 786
+  size: 56, 34
+  orig: 56, 34
+  offset: 0, 0
+  index: -1
+detail_1b
+  rotate: false
+  xy: 823, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+engine_new
+  rotate: false
+  xy: 823, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+cube
+  rotate: false
+  xy: 2, 2
+  size: 512, 501
+  orig: 512, 501
+  offset: 0, 0
+  index: -1
+alarm_light
+  rotate: false
+  xy: 260, 505
+  size: 194, 197
+  orig: 194, 197
+  offset: 0, 0
+  index: -1
+tube
+  rotate: false
+  xy: 601, 906
+  size: 115, 60
+  orig: 115, 60
+  offset: 0, 0
+  index: -1

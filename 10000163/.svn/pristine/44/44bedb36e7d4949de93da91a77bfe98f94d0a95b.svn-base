@@ -1,0 +1,46 @@
+wallpapers.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+madridWallpaper_unlocked
+  rotate: false
+  xy: 668, 404
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1
+newYorkWallpaper_unlocked
+  rotate: false
+  xy: 346, 2
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1
+customize_unlocked
+  rotate: false
+  xy: 2, 2
+  size: 342, 400
+  orig: 342, 400
+  offset: 0, 0
+  index: -1
+londonWallpaper_unlocked
+  rotate: false
+  xy: 679, 2
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1
+sidneyWallpaper_unlocked
+  rotate: false
+  xy: 335, 404
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1
+spaceWallpaper_unlocked
+  rotate: false
+  xy: 2, 404
+  size: 331, 400
+  orig: 331, 400
+  offset: 0, 0
+  index: -1

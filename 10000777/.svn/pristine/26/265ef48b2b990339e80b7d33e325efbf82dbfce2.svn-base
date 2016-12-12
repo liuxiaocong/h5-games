@@ -1,0 +1,67 @@
+{
+    "frames": [
+        {
+            "filename": "PreloaderAnimation",
+            "frame": {
+                "x": 257,
+                "y": 0,
+                "w": 208,
+                "h": 238
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 208,
+                "h": 238
+            },
+            "sourceSize": {
+                "w": 208,
+                "h": 238
+            }
+        },
+        {
+            "filename": "PreloaderBackTile",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 256,
+                "h": 256
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 256,
+                "h": 256
+            },
+            "sourceSize": {
+                "w": 256,
+                "h": 256
+            }
+        },
+        {
+            "filename": "PreloaderHeader",
+            "frame": {
+                "x": 0,
+                "y": 257,
+                "w": 283,
+                "h": 142
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 283,
+                "h": 142
+            },
+            "sourceSize": {
+                "w": 283,
+                "h": 142
+            }
+        }
+    ]
+}

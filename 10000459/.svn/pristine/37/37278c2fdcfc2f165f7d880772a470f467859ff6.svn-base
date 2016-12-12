@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>百度统计——最大的中文网站分析平台</title>
+        <link href="/web/css/white_simple_layout.css?__v=20140818140631" rel="stylesheet" type="text/css" media="all" />
+     
+    <link href="/web/css/login.css?__v=20140818140631" rel="stylesheet" type="text/css" media="all" />
+    <link href="/web/image/dynamic/typicalImages/loginTypical.min.css?_v=1409201171" rel="stylesheet" type="text/css" media="all" />
+ 
+</head>
+<body>    <div class="white-simple-header-wrapper">
+        <div class="white-simple-header span1">
+            <div class="top-nav">
+                <div class="login-bar">
+                    <a target="_blank" href="http://hi.baidu.com/bdtongji">官方博客</a><span class="header-split">|</span>
+                    <a target="_blank" href="http://support.baidu.com/tongji/?action=message">联系我们</a>
+                </div>
+            </div>
+
+           <div class="logo">
+               <img src="/web/image/login_logo.png?__v=20140818140631" alt="百度统计——最大的中文网站分析平台" />
+                <div class="attention-wrap">
+                    <div class="attention">
+                        <span class="dimensional-trigger">
+                            <span>二维码</span>
+                            <!--<span class="arrow-down"></span>-->
+                        </span>
+                        <div class="dimensional-code" style="display: none"></div>
+                        <a class="social social-b-tb" href="http://tieba.baidu.com/i/15733862" target="_blank" title="i贴吧">&nbsp; </a>
+                        <a class="social social-t-wb" href="http://t.qq.com/baidutongji" target="_blank" title="腾讯微博"> &nbsp; </a>
+                        <a class="social social-s-wb" href="http://t.sina.com.cn/baidutongji" target="_blank" title="新浪微博">&nbsp; </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="constent">
+            <!-- 内容区块开始 -->
+            
+
+<div class="tabs">
+    <div class="tab-list span1">
+        <ul>
+            <li class="selected">
+                <a href="/web/welcome/login" class="cur">首 页</a>
+            </li>
+            <li class="">
+                <a href="/web/welcome/products">产品介绍</a>
+            </li>
+            <li class="">
+                <a href="http://yingxiao.baidu.com/support/class/tongji/" target="_blank">带你入门</a>
+            </li>
+            <li class="">
+                <a href="/web/welcome/cases">成功案例</a>
+            </li>
+            <li class="">
+                <a href="http://yingxiao.baidu.com/support/tongji/?controller=index&action=main&castk=LTE%3D" target="_blank">帮助中心</a>
+            </li>
+        </ul>
+        <span class="login-container">    <a class="no-select dazzle-button login-trigger" href="javascript:void(0)" target="_self">
+        <span class="dazzle-button-text">登 录</span>
+    </a>
+                <a class="no-select dazzle-button register-trigger" href="javascript:void(0)" target="_self">
+        <span class="dazzle-button-text">注 册</span>
+    </a>
+        </span>
+    </div>
+</div>
+
+<div id="SlidesInteractive" class="slide">
+    <div id="SlidesContainer">
+        <div id="SliderLoading">loading...</div>
+        <div id="Slider" style="position: absolute; left: 0px; top: 0px;"></div>
+        <div class="slider-btn clearfix" style="opacity: 0.85;">
+            <div id="SliderBtn" class="slider-btn-control"></div>
+        </div>
+    </div>
+    <div class="slide-shortcut">
+        <a id="SlidePrev" class="slide-shortcut-prev no-select">&lt;</a>
+        <a id="SlideNext" class="slide-shortcut-next no-select">&gt;</a>
+    </div>
+</div>
+
+<div class="content span1 clearfix">
+        <div class="products l span2">
+            <div class="analytics">
+                <div class="analytics-title">
+                    <span>统计系统</span>
+                </div>
+                <div class="analytics-details clearfix">
+                    <div class="product l tj">
+                        <div class="product-img">
+                            <a href="http://tongji.baidu.com" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度统计-网站统计</div>
+                        <div class="product-desc">专业的网站流量</div>
+                        <div class="product-type">分析工具</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="/web/welcome/ico?s=f4748a8fdde92fba48d342afbc101386" target="_self">
+        <span class="dazzle-button-text">演示</span>
+    </a>
+                                <a class="no-select dazzle-button links" href="http://tongji.baidu.com/web/register" target="_blank">
+        <span class="dazzle-button-text">注册</span>
+    </a>
+                                <a class="no-select dazzle-button links last product-webmaster-login" href="javascript:void(0)" target="_self">
+        <span class="dazzle-button-text">登录</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l tj-pro">
+                        <div class="product-img">
+                            <a href="http://tongji.baidu.com" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度统计-推广分析</div>
+                        <div class="product-desc">百度推广效果一站式</div>
+                        <div class="product-type">评估工具</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="/web/welcome/ico?s=f4748a8fdde92fba48d342afbc101386" target="_self">
+        <span class="dazzle-button-text">演示</span>
+    </a>
+                                <a class="no-select dazzle-button links" href="http://u.baidu.com/?module=default&controller=Reg&action=regUser&appid=3" target="_blank">
+        <span class="dazzle-button-text">注册</span>
+    </a>
+                                <a class="no-select dazzle-button links last product-pro-login" href="javascript:void(0)" target="_self">
+        <span class="dazzle-button-text">登录</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l mtj">
+                        <div class="product-img">
+                            <a href="http://mtj.baidu.com" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度统计-移动统计</div>
+                        <div class="product-desc">免费移动应用统计</div>
+                        <div class="product-type">分析工具</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://mtj.baidu.com/web/welcome/ico?key=8503dc9e" target="_self">
+        <span class="dazzle-button-text">演示</span>
+    </a>
+                                <a class="no-select dazzle-button links" href="http://mtj.baidu.com/web/welcome/register" target="_blank">
+        <span class="dazzle-button-text">注册</span>
+    </a>
+                                <a class="no-select dazzle-button links last" href="http://mtj.baidu.com" target="_blank">
+        <span class="dazzle-button-text">登录</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l last tj-open">
+                        <div class="product-img">
+                            <a href="http://tongji.baidu.com/open/" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度统计-开放平台</div>
+                        <div class="product-desc">数据收集与导出的</div>
+                        <div class="product-type">开放API工具</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://tongji.baidu.com/open/" target="_blank">
+        <span class="dazzle-button-text">开始使用</span>
+    </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-title">
+                    <span>网站服务</span>
+                </div>
+                <div class="service-details clearfix">
+                    <div class="product l tuijian">
+                        <div class="product-img">
+                            <a href="http://tuijian.baidu.com/" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度推荐</div>
+                        <div class="product-desc">专业的网站内容</div>
+                        <div class="product-type">推荐工具</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://tuijian.baidu.com" target="_blank">
+        <span class="dazzle-button-text">开始使用</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l dc">
+                        <div class="product-img">
+                            <a href="http://tongji.baidu.com/data/" target="_blank"></a>
+                        </div>
+                        <div class="product-name">流量研究院</div>
+                        <div class="product-desc">中国互联网权威的数据</div>
+                        <div class="product-type">资讯中心</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://tongji.baidu.com/data/" target="_blank">
+        <span class="dazzle-button-text">开始使用</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l webmaster">
+                        <div class="product-img">
+                            <a href="http://zhanzhang.baidu.com" target="_blank"></a>
+                        </div>
+                        <div class="product-name">百度站长平台</div>
+                        <div class="product-desc">免费的SEO工具及站长</div>
+                        <div class="product-type">交流平台</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://zhanzhang.baidu.com" target="_blank">
+        <span class="dazzle-button-text">开始使用</span>
+    </a>
+                        </div>
+                    </div>
+                    <div class="product l last datamarket">
+                        <div class="product-img">
+                            <a href="http://datamarket.baidu.com" target="_blank"></a>
+                        </div>
+                        <div class="product-name">数据市场</div>
+                        <div class="product-desc">百度大数据产品</div>
+                        <div class="product-type">整合中心</div>
+                        <div class="product-buttons clearfix">
+                                <a class="no-select dazzle-button links" href="http://datamarket.baidu.com/" target="_blank">
+        <span class="dazzle-button-text">开始使用</span>
+    </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news l span3">
+            <div class="updates">
+                <div class="updates-title">
+                    <span class="title">最新升级</span>
+                    <a class="r more" href="http://hi.baidu.com/bdtongji" target="_blank"><span>[更多]</span></a>
+                </div>
+                <div class="updates-details clearfix">
+                    <ul>
+                                                <li>
+                            <span class="dot"></span>
+                            <a href="http://hi.baidu.com/bdtongji/item/fb4eb7455d085faadf2a9f8f" target="_blank" title="百度统计电商分析邀请试用了！">百度统计电商分析邀请试用了！</a>
+                            <span class="blog-date r">14-08-22</span>
+                        </li>
+                                                <li>
+                            <span class="dot"></span>
+                            <a href="http://hi.baidu.com/bdtongji/item/cc01214d47963291833ae185" target="_blank" title="百度“英雄汇”-移动开发者沙龙成都、上海站启动报名">百度“英雄汇”-移动开发者沙龙成都、上海站启动报名</a>
+                            <span class="blog-date r">14-07-15</span>
+                        </li>
+                                                <li>
+                            <span class="dot"></span>
+                            <a href="http://hi.baidu.com/bdtongji/item/a3cafc2bcdc8f9130975082f" target="_blank" title="百度统计应用中心全新上线">百度统计应用中心全新上线</a>
+                            <span class="blog-date r">14-05-29</span>
+                        </li>
+                                                <li>
+                            <span class="dot"></span>
+                            <a href="http://hi.baidu.com/bdtongji/item/e8ea0b55ec8cfc0ee7c4a50f" target="_blank" title="百度统计武汉站交流会成功举办">百度统计武汉站交流会成功举办</a>
+                            <span class="blog-date r">14-05-23</span>
+                        </li>
+                                                <li>
+                            <span class="dot"></span>
+                            <a href="http://hi.baidu.com/bdtongji/item/15ca6f1dc78b36a2ffded525" target="_blank" title="百度统计站长交流会武汉站即将启动">百度统计站长交流会武汉站即将启动</a>
+                            <span class="blog-date r">14-05-13</span>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="news-sep"></div>
+            <div class="cases">
+                <div class="cases-title">
+                    <span class="title">经验分享</span>
+                    <a class="r more" href="/web/welcome/cases" target="_blank"><span>[更多]</span></a>
+                </div>
+                <div class="cases-details clearfix">
+                    <ul>
+                                                <li>
+                            <div class="share-item">
+                                <a href="/web/welcome/cases#Case2" target="_blank">百度统计为网站运营提供了非常精准的数据，使得我们最大化的了解了访客的浏览行...</a>
+                            </div>
+                            <div class="case-date r">-- PPTV网络电视 网站产品负责人 朱悦</div>
+                        </li>
+                                                <li>
+                            <div class="share-item">
+                                <a href="/web/welcome/cases#Case5" target="_blank">泡泡网有大量的访问量来自搜索引擎，百度统计帮助我们更好的理解用户的搜索需求...</a>
+                            </div>
+                            <div class="case-date r">-- 盛拓传媒 资讯产品部总监 孙维</div>
+                        </li>
+                                                <li>
+                            <div class="share-item">
+                                <a href="/web/welcome/cases#Case3" target="_blank">百度统计真是太棒了，不但数据类型齐全，界面友好，数据及时性强，对门户和社区...</a>
+                            </div>
+                            <div class="case-date r">-- 杭州19楼总经理 程伟锋</div>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="span1 typical-users">
+    <div class="typical-title">
+        <span class="title">典型客户</span>
+        <a class="r more" href="/web/welcome/cases#typical-clients" target="_blank"><span>[更多]</span></a>
+    </div>
+    <div class="typical-details clearfix">
+        <div id="TypicalSliderContainer">
+            <div id="TypicalSlider" style="position: absolute; left: 0px; top: 0px;">
+            </div>
+        </div>
+        <div class="slide-shortcut">
+            <a id="TypicalSliderPrev" class="typical-slide-shortcut-prev no-select">&lt;</a>
+            <a id="TypicalSliderNext" class="typical-slide-shortcut-next no-select">&gt;</a>
+        </div>
+    </div>
+</div>
+
+
+
+<script id="LoginTemplate" type="text/template">
+
+<div id="LoginContainer" class="login-dialog">
+    <div id="TopTmp">&nbsp;</div>
+
+    if (this.isIco == 1) {
+    <div id="LoginMain" class="ico-login clearfix">
+        <div class="visitor-login-tab" id="LoginTab">请输入查看密码</div>
+        <div id="LoginInput" class="login-input">
+            if (this.errMsg) {
+                <div id="ErrorTip" class="error">#{this.errMsg}</div>
+            }
+            <div class="error" id="ErrorNoSubmit" style="display: none;">
+            </div>
+            <form method="post" action="">
+                <input type="hidden" value="0" id="Appid" name="appid">
+
+                <div class="form-item">
+                     <input type="password" class="client-password-input" id="Client_Password" name="passwd" style="ime-mode: disabled" placeholder="请输入查看密码" />
+                </div>
+                <div class="form-buttons">
+                    <input type="submit" id="Client_Submit" class="login-btn l" value="" />
+                    <a href="#{this.loginUrl}" id="change_tj_login_type" class="l">切换到管理员登录</a>
+                </div>
+                <input type="hidden" value="utf-8" name="charset" />
+                <input type="hidden" value="1" name="senderr" />
+            </form>
+        </div>
+    </div>
+    }
+    else {
+    <div id="LoginMain" class="login-main">
+        <div class="login-tab" id="LoginTab">
+            <ul id="LoginType">
+                <li id="f"><a href="#0">站长帐号</a></li>
+                <li id="s"><a href="#1">推广帐号</a></li>
+            </ul>
+        </div>
+        <div style="display: none;" id="WebMasterTip">统计/联盟/广告管家 账号在此登录</div>
+        <div id="LoginInput" class="login-input">
+            if (this.errMsg) {
+                <div id="ErrorTip" class="error">#{this.errMsg}</div>
+            }
+            <div class="error" id="ErrorNoSubmit" style="display: none;">
+            </div>
+            <form method="post" action="#{this.loginAction}">
+                <input type="hidden" value="12" id="Appid" name="appid">
+                <div class="form-item login-username">
+                    <input type="text" class="text" tabindex="1" id="UserName" autocomplete="off" name="entered_login" value="#{this.userName}" placeholder="请输入用户名">
+                </div>
+                <div class="form-item login-pwd">
+                    <div id="uc-safe-pwd-input" class="uc-safe-pwd-input-hidden"></div>
+                    <input type="password" class="text" tabindex="2" id="Password" autocomplete="off" name="entered_password" style="ime-mode: disabled" placeholder="请输入密码">
+                </div>
+                <div>
+                    <div class="form-item login-vcode l">
+                        <input type="text" class="text" id="Valicode" tabindex="3" name="entered_imagecode" maxlength="4" autocomplete="off" style="ime-mode:disabled">
+                    </div>
+                    <img id='cas_code' width="80" height="40" align="middle" alt="验证码" src="#{this.authCode}" />
+                    <a href="#" id="change_cas" style="margin: 0 auto; position: relative; top: 8px;">换一张</a>
+                </div>
+
+                <div class="form-buttons">
+                    <input type="submit" id="Submit" tabindex="4" class="login-btn form-btn l" value="" />
+                    <a id="RegisterUrl" class="reg form-btn register-btn l" href="#{this.registerUrl}" title="免费注册"></a>
+                </div>
+
+                <div class="safe-control">
+                    <label for="safe-check" class="safe-check">
+                    <input tabindex="6" type="checkbox" tabindex="5" id="safe-check" />安全控件登录</label><a id="GetForgetUrl" href="#{this.uc_forget}" target="_blank">找回密码</a>
+                </div>
+
+                <input type="hidden" value="utf-8" name="charset" />
+                <input type="hidden" value="#{this.fromUrl}" name="fromu" />
+                <input type="hidden" value="#{this.selfUrl}" name="selfu" />
+                <input type="hidden" value="1" name="senderr" />
+            </form>
+        </div>
+    </div>
+    }
+</div>
+<div class="dialog-bottom-bg"></div>
+</script>
+
+<script id="RegisterTemplate" type="text/template">
+    <div class="register-dialog">
+        <div class="register-item reg-webmaster">
+            <div class="reg clearfix">
+                <a target="_blank" href="http://tongji.baidu.com/web/register"></a>
+                <span>适合媒体站长用户</span>
+            </div>
+            <div class="reg-info">
+                现在有<span class="reg-num"> #{this.webmasterUserNum} </span>用户使用。一起加入吧！
+            </div>
+        </div>
+        <div class="register-item reg-custom">
+            <div class="reg clearfix">
+                <a target="_blank" href="http://u.baidu.com/?module=default&controller=Reg&action=regUser&appid=3"></a>
+                <span>适合百度推广用户</span>
+            </div>
+            <div class="reg-info">
+                现在有<span class="reg-num"> #{this.customerUserNum} </span>用户使用。一起加入吧！
+            </div>
+        </div>
+        <div class="register-item reg-mtj">
+            <div class="reg clearfix">
+                <a target="_blank" href="http://mtj.baidu.com/web/welcome/register"></a>
+                <span>适合移动应用开发者</span>
+            </div>
+            <div class="reg-info">
+                现在有<span class="reg-num"> #{this.mtjUserNum} </span>用户使用。一起加入吧！
+            </div>
+        </div>
+    </div>
+    <div class="dialog-bottom-bg"></div>
+</script>
+
+
+
+ 
+            <!-- 内容区块结束 -->
+        </div>
+    </div>
+    
+        <div class="footer">
+            &copy;2014 Baidu <a target="_blank" href="http://www.baidu.com/duty/">使用百度前必读</a>&nbsp;&nbsp;<a target="_blank" href="http://www.baidu.com">百度首页</a>&nbsp;&nbsp;<a target="_blank" href="/web/welcome/cases#friendly-links">友情链接</a>
+        </div>
+    
+    
+    <script src="/web/js/tangram.js?__v=20140818140631" type="text/javascript"></script>
+
+    
+        <script type="text/javascript">
+            T.config = T.config || {};
+            T.extend(T.config,{"systemConfig":{"domain":"tongji.baidu.com","webRoot":"\/web","baseUri":"\/web","ajaxUri":"\/web\/ajax\/post","memoUri":"\/web\/common\/memo","trackUri":"\/web\/stat\/index","oldVersionUrl":"\/hm-web\/home\/welcome","now":1409201171000,"hmJsFootCode":"<script type=\"text\/javascript\">\nvar _bdhmProtocol = ((\"https:\" == document.location.protocol) ? \" https:\/\/\" : \" http:\/\/\");\ndocument.write(unescape(\"%3Cscript src='\" + _bdhmProtocol + \"hm.baidu.com\/h.js%3F09c5d4daddb9b6250ba93075257e58a2' type='text\/javascript'%3E%3C\/script%3E\"));\nvar _hm = document.createElement(\"script\"); _hm.type = \"text\/javascript\"; _hm.async = true;\n_hm.src = (\"https:\" == document.location.protocol ? \"https:\/\/\" : \"http:\/\/\") + \"123.125.114.142:8001\/h.js?09c5d4daddb9b6250ba93075257e58a2\";\nvar s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(_hm, s);\n<\/script>","imageSaveUri":"\/web\/amfphp\/gateway.php","imageSaveMethod":"ImageSaver.save","unionUrl":"http:\/\/union.baidu.com\/client\/#\/","version":1351094400},"pageInfo":{"title":"\u767e\u5ea6\u7edf\u8ba1","showNewVersion":false,"newBlogCount":0,"topicUri":"http:\/\/yingxiao.baidu.com\/zhuanti\/list\/23.html","helpUri":"\/web\/home\/user\/help","logoutUri":"\/web\/welcome\/logout","ucslJsUrl":"cas.baidu.com\/ucsl\/ucsl.js","bannerList":[{"id":23,"link":"http:\/\/hi.baidu.com\/bdtongji\/item\/fb4eb7455d085faadf2a9f8f","imgUrl":"http:\/\/e.hiphotos.bdimg.com\/album\/h%3D820%3Bq%3D90\/sign=cceee4322ef5e0fef11884036c5b4595\/1e30e924b899a90170f9b01d1e950a7b0308f5c9.jpg","bg":{"repeat":"no-repeat"}},{"id":21,"link":"http:\/\/yingxiao.baidu.com\/topic\/321\/","imgUrl":"http:\/\/d.hiphotos.bdimg.com\/album\/h%3D820%3Bq%3D90\/sign=9e52c8d72a34349b6b066387f9d164f3\/ac6eddc451da81cb82a4aa005066d016082431b8.jpg","bg":{"repeat":"no-repeat"}},{"id":20,"link":"http:\/\/yingxiao.baidu.com\/topic\/308\/index.html","imgUrl":"http:\/\/f.hiphotos.bdimg.com\/album\/h%3D820%3Bq%3D90\/sign=e37daa0a3f6d55fbdac67b245d193e77\/241f95cad1c8a7860cfd8cda6509c93d71cf500b.jpg","bg":{"repeat":"no-repeat"}},{"id":18,"link":"http:\/\/hi.baidu.com\/bdtuijian\/item\/24110c6cf5498e1468105b66","imgUrl":"http:\/\/f.hiphotos.bdimg.com\/album\/h%3D820%3Bq%3D90\/sign=ccfa782e881363270aedcf31a1b4d1d1\/bd3eb13533fa828b7b3b7911ff1f4134970a5a2c.jpg","bg":{"repeat":"no-repeat"}},{"id":17,"link":"http:\/\/datamarket.baidu.com\/web\/app.html#app\/detail?appId=2","imgUrl":"http:\/\/h.hiphotos.bdimg.com\/album\/h%3D820%3Bq%3D90\/sign=416a2d6a7ed98d1069d401331104c933\/eac4b74543a98226a04b90b18882b9014b90eb9a.jpg","bg":{"repeat":"no-repeat"}},{"id":11,"link":"http:\/\/yingxiao.baidu.com\/zhuanti\/255.html","imgUrl":"http:\/\/b.hiphotos.bdimg.com\/album\/h%3D1044%3Bq%3D90\/sign=a98a683d013b5bb5a1d724fe02e7ee48\/5366d0160924ab18169588a137fae6cd7a890ba0.jpg","bg":{"repeat":"repeat-x"}}],"typicalUsers":[{"name":"\u7231\u4e3d","url":"http:\/\/27.cn\n","id":"login-typical-1"},{"name":"\u6c7d\u8f66\u4e4b\u5bb6","url":"http:\/\/www.autohome.com.cn\/\n","id":"login-typical-2"},{"name":"\u767e\u5408\u7f51","url":"http:\/\/www.baihe.com\/\n","id":"login-typical-3"},{"name":"\u66b4\u98ce\u5f71\u97f3","url":"http:\/\/www.baofeng.com\/\n","id":"login-typical-4"},{"name":"bianews.com","url":"http:\/\/www.bianews.com\/\n","id":"login-typical-5"},{"name":"\u6613\u8f66\u7f51","url":"http:\/\/www.bitauto.com\/\n","id":"login-typical-6"},{"name":"\u8584\u8377\u65f6\u5c1a","url":"http:\/\/www.bh5.com\/\n","id":"login-typical-7"},{"name":"\u8d22\u7ecf\u7f51","url":"http:\/\/www.caijing.com.cn\/\n","id":"login-typical-8"},{"name":"\u8f66\u8baf\u7f51","url":"http:\/\/www.chexun.com\/\n","id":"login-typical-9"},{"name":"\u6218\u7565\u7f51","url":"http:\/\/www.chinaiiss.com\/\n","id":"login-typical-10"},{"name":"\u4e2d\u56fd\u65b0\u95fb\u7f51","url":"http:\/\/www.chinanews.com\/\n","id":"login-typical-11"},{"name":"\u7ad9\u957f\u4e4b\u5bb6","url":"http:\/\/www.chinaz.com\/\n","id":"login-typical-12"},{"name":"\u5f3a\u56fd\u7f51","url":"http:\/\/www.chn2007.com\/\n","id":"login-typical-13"},{"name":"21CN","url":"http:\/\/www.21cn.com\/\n","id":"login-typical-14"},{"name":"\u5e93\u5df4\u7f51","url":"http:\/\/www.coo8.com\/\n","id":"login-typical-15"},{"name":"\u591a\u73a9\u6e38\u620f","url":"http:\/\/www.duowan.com\/\n","id":"login-typical-16"},{"name":"www.e23.cn","url":"http:\/\/www.e23.cn\/\n","id":"login-typical-17"},{"name":"\u827a\u9f99","url":"http:\/\/www.elong.com\/\n","id":"login-typical-18"},{"name":"www.espnstar.com.cn","url":"http:\/\/www.espnstar.com.cn\/\n","id":"login-typical-19"},{"name":"\u8d76\u96c6","url":"http:\/\/www.ganji.com\/\n","id":"login-typical-20"},{"name":"\u5149\u660e\u7f51","url":"http:\/\/www.gmw.cn\/\n","id":"login-typical-21"},{"name":"\u6d77\u9a6c\u82f9\u679c\u52a9\u624b","url":"http:\/\/www.haima.me\/\n","id":"login-typical-22"},{"name":"\u5b89\u5353\u7f51","url":"http:\/\/www.hiapk.com\/\n","id":"login-typical-23"},{"name":"\u5e7b\u5251\u4e66\u76df","url":"http:\/\/hjsm.tom.com\/\n","id":"login-typical-24"},{"name":"\u7ea2\u8896\u6dfb\u9999","url":"http:\/\/www.hongxiu.com\/\n","id":"login-typical-25"},{"name":"\u73af\u7403\u7f51","url":"http:\/\/www.huanqiu.com\/\n","id":"login-typical-26"},{"name":"\u805a\u7f8e\u4f18\u54c1","url":"http:\/\/www.jumei.com\/\n","id":"login-typical-28"},{"name":"\u8003\u7814\u7f51","url":"http:\/\/www.kaoyan.com\/\n","id":"login-typical-29"},{"name":"\u7231\u4e50\u6d3b","url":"http:\/\/www.leho.com\/\n","id":"login-typical-31"},{"name":"12580.com","url":"http:\/\/www.12580.com\/\n","id":"login-typical-32"},{"name":"19\u697c","url":"http:\/\/www.19lou.com\/\n","id":"login-typical-33"},{"name":"265G","url":"http:\/\/www.265g.com\/\n","id":"login-typical-34"},{"name":"\u65e0\u5fe7\u8003\u7f51","url":"http:\/\/www.51test.net\/\n","id":"login-typical-35"},{"name":"\u6211\u7231\u8d2d\u7269\u7f51","url":"http:\/\/www.55bbs.com\/\n","id":"login-typical-36"},{"name":"7k7k\u5c0f\u6e38\u620f\u4e16\u754c","url":"http:\/\/www.7k7k.com\/\n","id":"login-typical-37"},{"name":"\u4e5d\u9177\u97f3\u4e50\u7f51","url":"http:\/\/www.9ku.com\/\n","id":"login-typical-38"},{"name":"\u7c73\u5c14\u7f51","url":"http:\/\/www.miercn.com\/\n","id":"login-typical-39"},{"name":"91.com","url":"http:\/\/www.91.com\/\n","id":"login-typical-40"},{"name":"\u6635\u56fe\u7f51","url":"http:\/\/www.nipic.com\/\n","id":"login-typical-41"},{"name":"\u592a\u5e73\u6d0b\u6c7d\u8f66\u7f51","url":"http:\/\/www.pcauto.com.cn\/\n","id":"login-typical-42"},{"name":"pcbeta","url":"http:\/\/www.pcbeta.com\/\n","id":"login-typical-43"},{"name":"\u592a\u5e73\u6d0b\u6e38\u620f\u7f51","url":"http:\/\/www.pcgames.com.cn\/\n","id":"login-typical-44"},{"name":"PPTV","url":"http:\/\/www.pptv.com\/\n","id":"login-typical-45"},{"name":"\u5343\u5343\u9759\u542c","url":"http:\/\/www.qianqian.com\/\n","id":"login-typical-46"},{"name":"\u9a71\u52a8\u4e4b\u5bb6","url":"http:\/\/www.mydrivers.com\/\n","id":"login-typical-47"},{"name":"\u641c\u5916\u7f51","url":"http:\/\/www.seowhy.com\/\n","id":"login-typical-48"},{"name":"\u70e7\u9ea6\u7f51","url":"http:\/\/www.shaomy.com\/\n","id":"login-typical-49"},{"name":"6\u4eba\u6e38","url":"http:\/\/www.6renyou.com\/\n","id":"login-typical-50"},{"name":"\u5927\u516c\u7f51","url":"http:\/\/www.takungpao.com\/\n","id":"login-typical-51"},{"name":"\u7535\u73a9\u5df4\u58eb","url":"http:\/\/www.tgbus.com\/\n","id":"login-typical-52"},{"name":"\u5929\u6daf\u793e\u533a","url":"http:\/\/www.tianya.cn\/\n","id":"login-typical-53"},{"name":"\u94c1\u8840\u7f51","url":"http:\/\/www.tiexue.net\/\n","id":"login-typical-54"},{"name":"web\u5f00\u53d1\u7f51","url":"http:\/\/www.cncms.com\/\n","id":"login-typical-55"},{"name":"WPS","url":"http:\/\/www.wps.cn\/\n","id":"login-typical-56"},{"name":"\u7231\u5361\u6c7d\u8f66","url":"http:\/\/www.xcar.com.cn\/\n","id":"login-typical-57"},{"name":"\u65b0\u4e1c\u65b9","url":"http:\/\/www.xdf.cn\/\n","id":"login-typical-58"},{"name":"\u6c7d\u8f66\u70b9\u8bc4\u7f51","url":"http:\/\/www.xgo.com.cn\/\n","id":"login-typical-59"},{"name":"\u7279\u6b65","url":"http:\/\/www.xtep.com.cn\/\n","id":"login-typical-60"},{"name":"\u65b0\u519b\u4e8b","url":"http:\/\/www.xinjunshi.com\/\n","id":"login-typical-61"},{"name":"\u5929\u6781\u7f51","url":"http:\/\/www.yesky.com\/\n","id":"login-typical-62"},{"name":"\u97f3\u60a6\u53f0","url":"http:\/\/www.yinyuetai.com\/\n","id":"login-typical-63"},{"name":"YOKA","url":"http:\/\/www.yoka.com\/\n","id":"login-typical-64"},{"name":"\u9010\u6d6a\u7f51","url":"http:\/\/www.zhulang.com\/\n","id":"login-typical-65"},{"name":"\u5bb6\u6709\u6c47","url":"http:\/\/www.jyh.com","id":"login-typical-66"},{"name":"\u9177\u72d7","url":"http:\/\/www.kugou.com","id":"login-typical-67"},{"name":"\u8695\u8c46\u7f51","url":"http:\/\/candou.com","id":"login-typical-69"}]}});
+        </script>
+    
+    
+    <script type="text/javascript">
+        VAR = {
+            webMasterRegister: "http://tongji.baidu.com/web/register",
+            customRegister: "http://u.baidu.com/?module=default&controller=Reg&action=regUser&appid=3",
+            union_forget: "http://union.baidu.com/findPassword!input.action",
+            shifen_forget: "http://www2.baidu.com/user/getpwd.php",
+            uc_forget: "https://cas.baidu.com/?controller=user&amp;action=retrivepwd&amp;appscope[]=6&amp;appscope[]=12&amp;appscope[]=7",
+            waiting_img_src: "/web/img/loadingImage.gif",
+            app_id: "0",
+            errMsg: "",
+            loginUrl: "/web/welcome/login",
+            loginAction: "https://cas.baidu.com/?action=login",
+            userName: "",
+            authCode: "http://cas.baidu.com/?action=image&key=1409201171",
+            registerUrl: "/web/register",
+            fromUrl: "http://tongji.baidu.com/web/welcome/index",
+            selfUrl: "http://tongji.baidu.com/web/welcome/login",
+            isIco: "0",
+            webmasterUserNum: "1281926",
+            customerUserNum: "1455677",
+            mtjUserNum: "631630"
+        };
+    </script>
+<script type="text/javascript">
+    var _bducProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bducProtocol + "cas.baidu.com/ucsl/ucsl.js%3Fappid=12%26d="
+         + Math.floor((+new Date) / (864e5)) + "' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script src="/web/js/login.js?__v=20140818140631" type="text/javascript"></script>
+
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F09c5d4daddb9b6250ba93075257e58a2' type='text/javascript'%3E%3C/script%3E"));
+var _hm = document.createElement("script"); _hm.type = "text/javascript"; _hm.async = true;
+_hm.src = ("https:" == document.location.protocol ? "https://" : "http://") + "123.125.114.142:8001/h.js?09c5d4daddb9b6250ba93075257e58a2";
+var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_hm, s);
+</script>
+</body>
+</html>

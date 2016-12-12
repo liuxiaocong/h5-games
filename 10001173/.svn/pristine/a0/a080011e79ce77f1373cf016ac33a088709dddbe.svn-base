@@ -1,0 +1,4166 @@
+__manifest = {
+	launch: "js/OnslaughtDefense",
+	title: "Onslaught! Defense",
+	sizes: [[320, 480]],
+	description: "Wield powerful weapons to defend your castle from hordes of dragons and demons in this action-packed castle defense game. Upgrade powerful swords, axes and spears to earn the mighty Runeforge! How many monsters can you slay before your castle is overrun?",
+	shortName: "onslaught_defense",
+	orientation: "portrait",
+	favicon: "media/images/favicon.ico",
+	icons: {
+		114 : "media/images/icons/114.png"
+	},
+	version: "1.6.1"
+};
+__intl = {
+	LOADING: "加载中",
+	COPYRIGHT: "",
+	HIGH_SCORE: "最高分:",
+	PLAY: "开始游戏",
+	READY: "准备",
+	NEW_HIGH_SCORE: "新的最高纪录!",
+	PAUSED: "游戏暂停",
+	YOUR_SCORE: "你的分数:",
+	PLAY_SOUND: "打开声音",
+	QUIT: "退出游戏",
+	CONTINUE: "继续游戏",
+	GAME_OVER: "游戏结束",
+	MONSTERS_SLAIN: "消灭怪物:",
+	PLAY_AGAIN: "再玩一次"
+};
+var requirejs, require, define; (function(d) {
+	function a(f, b) {
+		var a = b && b.split("/"),
+		c = q.map,
+		e = c && c["*"] || {},
+		l,
+		h,
+		d,
+		k,
+		g,
+		s;
+		if (f && "." === f.charAt(0) && b) {
+			a = a.slice(0, a.length - 1);
+			f = a.concat(f.split("/"));
+			for (g = 0; l = f[g]; g++) if ("." === l) f.splice(g, 1),
+			g -= 1;
+			else if (".." === l) {
+				if (1 === g && (".." === f[2] || ".." === f[0])) return ! 0;
+				0 < g && (f.splice(g - 1, 2), g -= 2)
+			}
+			f = f.join("/")
+		}
+		if ((a || e) && c) for (l = f.split("/"), g = l.length; 0 < g; g -= 1) {
+			h = l.slice(0, g).join("/");
+			if (a) for (s = a.length; 0 < s; s -= 1) if (d = c[a.slice(0, s).join("/")]) if (d = d[h]) {
+				k = d;
+				break
+			}
+			if (k = k || e[h]) {
+				l.splice(0, g, k);
+				f = l.join("/");
+				break
+			}
+		}
+		return f
+	}
+	function c(f, a) {
+		return function() {
+			return n.apply(d, r.call(arguments, 0).concat([f, a]))
+		}
+	}
+	function b(f) {
+		return function(b) {
+			return a(b, f)
+		}
+	}
+	function e(a) {
+		return function(b) {
+			f[a] = b
+		}
+	}
+	function h(a) {
+		if (l.hasOwnProperty(a)) {
+			var b = l[a];
+			delete l[a];
+			s[a] = !0;
+			p.apply(d, b)
+		}
+		if (!f.hasOwnProperty(a)) throw Error("No " + a);
+		return f[a]
+	}
+	function g(f, c) {
+		var e, l, d = f.indexOf("!");
+		return - 1 !== d ? (e = a(f.slice(0, d), c), f = f.slice(d + 1), l = h(e), l && l.normalize ? f = l.normalize(f, b(c)) : f = a(f, c)) : f = a(f, c),
+		{
+			f: e ? e + "!" + f: f,
+			n: f,
+			p: l
+		}
+	}
+	function k(f) {
+		return function() {
+			return q && q.config && q.config[f] || {}
+		}
+	}
+	var f = {},
+	l = {},
+	q = {},
+	s = {},
+	r = [].slice,
+	p,
+	n;
+	p = function(a, b, q, r) {
+		var m = [],
+		y,
+		w,
+		t,
+		n,
+		p;
+		r = r || a;
+		if ("function" == typeof q) {
+			b = !b.length && q.length ? ["require", "exports", "module"] : b;
+			for (p = 0; p < b.length; p++) if (n = g(b[p], r), t = n.f, "require" === t) m[p] = c(a);
+			else if ("exports" === t) m[p] = f[a] = {},
+			y = !0;
+			else if ("module" === t) w = m[p] = {
+				id: a,
+				uri: "",
+				exports: f[a],
+				config: k(a)
+			};
+			else if (f.hasOwnProperty(t) || l.hasOwnProperty(t)) m[p] = h(t);
+			else if (n.p) n.p.load(n.n, c(r, !0), e(t), {}),
+			m[p] = f[t];
+			else if (!s[t]) throw Error(a + " missing " + t);
+			b = q.apply(f[a], m);
+			a && (w && w.exports !== d && w.exports !== f[a] ? f[a] = w.exports: b === d && y || (f[a] = b))
+		} else a && (f[a] = q)
+	};
+	requirejs = require = n = function(f, a, b, c) {
+		return "string" == typeof f ? h(g(f, a).f) : (f.splice || (q = f, a.splice ? (f = a, a = b, b = null) : f = d), a = a ||
+		function() {},
+		c ? p(d, f, a, b) : setTimeout(function() {
+			p(d, f, a, b)
+		},
+		15), n)
+	};
+	n.config = function(f) {
+		return q = f,
+		n
+	};
+	define = function(f, a, b) {
+		a.splice || (b = a, a = []);
+		l[f] = [f, a, b]
+	};
+	define.amd = {
+		jQuery: !0
+	}
+})();
+define("../djinn/lib/almond",
+function() {});
+var djinn = {
+	version: "2.6.4"
+},
+bind = function(d, a) {
+	return "string" == typeof a && (a = d[a]),
+	function() {
+		a.apply(d, arguments)
+	}
+},
+clone = function(d) {
+	return JSON.parse(JSON.stringify(d))
+},
+merge = function() {
+	for (var d = {},
+	a = arguments.length - 1; 0 <= a; --a) {
+		var c = arguments[a];
+		if ("object" == typeof c) for (var b in c) c[b] && d[b] && "function" != typeof c[b].concat && "object" == typeof c[b] && "object" == typeof d[b] ? d[b] = arguments.callee(c[b], d[b]) : d[b] = c[b]
+	}
+	return d
+},
+sprintf = function(d) {
+	for (var a = 1,
+	c = arguments.length; a < c; ++a) d = d.replace(/%s/, arguments[a]);
+	return d
+};
+if ("undefined" == typeof requestAnimationFrame) var requestAnimationFrame = window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+function(d) {
+	setTimeout(function() {
+		d(Date.now())
+	},
+	17)
+};
+var logger = "undefined" != typeof console ? console: {
+	error: function() {},
+	info: function() {},
+	log: function() {},
+	warn: function() {}
+};
+"function" != typeof logger.info && (logger.info = logger.log);
+define("djinn/global",
+function() {});
+define("djinn/Class", [],
+function() {
+	var d = !1,
+	a = /\b_super\b/,
+	c = function() {};
+	return c.extend = function(b) {
+		var c = this.prototype;
+		d = !0;
+		var h = new this;
+		d = !1;
+		for (var g in b) h[g] = "function" == typeof b[g] && "function" == typeof c[g] && a.test(b[g]) ?
+		function(a, f) {
+			return function() {
+				var b = this._super;
+				this._super = c[a];
+				var h = f.apply(this, arguments);
+				return this._super = b,
+				h
+			}
+		} (g, b[g]) : b[g];
+		g = function() { ! d && this.init && this.init.apply(this, arguments)
+		};
+		return g.prototype = h,
+		g.prototype.constructor = g,
+		g.extend = arguments.callee,
+		g
+	},
+	c
+});
+define("djinn/Emitter", ["djinn/Class"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			this._listenerKey = 0;
+			this._listeners = {}
+		},
+		fire: function(a, c) {
+			for (var b in this._listeners) {
+				var e = this._listeners[b];
+				if (e.eventName == a) if (e.method) e.method.apply(e.context, c);
+				else if (e.methodName) {
+					var h = e.context[e.methodName];
+					if ("function" != typeof h) throw "Could not find method: " + e.methodName;
+					h.apply(e.context, c)
+				}
+			}
+		},
+		on: function(a) {
+			var c = {
+				eventName: a
+			};
+			if (2 == arguments.length) c.method = arguments[1];
+			else {
+				c.context = arguments[1];
+				var b = arguments[2];
+				"string" == typeof b ? c.methodName = b: c.method = b
+			}
+			return this._listeners[++this._listenerKey] = c,
+			this
+		},
+		off: function(a) {
+			var c = null,
+			b;
+			for (b in this._listeners) {
+				var e = this._listeners[b];
+				if (e.eventName == a) if (2 == arguments.length) {
+					if (e.method == arguments[1]) {
+						c = b;
+						break
+					}
+				} else if (arguments[1] == e.context) {
+					var h = arguments[2];
+					if ("string" == typeof h) {
+						if (h == e.methodName) {
+							c = b;
+							break
+						}
+					} else if (e.method = h, h == e.method) {
+						c = b;
+						break
+					}
+				}
+			}
+			return null !== c && delete this._listeners[c],
+			this
+		},
+		remove: function() {
+			this._listeners = null
+		}
+	})
+});
+define("djinn/math/core", {
+	twoPi: 2 * Math.PI,
+	random: function(d, a) {
+		return d instanceof Array ? arguments.callee(0, d.length - 1) : Math.round(Math.random() * (a - d)) + d
+	},
+	clamp: function(d, a, c) {
+		return Math.min(Math.max(d, a), c)
+	},
+	intersects: function(d, a) {
+		return d.x < a.x + a.width && a.x < d.x + d.width && d.y < a.y + a.height && a.y < d.y + d.height
+	},
+	pointInRect: function(d, a) {
+		return d.x > a.x && d.y > a.y && d.x < a.x + a.width && d.y < a.y + a.height
+	},
+	round: function(d, a) {
+		var c = Math.pow(10, a);
+		return Math.round(d * c) / c
+	}
+});
+define("djinn/utils/transitions", [],
+function() {
+	var d = {
+		linear: function(a, c, b, e) {
+			return b * a / e + c
+		},
+		easeIn: function(a, c, b, e) {
+			return b * (a /= e) * a + c
+		},
+		easeOut: function(a, c, b, e) {
+			return - b * (a /= e) * (a - 2) + c
+		},
+		easeBoth: function(a, c, b, e) {
+			return 1 > (a /= e / 2) ? b / 2 * a * a + c: -b / 2 * (--a * (a - 2) - 1) + c
+		},
+		inStrong: function(a, c, b, e) {
+			return b * (a /= e) * a * a * a + c
+		},
+		outStrong: function(a, c, b, e) {
+			return - b * ((a = a / e - 1) * a * a * a - 1) + c
+		},
+		bothStrong: function(a, c, b, e) {
+			return 1 > (a /= e / 2) ? b / 2 * a * a * a * a + c: -b / 2 * ((a -= 2) * a * a * a - 2) + c
+		},
+		elasticIn: function(a, c, b, e, h, d) {
+			if (0 == a) return c;
+			if (1 == (a /= e)) return c + b;
+			d || (d = 0.3 * e); ! h || h < Math.abs(b) ? (h = b, b = d / 4) : b = d / (2 * Math.PI) * Math.asin(b / h);
+			return - (h * Math.pow(2, 10 * (a -= 1)) * Math.sin(2 * (a * e - b) * Math.PI / d)) + c
+		},
+		elasticOut: function(a, c, b, e, h, d) {
+			if (0 == a) return c;
+			if (1 == (a /= e)) return c + b;
+			d || (d = 0.3 * e);
+			if (!h || h < Math.abs(b)) {
+				h = b;
+				var k = d / 4
+			} else k = d / (2 * Math.PI) * Math.asin(b / h);
+			return h * Math.pow(2, -10 * a) * Math.sin(2 * (a * e - k) * Math.PI / d) + b + c
+		},
+		elasticBoth: function(a, c, b, e, d, g) {
+			if (0 == a) return c;
+			if (2 == (a /= e / 2)) return c + b;
+			g || (g = 0.3 * e * 1.5);
+			if (!d || d < Math.abs(b)) {
+				d = b;
+				var k = g / 4
+			} else k = g / (2 * Math.PI) * Math.asin(b / d);
+			return 1 > a ? -0.5 * d * Math.pow(2, 10 * (a -= 1)) * Math.sin(2 * (a * e - k) * Math.PI / g) + c: d * Math.pow(2, -10 * (a -= 1)) * Math.sin(2 * (a * e - k) * Math.PI / g) * 0.5 + b + c
+		},
+		backIn: function(a, c, b, e, d) {
+			return void 0 === d && (d = 1.70158),
+			b * (a /= e) * a * ((d + 1) * a - d) + c
+		},
+		backOut: function(a, c, b, e, d) {
+			return void 0 === d && (d = 1.70158),
+			b * ((a = a / e - 1) * a * ((d + 1) * a + d) + 1) + c
+		},
+		backBoth: function(a, c, b, e, d) {
+			return void 0 === d && (d = 1.70158),
+			1 > (a /= e / 2) ? b / 2 * a * a * (((d *= 1.525) + 1) * a - d) + c: b / 2 * ((a -= 2) * a * (((d *= 1.525) + 1) * a + d) + 2) + c
+		},
+		bounceIn: function(a, c, b, e) {
+			return b - d.bounceOut(e - a, 0, b, e) + c
+		},
+		bounceOut: function(a, c, b, e) {
+			return (a /= e) < 1 / 2.75 ? 7.5625 * b * a * a + c: a < 2 / 2.75 ? b * (7.5625 * (a -= 1.5 / 2.75) * a + 0.75) + c: a < 2.5 / 2.75 ? b * (7.5625 * (a -= 2.25 / 2.75) * a + 0.9375) + c: b * (7.5625 * (a -= 2.625 / 2.75) * a + 0.984375) + c
+		},
+		bounceBoth: function(a, c, b, e) {
+			return a < e / 2 ? 0.5 * d.bounceIn(2 * a, 0, b, e) + c: 0.5 * d.bounceOut(2 * a - e, 0, b, e) + 0.5 * b + c
+		}
+	};
+	return d
+});
+define("djinn/utils/viewEffects", ["djinn/math/core", "djinn/utils/transitions"],
+function(d, a) {
+	return {
+		alert: function(c, b, e) {
+			b = b || {};
+			var d = c.z;
+			c.z = Infinity;
+			c.tween({
+				scale: b.scale || 1.5
+			},
+			(b.duration || 500) / 2, a.easeBoth,
+			function() {
+				b.midCallback && b.midCallback()
+			}).tween({
+				scale: 1
+			},
+			(b.duration || 500) / 2, a.easeBoth,
+			function() {
+				c.z = d;
+				e && e()
+			})
+		},
+		burst: function(c, b, e) {
+			c.opacity = 0;
+			c.scale = 0.5;
+			c.tween({
+				opacity: 1,
+				rotation: Math.PI / 2,
+				scale: 1.5
+			},
+			100, a.linear).tween({
+				opacity: 0
+			},
+			100, a.linear,
+			function() {
+				e && e()
+			})
+		},
+		buttonPress: function(c, b, e) {
+			c.tween({
+				y: c.y + c.height / 10
+			},
+			50, a.linear).tween({
+				y: c.y
+			},
+			50, a.linear, e)
+		},
+		fadeOut: function(c, b, e) {
+			b = b || {};
+			c.tween({
+				opacity: 0
+			},
+			b.duration || 1E3, a.linear, e)
+		},
+		fadeIn: function(c, b, e) {
+			b = b || {};
+			c.tween({
+				opacity: 1
+			},
+			b.duration || 1E3, a.linear, e)
+		},
+		popIn: function(c, b, e) {
+			b = b || {};
+			var h = 1 == d.random(1, 2) ? 2 : -2,
+			h = d.clamp(c.x + c.width * h, 0, c.parent.width - c.width),
+			g = c.y;
+			c.opacity = b.opacity || 0;
+			c.scale = b.scale || 0.5;
+			c.y += c.height / 2;
+			c.tween({
+				opacity: 1,
+				scale: 1,
+				x: h,
+				y: g
+			},
+			200, a.linear).tween({
+				scale: 1.25
+			},
+			50, a.linear).tween({
+				scale: 1
+			},
+			50, a.linear, e)
+		},
+		popOut: function(c, b, e) {
+			c.opacity = 1;
+			c.tween({
+				scale: 0.75
+			},
+			50, a.linear).tween({
+				opacity: 0,
+				scale: 2
+			},
+			250, a.linear, e)
+		},
+		shake: function(a, b, e) {
+			a.completeTween();
+			b = b || {};
+			var d = b.iterations || 10,
+			g = (b.duration || 250) / d;
+			b = b.violence || 6;
+			for (var k = a.x,
+			f = a.y,
+			l = 0; l < d; ++l) a.tween({
+				x: a.x + b * (l % 2 ? 1 : -1)
+			},
+			g);
+			a.delayTween(0,
+			function() {
+				a.x = k;
+				a.y = f;
+				e && e()
+			})
+		},
+		vibrate: function(a, b, e) {
+			a.completeTween();
+			b = b || {};
+			var h = b.iterations || 10,
+			g = (b.duration || 250) / h;
+			b = b.violence || 6;
+			for (var k = a.x,
+			f = a.y,
+			l = 0; l < h; ++l) a.tween({
+				x: a.x + d.random( - b, b),
+				y: a.y + d.random( - b, b)
+			},
+			g);
+			a.delayTween(0,
+			function() {
+				a.x = k;
+				a.y = f;
+				e && e()
+			})
+		}
+	}
+});
+define("djinn/manifest", [],
+function() {
+	return __manifest
+});
+define("djinn/globalTimer", ["djinn/Emitter"],
+function(d) {
+	return new(d.extend({
+		init: function(a) {
+			this._super(a);
+			this.running = !1;
+			this._lastUpdate = this.fps = 0;
+			this._tickHistory = []
+		},
+		start: function() {
+			this.running = !0;
+			this._lastUpdate = Date.now();
+			this._requestFrame()
+		},
+		stop: function() {
+			this.running = !1
+		},
+		_requestFrame: function() {
+			this.running && requestAnimationFrame(bind(this, "_update"))
+		},
+		_update: function(a) {
+			var c = a - this._lastUpdate;
+			1E3 < c && (logger.warn("Dropping large tick: " + c), c = 1);
+			this._recordTick(c);
+			this.fire("tick", [c]);
+			this._lastUpdate = a;
+			this._requestFrame()
+		},
+		_recordTick: function(a) {
+			a = this._tickHistory.push(a);
+			if (50 < a) {
+				for (var c = 0,
+				b = 0; b < a; ++b) c += this._tickHistory[b];
+				this.fps = ~~ (1E3 / (c / a));
+				this._tickHistory = []
+			}
+		}
+	}))
+});
+define("djinn/Timer", ["djinn/Emitter", "djinn/globalTimer"],
+function(d, a) {
+	return d.extend({
+		init: function(c) {
+			this._super();
+			this._loops = this._elapsed = 0;
+			this._running = !1;
+			this._tickHost = a;
+			"number" == typeof c ? this.interval = c: "object" == typeof c ? (this.interval = Number(c.interval || 1E3), this._tickHost = c.tickHost || this._tickHost) : this.interval = 1E3;
+			Object.defineProperty(this, "elapsed", {
+				get: function() {
+					return this._elapsed
+				}
+			});
+			Object.defineProperty(this, "percentComplete", {
+				get: function() {
+					return this._elapsed / this.interval * 100
+				}
+			});
+			Object.defineProperty(this, "running", {
+				get: function() {
+					return this._running
+				},
+				set: function(a) {
+					a ? this.start() : this.stop()
+				}
+			})
+		},
+		reset: function() {
+			return this.start()
+		},
+		start: function(a) {
+			return void 0 !== a && (this.interval = a),
+			this._elapsed = 0,
+			this._running || (this._tickHost.on("tick", this, "_update"), this._running = !0),
+			this
+		},
+		stop: function() {
+			return this._running && (this._tickHost.off("tick", this, "_update"), this._running = !1),
+			this
+		},
+		_update: function(a) {
+			this._elapsed += a;
+			this._elapsed >= this.interval && (this._elapsed = 0, ++this._loops, this.fire("elapsed", [this._loops]))
+		}
+	})
+});
+define("djinn/XHR", [],
+function() {
+	return function(d, a, c, b) {
+		c = c || {};
+		var e = "",
+		h = new XMLHttpRequest;
+		h.open(d, a, !0);
+		if ("POST" == d.toUpperCase()) {
+			for (var g in b) if ("object" == typeof b[g] && b[g].length) for (d = 0, a = b[g].length; d < a; ++d) e += sprintf("%s[]=%s&", g, encodeURIComponent(b[g][d]));
+			else e += sprintf("%s=%s&", g, encodeURIComponent(b[g]));
+			h.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+		} else h.setRequestHeader("Content-Type", "application/x-javascript");
+		h.onreadystatechange = function() {
+			4 == h.readyState && (c.complete && c.complete(h), 200 == h.status ? c.success && c.success(h.responseText) : c.error && c.error(h.status))
+		};
+		h.send(e || null)
+	}
+});
+define("djinn/client", ["djinn/Emitter", "djinn/manifest"],
+function(d, a) {
+	return new(d.extend({
+		init: function(c) {
+			this._super(c);
+			c = navigator.userAgent;
+			this.pixelRatio = window.devicePixelRatio || 1;
+			this.isBrowser = document && "function" == typeof document.getElementsByTagName;
+			this.isTouch = "undefined" != typeof window.ontouchstart || !this.isBrowser;
+			this.isIPhone = /iPhone OS/.test(c);
+			this.isIPad = /iPad/.test(c);
+			this.isIOS = this.isIPhone || this.isIPad;
+			this.isAndroid = /Android/.test(c);
+			this.isFullScreen = !0 === window.navigator.standalone;
+			Object.defineProperty(this, "orientation", {
+				get: function() {
+					switch (window.orientation) {
+					case 0:
+						return "portrait";
+					case - 90 : case 90:
+						return "landscape";
+					default:
+						return "both" == a.orientation ? this.width > this.height ? "landscape": "portrait": a.orientation
+					}
+				}
+			});
+			this._cacheDimensions();
+			this._updateSize();
+			if (this.isTouch) {
+				c = bind(this,
+				function(a) {
+					a.preventDefault();
+					this._hideAddressBar()
+				});
+				for (var b = ["touchstart", "touchmove", "touchend"], e = 0, d = b.length; e < d; ++e) addEventListener(b[e], c, !1)
+			}
+			addEventListener("load", bind(this, "_load"), !1);
+			addEventListener("resize", bind(this, "_resize"), !1);
+			addEventListener("orientationchange", bind(this, "_resize"), !1);
+			setInterval(bind(this, "_resize"), 2E3)
+		},
+		_load: function() {
+			this._hideAddressBar()
+		},
+		_cacheDimensions: function() {
+			this._dimensions = {
+				orientation: window.orientation,
+				width: window.innerWidth,
+				height: window.innerHeight
+			}
+		},
+		_haveDimensionsChanged: function() {
+			var a = this._dimensions;
+			return a.orientation != window.orientation || a.width != window.innerWidth || a.height != window.innerHeight
+		},
+		_updateSize: function() {
+			this.isTouch && (this.isAndroid || this.isIPhone) ? (this.width = window.innerWidth, this.isAndroid ? (document.body.style.height = window.innerHeight + "px", this.height = window.outerHeight / this.pixelRatio, document.body.style.height = this.height + "px") : this.isIPhone && ("portrait" == this.orientation ? this.height = window.screen.height: this.height = window.screen.width, this.height -= 20, this.isFullScreen || (this.height -= "portrait" == this.orientation ? 44 : 32))) : (this.width = window.innerWidth, this.height = window.innerHeight);
+			logger.info("[client._updateSize] " + this.width + "x" + this.height)
+		},
+		_hideAddressBar: function() {
+			this.isTouch && setTimeout(function() {
+				window.scrollTo(0, 1)
+			},
+			1)
+		},
+		_resize: function() {
+			this._haveDimensionsChanged() && (logger.info(["_resize", this.orientation, window.innerWidth + "x" + window.innerHeight].join(", ")), this._cacheDimensions(), this._updateSize(), this._hideAddressBar(), this.fire("orientationChange"))
+		}
+	}))
+});
+define("djinn/assets", ["djinn/client", "djinn/XHR", "djinn/manifest"],
+function(d, a, c) {
+	var b = {},
+	e = {
+		image: ["png", "jpg", "jpeg", "gif"],
+		audio: ["mp3", "ogg"],
+		font: ["ttf"],
+		json: ["json"]
+	},
+	h = {
+		image: function(a, f, b) {
+			var e = new Image;
+			e.onload = function() {
+				e.ready = !0;
+				f && f(a, e)
+			};
+			e.onerror = function() {
+				b && b(a, e)
+			};
+			d.isBrowser && "data:" != a.substring(0, 5) && (a = a + "?v=" + c.version);
+			return e.src = a,
+			e
+		},
+		audio: function(a, f) {
+			var b = new Audio;
+			return b.canPlayType("audio/mpeg") ? (d.isBrowser ? (b.addEventListener("canplay",
+			function() {
+				b.ready = !0;
+				f && f(a, b)
+			},
+			!1), b.src = a) : (b.src = a, b.load(), b.ready = !0, f && f(a, b)), b) : (logger.warn("No mp3 support: " + a), f && f(a, null), null)
+		},
+		font: function(a, f) {
+			var b = /^.*\/([^\.]+)\.ttf$/.exec(a)[1],
+			b = sprintf("@font-face { font-family: '%s'; src: url('%s'); }", b, a),
+			c = document.createElement("style");
+			return c && (c.innerHTML = b, document.body.appendChild(c)),
+			f && f(a, null),
+			null
+		},
+		data: function(b, f) {
+			return a("GET", b, {
+				complete: function(a) {
+					f && f(b, a.responseText)
+				}
+			}),
+			""
+		},
+		json: function(a, f) {
+			return h.data(a,
+			function(a, b) {
+				var c = JSON.parse(b);
+				f && f(a, c)
+			}),
+			{}
+		}
+	},
+	g = {};
+	return g.cacheImage = function(a, f) {
+		b[a] = h.image(f)
+	},
+	g.load = function(a, f, c) {
+		if (a) {
+			"string" == typeof a && (a = [a]);
+			for (var e = a.length,
+			d = 0,
+			r = function(a, g) {
+				b[a] = g; ++d;
+				var h = d / e;
+				c && c(a, g, d, e, h);
+				d >= e && f && f()
+			},
+			p = function(a, f) {
+				logger.error("Failed to load asset: " + a);
+				r(a, f)
+			},
+			n = 0, v = a.length; n < v; ++n) {
+				var u = a[n];
+				if ("string" != typeof u || 0 >= u.length) logger.info("[assets.load] Skipping empty asset path"),
+				--e;
+				var x = g.inferAssetType(u);
+				b[u] = (0, h[x])(u, r, p)
+			}
+		}
+	},
+	g.unload = function(a) {
+		"string" == typeof a && (a = [a]);
+		for (var f = 0,
+		c = a.length; f < c; ++f) delete b[a[f]]
+	},
+	g.get = function(a) {
+		return "undefined" == typeof b[a] && (logger.warn("On-the-fly asset load: " + a), g.load(a)),
+		b[a]
+	},
+	g.inferAssetType = function(a) {
+		a = (a = a.match(/\.(.+)/)) ? a[1].toLowerCase() : "";
+		for (var f in e) if ( - 1 != e[f].indexOf(a)) return f;
+		return "data"
+	},
+	g
+});
+define("djinn/stage", ["djinn/Emitter", "djinn/client", "djinn/math/core", "djinn/manifest"],
+function(d, a, c, b) {
+	var e = null,
+	h = null,
+	g = 1,
+	k = [],
+	f = !1,
+	l = ["touchstart", "touchmove", "touchend"],
+	q = ["mousedown", "mousemove", "mouseup"];
+	return new(d.extend({
+		init: function(f) {
+			this._super(f);
+			this.eraseBeforeRender = !1;
+			this._maxScale = Infinity;
+			Object.defineProperty(this, "canFullScreen", {
+				get: function() {
+					return "function" == typeof document.webkitCancelFullScreen
+				}
+			});
+			Object.defineProperty(this, "isFullScreen", {
+				get: function() {
+					return document.webkitIsFullScreen
+				}
+			});
+			Object.defineProperty(this, "maxScale", {
+				get: function() {
+					return this._maxScale
+				},
+				set: function(a) {
+					this._maxScale = a;
+					this._autoSize()
+				}
+			});
+			Object.defineProperty(this, "width", {
+				get: function() {
+					return e.width
+				}
+			});
+			Object.defineProperty(this, "height", {
+				get: function() {
+					return e.height
+				}
+			});
+			e = document.createElement("canvas");
+			e.width = a.width;
+			e.height = a.height;
+			e.style.position = "absolute";
+			e.style.left = 0;
+			e.style.top = 0;
+			this._initInput();
+			f = document.body;
+			a.isBrowser && (f = document.getElementById(b.gameContainer) || f);
+			f.appendChild(e);
+			a._hideAddressBar();
+			h = e.getContext("2d");
+			a.on("orientationChange", this, "_autoSize");
+		},
+		matchSize: function(f) {
+			if (f && 0 !== f.length) {
+				for (var b = null,
+				c = Infinity,
+				d = 0,
+				l = f.length; d < l; ++d) {
+					var g = Math.min(f[d][0], f[d][1]),
+					h = Math.max(f[d][0], f[d][1]),
+					k = Math.min(a.width, a.height),
+					q = Math.max(a.width, a.height),
+					k = Math.abs(g * h - k * q);
+					k < c && (b = [g, h], c = k)
+				}
+				e.width = b[0];
+				e.height = b[1];
+				this._autoSize()
+			} else logger.warn("[stage] sizes needs to be set in manifest", f)
+		},
+		localizePoint: function(a, f) {
+			return {
+				x: Math.round(1 / g * (a - e.offsetLeft)),
+				y: Math.round(1 / g * (f - e.offsetTop))
+			}
+		},
+		renderView: function(a) {
+			this.eraseBeforeRender && h.clearRect(0, 0, e.width, e.height);
+			a.preRender(h)
+		},
+		createBuffer: function(a, f) {
+			var b = document.createElement("canvas");
+			return b.width = Number(a),
+			b.height = Number(f),
+			b.style.display = "none",
+			b
+		},
+		getInputEvents: function() {
+			var a = k;
+			return k = [],
+			a
+		},
+		requestFullScreen: function() {
+			document.body.webkitRequestFullScreen()
+		},
+		cancelFullScreen: function() {
+			document.webkitCancelFullScreen()
+		},
+		_getEventType: function(a) {
+			switch (a.type) {
+			case "touchstart":
+			case "mousedown":
+				return "inputStart";
+			case "touchmove":
+			case "mousemove":
+				return "inputMove";
+			case "touchend":
+			case "mouseup":
+				return "inputEnd"
+			}
+		},
+		_handleInputEvent: function(b) {
+			var c = -1,
+			e = 0,
+			d = 0;
+			a.isTouch ? (d = "touchend" === b.type ? b.changedTouches[0] : b.touches[0], c = d.identifier, e = d.pageX, d = d.pageY) : (e = b.pageX, d = b.pageY);
+			b = {
+				id: c,
+				type: this._getEventType(b),
+				point: this.localizePoint(e, d)
+			};
+			k.push(b);
+			this.fire(b.type, [b]); ! f && this.fire("initialInput");
+			f = !0
+		},
+		_initInput: function() {
+			for (var f = a.isTouch ? l: q, b = 0, c = f.length; b < c; ++b) e.addEventListener(f[b], bind(this, "_handleInputEvent"), !1)
+		},
+		_autoSize: function() {
+			var f = Math.min(e.width, e.height),
+			b = Math.max(e.width, e.height);
+			e.width = "portrait" == a.orientation ? f: b;
+			e.height = "portrait" == a.orientation ? b: f;
+			g = Math.min(a.width / e.width, a.height / e.height);
+			g = c.clamp(g, 0, this.maxScale);
+			logger.info(sprintf("[stage._autoSize] %sx%s (%s)", e.width, e.height, g));
+			a.isIOS ? (logger.info("Using 3D scaling"), f = "scale3d(" + g + ", " + g + ", 1)") : f = "scale(" + g + ")";
+			e.style.webkitTransformOrigin = "0 0";
+			e.style.webkitTransform = f;
+			e.style.MozTransformOrigin = "0 0";
+			e.style.MozTransform = f;
+			e.style.msTransformOrigin = "0 0";
+			e.style.msTransform = f;
+			e.style.left = a.width / 2 - e.width * g / 2 + "px";
+			e.style.top = a.height / 2 - e.height * g / 2 + "px";
+			console.log(e);
+			var left = parseFloat(e.style.left);
+			var top = left*(480/320);
+			console.log(top);
+			e.style.top = top + "px";
+			this.fire("resize")
+		}
+	}))
+});
+define("djinn/View", "djinn/Emitter djinn/utils/transitions djinn/assets djinn/math/core djinn/Timer djinn/stage".split(" "),
+function(d, a, c, b, e, h) {
+	var g = 0,
+	k = d.extend({
+		_initGetSet: function() {
+			Object.defineProperty(this, "right", {
+				get: function() {
+					return this.x + this.width
+				},
+				set: function(a) {
+					this.x = a - this.width
+				}
+			});
+			Object.defineProperty(this, "bottom", {
+				get: function() {
+					return this.y + this.height
+				},
+				set: function(a) {
+					this.y = a - this.height
+				}
+			});
+			Object.defineProperty(this, "z", {
+				get: function() {
+					return this._z
+				},
+				set: function(a) {
+					this._z = a;
+					this.parent && (this.parent.needsResort = !0)
+				}
+			});
+			Object.defineProperty(this, "image", {
+				set: function(a) {
+					this._image = c.get(a)
+				}
+			});
+			Object.defineProperty(this, "center", {
+				get: function() {
+					return {
+						x: this.x + this.width / 2,
+						y: this.y + this.height / 2
+					}
+				}
+			});
+			Object.defineProperty(this, "boundingBox", {
+				get: function() {
+					var a = this._boundingBox;
+					return null == a ? {
+						x: this.x,
+						y: this.y,
+						width: this.width,
+						height: this.height
+					}: {
+						x: this.x + a.x,
+						y: this.y + a.y,
+						width: a.width,
+						height: a.height
+					}
+				},
+				set: function(a) {
+					this._boundingBox = a
+				}
+			});
+			Object.defineProperty(this, "compositeOpacity", {
+				get: function() {
+					return this.opacity * (this.parent ? this.parent.compositeOpacity: 1)
+				}
+			});
+			Object.defineProperty(this, "layouts", {
+				set: function(a) {
+					this._layouts = a;
+					this._initLayouts()
+				}
+			});
+			Object.defineProperty(this, "canReact", {
+				get: function() {
+					return this.acceptInputEvents && this.visible && !this.paused
+				}
+			});
+			Object.defineProperty(this, "absolutePosition", {
+				get: function() {
+					for (var a = this.x,
+					b = this.y,
+					c = this; c.parent instanceof k;) c = c.parent,
+					a += c.x,
+					b += c.y;
+					return {
+						x: a,
+						y: b
+					}
+				}
+			})
+		},
+		init: function(a) {
+			this._initGetSet();
+			var b = ++g;
+			a = merge(a, {
+				parent: null,
+				id: b,
+				tag: "View_" + b,
+				x: 0,
+				y: 0,
+				z: 1,
+				anchorX: null,
+				anchorY: null,
+				boundingBox: null,
+				acceptInputEvents: !1,
+				captureInputEvents: !0,
+				cancelInputEvents: !1,
+				debug: !1,
+				layouts: null,
+				rotation: 0,
+				clip: !1,
+				width: 0,
+				height: 0,
+				scale: 1,
+				visible: !0,
+				opacity: 1,
+				backgroundColor: null,
+				image: null,
+				imageX: 0,
+				imageY: 0,
+				paused: !1,
+				tickSpeed: 1,
+				flipHorizontal: !1,
+				flipVertical: !1
+			});
+			a.parent && (a.width = a.width || a.parent.width, a.height = a.height || a.parent.height);
+			this._super(a);
+			this.id = a.id;
+			this.tag = a.tag;
+			this.x = Number(a.x);
+			this.y = Number(a.y);
+			this._z = Number(a.z);
+			this.anchorX = Number(a.anchorX || a.width / 2);
+			this.anchorY = Number(a.anchorY || a.height / 2);
+			this.rotation = Number(a.rotation);
+			this.boundingBox = a.boundingBox;
+			this.width = Number(a.width);
+			this.height = Number(a.height);
+			this.scale = Number(a.scale);
+			this.visible = Boolean(a.visible);
+			this.opacity = Number(a.opacity);
+			this.clip = Boolean(a.clip);
+			this.backgroundColor = a.backgroundColor;
+			this._image = null;
+			this.imageX = Number(a.imageX);
+			this.imageY = Number(a.imageY);
+			this.flipHorizontal = a.flipHorizontal;
+			this.flipVertical = a.flipVertical;
+			this.acceptInputEvents = Boolean(a.acceptInputEvents);
+			this.captureInputEvents = Boolean(a.captureInputEvents);
+			this.cancelInputEvents = Boolean(a.cancelInputEvents);
+			this.paused = Boolean(a.paused);
+			this.tickSpeed = Number(a.tickSpeed);
+			this.debug = Boolean(a.debug);
+			this.children = [];
+			this._removedChildren = [];
+			this.needsReflow = this.needsResort = !1;
+			this.layouts = a.layouts;
+			this._tweenQueue = [];
+			a.image && (this.image = a.image);
+			a.parent && a.parent.addChild(this)
+		},
+		set: function(a) {
+			for (var b in a) this[b] = a[b]
+		},
+		addChild: function(a) {
+			a.parent && a.removeFromParent();
+			a.parent = this;
+			this.children.push(a);
+			this.sortChildren()
+		},
+		removeChild: function(a) {
+			a.parent == this && -1 == this._removedChildren.indexOf(a) && (a.parent = null, this._removedChildren.push(a))
+		},
+		getChildByTag: function(a) {
+			for (var b = 0,
+			c = this.children.length; b < c; ++b) {
+				var e = this.children[b];
+				if (e.tag == a) return e
+			}
+			return null
+		},
+		removeFromParent: function() {
+			this.parent && this.parent.removeChild(this);
+			this.fire("removedFromParent", [this])
+		},
+		sortChildren: function() {
+			this.children.sort(function(a, b) {
+				return a.z == b.z ? a.id - b.id: a.z - b.z
+			})
+		},
+		reflow: function() {
+			this.debug && logger.info(this.tag + ": Reflow");
+			var a = this._getCurrentLayout();
+			null != a && this.applyLayout(a);
+			for (var a = 0,
+			b = this.children.length; a < b; ++a) this.children[a].reflow()
+		},
+		applyLayout: function(a) {
+			this.set(a.conf);
+			a.align && this.align.apply(this, a.align);
+			for (var b = 0,
+			c = this.children.length; b < c; ++b) {
+				var e = this.children[b];
+				a.children && a.children[e.tag] && e.applyLayout(a.children[e.tag])
+			}
+		},
+		show: function() {
+			this.visible = !0
+		},
+		hide: function() {
+			this.visible = !1
+		},
+		toggle: function() {
+			this.visible = !this.visible
+		},
+		intersects: function(a) {
+			return a instanceof k ? b.intersects(a.boundingBox, this.boundingBox) : a.width ? b.intersects(a, this.boundingBox) : b.pointInRect(a, this.boundingBox)
+		},
+		createBoundTimer: function(a, b) {
+			var c = new e({
+				interval: a,
+				tickHost: this
+			});
+			return c.on("elapsed", this, b),
+			c
+		},
+		react: function(a) {
+			if (this.canReact) {
+				if (this.captureInputEvents) {
+					for (var b = {
+						x: a.point.x - this.x,
+						y: a.point.y - this.y
+					},
+					c = this.children.length - 1; 0 <= c; --c) {
+						var e = this.children[c];
+						if (e.canReact && e.intersects(b) && (a.point.x = b.x, a.point.y = b.y, e.react(a), !0 === a.cancel)) return
+					}
+					a.target || (a.target = this);
+					a.point.x = b.x;
+					a.point.y = b.y;
+					this.fire(a.type, [a]);
+					"inputStart" === a.type ? this._inputStartID = a.id: "inputEnd" === a.type && this._inputStartID === a.id && (this.fire("inputPress", [a]), delete this._inputStartID)
+				}
+				this.cancelInputEvents && (a.cancel = !0)
+			}
+		},
+		preTick: function(a) {
+			if (!this.paused && this.visible) {
+				a *= this.tickSpeed;
+				for (var b = 0,
+				c = this._removedChildren.length; b < c; ++b) {
+					var e = this._removedChildren[b],
+					d = this.children.indexOf(e); - 1 != d ? this.children.splice(d, 1) : logger.warn("Tried to remove non-child " + e.tag + " from " + this.tag)
+				}
+				this._removedChildren.splice(0, c);
+				this.needsResort && (this.sortChildren(), this.needsResort = !1);
+				this.needsReflow && (this.debug && logger.info(this.tag + ": Needs reflow"), this.reflow(), this.needsReflow = !1);
+				this._updateTween(a);
+				this.tick && this.tick(a);
+				this.fire("tick", [a]);
+				b = 0;
+				for (c = this.children.length; b < c; ++b) e = this.children[b],
+				-1 === this._removedChildren.indexOf(e) && e.preTick(a)
+			}
+		},
+		preRender: function(a) {
+			if (this.visible && !(0 >= this.opacity)) {
+				var b = ~~this.x,
+				c = ~~this.y;
+				a.save();
+				a.translate(b + this.anchorX, c + this.anchorY);
+				a.globalAlpha = this.compositeOpacity;
+				0 != this.rotation && a.rotate(this.rotation);
+				1 != this.scale && a.scale(this.scale, this.scale); (this.flipHorizontal || this.flipVertical) && a.scale(this.flipHorizontal ? -1 : 1, this.flipVertical ? -1 : 1);
+				a.translate( - this.anchorX, -this.anchorY);
+				this.clip && (a.beginPath(), a.rect(0, 0, this.width, this.height), a.clip());
+				this.render && 0 < this.width && 0 < this.height && (this.render(a), this.debug && this._renderDebug(a));
+				b = 0;
+				for (c = this.children.length; b < c; ++b) {
+					var e = this.children[b]; - 1 === this._removedChildren.indexOf(e) && e.preRender(a)
+				}
+				a.restore()
+			}
+		},
+		render: function(a) {
+			this._image && this._image.ready ? a.drawImage(this._image, this.imageX, this.imageY, this.width, this.height, 0, 0, this.width, this.height) : this.backgroundColor && (a.fillStyle = this.backgroundColor, a.fillRect(0, 0, this.width, this.height))
+		},
+		align: function(a, b, c, e) {
+			if (this.parent) {
+				if (void 0 !== a && null !== a) {
+					switch (a) {
+					case "left":
+						this.x = 0;
+						break;
+					case "right":
+						this.right = this.parent.width;
+						break;
+					case "center":
+						this.x = this.parent.width / 2 - this.width / 2
+					}
+					this.x += c || 0
+				}
+				if (void 0 !== b && null !== b) {
+					switch (b) {
+					case "top":
+						this.y = 0;
+						break;
+					case "bottom":
+						this.y = this.parent.height - this.height;
+						break;
+					case "center":
+						this.y = this.parent.height / 2 - this.height / 2
+					}
+					this.y += e || 0
+				}
+				return this
+			}
+		},
+		centerOn: function(a, b, c) {
+			a.width = a.width || 1;
+			a.height = a.height || 1;
+			var e = a.y + a.height / 2;
+			return this.x = a.x + a.width / 2 - this.width / 2 + (b || 0),
+			this.y = e - this.height / 2 + (c || 0),
+			this
+		},
+		centerAnchor: function() {
+			return this.anchorX = this.width / 2,
+			this.anchorY = this.height / 2,
+			this
+		},
+		tween: function(b, c, e, d) {
+			if (null != b) for (var g in b) {
+				var h = b[g];
+				"object" != typeof h && (b[g] = {
+					from: null,
+					to: h
+				})
+			}
+			return this._tweenQueue.push({
+				properties: b,
+				duration: isNaN(c) ? 1E3: c,
+				transition: e || a.linear,
+				callback: d || null,
+				elapsed: 0
+			}),
+			this.visible || (logger.warn(this.tag + ": Auto-completing tween because this view is invisible"), this.completeTween()),
+			this
+		},
+		delayTween: function(a, b) {
+			return this.tween(null, a, null, b)
+		},
+		cancelTween: function() {
+			return this._tweenQueue = [],
+			this
+		},
+		completeTween: function() {
+			for (var a = this._tweenQueue.length,
+			b = this._tweenQueue.splice(0, a), c = 0; c < a; ++c) {
+				var e = b[c],
+				d;
+				for (d in e.properties) this[d] = e.properties[d].to;
+				e.callback && e.callback()
+			}
+		},
+		_updateTween: function(a) {
+			if (! (1 > this._tweenQueue.length)) {
+				var b = this._tweenQueue[0];
+				b.elapsed += a;
+				if (null === b.properties) b.elapsed >= b.duration && (this._tweenQueue.shift(), b.callback && b.callback());
+				else {
+					a = Math.ceil(b.duration / a);
+					var c = Math.floor(b.elapsed / b.duration * a);
+					if (c >= a) {
+						for (var e in b.properties) this[e] = b.properties[e].to;
+						this._tweenQueue.shift();
+						b.callback && b.callback()
+					} else for (e in b.properties) {
+						var d = b.properties[e];
+						null == d.from && (d.from = this[e]);
+						d = b.transition(c, d.from, d.to - d.from, a);
+						this[e] = d
+					}
+				}
+			}
+		},
+		_getCurrentLayout: function() {
+			var a = h.width + "x" + h.height;
+			return this._layouts && this._layouts[a] ? this._layouts[a] : null
+		},
+		_initLayouts: function() {
+			if (null != this._layouts) {
+				var a = this._layouts.init,
+				b = a ? a.conf || {}: {},
+				c = this._getCurrentLayout();
+				c && c.conf && (b = merge(c.conf, b));
+				this.set(b);
+				if (a && a.children) for (var e in a.children) {
+					var c = a.children[e],
+					d = c.conf || {},
+					g = this._getCurrentLayout(),
+					b = null;
+					null != g && g.children && g.children[e] && (b = g.children[e], d = merge(b.conf, d));
+					c = new(c.ctor || k)(merge({
+						parent: this,
+						tag: e
+					},
+					d));
+					b && b.align && c.align.apply(c, b.align)
+				}
+				this.reflow()
+			}
+		},
+		_renderDebug: function(a) {
+			a.lineWidth = 1;
+			var b = this.boundingBox,
+			c = b.x - this.x,
+			e = b.y - this.y;
+			a.fillStyle = "rgba(255, 0, 0, 0.15)";
+			a.fillRect(c, e, b.width, b.height);
+			a.strokeStyle = "rgb(255, 0, 0)";
+			a.strokeRect(c, e, b.width, b.height);
+			a.strokeStyle = "rgb(0, 0, 255)";
+			a.strokeRect(0, 0, this.width, this.height)
+		}
+	});
+	return k.transitions = a,
+	k
+});
+define("djinn/helpers/RotateDeviceView", ["djinn/View"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			a = merge(a, {
+				visible: !1,
+				z: Infinity,
+				backgroundColor: "rgb(255, 255, 255)"
+			});
+			this._super(a);
+			this._rotateView = (new d({
+				parent: this,
+				width: 250,
+				height: 250,
+				image: "__rotateImage"
+			})).align("center", "center")
+		},
+		reflow: function() {
+			this.width = this.parent.width;
+			this.height = this.parent.height;
+			this._rotateView.align("center", "center");
+			this._super()
+		}
+	})
+});
+define("djinn/ui/ProgressBar", ["djinn/View"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			a = merge(a, {
+				progress: 0
+			});
+			this._super(a);
+			this.progress = Number(a.progress)
+		},
+		render: function(a) {
+			this._super(a);
+			var c = this.width * this.progress;
+			a.fillStyle = "rgb(100, 100, 100)";
+			a.fillRect(0, 0, c, this.height);
+			a.lineWidth = 2;
+			a.strokeStyle = "rgb(230, 230, 230)";
+			a.strokeRect(0, 0, this.width, this.height)
+		}
+	})
+});
+define("djinn/TextView", ["djinn/View", "djinn/client"],
+function(d, a) {
+	var c = d.extend({
+		init: function(a) {
+			Object.defineProperty(this, "text", {
+				get: function() {
+					return this._rawText
+				},
+				set: function(a) {
+					this._lineBuffer = null;
+					this._rawText = a ? String(a) : null
+				}
+			});
+			a = merge(a, c.defaults);
+			a.parent && (!a.width || 1 > a.width) && (a.width = a.parent.width);
+			if (!a.height || 1 > a.height) a.height = a.fontSize;
+			this._super(a);
+			this._lineBuffer = null;
+			this.fontSize = Number(a.fontSize);
+			this.fontFamily = a.fontFamily;
+			this.color = a.color;
+			this.shadowColor = a.shadowColor;
+			this.strokeColor = a.strokeColor;
+			this.strokeWidth = a.strokeWidth;
+			this.textAlign = a.textAlign;
+			this.verticalAlign = a.verticalAlign;
+			this.text = a.text
+		},
+		render: function(b) {
+			this._super(b);
+			if (! (void 0 === this.text || null === this.text || 1 > this.text.length)) {
+				null == this._lineBuffer && this._bufferLines(this.text, b);
+				var c = drawY = 0;
+				"center" == this.textAlign && (c = this.width / 2);
+				"right" == this.textAlign && (c = this.width);
+				"middle" == this.verticalAlign && (drawY = this.height / 2);
+				this._applyContextSettings(b);
+				for (var d = 0,
+				g = this._lineBuffer.length; d < g; ++d) {
+					var k = drawY + d * this.fontSize,
+					f = this._lineBuffer[d];
+					this.shadowColor && (b.fillStyle = this.shadowColor, b.fillText(f, c + 1, k + 1)); ! a.isTouch && this.strokeColor && this.strokeWidth && (b.lineWidth = this.strokeWidth, b.strokeStyle = this.strokeColor, b.strokeText(f, c, k));
+					b.fillStyle = this.color;
+					b.fillText(f, c, k)
+				}
+			}
+		},
+		_applyContextSettings: function(a) {
+			a.font = this.fontSize + "px " + this.fontFamily;
+			a.textAlign = this.textAlign;
+			a.textBaseline = this.verticalAlign
+		},
+		_bufferLines: function(a, c) {
+			a = String(a);
+			this._lineBuffer = [];
+			this._applyContextSettings(c);
+			for (var d = a.split(" "), g = 0, k = 0, f = d.length; k < f; ++k) {
+				var l = this._lineBuffer[g] || "",
+				q = 0 < l.length ? l + " " + d[k] : d[k];
+				0 < l.length && c.measureText(q).width > this.width ? (++g, this._lineBuffer[g] = d[k]) : this._lineBuffer[g] = q
+			}
+		}
+	});
+	return c.defaults = {
+		fontSize: 20,
+		fontFamily: "Arial",
+		color: "rgb(0, 0, 0)",
+		textAlign: "left",
+		verticalAlign: "top",
+		text: ""
+	},
+	c
+});
+define("djinn/helpers/LoadingScreen", "djinn/manifest djinn/assets djinn/View djinn/TextView djinn/ui/ProgressBar djinn/utils/viewEffects".split(" "),
+function(d, a, c, b, e, h) {
+	var g = merge(d.splash, {
+		fadeDuration: 1,
+		displayDuration: 0,
+		backgroundColor: "rgb(0, 0, 0)",
+		imageWidth: 100,
+		imageHeight: 100
+	});
+	return c.extend({
+		init: function(d) {
+			Object.defineProperty(this, "loadingProgress", {
+				set: function(a) {
+					this._loadingBar.progress = a;
+					this._loadingText.text = "LOADING: " + ~~ (100 * a) + "%"
+				}
+			});
+			d = merge({
+				tag: "LoadingScreen",
+				acceptInputEvents: !0,
+				cancelInputEvents: !0,
+				visible: !1,
+				backgroundColor: g.backgroundColor,
+				z: Infinity
+			},
+			d);
+			this._super(d);
+			g.image && (a.load(g.image), this._splashImage = (new c({
+				parent: this,
+				image: g.image,
+				width: g.imageWidth,
+				height: g.imageHeight
+			})).align("center", "center"));
+			d = 0.05 * this.height;
+			this._loadingBar = (new e({
+				parent: this,
+				visible: !1,
+				width: 0.8 * this.width,
+				height: d
+			})).align("center", "bottom", 0, -d);
+			this._loadingText = (new b({
+				parent: this,
+				visible: !1,
+				text: "LOADING",
+				textAlign: "center",
+				verticalAlign: "middle",
+				color: "rgb(255, 255, 255)",
+				fontSize: ~~ (0.75 * d),
+				height: d
+			})).align("center", "bottom", 0, -d);
+			this._uiDelayTimer = this.createBoundTimer(500, bind(this, "_onDelayElapsed"));
+			this.on("inputStart", this, "_onInputStart")
+		},
+		show: function(a) {
+			this.set({
+				opacity: 0,
+				visible: !0
+			});
+			h.fadeIn(this, {
+				duration: g.fadeDuration
+			});
+			this.delayTween(g.displayDuration,
+			function() {
+				a && a()
+			});
+			this._uiDelayTimer.start()
+		},
+		hide: function(a) {
+			this.acceptInputEvents = !1;
+			h.fadeOut(this, {
+				duration: g.fadeDuration
+			},
+			bind(this,
+			function() {
+				this.visible = !1;
+				a && a()
+			}))
+		},
+		_onDelayElapsed: function() {
+			this._uiDelayTimer.stop();
+			1 > this._loadingBar.progress && (this._loadingText.visible = !0, this._loadingBar.visible = !0)
+		},
+		_onInputStart: function(a) {
+			this._onDelayElapsed();
+			this.completeTween()
+		}
+	})
+});
+define("djinn/Game", "djinn/Emitter djinn/globalTimer djinn/client djinn/stage djinn/View djinn/TextView djinn/helpers/RotateDeviceView djinn/helpers/LoadingScreen djinn/manifest djinn/assets".split(" "),
+function(d, a, c, b, e, h, g, k, f, l) {
+	return d.extend({
+		init: function(a) {
+			a = merge(a, {
+				showLoadingScreen: !1
+			});
+			this._super(a);
+			this.showLoadingScreen = a.showLoadingScreen;
+			this._splashFinished = !1;
+			this._loadingProgress = 0;
+			this.view = new e({
+				tag: "GameRootView",
+				acceptInputEvents: !0,
+				width: b.width,
+				height: b.height
+			});
+			b.on("resize", this, "_onStageResize");
+			"both" != f.orientation && (this._rotateDeviceView = new g({
+				parent: this.view
+			}), a = bind(this,
+			function() {
+				f.orientation != c.orientation ? this._rotateDeviceView.show() : this._rotateDeviceView.hide()
+			}), c.on("orientationChange", a), a());
+			this._loadingScreen = new k({
+				parent: this.view,
+				visible: !1
+			})
+		},
+		run: function() {
+			a.on("tick", this, "_update");
+			a.start();
+			this.showLoadingScreen && (b.eraseBeforeRender = !0, this._loadingScreen.show(bind(this, "_onSplashFinish")))
+		},
+		stop: function() {
+			a.stop();
+			a.off("tick", this)
+		},
+		preloadAssets: function(a) {
+			l.load(a, bind(this, "_onLoadComplete"), bind(this, "_onLoadProgress"))
+		},
+		_onLoadProgress: function(a, b, c, e, d) {
+			this._loadingProgress = d;
+			this._loadingScreen.loadingProgress = this._loadingProgress;
+			this._checkGameReady()
+		},
+		_onLoadComplete: function() {
+			this.fire("load")
+		},
+		_update: function(a) {
+			this._react();
+			this.view.preTick(a);
+			this._render()
+		},
+		_react: function() {
+			for (var a = b.getInputEvents(), c = a.length, e = 0; e < c; ++e) this.view.react(a[e])
+		},
+		_render: function() {
+			b.renderView(this.view)
+		},
+		_onStageResize: function() {
+			this.view.width = b.width;
+			this.view.height = b.height;
+			this.view.reflow()
+		},
+		_onSplashFinish: function() {
+			this._splashFinished = !0;
+			this._checkGameReady()
+		},
+		_checkGameReady: function() {
+			this._splashFinished && 1 === this._loadingProgress && this._loadingScreen.hide(bind(this,
+			function() {
+				b.eraseBeforeRender = !1;
+				this.fire("ready")
+			}))
+		}
+	})
+});
+define("djinn/intl", [],
+function() {
+	var d = __intl || {};
+	return {
+		get: function(a) {
+			return d[a] ? 1 == arguments.length ? d[a] : (arguments[0] = d[a], sprintf.apply(arguments, arguments)) : sprintf("[undefined intl: %s]", a)
+		}
+	}
+});
+define("djinn/Model", ["djinn/Emitter"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			this._super(a);
+			this.persists = !1;
+			this.storageKey = null;
+			this.attributes = a || {}
+		},
+		add: function(a, c) {
+			var b = this.get(a),
+			b = b + Number(c);
+			this.set(a, b)
+		},
+		has: function(a) {
+			return this.attributes.hasOwnProperty(a)
+		},
+		set: function(a, c, b) {
+			if ("string" == typeof a) {
+				var e = {};
+				e[a] = c;
+				this._set(e, b)
+			} else this._set(a, c)
+		},
+		get: function(a, c) {
+			return this.has(a) ? this.attributes[a] : c
+		},
+		load: function() {
+			var a = localStorage.getItem(this.storageKey);
+			return a ? (a = JSON.parse(a), this.set(a, {
+				nosave: !0
+			}), this.fire("load"), !0) : !1
+		},
+		save: function() {
+			if (!this.persists) return ! 1;
+			if (null == this.storageKey) return logger.warn("No .storageKey specified. Cannot save model."),
+			!1;
+			var a = JSON.stringify(this.attributes);
+			try {
+				localStorage.setItem(this.storageKey, a)
+			} catch(c) {
+				logger.error("Failed to set localStorage! Quota exceeded?")
+			}
+			return ! 0
+		},
+		_set: function(a, c) {
+			c = c || {};
+			for (var b in a) {
+				var e = this.attributes[b];
+				this.attributes[b] = a[b]; ! 0 !== c.silent && this.fire("changed:" + b, [{
+					target: this,
+					oldValue: e,
+					newValue: a[b]
+				}])
+			} ! 0 !== c.nosave && this.save(); ! 0 !== c.silent && this.fire("changed", [{
+				target: this
+			}])
+		}
+	})
+});
+define("js/model/GameModel", ["djinn/Model", "djinn/math/core", "djinn/manifest"],
+function(d, a, c) {
+	return new(d.extend({
+		init: function(a) {
+			this._super({
+				highScore: 10,
+				soundEnabled: !0
+			});
+			this.persists = !0;
+			this.storageKey = c.shortName;
+			this.load();
+			this.MAX_PLAYER_HEALTH = 5;
+			this.WEAPON_DURATION = 2E4
+		},
+		equipWeapon: function(a) {
+			this.fire("gotWeapon", [a])
+		},
+		healPlayer: function(b) {
+			this.playerHealth += b;
+			this.playerHealth = a.clamp(this.playerHealth, 0, this.MAX_PLAYER_HEALTH);
+			this.fire("playerHealed", [this.playerHealth])
+		},
+		hitPlayer: function(b) {
+			this.playerHealth -= b;
+			this.playerHealth = a.clamp(this.playerHealth, 0, this.MAX_PLAYER_HEALTH);
+			this.fire("playerDamaged")
+		},
+		isPlayerHurt: function() {
+			return this.playerHealth < this.MAX_PLAYER_HEALTH
+		},
+		reset: function() {
+			this.playerHealth = this.MAX_PLAYER_HEALTH
+		}
+	}))
+});
+define("djinn/math/Vector2", ["djinn/Class"],
+function(d) {
+	var a = d.extend({
+		init: function(a, b) {
+			return void 0 === a && (a = {
+				x: 0,
+				y: 0
+			}),
+			"number" == typeof a ? (this.x = Number(a), this.y = Number(b)) : void 0 === a.angle ? (this.x = Number(a.x || 0), this.y = Number(a.y || 0)) : (this.x = a.magnitude * Math.cos(a.angle), this.y = a.magnitude * Math.sin(a.angle)),
+			Object.defineProperty(this, "angle", {
+				get: function() {
+					return Math.atan2(this.y, this.x)
+				}
+			}),
+			Object.defineProperty(this, "heading", {
+				get: function() {
+					return Math.atan2(this.x, -this.y)
+				}
+			}),
+			this
+		},
+		add: function(a) {
+			return this.x += a.x,
+			this.y += a.y,
+			this
+		},
+		clone: function() {
+			return new this.constructor({
+				x: this.x,
+				y: this.y
+			})
+		},
+		floor: function() {
+			return this.x = Math.floor(this.x),
+			this.y = Math.floor(this.y),
+			this
+		},
+		getUnitVector: function() {
+			return new a({
+				angle: this.angle,
+				magnitude: 1
+			})
+		},
+		magnitude: function() {
+			return Math.sqrt(this.x * this.x + this.y * this.y)
+		},
+		minus: function(c) {
+			return new a({
+				x: this.x - c.x,
+				y: this.y - c.y
+			})
+		},
+		normalize: function() {
+			var a = this.magnitude();
+			return 0 === a ? this: this.scale(1 / a)
+		},
+		scale: function(a) {
+			return this.x *= a,
+			this.y *= a,
+			this
+		},
+		subtract: function(a) {
+			return this.x -= a.x,
+			this.y -= a.y,
+			this
+		},
+		toAngle: function() {
+			return 180 / Math.PI * this.heading
+		}
+	});
+	return a.makeFromHeading = function(c, b) {
+		b = Number(b) || 1;
+		return new a({
+			x: Math.sin(c) * b,
+			y: -Math.cos(c) * b
+		})
+	},
+	a
+});
+define("djinn/Sprite", ["djinn/View"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			Object.defineProperty(this, "currentAnimation", {
+				get: function() {
+					return this._currentAnim
+				}
+			});
+			Object.defineProperty(this, "tickSpeed", {
+				get: function() {
+					return this._tickSpeed || 1
+				},
+				set: function(a) {
+					this._animating && (this._frameElapsed *= a / (this._tickSpeed || 1));
+					this._tickSpeed = a
+				}
+			});
+			a = merge(a, {
+				animations: {}
+			});
+			this._super(a);
+			this._animations = a.animations;
+			this._animating = !1;
+			this._currentAnim = null;
+			this._frameIndex = this._frameElapsed = 0;
+			for (var c in this._animations) this._animations[c] = merge(this._animations[c], {
+				frames: [],
+				frameRate: 12,
+				flipHorizontal: !1,
+				flipVertical: !1,
+				loop: !0
+			})
+		},
+		tick: function(a) {
+			if (this._animating && this._currentAnim) {
+				var c = this._animations[this._currentAnim];
+				void 0 === c && logger.warn("Animation not defined: ", this._currentAnim);
+				this._frameElapsed += a;
+				this._frameElapsed >= 1E3 / c.frameRate && (this._frameElapsed = 0, ++this._frameIndex, a = c.frames.length - 1, this._frameIndex > a && (0 == c.loop ? (this._frameIndex = a, this._animating = !1, this.fire("animationEnd")) : this._frameIndex = 0))
+			}
+		},
+		render: function(a) {
+			if (this._currentAnim) {
+				var c = this._animations[this._currentAnim],
+				b = c.frames[this._frameIndex],
+				e = b[0],
+				b = b[1];
+				this._image && this._image.ready && ((c.flipHorizontal || c.flipVertical) && a.scale(c.flipHorizontal ? -1 : 1, c.flipVertical ? -1 : 1), e + this.width > this._image.width || b + this.height > this._image.height ? logger.warn("Invalid sprite coordinates!") : a.drawImage(this._image, e, b, this.width, this.height, 0, 0, this.width, this.height))
+			} else this._super(a)
+		},
+		playAnimation: function(a, c) {
+			if (this._currentAnim != a || !1 !== c) this._animating = !0,
+			this._currentAnim = a,
+			this._frameElapsed = this._frameIndex = 0
+		}
+	})
+});
+define("js/data/weapons", {
+	axe: {
+		bounce: !0,
+		damage: 10,
+		interval: 200,
+		rotate: !0,
+		speed: 250
+	},
+	axe2: {
+		bounce: !0,
+		damage: 15,
+		interval: 250,
+		rotate: !0,
+		speed: 300
+	},
+	axe3: {
+		bounce: !0,
+		damage: 20,
+		interval: 250,
+		rotate: !0,
+		sound: "xamAttackIce",
+		speed: 300
+	},
+	spear: {
+		damage: 10,
+		interval: 400,
+		speed: 600
+	},
+	spear2: {
+		damage: 15,
+		interval: 300,
+		speed: 700
+	},
+	spear3: {
+		damage: 20,
+		interval: 250,
+		speed: 800
+	},
+	sword: {
+		damage: 10,
+		interval: 400,
+		speed: 250
+	},
+	sword2: {
+		damage: 15,
+		interval: 250,
+		speed: 300
+	},
+	sword3: {
+		damage: 20,
+		interval: 200,
+		sound: "xamAttackFire",
+		speed: 500
+	},
+	runeforge: {
+		damage: 30,
+		interval: 150,
+		sound: "xamAttackFire",
+		speed: 750
+	}
+});
+define("js/view/DifficultyView", ["djinn/View"],
+function(d) {
+	return d.extend({
+		init: function(a) {
+			a = merge(a, {
+				opacity: 0.5
+			});
+			this._super(a)
+		},
+		render: function(a) {
+			a.fillStyle = "rgb(0, 0, 0)";
+			a.fillRect(this.center.x - 50, this.center.y - 50, 100, 100);
+			a.fillStyle = "rgb(250, 250, 0)";
+			a.fillRect(this.center.x - 50, this.center.y + 50, 100, -(this.difficulty.value / 100 * 100));
+			a.font = "20px Verdana";
+			a.textAlign = "center";
+			a.fillText(Math.round(this.difficulty.value), this.center.x, this.center.y);
+			var c = (this.difficulty.rateOfIncrease - 1.6) / 1.6;
+			a.fillStyle = "rgb(250, 0, 0)";
+			a.fillRect(this.center.x - 50 - 10, this.center.y + 50, 10, -(100 * c));
+			c = Math.sin(this.difficulty.fluctuation);
+			a.fillStyle = "rgb(0, 0, 250)";
+			a.fillRect(this.center.x + 50, this.center.y, 10, 50 * c)
+		}
+	})
+});
+define("js/view/viewData", {
+	width: 320,
+	height: 480,
+	backgroundColor: "rgb(10, 10, 10)",
+	color: "rgb(240, 240, 240)",
+	margin: 10,
+	fontFamily: "Arial",
+	fontSize: 16,
+	shadowColor: "rgb(10, 10, 10)",
+	targetMaxY: 346,
+	numbers: {
+		fontFamily: "Arial Black",
+		strokeColor: "rgb(10, 10, 10)",
+		strokeWidth: 3
+	},
+	bars: {
+		backgroundColor: "rgba(10, 10, 10, 0.75)",
+		getColor: function(d) {
+			return 0.25 >= d ? "rgb(250, 30, 37)": 0.5 >= d ? "rgb(233, 116, 28)": "rgb(64, 188, 63)"
+		},
+		height: 6
+	},
+	objects: {
+		image: "media/images/objects.png",
+		width: 32,
+		height: 32,
+		types: {
+			heart: {
+				imageX: 128,
+				imageY: 0
+			},
+			starburst: {
+				imageX: 160,
+				imageY: 0,
+				z: 3
+			},
+			axe: {
+				imageX: 0,
+				imageY: 64
+			},
+			axe2: {
+				imageX: 32,
+				imageY: 64
+			},
+			axe3: {
+				imageX: 64,
+				imageY: 64
+			},
+			spear: {
+				imageX: 0,
+				imageY: 32
+			},
+			spear2: {
+				imageX: 32,
+				imageY: 32
+			},
+			spear3: {
+				imageX: 64,
+				imageY: 32
+			},
+			sword: {
+				imageX: 0,
+				imageY: 0
+			},
+			sword2: {
+				imageX: 32,
+				imageY: 0
+			},
+			sword3: {
+				imageX: 64,
+				imageY: 0
+			},
+			runeforge: {
+				imageX: 92,
+				imageY: 0
+			}
+		}
+	},
+	modal: {
+		image: "media/images/modal.png",
+		offsetX: 4,
+		width: 264,
+		height: 264
+	},
+	titleScreen: {
+		image: "media/images/title_bg.png",
+		title: {
+			image: "media/images/title.png",
+			y: 24,
+			width: 316,
+			height: 142
+		},
+		highScore: {
+			fontSize: 18,
+			valueFontSize: 48,
+			x: 95,
+			y: 220
+		},
+		button: {
+			x: 196,
+			y: 316
+		},
+		monsters: {
+			image: "media/images/title_monsters.png",
+			x: 38,
+			width: 246,
+			height: 94
+		}
+	},
+	button: {
+		image: "media/images/button.png",
+		color: "rgb(240, 240, 240)",
+		width: 118,
+		height: 56
+	},
+	battleScreen: {
+		fontSize: 48,
+		painColor: "rgb(211, 43, 48)",
+		wallY: 320,
+		headerPanel: {
+			image: "media/images/header_panel.png",
+			width: 320,
+			height: 64,
+			z: 3
+		},
+		pauseButton: {
+			image: "media/images/pause.png",
+			margin: 4,
+			width: 40,
+			height: 40
+		},
+		progressBar: {
+			image: "media/images/bar_filler.png",
+			x: 20,
+			y: 52,
+			z: 4,
+			width: 280,
+			height: 8
+		},
+		battleField: {
+			image: "media/images/battle_field.png",
+			width: 320,
+			height: 416
+		},
+		equippedWeapon: {
+			backgroundColor: "rgba(0, 0, 0, 0.75)",
+			x: 214,
+			y: 4,
+			width: 40,
+			height: 40
+		},
+		lever: {
+			image: "media/images/lever.png",
+			margin: -4,
+			width: 80,
+			height: 56
+		}
+	},
+	overlay: {
+		z: 5
+	},
+	xam: {
+		image: "media/images/xam.png",
+		y: 314,
+		z: 2,
+		width: 32,
+		height: 32,
+		animations: {
+			up: {
+				frameRate: 5,
+				frames: [[0, 0], [32, 0]]
+			},
+			upPain: {
+				frameRate: 5,
+				frames: [[0, 96], [32, 96]]
+			},
+			left: {
+				frameRate: 5,
+				frames: [[0, 32], [32, 32]]
+			},
+			leftPain: {
+				frameRate: 5,
+				frames: [[0, 128], [32, 128]]
+			},
+			right: {
+				frameRate: 5,
+				frames: [[0, 64], [32, 64]]
+			},
+			rightPain: {
+				frameRate: 5,
+				frames: [[0, 160], [32, 160]]
+			},
+			death: {
+				frameRate: 4,
+				frames: [[0, 192], [32, 192], [64, 192]],
+				loop: !1
+			}
+		}
+	},
+	spawnPoints: {
+		small: [32, 64, 128, 160, 224, 256],
+		large: [32, 128, 224]
+	},
+	monster: {
+		bat: {
+			image: "media/images/monsters/bat.png"
+		},
+		demoblin: {
+			image: "media/images/monsters/demoblin.png"
+		},
+		flamingSkull: {
+			image: "media/images/monsters/flaming_skull.png"
+		},
+		gel: {
+			image: "media/images/monsters/gel.png"
+		},
+		goblin: {
+			image: "media/images/monsters/goblin.png"
+		},
+		wizard: {
+			image: "media/images/monsters/wizard.png"
+		},
+		owlbear: {
+			image: "media/images/monsters/owlbear.png"
+		},
+		cyclops: {
+			image: "media/images/monsters/cyclops.png"
+		},
+		dragon: {
+			image: "media/images/monsters/green_dragon.png"
+		},
+		width: 32,
+		height: 32,
+		largeWidth: 64,
+		largeHeight: 64,
+		getAnimations: function(d, a) {
+			return {
+				down: {
+					frameRate: 5,
+					frames: [[0, 0], [d, 0]]
+				},
+				up: {
+					frameRate: 5,
+					frames: [[0, a], [d, a]]
+				},
+				downPain: {
+					frameRate: 5,
+					frames: [[0, 3 * a], [d, 3 * a]]
+				},
+				upPain: {
+					frameRate: 5,
+					frames: [[0, 4 * a], [d, 4 * a]]
+				},
+				idle: {
+					frameRate: 0,
+					frames: [[0, 0]]
+				},
+				idlePain: {
+					frameRate: 0,
+					frames: [[0, 3 * a]]
+				},
+				death: {
+					frameRate: 3,
+					frames: [[0, 6 * a], [d, 6 * a], [2 * d, 6 * a]],
+					loop: !1
+				}
+			}
+		}
+	},
+	gameOverScreen: {
+		color: "rgb(216, 200, 161)",
+		padding: 20,
+		header: {
+			fontSize: 32
+		},
+		monstersSlain: {
+			fontSize: 20,
+			y: 70
+		},
+		monstersSlainValue: {
+			y: 85
+		},
+		debugMode: {
+			fontSize: 20,
+			y: 120
+		},
+		highScore: {
+			y: 132
+		},
+		button: {
+			image: "media/images/buttons_colored_narrow.png",
+			quitImageY: 112,
+			y: 174,
+			width: 98,
+			height: 56
+		},
+		highScoreDragon: {
+			image: "media/images/high_score_dragon.png",
+			x: 220,
+			y: 20,
+			z: 2,
+			width: 116,
+			height: 132
+		}
+	},
+	settingsScreen: {
+		color: "rgb(216, 200, 161)",
+		padding: 20,
+		header: {
+			fontSize: 32
+		},
+		yourScore: {
+			fontSize: 16,
+			y: 70
+		},
+		highScore: {
+			fontSize: 16,
+			y: 95
+		},
+		playSound: {
+			fontSize: 24,
+			y: 125,
+			width: 132,
+			height: 38
+		},
+		button: {
+			image: "media/images/buttons_colored_narrow.png",
+			quitImageY: 112,
+			y: 174,
+			width: 98,
+			height: 56
+		}
+	},
+	checkbox: {
+		color: "rgb(216, 200, 161)",
+		image: "media/images/checkbox.png",
+		width: 38,
+		height: 38
+	},
+	health: {
+		between: 6,
+		margin: 8
+	}
+});
+define("js/data/monsters", ["djinn/math/Vector2", "djinn/Timer", "djinn/math/core", "../view/viewData"],
+function(d, a, c, b) {
+	return {
+		bat: {
+			bounce: !0,
+			health: 10,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(c.random( - 10, 10), 50);
+				this._changeDirectionTimer = (new a(500)).on("elapsed", bind(this,
+				function() {
+					this.velocity = new d(c.random( - 50, 50), c.random(10, 100));
+					this._changeDirectionTimer.start(c.random(500, 5E3))
+				})).start()
+			},
+			tick: function(a) {
+				this.x < b.margin ? (this.velocity.x = -this.velocity.x, this.x = b.margin) : this.right > b.width - b.margin && (this.velocity.x = -this.velocity.x, this.right = b.width - b.margin);
+				this.y < -this.height && (this.velocity.y = -this.velocity.y, this.y = -this.height)
+			}
+		},
+		goblin: {
+			health: 15,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(0, 120)
+			}
+		},
+		demoblin: {
+			health: 50,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(0, 75)
+			}
+		},
+		flamingSkull: {
+			bounce: !0,
+			health: 30,
+			damage: 1,
+			init: function() {
+				var a = c.random(100, 200) * (c.random(0, 1) || -1);
+				this.velocity = new d(a, c.random(40, 60))
+			},
+			tick: function(a) {
+				this.x < b.margin ? (this.velocity.x = -this.velocity.x, this.x = b.margin) : this.right > b.width - b.margin && (this.velocity.x = -this.velocity.x, this.right = b.width - b.margin)
+			}
+		},
+		gel: {
+			bounce: !0,
+			health: 30,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(c.random( - 50, 50), 50)
+			},
+			onHit: function() {
+				this.velocity = new d(c.random( - 50, 50), -200)
+			},
+			tick: function(a) {
+				this.x < b.margin ? (this.velocity.x = -this.velocity.x, this.x = b.margin) : this.right > b.width - b.margin && (this.velocity.x = -this.velocity.x, this.right = b.width - b.margin);
+				this.y < -this.height && (this.velocity.y = -this.velocity.y, this.y = -this.height)
+			}
+		},
+		wizard: {
+			health: 40,
+			damage: 1,
+			init: function() {
+				this._radians = 0;
+				this._startX = this.x;
+				this.velocity = new d(0, 50);
+				this._radius = 25;
+				this._tickMod = 300
+			},
+			tick: function(a) {
+				this._radians += a / this._tickMod;
+				this._radians >= 2 * Math.PI && (this._radians -= 2 * Math.PI);
+				this.x = this._startX + Math.sin(this._radians) * this._radius;
+				this.y < -this.height && (this.velocity.y = -this.velocity.y, this.y = -this.height)
+			}
+		},
+		owlbear: {
+			size: "large",
+			health: 60,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(0, 80)
+			}
+		},
+		cyclops: {
+			size: "large",
+			health: 80,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(0, 60)
+			}
+		},
+		dragon: {
+			size: "large",
+			health: 150,
+			damage: 1,
+			init: function() {
+				this.velocity = new d(0, 60)
+			}
+		}
+	}
+});
+define("js/view/ProgressBar", ["djinn/View", "djinn/intl", "../model/GameModel", "./viewData"],
+function(d, a, c, b) {
+	return d.extend({
+		init: function(a) {
+			a = merge({
+				image: b.battleScreen.progressBar.image,
+				x: b.battleScreen.progressBar.x,
+				y: b.battleScreen.progressBar.y,
+				z: b.battleScreen.progressBar.z,
+				width: b.battleScreen.progressBar.width,
+				height: b.battleScreen.progressBar.height
+			},
+			a);
+			this._super(a);
+			this.monstersSlain = 0
+		},
+		increment: function() {
+			this.monstersSlain += 1;
+			this._update()
+		},
+		reset: function() {
+			this._gotNewHighScore = !1;
+			this.monstersSlain = this.imageY = 0;
+			this._update()
+		},
+		_update: function() {
+			var a = Math.min(this.monstersSlain / c.get("highScore"), 1);
+			this.width = b.battleScreen.progressBar.width * a;
+			this.imageY = 1 == a ? this.height: 0; ! this._gotNewHighScore && 1 == a && (this._gotNewHighScore = !0, this.fire("newHighScore"))
+		}
+	})
+});
+define("js/view/WeaponView", ["djinn/View", "djinn/math/Vector2", "../data/weapons", "./viewData"],
+function(d, a, c, b) {
+	return d.extend({
+		init: function(a) {
+			a = merge({
+				image: b.objects.image,
+				width: b.objects.width,
+				height: b.objects.height
+			},
+			a);
+			this._super(a);
+			this._data = c[a.type];
+			this.bounce = this._data.bounce;
+			this.damage = this._data.damage;
+			this.speed = this._data.speed;
+			var d = b.objects.types;
+			this.imageX = d[a.type].imageX;
+			this.imageY = d[a.type].imageY;
+			this.velocity = a.targetVector.scale(this.speed || 0);
+			this.rotation = a.targetVector.heading
+		},
+		tick: function(a) {
+			a /= 1E3;
+			this._data.rotate && (this.rotation -= 0.2, 0 > this.rotation && (this.rotation += 2 * Math.PI));
+			this.velocity && (this.x += this.velocity.x * a, this.y += this.velocity.y * a)
+		}
+	})
+});
+define("js/view/HighScoreDragonView", ["djinn/View", "djinn/math/core", "djinn/utils/transitions", "./viewData"],
+function(d, a, c, b) {
+	return d.extend({
+		init: function(a) {
+			a = merge({
+				image: b.gameOverScreen.highScoreDragon.image,
+				anchorY: b.gameOverScreen.highScoreDragon.height / 5,
+				width: b.gameOverScreen.highScoreDragon.width,
+				height: b.gameOverScreen.highScoreDragon.height,
+				x: b.gameOverScreen.highScoreDragon.x,
+				y: b.gameOverScreen.highScoreDragon.y,
+				z: b.gameOverScreen.highScoreDragon.z
+			},
+			a);
+			this._super(a);
+			this._sway()
+		},
+		_sway: function() {
+			if (this.visible) {
+				var a = Math.PI / 16;
+				this.tween({
+					rotation: -a
+				},
+				4E3, c.easeBoth).tween({
+					rotation: a
+				},
+				4E3, c.easeBoth, bind(this, "_sway"))
+			}
+		}
+	})
+});
+define("js/view/polish", ["djinn/math/core", "djinn/utils/transitions", "./viewData"],
+function(d, a, c) {
+	return {
+		burst: function(b, c) {
+			b.opacity = 0;
+			b.scale = 0.5;
+			b.tween({
+				opacity: 1,
+				rotation: Math.PI / 2,
+				scale: 1.5
+			},
+			100, a.linear).tween({
+				opacity: 0
+			},
+			100, a.linear,
+			function() {
+				c && c()
+			})
+		},
+		buttonPress: function(b, c) {
+			b.tween({
+				y: b.y + b.height / 10
+			},
+			50, a.linear).tween({
+				y: b.y
+			},
+			50, a.linear, c)
+		},
+		fadeOut: function(b, c, d) {
+			b.tween({
+				opacity: 0
+			},
+			c, a.linear, d)
+		},
+		fadeIn: function(b, c, d) {
+			b.tween({
+				opacity: 1
+			},
+			c, a.linear, d)
+		},
+		hover: function(a) {
+			var c = a.y;
+			a.tick = function(a) {
+				void 0 === this._radians && (this._radians = 0);
+				this._radians += a / 300;
+				this._radians >= 2 * Math.PI && (this._radians -= 2 * Math.PI);
+				this.y = c + 2 * Math.sin(this._radians)
+			}
+		},
+		popIn: function(b, e, h, g) {
+			var k = 1 == d.random(1, 2) ? 2 : -2,
+			k = d.clamp(b.x + b.width * k, 0, c.width - b.width),
+			f = b.y;
+			b.opacity = h || 0;
+			b.scale = e || 0.5;
+			b.y += b.height / 2;
+			b.tween({
+				opacity: 1,
+				scale: 1,
+				x: k,
+				y: f
+			},
+			200, a.linear).tween({
+				scale: 1.25
+			},
+			50, a.linear).tween({
+				scale: 1
+			},
+			50, a.linear, g)
+		},
+		popOut: function(b, c, d, g) {
+			b.opacity = 1;
+			b.tween({
+				scale: 0.75
+			},
+			50, a.linear).tween({
+				opacity: 0,
+				scale: 2
+			},
+			250, a.linear, g)
+		},
+		vibrate: function(a, c, h, g, k) {
+			a.completeTween();
+			h = h || 10;
+			g = (g || 250) / h;
+			c = c || 6;
+			for (var f = a.x,
+			l = a.y,
+			q = 0; q < h; ++q) a.tween({
+				x: a.x + d.random( - c, c),
+				y: a.y + d.random( - c, c)
+			},
+			g);
+			a.delayTween(0,
+			function() {
+				a.x = f;
+				a.y = l;
+				k && k()
+			})
+		}
+	}
+});
+define("js/view/ButtonView", ["djinn/View", "djinn/TextView", "djinn/utils/transitions", "./polish", "./viewData"],
+function(d, a, c, b, e) {
+	return d.extend({
+		init: function(b) {
+			b = merge(b, {
+				acceptInputEvents: !0,
+				image: e.button.image,
+				width: e.button.width,
+				height: e.button.height
+			});
+			this._super(b);
+			this._enabled = !0;
+			this.imageY = this._defaultImageY = b.defaultImageY || 0;
+			this._textView = (new a({
+				parent: this,
+				text: b.text,
+				color: e.button.color,
+				textAlign: "center",
+				verticalAlign: "middle",
+				height: this.height
+			})).align("center", "center");
+			this.on("inputStart", this, "_onInputStart");
+			Object.defineProperty(this, "text", {
+				set: function(a) {
+					this._textView.text = a
+				}
+			})
+		},
+		enable: function() {
+			return this._enabled = !0,
+			this.imageY = this._defaultImageY,
+			this
+		},
+		disable: function() {
+			return this._enabled = !1,
+			this.imageY = this.height,
+			this
+		},
+		_onInputStart: function() {
+			this._enabled && b.buttonPress(this, bind(this,
+			function() {
+				this.fire("pressed")
+			}))
+		}
+	})
+});
+define("js/view/GameOverScreen", "djinn/View djinn/TextView djinn/utils/transitions djinn/intl ../model/GameModel ./ButtonView ./HighScoreDragonView ./viewData".split(" "),
+function(d, a, c, b, e, h, g, k) {
+	return d.extend({
+		init: function(c) {
+			c = merge({
+				acceptInputEvents: !0,
+				width: k.width,
+				height: k.height
+			},
+			c);
+			this._super(c);
+			this.monstersSlain = this._monstersSlainDisplay = null;
+			this._radians = 0;
+			this._modalView = (new d({
+				acceptInputEvents: !0,
+				parent: this,
+				image: k.modal.image,
+				width: k.modal.width,
+				height: k.modal.height
+			})).align("center", "center", k.modal.offsetX);
+			this._modalStartY = this._modalView.y;
+			this._gameOverText = (new a({
+				parent: this._modalView,
+				text: b.get("GAME_OVER"),
+				color: k.gameOverScreen.color,
+				fontSize: k.gameOverScreen.header.fontSize,
+				textAlign: "center",
+				y: k.gameOverScreen.padding
+			})).align("center");
+			this._monstersSlainText = (new a({
+				parent: this._modalView,
+				text: b.get("MONSTERS_SLAIN"),
+				color: k.gameOverScreen.color,
+				textAlign: "center",
+				y: k.gameOverScreen.monstersSlain.y
+			})).align("center");
+			this._monstersSlainValueText = (new a({
+				parent: this._modalView,
+				textAlign: "center",
+				fontFamily: k.numbers.fontFamily,
+				fontSize: k.gameOverScreen.header.fontSize,
+				strokeColor: k.numbers.strokeColor,
+				strokeWidth: k.numbers.strokeWidth,
+				y: k.gameOverScreen.monstersSlainValue.y
+			})).align("center");
+			this._highScoreText = (new a({
+				parent: this._modalView,
+				color: k.gameOverScreen.color,
+				textAlign: "center",
+				y: k.gameOverScreen.highScore.y
+			})).align("center").on("inputStart", this, "_onHighScoreTextPressedForSomeReason");
+			c = k.gameOverScreen.button;
+			var e = k.margin / 2;
+			this._quitButton = (new h({
+				parent: this._modalView,
+				image: c.image,
+				text: b.get("QUIT"),
+				defaultImageY: c.quitImageY,
+				x: this._modalView.width / 2 - c.width - e,
+				y: c.y,
+				width: c.width,
+				height: c.height
+			})).on("pressed", this, "_onPressedQuit");
+			this._continueButton = (new h({
+				parent: this._modalView,
+				image: c.image,
+				text: b.get("PLAY_AGAIN"),
+				x: this._modalView.width / 2 + e,
+				y: k.gameOverScreen.button.y,
+				width: c.width,
+				height: c.height
+			})).on("pressed", this, "_onPressedContinue");
+			this._highScoreDragonView = new g({
+				parent: this,
+				visible: !1
+			})
+		},
+		_onHighScoreTextPressedForSomeReason: function() {
+			this._highScoreDragonView.toggle()
+		},
+		_onPressedContinue: function() {
+			this._continueButton.disable();
+			this.fire("pressedContinue")
+		},
+		_onPressedQuit: function() {
+			this._quitButton.disable();
+			this.fire("pressedQuit")
+		},
+		show: function() {
+			this._modalView.y = -this._modalView.height;
+			this._monstersSlainText.opacity = 0;
+			this._monstersSlainValueText.hide();
+			this._highScoreText.opacity = 0;
+			this.gotNewHighScore ? this._highScoreText.text = b.get("NEW_HIGH_SCORE") : (this._highScoreText.scale = 1, this._highScoreText.text = b.get("HIGH_SCORE") + " " + e.get("highScore"));
+			this._continueButton.enable();
+			this._quitButton.enable();
+			this._highScoreDragonView.hide();
+			this._super();
+			this._modalView.tween({
+				y: this._modalStartY
+			},
+			1E3, c.bounceOut, bind(this,
+			function() {
+				updateShareScore(this._monstersSlainValueText._rawText);//上传分数
+				this._monstersSlainText.tween({
+					opacity: 1
+				},
+				500, c.linear);
+				
+				this._highScoreText.tween({
+					opacity: 1
+				},
+				500, c.linear, bind(this,
+				function() {
+					this._monstersSlainDisplay = 0;
+					this._monstersSlainValueText.text = 0;
+					this._monstersSlainValueText.show()
+				}))
+			}))
+		},
+		hide: function(a) {
+			var b = this._super;
+			this._modalView.tween({
+				y: -this._modalView.height
+			},
+			500, c.easeIn,
+			function() {
+				b();
+				a && a()
+			})
+		},
+		tick: function(a) {
+			this._super && this._super(a);
+			this.visible && this._monstersSlainDisplay < this.monstersSlain && (this._monstersSlainDisplay += Math.round(a / 20), this._monstersSlainDisplay = Math.min(this._monstersSlainDisplay, this.monstersSlain), this._monstersSlainValueText.text = this._monstersSlainDisplay);
+			this.gotNewHighScore && (this._radians += a / 100, this._radians > 2 * Math.PI && (this._radians -= 2 * Math.PI), this._highScoreText.scale = 1.5 + Math.sin(this._radians) / 10)
+		}
+	})
+});
+define("js/view/HealthView", ["djinn/View", "djinn/utils/transitions", "../model/GameModel", "./polish", "./viewData"],
+function(d, a, c, b, e) {
+	return d.extend({
+		init: function(a) {
+			a = merge({
+				width: e.width,
+				height: e.height
+			},
+			a);
+			this._super(a);
+			this._maxHealth = c.MAX_PLAYER_HEALTH;
+			this._heartViews = [];
+			a = e.objects.width + e.health.between;
+			for (var b = 0; b < this._maxHealth; ++b) this._heartViews.push(new d({
+				parent: this,
+				image: e.objects.image,
+				imageX: e.objects.types.heart.imageX,
+				imageY: e.objects.types.heart.imageY,
+				x: e.margin + a * b,
+				y: e.margin,
+				width: e.objects.width,
+				height: e.objects.height
+			}))
+		},
+		heal: function(a) {
+			this._update(a)
+		},
+		reset: function() {
+			for (var a = 0; a < this._maxHealth; ++a) this._heartViews[a].opacity = 1,
+			this._heartViews[a].scale = 1
+		},
+		takeDamage: function(a) {
+			this._update(a)
+		},
+		_update: function(b) {
+			for (var d = 0; d < c.MAX_PLAYER_HEALTH; ++d) {
+				var e = this._heartViews[d];
+				e.cancelTween();
+				d < b ? e.tween({
+					opacity: 1,
+					scale: 1
+				},
+				100, a.linear) : e.tween({
+					opacity: 0,
+					scale: 0.5
+				},
+				100, a.linear)
+			}
+		}
+	})
+});
+define("js/view/PauseButton", ["djinn/View", "djinn/utils/transitions", "./polish", "./viewData"],
+function(d, a, c, b) {
+	return d.extend({
+		init: function(a) {
+			var c = b.battleScreen.pauseButton;
+			a = merge({
+				image: c.image,
+				width: c.width,
+				height: c.height
+			},
+			a);
+			this._super(a);
+			this._enabled = !0;
+			Object.defineProperty(this, "enabled", {
+				set: function(a) {
+					this.imageY = (this._enabled = a) ? 0 : this.height
+				}
+			});
+			this.on("inputStart", this, "_onInputStart")
+		},
+		_onInputStart: function(a) {
+			a.cancel = !0;
+			this._enabled && c.buttonPress(this, bind(this,
+			function() {
+				this.fire("pressed")
+			}))
+		}
+	})
+});
+define("js/view/StarburstView", ["djinn/View", "./polish", "./viewData"],
+function(d, a, c) {
+	return d.extend({
+		init: function(b) {
+			var d = c.objects;
+			b = merge({
+				image: d.image,
+				imageX: d.types.starburst.imageX,
+				imageY: d.types.starburst.imageY,
+				width: d.width,
+				height: d.height,
+				z: d.types.starburst.z
+			},
+			b);
+			this._super(b);
+			a.burst(this, bind(this,
+			function() {
+				this.removeFromParent()
+			}))
+		}
+	})
+});
+define("js/view/EquippedWeaponView", ["djinn/View", "djinn/utils/transitions", "../model/GameModel", "./polish", "./viewData"],
+function(d, a, c, b, e) {
+	return d.extend({
+		init: function(a) {
+			var b = e.battleScreen.equippedWeapon;
+			a = merge({
+				backgroundColor: b.backgroundColor,
+				clip: !0,
+				x: b.x,
+				y: b.y,
+				width: b.width,
+				height: b.height
+			},
+			a);
+			this._super(a);
+			this._depletedTimer = this.createBoundTimer(c.WEAPON_DURATION, "_onDepletedElapsed");
+			this._barFillView = new d({
+				parent: this,
+				width: b.width,
+				height: b.height
+			});
+			this._objectView = (new d({
+				parent: this,
+				image: e.objects.image,
+				width: e.objects.width,
+				height: e.objects.height
+			})).align("center", "center")
+		},
+		_onDepletedElapsed: function() {
+			this._depletedTimer.stop();
+			this.hide();
+			this.fire("depleted")
+		},
+		equipWeapon: function(a) {
+			if (! ( - 1 < ["axe", "spear", "sword"].indexOf(a))) {
+				var b = e.objects.types;
+				this._objectView.imageX = b[a].imageX;
+				this._objectView.imageY = b[a].imageY;
+				this._depletedTimer.start();
+				this.show()
+			}
+		},
+		tick: function() {
+			var a = this._depletedTimer.percentComplete / 100,
+			b = this.height * a;
+			this._barFillView.backgroundColor = e.bars.getColor(1 - a);
+			this._barFillView.y = b
+		}
+	})
+});
+define("js/SoundIOS", ["djinn/Emitter", "djinn/Timer", "./model/GameModel"],
+function(d, a, c) {
+	return new(d.extend({
+		init: function() {
+			this._super();
+			this.enabled = c.get("soundEnabled");
+			this._audioNode = null;
+			this._stopAudioTimer = (new a).on("elapsed", this, "_onStopAudioTimerElapsed");
+			this._sounds = {
+				celebrate: {
+					start: 16,
+					duration: 0.75
+				},
+				equip: {
+					start: 56,
+					duration: 0.4
+				},
+				input: {
+					start: 40,
+					duration: 0.5
+				},
+				monsterDies: {
+					start: 32,
+					duration: 0.75
+				},
+				monsterDiesLarge: {
+					start: 24,
+					duration: 0.75
+				},
+				pause: {
+					start: 40,
+					duration: 0.5
+				},
+				xamDies: {
+					start: 8,
+					duration: 3.9
+				},
+				xamPain: {
+					start: 0,
+					duration: 0.4
+				}
+			}
+		},
+		load: function() {
+			var a = new Audio;
+			a.src = "media/sound_effects/audio_sheet.mp3";
+			a.play();
+			a.pause();
+			this._audioNode = a
+		},
+		_onStopAudioTimerElapsed: function() {
+			this._audioNode.pause();
+			this._stopAudioTimer.stop()
+		},
+		play: function(a) {
+			if (this.enabled) if (this._audioNode) try {
+				if (a in this._sounds) {
+					var c = this._sounds[a];
+					this._audioNode.pause();
+					this._audioNode.currentTime = c.start;
+					this._audioNode.play();
+					this._stopAudioTimer.start(1E3 * c.duration)
+				}
+			} catch(d) {
+				logger.warn("SoundIOS.play() caught an error: " + d)
+			} else logger.warn("SoundIOS: iOS audio not ready yet")
+		},
+		stop: function() {
+			this._onStopAudioTimerElapsed()
+		}
+	}))
+});
+define("js/Sound", ["djinn/Emitter", "djinn/client", "./SoundIOS", "./model/GameModel"],
+function(d, a, c, b) {
+	d = d.extend({
+		init: function() {
+			this._super();
+			this.enabled = b.get("soundEnabled");
+			this._audioNodes = {};
+			this._sounds = {
+				celebrate: "media/sound_effects/celebrate.mp3",
+				equip: "media/sound_effects/equip.mp3",
+				input: "media/sound_effects/input.mp3",
+				monsterDies: "media/sound_effects/monster_dies.mp3",
+				monsterPain: "media/sound_effects/goblin_damage_.mp3",
+				monsterDiesLarge: "media/sound_effects/monster_dies_large.mp3",
+				music: "media/music/cave.mp3",
+				pause: "media/sound_effects/pause.mp3",
+				unpause: "media/sound_effects/unpause.mp3",
+				xamAttack: "media/sound_effects/char_attacks_.mp3",
+				xamAttackFire: "media/sound_effects/char_attacks_fire_.mp3",
+				xamAttackIce: "media/sound_effects/xam_attacks_ice.mp3",
+				xamDies: "media/sound_effects/xam_dies.mp3",
+				xamPain: "media/sound_effects/xam_pain.mp3"
+			}
+		},
+		load: function() {
+			for (var a in this._sounds) {
+				var b = this._sounds[a],
+				c = new Audio,
+				d = c;
+				c.loaded = !0;
+				d.oncanplaythrough = void 0;
+				c.src = b;
+				this._audioNodes[a] = c
+			}
+		},
+		play: function(a, b) {
+			if (this.enabled) {
+				var c = this._audioNodes[a];
+				if (c && c.loaded) {
+					try {
+						c.currentTime = 0,
+						c.loop = "music" == a
+					} catch(d) {
+						logger.warn("[sound.play] audioNode.currentTime error: " + d)
+					}
+					c.play()
+				} else logger.warn("[sound.play] key '" + a + "' not ready yet")
+			}
+		},
+		stop: function(a) {
+			var b = this._audioNodes[a];
+			if (b && b.loaded) try {
+				b.pause()
+			} catch(c) {
+				logger.warn("[sound.stop] error: " + c)
+			} else logger.warn("[sound.stop] key '" + a + "' not ready yet")
+		}
+	});
+	return d = new d,
+	a.isTouch ? c: d
+});
+define("js/view/TitleScreen", "djinn/View djinn/TextView djinn/utils/transitions djinn/intl ../Sound ../model/GameModel ./ButtonView ./polish ./viewData djinn/manifest".split(" "),
+function(d, a, c, b, e, h, g, k, f, l) {
+	return d.extend({
+		init: function(c) {
+			c = merge({
+				acceptInputEvents: !0,
+				image: f.titleScreen.image,
+				width: f.width,
+				height: f.height
+			},
+			c);
+			this._super(c);
+			this._titleView = (new d({
+				parent: this,
+				image: f.titleScreen.title.image,
+				x: f.titleScreen.title.x,
+				width: f.titleScreen.title.width,
+				height: f.titleScreen.title.height
+			})).align("center");
+			this._highScoreText = new a({
+				parent: this,
+				text: b.get("HIGH_SCORE"),
+				fontFamily: f.numbers.fontFamily,
+				fontSize: f.titleScreen.highScore.fontSize,
+				shadowColor: null,
+				strokeColor: f.numbers.strokeColor,
+				strokeWidth: f.numbers.strokeWidth,
+				textAlign: "center",
+				x: f.titleScreen.highScore.x,
+				y: f.titleScreen.highScore.y
+			});
+			this._highScoreValueText = new a({
+				parent: this,
+				fontFamily: f.numbers.fontFamily,
+				fontSize: f.titleScreen.highScore.valueFontSize,
+				shadowColor: null,
+				strokeColor: f.numbers.strokeColor,
+				strokeWidth: f.numbers.strokeWidth,
+				textAlign: "center",
+				x: f.titleScreen.highScore.x,
+				y: f.titleScreen.highScore.y + this._highScoreText.height
+			});
+			this.buttonView = (new g({
+				parent: this,
+				text: b.get("LOADING"),
+				y: f.titleScreen.button.y
+			})).disable();
+			this.buttonView.on("pressed", bind(this,
+			function() {
+				e.play("input");
+				this.buttonView.disable();
+				this.fire("playButton")
+			}));
+			this._monstersView = new d({
+				parent: this,
+				image: f.titleScreen.monsters.image,
+				x: f.titleScreen.monsters.x,
+				width: f.titleScreen.monsters.width,
+				height: f.titleScreen.monsters.height
+			}); (new a({
+				parent: this,
+				
+				textAlign: "center"
+			})).align("center", "top", null, f.margin / 2);
+			h.on("changed:highScore", this, "_update");
+			this._update()
+		},
+		doneLoading: function() {
+			this.buttonView.text = b.get("PLAY");
+			this.buttonView.enable()
+		},
+		show: function() {
+			this.opacity = 0;
+			this._monstersView.y = f.height;
+			this._titleView.y = -this._titleView.height;
+			this.buttonView.enable();
+			this.buttonView.x = f.width;
+			this._highScoreText.opacity = 0;
+			this._highScoreValueText.opacity = 0;
+			k.fadeIn(this, 500, bind(this,
+			function() {
+				this._monstersView.tween({
+					y: f.height - this._monstersView.height
+				},
+				1E3, c.easeOut, bind(this,
+				function() {
+					this._titleView.tween({
+						y: f.titleScreen.title.y
+					},
+					1E3, c.bounceOut);
+					this._highScoreText.tween({
+						opacity: 1
+					},
+					1E3);
+					this._highScoreValueText.tween({
+						opacity: 1
+					},
+					1E3);
+					this.buttonView.tween({
+						x: f.titleScreen.button.x
+					},
+					1E3, c.easeOut)
+				}))
+			}));
+			this._super()
+		},
+		_update: function() {
+			this._highScoreValueText.text = h.get("highScore")
+		}
+	})
+});
+define("js/view/XamView", "djinn/Sprite djinn/Timer djinn/utils/transitions djinn/math/core djinn/math/Vector2 ../Sound ../data/weapons ./viewData".split(" "),
+function(d, a, c, b, e, h, g, k) {
+	return d.extend({
+		init: function(b) {
+			b = merge({
+				image: k.xam.image,
+				y: k.xam.y,
+				z: k.xam.z,
+				width: k.xam.width,
+				height: k.xam.height,
+				animations: k.xam.animations
+			},
+			b);
+			this._super(b);
+			this.controlScheme = "move";
+			this.alive = !0;
+			this.invincible = !1;
+			this.target = null;
+			this.speed = 200;
+			this._attackTimer = (new a).on("elapsed", this, "_onAttackTimerElapsed");
+			this._invincibleTimer = (new a(1E3)).on("elapsed", this, "_onInvincibleTimerElapsed");
+			this._painFlickerTimer = (new a(80)).on("elapsed", this, "_onPainFlickerElapsed");
+			this._painResetTimer = (new a(1E3)).on("elapsed", this, "_onPainResetElapsed")
+		},
+		attack: function() {
+			if (this.target) {
+				h.play(g[this.weapon].sound || "xamAttack");
+				this.canAttack = !1;
+				this._attackTimer.reset();
+				switch (this.controlScheme) {
+				case "aim":
+					var a = new e(this.target);
+					a.subtract(this.center).normalize();
+					var b = -(Math.PI / 2) + 0.25,
+					c = Math.PI / 2 - 0.25,
+					d = a.heading;
+					d < b ? a = e.makeFromHeading(b) : d > c && (a = e.makeFromHeading(c));
+					break;
+				case "move":
+					g[this.weapon].bounce ? (this._weaponToggle = !this._weaponToggle, a = new e({
+						x: this.center.x + (this._weaponToggle ? -this.width: this.width),
+						y: this.center.y - 3 * this.height
+					})) : a = new e({
+						x: this.center.x,
+						y: this.center.y - this.height
+					}),
+					a.subtract(this.center).normalize()
+				}
+				this.fire("attack", [a])
+			}
+		},
+		enter: function() {
+			var a = k.width / 2;
+			this.playAnimation(this.x < a ? "right": "left");
+			this.tween({
+				x: a - this.width / 2
+			},
+			1500, c.linear, bind(this,
+			function() {
+				this.playAnimation("up")
+			}))
+		},
+		hasBaseWeapon: function() {
+			return - 1 != ["sword", "axe", "spear"].indexOf(this.weapon)
+		},
+		equipWeapon: function(a) {
+			this.weapon = a;
+			this._attackTimer.start(g[a].interval)
+		},
+		_onAttackTimerElapsed: function() {
+			this.canAttack = !0
+		},
+		_onInvincibleTimerElapsed: function() {
+			this.invincible = !1
+		},
+		_onPainFlickerElapsed: function() {
+			this._inPain && (this._showPain = !this._showPain);
+			this.playAnimation(this.currentAnimation)
+		},
+		_onPainResetElapsed: function() {
+			this._painFlickerTimer.stop();
+			this._painResetTimer.stop();
+			this._showPain = this._inPain = !1;
+			this.playAnimation(this.currentAnimation)
+		},
+		playAnimation: function(a, b) {
+			this._inPain && this._showPain ? null === a.match(/Pain/) && (a += "Pain") : a = a.replace(/Pain/, "");
+			this._super(a, b)
+		},
+		reset: function() {
+			this.canAttack = this.alive = !0;
+			this.invincible = this._showPain = this._inPain = !1;
+			this.target = null;
+			this.x = 1 == b.random(1, 2) ? -this.width: k.width;
+			this.equipWeapon("sword")
+		},
+		takeDamage: function(a) {
+			1 > a ? (h.play("xamDies"), this.alive = !1, this._inPain = !1, this._showPain = !1, this.playAnimation("death")) : (h.play("xamPain"), this.invincible = !0, this._invincibleTimer.start(), this._inPain = !0, this._showPain = !0, this._painFlickerTimer.start(), this._painResetTimer.start(), this.playAnimation(this.currentAnimation))
+		},
+		tick: function(a) {
+			this._super(a);
+			if (this.alive && this.target && (this.canAttack && this.attack(), "move" == this.controlScheme)) {
+				var b = this.center.x - this.target.x,
+				c = Math.abs(b);
+				c >= k.margin ? this.playAnimation(0 < b ? "left": "right", !1) : this.playAnimation("up", !1);
+				5 <= c ? (a /= 1E3, 0 < b ? this.x -= a * this.speed: 0 > b && (this.x += a * this.speed)) : this.x = this.target.x - this.width / 2
+			}
+		}
+	})
+});
+define("js/view/MonsterView", "djinn/Sprite djinn/math/Vector2 djinn/utils/transitions ../Sound ../model/GameModel ../data/monsters ./polish ./viewData".split(" "),
+function(d, a, c, b, e, h, g, k) {
+	return d.extend({
+		init: function(a) {
+			this._data = h[a.type];
+			if ("large" == this._data.size) var b = k.monster.largeWidth,
+			c = k.monster.largeHeight;
+			else b = k.monster.width,
+			c = k.monster.height;
+			a = merge({
+				image: k.monster[a.type].image,
+				y: -c,
+				width: b,
+				height: c,
+				animations: k.monster.getAnimations(b, c)
+			},
+			a);
+			this._super(a);
+			this._data = h[a.type];
+			this._health = this._data.health;
+			this._data.init && this._data.init.apply(this);
+			this.alive = !0;
+			this.rotVelocity = {
+				x: 0,
+				y: 0
+			};
+			this.speed = 150;
+			this.playAnimation("down")
+		},
+		attack: function() {
+			e.hitPlayer(this._data.damage);
+			this._bounceBack()
+		},
+		_bounceBack: function() {
+			this._data.bounce ? this.velocity.y *= -1 : this.rotVelocity.y = "large" == this._data.size ? -450 : -350
+		},
+		hit: function(a) {
+			this._health -= a;
+			if (0 < this._health) {
+				if (!this._inPain) {
+					this._inPain = !0;
+					b.play(this._data.painSound || "monsterPain");
+					var c = this.currentAnimation;
+					null === c.match(/Pain/) && this.playAnimation(c + "Pain");
+					if (this._data.onHit) this._data.onHit.apply(this, [a]);
+					else {
+						var d = this.velocity;
+						this.velocity = {
+							x: 0,
+							y: 0
+						}
+					}
+					this.delayTween(200, bind(this,
+					function() {
+						this._data.onHit || (this._inPain = !1, this.velocity = d);
+						this.playAnimation(c)
+					}))
+				}
+				return ! 1
+			}
+			return this.kill(),
+			!0
+		},
+		kill: function() {
+			this.alive = !1;
+			this.velocity = {
+				x: 0,
+				y: 0
+			};
+			this.cancelTween();
+			this.playAnimation("death");
+			this.delayTween(1E3, bind(this,
+			function() {
+				g.fadeOut(this, 500, bind(this,
+				function() {
+					this.removeFromParent()
+				}))
+			}));
+			"large" == this._data.size ? b.play("monsterDiesLarge") : b.play("monsterDies")
+		},
+		render: function(a) {
+			this._super(a);
+			if (this.alive && this._health < this._data.health) {
+				var b = this._health / this._data.health;
+				a.fillStyle = k.bars.backgroundColor;
+				a.fillRect( - 1, this.height, this.width + 2, k.bars.height);
+				a.fillStyle = k.bars.getColor(b);
+				a.fillRect(0, this.height + 1, this.width * b, k.bars.height - 2)
+			}
+		},
+		tick: function(a) {
+			this._super(a);
+			if (this.alive) {
+				this._data.tick && this._data.tick.apply(this, [a]);
+				var b = a / 1E3;
+				this.velocity && (this.x += this.velocity.x * b, this.y += this.velocity.y * b);
+				0 > this.rotVelocity.y && (this.y += this.rotVelocity.y * b, this.rotVelocity.y += a / 2, 0 < this.rotVelocity.y && (this.rotVelocity.y = 0));
+				this.bottom > k.battleScreen.wallY && (this.bottom = k.battleScreen.wallY, this._bounceBack())
+			}
+		},
+		wander: function() {
+			this.velocity.y = 0;
+			this.playAnimation("idle");
+			this.delayTween(1500, bind(this,
+			function() {
+				this.velocity.y = -(this.speed / 5);
+				this.playAnimation("up")
+			}))
+		}
+	})
+});
+define("js/view/LootView", "djinn/View djinn/TextView djinn/utils/transitions ../Sound ../model/GameModel ./polish ./viewData".split(" "),
+function(d, a, c, b, e, h, g) {
+	return d.extend({
+		init: function(a) {
+			a = merge({
+				image: g.objects.image,
+				imageX: g.objects.types[a.type].imageX,
+				imageY: g.objects.types[a.type].imageY,
+				width: g.objects.width,
+				height: g.objects.height
+			},
+			a);
+			this._super(a);
+			this._type = a.type;
+			a.creator && this.centerOn(a.creator);
+			0 > this.y && (this.y = 0);
+			h.popIn(this, null, null, bind(this,
+			function() {
+				h.hover(this);
+				this.numFlashes = 1;
+				this.delayTween(1E3);
+				for (var a = 0; 20 > a; ++a) this.delayTween(6 * (30 - a), bind(this,
+				function() {
+					this.opacity = 1 == this.opacity ? 0 : 1;
+					20 == ++this.numFlashes && (this.expired = !0)
+				}))
+			}))
+		},
+		collect: function() {
+			if (!this.collected) {
+				this.collected = !0;
+				switch (this._type) {
+				case "heart":
+					e.healPlayer(1);
+					break;
+				default:
+					b.play("equip"),
+					e.equipWeapon(this._type)
+				}
+				this.cancelTween();
+				h.popOut(this, null, null, bind(this,
+				function() {
+					this.expired = !0
+				}))
+			}
+		}
+	})
+});
+define("js/view/BattleScreen", "djinn/View djinn/TextView djinn/math/core djinn/utils/transitions djinn/intl ../Sound ../model/GameModel ../data/monsters ./ProgressBar ./XamView ./WeaponView ./MonsterView ./LootView ./HealthView ./DifficultyView ./PauseButton ./StarburstView ./EquippedWeaponView ./polish ./viewData".split(" "),
+function(d, a, c, b, e, h, g, k, f, l, q, s, r, p, n, v, u, x, z, m) {
+	return d.extend({
+		init: function(b) {
+			b = merge({
+				acceptInputEvents: !0,
+				width: m.width,
+				height: m.height
+			},
+			b);
+			this._super(b);
+			this._combo = 0;
+			this.paused = this.running = !1;
+			this._spawnTimer = this.createBoundTimer(0, "_onSpawnTimerElapsed");
+			this._spawnCount = 1;
+			b = new d({
+				acceptInputEvents: !0,
+				parent: this,
+				image: m.battleScreen.headerPanel.image,
+				z: m.battleScreen.headerPanel.z,
+				width: m.battleScreen.headerPanel.width,
+				height: m.battleScreen.headerPanel.height
+			});
+			this._healthView = new p({
+				parent: b
+			});
+			this._equippedWeaponView = (new x({
+				parent: b,
+				visible: !1,
+				width: m.width,
+				height: m.height,
+				z: 100
+			})).on("depleted", this, "_onEquippedWeaponDepleted");
+			var c = m.battleScreen.pauseButton;
+			this._pauseButton = (new v({
+				acceptInputEvents: !0,
+				parent: b
+			})).align("right", "top", -c.margin, c.margin);
+			this._progressBar = (new f({
+				parent: b
+			})).on("newHighScore", this, "_onNewHighScore");
+			this._battleFieldView = (new d({
+				parent: this,
+				image: m.battleScreen.battleField.image,
+				width: m.battleScreen.battleField.width,
+				height: m.battleScreen.battleField.height
+			})).align(null, "bottom");
+			this._messageText = (new a({
+				parent: this,
+				fontSize: m.battleScreen.fontSize,
+				textAlign: "center",
+				visible: !1
+			})).align("center", "center");
+			this._xamView = (new l({
+				parent: this._battleFieldView
+			})).on("attack", this, "_onXamAttack");
+			this._leverView = (new d({
+				parent: this._battleFieldView,
+				image: m.battleScreen.lever.image,
+				width: m.battleScreen.lever.width,
+				height: m.battleScreen.lever.height
+			})).align("center", "bottom", null, m.battleScreen.lever.margin);
+			this._difficultyView = new n({
+				parent: this,
+				visible: !1,
+				width: m.width,
+				height: m.height,
+				z: 100
+			});
+			this._overlayView = new d({
+				parent: this,
+				backgroundColor: m.battleScreen.painColor,
+				opacity: 0,
+				width: this.width,
+				height: this.height
+			});
+			this._overlayView.tick = function(a) {
+				0 < this.opacity && (this.opacity -= a / 800)
+			};
+			this.on("inputStart", this, "_onInputStart");
+			this.on("inputMove", this, "_onInputMove");
+			this.on("inputEnd", this, "_onInputEnd");
+			this._pauseButton.on("pressed", this, "_onPressedPause");
+			g.on("gotWeapon", this, "_onGotWeapon");
+			g.on("playerDamaged", this, "_onPlayerDamaged");
+			g.on("playerHealed", this, "_onPlayerHealed")
+		},
+		_clampInput: function(a) {
+			return {
+				x: c.clamp(a.x, m.margin, m.width - m.margin),
+				y: this._xamView.y - this._xamView.height
+			}
+		},
+		_forEach: function(a, b) {
+			for (var c in a) b(a[c])
+		},
+		_getComputedDifficulty: function() {
+			return this._difficulty.value
+		},
+		_getMonsterSpawnPoint: function(a) {
+			a = m.spawnPoints[a || "small"];
+			return a[c.random(a)]
+		},
+		_getMonsterType: function() {
+			var a = this._getComputedDifficulty(),
+			a = 20 > a ? ["bat", "goblin", "demoblin"] : 50 > a ? ["demoblin", "flamingSkull", "gel", "goblin", "owlbear"] : 70 > a ? "bat demoblin flamingSkull gel goblin wizard owlbear cyclops".split(" ") : 90 > a ? ["demoblin", "flamingSkull", "wizard", "owlbear", "cyclops"] : 100 > a ? ["flamingSkull", "gel", "wizard", "owlbear", "cyclops"] : ["dragon"];
+			return a[c.random(0, a.length - 1)]
+		},
+		_getNextSpawnTime: function() {
+			var a = this._getComputedDifficulty();
+			return 25 > a ? c.random(1500, 2E3) : 50 > a ? c.random(1E3, 1500) : 90 > a ? c.random(750, 1250) : c.random(500, 1E3)
+		},
+		_getRandomWeaponType: function() {
+			var a = this._xamView.weapon,
+			b = a.replace(/\d/, ""),
+			d = Number(a.substr( - 1));
+			if ("runeforge" == a) return null;
+			isNaN(d) ? (d = ["axe", "spear", "sword"], b = d.indexOf(b), d[b] += "2", d.push(a + "2")) : d = 3 == d ? [a, a, "runeforge"] : [a, b + String(d + 1)];
+			return d[c.random(d)]
+		},
+		_makeDamageStarburst: function(a) { (new u({
+				parent: this._battleFieldView
+			})).centerOn(a)
+		},
+		_onEquippedWeaponDepleted: function() {
+			var a = ["axe", "spear", "sword"];
+			this._xamView.equipWeapon(a[c.random(a)])
+		},
+		_resetDifficulty: function(a) {
+			this._difficulty.fluctuation = 0;
+			this._difficulty.rateOfIncrease = 1.6;
+			this._difficulty.value = a || 0
+		},
+		_onXamAttack: function(a) {
+			a && (a = (new q({
+				parent: this._battleFieldView,
+				targetVector: a,
+				type: this._xamView.weapon
+			})).centerOn(this._xamView), this._weaponViews[a.id] = a)
+		},
+		_onInputStart: function(a) {
+			if (this._acceptInput) {
+				this._inputStarted = !0;
+				var b = this._clampInput(a.point);
+				this._xamView.target = b;
+				this._updateLever(a.point)
+			}
+		},
+		_onInputMove: function(a) {
+			if (this._acceptInput && this._inputStarted) {
+				var b = this._clampInput(a.point);
+				this._xamView.target = b;
+				this._updateLever(a.point)
+			}
+		},
+		_onInputEnd: function(a) {
+			this._inputStarted = !1;
+			this._xamView.target = null
+		},
+		_onGotWeapon: function(a) {
+			this._equippedWeaponView.equipWeapon(a);
+			this._xamView.equipWeapon(a)
+		},
+		_onNewHighScore: function() {
+			this._showNewHighScoreText()
+		},
+		_onPlayerDamaged: function() {
+			this._spawnTimer.start(2E3);
+			this._xamView.takeDamage(g.playerHealth);
+			this._healthView.takeDamage(g.playerHealth);
+			this._difficulty.rateOfIncrease = 1.6;
+			this._difficulty.rateOfIncrease += (g.MAX_PLAYER_HEALTH - g.playerHealth) / g.MAX_PLAYER_HEALTH * 1.6;
+			this._comboBreaker();
+			z.vibrate(this);
+			this._overlayView.opacity = 0.6;
+			1 > g.playerHealth && (h.stop("music"), this._pauseButton.enabled = !1, this._leverView.imageY = this._leverView.height, this._acceptInput = !1, this._spawnTimer.stop(), this._forEach(this._monsterViews,
+			function(a) {
+				a.alive && a.wander()
+			}), this._equippedWeaponView.hide(), this.fire("gameOver", [this._progressBar.monstersSlain]))
+		},
+		_onPlayerHealed: function(a) {
+			this._healthView.heal(a)
+		},
+		reset: function() {
+			g.reset();
+			this.running = this.paused = !1;
+			this._spawnCount = 1;
+			this._combo = 0;
+			this._progressBar.reset();
+			this._xamView.reset();
+			this._healthView.reset();
+			this._leverView.align("center");
+			this._leverView.imageY = this._leverView.height;
+			this._pauseButton.enabled = !1;
+			this._equippedWeaponView.hide();
+			this._difficulty = this._difficultyView.difficulty = {
+				fluctuation: 0,
+				rateOfIncrease: 1.6,
+				value: 1
+			};
+			this._forEach(this._weaponViews, bind(this,
+			function(a) {
+				a.removeFromParent();
+				delete this._weaponViews[a.id]
+			}));
+			this._weaponViews = {};
+			this._forEach(this._monsterViews, bind(this,
+			function(a) {
+				a.removeFromParent();
+				delete this._monsterViews[a.id]
+			}));
+			this._monsterViews = {};
+			this._forEach(this._lootViews, bind(this,
+			function(a) {
+				a.removeFromParent();
+				delete this._lootViews[a.id]
+			}));
+			this._lootViews = {}
+		},
+		_onSpawnTimerElapsed: function() {
+			if (this._acceptInput) {
+				for (var a = 0; a < this._spawnCount; ++a) this._spawnMonster();
+				100 <= this._difficulty.value && (this._resetDifficulty(c.random(25, 50)), ++this._spawnCount);
+				a = this._getNextSpawnTime();
+				this._spawnTimer.start(a)
+			}
+		},
+		pause: function() {
+			this.paused = !1;
+			this.togglePause()
+		},
+		togglePause: function() {
+			this.paused = !this.paused;
+			this.running = !this.paused;
+			this._pauseButton.enabled = !this.paused;
+			this._acceptInput = this.paused ? !1 : !0;
+			this._leverView.imageY = this._acceptInput ? 0 : this._leverView.height;
+			h.play(this.paused ? "pause": "unpause");
+			this.paused ? h.stop("music") : h.play("music")
+		},
+		_onPressedPause: function(a) {
+			this.paused || this.fire("pressedPause", [this._progressBar.monstersSlain])
+		},
+		render: function(a) {
+			this._super(a)
+		},
+		_showReadyText: function(a) {
+			var c = this._messageText;
+			c.opacity = 0;
+			c.scale = 5;
+			c.text = e.get("READY");
+			c.show();
+			a && c.delayTween(a);
+			c.tween({
+				opacity: 1,
+				scale: 1
+			},
+			500);
+			c.delayTween(1500);
+			c.tween({
+				opacity: 0,
+				scale: 0.1
+			},
+			500, b.linear,
+			function() {
+				c.hide()
+			})
+		},
+		_showNewHighScoreText: function() {
+			h.play("celebrate");
+			var a = this._messageText;
+			a.opacity = 0;
+			a.scale = 0;
+			a.text = e.get("NEW_HIGH_SCORE");
+			a.show();
+			a.tween({
+				opacity: 1,
+				scale: 0.7
+			},
+			500).delayTween(1E3).tween({
+				opacity: 0,
+				scale: 1
+			},
+			500, b.linear,
+			function() {
+				a.hide()
+			})
+		},
+		_spawnLoot: function(a) {
+			var b, d = this._xamView.hasBaseWeapon() ? 3 : 5;
+			1 === c.random(1, d) ? b = this._getRandomWeaponType() : g.isPlayerHurt() && 1 === c.random(1, 10) && (b = "heart");
+			b && (a = new r({
+				parent: this._battleFieldView,
+				creator: a,
+				type: b
+			}), this._lootViews[a.id] = a)
+		},
+		_spawnMonster: function() {
+			var a = this._getMonsterType(),
+			a = new s({
+				parent: this._battleFieldView,
+				type: a,
+				x: this._getMonsterSpawnPoint(k[a].size)
+			});
+			this._monsterViews[a.id] = a
+		},
+		tick: function(a) {
+			if (this._acceptInput) {
+				this._updateDifficulty(a);
+				this._forEach(this._weaponViews, bind(this,
+				function(a) {
+					if (a.bounce) 0 >= a.x ? (a.x = 0, a.velocity.x *= -1) : a.x >= m.width - a.width && (a.x = m.width - a.width, a.velocity.x *= -1),
+					a.y <= -a.height && (delete this._weaponViews[a.id], a.removeFromParent(), this._comboBreaker());
+					else if (a.x <= -a.width || a.x >= m.width || a.y <= -a.height) delete this._weaponViews[a.id],
+					a.removeFromParent(),
+					this._comboBreaker()
+				}));
+				this._forEach(this._lootViews, bind(this,
+				function(a) {
+					this._forEach(this._weaponViews, bind(this,
+					function(b) {
+						a && c.intersects(a, b) && a.collect()
+					}));
+					a.expired && (a.removeFromParent(), delete this._lootViews[a.id])
+				}));
+				var b = 0;
+				this._forEach(this._monsterViews, bind(this,
+				function(a) {++b;
+					this._xamView.alive && !this._xamView.invincible && a.y >= m.battleScreen.wallY - a.height && (a.attack(), this._makeDamageStarburst({
+						x: a.center.x,
+						y: a.center.y + a.height / 2
+					}));
+					this._forEach(this._weaponViews, bind(this,
+					function(b) {
+						if (a && c.intersects(a, b)) {
+							var d = b.damage;
+							delete this._weaponViews[b.id];
+							b.removeFromParent();
+							this._makeDamageStarburst(a.center);
+							a.hit(d) && (this._spawnLoot(a), delete this._monsterViews[a.id], this._incrementCombo(), this._progressBar.increment())
+						}
+					}))
+				}));
+				1 > b && (this._spawnTimer.reset(), this._spawnMonster())
+			}
+		},
+		start: function() {
+			h.play("music");
+			this.running = !0;
+			this._xamView.enter();
+			this._showReadyText(500);
+			this._spawnTimer.start(2500);
+			this.delayTween(2500, bind(this,
+			function() {
+				this._acceptInput = !0;
+				this._leverView.imageY = 0;
+				this._pauseButton.enabled = !0
+			}))
+		},
+		_updateDifficulty: function(a) {
+			var b = this._difficulty.fluctuation,
+			b = b + a / 2E3;
+			b >= 2 * Math.PI && (b -= 2 * Math.PI);
+			this._difficulty.fluctuation = b;
+			this._difficulty.value += a / 1E3 * this._difficulty.rateOfIncrease;
+			this._difficulty.value = c.clamp(this._difficulty.value, 1, 100);
+			this._difficultyView.difficulty = this._difficulty
+		},
+		_updateLever: function(a) {
+			this._leverView.x = c.clamp(a.x - this._leverView.width / 2, m.margin, m.width - m.margin - this._leverView.width)
+		},
+		_comboBreaker: function() {
+			this._combo = 0
+		},
+		hide: function() {
+			this.running = !1;
+			this._super()
+		},
+		_incrementCombo: function() {++this._combo
+		}
+	})
+});
+define("js/view/CheckboxView", "djinn/View djinn/TextView djinn/utils/transitions ../Sound ./polish ./viewData ../model/GameModel".split(" "),
+function(d, a, c, b, e, h, g) {
+	return d.extend({
+		init: function(c) {
+			var d = h.checkbox;
+			this._super(merge(c, {
+				acceptInputEvents: !0
+			}));
+			this._checked = b.enabled;
+			this._imageView = new a({
+				parent: this,
+				image: d.image,
+				imageY: this._checked ? 0 : d.height,
+				width: d.width,
+				height: d.height
+			});
+			this._textView = new a({
+				parent: this,
+				text: c.text,
+				color: h.checkbox.color,
+				verticalAlign: "middle",
+				x: this._imageView.right + h.margin,
+				y: this.height / 2 - h.margin / 2
+			});
+			this.on("inputStart", this, "_onInputStart");
+			Object.defineProperty(this, "text", {
+				set: function(a) {
+					this._textView.text = a
+				}
+			})
+		},
+		_onInputStart: function() {
+			e.buttonPress(this._imageView, bind(this,
+			function() {
+				this._checked = !this._checked;
+				this._imageView.imageY = this._checked ? 0 : this._imageView.height;
+				b.enabled = this._checked;
+				g.set("soundEnabled", b.enabled);
+				this.fire("check")
+			}))
+		}
+	})
+});
+define("js/view/SettingsScreen", "djinn/View djinn/TextView djinn/utils/transitions djinn/intl ../Sound ../model/GameModel ./ButtonView ./CheckboxView ./viewData".split(" "),
+function(d, a, c, b, e, h, g, k, f) {
+	return d.extend({
+		init: function(c) {
+			c = merge({
+				acceptInputEvents: !0,
+				width: f.width,
+				height: f.height
+			},
+			c);
+			this._super(c);
+			this._modalView = (new d({
+				acceptInputEvents: !0,
+				parent: this,
+				image: f.modal.image,
+				width: f.modal.width,
+				height: f.modal.height
+			})).align("center", "center", f.modal.offsetX);
+			this._modalStartY = this._modalView.y;
+			this._settingsText = (new a({
+				parent: this._modalView,
+				text: b.get("PAUSED"),
+				color: f.settingsScreen.color,
+				fontSize: f.settingsScreen.header.fontSize,
+				textAlign: "center",
+				y: f.settingsScreen.padding
+			})).align("center");
+			this._yourScoreText = (new a({
+				parent: this._modalView,
+				color: f.settingsScreen.color,
+				fontSize: f.settingsScreen.yourScore.fontSize,
+				textAlign: "center",
+				y: f.settingsScreen.yourScore.y
+			})).align("center");
+			this._highScoreText = (new a({
+				parent: this._modalView,
+				color: f.settingsScreen.color,
+				fontSize: f.settingsScreen.highScore.fontSize,
+				textAlign: "center",
+				y: f.settingsScreen.highScore.y
+			})).align("center"); (new k({
+				parent: this._modalView,
+				text: b.get("PLAY_SOUND"),
+				color: f.settingsScreen.color,
+				fontSize: f.settingsScreen.playSound.fontSize,
+				textAlign: "center",
+				y: f.settingsScreen.playSound.y,
+				width: f.settingsScreen.playSound.width,
+				height: f.settingsScreen.playSound.height
+			})).align("center").on("press", this, "_onPressPlaySound");
+			c = f.settingsScreen.button;
+			var e = f.margin / 2;
+			this._quitButton = (new g({
+				parent: this._modalView,
+				image: c.image,
+				text: b.get("QUIT"),
+				defaultImageY: c.quitImageY,
+				x: this._modalView.width / 2 - c.width - e,
+				y: c.y,
+				width: c.width,
+				height: c.height
+			})).on("pressed", this, "_onPressedQuit");
+			this._continueButton = (new g({
+				parent: this._modalView,
+				image: c.image,
+				text: b.get("CONTINUE"),
+				x: this._modalView.width / 2 + e,
+				y: f.settingsScreen.button.y,
+				width: c.width,
+				height: c.height
+			})).on("pressed", this, "_onPressedContinue")
+		},
+		_onPressPlaySound: function() {
+			logger.log("toggle sound")
+		},
+		_onPressedContinue: function() {
+			e.play("input");
+			this._continueButton.disable();
+			this.fire("continue")
+		},
+		_onPressedQuit: function() {
+			e.play("input");
+			this._quitButton.disable();
+			this.fire("quit")
+		},
+		show: function(a) {
+			this._modalView.y = -this._modalView.height;
+			this._quitButton.enable();
+			this._continueButton.enable();
+			this._yourScoreText.text = b.get("YOUR_SCORE") + " " + a;
+			this._highScoreText.text = b.get("HIGH_SCORE") + " " + h.get("highScore");
+			this._super();
+			this._modalView.tween({
+				y: this._modalStartY
+			},
+			500, c.easeOut)
+		},
+		hide: function(a) {
+			var b = this._super;
+			this._modalView.tween({
+				y: -this._modalView.height
+			},
+			500, c.easeIn,
+			function() {
+				b();
+				a && a()
+			})
+		},
+		tick: function(a) {
+			this._super && this._super(a)
+		}
+	})
+});
+define("js/OnslaughtDefense", "djinn/Game djinn/View djinn/TextView djinn/globalTimer djinn/assets djinn/client djinn/stage djinn/intl ./model/GameModel ./view/TitleScreen ./view/BattleScreen ./view/GameOverScreen ./view/SettingsScreen ./view/polish ./view/viewData ./Sound".split(" "),
+function(d, a, c, b, e, h, g, k, f, l, q, s, r, p, n, v) {
+	return d.extend({
+		init: function(a) {
+			this._super(merge(a, {
+				showFPS: !1,
+				eraseBeforeRender: !1
+			}));
+			c.defaults.color = n.color;
+			c.defaults.fontFamily = n.fontFamily;
+			c.defaults.fontSize = n.fontSize;
+			c.defaults.shadowColor = n.shadowColor;
+			h.on("orientationChange", this, "_updateOrientation"); (new c({
+				parent: this.view,
+				text: k.get("LOADING"),
+				textAlign: "center"
+			})).align("center", "center");
+			e.load([n.titleScreen.image, n.titleScreen.title.image, n.titleScreen.monsters.image, n.button.image], bind(this,
+			function() {
+				this._preloadImages();
+				this._makeViews();
+				this._updateOrientation();
+				this._titleScreen.show(); ! h.isIOS && v.load()
+			}));
+			h.isIOS && g.on("initialInput",
+			function() {
+				v.load()
+			})
+		},
+		_makeViews: function() {
+			var b = new a({
+				acceptInputEvents: !0,
+				parent: this.view,
+				clip: !0,
+				backgroundColor: n.backgroundColor,
+				width: n.width,
+				height: n.height
+			});
+			this._battleScreen = (new q({
+				parent: b,
+				visible: !1
+			})).on("gameOver", this, "_onGameOver").on("pressedPause", this, "_onPressedPause");
+			this._gameOverScreen = (new s({
+				parent: b,
+				visible: !1
+			})).on("pressedContinue", this, "_onPressedGameOverContinue").on("pressedQuit", this, "_onPressedGameOverQuit");
+			this._settingsScreen = (new r({
+				parent: b,
+				visible: !1
+			})).on("quit", this, "_onPressedSettingsQuit").on("continue", this, "_onPressedSettingsContinue");
+			this._titleScreen = (new l({
+				parent: b,
+				opacity: 0
+			})).on("playButton", this, "_onPressedPlay")
+		},
+		_onGameOver: function(a) {
+			this._gameOverScreen.delayTween(500, bind(this,
+			function() {
+				
+				var b = f.get("highScore");
+				this._gameOverScreen.gotNewHighScore = a > b;
+				this._gameOverScreen.monstersSlain = a;
+				this._gameOverScreen.opacity = 1;
+				this._gameOverScreen.show();
+				a > b && f.set("highScore", a)
+			}))
+		},
+		_onPressedGameOverContinue: function() {
+			p.fadeOut(this._battleScreen, 250);
+			this._battleScreen.reset();
+			this._gameOverScreen.hide(bind(this,
+			function() {
+				this._gameOverScreen.hide();
+				this._battleScreen.show();
+				p.fadeIn(this._battleScreen, 500, bind(this,
+				function() {
+					this._battleScreen.start()
+				}))
+			}))
+		},
+		_onPressedGameOverQuit: function() {
+			p.fadeOut(this._battleScreen, 250);
+			this._gameOverScreen.hide(bind(this,
+			function() {
+				this._titleScreen.show()
+			}))
+		},
+		_onPressedSettingsQuit: function() {
+			p.fadeOut(this._battleScreen, 250);
+			this._settingsScreen.hide(bind(this,
+			function() {
+				this._titleScreen.show()
+			}))
+		},
+		_onPressedSettingsContinue: function() {
+			this._settingsScreen.hide(bind(this,
+			function() {
+				this._battleScreen.togglePause()
+			}))
+		},
+		_onPressedPause: function(a) {
+			this._battleScreen.togglePause();
+			this._settingsScreen.show(a)
+		},
+		_onPressedPlay: function() {
+			p.fadeOut(this._battleScreen, 250);
+			this._battleScreen.reset();
+			p.fadeOut(this._titleScreen, 500, bind(this,
+			function() {
+				this._titleScreen.hide();
+				this._battleScreen.show();
+				p.fadeIn(this._battleScreen, 500, bind(this,
+				function() {
+					this._battleScreen.start()
+				}))
+			}))
+		},
+		_preloadImages: function() {
+			e.load("media/images/bar_filler.png media/images/battle_field.png media/images/buttons_colored_narrow.png media/images/header_panel.png media/images/high_score_dragon.png media/images/lever.png media/images/modal.png media/images/objects.png media/images/pause.png media/images/xam.png media/images/checkbox.png media/images/monsters/bat.png media/images/monsters/demoblin.png media/images/monsters/flaming_skull.png media/images/monsters/gel.png media/images/monsters/goblin.png media/images/monsters/wizard.png media/images/monsters/owlbear.png media/images/monsters/cyclops.png media/images/monsters/green_dragon.png".split(" "), bind(this,
+			function() {
+				this._titleScreen.doneLoading()
+			}))
+		},
+		_updateOrientation: function() {
+			"portrait" != h.orientation && this._battleScreen.running && (this._settingsScreen.show(), this._battleScreen.pause())
+		}
+	})
+});
+require(["djinn/global", "djinn/manifest", "djinn/assets", "djinn/stage"],
+function(d, a, c, b) {
+	c.cacheImage("__rotateImage", "data:image/jpeg;base64,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");
+	b.matchSize(a.sizes);
+	require(["js/OnslaughtDefense"],
+	function(a) { (new a).run()
+	})
+});

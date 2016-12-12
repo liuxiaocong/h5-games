@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pk - Stick Hero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <script type="text/javascript" src="phaser.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="fastclick.js"></script>
+<script type="text/javascript">
+FastClick.attach(document.body);
+var game = new Phaser.Game(325, 512, Phaser.AUTO, 'sticker-hero');
+game.States = {};
+
+//States - preload
+game.States.boot = function () {
+    this.preload = function () {
+        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.scale.pageAlignHorizontally = true;
+        this.scale.pageAlignVertically = true;
+        this.scale.setScreenSize(true);
+        game.load.image('loading', 'preloader.gif');
+    };
+    this.create = function () {
+        game.state.start('preload');
+    };
+};
+
+game.States.preload = function () {
+    this.preload = function () {
+        var preloadSprite = game.add.sprite(50, game.height / 2, 'loading');
+        game.load.setPreloadSprite(preloadSprite);
+        // 下面为要加载的资源
+        game.load.image('radish', 'radish.png');
+        game.load.image('radish1', 'radish1.png');
+        game.load.image('radish2', 'radish2.png');
+        game.load.image('radish3', 'radish3.png');
+        game.load.image('background', 'background.jpg');
+        game.load.image('btn', 'start-button.png');
+        game.load.image('title', 'title.png');
+        game.load.image('score', 'score.png');
+        game.load.image('rainbow', 'rainbow.png');
+        game.load.image('stick', 'stick.png');
+        game.load.image('cloud1', 'cloud1.png');
+        game.load.image('cloud2', 'cloud2.png');
+        game.load.image('ground', 'ground.png');
+        game.load.spritesheet('hero', 'bird.png', 55, 85, 44);
+        game.load.image('gameover', 'game-over.png');
+        game.load.bitmapFont('font', 'fonts/font.png', 'fonts/font.fnt');
+    };
+    this.create = function () {
+        game.state.start('menu');
+    };
+};
+
+game.States.menu = function () {
+    this.create = function () {
+        var bg = game.add.tileSprite(0, 0, game.width, game.height, 'background');
+        bg.autoScroll(-10, 0);
+        var titleGroup = game.add.group();
+        titleGroup.create(0, 0, 'title');
+        titleGroup.x = 58;
+        titleGroup.y = 90;
+        game.add.tween(titleGroup).to({y: 110}, 1000, null, true, 0, Number.MAX_VALUE, true);
+        var btn = game.add.button(game.width / 2, game.height / 2, 'btn', function () {
+            
+            try{
+            gameClient.gameStart();
+        }catch (e){}
+			game.state.start('play');
+        });
+        btn.anchor.setTo(0.5, 0.5);
+    };
+};
+
+// States - play
+game.States.play = function () {
+    this.generateGround = function () {
+        if (!this.firstTime) {
+            this.ground = this.nextground;
+        }
+        this.firstTime = false;
+        var random = Math.random();
+        var x = (this.ground.x + this.ground.width / 2 + 30) + (game.width - (this.ground.x + this.ground.width / 2 + 30 + 50)) * random;
+        this.nextground = game.add.sprite(x, game.height - 50, 'ground');
+        this.nextground.anchor.setTo(0.5, 0.5);
+        this.nextground.scale.setTo(0.55 - (0.3 * random), 0.5);
+        this.nextground.immovable = false;
+        this.nextgroundRightEdge = this.nextground.x + this.nextground.width / 2;
+        this.nextgroundLeftEdge = this.nextground.x - this.nextground.width / 2;
+        game.physics.arcade.enable(this.nextground);
+        console.log("left" + this.nextgroundLeftEdge);
+        console.log("right" + this.nextgroundRightEdge);
+        // 判断ground的距离，距离越远，人走的速度越快，分数越高
+        if (random >= 0.7 && random < 1) {
+            this.radish = game.add.sprite(this.nextground.x, game.height - 115, 'radish3');
+            this.radish.anchor.setTo(0.5, 0.5);
+            this.addedScore = 4;
+            this.heroSpeed = 200;
+        } else if (random >= 0.4 && random < 0.7) {
+            this.radish = game.add.sprite(this.nextground.x, game.height - 115, 'radish2');
+            this.radish.anchor.setTo(0.5, 0.5);
+            this.addedScore = 3;
+            this.heroSpeed = 200;
+        } else if (random >= 0.2 && random < 0.4) {
+            this.radish = game.add.sprite(this.nextground.x, game.height - 115, 'radish1');
+            this.radish.anchor.setTo(0.5, 0.5);
+            this.addedScore = 2;
+            this.heroSpeed = 200;
+        } else if (random >= 0 && random < 0.2) {
+            this.radish = game.add.sprite(this.nextground.x, game.height - 115, 'radish');
+            this.radish.anchor.setTo(0.5, 0.5);
+            this.addedScore = 1;
+            this.heroSpeed = 200;
+        }
+    }
+    this.create = function () {
+        this.bg = game.add.tileSprite(0, 0, game.width, game.height, 'background');
+        this.bg.autoScroll(-10, 0);
+        var rainbow = game.add.sprite(0, 30, 'rainbow');
+        rainbow.alpha = 0.5;
+        this.stick = null;
+        this.heroSpeed = 0;
+        this.scaleEnable = false;
+        this.addedScore = 1;//过关的时候增加的分数
+        this.topScale = 0.01;
+        this.lessGap = 20;
+        this.lockScale = false;
+        this.nextground = null;
+        this.stickOffsetX = 48;
+        this.nextgroundRightEdge = 9999;
+        this.nextgroundLeftEdge = 0;
+        this.isOutOfGround = false;
+        this.stepEnd = false;
+        this.moving = false;
+        this.firstTime = true;
+        this.successTime = 0;//初始分数
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.stage.backgroundColor = 0xeeeeee;
+        this.stick = game.add.sprite(49, game.height - 100, 'stick');
+        this.stickOrgHeight = this.stick.height;
+        this.hero = game.add.sprite(17, game.height - 134, 'hero');
+
+        this.hero.anchor.setTo(0.5, 0.5);
+        this.ground = game.add.sprite(25, game.height - 50, 'ground');
+        this.ground.anchor.setTo(0.5, 0.5);
+        this.ground.scale.setTo(0.5, 0.5);
+        this.stick.anchor.setTo(0.5, 1);
+        this.stick.scale.setTo(1, this.topScale);
+        this.hero.animations.add('run', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 24, true); //跑动时的动画
+        this.hero.animations.add('static', [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], 24, true);
+        this.hero.animations.add('drop', [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 24, false);
+        this.hero.animations.play('static');
+        // this.hero.frame = 3;
+        game.input.onDown.add(this.enableScale, this); //给鼠标按下事件绑定鸟的飞翔动作
+        game.input.onUp.add(this.disableScale, this);
+        game.input.onUp.add(this.dropStick, this);
+        game.physics.arcade.enable(this.stick);
+        game.physics.arcade.enable(this.ground);
+        game.physics.arcade.enable(this.hero);
+        this.hero.enableBody = true;
+        //this.hero.body.gravity.y = 100;
+        this.ground.enableBody = true;
+        this.ground.body.moves = true;
+        this.ground.immovable = false;
+        this.generateGround();
+
+        this.group = game.add.group();//添加一个组，包含所有东西
+        this.group.add(this.hero);//给组添加实体
+        this.group.add(this.stick);//给组添加实体
+        this.group.add(this.nextground);//给组添加实体
+        this.group.add(this.ground);//给组添加实体
+
+        this.scoreText = game.add.bitmapText(game.width / 2 - 5, game.width / 2 - 100, 'font', '0');
+    }
+    this.enableScale = function () {
+        this.scaleEnable = true;
+    }
+    this.disableScale = function () {
+        this.scaleEnable = false;
+    }
+    this.dropStick = function () {
+        if (!this.lockScale) {
+            this.lockScale = true;
+            var that = this;
+            //this.stickOffsetX += this.stick.height;
+            console.log(this.stick.height);
+            this.stickOffsetX += this.stickOrgHeight * this.topScale;
+//            console.log(this.stick.height);
+//            console.log(200 * this.topScale)
+            console.log("target x:" + this.stickOffsetX);
+            window.setTimeout(function () {
+                game.add.tween(that.stick).to({angle: 90}, 600, null, true, 0, 0, false);
+            }, 200)
+            window.setTimeout(function () {
+                that.hero.animations.play('run');
+                that.hero.body.velocity.x = that.heroSpeed;
+            }, 900)
+        }
+    }
+
+    this.scrollBack = function () {
+        this.hero.body.velocity.x = -100;
+        this.stick.body.velocity.x = -100;
+        this.nextground.body.velocity.x = -100;
+        this.ground.body.velocity.x = -100;
+        this.moving = true;
+    };
+
+    this.scrollStop = function () {
+        this.hero.body.velocity.x = 0;
+        this.stick.body.velocity.x = 0;
+        this.nextground.body.velocity.x = 0;
+        this.ground.body.velocity.x = 0;
+        this.generateGround();
+        this.lockScale = false;
+    };
+    this.resetStick = function () {
+        this.topScale = 0.01;
+        this.stick.scale.setTo(1, this.topScale);
+        game.add.tween(this.stick).to({angle: 0}, 10, null, true, 0, 0, false);
+        game.add.tween(this.stick).to({x: this.nextground.x + this.nextground.width / 2 - 2}, 10, null, true, 0, 0, false);
+        this.stickOffsetX = this.nextground.x + this.nextground.width / 2 - 2;
+        this.stepEnd = false;
+        console.log("new sticker offset x:" + this.stickOffsetX);
+        console.log(this.hero.x);
+    };
+    this.reStart = function () {
+        this.game.state.start('play');
+        this.resetStick();
+        this.scrollStop();
+    }
+    this.gameOver = function () {
+        this.scoreText.destroy();
+        var gameOver = game.add.sprite(game.width / 2, game.height / 4, 'gameover');
+        var score = game.add.sprite(game.width / 2 - 70, game.height / 3, 'score');
+        var that = this;
+        gameOver.anchor.setTo(0.5, 0.5);
+        var score = that.successTime.toString();
+        updateShareScore(score);
+        var reStartBtn = game.add.button(game.width / 2, game.height / 1.8, 'btn', function () {
+            that.reStart();
+        });
+        reStartBtn.anchor.setTo(0.5, 0.5);
+        var scoreText = game.add.bitmapText(game.width / 2 + 20, game.height / 3 + 4, 'font', score);
+    };
+
+    this.showAddedScore = function () {
+        // 过关的时候展示增加的分数
+        var addedScoreText = game.add.text(game.width / 2, game.height / 2, "+" + this.addedScore.toString());
+        addedScoreText.anchor.setTo(0.5, 0.5);
+        addedScoreText.alpha = 0;
+        game.add.tween(addedScoreText).to({alpha: 1}, 500, Phaser.Easing.Linear.None, true, 0, 1, true);
+    };
+
+    this.update = function () {
+        game.physics.arcade.collide(this.hero, this.ground);
+        game.physics.arcade.collide(this.ground, this.stick);
+        if (this.scaleEnable == true && (!this.lockScale)) {
+            this.topScale += 0.01;
+            //game.add.tween(this.stick.scale).to({x: 1, y: this.topScale}, 100, null, true, 0, 0, false);
+            game.add.tween(this.stick).to({height: this.stickOrgHeight * this.topScale}, 100, null, true, 0, 0, false);
+        }
+        if (this.hero.x >= this.stickOffsetX) {
+            if (!this.stepEnd) {
+                console.log("end");
+                console.log(this.hero.x);
+                if ((this.nextgroundLeftEdge < this.hero.x) && (this.hero.x < (this.nextgroundRightEdge))) {
+                    this.hero.body.velocity.x = 0;
+                    // this.hero.animations.stop();
+                    this.hero.animations.play('static');
+                    var targetX = this.nextgroundRightEdge - 17;
+                    game.add.tween(this.hero).to({x: targetX}, 100, null, true, 0, 0, false);
+                    this.scrollBack();
+                    console.log("success");
+                    this.showAddedScore();
+                    this.successTime += this.addedScore;
+                    this.scoreText.text = this.successTime.toString();
+                    
+                    try{
+            gameClient.updateScore(parseInt(this.scoreText.text));
+        }catch (e){}
+                    // console.log(parseInt(this.scoreText.text));
+                    this.radish.destroy();
+                } else {
+                    that = this;
+                    this.hero.animations.stop();// 掉下去的时候停止动画
+                    this.hero.frame = 4;// 任务切换到第五帧
+				
+                    console.log("fail");	
+					
+                    try{
+            gameClient.gameOver(parseInt(this.scoreText.text));
+        }catch (e){}
+					// console.log(parseInt(this.scoreText.text));
+                    this.hero.body.velocity.x = 0;
+                    this.hero.animations.play('drop');
+                    setTimeout(function () {//掉落的时候，停顿一小段时间再掉落
+                        that.hero.body.gravity.y = 5500;
+                    }, 1000);
+
+                    var that = this;
+                    window.setTimeout(function () {
+                        that.gameOver();
+                    }, 1000)
+                }
+                this.stepEnd = true;
+            }
+        }
+
+        if (this.hero.x < 15 && this.moving === true) {
+            this.resetStick();
+            this.scrollStop();
+            this.moving = false;
+        }
+    }
+}
+game.state.add('boot', game.States.boot);
+game.state.add('preload', game.States.preload);
+game.state.add('menu', game.States.menu);
+game.state.add('play', game.States.play);
+game.state.start('boot');
+</script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" src="pk/PkApi.js"></script>
+<script type="text/javascript" src="pk/WeixinApi.js"></script>
+<script type="text/javascript" src="pk/PkGame.js"></script>
+<script type="text/javascript" src="pk/sockjs-0.3.4.js"></script>
+<script type="text/javascript" src="pk/stomp.js"></script>
+<script type="text/javascript" src="http://pkleyou.cn/scripts/GameClient.js"></script>
+
+<script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '我吃到了' + bestScore + '个胡萝卜，你呢';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+     pkGame.ready(function () {
+
+    });
+</script>
+<script type="text/javascript">
+    PkApi.onReady(function(Api) {
+		//alert(Api);////
+        try{
+                gameClient.init(Api);
+            }catch (e){
+                var oj = document.body;
+                var docHei = document.documentElement.clientHeight;
+                var docWid = document.documentElement.clientWidth;
+
+                var div = document.createElement("div");
+                div.setAttribute('id','netStatu');
+                div.style.cssText = "width:200px;height:35px;line-height:35px;position:absolute;top:"+(docHei-35)/2+"px;left:"+(docWid-200)/2+"px;background:#000000;color:#ffffff;opacity:0.9;text-align:center;font-size:13px;border-radius:5px;z-index:1000";
+
+                div.innerHTML = '网络太慢了，无法参加活动哦!';
+                oj.appendChild(div);
+                setTimeout(function(){
+                    document.body.removeChild(document.getElementById('netStatu'));
+                },5000);
+            }	
+   });
+</script>
+
+</body>
+</html>

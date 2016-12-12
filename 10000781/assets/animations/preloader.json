@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "loony_preloader_run0001",
+	"frame": {"x":0,"y":0,"w":71,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":100},
+	"sourceSize": {"w":71,"h":100}
+},
+{
+	"filename": "loony_preloader_run0002",
+	"frame": {"x":72,"y":0,"w":71,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":100},
+	"sourceSize": {"w":71,"h":100}
+},
+{
+	"filename": "medic_preloader_run0001",
+	"frame": {"x":144,"y":0,"w":121,"h":123},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":123},
+	"sourceSize": {"w":121,"h":123}
+},
+{
+	"filename": "medic_preloader_run0002",
+	"frame": {"x":0,"y":124,"w":121,"h":123},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":123},
+	"sourceSize": {"w":121,"h":123}
+},
+{
+	"filename": "medic_preloader_run0003",
+	"frame": {"x":122,"y":124,"w":121,"h":123},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":123},
+	"sourceSize": {"w":121,"h":123}
+},
+{
+	"filename": "medic_preloader_run0004",
+	"frame": {"x":244,"y":124,"w":121,"h":123},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":123},
+	"sourceSize": {"w":121,"h":123}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "preloader.png",
+	"format": "RGBA8888",
+	"size": {"w":366,"h":247},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b29e49469b1477be9e01189f8032e4f8:0c199c5aa0ce9bffe03ffd6bec55aff7:b6cdaa10a06bef6f46bf15cd0aaf732b$"
+}
+}

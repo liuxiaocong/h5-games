@@ -1,0 +1,21 @@
+<font>
+  <info face="ComickBook" size="51" bold="0" italic="0" charset="" unicode="" stretchH="100" smooth="1" aa="1" padding="1,1,1,1" spacing="0,0" outline="0"/>
+  <common lineHeight="71" base="56" scaleW="381" scaleH="44" pages="1" packed="0"/>
+  <pages>
+    <page id="0" file="font.png"/>
+  </pages>
+  <chars count="10">
+    <char id="48" x="2" y="1.5" width="35" height="42" xoffset="2" yoffset="3" xadvance="36" page="0" chnl="15"/>
+    <char id="49" x="46.5" y="2" width="22" height="41" xoffset="2" yoffset="2" xadvance="23" page="0" chnl="15"/>
+    <char id="50" x="79.5" y="2.5" width="32" height="40" xoffset="2" yoffset="3" xadvance="33" page="0" chnl="15"/>
+    <char id="51" x="118.5" y="2" width="30" height="41" xoffset="2" yoffset="3" xadvance="31" page="0" chnl="15"/>
+    <char id="52" x="154" y="1.5" width="35" height="42" xoffset="2" yoffset="3" xadvance="37" page="0" chnl="15"/>
+    <char id="53" x="193.5" y="1.5" width="32" height="42" xoffset="2" yoffset="3" xadvance="33" page="0" chnl="15"/>
+    <char id="54" x="231" y="1" width="33" height="43" xoffset="1" yoffset="1" xadvance="35" page="0" chnl="15"/>
+    <char id="55" x="267" y="2" width="37" height="41" xoffset="2" yoffset="4" xadvance="37" page="0" chnl="15"/>
+    <char id="56" x="307.5" y="2" width="32" height="41" xoffset="2" yoffset="3" xadvance="33" page="0" chnl="15"/>
+    <char id="57" x="345" y="1" width="33" height="43" xoffset="2" yoffset="0" xadvance="34" page="0" chnl="15"/>
+    <char id="32" x="0" y="0" width="1" height="1" xoffset="0" yoffset="0" xadvance="27" page="0" chnl="15"/>
+  </chars>
+  <kernings count="0"/>
+</font>

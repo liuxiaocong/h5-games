@@ -1,0 +1,46 @@
+splash.atlas.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+progress_bar
+  rotate: false
+  xy: 2, 257
+  size: 315, 21
+  orig: 315, 21
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 327, 2
+  size: 400, 198
+  orig: 400, 198
+  offset: 0, 0
+  index: -1
+immanitas
+  rotate: false
+  xy: 327, 202
+  size: 400, 101
+  orig: 400, 101
+  offset: 0, 0
+  index: -1
+blackBox
+  rotate: false
+  xy: 729, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+progress_bar_background
+  rotate: false
+  xy: 2, 2
+  size: 323, 253
+  orig: 323, 253
+  offset: 0, 0
+  index: -1
+whiteBox
+  rotate: false
+  xy: 729, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

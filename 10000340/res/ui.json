@@ -1,0 +1,567 @@
+{
+    "displays": {
+        "A10Button": {
+            "anchorY": 0,
+            "start": 0,
+            "end": 1,
+            "anchorX": 0,
+            "type": "LogoButton",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "moreBtn1": {
+            "anchorY": 0,
+            "start": 0,
+            "end": 0,
+            "anchorX": 0,
+            "type": "MoreGameButton",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "resultBG": {
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "type": "null",
+            "start": 32,
+            "end": 32
+        },
+        "barFrame": {
+            "anchorX": 0,
+            "anchorY": 1,
+            "type": "null",
+            "start": 19,
+            "end": 19
+        },
+        "startBtn": {
+            "anchorY": 0.5,
+            "start": 33,
+            "end": 34,
+            "anchorX": 0.5,
+            "type": "button",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "gotText": {
+            "anchorX": 0.5,
+            "anchorY": 0.53,
+            "type": "null",
+            "start": 22,
+            "end": 22
+        },
+        "TheBar": {
+            "anchorX": 0,
+            "anchorY": 1,
+            "type": "progress",
+            "start": 18,
+            "end": 18
+        },
+        "barHilight": {
+            "anchorX": -0.22,
+            "anchorY": 2.06,
+            "type": "null",
+            "start": 21,
+            "end": 21
+        },
+        "replayBtn": {
+            "anchorY": 0.5,
+            "start": 30,
+            "end": 31,
+            "anchorX": 0.5,
+            "type": "button",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "moreBtn2": {
+            "anchorY": 0.5,
+            "start": 0,
+            "end": 0,
+            "anchorX": 0.33,
+            "type": "MoreGameButton",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "PauseButton": {
+            "anchorY": 0.49,
+            "start": 2,
+            "end": 4,
+            "anchorX": 0.48,
+            "type": "button",
+            "labels": {
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "menuBG": {
+            "anchorX": 0,
+            "anchorY": 0,
+            "type": "null",
+            "start": 23,
+            "end": 23
+        },
+        "barHeader": {
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "type": "null",
+            "start": 20,
+            "end": 20
+        },
+        "SoundButton": {
+            "anchorY": 0.49,
+            "start": 15,
+            "end": 17,
+            "anchorX": 0.48,
+            "type": "button",
+            "labels": {
+                "selected": {
+                    "start": 2,
+                    "end": 2
+                },
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        },
+        "moreBtn": {
+            "anchorY": 0.62,
+            "start": 0,
+            "end": 0,
+            "anchorX": 0.51,
+            "type": "MoreGameButton",
+            "labels": {
+                "over": {
+                    "start": 1,
+                    "end": 1
+                },
+                "up": {
+                    "start": 0,
+                    "end": 0
+                }
+            }
+        }
+    },
+    "fonts": {
+        "ScoreFont": {
+            "size": 45,
+            "chars": "0123456789",
+            "start": 5,
+            "end": 14
+        }
+    },
+    "mcs": {
+        "ControlBar": {
+            "anchorX": 0,
+            "children": {
+                "pauseBtn": {
+                    "class": "PauseButton",
+                    "frames": "5.60,-15.15,0.00,1.00,1.00,1.00",
+                    "zOrder": 1
+                },
+                "soundBtn": {
+                    "class": "SoundButton",
+                    "frames": "53.30,-15.15,0.00,1.00,1.00,1.00",
+                    "zOrder": 0
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "-15.25,-35.55,90.3,42.5"
+        },
+        "MainMenu": {
+            "anchorX": 0,
+            "children": {
+                "startBtn": {
+                    "class": "startBtn",
+                    "frames": "339.55,587.50,0.00,1.00,1.00,1.00",
+                    "zOrder": 1
+                },
+                "instance494": {
+                    "class": "menuBG",
+                    "frames": "0.00,0.00,0.00,1.00,1.00,1.00",
+                    "zOrder": 0
+                },
+                "instance498": {
+                    "class": "A10Button",
+                    "frames": "0.00,0.00,0.00,1.00,1.00,1.00",
+                    "zOrder": 3
+                },
+                "moreBtn": {
+                    "class": "moreBtn",
+                    "frames": "197.75,473.15,0.00,1.00,1.00,1.00",
+                    "zOrder": 2
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "-0.05,0,640,960.5"
+        },
+        "TopBar": {
+            "anchorX": 0,
+            "children": {
+                "instance656": {
+                    "class": "A10Button",
+                    "frames": "0.00,0.00,0.00,1.00,1.00,1.00",
+                    "zOrder": 5
+                },
+                "instance649": {
+                    "class": "HPBar",
+                    "frames": "2.00,952.00,0.00,1.00,1.00,1.00",
+                    "zOrder": 4
+                },
+                "instance635": {
+                    "class": "ControlBar",
+                    "frames": "561.20,947.00,0.00,1.00,1.00,1.00",
+                    "zOrder": 1
+                },
+                "moreBtn": {
+                    "class": "moreBtn1",
+                    "frames": "469.15,930.40,0.00,0.50,0.50,1.00",
+                    "zOrder": 3
+                },
+                "hp": {
+                    "class": "TheBar",
+                    "frames": "3.70,940.15,0.00,1.00,1.00,1.00",
+                    "zOrder": 0
+                },
+                "scoreTxt": {
+                    "class": "ScoreFont",
+                    "frames": "318.85,952.00,0.00,1.00,1.00,1.00",
+                    "text": "000000",
+                    "zOrder": 2
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "0,0,636.25,955.4"
+        },
+        "HPBar": {
+            "anchorX": 0,
+            "children": {
+                "instance468": {
+                    "class": "barHeader",
+                    "frames": "25.35,-17.50,0.00,0.85,0.85,1.00",
+                    "zOrder": 2
+                },
+                "instance464": {
+                    "class": "barHilight",
+                    "frames": "-38.00,-8.55,0.00,0.61,0.61,1.00",
+                    "zOrder": 0
+                },
+                "instance466": {
+                    "class": "barFrame",
+                    "frames": "0.00,-9.15,0.00,0.85,0.85,1.00",
+                    "zOrder": 1
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "0,-38.4,222.8,41.8"
+        },
+        "GameResult": {
+            "anchorX": 0,
+            "children": {
+                "replayBtn": {
+                    "class": "replayBtn",
+                    "frames": "313.50,373.80,0.00,1.00,1.00,1.00",
+                    "zOrder": 3
+                },
+                "instance402": {
+                    "class": "resultBG",
+                    "frames": "314.95,468.60,0.00,1.00,1.00,1.00",
+                    "zOrder": 0
+                },
+                "scoreTxt": {
+                    "class": "ScoreFont",
+                    "frames": "263.80,481.45,0.00,1.00,1.00,1.00",
+                    "text": "0",
+                    "zOrder": 2
+                },
+                "instance436": {
+                    "class": "gotText",
+                    "frames": "322.15,550.70,0.00,1.00,1.00,1.00",
+                    "zOrder": 1
+                },
+                "moreBtn": {
+                    "class": "moreBtn1",
+                    "frames": "184.90,373.80,0.00,0.70,0.70,1.00",
+                    "zOrder": 4
+                }
+            },
+            "anchorY": 0,
+            "totalFrames": 1,
+            "rect": "60.8,297.4,509.15,343.65"
+        }
+    },
+    "frames": {
+        "ui_000034": {
+            "frame": "{{644,130},{352,130}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{348,126}"
+        },
+        "ui_000028": {
+            "frame": "{{644,260},{365,97}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{361,93}"
+        },
+        "ui_000021": {
+            "frame": "{{644,948},{344,14}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{340,10}"
+        },
+        "ui_000000": {
+            "frame": "{{644,694},{204,66}}",
+            "rotated": false,
+            "offset": "{-8.00,-5.10}",
+            "sourceSize": "{220,68.2}"
+        },
+        "ui_000033": {
+            "frame": "{{644,0},{352,130}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{348,126}"
+        },
+        "ui_000014": {
+            "frame": "{{940,760},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000007": {
+            "frame": "{{996,41},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000031": {
+            "frame": "{{865,538},{151,57}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{147,53}"
+        },
+        "ui_000024": {
+            "frame": "{{644,454},{221,84}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{217,80}"
+        },
+        "ui_000017": {
+            "frame": "{{865,760},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000003": {
+            "frame": "{{970,622},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000010": {
+            "frame": "{{996,171},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000006": {
+            "frame": "{{968,760},{18,41}}",
+            "rotated": false,
+            "offset": "{-1.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000027": {
+            "frame": "{{644,817},{221,57}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{217,53}"
+        },
+        "ui_000020": {
+            "frame": "{{868,622},{55,53}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{51,49}"
+        },
+        "ui_000023": {
+            "frame": "{{0,0},{644,964}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{640,960}"
+        },
+        "ui_000009": {
+            "frame": "{{996,130},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000030": {
+            "frame": "{{865,454},{151,57}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{147,53}"
+        },
+        "ui_000013": {
+            "frame": "{{912,760},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000016": {
+            "frame": "{{942,694},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000002": {
+            "frame": "{{923,622},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000012": {
+            "frame": "{{989,694},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000005": {
+            "frame": "{{996,0},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000026": {
+            "frame": "{{644,760},{221,57}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{217,53}"
+        },
+        "ui_000019": {
+            "frame": "{{644,916},{266,32}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{262,28}"
+        },
+        "ui_000015": {
+            "frame": "{{895,694},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000001": {
+            "frame": "{{644,622},{224,72}}",
+            "rotated": false,
+            "offset": "{2.00,-1.90}",
+            "sourceSize": "{220,68.2}"
+        },
+        "ui_000032": {
+            "frame": "{{0,964},{513,348}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{509,344}"
+        },
+        "ui_000008": {
+            "frame": "{{996,82},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        },
+        "ui_000029": {
+            "frame": "{{644,357},{365,97}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{361,93}"
+        },
+        "ui_000022": {
+            "frame": "{{644,874},{223,42}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{219,38}"
+        },
+        "ui_000025": {
+            "frame": "{{644,538},{221,84}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{217,80}"
+        },
+        "ui_000018": {
+            "frame": "{{513,964},{223,25}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{219,21}"
+        },
+        "ui_000004": {
+            "frame": "{{848,694},{47,47}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{43,43}"
+        },
+        "ui_000011": {
+            "frame": "{{996,212},{28,41}}",
+            "rotated": false,
+            "offset": "{2.00,-2.00}",
+            "sourceSize": "{24,37}"
+        }
+    },
+    "metadata": {
+        "textureFileName": "ui.png",
+        "realTextureFileName": "ui.png",
+        "size": "{1024,2048}",
+        "format": 2
+    }
+}

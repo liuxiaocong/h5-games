@@ -1,0 +1,2974 @@
+﻿(function (e) {
+    Number.prototype.map = function (e, t, n, r) {
+        return n + (this - e) / (t - e) * (r - n)
+    };
+    Number.prototype.limit = function (e, t) {
+        return Math.min(t, Math.max(e, this))
+    };
+    Number.prototype.round = function (e) {
+        e = Math.pow(10, e || 0);
+        return Math.round(this * e) / e
+    };
+    Number.prototype.floor = function () {
+        return Math.floor(this)
+    };
+    Number.prototype.ceil = function () {
+        return Math.ceil(this)
+    };
+    Number.prototype.toInt = function () {
+        return this | 0
+    };
+    Number.prototype.toRad = function () {
+        return this / 180 * Math.PI
+    };
+    Number.prototype.toDeg = function () {
+        return 180 * this / Math.PI
+    };
+    Array.prototype.erase = function (e) {
+        for (var t = this.length; t--;) this[t] === e && this.splice(t, 1);
+        return this
+    };
+    Array.prototype.random = function () {
+        return this[Math.floor(Math.random() * this.length)]
+    };
+    Function.prototype.bind = Function.prototype.bind || function (e) {
+        var t = this;
+        return function () {
+            var n = Array.prototype.slice.call(arguments);
+            return t.apply(e || null, n)
+        }
+    };
+    e.ig = {
+        game: null,
+        debug: null,
+        version: "1.20",
+        global: e,
+        modules: {},
+        resources: [],
+        ready: !1,
+        baked: !1,
+        nocache: "",
+        ua: {},
+        prefix: e.ImpactPrefix || "",
+        lib: "lib/",
+        _current: null,
+        _loadQueue: [],
+        _waitForOnload: 0,
+        $: function (e) {
+            return "#" == e.charAt(0) ? document.getElementById(e.substr(1)) : document.getElementsByTagName(e)
+        },
+        $new: function (e) {
+            return document.createElement(e)
+        },
+        copy: function (e) {
+            if (!e || "object" != typeof e || e instanceof HTMLElement || e instanceof ig.Class) return e;
+            if (e instanceof Array)
+                for (var t = [], n = 0, r = e.length; n < r; n++) t[n] = ig.copy(e[n]);
+            else
+                for (n in t = {}, e) t[n] = ig.copy(e[n]);
+            return t
+        },
+        merge: function (e, t) {
+            for (var n in t) {
+                var r = t[n];
+                "object" != typeof r || r instanceof HTMLElement || r instanceof ig.Class ? e[n] = r : (e[n] && "object" == typeof e[n] || (e[n] = r instanceof Array ? [] : {}), ig.merge(e[n], r))
+            }
+            return e
+        },
+        ksort: function (e) {
+            if (!e || "object" != typeof e) return [];
+            var t = [],
+                n = [],
+                r;
+            for (r in e) t.push(r);
+            t.sort();
+            for (r = 0; r < t.length; r++) n.push(e[t[r]]);
+            return n
+        },
+        module: function (e) {
+            if (ig._current) throw "Module '" + ig._current.name + "' defines nothing";
+            if (ig.modules[e] && ig.modules[e].body) throw "Module '" + e + "' is already defined";
+            ig._current = {
+                name: e,
+                requires: [],
+                loaded: !1,
+                body: null
+            };
+            ig.modules[e] = ig._current;
+            ig._loadQueue.push(ig._current);
+            return ig
+        },
+        requires: function () {
+            ig._current.requires = Array.prototype.slice.call(arguments);
+            return ig
+        },
+        defines: function (e) {
+            ig._current.body = e;
+            ig._current = null;
+            ig._initDOMReady()
+        },
+        addResource: function (e) {
+            ig.resources.push(e)
+        },
+        setNocache: function (e) {
+            ig.nocache = e ? "?" + Date.now() : ""
+        },
+        log: function () {
+        },
+        assert: function (e, t) {
+        },
+        show: function (e, t) {
+        },
+        mark: function (e, t) {
+        },
+        _loadScript: function (e, t) {
+            ig.modules[e] = {
+                name: e,
+                requires: [],
+                loaded: !1,
+                body: null
+            };
+            ig._waitForOnload++;
+            var n = ig.prefix + ig.lib + e.replace(/\./g, "/") + ".js" + ig.nocache,
+                r = ig.$new("script");
+            r.type = "text/javascript";
+            r.src = n;
+            r.onload = function () {
+                ig._waitForOnload--;
+                ig._execModules()
+            };
+            r.onerror = function () {
+                throw "Failed to load module " + e + " at " + n + " required from " + t
+            };
+            ig.$("head")[0].appendChild(r)
+        },
+        _execModules: function () {
+            for (var e = !1, t = 0; t < ig._loadQueue.length; t++) {
+                for (var n = ig._loadQueue[t], r = !0, i = 0; i < n.requires.length; i++) {
+                    var s = n.requires[i];
+                    ig.modules[s] ? ig.modules[s].loaded || (r = !1) : (r = !1, ig._loadScript(s, n.name))
+                }
+                r && n.body && (ig._loadQueue.splice(t, 1), n.loaded = !0, n.body(), e = !0, t--)
+            }
+            if (e) ig._execModules();
+            else if (!ig.baked && 0 == ig._waitForOnload && 0 != ig._loadQueue.length) {
+                e = [];
+                for (t = 0; t < ig._loadQueue.length; t++) {
+                    r = [];
+                    s = ig._loadQueue[t].requires;
+                    for (i = 0; i < s.length; i++)(n = ig.modules[s[i]]) && n.loaded || r.push(s[i]);
+                    e.push(ig._loadQueue[t].name + " (requires: " + r.join(", ") + ")")
+                }
+                throw "Unresolved (circular?) dependencies. Most likely there's a name/path mismatch for one of the listed modules:\n" + e.join("\n")
+            }
+        },
+        _DOMReady: function () {
+            if (!ig.modules["dom.ready"].loaded) {
+                if (!document.body) return setTimeout(ig._DOMReady, 13);
+                ig.modules["dom.ready"].loaded = !0;
+                ig._waitForOnload--;
+                ig._execModules()
+            }
+            return 0
+        },
+        _boot: function () {
+            document.location.href.match(/\?nocache/) && ig.setNocache(!0);
+            ig.ua.pixelRatio = e.devicePixelRatio || 1;
+            ig.ua.viewport = {
+                width: e.innerWidth,
+                height: e.innerHeight
+            };
+            ig.ua.screen = {
+                width: e.screen.availWidth * ig.ua.pixelRatio,
+                height: e.screen.availHeight * ig.ua.pixelRatio
+            };
+            ig.ua.iPhone = /iPhone/i.test(navigator.userAgent);
+            ig.ua.iPhone4 = ig.ua.iPhone && 2 == ig.ua.pixelRatio;
+            ig.ua.iPad = /iPad/i.test(navigator.userAgent);
+            ig.ua.android = /android/i.test(navigator.userAgent);
+            ig.ua.iOS = ig.ua.iPhone || ig.ua.iPad;
+            ig.ua.mobile = ig.ua.iOS || ig.ua.android
+        },
+        _initDOMReady: function () {
+            ig.modules["dom.ready"] ? ig._execModules() : (ig._boot(), ig.modules["dom.ready"] = {
+                requires: [],
+                loaded: !1,
+                body: null
+            }, ig._waitForOnload++, "complete" === document.readyState ? ig._DOMReady() : (document.addEventListener("DOMContentLoaded", ig._DOMReady, !1), e.addEventListener("load", ig._DOMReady, !1)))
+        }
+    };
+    for (var t = ["ms", "moz", "webkit", "o"], n = 0; n < t.length && !e.requestAnimationFrame; n++) e.requestAnimationFrame = e[t[n] + "RequestAnimationFrame"];
+    if (e.requestAnimationFrame) {
+        var r = 1,
+            i = {};
+        e.ig.setAnimation = function (t, n) {
+            var s = r++;
+            i[s] = !0;
+            var o = function () {
+                i[s] && (e.requestAnimationFrame(o, n), t())
+            };
+            e.requestAnimationFrame(o, n);
+            return s
+        };
+        e.ig.clearAnimation = function (e) {
+            delete i[e]
+        }
+    } else e.ig.setAnimation = function (t, n) {
+        return e.setInterval(t, 1e3 / 60)
+    }, e.ig.clearAnimation = function (t) {
+        e.clearInterval(t)
+    };
+    var s = !1,
+        o = /xyz/.test(function () {
+            xyz
+        }) ? /\bparent\b/ : /.*/;
+    e.ig.Class = function () {
+    };
+    var u = function (e) {
+        var t = this.prototype,
+            n = {},
+            r;
+        for (r in e) "function" == typeof e[r] && "function" == typeof t[r] && o.test(e[r]) ? (n[r] = t[r], t[r] = function (e, t) {
+            return function () {
+                var r = this.parent;
+                this.parent = n[e];
+                var i = t.apply(this, arguments);
+                this.parent = r;
+                return i
+            }
+        }(r, e[r])) : t[r] = e[r]
+    };
+    e.ig.Class.extend = function (t) {
+        function n() {
+            if (!s) {
+                if (this.staticInstantiate) {
+                    var e = this.staticInstantiate.apply(this, arguments);
+                    if (e) return e
+                }
+                for (var t in this) "object" == typeof this[t] && (this[t] = ig.copy(this[t]));
+                this.init && this.init.apply(this, arguments)
+            }
+            return this
+        }
+
+        var r = this.prototype;
+        s = !0;
+        var i = new this;
+        s = !1;
+        for (var c in t) "function" == typeof t[c] && "function" == typeof r[c] && o.test(t[c]) ? i[c] = function (e, t) {
+            return function () {
+                var n = this.parent;
+                this.parent = r[e];
+                var i = t.apply(this, arguments);
+                this.parent = n;
+                return i
+            }
+        }(c, t[c]) : i[c] = t[c];
+        n.prototype = i;
+        n.constructor = n;
+        n.extend = e.ig.Class.extend;
+        n.inject = u;
+        return n
+    }
+})(window);
+ig.baked = !0;
+ig.module("impact.image").defines(function () {
+    ig.Image = ig.Class.extend({
+        data: null,
+        width: 0,
+        height: 0,
+        loaded: !1,
+        failed: !1,
+        loadCallback: null,
+        path: "",
+        staticInstantiate: function (e) {
+            return ig.Image.cache[e] || null
+        },
+        init: function (e) {
+            this.path = e;
+            this.load()
+        },
+        load: function (e) {
+            this.loaded ? e && e(this.path, !0) : (!this.loaded && ig.ready ? (this.loadCallback = e || null, this.data = new Image, this.data.onload = this.onload.bind(this), this.data.onerror = this.onerror.bind(this), this.data.src = ig.prefix + this.path + ig.nocache) : ig.addResource(this), ig.Image.cache[this.path] = this)
+        },
+        reload: function () {
+            this.loaded = !1;
+            this.data = new Image;
+            this.data.onload = this.onload.bind(this);
+            this.data.src = this.path + "?" + Date.now()
+        },
+        onload: function (e) {
+            this.width = this.data.width;
+            this.height = this.data.height;
+            this.loaded = !0;
+            1 != ig.system.scale && this.resize(ig.system.scale);
+            this.loadCallback && this.loadCallback(this.path, !0)
+        },
+        onerror: function (e) {
+            this.failed = !0;
+            this.loadCallback && this.loadCallback(this.path, !1)
+        },
+        resize: function (e) {
+            var t = this.width * e,
+                n = this.height * e,
+                r = ig.$new("canvas");
+            r.width = this.width;
+            r.height = this.height;
+            r = r.getContext("2d");
+            r.drawImage(this.data, 0, 0, this.width, this.height, 0, 0, this.width, this.height);
+            var r = r.getImageData(0, 0, this.width, this.height),
+                i = ig.$new("canvas");
+            i.width = t;
+            i.height = n;
+            for (var s = i.getContext("2d"), o = s.getImageData(0, 0, t, n), u = 0; u < n; u++)
+                for (var a = 0; a < t; a++) {
+                    var f = 4 * (Math.floor(u / e) * this.width + Math.floor(a / e)),
+                        l = 4 * (u * t + a);
+                    o.data[l] = r.data[f];
+                    o.data[l + 1] = r.data[f + 1];
+                    o.data[l + 2] = r.data[f + 2];
+                    o.data[l + 3] = r.data[f + 3]
+                }
+            s.putImageData(o, 0, 0);
+            this.data = i
+        },
+        draw: function (e, t, n, r, i, s) {
+            if (this.loaded) {
+                var o = ig.system.scale;
+                i = (i ? i : this.width) * o;
+                s = (s ? s : this.height) * o;
+                ig.system.context.drawImage(this.data, n ? n * o : 0, r ? r * o : 0, i, s, ig.system.getDrawPos(e), ig.system.getDrawPos(t), i, s);
+                ig.Image.drawCount++
+            }
+        },
+        drawTile: function (e, t, n, r, i, s, o) {
+            i = i ? i : r;
+            if (this.loaded && !(r > this.width || i > this.height)) {
+                var u = ig.system.scale,
+                    a = Math.floor(r * u),
+                    f = Math.floor(i * u),
+                    l = s ? -1 : 1,
+                    c = o ? -1 : 1;
+                if (s || o) ig.system.context.save(), ig.system.context.scale(l, c);
+                ig.system.context.drawImage(this.data, Math.floor(n * r) % this.width * u, Math.floor(n * r / this.width) * i * u, a, f, ig.system.getDrawPos(e) * l - (s ? a : 0), ig.system.getDrawPos(t) * c - (o ? f : 0), a, f);
+                (s || o) && ig.system.context.restore();
+                ig.Image.drawCount++
+            }
+        }
+    });
+    ig.Image.drawCount = 0;
+    ig.Image.cache = {};
+    ig.Image.reloadCache = function () {
+        for (var e in ig.Image.cache) ig.Image.cache[e].reload()
+    }
+});
+ig.baked = !0;
+ig.module("impact.font").requires("impact.image").defines(function () {
+    ig.Font = ig.Image.extend({
+        widthMap: [],
+        indices: [],
+        chars: [],
+        firstChar: 32,
+        alpha: 1,
+        letterSpacing: 1,
+        lineSpacing: 0,
+        onload: function (e) {
+            this._loadMetrics(this.data);
+            this.parent(e)
+        },
+        widthForString: function (e) {
+            if (-1 !== e.indexOf("\n")) {
+                e = e.split("\n");
+                for (var t = 0, n = 0; n < e.length; n++) t = Math.max(t, this._widthForLine(e[n]));
+                return t
+            }
+            return this._widthForLine(e)
+        },
+        _widthForLine: function (e) {
+            for (var t = 0, n = 0; n < e.length; n++) t += this.widthMap[e.charCodeAt(n) - this.firstChar] + this.letterSpacing;
+            return t
+        },
+        heightForString: function (e) {
+            return e.split("\n").length * (this.height + this.lineSpacing)
+        },
+        draw: function (e, t, n, r) {
+            "string" != typeof e && (e = e.toString());
+            if (-1 !== e.indexOf("\n")) {
+                e = e.split("\n");
+                for (var i = this.height + this.lineSpacing, s = 0; s < e.length; s++) this.draw(e[s], t, n + s * i, r)
+            } else {
+                if (r == ig.Font.ALIGN.RIGHT || r == ig.Font.ALIGN.CENTER) s = this._widthForLine(e), t -= r == ig.Font.ALIGN.CENTER ? s / 2 : s;
+                t = Math.round(t);
+                n = Math.round(n);
+                1 !== this.alpha && (ig.system.context.globalAlpha = this.alpha);
+                for (s = 0; s < e.length; s++) r = e.charCodeAt(s), t += this._drawChar(r - this.firstChar, t, n);
+                1 !== this.alpha && (ig.system.context.globalAlpha = 1);
+                ig.Image.drawCount += e.length
+            }
+        },
+        _drawChar: function (e, t, n) {
+            if (!this.loaded || 0 > e || e >= this.indices.length) return 0;
+            var r = ig.system.scale,
+                i = this.widthMap[e] * r,
+                s = (this.height - 2) * r;
+            ig.system.context.drawImage(this.data, this.indices[e] * r, 0, i, s, ig.system.getDrawPos(t), ig.system.getDrawPos(n), i, s);
+            return this.widthMap[e] + this.letterSpacing
+        },
+        _loadMetrics: function (e) {
+            this.height = e.height - 1;
+            this.widthMap = [];
+            this.indices = [];
+            var t = ig.$new("canvas");
+            t.width = e.width;
+            t.height = e.height;
+            t = t.getContext("2d");
+            t.drawImage(e, 0, 0);
+            for (var t = t.getImageData(0, e.height - 1, e.width, 1), n = 0, r = 0, i = 0; i < e.width; i++) {
+                var s = 4 * i + 3;
+                0 != t.data[s] ? r++ : 0 == t.data[s] && r && (this.widthMap.push(r), this.indices.push(i - r), n++, r = 0)
+            }
+            this.widthMap.push(r);
+            this.indices.push(i - r)
+        }
+    });
+    ig.Font.ALIGN = {
+        LEFT: 0,
+        RIGHT: 1,
+        CENTER: 2
+    }
+});
+ig.baked = !0;
+ig.module("impact.sound").defines(function () {
+    ig.SoundManager = ig.Class.extend({
+        clips: {},
+        volume: 1,
+        format: null,
+        init: function () {
+            for (var e = new Audio, t = 0; t < ig.Sound.use.length; t++) {
+                var n = ig.Sound.use[t];
+                if (e.canPlayType(n.mime)) {
+                    this.format = n;
+                    break
+                }
+            }
+            this.format || (ig.Sound.enabled = !1)
+        },
+        load: function (e, t, n) {
+            var r = ig.prefix + e.replace(/[^\.]+$/, this.format.ext) + ig.nocache;
+            if (this.clips[e]) {
+                if (t && this.clips[e].length < ig.Sound.channels)
+                    for (t = this.clips[e].length; t < ig.Sound.channels; t++) {
+                        var i = new Audio(r);
+                        i.load();
+                        this.clips[e].push(i)
+                    }
+                return this.clips[e][0]
+            }
+            var s = new Audio(r);
+            n && (s.addEventListener("canplaythrough", function o(t) {
+                s.removeEventListener("canplaythrough", o, !1);
+                n(e, !0, t)
+            }, !1), s.addEventListener("error", function (t) {
+                n(e, !1, t)
+            }, !1));
+            s.preload = "auto";
+            s.load();
+            this.clips[e] = [s];
+            if (t)
+                for (t = 1; t < ig.Sound.channels; t++) i = new Audio(r), i.load(), this.clips[e].push(i);
+            return s
+        },
+        get: function (e) {
+            e = this.clips[e];
+            for (var t = 0, n; n = e[t++];)
+                if (n.paused || n.ended) return n.ended && (n.currentTime = 0), n;
+            e[0].pause();
+            e[0].currentTime = 0;
+            return e[0]
+        }
+    });
+    ig.Music = ig.Class.extend({
+        tracks: [],
+        namedTracks: {},
+        currentTrack: null,
+        currentIndex: 0,
+        random: !1,
+        _volume: 1,
+        _loop: !1,
+        _fadeInterval: 0,
+        _fadeTimer: null,
+        _endedCallbackBound: null,
+        init: function () {
+        },
+        add: function (e, t) {
+        },
+        next: function () {
+        },
+        pause: function () {
+        },
+        stop: function () {
+        },
+        play: function (e) {
+        },
+        getLooping: function () {
+        },
+        setLooping: function (e) {
+        },
+        getVolume: function () {
+        },
+        setVolume: function (e) {
+        },
+        fadeOut: function (e) {
+        },
+        _fadeStep: function () {
+        },
+        _endedCallback: function () {
+        }
+    });
+    ig.Sound = ig.Class.extend({
+        path: "",
+        volume: 1,
+        currentClip: {},
+        multiChannel: !0,
+        init: function (e, t) {
+        },
+        load: function (e) {
+        },
+        play: function () {
+        },
+        stop: function () {
+        }
+    });
+    ig.Sound.FORMAT = {
+        MP3: {
+            ext: "mp3",
+            mime: "audio/mpeg"
+        },
+        M4A: {
+            ext: "m4a",
+            mime: "audio/mp4; codecs=mp4a"
+        },
+        OGG: {
+            ext: "ogg",
+            mime: "audio/ogg; codecs=vorbis"
+        },
+        WEBM: {
+            ext: "webm",
+            mime: "audio/webm; codecs=vorbis"
+        },
+        CAF: {
+            ext: "caf",
+            mime: "audio/x-caf"
+        }
+    };
+    ig.Sound.use = [ig.Sound.FORMAT.OGG, ig.Sound.FORMAT.MP3];
+    ig.Sound.channels = 4;
+    ig.Sound.enabled = !1
+});
+ig.baked = !0;
+ig.module("impact.loader").requires("impact.image", "impact.font", "impact.sound").defines(function () {
+    ig.Loader = ig.Class.extend({
+        resources: [],
+        gameClass: null,
+        status: 0,
+        done: !1,
+        _unloaded: [],
+        _drawStatus: 0,
+        _intervalId: 0,
+        _loadCallbackBound: null,
+        init: function (e, t) {
+            this.gameClass = e;
+            this.resources = t;
+            this._loadCallbackBound = this._loadCallback.bind(this);
+            for (var n = 0; n < this.resources.length; n++) this._unloaded.push(this.resources[n].path)
+        },
+        load: function () {
+            ig.system.clear("#000");
+            if (this.resources.length) {
+                for (var e = 0; e < this.resources.length; e++) this.loadResource(this.resources[e]);
+                this._intervalId = setInterval(this.draw.bind(this), 16)
+            } else this.end()
+        },
+        loadResource: function (e) {
+            e.load(this._loadCallbackBound)
+        },
+        end: function () {
+            this.done || (this.done = !0, clearInterval(this._intervalId), ig.system.setGame(this.gameClass))
+        },
+        draw: function () {
+            this._drawStatus += (this.status - this._drawStatus) / 5;
+            var e = ig.system.scale,
+                t = .6 * ig.system.width,
+                n = .1 * ig.system.height,
+                r = .5 * ig.system.width - t / 2,
+                i = .5 * ig.system.height - n / 2;
+            ig.system.context.fillStyle = "#000";
+            ig.system.context.fillRect(0, 0, 480, 320);
+            ig.system.context.fillStyle = "#fff";
+            ig.system.context.fillRect(r * e, i * e, t * e, n * e);
+            ig.system.context.fillStyle = "#000";
+            ig.system.context.fillRect(r * e + e, i * e + e, t * e - e - e, n * e - e - e);
+            ig.system.context.fillStyle = "#fff";
+            ig.system.context.fillRect(r * e, i * e, t * e * this._drawStatus, n * e)
+        },
+        _loadCallback: function (e, t) {
+            if (t) this._unloaded.erase(e);
+            else throw "Failed to load resource: " + e;
+            this.status = 1 - this._unloaded.length / this.resources.length;
+            0 == this._unloaded.length && setTimeout(this.end.bind(this), 250)
+        }
+    })
+});
+ig.baked = !0;
+ig.module("impact.timer").defines(function () {
+    ig.Timer = ig.Class.extend({
+        target: 0,
+        base: 0,
+        last: 0,
+        pausedAt: 0,
+        init: function (e) {
+            this.last = this.base = ig.Timer.time;
+            this.target = e || 0
+        },
+        set: function (e) {
+            this.target = e || 0;
+            this.base = ig.Timer.time;
+            this.pausedAt = 0
+        },
+        reset: function () {
+            this.base = ig.Timer.time;
+            this.pausedAt = 0
+        },
+        tick: function () {
+            var e = ig.Timer.time - this.last;
+            this.last = ig.Timer.time;
+            return this.pausedAt ? 0 : e
+        },
+        delta: function () {
+            return (this.pausedAt || ig.Timer.time) - this.base - this.target
+        },
+        pause: function () {
+            this.pausedAt || (this.pausedAt = ig.Timer.time)
+        },
+        unpause: function () {
+            this.pausedAt && (this.base += ig.Timer.time - this.pausedAt, this.pausedAt = 0)
+        }
+    });
+    ig.Timer._last = 0;
+    ig.Timer.time = 0;
+    ig.Timer.timeScale = 1;
+    ig.Timer.maxStep = .05;
+    ig.Timer.step = function () {
+        var e = Date.now();
+        ig.Timer.time += Math.min((e - ig.Timer._last) / 1e3, ig.Timer.maxStep) * ig.Timer.timeScale;
+        ig.Timer._last = e
+    }
+});
+ig.baked = !0;
+ig.module("impact.system").requires("impact.timer", "impact.image").defines(function () {
+    ig.System = ig.Class.extend({
+        fps: 30,
+        width: 320,
+        height: 240,
+        realWidth: 320,
+        realHeight: 240,
+        scale: 1,
+        tick: 0,
+        animationId: 0,
+        newGameClass: null,
+        running: !1,
+        delegate: null,
+        clock: null,
+        canvas: null,
+        context: null,
+        init: function (e, t, n, r, i) {
+            this.fps = t;
+            this.clock = new ig.Timer;
+            this.canvas = ig.$(e);
+            this.resize(n, r, i);
+            this.context = this.canvas.getContext("2d");
+            this.getDrawPos = ig.System.drawMode
+        },
+        resize: function (e, t, n) {
+            this.width = e;
+            this.height = t;
+            this.scale = n || this.scale;
+            this.realWidth = this.width * this.scale;
+            this.realHeight = this.height * this.scale;
+            this.canvas.width = this.realWidth;
+            this.canvas.height = this.realHeight
+        },
+        setGame: function (e) {
+            this.running ? this.newGameClass = e : this.setGameNow(e)
+        },
+        setGameNow: function (e) {
+            ig.game = new e;
+            ig.system.setDelegate(ig.game)
+        },
+        setDelegate: function (e) {
+            if ("function" == typeof e.run) this.delegate = e, this.startRunLoop();
+            else throw "System.setDelegate: No run() function in object"
+        },
+        stopRunLoop: function () {
+            ig.clearAnimation(this.animationId);
+            this.running = !1
+        },
+        startRunLoop: function () {
+            this.stopRunLoop();
+            this.animationId = ig.setAnimation(this.run.bind(this), this.canvas);
+            this.running = !0
+        },
+        clear: function (e) {
+            this.context.fillStyle = e;
+            this.context.fillRect(0, 0, this.realWidth, this.realHeight)
+        },
+        run: function () {
+            ig.Timer.step();
+            this.tick = this.clock.tick();
+            this.delegate.run();
+            ig.input.clearPressed();
+            this.newGameClass && (this.setGameNow(this.newGameClass), this.newGameClass = null)
+        },
+        getDrawPos: null
+    });
+    ig.System.DRAW = {
+        AUTHENTIC: function (e) {
+            return Math.round(e) * this.scale
+        },
+        SMOOTH: function (e) {
+            return Math.round(e * this.scale)
+        },
+        SUBPIXEL: function (e) {
+            return e * this.scale
+        }
+    };
+    ig.System.drawMode = ig.System.DRAW.SMOOTH
+});
+ig.baked = !0;
+ig.module("impact.input").defines(function () {
+    ig.KEY = {
+        MOUSE1: -1,
+        MOUSE2: -3,
+        MWHEEL_UP: -4,
+        MWHEEL_DOWN: -5,
+        BACKSPACE: 8,
+        TAB: 9,
+        ENTER: 13,
+        PAUSE: 19,
+        CAPS: 20,
+        ESC: 27,
+        SPACE: 32,
+        PAGE_UP: 33,
+        PAGE_DOWN: 34,
+        END: 35,
+        HOME: 36,
+        LEFT_ARROW: 37,
+        UP_ARROW: 38,
+        RIGHT_ARROW: 39,
+        DOWN_ARROW: 40,
+        INSERT: 45,
+        DELETE: 46,
+        _0: 48,
+        _1: 49,
+        _2: 50,
+        _3: 51,
+        _4: 52,
+        _5: 53,
+        _6: 54,
+        _7: 55,
+        _8: 56,
+        _9: 57,
+        A: 65,
+        B: 66,
+        C: 67,
+        D: 68,
+        E: 69,
+        F: 70,
+        G: 71,
+        H: 72,
+        I: 73,
+        J: 74,
+        K: 75,
+        L: 76,
+        M: 77,
+        N: 78,
+        O: 79,
+        P: 80,
+        Q: 81,
+        R: 82,
+        S: 83,
+        T: 84,
+        U: 85,
+        V: 86,
+        W: 87,
+        X: 88,
+        Y: 89,
+        Z: 90,
+        NUMPAD_0: 96,
+        NUMPAD_1: 97,
+        NUMPAD_2: 98,
+        NUMPAD_3: 99,
+        NUMPAD_4: 100,
+        NUMPAD_5: 101,
+        NUMPAD_6: 102,
+        NUMPAD_7: 103,
+        NUMPAD_8: 104,
+        NUMPAD_9: 105,
+        MULTIPLY: 106,
+        ADD: 107,
+        SUBSTRACT: 109,
+        DECIMAL: 110,
+        DIVIDE: 111,
+        F1: 112,
+        F2: 113,
+        F3: 114,
+        F4: 115,
+        F5: 116,
+        F6: 117,
+        F7: 118,
+        F8: 119,
+        F9: 120,
+        F10: 121,
+        F11: 122,
+        F12: 123,
+        SHIFT: 16,
+        CTRL: 17,
+        ALT: 18,
+        PLUS: 187,
+        COMMA: 188,
+        MINUS: 189,
+        PERIOD: 190
+    };
+    ig.Input = ig.Class.extend({
+        bindings: {},
+        actions: {},
+        presses: {},
+        locks: {},
+        delayedKeyup: {},
+        isUsingMouse: !1,
+        isUsingKeyboard: !1,
+        isUsingAccelerometer: !1,
+        mouse: {
+            x: 0,
+            y: 0
+        },
+        accel: {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        initMouse: function () {
+            if (!this.isUsingMouse) {
+                this.isUsingMouse = !0;
+                var e = this.mousewheel.bind(this);
+                ig.system.canvas.addEventListener("mousewheel", e, !1);
+                ig.system.canvas.addEventListener("DOMMouseScroll", e, !1);
+                ig.system.canvas.addEventListener("contextmenu", this.contextmenu.bind(this), !1);
+                ig.system.canvas.addEventListener("mousedown", this.keydown.bind(this), !1);
+                ig.system.canvas.addEventListener("mouseup", this.keyup.bind(this), !1);
+                ig.system.canvas.addEventListener("mousemove", this.mousemove.bind(this), !1);
+                ig.system.canvas.addEventListener("touchstart", this.keydown.bind(this), !1);
+                ig.system.canvas.addEventListener("touchend", this.keyup.bind(this), !1);
+                ig.system.canvas.addEventListener("touchmove", this.mousemove.bind(this), !1)
+            }
+        },
+        initKeyboard: function () {
+            this.isUsingKeyboard || (this.isUsingKeyboard = !0, window.addEventListener("keydown", this.keydown.bind(this), !1), window.addEventListener("keyup", this.keyup.bind(this), !1))
+        },
+        initAccelerometer: function () {
+            this.isUsingAccelerometer || window.addEventListener("devicemotion", this.devicemotion.bind(this), !1)
+        },
+        mousewheel: function (e) {
+            var t = this.bindings[0 < (e.wheelDelta ? e.wheelDelta : -1 * e.detail) ? ig.KEY.MWHEEL_UP : ig.KEY.MWHEEL_DOWN];
+            t && (this.actions[t] = !0, this.presses[t] = !0, this.delayedKeyup[t] = !0, e.stopPropagation(), e.preventDefault())
+        },
+        mousemove: function (e) {
+            for (var t = ig.system.canvas, n = 0, r = 0; null != t;) n += t.offsetLeft, r += t.offsetTop, t = t.offsetParent;
+            var t = e.pageX,
+                i = e.pageY;
+            e.touches && (t = e.touches[0].clientX, i = e.touches[0].clientY);
+            this.mouse.x = (t - n) / ig.system.scale;
+            this.mouse.y = (i - r) / ig.system.scale
+        },
+        contextmenu: function (e) {
+            this.bindings[ig.KEY.MOUSE2] && (e.stopPropagation(), e.preventDefault())
+        },
+        keydown: function (e) {
+            if ("text" != e.target.type) {
+                var t = "keydown" == e.type ? e.keyCode : 2 == e.button ? ig.KEY.MOUSE2 : ig.KEY.MOUSE1;
+                "touchstart" != e.type && "mousedown" != e.type || this.mousemove(e);
+                if (t = this.bindings[t]) this.actions[t] = !0, this.locks[t] || (this.presses[t] = !0, this.locks[t] = !0), e.stopPropagation(), e.preventDefault()
+            }
+        },
+        keyup: function (e) {
+            if ("text" != e.target.type) {
+                var t = this.bindings["keyup" == e.type ? e.keyCode : 2 == e.button ? ig.KEY.MOUSE2 : ig.KEY.MOUSE1];
+                t && (this.delayedKeyup[t] = !0, e.stopPropagation(), e.preventDefault())
+            }
+        },
+        devicemotion: function (e) {
+            this.accel = e.accelerationIncludingGravity
+        },
+        bind: function (e, t) {
+            0 > e ? this.initMouse() : 0 < e && this.initKeyboard();
+            this.bindings[e] = t
+        },
+        bindTouch: function (e, t) {
+            var n = ig.$(e),
+                r = this;
+            n.addEventListener("touchstart", function (e) {
+                r.touchStart(e, t)
+            }, !1);
+            n.addEventListener("touchend", function (e) {
+                r.touchEnd(e, t)
+            }, !1)
+        },
+        unbind: function (e) {
+            this.delayedKeyup[this.bindings[e]] = !0;
+            this.bindings[e] = null
+        },
+        unbindAll: function () {
+            this.bindings = {};
+            this.actions = {};
+            this.presses = {};
+            this.locks = {};
+            this.delayedKeyup = {}
+        },
+        state: function (e) {
+            return this.actions[e]
+        },
+        pressed: function (e) {
+            return this.presses[e]
+        },
+        released: function (e) {
+            return this.delayedKeyup[e]
+        },
+        clearPressed: function () {
+            for (var e in this.delayedKeyup) this.actions[e] = !1, this.locks[e] = !1;
+            this.delayedKeyup = {};
+            this.presses = {}
+        },
+        touchStart: function (e, t) {
+            this.actions[t] = !0;
+            this.presses[t] = !0;
+            e.stopPropagation();
+            e.preventDefault();
+            return !1
+        },
+        touchEnd: function (e, t) {
+            this.delayedKeyup[t] = !0;
+            e.stopPropagation();
+            e.preventDefault();
+            return !1
+        }
+    })
+});
+ig.baked = !0;
+ig.module("impact.impact").requires("dom.ready", "impact.loader", "impact.system", "impact.input", "impact.sound").defines(function () {
+    ig.main = function (e, t, n, r, i, s, o) {
+        ig.system = new ig.System(e, n, r, i, s || 1);
+        ig.input = new ig.Input;
+        ig.soundManager = new ig.SoundManager;
+        ig.music = new ig.Music;
+        ig.ready = !0;
+        (new (o || ig.Loader)(t, ig.resources)).load()
+    }
+});
+ig.baked = !0;
+ig.module("impact.animation").requires("impact.timer", "impact.image").defines(function () {
+    ig.AnimationSheet = ig.Class.extend({
+        width: 8,
+        height: 8,
+        image: null,
+        init: function (e, t, n) {
+            this.width = t;
+            this.height = n;
+            this.image = new ig.Image(e)
+        }
+    });
+    ig.Animation = ig.Class.extend({
+        sheet: null,
+        timer: null,
+        sequence: [],
+        flip: {
+            x: !1,
+            y: !1
+        },
+        pivot: {
+            x: 0,
+            y: 0
+        },
+        frame: 0,
+        tile: 0,
+        loopCount: 0,
+        alpha: 1,
+        angle: 0,
+        init: function (e, t, n, r) {
+            this.sheet = e;
+            this.pivot = {
+                x: e.width / 2,
+                y: e.height / 2
+            };
+            this.timer = new ig.Timer;
+            this.frameTime = t;
+            this.sequence = n;
+            this.stop = !!r;
+            this.tile = this.sequence[0]
+        },
+        rewind: function () {
+            this.timer.reset();
+            this.loopCount = 0;
+            this.tile = this.sequence[0];
+            return this
+        },
+        gotoFrame: function (e) {
+            this.timer.set(this.frameTime * -e);
+            this.update()
+        },
+        gotoRandomFrame: function () {
+            this.gotoFrame(Math.floor(Math.random() * this.sequence.length))
+        },
+        update: function () {
+            var e = Math.floor(this.timer.delta() / this.frameTime);
+            this.loopCount = Math.floor(e / this.sequence.length);
+            this.frame = this.stop && 0 < this.loopCount ? this.sequence.length - 1 : e % this.sequence.length;
+            this.tile = this.sequence[this.frame]
+        },
+        draw: function (e, t) {
+            var n = Math.max(this.sheet.width, this.sheet.height);
+            e > ig.system.width || t > ig.system.height || 0 > e + n || 0 > t + n || (1 != this.alpha && (ig.system.context.globalAlpha = this.alpha), 0 == this.angle ? this.sheet.image.drawTile(e, t, this.tile, this.sheet.width, this.sheet.height, this.flip.x, this.flip.y) : (ig.system.context.save(), ig.system.context.translate(ig.system.getDrawPos(e + this.pivot.x), ig.system.getDrawPos(t + this.pivot.y)), ig.system.context.rotate(this.angle), this.sheet.image.drawTile(-this.pivot.x, -this.pivot.y, this.tile, this.sheet.width, this.sheet.height, this.flip.x, this.flip.y), ig.system.context.restore()), 1 != this.alpha && (ig.system.context.globalAlpha = 1))
+        }
+    })
+});
+ig.baked = !0;
+ig.module("impact.entity").requires("impact.animation", "impact.impact").defines(function () {
+    ig.Entity = ig.Class.extend({
+        id: 0,
+        settings: {},
+        size: {
+            x: 16,
+            y: 16
+        },
+        offset: {
+            x: 0,
+            y: 0
+        },
+        pos: {
+            x: 0,
+            y: 0
+        },
+        last: {
+            x: 0,
+            y: 0
+        },
+        vel: {
+            x: 0,
+            y: 0
+        },
+        accel: {
+            x: 0,
+            y: 0
+        },
+        friction: {
+            x: 0,
+            y: 0
+        },
+        maxVel: {
+            x: 100,
+            y: 100
+        },
+        zIndex: 0,
+        gravityFactor: 1,
+        standing: !1,
+        bounciness: 0,
+        minBounceVelocity: 40,
+        anims: {},
+        animSheet: null,
+        currentAnim: null,
+        health: 10,
+        type: 0,
+        checkAgainst: 0,
+        collides: 0,
+        _killed: !1,
+        slopeStanding: {
+            min: 44..toRad(),
+            max: 136..toRad()
+        },
+        init: function (e, t, n) {
+            this.id = ++ig.Entity._lastId;
+            this.pos.x = e;
+            this.pos.y = t;
+            ig.merge(this, n)
+        },
+        addAnim: function (e, t, n, r) {
+            if (!this.animSheet) throw "No animSheet to add the animation " + e + " to.";
+            t = new ig.Animation(this.animSheet, t, n, r);
+            this.anims[e] = t;
+            this.currentAnim || (this.currentAnim = t);
+            return t
+        },
+        update: function () {
+            this.last.x = this.pos.x;
+            this.last.y = this.pos.y;
+            this.pos.x += this.vel.x * ig.system.tick;
+            this.pos.y += this.vel.y * ig.system.tick;
+            this.currentAnim && this.currentAnim.update()
+        },
+        getNewVelocity: function (e, t, n, r) {
+            return t ? (e + t * ig.system.tick).limit(-r, r) : n ? (t = n * ig.system.tick, 0 < e - t ? e - t : 0 > e + t ? e + t : 0) : e.limit(-r, r)
+        },
+        handleMovementTrace: function (e) {
+            this.standing = !1;
+            e.collision.y && (0 < this.bounciness && Math.abs(this.vel.y) > this.minBounceVelocity ? this.vel.y *= -this.bounciness : (0 < this.vel.y && (this.standing = !0), this.vel.y = 0));
+            e.collision.x && (0 < this.bounciness && Math.abs(this.vel.x) > this.minBounceVelocity ? this.vel.x *= -this.bounciness : this.vel.x = 0);
+            if (e.collision.slope) {
+                var t = e.collision.slope;
+                if (0 < this.bounciness) {
+                    var n = this.vel.x * t.nx + this.vel.y * t.ny;
+                    this.vel.x = (this.vel.x - t.nx * n * 2) * this.bounciness;
+                    this.vel.y = (this.vel.y - t.ny * n * 2) * this.bounciness
+                } else n = (this.vel.x * t.x + this.vel.y * t.y) / (t.x * t.x + t.y * t.y), this.vel.x = t.x * n, this.vel.y = t.y * n, t = Math.atan2(t.x, t.y), t > this.slopeStanding.min && t < this.slopeStanding.max && (this.standing = !0)
+            }
+            this.pos = e.pos
+        },
+        draw: function () {
+            this.currentAnim && this.currentAnim.draw(this.pos.x - this.offset.x - ig.game._rscreen.x, this.pos.y - this.offset.y - ig.game._rscreen.y)
+        },
+        kill: function () {
+            ig.game.removeEntity(this)
+        },
+        receiveDamage: function (e, t) {
+            this.health -= e;
+            0 >= this.health && this.kill()
+        },
+        touches: function (e) {
+            return !(this.pos.x >= e.pos.x + e.size.x || this.pos.x + this.size.x <= e.pos.x || this.pos.y >= e.pos.y + e.size.y || this.pos.y + this.size.y <= e.pos.y)
+        },
+        distanceTo: function (e) {
+            var t = this.pos.x + this.size.x / 2 - (e.pos.x + e.size.x / 2);
+            e = this.pos.y + this.size.y / 2 - (e.pos.y + e.size.y / 2);
+            return Math.sqrt(t * t + e * e)
+        },
+        angleTo: function (e) {
+            return Math.atan2(e.pos.y + e.size.y / 2 - (this.pos.y + this.size.y / 2), e.pos.x + e.size.x / 2 - (this.pos.x + this.size.x / 2))
+        },
+        check: function (e) {
+        },
+        collideWith: function (e, t) {
+        },
+        ready: function () {
+        }
+    });
+    ig.Entity._lastId = 0;
+    ig.Entity.COLLIDES = {
+        NEVER: 0,
+        LITE: 1,
+        PASSIVE: 2,
+        ACTIVE: 4,
+        FIXED: 8
+    };
+    ig.Entity.TYPE = {
+        NONE: 0,
+        A: 1,
+        B: 2,
+        BOTH: 3
+    };
+    ig.Entity.checkPair = function (e, t) {
+        e.checkAgainst & t.type && e.check(t);
+        t.checkAgainst & e.type && t.check(e)
+    };
+    ig.Entity.solveCollision = function (e, t) {
+        var n = null;
+        if (e.collides == ig.Entity.COLLIDES.LITE || t.collides == ig.Entity.COLLIDES.FIXED) n = e;
+        else if (t.collides == ig.Entity.COLLIDES.LITE || e.collides == ig.Entity.COLLIDES.FIXED) n = t;
+        e.last.x + e.size.x > t.last.x && e.last.x < t.last.x + t.size.x ? (e.last.y < t.last.y ? ig.Entity.seperateOnYAxis(e, t, n) : ig.Entity.seperateOnYAxis(t, e, n), e.collideWith(t, "y"), t.collideWith(e, "y")) : e.last.y + e.size.y > t.last.y && e.last.y < t.last.y + t.size.y && (e.last.x < t.last.x ? ig.Entity.seperateOnXAxis(e, t, n) : ig.Entity.seperateOnXAxis(t, e, n), e.collideWith(t, "x"), t.collideWith(e, "x"))
+    };
+    ig.Entity.seperateOnXAxis = function (e, t, n) {
+        var r = e.pos.x + e.size.x - t.pos.x;
+        n ? (n.vel.x = -n.vel.x * n.bounciness + (e === n ? t : e).vel.x, t = ig.game.collisionMap.trace(n.pos.x, n.pos.y, n == e ? -r : r, 0, n.size.x, n.size.y), n.pos.x = t.pos.x) : (n = (e.vel.x - t.vel.x) / 2, e.vel.x = -n, t.vel.x = n, n = ig.game.collisionMap.trace(e.pos.x, e.pos.y, -r / 2, 0, e.size.x, e.size.y), e.pos.x = Math.floor(n.pos.x), e = ig.game.collisionMap.trace(t.pos.x, t.pos.y, r / 2, 0, t.size.x, t.size.y), t.pos.x = Math.ceil(e.pos.x))
+    };
+    ig.Entity.seperateOnYAxis = function (e, t, n) {
+        var r = e.pos.y + e.size.y - t.pos.y;
+        if (n) {
+            t = e === n ? t : e;
+            n.vel.y = -n.vel.y * n.bounciness + t.vel.y;
+            var i = 0;
+            n == e && Math.abs(n.vel.y - t.vel.y) < n.minBounceVelocity && (n.standing = !0, i = t.vel.x * ig.system.tick);
+            e = ig.game.collisionMap.trace(n.pos.x, n.pos.y, i, n == e ? -r : r, n.size.x, n.size.y);
+            n.pos.y = e.pos.y;
+            n.pos.x = e.pos.x
+        } else ig.game.gravity && (t.standing || 0 < e.vel.y) ? (n = ig.game.collisionMap.trace(e.pos.x, e.pos.y, 0, -(e.pos.y + e.size.y - t.pos.y), e.size.x, e.size.y), e.pos.y = n.pos.y, 0 < e.bounciness && e.vel.y > e.minBounceVelocity ? e.vel.y *= -e.bounciness : (e.standing = !0, e.vel.y = 0)) : (n = (e.vel.y - t.vel.y) / 2, e.vel.y = -n, t.vel.y = n, i = t.vel.x * ig.system.tick, n = ig.game.collisionMap.trace(e.pos.x, e.pos.y, i, -r / 2, e.size.x, e.size.y), e.pos.y = n.pos.y, e = ig.game.collisionMap.trace(t.pos.x, t.pos.y, 0, r / 2, t.size.x, t.size.y), t.pos.y = e.pos.y)
+    }
+});
+ig.baked = !0;
+ig.module("impact.map").defines(function () {
+    ig.Map = ig.Class.extend({
+        tilesize: 8,
+        width: 1,
+        height: 1,
+        data: [
+            []
+        ],
+        name: null,
+        init: function (e, t) {
+            this.tilesize = e;
+            this.data = t;
+            this.height = t.length;
+            this.width = t[0].length
+        },
+        getTile: function (e, t) {
+            var n = Math.floor(e / this.tilesize),
+                r = Math.floor(t / this.tilesize);
+            return 0 <= n && n < this.width && 0 <= r && r < this.height ? this.data[r][n] : 0
+        },
+        setTile: function (e, t, n) {
+            e = Math.floor(e / this.tilesize);
+            t = Math.floor(t / this.tilesize);
+            0 <= e && e < this.width && 0 <= t && t < this.height && (this.data[t][e] = n)
+        }
+    })
+});
+ig.baked = !0;
+ig.module("impact.collision-map").requires("impact.map").defines(function () {
+    ig.CollisionMap = ig.Map.extend({
+        lastSlope: 1,
+        tiledef: null,
+        init: function (e, t, n) {
+            this.parent(e, t);
+            this.tiledef = n || ig.CollisionMap.defaultTileDef;
+            for (var r in this.tiledef) r | 0 > this.lastSlope && (this.lastSlope = r | 0)
+        },
+        trace: function (e, t, n, r, i, s) {
+            var o = {
+                    collision: {
+                        x: !1,
+                        y: !1,
+                        slope: !1
+                    },
+                    pos: {
+                        x: e,
+                        y: t
+                    },
+                    tile: {
+                        x: 0,
+                        y: 0
+                    }
+                },
+                u = Math.ceil(Math.max(Math.abs(n), Math.abs(r)) / this.tilesize);
+            if (1 < u)
+                for (var a = n / u, f = r / u, l = 0; l < u && (a || f) && (this._traceStep(o, e, t, a, f, i, s, n, r, l), e = o.pos.x, t = o.pos.y, o.collision.x && (n = a = 0), o.collision.y && (r = f = 0), !o.collision.slope); l++);
+            else this._traceStep(o, e, t, n, r, i, s, n, r, 0);
+            return o
+        },
+        _traceStep: function (e, t, n, r, i, s, o, u, a, f) {
+            e.pos.x += r;
+            e.pos.y += i;
+            var l = 0;
+            if (r) {
+                var c = 0 < r ? s : 0,
+                    h = 0 > r ? this.tilesize : 0,
+                    l = Math.max(Math.floor(n / this.tilesize), 0),
+                    p = Math.min(Math.ceil((n + o) / this.tilesize), this.height);
+                r = Math.floor((e.pos.x + c) / this.tilesize);
+                var d = Math.floor((t + c) / this.tilesize);
+                if (0 < f || r == d || 0 > d || d >= this.width) d = -1;
+                if (0 <= r && r < this.width)
+                    for (var v = l; v < p && !(-1 != d && (l = this.data[v][d], 1 < l && l <= this.lastSlope && this._checkTileDef(e, l, t, n, u, a, s, o, d, v))); v++)
+                        if (l = this.data[v][r], 1 == l || l > this.lastSlope || 1 < l && this._checkTileDef(e, l, t, n, u, a, s, o, r, v)) {
+                            if (1 < l && l <= this.lastSlope && e.collision.slope) break;
+                            e.collision.x = !0;
+                            e.tile.x = l;
+                            t = e.pos.x = r * this.tilesize - c + h;
+                            u = 0;
+                            break
+                        }
+            }
+            if (i) {
+                c = 0 < i ? o : 0;
+                i = 0 > i ? this.tilesize : 0;
+                l = Math.max(Math.floor(e.pos.x / this.tilesize), 0);
+                h = Math.min(Math.ceil((e.pos.x + s) / this.tilesize), this.width);
+                v = Math.floor((e.pos.y + c) / this.tilesize);
+                p = Math.floor((n + c) / this.tilesize);
+                if (0 < f || v == p || 0 > p || p >= this.height) p = -1;
+                if (0 <= v && v < this.height)
+                    for (r = l; r < h && !(-1 != p && (l = this.data[p][r], 1 < l && l <= this.lastSlope && this._checkTileDef(e, l, t, n, u, a, s, o, r, p))); r++)
+                        if (l = this.data[v][r], 1 == l || l > this.lastSlope || 1 < l && this._checkTileDef(e, l, t, n, u, a, s, o, r, v)) {
+                            if (1 < l && l <= this.lastSlope && e.collision.slope) break;
+                            e.collision.y = !0;
+                            e.tile.y = l;
+                            e.pos.y = v * this.tilesize - c + i;
+                            break
+                        }
+            }
+        },
+        _checkTileDef: function (e, t, n, r, i, s, o, u, a, f) {
+            var l = this.tiledef[t];
+            if (!l) return !1;
+            t = (l[2] - l[0]) * this.tilesize;
+            var c = (l[3] - l[1]) * this.tilesize,
+                h = l[4];
+            o = n + i + (0 > c ? o : 0) - (a + l[0]) * this.tilesize;
+            u = r + s + (0 < t ? u : 0) - (f + l[1]) * this.tilesize;
+            if (0 < t * u - c * o) {
+                if (0 > i * -c + s * t) return h;
+                a = Math.sqrt(t * t + c * c);
+                f = c / a;
+                a = -t / a;
+                var p = o * f + u * a,
+                    l = f * p,
+                    p = a * p;
+                if (l * l + p * p >= i * i + s * s) return h || .5 > t * (u - s) - c * (o - i);
+                e.pos.x = n + i - l;
+                e.pos.y = r + s - p;
+                e.collision.slope = {
+                    x: t,
+                    y: c,
+                    nx: f,
+                    ny: a
+                };
+                return !0
+            }
+            return !1
+        }
+    });
+    var e = 1 / 3,
+        t = 2 / 3;
+    ig.CollisionMap.defaultTileDef = {
+        5: [0, 1, 1, t, !0],
+        6: [0, t, 1, e, !0],
+        7: [0, e, 1, 0, !0],
+        3: [0, 1, 1, .5, !0],
+        4: [0, .5, 1, 0, !0],
+        2: [0, 1, 1, 0, !0],
+        10: [.5, 1, 1, 0, !0],
+        21: [0, 1, .5, 0, !0],
+        32: [t, 1, 1, 0, !0],
+        43: [e, 1, t, 0, !0],
+        54: [0, 1, e, 0, !0],
+        27: [0, 0, 1, e, !0],
+        28: [0, e, 1, t, !0],
+        29: [0, t, 1, 1, !0],
+        25: [0, 0, 1, .5, !0],
+        26: [0, .5, 1, 1, !0],
+        24: [0, 0, 1, 1, !0],
+        11: [0, 0, .5, 1, !0],
+        22: [.5, 0, 1, 1, !0],
+        33: [0, 0, e, 1, !0],
+        44: [e, 0, t, 1, !0],
+        55: [t, 0, 1, 1, !0],
+        16: [1, e, 0, 0, !0],
+        17: [1, t, 0, e, !0],
+        18: [1, 1, 0, t, !0],
+        14: [1, .5, 0, 0, !0],
+        15: [1, 1, 0, .5, !0],
+        13: [1, 1, 0, 0, !0],
+        8: [.5, 1, 0, 0, !0],
+        19: [1, 1, .5, 0, !0],
+        30: [e, 1, 0, 0, !0],
+        41: [t, 1, e, 0, !0],
+        52: [1, 1, t, 0, !0],
+        38: [1, t, 0, 1, !0],
+        39: [1, e, 0, t, !0],
+        40: [1, 0, 0, e, !0],
+        36: [1, .5, 0, 1, !0],
+        37: [1, 0, 0, .5, !0],
+        35: [1, 0, 0, 1, !0],
+        9: [1, 0, .5, 1, !0],
+        20: [.5, 0, 0, 1, !0],
+        31: [1, 0, t, 1, !0],
+        42: [t, 0, e, 1, !0],
+        53: [e, 0, 0, 1, !0],
+        12: [0, 0, 1, 0, !1],
+        23: [1, 1, 0, 1, !1],
+        34: [1, 0, 1, 1, !1],
+        45: [0, 1, 0, 0, !1]
+    };
+    ig.CollisionMap.staticNoCollision = {
+        trace: function (e, t, n, r) {
+            return {
+                collision: {
+                    x: !1,
+                    y: !1,
+                    slope: !1
+                },
+                pos: {
+                    x: e + n,
+                    y: t + r
+                },
+                tile: {
+                    x: 0,
+                    y: 0
+                }
+            }
+        }
+    }
+});
+ig.baked = !0;
+ig.module("impact.background-map").requires("impact.map", "impact.image").defines(function () {
+    ig.BackgroundMap = ig.Map.extend({
+        tiles: null,
+        scroll: {
+            x: 0,
+            y: 0
+        },
+        distance: 1,
+        repeat: !1,
+        tilesetName: "",
+        foreground: !1,
+        enabled: !0,
+        preRender: !1,
+        preRenderedChunks: null,
+        chunkSize: 512,
+        debugChunks: !1,
+        anims: {},
+        init: function (e, t, n) {
+            this.parent(e, t);
+            this.setTileset(n)
+        },
+        setTileset: function (e) {
+            this.tilesetName = e instanceof ig.Image ? e.path : e;
+            this.tiles = new ig.Image(this.tilesetName);
+            this.preRenderedChunks = null
+        },
+        setScreenPos: function (e, t) {
+            this.scroll.x = e / this.distance;
+            this.scroll.y = t / this.distance
+        },
+        preRenderMapToChunks: function () {
+            var e = this.width * this.tilesize * ig.system.scale,
+                t = this.height * this.tilesize * ig.system.scale,
+                n = Math.ceil(e / this.chunkSize),
+                r = Math.ceil(t / this.chunkSize);
+            this.preRenderedChunks = [];
+            for (var i = 0; i < r; i++) {
+                this.preRenderedChunks[i] = [];
+                for (var s = 0; s < n; s++) this.preRenderedChunks[i][s] = this.preRenderChunk(s, i, s == n - 1 ? e - s * this.chunkSize : this.chunkSize, i == r - 1 ? t - i * this.chunkSize : this.chunkSize)
+            }
+        },
+        preRenderChunk: function (e, t, n, r) {
+            var i = n / this.tilesize / ig.system.scale + 1,
+                s = r / this.tilesize / ig.system.scale + 1,
+                o = e * this.chunkSize / ig.system.scale % this.tilesize,
+                u = t * this.chunkSize / ig.system.scale % this.tilesize;
+            e = Math.floor(e * this.chunkSize / this.tilesize / ig.system.scale);
+            t = Math.floor(t * this.chunkSize / this.tilesize / ig.system.scale);
+            var a = ig.$new("canvas");
+            a.width = n;
+            a.height = r;
+            n = ig.system.context;
+            ig.system.context = a.getContext("2d");
+            for (r = 0; r < i; r++)
+                for (var f = 0; f < s; f++)
+                    if (r + e < this.width && f + t < this.height) {
+                        var l = this.data[f + t][r + e];
+                        l && this.tiles.drawTile(r * this.tilesize - o, f * this.tilesize - u, l - 1, this.tilesize)
+                    }
+            ig.system.context = n;
+            return a
+        },
+        draw: function () {
+            this.tiles.loaded && this.enabled && (this.preRender ? this.drawPreRendered() : this.drawTiled())
+        },
+        drawPreRendered: function () {
+            this.preRenderedChunks || this.preRenderMapToChunks();
+            var e = ig.system.getDrawPos(this.scroll.x),
+                t = ig.system.getDrawPos(this.scroll.y);
+            this.repeat && (e %= this.width * this.tilesize * ig.system.scale, t %= this.height * this.tilesize * ig.system.scale);
+            var n = Math.max(Math.floor(e / this.chunkSize), 0),
+                r = Math.max(Math.floor(t / this.chunkSize), 0),
+                i = Math.ceil((e + ig.system.realWidth) / this.chunkSize),
+                s = Math.ceil((t + ig.system.realHeight) / this.chunkSize),
+                o = this.preRenderedChunks[0].length,
+                u = this.preRenderedChunks.length;
+            this.repeat || (i = Math.min(i, o), s = Math.min(s, u));
+            for (var a = 0; r < s; r++) {
+                for (var f = 0, l = n; l < i; l++) {
+                    var c = this.preRenderedChunks[r % u][l % o],
+                        h = -e + l * this.chunkSize - f,
+                        p = -t + r * this.chunkSize - a;
+                    ig.system.context.drawImage(c, h, p);
+                    ig.Image.drawCount++;
+                    this.debugChunks && (ig.system.context.strokeStyle = "#f0f", ig.system.context.strokeRect(h, p, this.chunkSize, this.chunkSize));
+                    this.repeat && c.width < this.chunkSize && h + c.width < ig.system.realWidth && (f = this.chunkSize - c.width, i++)
+                }
+                this.repeat && c.height < this.chunkSize && p + c.height < ig.system.realHeight && (a = this.chunkSize - c.height, s++)
+            }
+        },
+        drawTiled: function () {
+            for (var e = 0, t = null, n = (this.scroll.x / this.tilesize).toInt(), r = (this.scroll.y / this.tilesize).toInt(), i = this.scroll.x % this.tilesize, s = this.scroll.y % this.tilesize, o = -i - this.tilesize, i = ig.system.width + this.tilesize - i, u = ig.system.height + this.tilesize - s, a = -1, s = -s - this.tilesize; s < u; a++, s += this.tilesize) {
+                var f = a + r;
+                if (f >= this.height || 0 > f) {
+                    if (!this.repeat) continue;
+                    f = 0 < f ? f % this.height : (f + 1) % this.height + this.height - 1
+                }
+                for (var l = -1, c = o; c < i; l++, c += this.tilesize) {
+                    e = l + n;
+                    if (e >= this.width || 0 > e) {
+                        if (!this.repeat) continue;
+                        e = 0 < e ? e % this.width : (e + 1) % this.width + this.width - 1
+                    }
+                    if (e = this.data[f][e])(t = this.anims[e - 1]) ? t.draw(c, s) : this.tiles.drawTile(c, s, e - 1, this.tilesize)
+                }
+            }
+        }
+    })
+});
+ig.baked = !0;
+ig.module("impact.game").requires("impact.impact", "impact.entity", "impact.collision-map", "impact.background-map").defines(function () {
+    ig.Game = ig.Class.extend({
+        clearColor: "#000000",
+        gravity: 0,
+        screen: {
+            x: 0,
+            y: 0
+        },
+        _rscreen: {
+            x: 0,
+            y: 0
+        },
+        entities: [],
+        namedEntities: {},
+        collisionMap: ig.CollisionMap.staticNoCollision,
+        backgroundMaps: [],
+        backgroundAnims: {},
+        autoSort: !1,
+        sortBy: null,
+        cellSize: 64,
+        _deferredKill: [],
+        _levelToLoad: null,
+        _doSortEntities: !1,
+        staticInstantiate: function () {
+            this.sortBy = this.sortBy || ig.Game.SORT.Z_INDEX;
+            ig.game = this;
+            return null
+        },
+        loadLevel: function (e) {
+            this.screen = {
+                x: 0,
+                y: 0
+            };
+            this.entities = [];
+            this.namedEntities = {};
+            for (var t = 0; t < e.entities.length; t++) {
+                var n = e.entities[t];
+                this.spawnEntity(n.type, n.x, n.y, n.settings)
+            }
+            this.sortEntities();
+            this.collisionMap = ig.CollisionMap.staticNoCollision;
+            this.backgroundMaps = [];
+            for (t = 0; t < e.layer.length; t++)
+                if (n = e.layer[t], "collision" == n.name) this.collisionMap = new ig.CollisionMap(n.tilesize, n.data);
+                else {
+                    var r = new ig.BackgroundMap(n.tilesize, n.data, n.tilesetName);
+                    r.anims = this.backgroundAnims[n.tilesetName] || {};
+                    r.repeat = n.repeat;
+                    r.distance = n.distance;
+                    r.foreground = !!n.foreground;
+                    r.preRender = !!n.preRender;
+                    r.name = n.name;
+                    this.backgroundMaps.push(r)
+                }
+            for (t = 0; t < this.entities.length; t++) this.entities[t].ready()
+        },
+        loadLevelDeferred: function (e) {
+            this._levelToLoad = e
+        },
+        getMapByName: function (e) {
+            if ("collision" == e) return this.collisionMap;
+            for (var t = 0; t < this.backgroundMaps.length; t++)
+                if (this.backgroundMaps[t].name == e) return this.backgroundMaps[t];
+            return null
+        },
+        getEntityByName: function (e) {
+            return this.namedEntities[e]
+        },
+        getEntitiesByType: function (e) {
+            e = "string" === typeof e ? ig.global[e] : e;
+            for (var t = [], n = 0; n < this.entities.length; n++) {
+                var r = this.entities[n];
+                r instanceof e && !r._killed && t.push(r)
+            }
+            return t
+        },
+        spawnEntity: function (e, t, n, r) {
+            var i = "string" === typeof e ? ig.global[e] : e;
+            if (!i) throw "Can't spawn entity of type " + e;
+            e = new i(t, n, r || {});
+            this.entities.push(e);
+            e.name && (this.namedEntities[e.name] = e);
+            return e
+        },
+        sortEntities: function () {
+            this.entities.sort(this.sortBy)
+        },
+        sortEntitiesDeferred: function () {
+            this._doSortEntities = !0
+        },
+        removeEntity: function (e) {
+            e.name && delete this.namedEntities[e.name];
+            e._killed = !0;
+            e.type = ig.Entity.TYPE.NONE;
+            e.checkAgainst = ig.Entity.TYPE.NONE;
+            e.collides = ig.Entity.COLLIDES.NEVER;
+            this._deferredKill.push(e)
+        },
+        run: function () {
+            this.update();
+            this.draw()
+        },
+        update: function () {
+            this._levelToLoad && (this.loadLevel(this._levelToLoad), this._levelToLoad = null);
+            if (this._doSortEntities || this.autoSort) this.sortEntities(), this._doSortEntities = !1;
+            this.updateEntities();
+            this.checkEntities();
+            for (var e = 0; e < this._deferredKill.length; e++) this.entities.erase(this._deferredKill[e]);
+            this._deferredKill = [];
+            for (var t in this.backgroundAnims) {
+                var e = this.backgroundAnims[t],
+                    n;
+                for (n in e) e[n].update()
+            }
+        },
+        updateEntities: function () {
+            for (var e = 0; e < this.entities.length; e++) {
+                var t = this.entities[e];
+                t._killed || t.update()
+            }
+        },
+        draw: function () {
+            this.clearColor && ig.system.clear(this.clearColor);
+            this._rscreen.x = ig.system.getDrawPos(this.screen.x) / ig.system.scale;
+            this._rscreen.y = ig.system.getDrawPos(this.screen.y) / ig.system.scale;
+            var e;
+            for (e = 0; e < this.backgroundMaps.length; e++) {
+                var t = this.backgroundMaps[e];
+                if (t.foreground) break;
+                t.setScreenPos(this.screen.x, this.screen.y);
+                t.draw()
+            }
+            this.drawEntities();
+            for (e; e < this.backgroundMaps.length; e++) t = this.backgroundMaps[e], t.setScreenPos(this.screen.x, this.screen.y), t.draw()
+        },
+        drawEntities: function () {
+            for (var e = 0; e < this.entities.length; e++) this.entities[e].draw()
+        },
+        checkEntities: function () {
+            for (var e = {}, t = 0; t < this.entities.length; t++) {
+                var n = this.entities[t];
+                if (n.type != ig.Entity.TYPE.NONE || n.checkAgainst != ig.Entity.TYPE.NONE || n.collides != ig.Entity.COLLIDES.NEVER)
+                    for (var r = {}, i = Math.floor(n.pos.y / this.cellSize), s = Math.floor((n.pos.x + n.size.x) / this.cellSize) + 1, o = Math.floor((n.pos.y + n.size.y) / this.cellSize) + 1, u = Math.floor(n.pos.x / this.cellSize); u < s; u++)
+                        for (var a = i; a < o; a++)
+                            if (e[u])
+                                if (e[u][a]) {
+                                    for (var f = e[u][a], l = 0; l < f.length; l++) n.touches(f[l]) && !r[f[l].id] && (r[f[l].id] = !0, ig.Entity.checkPair(n, f[l]));
+                                    f.push(n)
+                                } else e[u][a] = [n];
+                            else e[u] = {}, e[u][a] = [n]
+            }
+        }
+    });
+    ig.Game.SORT = {
+        Z_INDEX: function (e, t) {
+            return e.zIndex - t.zIndex
+        },
+        POS_X: function (e, t) {
+            return e.pos.x + e.size.x - (t.pos.x + t.size.x)
+        },
+        POS_Y: function (e, t) {
+            return e.pos.y + e.size.y - (t.pos.y + t.size.y)
+        }
+    }
+});
+ig.baked = !0;
+ig.module("plugins.impact-splash-loader").requires("impact.loader").defines(function () {
+    ig.ImpactSplashLoader = ig.Loader.extend({
+        endTime: 0,
+        fadeToWhiteTime: 200,
+        fadeToGameTime: 800,
+        logoWidth: 340,
+        logoHeight: 120,
+        init: function (e, t) {
+            this.logo = new Image;
+            this.logo.src = "media/loading.png";
+            this.parent(e, t)
+        },
+        end: function () {
+            this.parent();
+            this.endTime = Date.now();
+            ig.system.setDelegate(this)
+        },
+        run: function () {
+            var e = Date.now() - this.endTime,
+                t = 1;
+            if (e < this.fadeToWhiteTime) this.draw(), t = e.map(0, this.fadeToWhiteTime, 0, 1);
+            else if (e < this.fadeToGameTime) ig.game.run(), t = e.map(this.fadeToWhiteTime, this.fadeToGameTime, 1, 0);
+            else {
+                ig.system.setDelegate(ig.game);
+                return
+            }
+            ig.system.context.fillStyle = "rgba(255,255,255," + t + ")";
+            ig.system.context.fillRect(0, 0, ig.system.realWidth, ig.system.realHeight)
+        },
+        draw: function () {
+            this._drawStatus += (this.status - this._drawStatus) / 5;
+            var e = ig.system.context,
+                t = ig.system.realWidth,
+                n = ig.system.realHeight,
+                r = t / this.logoWidth / 3,
+                i = (t - this.logoWidth * r) / 2;
+            e.fillStyle = "rgba(0,0,0,0.8)";
+            e.fillRect(0, 0, t, n);
+            e.save();
+            e.translate(i, n / 2.5);
+            e.scale(r, r);
+            e.lineWidth = "3";
+            e.strokeStyle = "rgb(255,255,255)";
+            e.strokeRect(25, this.logoHeight + 40, 300, 20);
+            e.fillStyle = "rgb(255,255,255)";
+            e.fillRect(30, this.logoHeight + 45, 290 * this._drawStatus, 10);
+            this.logo.width && e.drawImage(this.logo, 0, 0);
+            e.restore()
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.particle").requires("impact.entity").defines(function () {
+    window.EntityParticles = ig.Class.extend({
+        type: ig.Entity.TYPE.NONE,
+        checkAgainst: ig.Entity.TYPE.NONE,
+        collides: ig.Entity.COLLIDES.NEVER,
+        lifetime: 5,
+        fadetime: 1,
+        _vel: null,
+        _pos: null,
+        vel: {
+            x: 0,
+            y: 0
+        },
+        image: null,
+        alpha: 1,
+        count: 10,
+        init: function (e, t, n) {
+            this.count = n.count || this.count;
+            n = 2 * this.count;
+            e -= this.image.width / 2;
+            t -= this.image.height / 2;
+            this._vel = Array(n);
+            this._pos = Array(n);
+            for (var r = 0; r < n; r += 2) this._vel[r] = (2 * Math.random() - 1) * this.vel.x, this._vel[r + 1] = (2 * Math.random() - 1) * this.vel.y, this._pos[r] = e, this._pos[r + 1] = t;
+            this.idleTimer = new ig.Timer
+        },
+        update: function () {
+            this.idleTimer.delta() > this.lifetime ? ig.game.removeEntity(this) : this.alpha = this.idleTimer.delta().map(this.lifetime - this.fadetime, this.lifetime, 1, 0)
+        },
+        draw: function () {
+            var e = 2 * this.count,
+                t = this._pos,
+                n = this._vel,
+                r = ig.system.tick,
+                i = ig.system.context,
+                s = this.image.data,
+                o = ig.game._rscreen.x,
+                u = ig.game._rscreen.y;
+            ig.system.context.globalAlpha = this.alpha;
+            for (var a = 0; a < e; a += 2) t[a] += n[a] * r, t[a + 1] += n[a + 1] * r, i.drawImage(s, t[a] + o, t[a + 1] + u);
+            ig.system.context.globalAlpha = 1
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.crosshair").requires("impact.entity").defines(function () {
+    window.EntityCrosshair = ig.Entity.extend({
+        animSheet: new ig.AnimationSheet("media/sprites/crosshair.png", 18, 18),
+        size: {
+            x: 2,
+            y: 2
+        },
+        offset: {
+            x: 8,
+            y: 8
+        },
+        type: ig.Entity.TYPE.NONE,
+        init: function (e, t, n) {
+            this.parent(e, t, n);
+            this.addAnim("idle", 60, [0])
+        },
+        update: function () {
+            this.pos.x = ig.input.mouse.x;
+            this.pos.y = ig.input.mouse.y;
+            this.currentAnim.angle -= 3 * ig.system.tick
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.player").requires("impact.entity", "game.entities.particle", "game.entities.crosshair").defines(function () {
+    window.EntityPlayer = ig.Entity.extend({
+        animSheet: new ig.AnimationSheet("media/sprites/ship.png", 24, 24),
+        shieldAnimSheet: new ig.AnimationSheet("media/sprites/shield.png", 48, 48),
+        size: {
+            x: 2,
+            y: 2
+        },
+        offset: {
+            x: 11,
+            y: 11
+        },
+        angle: -Math.PI / 2,
+        targetAngle: -Math.PI / 2,
+        xfriction: {
+            x: 800,
+            y: 800
+        },
+        maxVel: {
+            x: 300,
+            y: 300
+        },
+        speed: 110,
+        soundShoot: new ig.Sound(),
+        soundExplode: new ig.Sound(),
+        type: ig.Entity.TYPE.A,
+        init: function (e, t, n) {
+            this.parent(e, t, n);
+            this.addAnim("idle", 60, [0]);
+            this.addAnim("shoot", .05, [3, 2, 1, 0], !0);
+            this.shield = new ig.Animation(this.shieldAnimSheet, 1, [0]);
+            this.shieldTimer = new ig.Timer(2);
+            this.lastShootTimer = new ig.Timer(0);
+            this.crosshair = ig.game.crosshair;
+            this.soundShoot.volume = .7;
+            ig.game.player = this
+        },
+        draw: function () {
+            this.parent();
+            this.shieldTimer && (this.shield.alpha = this.shieldTimer.delta().map(-.5, 0, .5, 0).limit(0, .5), this.shield.draw(this.pos.x - 24 - ig.game._rscreen.x, this.pos.y - 24 - ig.game._rscreen.y))
+        },
+        update: function () {
+            if (this.shieldTimer) {
+                var e = this.shieldTimer.delta();
+                if (0 < e) this.shieldTimer = null;
+                else if (-1 > e) {
+                    this.vel.y = e.map(-2, -1, -200, 0);
+                    this.parent();
+                    return
+                }
+            }
+            0 < this.currentAnim.loopCount && (this.currentAnim = this.anims.idle);
+            this.crosshair ? this.handleDesktopInput() : this.handleTouchInput();
+            this.currentAnim.angle = this.angle + Math.PI / 2;
+            this.parent();
+            0 > this.pos.x ? this.pos.x = 0 : this.pos.x > ig.system.width && (this.pos.x = ig.system.width);
+            0 > this.pos.y ? this.pos.y = 0 : this.pos.y > ig.system.height && (this.pos.y = ig.system.height)
+        },
+        handleDesktopInput: function () {
+            ig.input.state("left") ? this.vel.x = -this.speed : ig.input.state("right") ? this.vel.x = this.speed : this.vel.x = 0;
+            ig.input.state("up") ? this.vel.y = -this.speed : ig.input.state("down") ? this.vel.y = this.speed : this.vel.y = 0;
+            this.angle = this.angleTo(this.crosshair);
+            var e = ig.input.state("shoot");
+            e && 0 < this.lastShootTimer.delta() && (this.shoot(), this.lastShootTimer.set(.05));
+            e && !this.wasShooting ? (this.wasShooting = !0, this.soundShoot.play()) : this.wasShooting && !e && (this.soundShoot.stop(), this.wasShooting = !1)
+        },
+        handleTouchInput: function () {
+            var e = ig.game.stickLeft;
+            this.vel.x = e.input.x * this.speed;
+            this.vel.y = e.input.y * this.speed;
+            e = ig.game.stickRight;
+            e.amount && (this.angle = e.angle - Math.PI / 2, 0 < this.lastShootTimer.delta() && (this.shoot(), this.lastShootTimer.set(.05)))
+        },
+        kill: function () {
+            this.soundShoot.stop();
+            this.soundExplode.play();
+            ig.game.lastKillTimer.set(.5);
+            ig.game.spawnEntity(EntityExplosionParticleBlue, this.pos.x, this.pos.y, {
+                count: 40
+            });
+            this.pos.y = ig.system.height + 300;
+            this.parent();
+            ig.game.loseLive()
+        },
+        shoot: function () {
+            this.currentAnim = this.anims.shoot.rewind();
+            var e = this.angle + .1 * Math.random() - .05;
+            ig.game.spawnEntity(EntityPlasma, this.pos.x - 1, this.pos.y - 1, {
+                angle: e
+            })
+        }
+    });
+    window.EntityPlasma = ig.Entity.extend({
+        speed: 1e3,
+        maxVel: {
+            x: 1e3,
+            y: 1e3
+        },
+        image: new ig.Image("media/sprites/plasma.png"),
+        size: {
+            x: 4,
+            y: 4
+        },
+        offset: {
+            x: 46,
+            y: 46
+        },
+        checkAgainst: ig.Entity.TYPE.B,
+        init: function (e, t, n) {
+            this.parent(e, t, n);
+            this.vel.x = Math.cos(this.angle) * this.speed;
+            this.vel.y = Math.sin(this.angle) * this.speed
+        },
+        update: function () {
+            this.pos.x += this.vel.x * ig.system.tick;
+            this.pos.y += this.vel.y * ig.system.tick;
+            (this.pos.x > ig.system.width + 200 || this.pos.y > ig.system.height + 200 || -200 > this.pos.x || -200 > this.pos.y) && this.kill()
+        },
+        draw: function () {
+            ig.system.context.save();
+            ig.system.context.translate(this.pos.x - ig.game._rscreen.x, this.pos.y - ig.game._rscreen.y);
+            ig.system.context.rotate(this.angle + Math.PI / 2);
+            ig.system.context.drawImage(this.image.data, -this.offset.x, -this.offset.y);
+            ig.system.context.restore()
+        },
+        check: function (e) {
+            e instanceof EntityEnemy && (e.receiveDamage(10, this), this.kill())
+        }
+    });
+    window.EntityExplosionParticleBlue = EntityParticles.extend({
+        lifetime: 1,
+        fadetime: 1,
+        vel: {
+            x: 360,
+            y: 360
+        },
+        image: new ig.Image("media/sprites/exp-blue.png")
+    })
+});
+ig.baked = !0;
+
+ig.module("game.menus").requires("impact.font").defines(function () {
+    window.MenuItem = ig.Class.extend({
+        getText: function () {
+            return "none"
+        },
+        left: function () {
+        },
+        right: function () {
+        },
+        ok: function () {
+        },
+        click: function () {
+            ig.system.canvas.style.cursor = "auto";
+            this.ok()
+        }
+    });
+    window.Menu = ig.Class.extend({
+        clearColor: null,
+        name: null,
+        font: new ig.Font("media/fonts/chinese-48.png"),
+        fontSelected: new ig.Font("media/fonts/chinese-48-orange.png"),
+        fontTitle: new ig.Font("media/fonts/chinese-48.png"),
+        current: 0,
+        itemClasses: [],
+        items: [],
+        init: function () {
+            this.y = ig.system.height / 4 + 160;
+            for (var e = 0; e < this.itemClasses.length; e++) this.items.push(new this.itemClasses[e])
+        },
+        update: function () {
+            ig.input.pressed("up") && this.current--;
+            ig.input.pressed("down") && this.current++;
+            this.current = this.current.limit(0, this.items.length - 1);
+            ig.input.pressed("left") && this.items[this.current].left();
+            ig.input.pressed("right") && this.items[this.current].right();
+            for (var e = ig.ua.mobile ? this.font.height / 2 : 0, t = this.y, n = ig.system.width / 2, r = null, i = 0; i < this.items.length; i++) {
+                var s = this.items[i],
+                    o = this.font.widthForString(s.getText()) / 2 + e;
+                ig.input.mouse.x > n - o && ig.input.mouse.x < n + o && ig.input.mouse.y > t - e && ig.input.mouse.y < t + this.font.height + e && (r = s, this.current = i);
+                t += this.font.height + 20
+            }
+            r ? (ig.system.canvas.style.cursor = "pointer", ig.input.pressed("shoot") && r.click()) : ig.system.canvas.style.cursor = "auto";
+            ig.input.pressed("ok") && this.items[this.current].ok()
+        },
+        draw: function () {
+            this.clearColor && (ig.system.context.fillStyle = this.clearColor, ig.system.context.fillRect(0, 0, ig.system.width, ig.system.height));
+            var e = ig.system.width / 2,
+                t = this.y;
+            this.name && this.fontTitle.draw(this.name, e, t - 160, ig.Font.ALIGN.CENTER);
+            for (var n = 0; n < this.items.length; n++) {
+                var r = this.items[n].getText();
+                //PK: remove ad
+                if (r.indexOf("MNCD") > -1) {
+                    continue;
+                }
+                n == this.current ? this.fontSelected.draw(r, e, t, ig.Font.ALIGN.CENTER) : this.font.draw(r, e, t, ig.Font.ALIGN.CENTER);
+                //console.log(r);
+
+                if (n == this.current) {
+                    this.fontSelected.draw(r, e, t, ig.Font.ALIGN.CENTER)
+                } else {
+                    this.font.draw(r, e, t, ig.Font.ALIGN.CENTER);
+                }
+                t += this.font.height + 20
+            }
+        }
+    });
+    window.MenuItemSoundVolume = MenuItem.extend({
+        getText: function () {
+            return "ac  < " + (100 * ig.soundManager.volume).round() + "% >"
+        },
+        left: function () {
+            ig.soundManager.volume = (ig.soundManager.volume - .1).limit(0, 1)
+        },
+        right: function () {
+            ig.soundManager.volume = (ig.soundManager.volume + .1).limit(0, 1)
+        },
+        click: function () {
+            336 < ig.input.mouse.x ? this.right() : this.left()
+        }
+    });
+    window.MenuItemMusicVolume = MenuItem.extend({
+        getText: function () {
+            return "ab  < " + (100 * ig.music.volume).round() + "% >"
+        },
+        left: function () {
+            ig.music.volume = (ig.music.volume - .1).limit(0, 1)
+        },
+        right: function () {
+            ig.music.volume = (ig.music.volume + .1).limit(0, 1)
+        },
+        click: function () {
+            336 < ig.input.mouse.x ? this.right() : this.left()
+        }
+    });
+    window.MenuItemResume = MenuItem.extend({
+        getText: function () {
+            return "QR"
+        },
+        ok: function () {
+            ig.game.toggleMenu()
+        }
+    });
+    window.MenuItemBlank = MenuItem.extend({
+        getText: function () {
+            return ""
+        }
+    });
+    window.PauseMenu = Menu.extend({
+        init: function () {
+            ig.Sound.enabled && (this.itemClasses.push(MenuItemSoundVolume), this.itemClasses.push(MenuItemMusicVolume));
+            this.itemClasses.push(MenuItemResume);
+            ig.game.mode == XType.MODE.GAME && (this.itemClasses.push(MenuItemBlank), this.itemClasses.push(MenuItemBack));
+            this.parent()
+        },
+        name: "TU",
+        clearColor: "rgba(0,0,0,0.9)"
+    });
+    window.MenuItemPlay = MenuItem.extend({
+        getText: function () {
+            return "ABCD"
+        },
+        ok: function () {
+            ig.game.setGame()
+        }
+    });
+    window.MenuItemScores = MenuItem.extend({
+        getText: function () {
+            return "MNCD"
+        },
+        ok: function () {
+            goHome()
+        }
+    });
+    window.MenuItemSoundMenu = MenuItem.extend({
+        getText: function () {
+            return "OP"
+        },
+        ok: function () {
+            ig.game.toggleMenu()
+        }
+    });
+    window.TitleMenu = Menu.extend({
+        init: function () {
+            this.itemClasses.push(MenuItemPlay);
+            0 && this.itemClasses.push(MenuItemSoundMenu);
+            this.itemClasses.push(MenuItemScores);
+            this.parent()
+        }
+    });
+    window.MenuScores = Menu.extend({
+        loaded: "",
+        mode: "Desktop",
+        init: function () {
+            ig.$("#scores").style.display = "block";
+            MenuScores.initialized || (ig.$("#scoresBack").onclick = this.cancel.bind(this), ig.$("#showScoresDesktop").onclick = this.loadDesktop.bind(this), ig.$("#showScoresMobile").onclick = this.loadMobile.bind(this), MenuScores.initialized = !0);
+            this.loadMode(ig.ua.mobile ? "Mobile" : "Desktop")
+        },
+        loadDesktop: function () {
+            this.loadMode("Desktop");
+            return !1
+        },
+        loadMobile: function () {
+            this.loadMode("Mobile");
+            return !1
+        },
+        loadMode: function (e) {
+            this.mode = e;
+            ig.$("#showScoresDesktop").className = "";
+            ig.$("#showScoresMobile").className = "";
+            ig.$("#showScores" + e).className = "active";
+            ig.$("#scoresTable").innerHTML = "";
+            ig.$("#scoreNotice").innerHTML = "加载中...";
+//            ig.game.xhr("scores/index.php", {
+//                mode: e
+//            }, this.loadCallback.bind(this))
+        },
+        cancel: function () {
+            ig.$("#scores").style.display = "none";
+            ig.game.setTitle();
+            return !1
+        },
+        loadCallback: function (e) {
+            if (e.length) {
+                for (var t = '<table id="scoresTable"><tr class="head"><td></td><td>名字</td><td class="score">得分</td><td class="stage">关卡</td><td class="platform">平台</td></tr>', n = 0; n < e.length; n++) var r = e[n],
+                    t = t + ('<tr><td class="rank">' + (n + 1) + ".</td><td>" + this.escapeHTML(r.name) + '</a></td><td class="score">' + r.score + '</td><td class="stage">' + r.stage + '</td><td class="platform">' + r.platform + "</td></tr>");
+                t += "</table>";
+                ig.$("#scoresTable").innerHTML = t;
+                ig.$("#scoreNotice").innerHTML = ""
+            } else ig.$("#scoreNotice").innerHTML = "查询不到任何得分"
+        },
+        escapeHTML: function (e) {
+            return e.replace(/&/g, "&").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+        },
+        draw: function () {
+        },
+        update: function () {
+        }
+    });
+    window.MenuScores.initialized = !1;
+    window.MenuItemBack = MenuItem.extend({
+        getText: function () {
+            return "QRSTU"
+        },
+        ok: function () {
+//            alert(1);
+//            console.log(1);
+            window.setTimeout(function(){
+                ig.game.setTitle();
+            },300)
+        }
+    });
+    window.GameOverMenu = Menu.extend({
+        init: function () {
+            this.parent();
+            this.y = 500;
+            //pk: ending
+            updateShareScore(ig.game.score);
+            // dp_submitScore(ig.game.score)
+        },
+        itemClasses: [MenuItemBack],
+        draw: function () {
+            this.fontTitle.draw("CDEF", ig.system.width / 2, 100, ig.Font.ALIGN.CENTER);
+            this.fontTitle.draw("GH " + ig.game.score.zeroFill(6), ig.system.width / 2, 160, ig.Font.ALIGN.CENTER);
+            this.parent()
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy").requires("impact.entity", "game.entities.particle").defines(function () {
+    window.EntityEnemy = ig.Entity.extend({
+        speed: 0,
+        hitTimer: null,
+        dead: !1,
+        angle: 0,
+        killScore: 10,
+        hitScore: 10,
+        children: [],
+        parentNode: null,
+        nodeOffset: {
+            x: 0,
+            y: 0
+        },
+        pivot: {
+            x: 0,
+            y: 0
+        },
+        maxVel: {
+            x: 1e3,
+            y: 1e3
+        },
+        explodeParticles: 10,
+        attachmentPoints: [],
+        soundExplode: new ig.Sound("media/sounds/explosion.ogg"),
+        type: ig.Entity.TYPE.B,
+        checkAgainst: ig.Entity.TYPE.A,
+        killTimerTime: .3,
+        init: function (e, t, n) {
+            this.parent(e, t, n);
+            this.hitTimer = new ig.Timer(0);
+            this.dieTimer = new ig.Timer(0);
+            this.ownAngle = this.angle
+        },
+        angleToPoint: function (e, t) {
+            return Math.atan2(t - (this.pos.y + this.size.y / 2), e - (this.pos.x + this.size.x / 2))
+        },
+        update: function () {
+            this.isChild || (this.vel.x = Math.cos(this.angle) * this.speed, this.vel.y = Math.sin(this.angle) * this.speed, this.parent(), (this.pos.x < -this.image.width || this.pos.x > ig.system.width + 10 || this.pos.y > ig.system.height + 10 || this.pos.y < -this.image.height - 30) && this.kill())
+        },
+        attachChild: function (e) {
+            var t = this.attachmentPoints.shift();
+            return this.addChild(e, t.x, t.y, {
+                angle: t.angle * Math.PI / 180
+            })
+        },
+        addChild: function (e, t, n, r) {
+            r = ig.game.spawnEntity(e, 0, 0, r);
+            r.entityType = e;
+            r.nodeOffset.x = t;
+            r.nodeOffset.y = n;
+            r.isChild = !0;
+            r.parentNode = this;
+            this.children.push(r);
+            return r
+        },
+        updateChildren: function () {
+            if (this.children.length)
+                for (var e = Math.sin(this.angle - Math.PI / 2), t = Math.cos(this.angle - Math.PI / 2), n = 0; n < this.children.length; n++) {
+                    var r = this.children[n],
+                        i = r.nodeOffset.x,
+                        s = r.nodeOffset.y;
+                    r.pos.x = this.pos.x + t * i - e * s - r.size.x / 2 + this.size.x / 2;
+                    r.pos.y = this.pos.y + t * s + e * i - r.size.y / 2 + this.size.y / 2;
+                    r.angle = this.angle + r.ownAngle;
+                    r.updateChildren()
+                }
+        },
+        draw: function () {
+            var e = this.image.width / 2,
+                t = this.image.height / 2;
+            ig.system.context.save();
+            ig.system.context.translate(this.pos.x - ig.game._rscreen.x - this.offset.x + e, this.pos.y - ig.game._rscreen.y - this.offset.y + t);
+            ig.system.context.rotate(this.angle - Math.PI / 2);
+            ig.system.context.drawImage(this.image.data, -e, -t);
+            ig.system.context.restore()
+        },
+        receiveDamage: function (e, t) {
+            var n = !1;
+            if (10 >= this.health && this.children.length)
+                for (var r = 0; r < this.children.length && !(n = this.children[r].receiveSilentDamage(e)); r++);
+            n || this.parent(e);
+            this.hitTimer.set(.3);
+            ig.game.score += this.hitScore;
+            0 >= this.health ? (this.soundExplode.play(), this.explode(), ig.game.lastKillTimer.set(this.killTimerTime), ig.game.score += this.killScore) : ig.game.spawnEntity(EntityExplosionParticleLargeSlow, t.pos.x - t.size.x / 2, t.pos.y - t.size.y / 2, {
+                count: 1
+            })
+        },
+        receiveSilentDamage: function (e) {
+            if (10 >= this.health && this.children.length)
+                for (var t = 0; t < this.children.length; t++) {
+                    if (this.children[t].receiveSilentDamage(e)) return !0
+                } else if (10 < this.health) return this.health -= e, !0;
+            return !1
+        },
+        explode: function () {
+            ig.game.spawnEntity(EntityExplosionParticleLarge, this.pos.x + this.size.x / 2, this.pos.y + this.size.y / 2, {
+                count: this.explodeParticles
+            })
+        },
+        kill: function (e) {
+            for (var t = 0; t < this.children.length; t++) this.children[t].explode(), this.children[t].kill(!0);
+            e && (ig.game.score += this.killScore);
+            this.parentNode && !e && this.parentNode.children.erase(this);
+            this.parent()
+        },
+        check: function (e) {
+            e.shieldTimer ? this.receiveDamage(1e3, e) : (e.kill(), this.kill())
+        }
+    });
+    window.EntityExplosionParticleLarge = EntityParticles.extend({
+        lifetime: 1,
+        fadetime: 1,
+        vel: {
+            x: 150,
+            y: 150
+        },
+        image: new ig.Image("media/sprites/enemy-explosion.png")
+    });
+    window.EntityExplosionParticleLargeSlow = EntityParticles.extend({
+        lifetime: 1,
+        fadetime: 1,
+        vel: {
+            x: 20,
+            y: 20
+        },
+        image: new ig.Image("media/sprites/enemy-explosion.png")
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy-bullet").requires("game.entities.enemy").defines(function () {
+    window.EntityEnemyBullet = EntityEnemy.extend({
+        size: {
+            x: 16,
+            y: 16
+        },
+        offset: {
+            x: 2,
+            y: 4
+        },
+        image: new ig.Image("media/sprites/bullet.png"),
+        explodeParticles: 3,
+        killTimerTime: 0,
+        health: 10,
+        speed: 170,
+        killScore: 0,
+        hitScore: 0
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy-heart").requires("game.entities.enemy", "game.entities.enemy-bullet").defines(function () {
+    window.EntityEnemyHeart = EntityEnemy.extend({
+        size: {
+            x: 64,
+            y: 64
+        },
+        offset: {
+            x: 0,
+            y: 12
+        },
+        image: new ig.Image("media/sprites/heart.png"),
+        health: 400,
+        bullets: 16,
+        killScore: 1e4,
+        moveTarget: {
+            x: 0,
+            y: 0
+        },
+        angleTarget: {
+            x: 0,
+            y: 0
+        },
+        explodeParticles: 40,
+        killTimerTime: .3,
+        attachmentPoints: [
+            {
+                x: 40,
+                y: 42,
+                angle: -45
+            },
+            {
+                x: 44,
+                y: -20,
+                angle: -110
+            }
+        ],
+        init: function (e, t, n) {
+            this.parent(e, t - 18, n);
+            this.shootTimer = new ig.Timer(2);
+            this.angle = Math.PI / 2;
+            this.moveTimer = new ig.Timer(4);
+            this.angleTarget = {
+                x: ig.system.width / 2,
+                y: ig.system.height / 2
+            };
+            this.moveTarget = {
+                x: ig.system.width / 2,
+                y: ig.system.height / 6
+            }
+        },
+        speed: 20,
+        maxVel: {
+            x: 60,
+            y: 70
+        },
+        friction: {
+            x: 20,
+            y: 20
+        },
+        update: function () {
+            0 < this.moveTimer.delta() && (this.moveTarget = {
+                x: Math.random().map(0, 1, ig.system.width / 3, ig.system.width - ig.system.width / 3),
+                y: Math.random().map(0, 1, ig.system.height / 8, ig.system.height / 6)
+            }, this.moveTimer.set(6 * Math.random() + 12), this.angleTarget = {
+                x: ig.game.player.pos.x,
+                y: ig.game.player.pos.y
+            });
+            var e = (this.angle - this.angleToPoint(this.angleTarget.x, this.angleTarget.y)) * ig.system.tick;
+            this.angle -= e;
+            20 < Math.abs(this.pos.x - this.moveTarget.x) ? this.accel.x = 0 > this.pos.x - this.moveTarget.x ? this.speed : -this.speed : this.accel.x = 0;
+            20 < Math.abs(this.pos.y - this.moveTarget.y) ? this.accel.y = 0 > this.pos.y - this.moveTarget.y ? this.speed : -this.speed : this.accel.y = 0;
+            this.last.x = this.pos.x;
+            this.last.y = this.pos.y;
+            this.vel.x = this.getNewVelocity(this.vel.x, this.accel.x, this.friction.x, this.maxVel.x);
+            this.vel.y = this.getNewVelocity(this.vel.y, this.accel.y, this.friction.y, this.maxVel.y);
+            this.pos.x += this.vel.x * ig.system.tick;
+            this.pos.y += this.vel.y * ig.system.tick;
+            if (0 == this.children.length && 0 < this.shootTimer.delta()) {
+                for (var e = 140 / (this.bullets - 1), t = 20, n = 0; n < this.bullets; n++) {
+                    var r = t * Math.PI / 180,
+                        i = this.pos.x + 24 + 22 * Math.cos(r),
+                        s = this.pos.y + 44 + 22 * Math.sin(r);
+                    ig.game.spawnEntity(EntityEnemyBullet, i, s, {
+                        angle: r
+                    });
+                    t += e
+                }
+                this.shootTimer.reset()
+            }
+            this.updateChildren()
+        },
+        kill: function () {
+            this.parent();
+            ig.game.spawnEntity(EntityExplosionHuge, this.pos.x, this.pos.y);
+            ig.game.heart = null
+        }
+    });
+    window.EntityExplosionHuge = ig.Entity.extend({
+        lifetime: 1,
+        fadetime: 1,
+        alpha: 0,
+        img: new ig.Image("media/sprites/explosion-huge.jpg", 512, 512),
+        init: function (e, t, n) {
+            this.parent(e, t, n);
+            this.idleTimer = new ig.Timer
+        },
+        update: function () {
+            this.idleTimer.delta() > this.lifetime ? this.kill() : this.alpha = this.idleTimer.delta().map(this.lifetime - this.fadetime, this.lifetime, 1, 0)
+        },
+        draw: function () {
+            var e = ig.system.context;
+            e.save();
+            var t = this.alpha.map(0, 1, 10, 0);
+            e.translate(this.pos.x - ig.game._rscreen.x, this.pos.y - ig.game._rscreen.y);
+            e.scale(t, t);
+            e.globalAlpha = this.alpha;
+            this.img.draw(-256, -256);
+            e.globalAlpha = 1;
+            ig.system.context.restore()
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy-missilebox").requires("game.entities.enemy", "game.entities.enemy-bullet").defines(function () {
+    window.EntityEnemyMissilebox = EntityEnemy.extend({
+        size: {
+            x: 44,
+            y: 44
+        },
+        offset: {
+            x: 2,
+            y: 2
+        },
+        image: new ig.Image("media/sprites/missilebox.png"),
+        health: 120,
+        bullets: 8,
+        reloadTime: 3,
+        explodeParticles: 10,
+        killScore: 300,
+        init: function (e, t, n) {
+            this.parent(e, t - 18, n);
+            this.moveTimer = new ig.Timer;
+            this.angle = Math.PI / 2;
+            this.startAngle = this.ownAngle;
+            this.shootTimer = new ig.Timer(Math.random() * this.reloadTime * 2)
+        },
+        update: function () {
+            this.parent();
+            if (0 < this.shootTimer.delta()) {
+                for (var e = 140 / (this.bullets - 1), t = 20 + 180 * (this.angle - Math.PI / 2) / Math.PI, n = 0; n < this.bullets; n++) {
+                    var r = t * Math.PI / 180,
+                        i = this.pos.x + 20 + 22 * Math.cos(r),
+                        s = this.pos.y + 20 + 22 * Math.sin(r);
+                    ig.game.spawnEntity(EntityEnemyBullet, i, s, {
+                        angle: r
+                    });
+                    t += e
+                }
+                this.shootTimer.set(this.reloadTime)
+            }
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy-plasmabox").requires("game.entities.enemy", "game.entities.enemy-bullet").defines(function () {
+    window.EntityEnemyPlasmabox = EntityEnemy.extend({
+        size: {
+            x: 44,
+            y: 44
+        },
+        offset: {
+            x: 2,
+            y: 2
+        },
+        image: new ig.Image("media/sprites/plasmabox.png"),
+        health: 180,
+        reloadTime: 4,
+        bullets: 32,
+        explodeParticles: 10,
+        killScore: 400,
+        init: function (e, t, n) {
+            this.parent(e, t - 18, n);
+            this.moveTimer = new ig.Timer;
+            this.angle = Math.PI / 2;
+            this.startAngle = this.ownAngle;
+            this.shootTimer = new ig.Timer(Math.random() * this.reloadTime * 2)
+        },
+        update: function () {
+            this.parent();
+            if (0 < this.shootTimer.delta()) {
+                for (var e = 360 / (this.bullets - 1), t = 0, n = 0; n < this.bullets; n++) ig.game.spawnEntity(EntityEnemyPlasmaBullet, this.pos.x + 18, this.pos.y + 18, {
+                    angle: t * Math.PI / 180
+                }), t += e;
+                this.shootTimer.set(this.reloadTime)
+            }
+        }
+    });
+    window.EntityEnemyPlasmaBullet = EntityEnemy.extend({
+        size: {
+            x: 8,
+            y: 8
+        },
+        offset: {
+            x: 28,
+            y: 28
+        },
+        image: new ig.Image("media/sprites/pbullet.png"),
+        health: 10,
+        speed: 10,
+        maxSpeed: 160,
+        type: ig.Entity.TYPE.NONE,
+        update: function () {
+            this.speed = Math.min(this.maxSpeed, this.speed + 100 * ig.system.tick);
+            this.vel.x = Math.cos(this.angle) * this.speed;
+            this.vel.y = Math.sin(this.angle) * this.speed;
+            this.pos.x += this.vel.x * ig.system.tick;
+            this.pos.y += this.vel.y * ig.system.tick;
+            (this.pos.x > ig.system.width + 200 || this.pos.y > ig.system.height + 200 || -200 > this.pos.x || -200 > this.pos.y) && this.kill()
+        },
+        draw: function () {
+            ig.system.context.drawImage(this.image.data, this.pos.x - ig.game._rscreen.x - this.offset.x, this.pos.y - ig.game._rscreen.y - this.offset.y)
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.entities.enemy-arm").requires("game.entities.enemy", "game.entities.enemy-bullet").defines(function () {
+    window.EntityEnemyArm = EntityEnemy.extend({
+        size: {
+            x: 44,
+            y: 44
+        },
+        offset: {
+            x: 2,
+            y: 2
+        },
+        image: new ig.Image("media/sprites/arm.png"),
+        health: 70,
+        killScore: 50,
+        explodeParticles: 5,
+        attachmentPoints: [
+            {
+                x: -8,
+                y: 42,
+                angle: 20
+            },
+            {
+                x: 32,
+                y: 6,
+                angle: -70
+            },
+            {
+                x: -32,
+                y: 6,
+                angle: 70
+            }
+        ],
+        init: function (e, t, n) {
+            this.parent(e, t - 18, n);
+            this.moveTimer = new ig.Timer;
+            this.angle = Math.PI / 2;
+            this.startAngle = this.ownAngle
+        },
+        update: function () {
+            this.parent();
+            this.ownAngle = this.startAngle + .05 * Math.cos(this.moveTimer.delta())
+        }
+    })
+});
+ig.baked = !0;
+ig.module("plugins.analog-stick").requires("impact.system").defines(function () {
+    ig.AnalogStick = ig.Class.extend({
+        stickSize: 30,
+        baseSize: 70,
+        stickColor: "rgba(255,255,255,0.3)",
+        baseColor: "rgba(255,255,255,0.3)",
+        pos: {
+            x: 0,
+            y: 0
+        },
+        input: {
+            x: 0,
+            y: 0
+        },
+        pressed: !1,
+        angle: 0,
+        amount: 0,
+        _touchId: null,
+        init: function (e, t, n, r) {
+            this.pos = {
+                x: e,
+                y: t
+            };
+            this.baseSize = n || this.baseSize;
+            this.stickSize = r || this.stickSize;
+            this.max = this.baseSize - this.stickSize / 3;
+            ig.system.canvas.addEventListener("touchstart", this.touchStart.bind(this), !1);
+            document.addEventListener("touchmove", this.touchMove.bind(this), !1);
+            document.addEventListener("touchend", this.touchEnd.bind(this), !1);
+            ig.input.isUsingMouse = !0
+        },
+        touchStart: function (e) {
+            e.preventDefault();
+            if (!this.pressed)
+                for (var t = 0; t < e.touches.length; t++) {
+                    var n = e.touches[t],
+                        r = ig.input;
+                    r.mouse.x = n.pageX * ig.internalScale;
+                    r.mouse.y = n.pageY * ig.internalScale;
+                    r.actions.shoot = !0;
+                    r.locks.shoot || (r.presses.shoot = !0, r.locks.shoot = !0);
+                    var r = this.pos.x - n.pageX * ig.internalScale,
+                        i = this.pos.y - n.pageY * ig.internalScale;
+                    if (Math.sqrt(r * r + i * i) < this.baseSize) {
+                        this.pressed = !0;
+                        this._touchId = n.identifier;
+                        this._moved(n);
+                        break
+                    }
+                }
+        },
+        touchMove: function (e) {
+            e.preventDefault();
+            for (var t = 0; t < e.changedTouches.length; t++)
+                if (e.changedTouches[t].identifier == this._touchId) {
+                    this._moved(e.changedTouches[t]);
+                    break
+                }
+        },
+        _moved: function (e) {
+            var t = e.pageX * ig.internalScale - this.pos.x;
+            e = e.pageY * ig.internalScale - this.pos.y;
+            this.angle = Math.atan2(t, -e);
+            this.amount = Math.min(1, Math.sqrt(t * t + e * e) / this.max);
+            this.input.x = Math.sin(this.angle) * this.amount;
+            this.input.y = -Math.cos(this.angle) * this.amount
+        },
+        touchEnd: function (e) {
+            ig.input.delayedKeyup.shoot = !0;
+            for (var t = 0; t < e.changedTouches.length; t++)
+                if (e.changedTouches[t].identifier == this._touchId) {
+                    this.pressed = !1;
+                    this.input.x = 0;
+                    this.amount = this.input.y = 0;
+                    this._touchId = null;
+                    break
+                }
+        },
+        draw: function () {
+            var e = ig.system.context;
+            e.beginPath();
+            e.arc(this.pos.x, this.pos.y, this.baseSize, 0, 2 * Math.PI, !0);
+            e.lineWidth = 3;
+            e.strokeStyle = this.baseColor;
+            e.stroke();
+            e.beginPath();
+            e.arc(this.pos.x + this.input.x * this.max, this.pos.y + this.input.y * this.max, this.stickSize, 0, 2 * Math.PI, !0);
+            e.fillStyle = this.stickColor;
+            e.fill()
+        }
+    })
+});
+ig.baked = !0;
+ig.module("game.main").requires("impact.game", "impact.font", "plugins.impact-splash-loader", "game.entities.player", "game.menus", "game.entities.enemy-heart", "game.entities.enemy-missilebox", "game.entities.enemy-plasmabox", "game.entities.enemy-arm", "plugins.analog-stick").defines(function () {
+    Number.zeroes = "000000000000";
+    Number.prototype.zeroFill = function (e) {
+        var t = this.toString();
+        return Number.zeroes.substr(0, e - t.length) + t
+    };
+    window.XType = ig.Game.extend({
+        menu: null,
+        mode: 0,
+        font: new ig.Font("media/fonts/chinese-48.png"),
+        backdrop: new ig.Image("media/background/backdrop.png"),
+        grid: new ig.Image("media/background/grid.png"),
+        music: new ig.Sound(),
+        title: new ig.Image("media/title.png"),
+        pauseButton: new ig.Image("media/pause-button.png"),
+        madeWithImpact: new ig.Image("media/made-with-impact.png"),
+        instructions: new ig.Image("media/instructions-" + (ig.ua.mobile ? "mobile" : "desktop") + ".png"),
+        score: 0,
+        lives: 3,
+        level: {
+            level: 0,
+            support: 1,
+            plasma: 0,
+            missile: 0
+        },
+        stickLeft: null,
+        stickRight: null,
+        init: function () {
+            var e = new ig.BackgroundMap(620, [
+                [1]
+            ], this.grid);
+            e.repeat = !0;
+            this.backgroundMaps.push(e);
+            if (ig.ua.mobile) {
+                var e = ig.system.height - 60 - 20,
+                    t = ig.system.width - 60 - 20;
+                this.stickLeft = new ig.AnalogStick(80, e, 60, 30);
+                this.stickRight = new ig.AnalogStick(t, e, 60, 30)
+            } else ig.input.bind(ig.KEY.MOUSE1, "shoot"), ig.input.bind(ig.KEY.UP_ARROW, "up"), ig.input.bind(ig.KEY.DOWN_ARROW, "down"), ig.input.bind(ig.KEY.LEFT_ARROW, "left"), ig.input.bind(ig.KEY.RIGHT_ARROW, "right"), ig.input.bind(ig.KEY.W, "up"), ig.input.bind(ig.KEY.S, "down"), ig.input.bind(ig.KEY.A, "left"), ig.input.bind(ig.KEY.D, "right"), ig.input.bind(ig.KEY.ENTER, "ok"), ig.input.bind(ig.KEY.ESC, "menu"), ig.music.volume = .6, ig.music.add(this.music);
+            this.setTitle();
+            XType.initialized = !0
+        },
+        reset: function () {
+            this.heart = null;
+            this.lastKillTimer = new ig.Timer(-2);
+            this.entities = [];
+            this.entitiesSortedByPosTypeA = [];
+            this.entitiesSortedByPosTypeB = [];
+            this.score = 0;
+            this.lives = 1;
+            this.level = {
+                level: 0,
+                support: 1,
+                plasma: 0,
+                missile: 0
+            }
+        },
+        setGame: function () {
+            window.scrollTo(0, 0);
+            ig.music.play();
+            ig.system.canvas.style.cursor = "";
+            this.menu = null;
+            this.initTimer = new ig.Timer(3);
+            this.lastKillTimer.reset();
+            ig.ua.mobile || (this.crosshair = this.spawnEntity(EntityCrosshair, 0, 0));
+            this.bossEndTimer = null;
+            this.player = this.spawnEntity(EntityPlayer, ig.system.width / 2, ig.system.height + 24);
+            this.mode = XType.MODE.GAME
+        },
+        setTitle: function () {
+            //PK: start
+            //console.log("start");
+            pkGame.reportStatus('start');
+
+            this.reset();
+            this.mode = XType.MODE.TITLE;
+            this.menu = new TitleMenu;
+            ig.$("#scoreBox").style.display = "none"
+        },
+        setGameOver: function () {
+            if (0 < this.score) {
+                var e = this.getCookie("scoreName");
+                e && (ig.$("#scoreName").value = e);
+                ig.$("#scoreBox").style.display = "block";
+                ig.$("#scoreForm").style.display = "block";
+                ig.$("#scoreResponse").style.display = "none"
+            }
+            this.mode = XType.MODE.GAME_OVER;
+            this.menu = new GameOverMenu
+        },
+        toggleMenu: function () {
+            this.mode == XType.MODE.TITLE ? this.menu = this.menu instanceof TitleMenu ? new PauseMenu : new TitleMenu : this.menu ? (ig.system.canvas.style.cursor = "", this.menu = null) : this.menu = new PauseMenu
+        },
+        checkBoss: function () {
+            this.heart || this.initTimer || (this.bossEndTimer ? this.bossEndTimer && 0 < this.bossEndTimer.delta() && (this.bossEndTimer = null, this.spawnBoss()) : this.bossEndTimer = new ig.Timer(2))
+        },
+        spawnBoss: function () {
+            this.heart = this.spawnEntity(EntityEnemyHeart, ig.system.width / 2, 0);
+            this.level.level += 1;
+            this.level.support += 1;
+            this.level.plasma += this.level.level % 2 ? 0 : 1;
+            this.level.missile += this.level.level % 2 ? 1 : 0;
+            for (var e = 0; e < this.level.support; e++) this.spawEntityRandom(EntityEnemyArm);
+            for (e = 0; e < this.level.missile; e++) this.spawEntityRandom(EntityEnemyMissilebox);
+            for (e = 0; e < this.level.plasma; e++) this.spawEntityRandom(EntityEnemyPlasmabox);
+            this.mirrorChildren(this.heart, this.heart);
+            this.heart.update();
+            for (var t = this.getEntitiesByType(EntityEnemyArm), n = 0, e = 0; e < t.length; e++) n = Math.max(t[e].pos.y, n);
+            this.heart.pos.y = -n - 120;
+            this.heart.vel.y = 70;
+            this.heart.update()
+        },
+        mirrorChildren: function (e, t) {
+            for (var n = e.children.length, r = 0; r < n; r++) {
+                var i = e.children[r],
+                    s = t.addChild(i.entityType, -i.nodeOffset.x, i.nodeOffset.y, {
+                        angle: -i.ownAngle
+                    });
+                this.mirrorChildren(i, s)
+            }
+        },
+        spawEntityRandom: function (e) {
+            var t = this.getEntitiesByType(EntityEnemyArm);
+            t.push(this.heart);
+            for (var n = 0; 20 > n; n++) {
+                var r = t.random();
+                if (r.attachmentPoints && r.attachmentPoints.length && !(e == EntityEnemyArm && r instanceof EntityEnemyArm && 3 != r.attachmentPoints.length && r.parentNode instanceof EntityEnemyHeart)) {
+                    r.attachChild(e);
+                    break
+                }
+            }
+        },
+        update: function () {
+            !this.menu && (ig.input.pressed("menu") || ig.ua.mobile && ig.input.pressed("shoot") && 100 > ig.input.mouse.x && 100 > ig.input.mouse.y) && this.toggleMenu();
+            if (this.menu && (this.backgroundMaps[0].scroll.y -= 100 * ig.system.tick, this.menu.update(), this.mode == XType.MODE.TITLE && ig.input.pressed("shoot") && ig.input.mouse.x > ig.system.width - 154 && ig.input.mouse.y > ig.system.height - 56 && (window.location = "http://impactjs.com/"), !(this.menu instanceof GameOverMenu))) return;
+            this.parent();
+            this.backgroundMaps[0].scroll.y -= 100 * ig.system.tick;
+            this.mode == XType.MODE.GAME && this.checkBoss()
+        },
+        loseLive: function () {
+            this.lives--;
+            0 < this.lives ? (this.player = this.spawnEntity(EntityPlayer, ig.system.width / 2, ig.system.height + 24), this.livesRemainingTimer = new ig.Timer(2)) : this.setGameOver()
+        },
+        draw: function () {
+            this.backdrop.draw(0, 0);
+            var e = this.lastKillTimer.delta();
+            ig.system.context.globalAlpha = 0 > e ? -3 * e + .3 : .3;
+            for (var t = 0; t < this.backgroundMaps.length; t++) this.backgroundMaps[t].draw();
+            ig.system.context.globalAlpha = 1;
+            .5 > e ? (this._rscreen.x = 10 * Math.random() * (e - .5), this._rscreen.y = 10 * Math.random() * (e - .5)) : this._rscreen.x = this._rscreen.y = 0;
+            ig.system.context.globalCompositeOperation = "lighter";
+            for (t = 0; t < this.entities.length; t++) this.entities[t].draw();
+            ig.system.context.globalCompositeOperation = "source-over";
+            this.mode == XType.MODE.GAME ? this.drawUI() : this.mode == XType.MODE.TITLE && this.drawTitle();
+            this.menu && this.menu.draw()
+        },
+        drawUI: function () {
+            ig.ua.mobile && (this.stickLeft.draw(), this.stickRight.draw(), this.pauseButton.draw(16, 10));
+            this.font.draw(this.score.zeroFill(6), ig.system.width - 32, 32, ig.Font.ALIGN.RIGHT);
+            if (this.bossEndTimer) {
+                var e = -this.bossEndTimer.delta(),
+                    t = 1.7 < e ? e.map(2, 1.7, 0, 1) : 1 > e ? e.map(1, 0, 1, 0) : 1,
+                    n = ig.system.width / 2,
+                    e = ig.system.height / 3 + (1 > e ? Math.cos(1 - e).map(1, 0, 0, 250) : 0),
+                    r = this.level.level;
+                this.font.alpha = t;
+                this.font.draw("I " + r + " JKL", n, e, ig.Font.ALIGN.CENTER);
+                highestStage = r;
+                this.font.alpha = 1
+            }
+            this.livesRemainingTimer && (t = -this.livesRemainingTimer.delta(), n = 1.7 < t ? t.map(2, 1.7, 0, 1) : 1 > t ? t : 1, e = ig.system.width / 2, r = ig.system.height / 3 + (1 > t ? Math.cos(1 - t).map(1, 0, 0, 250) : 0), this.font.alpha = Math.max(n, 0), 1 < this.lives ? this.font.draw(this.lives + " VWXYZ", e, r, ig.Font.ALIGN.CENTER) : this.font.draw(this.lives + " VWXYZ", e, r, ig.Font.ALIGN.CENTER), this.font.alpha = 1, 0 > t && (this.livesRemainingTimer = null));
+            this.initTimer && (t = this.initTimer.delta(), 0 < t && (this.initTimer = null, this.spawnBoss()), ig.system.context.globalAlpha = t.map(-.5, 0, 1, 0).limit(0, 1), ig.ua.mobile ? this.instructions.draw(100, ig.system.height - 210) : this.instructions.draw(25, 260), ig.system.context.globalAlpha = 1)
+        },
+        drawTitle: function () {
+            this.title.draw(96, 96);
+            var e = ig.system.height - 40;
+            ig.system.context.globalAlpha = .6;
+            ig.system.context.globalAlpha = 1;
+            this.madeWithImpact.draw(ig.system.width - 154, ig.system.height - 56)
+        },
+        entitiesSortedByPosTypeA: [],
+        entitiesSortedByPosTypeB: [],
+        sortByYPos: function (e, t) {
+            return e.pos.y - t.pos.y
+        },
+        sortByYPosSize: function (e, t) {
+            return e.pos.y + e.size.y - (t.pos.y + t.size.y)
+        },
+        spawnEntity: function (e, t, n, r) {
+            var i = "string" === typeof e ? ig.global[e] : e;
+            if (!i) throw "Can't spawn entity of type " + e;
+            e = new i(t, n, r || {});
+            this.entities.push(e);
+            e.name && (this.namedEntities[e.name] = e);
+            if (e.type || e.checkAgainst) e.type == ig.Entity.TYPE.A || e.checkAgainst & ig.Entity.TYPE.B ? this.entitiesSortedByPosTypeA.push(e) : this.entitiesSortedByPosTypeB.push(e);
+            return e
+        },
+        removeEntity: function (e) {
+            e.name && delete this.namedEntities[e.name];
+            if (e.type || e.checkAgainst) e.type == ig.Entity.TYPE.A || e.checkAgainst & ig.Entity.TYPE.B ? this.entitiesSortedByPosTypeA.erase(e) : this.entitiesSortedByPosTypeB.erase(e);
+            e._killed = !0;
+            e.checkAgainst = ig.Entity.TYPE.NONE;
+            e.collides = ig.Entity.COLLIDES.NEVER;
+            this._deferredKill.push(e)
+        },
+        checkEntities: function () {
+            var e = this.entitiesSortedByPosTypeA,
+                t = this.entitiesSortedByPosTypeB;
+            t.sort(this.sortByYPosSize);
+            e.sort(this.sortByYPos);
+            for (var n = 0, r = null, i = null, s = 0, o = !0, u = 0; u < t.length; u++)
+                for (var r = t[u], o = !0, s = r.pos.y + r.size.y, a = n; a < e.length && (i = e[a]) && i.pos.y < s; a++) o && i.pos.y + i.size.y < r.pos.y ? n = a : o = !1, r.touches(i) && ig.Entity.checkPair(r, i)
+        },
+        submitScore: function () {
+        },
+        scoreResponse: function (e) {
+            e.success ? ig.$("#scoreResponse").innerHTML = "排名: #" + e.rank : ig.$("#scoreResponse").innerHTML = "抱歉，出错啦！"
+        },
+        xhr: function (e, t, n) {
+            var r = [];
+            if (t)
+                for (var i in t) r.push(i + "=" + encodeURIComponent(t[i]));
+            t = r.join("&");
+            var s = new XMLHttpRequest;
+            n && (s.onreadystatechange = function () {
+                4 == s.readyState && n(JSON.parse(s.responseText))
+            });
+            s.open("POST", e);
+            s.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            s.send(t)
+        },
+        setCookie: function (e, t, n) {
+            n = n || 1;
+            var r = new Date;
+            r.setTime(Date.now() + 864e5 * n);
+            document.cookie = e + "=" + escape(t) + ";expires=" + r.toGMTString()
+        },
+        getCookie: function (e) {
+            var t = (" " + document.cookie).match(RegExp("[; ]" + e + "=([^\\s;]*)"));
+            return e && t ? unescape(t[1]) : null
+        }
+    });
+    window.XType.MODE = {
+        TITLE: 0,
+        GAME: 1,
+        GAME_OVER: 2,
+        SCORES: 3
+    };
+    window.XType.paused = !1;
+    window.XType.startGame = function () {
+        ig.Sound.channels = 2;
+        ig.System.drawMode = ig.System.DRAW.SUBPIXEL;
+        var e = 720;
+        if (ig.ua.mobile) {
+            ig.Sound.enabled = !1;
+            var t = 480 / (window.innerWidth * ig.ua.pixelRatio),
+                e = window.innerHeight * ig.ua.pixelRatio * t;
+            ig.internalScale = t * ig.ua.pixelRatio;
+            t = ig.$("#canvas");
+            t.style.width = Math.floor(window.innerWidth) + "px";
+            t.style.height = Math.floor(window.innerHeight) + "px";
+            ig.$("#scoreBox").style.width = Math.floor(window.innerWidth) + "px";
+            ig.$("#scoreBox").style.top = 240 / ig.internalScale + "px";
+            ig.$("#scores").style.width = 410 / ig.internalScale + "px";
+            ig.$("#scores").style.height = Math.floor(window.innerHeight) + "px"
+        } else ig.$("#canvas").className = "desktop", ig.$("#making-of").style.display = "block", ig.$("#scoreBox").style.bottom = 0, ig.$("#scores").style.bottom = 0;
+        ig.$("#scoreForm").onsubmit = function () {
+            ig.game && ig.game.submitScore();
+            return !1
+        };
+        ig.main("#canvas", XType, 60, 480, e, 1, ig.ImpactSplashLoader)
+    };
+    window.XType.checkOrientation = function () {
+        var e = XType.isPortrait();
+        e !== XType.wasPortrait && (XType.wasPortrait = e, ig.$("#loading").style.display = "none", e ? (ig.$("#canvas").style.display = "block", ig.$("#rotate").style.display = "none", XType.initialized && XType.paused ? (ig.system.startRunLoop(), XType.paused = !1) : XType.initialized || (window.scrollTo(0, 0), window.setTimeout(XType.startGame, 1))) : (XType.initialized && (ig.system.stopRunLoop(), XType.paused = !0), ig.$("#canvas").style.display = "none", ig.$("#rotate").style.display = "block"))
+    };
+    window.XType.tweetPopup = function () {
+        var e = "I just scored " + ig.game.score + " in #xtype!";
+        return !1
+    };
+    window.XType.wasPortrait = -1;
+    window.XType.isPortrait = function () {
+        return !ig.ua.mobile || window.innerHeight > window.innerWidth
+    };
+    window.addEventListener("orientationchange", XType.checkOrientation, !1);
+    window.addEventListener("resize", XType.checkOrientation, !1);
+    window.XType.checkOrientation()
+});

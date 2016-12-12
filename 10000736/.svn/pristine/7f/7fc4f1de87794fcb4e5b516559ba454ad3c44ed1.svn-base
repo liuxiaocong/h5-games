@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+本游戏版权归天津九章科技有限公司所有，请遵守规则，欢迎转发。
+1.你可以收集、分享、转发本游戏。
+2.你可以在自己的服务器上存储本游戏。
+3.你可以修改游戏涉及的所有js代码。
+4.你可以修改更多游戏APP_LIST_URL的指向。
+5.你可以修改本html文件，但需保留本声明。
+6.你不可以修改游戏加载屏的内容。
+7.你不可以修改羊驼关注页面的指向。
+8.你不可以在游戏外遮盖游戏加载屏，和求关注的羊驼图标。
+9.本公司保留本游戏所有权利。如果你有其他要求，请联系QQ 1563344353。
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>数钱数到手抽筋</title>
+<script type="text/javascript">
+var GID = "shuqian";
+var SCORE_LIMIT = 6000;
+var APP_LIST_URL = 'http://wx.jyc.17188.com/index.html?from=sqsdscj';
+</script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/createjs-2013.12.12.min.js"></script>
+<script type="text/javascript" src="js/qipa_app.js"></script>
+<script type="text/javascript" src="js/qipa_stage.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+<style type="text/css">
+html,body,canvas {
+margin: 0px;
+padding: 0px;
+border:none;
+text-align: center;
+background-color: black;
+}
+canvas {
+background-color: white;
+}
+</style>
+</head>
+<body>
+<canvas id="stage">
+您的浏览器不支持html5, 请换用支持html5的浏览器。
+</canvas>
+<script language=javascript>
+		var mebtnopenurl = "http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd";
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG9uvvMnLxS6IX7kMHs0jSpXs5e46XEFPNj7lrGHZWtk2dP3WuYOHLTYaKl3wRXsttvBxO9hsM5VLw/0",
+		        "timeLineLink": "http://wx.jyc.17188.com/h5/sqsdscj/sqsdscj.html?u=" + Math.floor(Math.random()*10000000),
+		        "tTitle": "数钱数到手抽筋",
+		        "tContent": "数钱数到手抽筋"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+				window.location = "http://wx.jyc.17188.com/index.html?from=sqsdscj";
+		}
+		function dp_share(){
+			document.title ="我30秒内数了"+myData.score+"元钞票，手都快抽筋，你也来试试看！";
+			document.getElementById("share").style.display="block";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div style="display:block">
+			
+		</div>
+		<div id=share style="display: none">
+			<img width=100% src="http://game.9g.com/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "sqsdscj" };
+
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = "数了"+score+"元";
+				if(score>0){
+					if (confirm("我勒个去了，30秒你数了"+score+"元！快通知一下小伙伴吧！")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+	        }
+			</script>
+			<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+
+</body>
+</html>

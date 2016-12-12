@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Ninja Cat">
+        
+        <title>Ninja Cat</title>
+    </head>
+	
+    <body style="padding: 0; margin: 0; background-color: #000000; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; touch-action:none; -ms-touch-action:none;">
+        <script type="text/javascript" src="preloadjs-0.4.1.min.js"></script>
+    	<script type="text/javascript" src="easeljs-0.7.1.min.js"></script>
+        <script type="text/javascript" src="tweenjs-0.5.1.min.js"></script>
+        <script type="text/javascript" src="lang.js"></script>
+        <script type="text/javascript" src="engine.js"></script>
+        
+        <canvas id="canvas" width="640" height="720"></canvas>
+        <script type="text/javascript" src="pk/PkApi.js"></script>
+        <script type="text/javascript" src="pk/WeixinApi.js"></script>
+        <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+        <script type="text/javascript">
+            function updateShareScore(bestScore) {
+                var d = '记忆力大挑战获得' + bestScore + '分，观望四周求挑战 ！';
+                pkGame.updateResult(bestScore, bestScore, d, d);
+                console.log(d);
+            }
+
+            pkGame.ready(function() {
+
+            });
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Titles*/
+@font-face {
+	/*font-family: 'bamtangvicunaferozgordidemiBd';*/
+	/*src: url('../media/fonts/bvfg1-webfont.eot');*/
+	/*src: local('☺'), url('../media/fonts/bvfg1-webfont.woff') format('woff'), url('../media/fonts/bvfg1-webfont.ttf') format('truetype'), url('../media/fonts/bvfg1-webfont.svg') format('svg');*/
+	/*font-weight: normal;*/
+	/*font-style: normal;*/
+}
+/*Info*/
+/*@font-face {*/
+    /*font-family: 'bamtangllamagenialgordisXBd';*/
+    /*src: url('../media/fonts/bamtang_llama_genial_gordis-webfont.eot');*/
+    /*src: local('☺'), url('../media/fonts/bamtang_llama_genial_gordis-webfont.woff') format('woff'), url('../media/fonts/bamtang_llama_genial_gordis-webfont.ttf') format('truetype'), url('../media/fonts/bamtang_llama_genial_gordis-webfont.svg') format('svg');*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
+
+/*-----------------------------------------------------------------------------*/
+/*Container*/
+.ui_general_container {
+	top:0;
+	left:0;
+	width: 750px;
+    height: 500px;
+	position:relative;
+}
+
+/*-----------------------------------------------------------------------------*/
+/*Screen Background*/
+.ui_general_screen_bg {
+	top:0;
+	left:0;
+	width: 750px;
+	height: 500px;
+	background:url(../media/images/ui_images/common/gui_common_background.jpg);
+}
+/*Title*/
+.ui_general_screen_title {
+	position: absolute;
+	left: 0px;
+	top: 4px;
+	width: 750px;
+	height: 50px;
+	color: #ffff00;
+	font-family: 'bamtangvicunaferozgordidemiBd';
+	font-size: 28px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-smooth: always;
+	padding-top: 5px;
+}
+.ui_general_screen_title2 {
+	position: absolute;
+	left: -5px;
+	top: 8px;
+	width: 750px;
+	height: 50px;
+	color: #123186;
+	font-family: 'bamtangvicunaferozgordidemiBd';
+	font-size: 28px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-smooth: always;
+	padding-top: 5px;
+}
+
+/*-----------------------------------------------------------------------------*/
+/*Popup background*/
+.ui_general_popup_bg {
+	top:0;
+	left:0;
+	width: 750px;
+	height: 500px;
+	background:#000860;
+	opacity: 0.6;
+}
+.ui_general_popup_support {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 750px;
+	height: 500px;
+	background: url(../media/images/ui_images/common/gui_common_panel.png) no-repeat right top;
+}
+/*Popup title*/
+.ui_general_popup_title {
+	position: absolute;
+	left: 0px;
+	top: 61px;
+	width: 750px;
+	height: 50px;
+	color: #ffff00;
+	font-family: 'bamtangvicunaferozgordidemiBd';
+	font-size: 36px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-smooth: always;
+	padding-top: 5px;
+}
+/*CHILDREN*/
+.ui_general_popup_title.t1 {
+	position: absolute;
+}
+.ui_general_popup_title.t2 {
+	position: absolute;
+	left: -5px;
+	top: 65px;
+	color: #123186;
+}
+
+/*-----------------------------------------------------------------------------*/
+/*Button Back*/
+.ui_general_button_back {
+	position: absolute;
+	top: 210px;
+	left: 0px;
+	width: 94px;
+	height: 93px;
+	background: url(../media/images/ui_images/buttons/gui_buttons_icons02.png) no-repeat right top;
+	cursor: pointer;
+}
+/*CHILDREN*/
+.ui_general_button_back.b1 {
+	background-position: 0px 0px;
+}
+.ui_general_button_back.b1:hover {
+	background-position: -94px 0px;
+}
+/*-----------------------------------------------------------------------------*/
+/*Button Next*/
+.ui_general_button_next {
+	position: absolute;
+	top: 190px;
+	right: 0px;
+	width: 120px;
+	height: 119px;
+	background: url(../media/images/ui_images/buttons/gui_buttons_icons01.png) no-repeat right top;
+	cursor: pointer;
+}
+/*CHILDREN*/
+.ui_general_button_next.b1 {
+	background-position: -240px  0px;
+}
+.ui_general_button_next.b1:hover {
+	background-position: -120px  0px;
+}
+/*-----------------------------------------------------------------------------*/
+/*Button Skip*/
+.ui_general_button_skip {
+	position: absolute;
+	top: 20px;
+	left: 664px;
+	width: 62px;
+	height: 63px;
+	background: url(../media/images/ui_images/buttons/gui_buttons_icons03.png) no-repeat right top;
+	cursor: pointer;
+}
+/*CHILDREN*/
+.ui_general_button_skip.b1 {
+	background-position:  -248px 0px;
+}
+.ui_general_button_skip.b1:hover {
+	background-position: -310px 0px;
+}
+/*Button Mainmenu*/
+.ui_general_button_mainmenu {
+	position: absolute;
+	top: 210px;
+	left: 0px;
+	width: 94px;
+	height: 93px;
+	background: url(../media/images/ui_images/buttons/gui_buttons_icons02.png) no-repeat right top;
+	cursor: pointer;
+}
+/*CHILDREN*/
+.ui_general_button_mainmenu.b1 {
+	background-position: -744px  0px;
+}
+.ui_general_button_mainmenu.b1:hover {
+	background-position: -806px  0px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+/*Button Mainmenu*/
+.ui_general_button_mainmenu2 {
+	position: absolute;
+	top: 210px;
+	left: 0px;
+	width: 94px;
+	height: 93px;
+	background: url(../media/images/ui_images/buttons/gui_buttons_icons02.png) no-repeat right top;
+	cursor: pointer;
+}
+/*CHILDREN*/
+.ui_general_button_mainmenu2.b1 {
+	background-position: -188px 0px;
+}
+.ui_general_button_mainmenu2.b1:hover {
+	background-position: -282px 0px;
+}

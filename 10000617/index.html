@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>小章鱼拉手手</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Aqua Friends">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="./js/game.js" type="text/javascript"></script>
+    <script src="js/phaser-arcade-physics.min.js" type="text/javascript"></script>
+    <script src="js/game.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="gameContainer"></div>
+    <div id="orientation"></div>
+
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+    <script type="text/javascript">
+    //PK:
+    function updateShareScore(s) {
+        var d = '哎呀，我已经过了' + s + '关，和好多小章鱼成了好朋友。';
+        pkGame.updateResult(s, s, d, d);
+    }
+
+    pkGame.ready(function() {})
+    </script>
+</body>
+
+</html>

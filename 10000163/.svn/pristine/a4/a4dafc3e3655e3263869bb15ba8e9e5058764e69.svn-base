@@ -1,0 +1,249 @@
+common.png
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+config
+  rotate: false
+  xy: 471, 202
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+config_pressed
+  rotate: false
+  xy: 503, 2
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+connecting1
+  rotate: false
+  xy: 894, 390
+  size: 102, 96
+  orig: 102, 96
+  offset: 0, 0
+  index: -1
+connecting2
+  rotate: false
+  xy: 791, 392
+  size: 102, 96
+  orig: 102, 96
+  offset: 0, 0
+  index: -1
+connecting3
+  rotate: false
+  xy: 688, 392
+  size: 102, 96
+  orig: 102, 96
+  offset: 0, 0
+  index: -1
+logoLuggage
+  rotate: false
+  xy: 2, 403
+  size: 100, 81
+  orig: 100, 81
+  offset: 0, 0
+  index: -1
+menu_arrow
+  rotate: false
+  xy: 457, 102
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+menu_arrow_pressed
+  rotate: false
+  xy: 369, 366
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+menu_back_button
+  rotate: false
+  xy: 790, 196
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_back_button_pressed
+  rotate: false
+  xy: 688, 294
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_box_brown
+  rotate: false
+  xy: 95, 137
+  size: 361, 128
+  orig: 361, 128
+  offset: 0, 0
+  index: -1
+menu_box_green
+  rotate: false
+  xy: 2, 274
+  size: 361, 128
+  orig: 361, 128
+  offset: 0, 0
+  index: -1
+menu_cancel_button
+  rotate: false
+  xy: 684, 196
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_cancel_button_pressed
+  rotate: false
+  xy: 582, 298
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_config_button
+  rotate: false
+  xy: 578, 200
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_config_button_pressed
+  rotate: false
+  xy: 476, 302
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_facebook_button
+  rotate: false
+  xy: 716, 99
+  size: 283, 96
+  orig: 283, 96
+  offset: 0, 0
+  index: -1
+menu_facebook_button_pressed
+  rotate: false
+  xy: 716, 2
+  size: 283, 96
+  orig: 283, 96
+  offset: 0, 0
+  index: -1
+menu_facebook_button_simple
+  rotate: false
+  xy: 896, 293
+  size: 103, 96
+  orig: 103, 96
+  offset: 0, 0
+  index: -1
+menu_ok_button
+  rotate: false
+  xy: 610, 2
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_ok_button_pressed
+  rotate: false
+  xy: 564, 102
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+menu_pause_button
+  rotate: false
+  xy: 613, 396
+  size: 68, 64
+  orig: 68, 64
+  offset: 0, 0
+  index: -1
+menu_pause_button_pressed
+  rotate: false
+  xy: 544, 400
+  size: 68, 64
+  orig: 68, 64
+  offset: 0, 0
+  index: -1
+menu_twitter_button
+  rotate: false
+  xy: 896, 196
+  size: 103, 96
+  orig: 103, 96
+  offset: 0, 0
+  index: -1
+miles_logo
+  rotate: false
+  xy: 103, 403
+  size: 128, 80
+  orig: 128, 80
+  offset: 0, 0
+  index: -1
+next
+  rotate: false
+  xy: 364, 266
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+next_pressed
+  rotate: false
+  xy: 396, 2
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+one
+  rotate: false
+  xy: 2, 2
+  size: 88, 136
+  orig: 88, 136
+  offset: 0, 0
+  index: -1
+reload
+  rotate: false
+  xy: 289, 2
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+reload_pressed
+  rotate: false
+  xy: 182, 2
+  size: 106, 99
+  orig: 106, 99
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 232, 403
+  size: 68, 65
+  orig: 68, 65
+  offset: 0, 0
+  index: -1
+star_complete
+  rotate: false
+  xy: 476, 400
+  size: 67, 65
+  orig: 67, 65
+  offset: 0, 0
+  index: -1
+star_empty
+  rotate: false
+  xy: 301, 403
+  size: 67, 65
+  orig: 67, 65
+  offset: 0, 0
+  index: -1
+three
+  rotate: false
+  xy: 2, 139
+  size: 92, 134
+  orig: 92, 134
+  offset: 0, 0
+  index: -1
+two
+  rotate: false
+  xy: 91, 2
+  size: 90, 134
+  orig: 90, 134
+  offset: 0, 0
+  index: -1

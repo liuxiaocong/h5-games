@@ -1,0 +1,67 @@
+?<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=480,user-scalable=yes,uc-user-scalable=yes,target-densitydpi=high-dpi"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script language="javascript" type="text/javascript" src="js/jsgamemin.js"></script>
+    <script language="javascript" type="text/javascript" src="js/MrAahH.min.js"></script>
+    <title>9G游戏</title>
+	 <link rel="stylesheet" type="text/css" href="http://game.9g.com/css/game9g.css">
+  <script src="http://game.9g.com/js/game9g.js"></script>
+<style>
+	body{margin:0px; background-color:#434243; color:#6A6A6A;}
+	.bandiv{float:left; width:100%; background-color:#DBD1BB;}
+		.bandiv div{padding:10px; text-align:left;}
+</style>
+</head>
+<body onload="main()" lang="http://g.9g.com" id="0">
+<div style="text-align:center;">
+	<canvas id="jsGameScreen"> 
+	</canvas> 
+</div>
+
+	<script language=javascript>
+        var game9g = new Game9G("mxyx");
+        game9g.shareData.title = "命悬一线-9G游戏";
+        game9g.shareData.content = "用绳命在玩的游戏-9G游戏";
+
+		function goHome(){
+			window.location=game9g.homeurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = game9g.gzurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			game9g.share();
+		}
+		function dp_Ranking(){
+			window.location=game9g.homeurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		function dp_submitScore(score){
+			game9g.score =parseInt(score);
+			game9g.scoreName = score + "分";
+			game9g.shareData.title =score+"分！吓死我了，玩完这个《命悬一线》我得了恐高症！-9G游戏"; 
+			game9g.utils.shareConfirm("不错哦！得了"+score+"分！要不要跟朋友们分享下你的成果？",dp_share);
+			
+		}
+	</script>
+	<div style="display: none;">
+		<script type="text/javascript">
+			game9g.utils.tongji();
+		</script>						
+	</div>
+</div>
+</body>
+</html>

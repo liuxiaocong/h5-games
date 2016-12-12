@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>五子棋</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" name="viewport">
+    <link href="css/wuzi.css?v=1.58" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+<script> alert("对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！")</script>
+<![endif]-->
+</head>
+
+<body>
+
+    <div class="game-box">
+        <div class="game-box-title">
+            <span id="reckonTime">0</span>"</div>
+        <div class="game-box-body">
+            <div class="game-box-winner" id="winner"></div>
+            <div class="game-box-loser" id="loser"></div>
+            <div class="game-box-red" id="red"></div>
+            <div class="game-box-gesture-open" id="gestureOpen"></div>
+            <div class="game-box-gesture-close" id="gestureClose"></div>
+            <canvas id="wuzi" class="wuzi"></canvas>
+        </div>
+        <div class="btn-box"> <a href="javascript:" id="regretBtn">悔   棋(3)</a><a href="javascript:" id="restartBtnEcho">重新开始</a>
+        </div>
+    </div>
+
+    <div class="menu-box" id="menuBox">
+        <div class="overcast" id="overcast"></div>
+        <div class="menu">
+            <div class="menu-body" id="menuBody">
+                <div class="h1" id="h1"></div>
+                <div class="h2" id="h2" style="text-align:center;"></div>
+                <a href="javascript:" id="restartBtn">重新挑战</a>
+                <a href="javascript:" id="nextBtn">挑战一下局</a>
+            </div>
+        </div>
+    </div>
+    <div class="share-box" id="shareBox">
+        <div class="share-overcast" id="shareOvercast"></div>
+        <div class="share-bg" id="shareBg"></div>
+    </div>
+    <script type="text/javascript" src="js/common.js?v=1.67"></script>
+    <script type="text/javascript" src="js/play.js?v=1.67"></script>
+    <script type="text/javascript" src="js/AI.js?v=1.67"></script>
+    <script type="text/javascript" src="js/clasli.js?v=1.67"></script>
+    <div class="dn">
+        <audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+        <audio src="audio/click.wav" id="selectAudio" preload="auto"></audio>
+    </div>
+    <script language=javascript>
+    // var mebtnopenurl = 'http://game.9g.com/gototop.html';
+    // window.shareData = {
+    //     "imgUrl": "http://game.9g.com/wzq/icon.png",
+    //     "timeLineLink": "http://game.9g.com/wzq/game.html?f=zf",
+    //     "tTitle": "五子棋",
+    //     "tContent": "五子棋"
+    // };
+
+    // function goHome() {
+    //     window.location = mebtnopenurl;
+    // }
+
+    // function clickMore() {
+    //     if ((window.location + "").indexOf("f=zf", 1) > 0) {
+    //         window.location = "http://game.9g.com/goto9g.html?f=wzq";
+    //     } else {
+    //         goHome();
+    //     }
+    // }
+
+    // function dp_share() {
+    //     document.getElementById("share").style.display = "";
+
+    // }
+
+    // function dp_Ranking() {
+    //     window.location = mebtnopenurl;
+    // }
+
+    // function showAd() {}
+
+    // function hideAd() {}
+    // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+    //     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+    //         WeixinJSBridge.invoke('sendAppMessage', {
+    //             "img_url": window.shareData.imgUrl,
+    //             "link": window.shareData.timeLineLink,
+    //             "desc": window.shareData.tContent,
+    //             "title": window.shareData.tTitle
+    //         }, onShareComplete);
+    //     });
+
+    //     WeixinJSBridge.on('menu:share:timeline', function(argv) {
+    //         WeixinJSBridge.invoke('shareTimeline', {
+    //             "img_url": window.shareData.imgUrl,
+    //             "img_width": "640",
+    //             "img_height": "640",
+    //             "link": window.shareData.timeLineLink,
+    //             "desc": window.shareData.tContent,
+    //             "title": window.shareData.tTitle
+    //         }, onShareComplete);
+    //     });
+    // }, false);
+    </script>
+    <!-- <div id=share style="display: none">
+        <img width="100%" src="http://game.9g.com/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';" />
+    </div> -->
+    <script type="text/javascript">
+    // var myData = {
+    //     gameid: "wzq"
+    // };
+    // var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+    // window.shareData.timeLineLink = "http://" + parseInt(Math.random() * 100000) + "." + myData.gameid + "." + domain + "/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+
+    // // function dp_submitScore(score, stitle) {
+    // //     myData.score = parseInt(score);
+    // //     myData.scoreName = stitle + "(" + score + "分)";
+    // //     document.title = window.shareData.tTitle = "我在五子棋挑战中获得了" + com.score + "分,获得了" + stitle + "称号，你也来试试吧！";
+    // // }
+
+    // // function onShareComplete(res) {
+    // //     if (localStorage.myuid && myData.score != undefined) {
+    // //         setTimeout(function() {
+    // //             if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
+    // //                 window.location = "http://wx.9g.com/rank/submit2.jsp?gameid=" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+    // //             } else {
+    // //                 document.location.href = mebtnopenurl;
+    // //             }
+    // //         }, 500);
+    // //     } else {
+    // //         document.location.href = mebtnopenurl;
+    // //     }
+    // }
+    </script>
+
+    <script type="text/javascript" src="js/PkApi.js"></script>
+    <script type="text/javascript" src="js/WeixinApi.js"></script>
+    <script type="text/javascript" src="js/pkGame.js"></script>
+    <script type="text/javascript">
+
+    function updateShareScore(bestScore, title) {
+        //my result is: bestScore
+		var d = "我在五子棋挑战中获得了" + bestScore + "分,获得了" + title + "称号，你也来试试吧！";
+
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+        pkGame.gameInfo.title = "五子棋";
+        pkGame.gameInfo.desc = '哈哈，我在玩<<五子棋>>';
+        pkGame.gameInfo.result_desc = '哈哈，我在玩<<五子棋>>';
+        pkGame.gameInfo.result_short_desc = '哈哈，我在玩<<五子棋>>';
+    })
+    </script>
+
+
+
+
+</body>
+
+</html>

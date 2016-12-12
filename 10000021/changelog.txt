@@ -1,0 +1,72 @@
+var a6 = -1903889272;
+            if (D6P.T.p(24, 9398933) === a6) {
+                ig.game.staticSound = new Howl({
+                    urls: ['media/audio/play/static.ogg', 'media/audio/play/static.mp3']
+                });
+                ig.game.openingSound = new Howl({
+                    urls: ['media/audio/opening/opening.ogg', 'media/audio/opening/opening.mp3']
+                });
+                ig.game.kittyopeningSound = new Howl({
+                    urls: ['media/audio/opening/kittyopening.ogg', 'media/audio/opening/kittyopening.mp3']
+                });
+                ig.game.buttonSound = new Howl({
+                    urls: ['media/audio/game/button.ogg', 'media/audio/game/button.mp3']
+                });
+            } else {
+                ig.music.play();
+                this.injectMobileLink();
+                ig.music.pause();
+                console.log("showing anti-piracy layer ...");
+                orientationHandler();
+            }
+            ig.game.successSound = new Howl({
+                urls: ['media/audio/game/success.ogg', 'media/audio/game/success.mp3']
+            });
+
+
+
+
+
+new
+
+//            var a6 = -1903889272;
+//            if (D6P.T.p(24, 9398933) === a6) {
+//                ig.game.staticSound = new Howl({
+//                    urls: ['media/audio/play/static.ogg', 'media/audio/play/static.mp3']
+//                });
+//                ig.game.openingSound = new Howl({
+//                    urls: ['media/audio/opening/opening.ogg', 'media/audio/opening/opening.mp3']
+//                });
+//                ig.game.kittyopeningSound = new Howl({
+//                    urls: ['media/audio/opening/kittyopening.ogg', 'media/audio/opening/kittyopening.mp3']
+//                });
+//                ig.game.buttonSound = new Howl({
+//                    urls: ['media/audio/game/button.ogg', 'media/audio/game/button.mp3']
+//                });
+//            } else {
+//                ig.music.play();
+//                this.injectMobileLink();
+//                ig.music.pause();
+//                console.log("showing anti-piracy layer ...");
+//                orientationHandler();
+//            }
+            ig.game.staticSound = new Howl({
+                urls: ['media/audio/play/static.ogg', 'media/audio/play/static.mp3']
+            });
+            ig.game.openingSound = new Howl({
+                urls: ['media/audio/opening/opening.ogg', 'media/audio/opening/opening.mp3']
+            });
+            ig.game.kittyopeningSound = new Howl({
+                urls: ['media/audio/opening/kittyopening.ogg', 'media/audio/opening/kittyopening.mp3']
+            });
+            ig.game.buttonSound = new Howl({
+                urls: ['media/audio/game/button.ogg', 'media/audio/game/button.mp3']
+            });
+            ig.music.play();
+            this.injectMobileLink();
+            ig.music.pause();
+            console.log("showing anti-piracy layer ...");
+            orientationHandler();
+            ig.game.successSound = new Howl({
+                urls: ['media/audio/game/success.ogg', 'media/audio/game/success.mp3']
+            });

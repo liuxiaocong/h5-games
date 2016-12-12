@@ -1,0 +1,14 @@
+{
+	"missiles": [
+		{
+			"type":"dumb",
+			"rotation": 270,
+			"speed": 0.25,
+			"screenSide": "right",
+			"position": 300,
+			"delay": 0.0
+		}
+	], 
+
+	"timeLength": 2.5
+}

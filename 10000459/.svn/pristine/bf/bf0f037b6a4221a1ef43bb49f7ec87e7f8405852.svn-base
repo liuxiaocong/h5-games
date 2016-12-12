@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=7.0000" http-equiv="X-UA-Compatible">
+    <title>准到爆的古埃及智商测试，太邪门了</title>
+    <meta charset="utf-8">
+    <script src="js/jquery.js"></script>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
+    <script>
+
+$(document).ready(function(){
+    //PK start
+    pkGame.reportStatus('start');
+    //console.log("start");
+  $("div.select").click(function(){
+	var id = $(this).attr("id");
+    console.log("test");
+	var value = "";
+	var cval = $("div#question").attr("class");
+	if(cval === "first") {
+	  $("div#question").attr("class", "second");
+	  $("h1#answer1").text(id);
+	} else if(cval === "second"){
+	  $("div#question").attr("class", "third");
+	  $("h1#answer2").text(id);
+	  } else if(cval === "third"){
+	  $("div#question").attr("class", "four");
+	  $("h1#answer3").text(id);
+	} else if(cval === "four"){
+	  $("div#question").attr("class", "five");
+	  $("h1#answer4").text(id);
+	} else if(cval === "five"){
+	  $("div#question").attr("class", "six");
+	  $("h1#answer5").text(id);
+	} else if (cval === "six"){
+	  if($("h1#answer6").text().length <= 0) {
+		alert("请提交您的答案！");
+		return false;
+	  }
+	  $("h1#answer6").text(id);
+	  $("div#submit").show();
+	  $("a#link").click();
+	}
+	return false;
+ });
+ $("a#link").click(function(){
+
+   var text = $("h1.answer").text();
+   var aws = "BDCHAF";
+   var count = 0;
+   if(text[0] == aws[0]){
+	 count += 1;
+   }
+   if(text[1] == aws[1]){
+	 count += 1;
+   }
+   if(text[2] == aws[2]){
+	 count += 1;
+   }
+   if(text[3] == aws[3]){
+	   count += 1;
+   }
+   if(text[4] == aws[4]){
+	   count += 1;
+   }
+   if(text[5] == aws[5]){
+	   count += 1;
+   }
+   var fen = Math.round(count/6 * 100)+52;
+   $("div#question").attr("class", "iq_level");
+   $("span#iq_val").text(fen);
+   //PK: score
+   updateShareScore(fen);
+   //console.log(fen);
+   $("div#iq_level").show();
+   $("div#submit").hide();
+   $("div#share").show();
+   return false;
+ });
+ $("#mask").click(function(){
+	if($("#mask").is(":visible")){
+	  $("#mask").hide();
+	  $("#tip").hide();
+	}
+	return false;
+ });
+});
+
+</script>
+    <style type="text/css">
+        HTML
+        {
+            height: 100%;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+            margin: 0px;
+            padding-right: 0px;
+        }
+        BODY
+        {
+            height: 100%;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+            margin: 0px;
+            padding-right: 0px;
+        }
+        #wrapper
+        {
+            font-family: "Microsoft YaHei" , "WenQuanYi Micro Hei" , sans-serif;
+            width: 640px;
+            background: url(img/460.png) left top;
+            margin: 0px auto;
+            min-height: 90%;
+        }
+        #answer
+        {
+            height: 44px;
+            width: 600px;
+            background: url(img/2000.png) no-repeat left top;
+            margin: 0px auto 50px;
+        }
+        .first
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2001.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .second
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2002.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .third
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2003.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .four
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2004.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .five
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2005.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .six
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2006.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        .iq_level
+        {
+            height: 589px;
+            width: 556px;
+            background: url(img/2007.png) no-repeat left top;
+            margin: 0px auto;
+        }
+        #hope
+        {
+            position: absolute;
+            left: 50px;
+            top: 280px;
+        }
+        #content
+        {
+            font-size: 30px;
+            border-top: 2px solid;
+            height: 260px;
+            border-right: 2px solid;
+            width: 510px;
+            border-bottom: 2px solid;
+            font-weight: 600;
+            color: #9a9a9a;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 10px;
+            margin: 0px;
+            border-left: 2px solid;
+            padding-right: 10px;
+            background-color: #e1e1e1;
+            border-radius: 2px;
+        }
+        #button
+        {
+            position: absolute;
+            left: 100px;
+            top: 540px;
+        }
+        #button1
+        {
+            position: absolute;
+            left: 100px;
+            top: 640px;
+        }
+        #mask
+        {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            filter: alpha(Opacity=90);
+            display: none;
+            top: 0px;
+            background-color: #333;
+            -moz-opacity: 0.9;
+            opacity: 0.9;
+        }
+        #tip
+        {
+            position: absolute;
+            left: 10px;
+            display: none;
+            top: 10px;
+        }
+        #name
+        {
+            font-size: 32px;
+            height: 40px;
+        }
+        .ys
+        {
+            color: #ff0;
+        }
+    </style>
+    <meta name="GENERATOR" content="MSHTML 11.00.9600.17126">
+</head>
+<body style="zoom: 1;">
+    <div id="wrapper">
+        <div style="padding-top: 50px">
+            <div id="answer">
+                <h1 id="answer1" class="answer" style="float: left; color: white; margin-left: 36px;
+                    margin-top: 2px">
+                </h1>
+                <h1 id="answer2" class="answer" style="float: left; color: white; margin-left: 60px;
+                    margin-top: 2px">
+                </h1>
+                <h1 id="answer3" class="answer" style="float: left; color: white; margin-left: 63px;
+                    margin-top: 2px">
+                </h1>
+                <h1 id="answer4" class="answer" style="float: left; color: white; margin-left: 63px;
+                    margin-top: 2px">
+                </h1>
+                <h1 id="answer5" class="answer" style="float: left; color: white; margin-left: 63px;
+                    margin-top: 2px">
+                </h1>
+                <h1 id="answer6" class="answer" style="float: left; color: white; margin-left: 63px;
+                    margin-top: 2px">
+                </h1>
+            </div>
+            <div style="clear: both">
+            </div>
+        </div>
+        <div id="question" class="first">
+            <div style="height: 339px">
+                <div id="iq_level" style="width: 420px; text-align: center; margin: 0px auto; display: none">
+                    <h2 style="color: white">
+                        你的IQ智商测试结果是 <span id="iq_val"></span>分</h2>
+                    <br>
+                </div>
+            </div>
+            <div style="width: 424px; margin: 0px auto">
+                <div id="A" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="B" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="C" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="D" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="E" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="F" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="G" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div id="H" class="select" style="margin-bottom: 53px; cursor: pointer; height: 55px;
+                    width: 90px; float: left; margin-right: 16px">
+                </div>
+                <div style="clear: both">
+                </div>
+            </div>
+        </div>
+        <div id="submit" style="width: 200px; margin: 0px auto; display: none">
+            <a id="link" style="cursor: pointer">
+                <img alt="submit"></a></div>
+    </div>
+    <script type="text/javascript" src="pk/PkApi.js"></script>
+    <script type="text/javascript" src="pk/WeixinApi.js"></script>
+    <script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+    <script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '智商测试' + bestScore + '分，我太牛X了！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+    </script>
+</body>
+</html>

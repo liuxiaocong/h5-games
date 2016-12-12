@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>飞行指挥官</title>
+	<script>document.domain = '4399.com';</script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true"/>
+    <style>
+        @font-face {
+            font-family:CooperBlackBold;
+            src: url(assets/COOPBL.TTF);
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: black;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+        }
+
+        body{
+            padding: 0;
+            margin:0;
+        }
+
+        body,canvas{
+            -o-user-select:none;
+            -moz-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+        }
+
+        canvas {
+            image-rendering: optimizeSpeed;
+            -webkit-interpolation-mode: nearest-neighbor;
+            -webkit-tap-highlight-color:transparent;
+            background: black;
+            display: block;
+            padding: 0px;
+            border: 0px;
+            position:absolute;
+        }
+        #rotateScreen{
+            overflow: hidden;
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            margin:0;
+            padding:0;
+            display:none;
+            text-align:center;
+            background-color:#FFFFFF;
+            background-image:url(assets/turn.png);
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-size: auto 25%;
+        }
+        #rotateScreen img{
+            width:100%;
+            height:100%;
+            vertical-align:middle;
+        }
+    </style>
+    
+	<script language="javascript" type="text/javascript" src="js/play68.js"></script>
+	
+    <script type="text/javascript" src='js/createjs-2013.05.14.min.js'></script>
+    <link type="text/css" href='./asset/softgames.css' rel="stylesheet">
+    
+	<script type="text/javascript">
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = 'js/game.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 
+			ga.onload = function() {
+				ga.parentNode.removeChild(ga);
+			};
+		})();
+	</script>
+	<script type="text/javascript">
+        window.gameLangs = ['en','es','tr'];
+		window.gameJS = ['js/ndgmr.Collision.js','js/ColorFilter.js',
+		              'js/MainMenu.js','js/GameOverScreen.js','js/LevelOne.js','js/LevelTwo.js','js/LevelThree.js',
+		              'js/Aircraft.js','js/Helicopter.js','js/Landing.js'];
+		window.gameOnLoadScript = "init();";
+	</script>
+	
+	<script type="text/javascript" src='./asset/softgames-1.1.js'></script>
+	 <script type="text/javascript" src='js/sg-localization.js'></script>
+	 
+	 <!--Analytics-->
+
+</head>
+<body>
+    <canvas id="myCanvas" width="480" height="320">
+        Alternative Content
+    </canvas>
+    <div id="rotateScreen"></div>
+	
+<div style="display:none">
+    <!-- <script type="text/javascript" src="http://js.tongji.linezing.com/3497433/tongji.js"></script> -->
+</div>
+	<!--
+	#play68box{
+		position: fixed;
+		top: 25%;
+	}
+	-->
+	</style>
+	<script type="text/javascript">
+	HORIZONTAL = true;
+	</script>
+	
+    <!--<script type="text/javascript" src="../resources/js/play68bar.js"></script>-->
+
+</body>
+</html>

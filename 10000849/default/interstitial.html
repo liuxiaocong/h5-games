@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8"> 
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+   <!--
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/biz/gdt/mob/sdk/1.3/zepto.js"></script>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/biz/gdt/mob/sdk/1.3/slider.js"></script>-->
+    <meta name="description" content=""/>
+    <meta name="keywords" content="" />
+    <title>广点通移动广告</title>
+    <style type="text/css">
+        *{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        body,dl,dt,dd,p{
+            margin: 0;
+            padding: 0;
+        }
+        .popup_header,
+        .icon_close,
+        .page_info,
+        .ios_page_info,
+        .foucs_num{
+            background:url(http://qzonestyle.gtimg.cn/qzone/biz/gdt/mob/sdk/html/img/sdk_popup.png) no-repeat;
+            background-size: 300px 170px;
+        }
+
+        .foucs_num{width: 77px;height: 17px;background-position:-36px -110px;position: absolute;bottom: 0;left:110px;text-align: center;}
+        .foucs_num span{width: 7px;height: 7px;margin:0 3px;background: #c9c9c9;display: inline-block;overflow: hidden;
+            border: 1px solid #c9c9c9;vertical-align: 2px;
+            -moz-border-radius: 4px; -webkit-border-radius: 4px; 
+            -khtml-border-radius: 4px; border-radius: 4px;}
+        .foucs_num span.current{background:#fb7c2e;border: 1px solid #fb7c2e; }
+
+        .popup-content{position: relative;}
+        .popup_wrap{
+            border: 2px solid #efefef;
+            position: relative;
+            background:#efefef; 
+            overflow: hidden;
+        }
+        .popup_inner{
+            margin:0px;
+            padding:0px;
+            border:none;
+            overflow: hidden;
+            position: relative;
+            -webkit-transform: translate3d(0, 0, 0);
+            min-height: 44px;
+        }
+        .popup_cont{ 
+            overflow: hidden;
+            border:none;
+            position: relative;
+            background: #efefef;
+        }
+
+        .popup_header{
+            height: 51px;
+            background-position:0 0;
+            padding:14px 0 13px 18px;
+        }
+        .popup_logo{
+            width:50px;
+            height:50px;
+            float: left;
+        }
+        .popup_logo img{
+            width:46px;
+            height:46px;
+            border: 2px solid #ffffff;
+            background: #ffffff;
+            -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+            -khtml-border-radius: 5px; border-radius: 5px;
+        }
+        .popup_app{
+            margin-left: 67px;
+            line-height: 160%;
+            padding-top: 1px;
+        }
+        .popup_app dt{
+            font-size: 17px;
+            color: #fff;
+        }
+        .popup_app dd{
+            font-size: 12px;
+            color: #c3e1fb;
+        }
+        .icon_close{
+            width: 29px;
+            height: 30px;
+            position: absolute;
+            right:2px;
+            top:2px;
+            background-position: 0 -110px;
+            text-indent: -9999px;
+            overflow: hidden;  
+            z-index: 100;z
+        }
+        .popup_con{
+            padding: 6px 18px 0;
+        }
+        .popup_con p{
+            font-size: 13px;
+            color: #404040;
+            line-height: 170%;
+            height:98px;
+            word-break:break-all;
+            overflow: hidden;
+        }
+        .bt_wrap,.bt_wrap_bar{
+            padding-bottom:20px;
+            text-align: center;
+        }
+        .bt_wrap_bar a{
+            padding: 0 20px;
+        }
+        .page_info{width:100%;height:20px;background-position: 0 -87px;position: absolute;bottom: 0;left: 0;}
+        .ios_page_info{width:100%;height:20px;background-position: 0 -147px;position: absolute;bottom: 0;left: 0;}
+        .pro_info{padding-bottom: 7px;}
+        /*button*/
+        .btn_green,.btn_green_img,.btn_blue,.btn_orange,.btn_orange_img{
+            display: inline-block;
+            box-content: content-box;
+            border-radius: 4px; 
+            box-shadow: 0 1px 0 #c5c5c5;    
+            color: #fff;
+            font-size: 14px;   
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            height: 37px;
+            line-height: 37px; 
+            padding: 0 10%;
+            margin: 0 4%;
+        }
+        .btn_green:before,.btn_green_img:before,.btn_blue:before,.btn_orange:before,.btn_orange_img:before{
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 40%;
+        }
+        .btn_green{        
+            border: 1px solid #36aa3e;
+            border-left: 2px solid #36aa3e;
+            border-right: 2px solid #36aa3e;       
+            background-color: #3eb246;
+            background: -moz-linear-gradient(top,  #36ac3e 0%, #46b84e 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36ac3e), color-stop(100%,#46b84e));
+            background: -webkit-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: -o-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: -ms-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: linear-gradient(to bottom,  #36ac3e 0%,#46b84e 100%);    
+        }
+        .btn_green:before {    
+            box-shadow: 0 2px 13px #c3f7c6;
+        }
+        .btn_green_img{
+            position: absolute;bottom: 23px;left:27px;  
+            border: 1px solid #035808;    
+            background-color: #3eb246;
+            background: -moz-linear-gradient(top,  #36ac3e 0%, #46b84e 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36ac3e), color-stop(100%,#46b84e));
+            background: -webkit-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: -o-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: -ms-linear-gradient(top,  #36ac3e 0%,#46b84e 100%);
+            background: linear-gradient(to bottom,  #36ac3e 0%,#46b84e 100%);    
+        }
+        .btn_green_img:before {    
+            box-shadow: 0 2px 13px #c3f7c6;
+        }
+        .btn_blue{        
+            border: 1px solid #296daa;
+            border-left: 2px solid #296daa;
+            border-right: 2px solid #296daa;       
+            background-color: #3679b4;
+            background: -moz-linear-gradient(top,  #3f83bf 0%, #2d6da7 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f83bf), color-stop(100%,#2d6da7));
+            background: -webkit-linear-gradient(top,  #3f83bf 0%,#2d6da7 100%);
+            background: -o-linear-gradient(top,  #3f83bf 0%,#2d6da7 100%);
+            background: -ms-linear-gradient(top,  #3f83bf 0%,#2d6da7 100%);
+            background: linear-gradient(to bottom,  #3f83bf 0%,#2d6da7 100%);    
+        }
+        .btn_blue:before {    
+            box-shadow: 0 2px 13px #acd3f7;
+        }
+        .btn_orange{        
+            border: 1px solid #de6f2b;
+            border-left: 2px solid #de6f2b;
+            border-right: 2px solid #de6f2b;       
+            background-color: #e77a37;
+            background: -moz-linear-gradient(top,  #f08747 0%, #dd6a24 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f08747), color-stop(100%,#dd6a24));
+            background: -webkit-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: -o-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: -ms-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: linear-gradient(to bottom,  #f08747 0%,#dd6a24 100%);    
+        }
+        .btn_orange:before {    
+            box-shadow: 0 2px 13px #fad5bd;
+        }
+        .btn_orange_img{
+            position: absolute;bottom: 23px;left: 75px;  
+            border: 1px solid #813507;
+            background-color: #e77a37;
+            background: -moz-linear-gradient(top,  #f08747 0%, #dd6a24 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f08747), color-stop(100%,#dd6a24));
+            background: -webkit-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: -o-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: -ms-linear-gradient(top,  #f08747 0%,#dd6a24 100%);
+            background: linear-gradient(to bottom,  #f08747 0%,#dd6a24 100%);    
+        }
+        .btn_orange_img:before {    
+            box-shadow: 0 2px 13px #fad5bd;
+        }
+        .line-top,.line_bot{
+            position: absolute;    
+            left: 0;
+            width: 100%;
+            height: 1px;
+            font-size: 0;
+            overflow: hidden;
+        }
+        .btn_green .line_top {
+            top: 0;
+            background: -moz-linear-gradient(left,  rgba(176,254,155,0) 0%, rgba(176,254,155,0.9) 20%, rgba(176,254,155,1) 50%, rgba(176,254,155,0.9) 82%, rgba(176,254,155,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(176,254,155,0)), color-stop(20%,rgba(176,254,155,0.9)), color-stop(50%,rgba(176,254,155,1)), color-stop(82%,rgba(176,254,155,0.9)), color-stop(100%,rgba(176,254,155,0)));
+            background: -webkit-linear-gradient(left,  rgba(176,254,155,0) 0%,rgba(176,254,155,0.9) 20%,rgba(176,254,155,1) 50%,rgba(176,254,155,0.9) 82%,rgba(176,254,155,0) 100%);
+            background: -o-linear-gradient(left,  rgba(176,254,155,0) 0%,rgba(176,254,155,0.9) 20%,rgba(176,254,155,1) 50%,rgba(176,254,155,0.9) 82%,rgba(176,254,155,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(176,254,155,0) 0%,rgba(176,254,155,0.9) 20%,rgba(176,254,155,1) 50%,rgba(176,254,155,0.9) 82%,rgba(176,254,155,0) 100%);
+            background: linear-gradient(to right,  rgba(176,254,155,0) 0%,rgba(176,254,155,0.9) 20%,rgba(176,254,155,1) 50%,rgba(176,254,155,0.9) 82%,rgba(176,254,155,0) 100%);   
+        }
+        .btn_green .line_bot {    
+            bottom: 0;    
+            background: -moz-linear-gradient(left,  rgba(56,215,67,0) 0%, rgba(56,215,67,0.9) 20%, rgba(56,215,67,1) 50%, rgba(56,215,67,0.9) 82%, rgba(56,215,67,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(56,215,67,0)), color-stop(20%,rgba(56,215,67,0.9)), color-stop(50%,rgba(56,215,67,1)), color-stop(82%,rgba(56,215,67,0.9)), color-stop(100%,rgba(56,215,67,0)));
+            background: -webkit-linear-gradient(left,  rgba(56,215,67,0) 0%,rgba(56,215,67,0.9) 20%,rgba(56,215,67,1) 50%,rgba(56,215,67,0.9) 82%,rgba(56,215,67,0) 100%);
+            background: -o-linear-gradient(left,  rgba(56,215,67,0) 0%,rgba(56,215,67,0.9) 20%,rgba(56,215,67,1) 50%,rgba(56,215,67,0.9) 82%,rgba(56,215,67,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(56,215,67,0) 0%,rgba(56,215,67,0.9) 20%,rgba(56,215,67,1) 50%,rgba(56,215,67,0.9) 82%,rgba(56,215,67,0) 100%);
+            background: linear-gradient(to right,  rgba(56,215,67,0) 0%,rgba(56,215,67,0.9) 20%,rgba(56,215,67,1) 50%,rgba(56,215,67,0.9) 82%,rgba(56,215,67,0) 100%);   
+        }
+        .btn_blue .line_top {
+            top: 0;
+            background: -moz-linear-gradient(left,  rgba(206,227,247,0) 0%, rgba(206,227,247,0.9) 20%, rgba(206,227,247,1) 50%, rgba(206,227,247,0.9) 82%, rgba(206,227,247,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(206,227,247,0)), color-stop(20%,rgba(206,227,247,0.9)), color-stop(50%,rgba(206,227,247,1)), color-stop(82%,rgba(206,227,247,0.9)), color-stop(100%,rgba(206,227,247,0)));
+            background: -webkit-linear-gradient(left,  rgba(206,227,247,0) 0%,rgba(206,227,247,0.9) 20%,rgba(206,227,247,1) 50%,rgba(206,227,247,0.9) 82%,rgba(206,227,247,0) 100%);
+            background: -o-linear-gradient(left,  rgba(206,227,247,0) 0%,rgba(206,227,247,0.9) 20%,rgba(206,227,247,1) 50%,rgba(206,227,247,0.9) 82%,rgba(206,227,247,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(206,227,247,0) 0%,rgba(206,227,247,0.9) 20%,rgba(206,227,247,1) 50%,rgba(206,227,247,0.9) 82%,rgba(206,227,247,0) 100%);
+            background: linear-gradient(to right,  rgba(206,227,247,0) 0%,rgba(206,227,247,0.9) 20%,rgba(206,227,247,1) 50%,rgba(206,227,247,0.9) 82%,rgba(206,227,247,0) 100%);   
+        }
+        .btn_blue .line_bot {    
+            bottom: 0;    
+            background: -moz-linear-gradient(left,  rgba(106,181,250,0) 0%, rgba(106,181,250,0.9) 20%, rgba(106,181,250,1) 50%, rgba(106,181,250,0.9) 82%, rgba(106,181,250,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(106,181,250,0)), color-stop(20%,rgba(106,181,250,0.9)), color-stop(50%,rgba(106,181,250,1)), color-stop(82%,rgba(106,181,250,0.9)), color-stop(100%,rgba(106,181,250,0)));
+            background: -webkit-linear-gradient(left,  rgba(106,181,250,0) 0%,rgba(106,181,250,0.9) 20%,rgba(106,181,250,1) 50%,rgba(106,181,250,0.9) 82%,rgba(106,181,250,0) 100%);
+            background: -o-linear-gradient(left,  rgba(106,181,250,0) 0%,rgba(106,181,250,0.9) 20%,rgba(106,181,250,1) 50%,rgba(106,181,250,0.9) 82%,rgba(106,181,250,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(106,181,250,0) 0%,rgba(106,181,250,0.9) 20%,rgba(106,181,250,1) 50%,rgba(106,181,250,0.9) 82%,rgba(106,181,250,0) 100%);
+            background: linear-gradient(to right,  rgba(106,181,250,0) 0%,rgba(106,181,250,0.9) 20%,rgba(106,181,250,1) 50%,rgba(106,181,250,0.9) 82%,rgba(106,181,250,0) 100%);   
+        }
+        .btn_orange .line_top {
+            top: 0;
+            background: -moz-linear-gradient(left,  rgba(255,223,204,0) 0%, rgba(255,223,204,0.9) 20%, rgba(255,223,204,1) 50%, rgba(255,223,204,0.9) 82%, rgba(255,223,204,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,223,204,0)), color-stop(20%,rgba(255,223,204,0.9)), color-stop(50%,rgba(255,223,204,1)), color-stop(82%,rgba(255,223,204,0.9)), color-stop(100%,rgba(255,223,204,0)));
+            background: -webkit-linear-gradient(left,  rgba(255,223,204,0) 0%,rgba(255,223,204,0.9) 20%,rgba(255,223,204,1) 50%,rgba(255,223,204,0.9) 82%,rgba(255,223,204,0) 100%);
+            background: -o-linear-gradient(left,  rgba(255,223,204,0) 0%,rgba(255,223,204,0.9) 20%,rgba(255,223,204,1) 50%,rgba(255,223,204,0.9) 82%,rgba(255,223,204,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(255,223,204,0) 0%,rgba(255,223,204,0.9) 20%,rgba(255,223,204,1) 50%,rgba(255,223,204,0.9) 82%,rgba(255,223,204,0) 100%);
+            background: linear-gradient(to right,  rgba(255,223,204,0) 0%,rgba(255,223,204,0.9) 20%,rgba(255,223,204,1) 50%,rgba(255,223,204,0.9) 82%,rgba(255,223,204,0) 100%);   
+        }
+        .btn_orange .line_bot {    
+            bottom: 0;    
+            background: -moz-linear-gradient(left,  rgba(253,183,141,0) 0%, rgba(253,183,141,0.9) 20%, rgba(253,183,141,1) 50%, rgba(253,183,141,0.9) 82%, rgba(253,183,141,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(253,183,141,0)), color-stop(20%,rgba(253,183,141,0.9)), color-stop(50%,rgba(253,183,141,1)), color-stop(82%,rgba(253,183,141,0.9)), color-stop(100%,rgba(253,183,141,0)));
+            background: -webkit-linear-gradient(left,  rgba(253,183,141,0) 0%,rgba(253,183,141,0.9) 20%,rgba(253,183,141,1) 50%,rgba(253,183,141,0.9) 82%,rgba(253,183,141,0) 100%);
+            background: -o-linear-gradient(left,  rgba(253,183,141,0) 0%,rgba(253,183,141,0.9) 20%,rgba(253,183,141,1) 50%,rgba(253,183,141,0.9) 82%,rgba(253,183,141,0) 100%);
+            background: -ms-linear-gradient(left,  rgba(253,183,141,0) 0%,rgba(253,183,141,0.9) 20%,rgba(253,183,141,1) 50%,rgba(253,183,141,0.9) 82%,rgba(253,183,141,0) 100%);
+            background: linear-gradient(to right,  rgba(253,183,141,0) 0%,rgba(253,183,141,0.9) 20%,rgba(253,183,141,1) 50%,rgba(253,183,141,0.9) 82%,rgba(253,183,141,0) 100%);   
+        }
+        ul{
+            margin: 0;
+            padding:0;
+            display: block;
+            list-style-type: disc;
+            /*-webkit-transform-style:preserve-3d;*/
+            background: white;
+            /*-webkit-backface-visibility:;*/
+        }
+        ul li{
+            -webkit-transform: translate3d(0, 0, 0); 
+            float: left;
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("touchmove", function(e){e.preventDefault()});
+    </script>
+    <script>
+    window.speedbase = +new Date;
+        (function(){
+            var sd='',
+                s='<script type="text\/javascript" src="http://qzonestyle.gtimg.cn',
+                e='"><\/script>',
+                l=[
+                   // sd +'/ac/lib/jquery/1.9.1/jquery.js',
+                   // sd +'/qzone/biz/comm/js/qbs.js',
+                    sd + '/qzone/biz/res/tmpl/js/m.js'
+                ];
+            document.write(s+l.join(e+s)+e); 
+        })();
+
+    </script>
+</head>
+<body> 
+
+    <div class="popup_wrap">
+        <div class="popup_inner" id="gdtwrap_ul">
+        </div>
+    </div>   
+</body>
+<!--图片广告的模板-->
+<script type="text/template" id="tplSingleImage">
+<a href="javascript:" class="icon_close">关闭</a>
+<% for (var i = 0,len = d.length; i < len; i++){ var r = d[i];%>
+
+    <ul>
+     <li data-seqnum="<%=i%>">
+        <div class="popup_cont">
+            <%if(r.isApp){%>
+                <a href="javascript:" class="btn_green_img" data-appid="<%=r.appid%>" data-apptype="<%=r.apptype%>" data-orderid="<%=r.orderid%>"  data-rl="<%=r.rl%>" data-producttype="<%=r.producttype%>" onclick="GDT.I.onDownloadButtonClick(this)" style="left:<%=r.btn_left%>">
+                    <span class="line_top"></span>
+                    <span class="line_bot"></span>
+                    立即体验
+                </a>
+            <%}else{%>
+                <a href="javascript:" class="btn_green_img" style="left:<%=r.btn_left%>" href="javascript:" data-rl="<%=r.rl%>" data-producttype="<%=r.producttype%>" onclick="GDT.I.onDetailClick(this)">
+                    <span class="line_top"></span>
+                    <span class="line_bot"></span>
+                    查看详情
+                </a>
+            <%}%>
+            <a  target="_blank"
+                href="javascript:"
+                onclick="GDT.I.onLargeImgClicked(this)"
+                data-appid="<%=r.appid%>"
+                data-apurl="<%=r.apurl%>"
+                data-linktype="<%=r.linktype%>"
+                data-rl="<%=r.rl%>"
+                data-producttype="<%=r.producttype%>"
+                >
+                <img    id="largeImg<%=i%>"
+                        src="<%=r.img%>"
+                        data-apurl="<%=r.apurl%>"   
+                        data-seqnum="<%=i%>"
+                        style="width:100%;height:100%"
+                        onload="GDT.I.fetchImg(this)" />
+            </a>
+        </div>
+    </li> 
+    </ul>
+    <%if(d.length!=1){%>
+     <div class="foucs_num">
+        <span class="current"></span><span></span><span></span>
+    </div>
+    <%}%>
+<%}%>  
+</script> 
+ 
+</html>

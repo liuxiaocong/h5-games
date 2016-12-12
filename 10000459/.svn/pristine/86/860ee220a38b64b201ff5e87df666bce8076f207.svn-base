@@ -1,0 +1,655 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>你懂的 最棒的微信号</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        body, .header, .header *, .com *, .tj_box *, .btnbox *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .header, .header ul, .com ul, .tj_box ul, .btnbox ul, .header, .header li, .com li, .tj_box li, .btnbox li
+        {
+            list-style: none;
+        }
+        input, textarea
+        {
+            -webkit-appearance: none;
+        }
+        body
+        {
+            font-size: 14px;
+        }
+        body
+        {
+            font-family: "微软雅黑" , "宋体" ,Arial;
+            background: #efefef;
+            line-height: 1.8;
+        }
+        .clearfix:after
+        {
+            content: " ";
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+        * html .clearfix
+        {
+            zoom: 1;
+        }
+        *:first-child + html .clearfix
+        {
+            zoom: 1;
+        }
+        .wrapper
+        {
+            _width: 640px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .tj_title, .tj_box dl
+        {
+            border-bottom: 1px solid #c5c5c5;
+            box-shadow: 0 1px 0 #FFF;
+            -webkit-border-bottom: none;
+            -webkit-box-shadow: none;
+            -webkit-border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAl4AAAACCAMAAAC+LCIRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNTdCRjY1RDQ2QTVFMTExOTEzOEE0ODc3QUIxNzlFOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RkJGMjk2NkZDODcxMUUxOTlENDk5RDgzNTk0QUJDQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RkJGMjk2NUZDODcxMUUxOTlENDk5RDgzNTk0QUJDQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJCQURBMDA0QjNGQkUxMTFBNUY4QTFFQkFGRTM3OUNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE1N0JGNjVENDZBNUUxMTE5MTM4QTQ4NzdBQjE3OUU5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+GgBqZwAAAIpQTFRF////xcXF/v7+/f39/Pz8+/v7+vr69/f3+fn59fX19vb2+Pj49PT0xsbGx8fHyMjIycnJzc3Ny8vLysrK0tLSzs7O4eHhzMzM3Nzc2tra09PT1NTU3t7e1tbWz8/P39/f0dHR0NDQ1dXV2NjY3d3d2dnZ4ODg19fX29vb8/Pz4uLi5OTk4+Pj5eXlvVT1UwAAALlJREFUeNrc0okVgjAQAFFUUEAF5Bbl9MKD/tuT3U0wMXkW4G9hxhiGJ3iBB0rRFdTgCM4gB/1ojy6jE7iBEnTgAAoUowa0oAIJ2pEMhCRCAeMTj9tOZn9iK/I+fEEwibiQy5gdlzAVaUlDYobKFAemIyXBlLcTuRCqve9RzuAQ5yNTE5zmmjLjS8ad20gckStaSdYCW7KUWDLzy+LbXMv4U/PfFnqmlqWx1LAVa8VK5Soc1bTRW4ABAJ6hNNejrHxUAAAAAElFTkSuQmCC) 0 0 2 0/0 0 2px 0;
+        }
+        .tj_title
+        {
+            margin: 10px 10px 5px 10px;
+            color: #777777;
+            padding-bottom: 5px;
+            text-indent: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .tj_box
+        {
+            margin: 15px 10px;
+            text-align: left;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        
+        .tj_base img
+        {
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px 25px;
+        }
+        
+        .tj_box dl
+        {
+            margin: 5px 0;
+            padding-bottom: 5px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .tj_box dl dt
+        {
+            float: right;
+            padding: 0;
+            height: 50px;
+        }
+        .tj_box dl dd
+        {
+            float: right;
+            width: 100%;
+            margin-right: -70px;
+        }
+        .tj_box dl div
+        {
+            padding-right: 135px;
+        }
+        .tj_box dl p
+        {
+            color: #999999;
+            padding-right: 8px;
+            line-height: 1.5;
+        }
+        .tj_box dl h3
+        {
+            color: #5a5a5a;
+            font-size: 14px;
+        }
+        .tj_base
+        {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 15px;
+            text-align: center;
+            color: #808080;
+            text-decoration: none;
+            margin: 5px 0;
+            background-position: center 6px;
+            background-repeat: no-repeat;
+            background-size: 45px auto;
+        }
+        .header
+        {
+            height: 54px;
+            color: #FFF;
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: auto 54px;
+            -webkit-box-shadow: 0 2px 10px 2px #d3d3d3;
+            box-shadow: 0 2px 10px 2px #d3d3d3;
+            margin-bottom: 10px;
+        }
+        .header .left
+        {
+            float: left;
+            height: 100%;
+            width: 246px;
+            background-repeat: no-repeat;
+            background-position: left 0;
+            background-size: 246px 177px;
+        }
+        .header .right
+        {
+            float: right;
+            height: 100%;
+            width: 64px;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 246px 177px;
+        }
+        .header .left h1
+        {
+            padding: 15px 0 2px 15px;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 23px;
+        }
+        .header .left span
+        {
+            font-size: 13px;
+            line-height: 18px;
+            padding: 0 0 0 15px;
+        }
+        .header
+        {
+            background-image: url('./img/2222.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <ul class="header">
+            <li class="left">
+                <h1>
+                    2014年微信HOT榜</h1>
+            </li>
+            <li class="right"></li>
+        </ul>
+        <div class="tj_box">
+            <a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5MjkwODczNw==&mid=200528635&idx=1&sn=080c71ef16789fbbe24ae1806e6b8315#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                佛言禅心</h3>
+                            <p>
+                                看佛心禅语，给生活一丝感动，给人生一点感悟。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj49.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3ODk0NDIzMg==&mid=200397312&idx=1&sn=827bd454cb426a287c797e8a3774bd9a#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                女人心计学</h3>
+                            <p>
+                                关注我！每天学点心计学！从今天起，做个聪明又幸福的女人！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj48.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MjM5NzM0NDk1OQ==&mid=200919865&idx=1&sn=5ae8e15af9c61bab32d5351bf7ede5be#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                女人私密事</h3>
+                            <p>
+                                只有成年人才说的私密事，你懂的，每日更新的哦……</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj40.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3NjU3NDQyNQ==&mid=200591477&idx=1&sn=34c7df16abb38869c35bc65909c24c66#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                奇趣震惊事件</h3>
+                            <p>
+                                探索无尽的未知世界！奇趣、震惊、最劲爆的猛料！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj1.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3NTQxOTQyMQ==&mid=200186069&idx=1&sn=de7b3590ad3e382149212d502dd433f0#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                女人智慧语录</h3>
+                            <p>
+                                教你做个睿智的女人，学会从容地面对生活。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj6.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzAxMzAwNzI1Mw==&mid=200627174&idx=1&sn=8fb1cca5151ac88a59f3d1323024aefc#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                热辣小短片</h3>
+                            <p>
+                                每日新鲜视频，猎奇、香艳、爆笑……绝对让你看得过瘾。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj18.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA4MjQ1MjMyMg==&mid=200142076&idx=1&sn=87c183e3f5d99d685ecf72da66c49d86#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                哲言心语</h3>
+                            <p>
+                                如一道阳光照到你最悲伤的角落，给你温暖。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj2.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3Mjg2NTUzMQ==&mid=200586707&idx=1&sn=3cd3251a89c26abc621450064de9c7aa#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                内裤都笑湿了</h3>
+                            <p>
+                                精彩就在一瞬间！搞笑只需一刹那！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj37.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3NzczODUwNQ==&mid=200203097&idx=1&sn=105bd0642ae0e04cd2d188f56deec57b#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                最佳蹲坑读物</h3>
+                            <p>
+                                神奇的著名女起夜家，她能告诉你所有你不知道的事。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj7.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA4MjI4ODAyMg==&mid=200466866&idx=1&sn=bb9c7cfa571adb815a2df27440b6fbb1#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                小游戏</h3>
+                            <p>
+                                挑战你的智商，考验你的眼力，精彩不容错过。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj34.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3Njc3OTYwMg==&mid=200160322&idx=1&sn=5adcd24b7abebc1c83f4119a8a66ce27#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                做个好妈妈</h3>
+                            <p>
+                                ☑爱宝宝 ☑爱老公 ☑爱生活，做完美妈妈。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj16.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5MzAzMzIxNg==&mid=200279501&idx=1&sn=523bcf898010ec1ae1d732dd25dfb054#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                旅游攻略</h3>
+                            <p>
+                                捎上，放飞的心情，我们去旅行吧。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj14.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5NTc3MTYyNg==&mid=200347894&idx=1&sn=f9ed5b488531b5bb3c03aea84d401003#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                这个绝对有意思</h3>
+                            <p>
+                                小女子只更新有内涵的内容。至于节操，就扔了吧！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj23.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3MzY0OTExMA==&mid=200211779&idx=1&sn=441b1c45974523bebd4cc9880def3d80#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                服饰潮搭</h3>
+                            <p>
+                                在这里找找属于您的灵感！打造专属你的美丽！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj10.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5MTc0MzgxMg==&mid=200102648&idx=1&sn=4e9b1c2c07b6feb4a5133ab9ef205499#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                实用生活百科知识</h3>
+                            <p>
+                                每日分享实用生活小常识、小智慧、小窍门。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj11.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5MDc2MjYwMQ==&mid=201201357&idx=1&sn=88eb0eb0d429d20943cfe10f5809eb63#rd&ADUIN=21242795&ADSESSION=1402710968&ADTAG=CLIENT.QQ.5329_.0&ADPUBNO=26349">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                心情语录</h3>
+                            <p>
+                                愉悦你的眼，温暖你的心。不畏将来，不念过去。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj17.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA5NjU3MTQzOQ==&mid=200201361&idx=1&sn=fd15193bab92fb696df3a93649418ec7#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                爆笑GIF图</h3>
+                            <p>
+                                精选有内涵、无节操爆笑GIF图，每日让了乐个不停!!</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj13.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MjM5OTA4NDQ1OQ==&mid=200674461&idx=1&sn=9909e38dd9e407b4dd68bbda11679d5d#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                做菜很简单</h3>
+                            <p>
+                                教你学会做一手好菜！拴住Ta的胃，留住Ta的心!!</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj26.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA4NTMxODAxNA==&mid=200459852&idx=1&sn=7f5614c773e50fc8d29bb58f7bd2b0e5#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                微小说</h3>
+                            <p>
+                                东西为广，南北为轮；热爱生活，追求品质，分享乐趣!!</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj27.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3ODkxODQyMQ==&mid=201055033&idx=1&sn=e930f33ff7e4603d1592f343bd9cc2a5#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                路过心上的句子</h3>
+                            <p>
+                                一句话, 不足以讲述一个故事, 却可以让我们回味那些个动人的瞬间。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj50.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzAxOTAyMTk0NQ==&mid=200450258&idx=1&sn=746cbe43996012439fc0b779c5ec5af9#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                 晚安故事</h3>
+                            <p>
+                                每天守候着你，愿你聆听，愿你安眠！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj51.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MjM5MTQxNjc3MA==&mid=200635600&idx=1&sn=3b2580d049bbba4e63bc7416317079ab#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                 女人私密话</h3>
+                            <p>
+                                女人私密话,悄悄告诉你女人该懂得那些事儿.</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj52.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MjM5NjQxNTY4NQ==&mid=200487562&idx=1&sn=c22d963a1c1c2979b99b1b815f1f2118#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                 女人读心术</h3>
+                            <p>
+                                做个有心计的女人，松游走于男人的世界。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj53.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3MjczNTEwMQ==&mid=200150328&idx=1&sn=26013dcd6ed19349e772af0c70c5882a#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                闺蜜暖心话</h3>
+                            <p>
+                                一张美图，一份爱情。每天，陪你说说闺蜜暖心话。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj8.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3NDE1MTgwMQ==&mid=200776186&idx=1&sn=379a5c7420b2492329c65d4676504454#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                搞笑糗事段子精选
+                            </h3>
+                            <p>
+                                <span>
+                                    <img style="height: 16px; width: 16px;" src="./img/mimi.png">内裤都笑松了。各种恶搞、爆笑内容笑到你肚子疼…</span></p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj24.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3MTQ1OTkwNA==&mid=200484738&idx=1&sn=52d9f059af15ecdde4a150514ff8e2ce#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                美文酷图</h3>
+                            <p>
+                                美图怡人，美文怡心，每一天，美文美图，不见不散！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj4.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MjM5NTE1MzY2Nw==&mid=200214619&idx=1&sn=46c994dc154b988a831fbd59e68ffe10#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                爱美丽爱健康</h3>
+                            <p>
+                                做我自己，快乐人生。我们爱美丽更爱健康！</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj3.jpg"></dt>
+                </dl>
+            </a><a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4NDAwOQ==&mid=200309830&idx=1&sn=05a9b3c3c5248d23b96994d10ef1c658#rd">
+                <dl class="clearfix">
+                    <dd>
+                        <div style="position: relative;">
+                            <h3 class="font14">
+                                粉木耳</h3>
+                            <p>
+                                屌丝终有逆袭日，木耳再无还粉时！懂我你就进来。</p>
+                            <div style="width: 60px; height: 60px; position: absolute; right: 0; top: 0; padding-right: 75px;">
+                                <img src="./img/guanzhu.png" width="60px" height="25px" style="margin-top: 18px;" />
+                            </div>
+                        </div>
+                    </dd>
+                    <dt class="tj_base">
+                        <img src="./img/wxtj25.jpg"></dt>
+                </dl>
+            </a>
+        </div>
+        <div style="display: none;">
+            <script src="http://s23.cnzz.com/stat.php?id=5959661&web_id=5959661" language="JavaScript"></script>
+        </div>
+    </div>
+</body>
+</html>

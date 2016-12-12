@@ -1,0 +1,332 @@
+
+intro_screen.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+interior_background
+  rotate: false
+  xy: 1, 290
+  size: 482, 733
+  orig: 482, 733
+  offset: 0, 0
+  index: -1
+interior_tubes_right
+  rotate: false
+  xy: 485, 409
+  size: 245, 614
+  orig: 245, 614
+  offset: 0, 0
+  index: -1
+interior_foreground
+  rotate: false
+  xy: 1, 102
+  size: 485, 186
+  orig: 485, 186
+  offset: 0, 0
+  index: -1
+DEBUG
+  rotate: false
+  xy: 732, 623
+  size: 225, 400
+  orig: 225, 400
+  offset: 0, 0
+  index: -1
+interior_tubes_left
+  rotate: false
+  xy: 732, 400
+  size: 222, 221
+  orig: 222, 221
+  offset: 0, 0
+  index: -1
+exterior_belt_4
+  rotate: false
+  xy: 488, 226
+  size: 214, 181
+  orig: 214, 181
+  offset: 0, 0
+  index: -1
+luggage
+  rotate: false
+  xy: 704, 192
+  size: 265, 206
+  orig: 265, 206
+  offset: 0, 0
+  index: -1
+exterior_belt_3
+  rotate: false
+  xy: 488, 47
+  size: 214, 177
+  orig: 214, 177
+  offset: 0, 0
+  index: -1
+interior_tube
+  rotate: false
+  xy: 704, 71
+  size: 288, 119
+  orig: 288, 119
+  offset: 0, 0
+  index: -1
+luggage23
+  rotate: false
+  xy: 1, 7
+  size: 82, 93
+  orig: 82, 93
+  offset: 0, 0
+  index: -1
+luggage22
+  rotate: false
+  xy: 85, 17
+  size: 75, 83
+  orig: 75, 83
+  offset: 0, 0
+  index: -1
+luggage9
+  rotate: false
+  xy: 704, 1
+  size: 63, 68
+  orig: 63, 68
+  offset: 0, 0
+  index: -1
+luggage7
+  rotate: false
+  xy: 162, 29
+  size: 78, 71
+  orig: 78, 71
+  offset: 0, 0
+  index: -1
+luggage21
+  rotate: false
+  xy: 242, 28
+  size: 70, 72
+  orig: 70, 72
+  offset: 0, 0
+  index: -1
+luggage6
+  rotate: false
+  xy: 769, 6
+  size: 77, 63
+  orig: 77, 63
+  offset: 0, 0
+  index: -1
+luggage5
+  rotate: false
+  xy: 314, 40
+  size: 71, 60
+  orig: 71, 60
+  offset: 0, 0
+  index: -1
+luggage10
+  rotate: false
+  xy: 959, 957
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+luggage8
+  rotate: false
+  xy: 959, 957
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+luggage20
+  rotate: false
+  xy: 848, 6
+  size: 62, 63
+  orig: 62, 63
+  offset: 0, 0
+  index: -1
+luggage13
+  rotate: false
+  xy: 959, 893
+  size: 59, 62
+  orig: 59, 62
+  offset: 0, 0
+  index: -1
+interior_eng_left_2_2
+  rotate: false
+  xy: 387, 41
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+luggage19
+  rotate: false
+  xy: 912, 16
+  size: 65, 53
+  orig: 65, 53
+  offset: 0, 0
+  index: -1
+luggage14
+  rotate: false
+  xy: 959, 834
+  size: 59, 57
+  orig: 59, 57
+  offset: 0, 0
+  index: -1
+interior_eng_left_2_1
+  rotate: false
+  xy: 959, 776
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+luggage15
+  rotate: false
+  xy: 959, 724
+  size: 59, 50
+  orig: 59, 50
+  offset: 0, 0
+  index: -1
+luggage11
+  rotate: false
+  xy: 959, 673
+  size: 62, 49
+  orig: 62, 49
+  offset: 0, 0
+  index: -1
+luggage4
+  rotate: false
+  xy: 959, 624
+  size: 61, 47
+  orig: 61, 47
+  offset: 0, 0
+  index: -1
+luggage12
+  rotate: false
+  xy: 314, 2
+  size: 59, 36
+  orig: 59, 36
+  offset: 0, 0
+  index: -1
+luggage16
+  rotate: false
+  xy: 162, 6
+  size: 59, 21
+  orig: 59, 21
+  offset: 0, 0
+  index: -1
+luggage17
+  rotate: false
+  xy: 387, 7
+  size: 59, 32
+  orig: 59, 32
+  offset: 0, 0
+  index: -1
+luggage18
+  rotate: false
+  xy: 959, 574
+  size: 59, 48
+  orig: 59, 48
+  offset: 0, 0
+  index: -1
+luggage3
+  rotate: false
+  xy: 956, 541
+  size: 39, 31
+  orig: 39, 31
+  offset: 0, 0
+  index: -1
+luggage2
+  rotate: false
+  xy: 449, 78
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+luggage1
+  rotate: false
+  xy: 375, 27
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+
+intro_screen2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+exterior_background
+  rotate: false
+  xy: 1, 283
+  size: 293, 511
+  orig: 293, 511
+  offset: 0, 0
+  index: -1
+interior_belt_3
+  rotate: false
+  xy: 296, 610
+  size: 431, 184
+  orig: 431, 184
+  offset: 0, 0
+  index: -1
+interior_belt_2
+  rotate: false
+  xy: 296, 427
+  size: 419, 181
+  orig: 419, 181
+  offset: 0, 0
+  index: -1
+interior_belt_4
+  rotate: false
+  xy: 296, 273
+  size: 402, 152
+  orig: 402, 152
+  offset: 0, 0
+  index: -1
+exterior_belt_2
+  rotate: false
+  xy: 1, 107
+  size: 205, 174
+  orig: 205, 174
+  offset: 0, 0
+  index: -1
+interior_belt_5
+  rotate: false
+  xy: 208, 134
+  size: 370, 137
+  orig: 370, 137
+  offset: 0, 0
+  index: -1
+interior_belt_1
+  rotate: false
+  xy: 208, 1
+  size: 350, 131
+  orig: 350, 131
+  offset: 0, 0
+  index: -1
+interior_eng_left_2
+  rotate: false
+  xy: 729, 635
+  size: 156, 159
+  orig: 156, 159
+  offset: 0, 0
+  index: -1
+exterior_belt_5
+  rotate: false
+  xy: 580, 117
+  size: 214, 154
+  orig: 214, 154
+  offset: 0, 0
+  index: -1
+interior_eng_right
+  rotate: false
+  xy: 560, 4
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+interior_eng_left_1
+  rotate: false
+  xy: 672, 6
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+exterior_belt_1
+  rotate: false
+  xy: 700, 297
+  size: 201, 128
+  orig: 201, 128
+  offset: 0, 0
+  index: -1

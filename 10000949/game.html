@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script language="javascript" type="text/javascript" src="js/jsgamemin.js"></script>
+    <script language="javascript" type="text/javascript" src="js/MrAahH.min.js"></script>
+    <title>命悬一线</title>
+<style>
+	body{margin:0px; background-color:#434243; color:#6A6A6A;}
+	.bandiv{float:left; width:100%; background-color:#DBD1BB;}
+		.bandiv div{padding:10px; text-align:left;}
+</style>
+</head>
+<body onload="main()" id="0">
+<div style="text-align:center;">
+	<canvas id="jsGameScreen"> 
+	</canvas> 
+</div>
+
+		<script language=javascript>
+
+		function dp_submitScore(m,t){
+
+		}
+		
+		function dp_share(t){
+
+		}
+		function dp_Ranking(){
+
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+
+		</script>
+<script type="text/javascript" src="pk/PkApi.js"></script>
+<script type="text/javascript" src="pk/WeixinApi.js"></script>
+<script type="text/javascript" src="pk/PkGame.js"></script>
+
+
+<script type="text/javascript">
+    function updateShareScore(bestScore) {
+        var d = '命悬一线获得' + bestScore + '分，观望四周求挑战 ！';
+        pkGame.updateResult(bestScore, bestScore, d, d);
+        console.log(d);
+    }
+
+    pkGame.ready(function() {
+
+    });
+</script>
+</body>
+</html>

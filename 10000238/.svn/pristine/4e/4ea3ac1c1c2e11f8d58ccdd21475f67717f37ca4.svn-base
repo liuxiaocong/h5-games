@@ -1,0 +1,45 @@
+{
+	"missiles": [
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0.0,
+			"screenSide": "right",
+			"position": -1400,
+			"delay": 0.0
+		},
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0.0,
+			"screenSide": "right",
+			"position": 1400,
+			"delay": 0.0
+		},
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0.0,
+			"screenSide": "right",
+			"position": 700,
+			"delay": 0.4
+		},
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0.0,
+			"screenSide": "right",
+			"position": 700,
+			"delay": 0.4
+		},
+		{
+			"type":"mine",
+			"rotation": 270,
+			"speed": 0.0,
+			"screenSide": "right",
+			"position": 0,
+			"delay": 0.8
+		}
+	], 
+	"timeLength": 2
+}

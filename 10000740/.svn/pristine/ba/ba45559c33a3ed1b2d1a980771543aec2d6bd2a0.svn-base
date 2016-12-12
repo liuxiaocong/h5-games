@@ -1,0 +1,223 @@
+@charset "utf-8";
+body {
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+	background: url(../img/stype/bg.jpg) repeat scroll 0% 0% transparent;
+	margin: 0;
+	position: relative;
+}
+.game-box {
+	width: 640px;
+	margin: 0 auto;
+	position: relative;
+}
+.game-box-title {
+	background: url(../img/title.png) no-repeat 20px center;
+	height: 130px;
+	line-height:130px;
+	text-align:right;
+	padding-right:20px;
+	font-size:60px;
+	color:#EBC993;
+	font-family:Arial;
+}
+.game-box-title sub{
+		font-size:24px;
+		line-height:10px;
+		font-family:"微软雅黑"
+	}
+#goMoneyBtn,#vsBtn{
+-webkit-animation:pulse 1s .2s infinite ease both;
+-moz-animation:pulse 1s .2s infinite ease both;}
+@-webkit-keyframes pulse{
+0%{-webkit-transform:scale(1)}
+50%{-webkit-transform:scale(1.03)}
+100%{-webkit-transform:scale(1)}
+}
+@-moz-keyframes pulse{
+0%{-moz-transform:scale(1)}
+50%{-moz-transform:scale(1.1)}
+100%{-moz-transform:scale(1)}
+}
+
+.swing{
+-webkit-animation:swing 1s .2s ease both;
+-moz-animation:swing 1s .2s ease both;}
+@-webkit-keyframes swing{
+20%,40%,60%,80%,100%{-webkit-transform-origin:top center}
+20%{-webkit-transform:rotate(15deg)}
+40%{-webkit-transform:rotate(-10deg)}
+60%{-webkit-transform:rotate(5deg)}
+80%{-webkit-transform:rotate(-5deg)}
+100%{-webkit-transform:rotate(0deg)}
+}
+@-moz-keyframes swing{
+20%,40%,60%,80%,100%{-moz-transform-origin:top center}
+20%{-moz-transform:rotate(15deg)}
+40%{-moz-transform:rotate(-10deg)}
+60%{-moz-transform:rotate(5deg)}
+80%{-moz-transform:rotate(-5deg)}
+100%{-moz-transform:rotate(0deg)}
+}
+.game-box-body {
+	position: relative;
+}
+.wuzi {
+	width: 640px;
+	height: 640px;
+}
+.amplify{
+-webkit-animation:amplify 2s 0s 1  both ;
+-moz-animation:amplify 2s 0s 1 both;
+}
+@-webkit-keyframes amplify{
+	50%{-webkit-transform:scale(1.8,1.8);}
+}
+@-moz-keyframes amplify{
+	50%{-moz-transform:scale(1.8,1.8);}
+}
+
+.game-box-winner, .game-box-loser, .game-box-red,.game-box-gesture-open,.game-box-gesture-close {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 margin: auto auto;
+	 display: none;
+}
+.game-box-winner {
+	background: url(../img/winner.png) no-repeat center center;
+}
+
+.game-box-loser {
+	background: url(../img/loser.png) no-repeat center center;
+}
+.game-box-red{
+	background: url(../img/red.png) no-repeat center center;
+}
+
+.game-box-gesture-open{
+	background: url(../img/gesture-open.png) no-repeat center center;
+}
+.game-box-gesture-close{
+	background: url(../img/gesture-close.png) no-repeat center center;
+}
+.dn {
+	display: none;
+}
+.menu-box {
+	display: none;
+}
+.menu {
+	width: 480px;
+	margin: 0 auto;
+}
+.menu-body {
+	width: 480px;
+	height: 442px;
+	top: 190px;
+	left: auto;
+	right: auto;
+	position: absolute;
+	background: url(../img/panel-bg.png);
+}
+.overcast {
+	width: 100%;
+	height: 960px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: #000;
+	filter: alpha(Opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+.menu-body .h1 {
+	margin: 125px auto 0 auto;
+	color: #480E00;
+	width: 390px;
+	text-align: left;
+	font: bold 32px/56px "微软雅黑";
+	-webkit-text-shadow: 1px 1px 1px #E4CDAE;
+	-moz-text-shadow: 1px 1px 1px #E4CDAE;
+	text-shadow: 1px 1px 1px #E4CDAE;
+}
+.menu-body .h2 {
+	margin: 0 auto 50px auto;
+	text-align: left;
+	width: 390px;
+	color: #480e00;
+	font: normal 22px/40px"微软雅黑";
+}
+.menu-body a {
+	width: 440px;
+	height: 80px;
+	text-align: center;
+	margin: 0 auto;
+	background: url(../img/btn-big.png) center 0 no-repeat;
+	display: block;
+	font: normal 26px/75px "微软雅黑";
+	color: #2E1E12;
+	cursor: pointer;
+	text-decoration: none;
+}
+.menu-body a:hover {
+	background: url(../img/btn-big.png) center -80px no-repeat;
+	color: #724A2D;
+}
+
+.btn-box {
+	padding-left:45px;
+}
+.btn-box a {
+	background: url(../img/btn-bg1.png) center 0 no-repeat;
+	height: 75px;
+	width: 205px;
+	cursor: pointer;
+	margin:0 30px;
+	display:block;
+	font: normal 22px/70px "微软雅黑";
+	float:left;
+	color: #480e00;
+	text-decoration: none;
+}
+.btn-box a:hover {
+	background: url(../img/btn-bg1.png) center -75px no-repeat;
+	color: #480e00;
+}
+.share-box {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+}
+.share-bg,.share-bg-1{
+	width: 449px;
+	height: 237px;
+	background: url(../img/share-bg-2.png) right 10px no-repeat;
+	float:right;
+	top:10px;
+	margin-right:50px;
+	right:0;
+	position: absolute;
+	z-index:999;
+}
+
+.share-bg-1{
+	background: url(../img/share-bg-2.png) right -228px no-repeat;
+}
+
+.share-overcast{
+	z-index:888;
+	position: absolute;
+	width: 100%;
+	height: 960px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: #000;
+	filter: alpha(Opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+}

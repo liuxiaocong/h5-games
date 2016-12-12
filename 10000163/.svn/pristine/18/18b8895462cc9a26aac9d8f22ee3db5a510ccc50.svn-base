@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html xml:lang="EN" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<script src="//assets.adobedtm.com/659ec8ada5450db95675e43beaaae92399591a11/satelliteLib-46e65db5bb0c375f8f64619be31cc9b29acf4867.js"></script>
+            <meta name="content-type" content="reference"></meta>
+            <title>
+    Learn & Support</title>
+<script type="text/javascript">
+    
+    var omtrPageName = "Learn & Support";
+</script> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<meta http-equiv="Content-Language" content="en" />
+
+	<meta name="robots" content="noodp" />
+	<meta name="keywords" content="Article" />
+	<meta name="description" content="Find tutorials, manuals, support docs, and common questions for Adobe products. Solve installation, order, registration, and update issues." />
+		<meta name="creationDate" content="2014-08-10 @ 12:38:41" />
+	<meta name="lastModifiedDate" content="2014-08-10 @ 12:38:41" />
+	<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="public" />
+<link rel="icon" href="/include/img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="/include/img/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" media="screen" href="/include/style/adobe-light-compressed.css"/>
+<!--[if !IE]><!-->
+		<link rel="stylesheet" media="screen,print" href="/include/style/compressed.css"/>
+	<!--<![endif]-->
+	<!--[if IE]>
+		<link rel="stylesheet" media="screen,print" href="/include/style/dotcom-css-compressed.css" />
+		<link rel="stylesheet" media="screen,print" href="/include/style/default/SearchBuddy.css" />
+		<link rel="stylesheet" media="screen,print" href="/include/style/dotcom-css-modes.css" />
+	<![endif]-->
+    <link rel="stylesheet" media="screen" href="/include/jmvc/adobe-configurator-compressed.css"/>
+	<!--[if lt IE 10]>
+		<link rel="stylesheet" media="screen" href="/include/style/modes/MirrorIE.css" />
+	<![endif]-->
+	<script>
+	function createNs ( ns )
+	{
+		var o, a;			
+		a = ns.split(".");			
+		o = window[a[0]] = window[a[0]] || {};			
+		for(i=1; i < a.length; i++)
+		{
+			o = o[a[i]] = o[a[i]] || {};	
+		}
+		return o;		
+	}
+
+	createNs("Adobe.PageInfo");
+	createNs("Adobe.Tokens");
+	createNs("Adobe.UserInfo");
+	Adobe.PageInfo.AuthenticatedState = false;
+	Adobe.PageInfo.localeCode = "en";
+	Adobe.PageInfo.accountPageName = "";
+	Adobe.PageInfo.productKey = "";
+	Adobe.PageInfo.catalogName = "";
+	Adobe.PageInfo.countryCode = "";
+    Adobe.PageInfo.localeString = "";
+	Adobe.PageInfo.marketSegment = "";
+	Adobe.PageInfo.sitecatalystMarketSegment = "COM";
+	Adobe.PageInfo.akamaiURLPrefix = "";
+	Adobe.PageInfo.pageLevel = "4";
+</script>
+<script src="/include/script/compressed.js"></script>
+	<!--[if IE 6]>
+    <script>
+        try{void(document.execCommand("BackgroundImageCache",false,true));} catch(e) {}
+    </script>
+    <![endif]-->
+<script>
+	$(document).ready(function()
+	{
+		adobe.dom.param("wcmmode=disabled");
+		adobe.dom.param("compress=false");
+	});
+</script>
+<!-- Start headoverride.jsp -->
+<!-- The IKBS page needs the title in a meta tag -->
+<meta name="title" content="Learn & Support" /><meta name="content-type" content="reference"></meta>
+            <!-- Keyword metadata for the GSA -->
+<script type="text/javascript">
+    var product       = "";
+    var productTitle  = "";
+    var productSearch = "";    
+    var ionLabel      = "";                  
+    var productHub    = "";            
+</script>
+
+<script type="text/javascript" src="/etc/designs/help/js/jquery.cookie.js"></script>    
+
+
+<!-- Jive forums code -->
+<script>
+    var jiveTitle = document.title;
+    var pos = jiveTitle.indexOf("*");    
+    if( (pos != -1) && (pos+1 != jiveTitle.length) ) {
+        jiveTitle = jiveTitle.substr(pos+1,jiveTitle.length);
+    }
+    var jiveHref = window.location.toString().replace(/[\?,#](.*)/, "").replace(/content\/help\/en\//, "").replace(/content\/help\//, "");
+    // using javascript variable
+    var jiveDescription = "This question was posted in response to the following article: " + jiveHref; 
+    // using meta tags
+    document.write('<meta name="jiveDescription" content="This question was posted in response to the following article: ' + jiveHref  + '"/>');   
+    document.write('<meta name="jiveTitle" content="' + jiveTitle  + '"/>');
+</script>
+
+
+<script>
+            var forumId =  "Not set"; 
+        </script>
+        <!-- CHL CSS -->
+<link rel="stylesheet" type="text/css" href="/etc/designs/help/static.css"/>
+<link rel="stylesheet" type="text/css" href="/etc/designs/help/helppage.css"/>
+
+
+<link rel="stylesheet" type="text/css" href="/etc/designs/help/en_US/locale-specific.css"/>
+
+<script type="text/javascript">
+<!--[CDATA[
+    // Data for Meg
+    var productCount = 0;
+    // Data for Meg
+    var omtrProductList = "";
+    var omtrTagList = "";
+    var omtrContentType = "";
+    var metaElements = document.all ?
+    document.all.tags('meta') :
+    document.getElementsByTagName ?
+    document.getElementsByTagName ('meta') : new Array();
+    
+    for (var m = 0; m < metaElements.length; m++) {
+        if (metaElements[m].name == "product") {
+            productCount++;
+            if (omtrProductList.length > 0) {
+                omtrProductList = omtrProductList + ", ";
+            }
+            omtrProductList = omtrProductList + metaElements[m].content.toLowerCase();
+        }
+        if (metaElements[m].name == "tag") {
+            if (omtrTagList.length > 0) {
+                omtrTagList = omtrTagList + ": ";
+            }
+            omtrTagList = omtrTagList + metaElements[m].content.toLowerCase();
+        }
+        if (metaElements[m].name == "content-type") {
+            omtrContentType = metaElements[m].content.toLowerCase();
+        }
+    }
+
+	var urlMatch = /(https?:\/\/)([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*))(index.html)?(\?\S+)?(#\S+)?/;
+	var adobeMatch = /(https?:\/\/)([-\w\.]+)+(\.adobe\.com)/;
+	var adobeLocaleMatch = /^\/(ae|bg|cz|dk|de|gr|es|ee|fi|fr|il|hr|hu|it|jp|kr|lt|lv|no|nl|pl|br|ro|ru|sk|si|se|tr|ua|cn|tw)\/.+/;
+	var cqLocaleMatch = /^\/content\/help\/(ae|bg|cz|dk|de|gr|es|ee|fi|fr|il|hr|hu|it|jp|kr|lt|lv|no|nl|pl|br|ro|ru|sk|si|se|tr|ua|cn|tw)\/.+/;
+	var omtrLocale = "en";
+	if (adobeLocaleMatch.test(location.pathname)) {
+		var matchArray = adobeLocaleMatch.exec(location.pathname).slice();
+		omtrLocale = matchArray[1];
+		if ( typeof(matchArray[1]) != 'undefined') {
+			omtrLocale = matchArray[1];
+		}
+	}
+	else if (cqLocaleMatch.test(location.pathname)) {
+		var matchArray = cqLocaleMatch.exec(location.pathname).slice();
+		omtrLocale = matchArray[1];
+		if ( typeof(matchArray[1]) != 'undefined') {
+			omtrLocale = matchArray[1];
+		}
+	}
+// ]]-->
+</script> 
+
+<!--[if gte IE 8]>
+    <style>.step a[name*=step_par_text]{display:none;}</style>
+<![endif]-->
+
+<!-- for contact 2  -->
+<script src="//helpx.adobe.com/lib/com.liveperson/mtagconfig.js" type="text/javascript"></script>
+<link href="/etc/designs/help/contact-2/css/contact-2.1.css" rel="stylesheet"/>
+<script src="/etc/designs/help/contact-2/js/countryCode.js"></script>
+<script src="/etc/designs/help/contact-2/js/contact-2.1.js"></script>
+<script src="/etc/designs/help/contact-2/js/chat.js"></script>
+<link rel="stylesheet" href="/etc/designs/help/en_US/contact-locale-specific.css" type="text/css" media="screen"/>
+
+<!-- End headoverride.jsp -->
+<!--script src="//fonts.adobe.com/yoe7ink.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script-->
+  <script src="//fonts.adobe.com/whd3raw.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="Text TextMedium Link">
+<div class="cx2-nav-container"><div class="global-nav-placeholder"></div></div>
+<script type="text/javascript">
+adobeGlobalNavLocale = "en_US";
+</script>
+<!-- global-nav -->
+<link rel="stylesheet" href='https://wwwimages2.adobe.com/assets/globalnav/v1.1.4/css/globalnav.css'/>
+<script type="text/javascript" src='https://wwwimages2.adobe.com/assets/globalnav/v1.1.4/js/globalnav.js'></script>
+<script>
+  // Define the global adobeid object required by imslib.js (https://wiki.corp.adobe.com/display/ims/IMS+Javascript+Library+Spec)
+  // Global Nav requires:
+  //    uses_redirect_mode: true
+  //    scope: 'AdobeID,openid,acct_mgmt_api' (in addition to any other scopes you require)
+  var adobeid = {
+    uses_redirect_mode: true,
+    client_id: drawerPageIMS.data.client_id,
+    scope: drawerPageIMS.data.scope,
+  };
+  adobeid.redirect_uri = "https:" + window.location.href.substring(window.location.protocol.length);
+  
+  // Initialize Global Nav, must be called before fetching imslib.js.
+  var adobeGlobalNav = new window.AdobeGlobalNav({
+    // Required.
+    // The global adobeid object required by imslib.js.
+    adobeid: adobeid,
+ 
+    // Optional (default: 'en_US').
+    // The locale to render Global Nav in.
+    locale: adobeGlobalNavLocale,
+ 
+    // Required.
+    // Determines where to inject the Global Nav button set.
+    //
+    // The parentSelector element must be empty. No child elements or text
+    // nodes are permitted. If multiple elements match the parentSelector, the 
+    // first element will be used. The others will be ignored.
+    parentSelector: 'div.global-nav-placeholder',
+ 
+    // Optional (default: ['sitemap', 'search', 'profile']).
+    // The sections of Global Nav to enable.
+    sections: ['sitemap', 'search', 'profile', 'logo'],
+   
+    styles: {
+      // Optional (default: 'rgb(75%, 75%, 75%)').
+      // The CSS color used for the text and icons of the menu bar buttons
+      buttonTextColor: 'rgb(75%, 75%, 75%)',
+ 
+      // Optional (default: 'white').
+      // The CSS color used for hover state of the text and icons of the menu bar buttons
+      buttonTextHoverColor: 'black'
+    }
+
+  });
+  var jstring = drawerPageIMS.idp_endpoint + "/imslib.js?client_id=" + drawerPageIMS.data.client_id + "&locale=" + adobeGlobalNavLocale;
+  $.getScript(jstring);
+</script>
+
+
+<div class="LayoutGrid LayoutCenter ArticleGrid LayoutWideGrid LayoutP">
+
+    <script>
+    //<![CDATA[
+    if(typeof jQuery != 'undefined'){
+        (function($) {
+            var dispatcher = (adobe.vrbl("reflowDispatcher") || adobe.vrbl("reflowDispatcher", adobe.reflow.createDispatcher("width", window.document))),
+                    viewport = $(window),
+                    viewportWidth = NaN,
+                    meta = window.document.getElementsByName("viewport")[0],
+                    metaContent;
+
+            $(window).bind("resize orientationchange", setRenderMode);
+
+            if(meta) {
+                $(window.document).bind("adobe.reflow.LayoutChange", snapViewportToMaxWidth);
+            }
+
+            setRenderMode();
+
+            function snapViewportToMaxWidth(event, layout_event) {
+                if (layout_event.snapView && layout_event.active) {
+                    var widthSetter = "width=",
+                            width = widthSetter+layout_event.maxRange,
+                            content = meta.getAttribute("content");
+
+                    if(content.indexOf(widthSetter) > -1) {
+                        content = content.replace(/width=[^,$]+/, width);
+                    } else {
+                        content = width;
+                    }
+                    meta.setAttribute("content", content);
+                }
+            }
+
+            function setRenderMode() {
+                var currentViewportWidth = viewport.width();
+                if (viewportWidth == currentViewportWidth) {
+                    return;
+                } //trottle noisy event
+                viewportWidth = currentViewportWidth;
+                dispatcher.updateLayout(viewportWidth);
+            }
+        })(jQuery);
+    }
+    //]]>
+</script>
+<!-- Start contentheader.jsp -->
+<link rel="stylesheet" href="/etc/designs/help/clientlibs.css" type="text/css">
+<!--googleon: all-->
+<!--script type="text/javascript" src="/etc/designs/help/contact/js/support-wizard.js"></script-->
+<div class="Link LayoutCellSides LayoutBreakAfter">
+    <div class="LayoutSmallRow TextH1 LayoutGrid-1-5">
+        </div>
+</div>
+
+<!-- End contentheader.jsp -->
+<div> 
+    <div>
+
+		<div class="RawHtmlComponent">
+			<div class="rawhtml RawHtml">
+<style>
+.left-column, .right-column {
+display:none;
+}
+.bottomLists p {
+	color: #447099;
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 14px;
+	padding-bottom: 6px;
+	padding-right: 8px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	}
+
+html {
+    background: none;
+}
+
+.cx2-nav-container {
+	background-color:white;
+	}
+
+#mulitContainerDiv, #right-column {
+	display:none;
+	}
+
+#section-one-title {
+	font-size: 32px;
+	font-weight: 100;
+	line-height: 38px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 0;
+	}
+
+.topRow {
+	float: left;
+	display: inline;
+	border: 0px solid #D5D5D5;
+	border-radius: 5px;
+	color: #333333;
+	display: block;
+	float: left;
+	font-size: 13px;
+	font-weight: 100;
+	height: 170px;
+	line-height: 19px;
+	margin: 25px 6px 8px;
+	padding: 16px 10px 10px;
+	text-align: center;
+	top: 0;
+	width: 172px;
+	}
+
+.indProds {
+	float: left;
+	display: inline;
+	border: 0px solid #D5D5D5;
+	border-radius: 5px;
+	color: #333333;
+	display: block;
+	float: left;
+	font-size: 13px;
+	font-weight: 100;
+	height: 120px;
+	line-height: 19px;
+	margin: 25px 3px 8px;
+	padding: 1px 10px 10px;
+	text-align: center;
+	top: 0;
+	width: 89px;
+	}
+
+.options {
+	float: left;
+	display: inline;
+	border: 0px solid #D5D5D5;
+	border-radius: 5px;
+	color: #333333;
+	display: block;
+	float: left;
+	font-size: 13px;
+	font-weight: 100;
+	height:200px;
+	line-height: 19px;
+	padding: 16px 10px 10px;
+	text-align: center;
+	top: 0;
+	width: 130px;
+	}
+
+.textColumns {
+    border: 0 solid #D5D5D5;
+    border-radius: 5px;
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 19px;
+    margin-top: -15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    top: 0;
+    width: 212px;}
+
+
+.LayoutCenter {
+        margin-right: none !important;
+	}
+
+.divLine
+{border-top: 1px solid #DEDEDE; margin-top:30px;}
+
+.bottomLists p {
+	color: #389bf4;
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 14px;
+	padding-bottom: 6px;
+	padding-right: 8px;
+	}
+
+p.bttm-hds {
+  color: #3c3c3c;
+  font-size: 16px;
+  line-height: 22px;
+  padding-bottom: 8px;
+  padding-top: 30px;
+  font-weight: 500;
+  }
+
+.button {
+	background-color: #ffffff;
+	border: 1px solid #888888;
+	border-radius: 1ex;
+	color: #389bf4;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0;
+	padding: 0.5em 1em;
+	padding-top: 0;
+	}
+
+.pageTitle { color: #333333;
+    font-size: 36px;
+    font-weight: 200;
+    margin-bottom: -10px;
+    margin-top: 20px;
+    text-align: center;
+	}
+
+h2.sectionHds {
+	font-size: 22px;
+	font-weight: 100;
+	line-height: 22px;
+	margin-bottom: 20px;
+	text-align: center;
+	margin-top: 20px;
+
+.options
+    height: 65px;
+    padding-bottom: 9px;
+    padding-top: 11px;
+	}
+
+.optSubHd {font-size: 16px; font-weight: 400; padding-bottom:15px;}
+.optDesc {font-size: 14px; font-weight: 100; padding-top:8px;}
+
+a, .Link a, .Link a:link, .Link a:visited, a.Link, a.Link:link, a.Link:visited {color: #389Bf4}
+
+.button {
+    height: 32px;
+    width: 130px;
+	}
+
+.alertSmll {
+    max-width: 16px;
+    max-height: 16px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-top: 0;
+    vertical-align: middle;
+	}
+
+.featuredBg {
+background: url("/content/dam/help/images/en/greyRule.gif") no-repeat scroll 0 40% rgba(0, 0, 0, 0);
+padding-bottom: 12px;
+	}
+
+#draw-main .popup .closeBox div {
+    border: 0px solid #B4B4B4;
+
+</style>
+
+
+
+<script>
+
+function displayPromisePopup () {
+$('#promise').css('display','block');displayPopup();
+}
+
+</script></div>
+</div>
+		<div id="section-one-title" class="TextComponent">
+			<div class="text parbase section-one-title">
+
+
+
+
+<a name="jcr:content_section-one-title"></a>
+        <div class="text" style="background-color:"><p style="height: 62px;"><img src="/content/dam/help/images/en/support.png" style="align: center; max-height: 55px;"/></p>
+<h1 style="text-align: center; margin-top: 0px; font-family: adobe clean; color: #000000; font-size: 36px; font-weight: 300;" class="pageTitle">Learn &amp; Support</h1>
+<h2 style="text-align: center;" class="sectionHds">Tutorials, manuals, troubleshooting, and more. Plus, awesome people to help. All in one place.</h2>
+<p style="width: 100%; background-color: #f5f5f5; text-align: center; margin-top: 20px; padding-top: 8px; padding-bottom: 8px; line-height: 24px;"><span style="font-weight: 100; color: #666666;">For the latest product and support updates, <a href="https://twitter.com/AdobeCare" target="_blank">follow @AdobeCare</a>.</span></p>
+<div style="margin: auto 1.5em; display: inline-block;"><div style="text-align: center;" class="topRow"><a href="/creative-cloud/topics/getting-started.html"><img style="width: 147px;" src="/content/dam/help/images/en/CC-looseCrop.png"/></a><p style="padding-top: 6px;" class="optSubHd">Creative Cloud</p>
+</div>
+<div style="text-align: center;" class="topRow"><a href="/marketing-cloud.html"><img width="147" src="/content/dam/help/images/en/MC-looseCrop.png"/></a><p style="padding-top: 6px;" class="optSubHd">Marketing Cloud</p>
+</div>
+</div>
+<h2 class="featuredBg" style="text-align: center; margin-top: 0px; margin-bottom: 0px; font-size: 16px; font-weight: 500;"><span style="background-color: #FFFFFF; padding-left: 20px; padding-right: 20px;">Featured</span></h2>
+<div style="margin: auto 0em; display: inline-block;"><div style="text-align: center;" class="indProds"><a href="/photoshop.html"><img width="84" src="/content/dam/help/images/en/photoshop.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Photoshop</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/illustrator.html"><img width="84" src="/content/dam/help/images/en/illustrator.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Illustrator</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/indesign.html"><img width="84" src="/content/dam/help/images/en/indesign.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">InDesign</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/premiere-pro.html"><img width="84" src="/content/dam/help/images/en/premiere-pro.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Premiere Pro</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/after-effects.html"><img width="84" src="/content/dam/help/images/en/after-effects.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">After Effects</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/lightroom.html"><img width="84" src="/content/dam/help/images/en/ps-lightroom.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Lightroom</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/photoshop-elements.html"><img width="84" src="/content/dam/help/images/en/ps-elements.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Photoshop<br />
+Elements</p>
+</div>
+<div style="text-align: center;" class="indProds"><a href="/acrobat.html"><img width="84" src="/content/dam/help/images/en/acrobat.png"/></a><br />
+<p style="padding-top: 6px;" class="optSubHd">Acrobat</p>
+</div>
+</div>
+<div style="text-align: center; padding-left: 0px; padding-bottom: 20px;"><p class="button" style="cursor: pointer; font-size: 14px; font-weight: 300; text-align: center;" onclick="displayPromisePopup();">All products</p>
+</div>
+<p class="divLine">&nbsp;</p>
+<div style="margin: auto 1.5em; display: inline-block;"><div style="text-align: center;" class="options"><p class="optSubHd">Adobe ID</p>
+<a href="/x-productkb/policy-pricing/account-password-sign-faq.html"><img width="70" height="65" src="/content/dam/help/images/en/id.png"/></a><p class="optDesc">Multiple ID's?<br />
+Password reset<br />
+not working?</p>
+<p class="optDesc"><a href="/x-productkb/policy-pricing/account-password-sign-faq.html">Read more &gt;</a></p>
+</div>
+<div class="options" style="text-align: center;"><p class="optSubHd">Download &amp; Install</p>
+<a href="/download-install.html"><img width="70" height="65" src="/content/dam/help/images/en/download2.png"/></a><p class="optDesc">Solutions for common<br />
+download, install and<br />
+activation issues</p>
+<p class="optDesc"><a href="/download-install.html">Ask now &gt;</a></p>
+</div>
+<div style="text-align: center;" class="options"><p class="optSubHd">Membership</p>
+<a href="/x-productkb/policy-pricing/membership-subscription-troubleshooting-creative-cloud.html"><img width="70" height="65" src="/content/dam/help/images/en/id.png"/></a><br />
+<p class="optDesc">Find answers to<br />
+common questions<br />
+about Creative Cloud</p>
+<p class="optDesc"><a href="/x-productkb/policy-pricing/membership-subscription-troubleshooting-creative-cloud.html">Ask now &gt;</a></p>
+</div>
+<div style="text-align: center;" class="options"><p class="optSubHd">Ask the Community</p>
+<a href="https://forums.adobe.com/welcome"><img width="70" height="65" src="/content/dam/help/images/en/community.png"/></a><br />
+<p class="optDesc">Post, discuss and<br />
+be part of our<br />
+awesome community</p>
+<p class="optDesc"><a href="https://forums.adobe.com/welcome">Ask now &gt;</a></p>
+</div>
+<div style="text-align: center;" class="options"><p class="optSubHd">Contact Us</p>
+<a href="/contact.html"><img width="70" height="65" src="/content/dam/help/images/en/contact.png"/></a><br />
+<p class="optDesc">Start here to<br />
+connect with<br />
+our staff</p>
+<p class="optDesc"><a href="/contact.html">Start now &gt;</a></p>
+</div>
+</div>
+<p class="divLine">&nbsp;</p>
+<div style="margin: auto 1.5em; display: inline-block;"><div style="text-align: left;" class="textColumns"><p class="bttm-hds">Popular Topics</p>
+<div class="bottomLists"><p><a href="/x-productkb/policy-pricing/activation-deactivation-products.html">Activate or deactivate your product</a></p>
+<p><a href="/x-productkb/policy-pricing/cancel-membership-subscription.html">Cancel your membership</a></p>
+<p><a href="/creative-cloud/help/install-apps.html">Install, update, or uninstall apps</a></p>
+<p><a href="/creative-cloud/help/creative-cloud-desktop.html">Use Creative Cloud on the desktop</a></p>
+<p><a href="/x-productkb/policy-pricing/adobe-stores-online-order-payment-faq.html">Online order and payment FAQ</a></p>
+<p><a href="/x-productkb/policy-pricing/account-password-sign-faq.html">Adobe ID, password, and sign in FAQ</a></p>
+<p><a href="/flash-player/kb/flash-player-issues-windows-8.html">Flash Player issues | Windows 8</a></p>
+<p><a href="http://www.adobe.com/downloads/other-downloads.html">Download CS6 and older products</a></p>
+<p><a href="/x-productkb/policy-pricing/customer-alert.html">Customer security alert</a></p>
+</div>
+</div>
+<div style="text-align: left;" class="textColumns"><p class="bttm-hds" style="width: 237px; padding-left: 38px;">More learning</p>
+<div class="bottomLists" style="width: 237px; padding-left: 38px;"><p><a href="/learning.html">Training</a></p>
+<p><a href="http://tv.adobe.com/">Adobe TV</a></p>
+<p><a href="http://www.adobe.com/inspire.html">Adobe Inspire Magazine</a></p>
+<p><a href="http://training.adobe.com/certification.html">Certification</a></p>
+<p><a href="http://www.adobe.com/devnet.html">Adobe Developer Connection</a></p>
+<p class="bttm-hds" style="width: 237px; padding-top: 14px;">Support programs</p>
+<p><a href="contact/what-contact-options.html">For individuals</a></p>
+<p><a href="/support/programs/enterprise-support.html">For enterprise</a></p>
+</div>
+</div>
+<div style="text-align: left;" class="textColumns"><p class="bttm-hds" style="width: 270px; padding-left: 65px;">Download help</p>
+<div class="bottomLists" style="width: 270px; padding-left: 65px;"><p><a href="/reader.html">Adobe Reader</a></p>
+<p><a href="/flash-player.html">Adobe Flash Player</a></p>
+<p><a href="/air.html">Adobe AIR</a></p>
+<p><a href="/shockwave.html">Adobe Shockwave Player</a></p>
+<p><a href="/download-install.html">More downloads</a></p>
+</div>
+</div>
+</div>
+
+        </div>
+        </div>
+</div>
+		
+        <div id="draw-main">
+			<div id="mulitContainerDiv">
+
+			</div>
+
+            <div id="contactoptions-selector-container">
+                <div id="contactoptions-title" class="TextComponent" style="display:none;margin-bottom:40px">
+    				<div class="text parbase contactoptionsTitleText">
+
+
+
+
+</div>
+</div>
+                <div id="contact-selector">
+					<div class="selector">
+                        <div>
+                            <span class="view-all"></span>
+                            <span class="current"></span>
+                        </div>
+                    </div>
+                    <div class="list" style="display:none">
+                        <div class="contact-title">
+                            <p>Recommended</p>
+							<p class="contactOptionsLink"><a href="contact/what-contact-options.html">What are my options?</a></p>
+                        </div>
+                        <div id="contact-chat" class="currentContact" style="display:none">
+   							<div id="chatOnline" class="chatStatus" style="display:none">
+    							<span class="optionTitle"></span>
+    							<p></p>
+                            </div> 
+
+                            <!-- HIDDEN liveperson dynamic button response container -->
+                            <div id="lpChatDynamicButtonDiv_Image" style="display:none"></div>
+							<hr>
+                        </div>
+
+                        <div id="contact-phone" style="display:none">
+                            <span class="optionTitle"></span>
+                            <p></p>
+    						<hr>
+                        </div>
+
+   						<div id="contact-phonecallback" style="display:none">
+                            <span class="optionTitle"></span>
+                            <p class="subtitle"></p>
+							<p class="ewt">Estimated wait time:&nbsp;<span class="minutes minutesColor">1</span>&nbsp;<span class="minutesColor">minutes</span></p>
+							<p class="unavailable"><span>Currently unavailable</span></p>
+							<p class="maintenance"><span>Currently unavailable due to maintenance</span></p>
+    						<hr>
+                        </div>
+                        <div id="contact-email" style="display:none">
+                            <span class="optionTitle"></span>
+                            <p></p>
+							<hr>
+                        </div>
+                        <div id="contact-forum" style="display:none">
+                            <span class="optionTitle"></span>
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="contact-select-content" style="display:none">
+
+    				<p class="preContactInfo" style="margin-top:20px">
+                        <span class="caseNumberInfo">Your case number:&nbsp;<b></b></span>
+    					<span id="chatSayHi" style="display:none">Hi,&nbsp;</span>
+                        <span name="username"></span>
+                    </p>
+    				<p class="preContactInfo" id="preContactInfoDesc">Here's what we know about your issue so far. It relates to:</p>
+    				<div id="chooseoption"></div>
+
+					<div id="contact-select-content-phone" class="contact-content" style="display:none">
+						<div id="reg-phone">
+
+							<div class="phone-description defaultStyle">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="contact-select-content-phoneCallBack" class="contact-content" style="display:none">
+						<div id="reg-phoneCallBack">
+							<div id="preCallBack">
+								<p>
+									<textarea id="phoneCallBack_content" onkeyup="this.value = this.value.slice(0, 9999)" class="question" placeholder="Describe the issue in detail. For example, let us know if the issue is happening on a Mac or PC; plus, any steps you've already taken to troubleshoot."></textarea>
+								</p>
+								<p>
+									<textarea id="phoneCallBack_title" onkeyup="this.value = this.value.slice(0, 40)" class="question" placeholder="Sum it up with a title (40 characters)"></textarea>
+								</p>
+								<p style="margin-left:20px">
+									Have you contacted us about this before? Yes&nbsp;
+									<input type="checkbox" name="contactedBeforeCallme" >
+								</p>  
+								<div id="national-selector">
+									<div class="selector">
+										<span class="view-all">Select a country (sets the country code for your callback number)*</span>
+										<span class="current"></span>
+									</div>
+									<div class="list" style="display:none">
+										<ul>    									
+										</ul>
+									</div>
+								</div>
+								<script>
+									$("#national-selector .selector").click(function(){
+										$("#national-selector .list").toggle();
+									}).mouseover(function(){$(this).css("cursor","pointer")})                                
+								</script>
+								<p id="callback_number" style="margin-left:20px">
+									Callback number * : <span class="countryCode"></span> <span class="plus"> + </span> 
+									<input type="text" name="pre" placeholder="111"/> - 
+									<input type="text" name="mid" placeholder="111"/> - 
+									<input type="text" name="ap" placeholder="1111"/>
+									<span class="isoCode" style="display:none">US</span>
+								</p>
+								<div id="callMeBtn" onclick="" class="buttonCss btnDisabled">
+									<p>Call Me</p>
+								</div>
+							</div>
+							<div id="callBackInfo" style="display:none;">
+								<p id="callBackEWTInfo">We'll call you in approximately&nbsp;<span>1-5</span>&nbsp;minute(s) at:</p>
+								<p id="callBackPhone">&nbsp;</p>
+								<p id="callBackCaseNumber">The number assigned to this case is:&nbsp;<span>&nbsp;</span></p>
+								<p id="callBackUnavailable">Currently unavailable. Please choose another option.</p>
+							</div>
+                        </div>
+                    </div>
+
+					<div id="contact-select-content-chat" class="contact-content" style="display:none">
+						<div id="reg-chat">
+
+    						<div id="prechat">
+
+    							<p style="margin-left:0">
+									<textarea id="Issue_Description" onkeyup="this.value = this.value.slice(0, 9999)" class="question" placeholder="Describe the issue in detail. For example, let us know if the issue is happening on a Mac or PC; plus, any steps you've already taken to troubleshoot." ></textarea>
+                                </p>
+                                <p style="margin-left:0">
+                                    <textarea id="Case_Description" onkeyup="this.value = this.value.slice(0, 40)" class="question" placeholder="Sum it up with a title (40 characters)"></textarea>
+                                </p>
+    							<p>
+                                    Have you contacted us about this before? Yes&nbsp;
+                                    <input type="checkbox" name="contactedBeforeChat" >
+                                </p>
+                                <!--div id="startChat" onclick="if(checkChatStatus()){lpc.requestChatFromDynButton(lpMTagConfig.dynButton1.actionHook());}" class="buttonCss"-->
+								<div id="startChat" class="buttonCss">
+    								<p>Start Chat</p>
+                                </div>
+                                <div id="chatOfflineMessage" style="display:none">
+                                	<p>Chat is currently closed. Please choose another option.</p>
+                                </div>
+                            </div>
+							<div id="chatPanel" style="display:none;">
+    							<div id='chatArea' style="margin:20px 0 0 20px"></div>
+    							<textarea id='chatLine' placeholder='write your text here...'></textarea>
+                                <br/>
+								<div id="requestEmail"><input type="checkbox" name="requestEmailCheckBox" >&nbsp;Email me a copy of the chat transcript when we are finished.</div>
+                                <div id="sendButton" class="buttonCss" style="margin-top: 10px;background:#BBBBBB">
+    								<p>Send Message</p>
+    							</div>
+    							<div id="cancelButton" class="buttonCss" onclick='endChat()' style="margin-top: 10px;border: 1px groove #1E90FF;background: #FFFFFF;">
+    								<p style="color: #1E90FF;">End Chat</p>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+
+    				<div id="contact-select-content-forum" class="contact-content" style="display:none">
+						<div id="reg-forum">                           
+                            <div class="forum-description defaultStyle">
+                        
+                            </div>
+                        </div>
+                    </div>
+    				<div id="contact-select-content-email" class="contact-content" style="display:none">
+						<div id="reg-email">                           
+                            <div class="email-description defaultStyle">
+                        
+                            </div>
+                        </div>
+                    </div>
+
+
+				</div>
+    			<div class="afterChooseContact" style="display:none;margin:15px 0">
+                	<div class="text parbase bottomText">
+
+
+
+
+</div>
+</div>
+			</div>
+    		<div class="help-loader" style="display:none">
+    			<span class="help-loading"></span>
+    		</div>
+			<div class="popupBG"></div>
+			<div class="popup">
+				<div class="closeBox"><div><p>X</p></div></div>
+				<div class="popupRawHtml rawhtml"><style>
+
+.cx2-nav-container {
+background-color:white;
+}
+
+#mulitContainerDiv, #right-column {
+display:none;
+}
+
+#draw-main .popupBG {
+	background-color: rgba(0, 0, 0, 0.95);
+	opacity: 0.85;
+	}
+
+
+#draw-main .popup {
+	left: 42%;
+	top: 55%;
+	width: 880px !important;
+	height: 420px !important;
+	overflow:scroll;
+	}
+
+#draw-main .popup .closeBox {
+    padding-left: 769px;
+    padding-top: 4px;
+	}
+
+.popupRawHtml.rawhtml {
+    	padding: 0 !important;
+	}
+.popupRawHtml.rawhtml #promise {
+    	padding: 2em;
+	}
+
+#draw-main .popup {
+	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.9);
+	}
+
+#draw-main .liColor {
+    color: #1A8CE4;
+}
+
+.current liColor {
+    color: #1A8CE4;
+}
+
+.Link a, .Link a:link, a.Link, a.Link:link, .Link a:visited, a.Link:visited  {
+    color: #1A8CE4;
+}
+
+#draw-main .popup .closeBox div {
+	border-radius: 21px;
+	margin-left: 64px;
+	height: 21px;
+	width: 21px;
+	}
+
+#draw-main .popup .closeBox div p {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-left: 7px;
+}
+
+.adbeGrey{
+	color:#888888;
+	}
+
+</style>
+
+<div id="promise">
+<div style="margin: auto 0em; display: inline-block;"><h1 style="font-size:20px; font-weight: 500; padding-left: 9px; padding-bottom: 8px; color:#333333;">Products</h1>
+<div class="textColumns" style="text-align: left;"><p class="bttm-hds">A-D</p>
+<div class="bottomLists"><p><a href="acrobat.html" target="_blank" onclick="s_objectID=&quot;acrobat.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Acrobat</a></p>
+								<p><a target="_blank" href="acrobat-com.html" onclick="s_objectID=&quot;acrobat-com.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Acrobat.com</a></p>
+								<p><a target="_blank" href="acrobat.html" onclick="s_objectID=&quot;/acrobat.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Adobe Acrobat Pro</a><br>
+								</p>
+								<p><a target="_blank" href="after-effects.html" onclick="s_objectID=&quot;after-effects.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>After Effects</a></p>
+								<p><a target="_blank" href="air.html" onclick="s_objectID=&quot;air.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>AIR</a></p>
+								<p><a href="audition.html" onclick="s_objectID=&quot;audition.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Audition</a></p>
+								<p><a href="https://behancenetwork.zendesk.com/categories/20070010-Behance-Knowledge-Base-and-FAQ" onclick="s_objectID=&quot;https://behancenetwork.zendesk.com/categories/20070010-Behance-Knowledge-Base-and-FAQ_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Behance</a></p>
+								<p><a target="_blank" href="bridge.html" onclick="s_objectID=&quot;bridge.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Bridge</a><br>
+								</p>
+								<p><a href="business-catalyst.html" target="_blank" onclick="s_objectID=&quot;business-catalyst.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Business Catalyst</a></p>
+								<p><a href="captivate.html" target="_blank" onclick="s_objectID=&quot;captivate.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Captivate</a></p>
+								<p><a href="coldfusion.html" target="_blank" onclick="s_objectID=&quot;coldfusion.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>ColdFusion</a></p>
+								<p><a href="adobe-connect.html" target="_blank" onclick="s_objectID=&quot;adobe-connect.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Connect </a></p>
+								<p><a href="contribute.html" target="_blank" onclick="s_objectID=&quot;contribute.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Contribute</a></p>
+								<p><a href="acrobat-com/kb/using-createpdf.html" target="_blank" onclick="s_objectID=&quot;acrobat-com/kb/using-createpdf.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>CreatePDF</a></p>
+								<p><a href="creative-cloud/topics/getting-started.html" target="_blank" onclick="s_objectID=&quot;creative-cloud/topics/getting-started.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Creative Cloud</a></p>
+								<p><a target="_blank" href="creative-cloud/creative-cloud-enterprise.html" onclick="s_objectID=&quot;creative-cloud/creative-cloud-enterprise.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Creative Cloud for enterprise</a><br>
+								</p>
+								<p><a href="creative-cloud/creative-cloud-teams.html" target="_blank" onclick="s_objectID=&quot;creative-cloud/creative-cloud-teams.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Creative Cloud for teams</a><br>
+								</p>
+								<p><a href="creative-suite.html" target="_blank" onclick="s_objectID=&quot;creative-suite.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Creative Suite</a></p>
+								<p><a href="digital-editions.html" target="_blank" onclick="s_objectID=&quot;digital-editions.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Digital Editions</a></p>
+								<p><a href="https://digitalpublishing.acrobat.com/" target="_blank" onclick="s_objectID=&quot;https://digitalpublishing.acrobat.com/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Digital Publishing Suite, <br /><span style="line-height:22px;">Professional or Enterprise Edition</span></a></p>
+								<p><a href="digital-publishing-suite.html" target="_blank" onclick="s_objectID=&quot;digital-publishing-suite.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Digital Publishing Suite, <br /><span style="line-height:22px;">Single Edition</span></a></p>
+								<p><a href="director.html" target="_blank" onclick="s_objectID=&quot;director.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Director</a></p>
+								<p><a href="dreamweaver.html" target="_blank" onclick="s_objectID=&quot;dreamweaver.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Dreamweaver</a></p>
+								<p><a href="http://www.adobe.com/support/adobedrive/" target="_blank" onclick="s_objectID=&quot;http://www.adobe.com/support/adobedrive/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Drive</a></p>
+<br />
+<br />
+<p style="font-weight:500;"><a href="/x-productkb/policy-pricing/discontinued-products.html" target="_blank">Don't see your product here?</a></p>
+</div>
+</div>
+<div class="textColumns" style="text-align: left;"><p style="width: 237px; padding-left: 38px;" class="bttm-hds">E-L</p>
+<div style="width: 237px; padding-left: 38px;" class="bottomLists"><p><a href="https://www.echosign.adobe.com/en/support.html" target="_blank" onclick="s_objectID=&quot;https://www.echosign.adobe.com/en/support.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>EchoSign</a></p>
+								<p><a target="_blank" href="edge-animate.html" onclick="s_objectID=&quot;edge-animate.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Edge Animate</a></p>
+								<p><a target="_blank" href="http://forums.adobe.com/community/edge_inspect" onclick="s_objectID=&quot;http://forums.adobe.com/community/edge_inspect_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Edge Inspect</a></p>
+								<p><a href="creative-cloud/topics/getting-started.html" target="_blank" onclick="s_objectID=&quot;creative-cloud/topics/getting-started.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Edge Reflow</a></p>
+								<p><a href="https://edgewebfonts.adobe.com/help" target="_blank" onclick="s_objectID=&quot;https://edgewebfonts.adobe.com/help_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Edge Web Fonts</a><br>
+								</p>
+								<p><a target="_blank" href="elearning-suite.html" onclick="s_objectID=&quot;elearning-suite.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>eLearning Suite</a></p>
+								<p><a target="_blank" href="encore.html" onclick="s_objectID=&quot;encore.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Encore</a></p>
+								<p><a target="_blank" href="acrobat-com.html" onclick="s_objectID=&quot;acrobat-com.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>ExportPDF</a></p>
+								<p><a target="_blank" href="extension-builder.html" onclick="s_objectID=&quot;extension-builder.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Extension Builder</a></p>
+								<p><a target="_blank" href="fireworks.html" onclick="s_objectID=&quot;fireworks.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Fireworks</a></p>
+								<p><a target="_blank" href="flash-builder.html" onclick="s_objectID=&quot;flash-builder.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Flash Builder</a></p>
+								<p><a target="_blank" href="flash-player.html" onclick="s_objectID=&quot;flash-player.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Flash Player</a></p>
+								<p><a target="_blank" href="flash.html" onclick="s_objectID=&quot;flash.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Flash Professional</a></p>
+								<p><a target="_blank" href="flex.html" onclick="s_objectID=&quot;flex.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Flex</a></p>
+								<p><a target="_blank" href="font-folio-type.html" onclick="s_objectID=&quot;font-folio-type.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Font Folio</a></p>
+								<p><a target="_blank" href="http://help.adobe.com/en_US/formscentral/using/index.html" onclick="s_objectID=&quot;http://help.adobe.com/en_US/formscentral/using/index.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> FormsCentral</a></p>
+								<p><a target="_blank" href="framemaker.html" onclick="s_objectID=&quot;framemaker.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>FrameMaker</a></p>
+								<p><a target="_blank" href="http://forums.adobe.com/community/creative_cloud_touch_apps/adobe_ideas" onclick="s_objectID=&quot;http://forums.adobe.com/community/creative_cloud_touch_apps/adobe_ideas_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Ideas</a></p>
+								<p><a target="_blank" href="illustrator.html" onclick="s_objectID=&quot;illustrator.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Illustrator</a></p>
+								<p><a target="_blank" href="indesign.html" onclick="s_objectID=&quot;indesign.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>InCopy</a></p>
+								<p><a target="_blank" href="indesign.html" onclick="s_objectID=&quot;indesign.html_3&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>InDesign</a></p>
+
+								<p><a target="_blank" href="ink-and-slide.html" onclick="s_objectID=&quot;ink-and-slide.html_3&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Ink & Slide</a></p>
+
+								<p><a target="_blank" href="http://www.adobe.com/support/kuler/" onclick="s_objectID=&quot;http://www.adobe.com/support/kuler/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Kuler</a></p>
+								<p><a target="_blank" href="leanprint.html" onclick="s_objectID=&quot;leanprint.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> LeanPrint</a></p>
+								<p><a target="_blank" href="lightroom.html" onclick="s_objectID=&quot;lightroom.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Lightroom</a></p>
+								<p><a target="_blank" href="livecycle.html" onclick="s_objectID=&quot;livecycle.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>LiveCycle</a></p>
+
+</div>
+</div>
+<div class="textColumns" style="text-align: left;"><p style="width: 270px; padding-left: 65px;" class="bttm-hds">M-Z</p>
+<div style="width: 270px; padding-left: 65px;" class="bottomLists">								<p><a target="_blank" href="adobe-marketing-cloud.html" onclick="s_objectID=&quot;adobe-marketing-cloud.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Marketing Cloud</a></p>
+								<p><a target="_blank" href="premiere-pro.html" onclick="s_objectID=&quot;premiere-pro.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Media Encoder</a><br>
+								</p>
+								<p><a target="_blank" href="adobe-media-server.html" onclick="s_objectID=&quot;adobe-media-server.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Media Server</a></p>
+								<p><a target="_blank" href="muse.html" onclick="s_objectID=&quot;muse.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Muse</a></p>
+<p><a target="_blank" href="acrobat-com/kb/using-createpdf.html" onclick="s_objectID=&quot;acrobat-com/kb/using-createpdf.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> PDF Pack</a><br>
+								</p>
+								<p><a href="http://phonegap.com/support" target="_blank" onclick="s_objectID=&quot;http://phonegap.com/support_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>PhoneGap Build</a></p>
+								<p><a href="photoshop.html" target="_blank" onclick="s_objectID=&quot;photoshop.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Photoshop</a></p>
+								<p><a href="photoshop-elements.html" target="_blank" onclick="s_objectID=&quot;photoshop-elements.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Photoshop Elements</a></p>
+								<p><a href="lightroom.html" target="_blank" onclick="s_objectID=&quot;lightroom.html_3&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Photoshop Lightroom</a></p>
+								<p><a href="http://forums.adobe.com/community/photoshop_touch_for_phone" target="_blank" onclick="s_objectID=&quot;http://forums.adobe.com/community/photoshop_touch_for_phone_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Photoshop Touch for phone</a></p>
+								<p><a href="http://forums.adobe.com/community/creative_cloud_touch_apps/adobe_photoshop_touch" target="_blank" onclick="s_objectID=&quot;http://forums.adobe.com/community/creative_cloud_touch_apps/adobe_photoshop_touch_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Photoshop Touch for tablet</a></p>
+								<p><a href="prelude.html" target="_blank" onclick="s_objectID=&quot;prelude.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Prelude</a></p>
+								<p><a href="premiere-elements.html" target="_blank" onclick="s_objectID=&quot;premiere-elements.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Premiere Elements</a></p>
+								<p><a href="premiere-pro.html" target="_blank" onclick="s_objectID=&quot;premiere-pro.html_3&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Premiere Pro</a></p>
+								<p><a href="presenter.html" target="_blank" onclick="s_objectID=&quot;presenter.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Presenter</a></p>
+								<p><a href="reader.html" target="_blank" onclick="s_objectID=&quot;reader.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Reader</a><br>
+								</p>
+								<p><a href="revel.html" target="_blank" onclick="s_objectID=&quot;revel.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Revel</a></p>
+								<p><a href="robohelp.html" target="_blank" onclick="s_objectID=&quot;robohelp.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>RoboHelp</a></p>
+								<p><a href="acrobat-com.html" target="_blank" onclick="s_objectID=&quot;acrobat-com.html_3&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> SendNow</a><br>
+								</p>
+								<p><a href="shockwave.html" target="_blank" onclick="s_objectID=&quot;shockwave.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Shockwave Player</a></p>
+								<p><a target="_blank" href="speedgrade.html" onclick="s_objectID=&quot;speedgrade.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>SpeedGrade</a></p>
+								<p><a href="http://help.adobe.com/en_US/story/cs/using/index.html" target="_blank" onclick="s_objectID=&quot;http://help.adobe.com/en_US/story/cs/using/index.html_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Story Plus <br>
+								</a></p>
+								<p><a href="font-folio-type.html" target="_blank" onclick="s_objectID=&quot;font-folio-type.html_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Type products</a></p>
+								<p><a href="https://typekit.com/help" target="_blank" onclick="s_objectID=&quot;https://typekit.com/help_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span>Typekit</a></p>
+
+								<p><a target="_blank" href="http://www.adobe.com/support/avl/" onclick="s_objectID=&quot;http://www.adobe.com/support/avl/_2&quot;;return this.s_oc?this.s_oc(e):true"><span class="adbeGrey">Adobe </span> Volume Licensing</a></p>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+			<script>
+				$("#draw-main .popup .closeBox div").click(function(){
+					$("#draw-main .popup").hide();
+					$("#draw-main .popupBG").hide();
+				});
+				$(".cq-wcm-edit #draw-main .popup .closeBox div").unbind("click");
+				$("#draw-main .popupBG").click(function(){
+					$("#draw-main .popup").hide();
+					$("#draw-main .popupBG").hide();
+				});
+				function centerPopup(obj) {
+					var screenWidth = $(window).width();
+					var screenHeight = $(window).height();
+					var scrolltop = $(document).scrollTop();
+					var popupWidth = 620;
+					var popupHeight = 692;
+					if (popupWidth > screenWidth - 20) {
+						popupWidth = screenWidth - 20;
+					}
+					if (popupHeight > screenHeight - 20) {
+						popupHeight = screenHeight - 20;
+					}
+
+					var objLeft = 0 - popupWidth/2;
+					var objTop = 0 - popupHeight/2 + scrolltop;
+
+					// margin: -346px 0px 0px -310px;
+					obj.css({margin: objTop + 'px 0 0 ' + objLeft + 'px', width: popupWidth + 'px', height: popupHeight + 'px'});
+				}
+				function displayPopup() {
+					if (!$("body").hasClass("cq-wcm-edit")) {
+						centerPopup($("#draw-main .popup"));
+						$("#draw-main .popup").show();
+						$("#draw-main .popupBG").show();
+					}
+				}
+			</script>
+			<div id="beneathRawHtml">
+				<div class="beneathRawHtml rawhtml"></div>
+</div>
+        </div>
+        </div>
+</div>
+<div id="lastRawHtml">
+	<div class="lastRawHtml rawhtml"></div>
+</div>
+		
+<footer id="CX2Footer">
+<!-- START-HIDE-FOOTER -->
+				<div class="PrintLayoutHide">
+					<!--googleoff: all--><div class="footer parbase compbase">
+					<script type="text/javascript">
+						var hideEvidon = false;
+
+						$(document).ready(function() {
+							adobe.fn.initGlobalFooter();
+							adobe.fn.evidon('_bapw-link');
+						});   
+		
+						changeRegion = adobe.fn.changeRegionFooter;
+					</script>
+					<!--googleoff: index-->
+<!-- $Id: //depot/projects/dylan/releases/rc_14_8/ubi/footer/en_us/globalfooter_ssi_fq.html#1 $ -->
+
+<div id="SiteFooter" class="SiteFooter Text TextSmall TextInvert Link LayoutBreak"> <span id="Georouting"></span>
+  <div class="LayoutBreakAfter">
+    <div class="LayoutGridBreak">
+      <div class="LayoutCell">
+        <div class="SiteFooterRegionSelector TextInvert LinkInvert LinkStrong"> <a href="http://www.adobe.com/go/gffooter_choose_region" id="sfRegion" class="SiteFooterMenuItemIcon SiteFooterMenuItemIconRegionBlue">Choose your region</a> <span id="sfRegionSet" class="SiteFooterMenuItemIcon SiteFooterMenuItemIconRegionBlack" style="display: none;">United States <a href="http://www.adobe.com/go/gffooter_choose_region" id="sfRegionChange">(Change)</a></span>&nbsp;&nbsp;&nbsp;<strong><a href="http://www.adobe.com/products/catalog/software.html">Products</a></strong>&nbsp;&nbsp;&nbsp;<strong><a href="http://www.adobe.com/downloads.html">Downloads</a></strong>&nbsp;&nbsp;&nbsp;<strong><a href="http://helpx.adobe.com/support.html">Learn&nbsp;&amp;&nbsp;Support</a></strong>&nbsp;&nbsp;&nbsp;<strong><a href="http://www.adobe.com/company.html">Company</a></strong>
+				</div>
+				<div class="SiteFooterRegionPanel SiteFooterRegionPanelEvidon" id="RegionPanel" style="display: none;">
+					<div class="SiteFooterRegionPanelHeader"> <span class="SiteFooterMenuItemIcon SiteFooterMenuItemIconRegionBlack">Choose your region</span> <a id="sfRegionClose" class="SiteFooterRegionPanelHeaderClose">Close</a> </div>
+          <div class="Column">
+            <div class="Column-1">
+              <p class="SiteFooterRegionPanelRegionHeader">Americas</p>
+            </div>
+            <div class="Column-2-3">
+              <p class="SiteFooterRegionPanelRegionHeader">Europe, Middle East and Africa</p>
+            </div>
+            <div class="Column-4">
+              <p class="SiteFooterRegionPanelRegionHeader">Asia Pacific</p>
+            </div>
+            <div class="Column-1">
+              <ul>
+                <li lang="pt"><a onClick="changeRegion('br');">Brasil</a></li>
+                <li lang="en"><a onClick="changeRegion('ca');">Canada - English</a></li>
+                <li lang="fr"><a onClick="changeRegion('ca_fr');">Canada - Fran&ccedil;ais</a></li>
+                <li lang="es"><a onClick="changeRegion('la');">Latinoam&eacute;rica</a></li>
+                <li lang="es"><a onClick="changeRegion('mx');">M&eacute;xico</a></li>
+                <li lang="en"><a onClick="changeRegion('us');">United States</a></li>
+              </ul>
+            </div>
+            <div class="Column-2">
+              <ul>
+                <li lang="en"><a onClick="changeRegion('africa');">Africa - English</a></li>
+                <li lang="de"><a onClick="changeRegion('at');">&Ouml;sterreich - Deutsch</a></li>
+                <li lang="en"><a onClick="changeRegion('be_en');">Belgium - English</a></li>
+                <li lang="fr"><a onClick="changeRegion('be_fr');">Belgique - Fran&ccedil;ais</a></li>
+                <li lang="nl"><a onClick="changeRegion('be_nl');">Belgi&euml; - Nederlands</a></li>
+                <li lang="bg"><a onClick="changeRegion('bg');">България</a></li>
+                <li lang="hr"><a onClick="changeRegion('hr');">Hrvatska</a></li>
+                <li lang="en"><a onClick="changeRegion('eeurope');">Cyprus - English</a></li>
+                <li lang="cs"><a onClick="changeRegion('cz');">Česk&aacute; republika</a></li>
+                <li lang="da"><a onClick="changeRegion('dk');">Danmark</a></li>
+                <li lang="en"><a onClick="changeRegion('eeurope');">Eastern Europe - English</a></li>
+                <li lang="et"><a onClick="changeRegion('ee');">Eesti</a></li>
+                <li lang="fi"><a onClick="changeRegion('fi');">Suomi</a></li>
+                <li lang="fr"><a onClick="changeRegion('fr');">France</a></li>
+                <li lang="de"><a onClick="changeRegion('de');">Deutschland</a></li>
+                <li lang="en"><a onClick="changeRegion('eeurope');">Greece - English</a></li>
+                <li lang="hu"><a onClick="changeRegion('hu');">Magyarorsz&aacute;g</a></li>
+                <li lang="en"><a onClick="changeRegion('ie');">Ireland</a></li>
+                <li lang="en"><a onClick="changeRegion('il_en');">Israel - English</a></li>
+                <li lang="he"><a onClick="changeRegion('il_he');">&#1497;&#1513;&#1512;&#1488;&#1500; - &#1506;&#1489;&#1512;&#1497;&#1514;</a></li>
+                <li lang="it"><a onClick="changeRegion('it');">Italia</a></li>
+                <li lang="lv"><a onClick="changeRegion('lv');">Latvija</a></li>
+                <li lang="lt"><a onClick="changeRegion('lt');">Lietuva</a></li>
+                <li lang="de"><a onClick="changeRegion('lu_de');">Luxembourg - Deutsch</a></li>
+                <li lang="en"><a onClick="changeRegion('lu_en');">Luxembourg - English</a></li>
+                <li lang="fr"><a onClick="changeRegion('lu_fr');">Luxembourg - Fran&ccedil;ais</a></li>
+                <li lang="en"><a onClick="changeRegion('eeurope');">Malta - English</a></li>
+                <li lang="ar"><a onClick="changeRegion('mena_ar');">&#1575;&#1604;&#1588;&#1585;&#1602; &#1575;&#1604;&#1571;&#1608;&#1587;&#1591; &#1608;&#1588;&#1605;&#1575;&#1604; &#1571;&#1601;&#1585;&#1610;&#1602;&#1610;&#1575; - &#1575;&#1604;&#1604;&#1594;&#1577; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a></li>
+                <li lang="en"><a onClick="changeRegion('mena_en');">Middle East and North Africa - English</a></li>
+                <li lang="fr"><a onClick="changeRegion('mena_fr');">Moyen-Orient et Afrique du Nord - Fran&ccedil;ais</a></li>
+              </ul>
+            </div>
+            <div class="Column-3">
+              <ul>
+                <li lang="nl"><a onClick="changeRegion('nl');">Nederland</a></li>
+                <li lang="no"><a onClick="changeRegion('no');">Norge</a></li>
+                <li lang="pl"><a onClick="changeRegion('pl');">Polska</a></li>
+                <li lang="pt"><a onClick="changeRegion('pt');">Portugal</a></li>
+                <li lang="ro"><a onClick="changeRegion('ro');">Rom&acirc;nia</a></li>
+                <li lang="ru"><a onClick="changeRegion('ru');">Россия</a></li>
+                <li lang="sr"><a onClick="changeRegion('rs');">Srbija</a></li>
+                <li lang="sk"><a onClick="changeRegion('sk');">Slovensko</a></li>
+                <li lang="sl"><a onClick="changeRegion('si');">Slovenija</a></li>
+                <li lang="es"><a onClick="changeRegion('es');">Espa&ntilde;a</a></li>
+                <li lang="sv"><a onClick="changeRegion('se');">Sverige</a></li>
+                <li lang="de"><a onClick="changeRegion('ch_de');">Schweiz - Deutsch</a></li>
+                <li lang="fr"><a onClick="changeRegion('ch_fr');">Suisse - Fran&ccedil;ais</a></li>
+                <li lang="it"><a onClick="changeRegion('ch_it');">Svizzera - Italiano</a></li>
+                <li lang="tr"><a onClick="changeRegion('tr');">T&uuml;rkiye</a></li>
+                <li lang="uk"><a onClick="changeRegion('ua');">Україна</a></li>
+                <li lang="en"><a onClick="changeRegion('uk');">United Kingdom</a></li>
+              </ul>
+            </div>
+            <div class="Column-4">
+              <ul>
+                <li lang="en"><a onClick="changeRegion('au');">Australia</a></li>
+                <li lang="zh"><a onClick="changeRegion('cn');">中国</a></li>
+                <li lang="zh"><a onClick="changeRegion('hk_zh');">中國香港特別行政區</a></li>
+                <li lang="en"><a onClick="changeRegion('hk_en');">Hong Kong S.A.R. of China</a></li>
+                <li lang="en"><a onClick="changeRegion('in');">India - English</a></li>
+                <li lang="ja"><a onClick="changeRegion('jp');">日本</a></li>
+                <li lang="ko"><a onClick="changeRegion('kr');">한국</a></li>
+                <li lang="en"><a onClick="changeRegion('nz');">New Zealand</a></li>
+                <li lang="en"><a onClick="changeRegion('sea');">Southeast Asia (Includes Indonesia, Malaysia, Philippines, Singapore, Thailand, and Vietnam) - English</a></li>
+                <li lang="zh"><a onClick="changeRegion('tw');">台灣</a></li>
+              </ul>
+              <p class="SiteFooterRegionPanelRegionHeader">Commonwealth of Independent States</p>
+              <ul>
+                <li><a href="http://www.adobe.com/cis/">Includes Armenia, Azerbaijan, Belarus, Georgia, Moldova, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Ukraine, Uzbekistan</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="LayoutGridBreak">
+      <div class="LayoutCellSides">
+        <hr />
+      </div>
+    </div>
+    <div class="LayoutGrid-1-5 LayoutSlimGrid-1-2 LinkInvert LinkStrong">
+      <div class="LayoutCellSides LayoutCellBottom LinkInvert">
+        <p class="SiteFooterRow TextSmall">Copyright &copy; 2014 Adobe Systems Incorporated.  All rights reserved.</p>
+        <p class="SiteFooterRow TextSmall"><a href="http://www.adobe.com/go/gffooter_terms_of_use">Terms of Use</a> | <a href="http://www.adobe.com/privacy.html">Privacy</a> | <a href="http://www.adobe.com/privacy/cookies.html">Cookies</a></p>
+        <p class="SiteFooterRow SiteFooterRowTop"><a href="#" id="_bapw-link" class="TextSmall icon Icon SiteFooterMenuItemIconEvidon" style="display:none;">Ad Choices</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--googleon: index--></div>
+					<!--googleon: all-->
+				</div>
+<!-- END-HIDE-FOOTER -->
+			</footer>
+            <script>
+        //<![CDATA[
+
+        /* Foresee Wrapper Code To Prevent Foresee/Userzoom code from both firing for the same person */
+        /* The code makes use of a cookie (survey_cx) and a JS variable (survey_cx) to ensure that Foresee code will not conflict with UserZoom code when a page has both sets of code running.
+         Note that userzoom code will only be enabled on a page by page basis and will not be deployed in the footer like Foresee.
+         */
+
+        var surveycookie = $.cookie("survey_cx"); // grab survey_cx cookie
+        if (surveycookie == null) { // only proceed if it doesn't exist
+            if (typeof survey_cx == "undefined" || survey_cx != true) { // even if the cookie doesn't exist, if the survey_cx variable is set to true elsewhere, we won't proceed
+                // foresee code ends here
+                if(isDesktop())
+                {
+                    
+                    		var locale = 'en';
+                    	
+                    var hostName = URLParser.protocol + '//' + URLParser.host;
+
+                    if(URLParser.host == "www.adobe.com" || URLParser.host == "www.stage.adobe.com"){
+                        var scJsHost = (("https:" == document.location.protocol) ? hostName : Adobe.PageInfo.akamaiURLPrefix);
+                        document.write(unescape("%3Cscript src='" + scJsHost + "/include/script/foresee/foresee-trigger.js' type='text/javascript'%3E%3C/script%3E"));
+                    }
+                    else
+                    {
+                        document.write(unescape("%3Cscript src='" + hostName + "/include/script/foresee/foresee-trigger.js' type='text/javascript'%3E%3C/script%3E"));
+                    }
+                }
+                // foresee code ends here
+            }
+        }
+
+        //]]>
+    </script>
+</div>
+<script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+</html>

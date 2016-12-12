@@ -1,0 +1,457 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+		<meta http-equiv="expires" content="0">
+		<title>嘟嘟噜小游戏-让您玩得根本停不下来</title>
+		<meta name="keywords" content="嘟嘟噜小游戏-让您玩得根本停不下来">
+		<meta name="description" content="嘟嘟噜小游戏-让您玩得根本停不下来">
+		<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="./css/public.css" media="screen, projection">
+		<link rel="stylesheet" type="text/css" href="./css/buttons.css">
+		<script type="text/javascript" src="./js/jquery-1.11.1.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./js/jquery.lazyload.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./js/config.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="projects.json" charset="UTF-8"></script>
+		<style type="text/css">
+		.wrap{z-index:1;background-color:#000;opacity:0.1;filter:alpha(opacity:10);position:absolute;left:0;top:0;}
+
+		body {
+			background: #383f4f;
+		}
+
+		#header-section, #header-section-fixed, #footer-section {
+			height: 48px;
+			width: 100%;
+		}
+
+		#header-section {
+			/*margin-bottom: 4px;*/
+		}
+
+		#header-section-fixed {
+			position: relative;
+			top: 0;
+			z-index: 999;
+			background: #383f4f; 
+		}
+		#header-section-fixed.fixed {
+			position: fixed;
+		}
+
+
+		#header-section.hidden, #footer-section.hidden {
+		   display: none;
+		}
+
+		#footer-section {
+			position: fixed;
+			bottom: 0;
+		}
+
+		#DDL_toolbar {
+			display: none;
+		}
+
+		.pull-left {
+			float: left;
+		}
+
+		.header-block {
+			height: 48px;
+			width: 33.3333%;
+			line-height: 40px;
+			text-align: center;
+			background: #383f4f;
+			position: relative;
+		}
+		.header-block.actived #game-filter {
+			background: rgba(0,204,255,1);
+		}
+
+		.header-block-inner-right {
+			/*border-right: 1px solid #666;*/
+		}
+		.header-block-inner-left {
+			/*border-left: 1px solid #666;*/
+		}
+		.header-block-inner {
+			margin: 4px;
+			border-radius: 4px;
+		}
+
+		.header-block-icon {
+			width: 20px;
+			height: 20px;
+			margin-bottom: -4px;
+			margin-right: 4px;
+		}
+
+		#game-filter-list {
+			display: none;
+			position: absolute;
+			width: 220px;
+			left: -58px;
+		}
+		#game-filter-list.opened {
+			display: block;
+		}
+		.filter-list-item {
+			background: rgba(0,204,255,1);
+			/*border-bottom: 1px dashed #EEE;*/
+			text-align: left;
+			position: relative;
+			height: 40px;
+			box-shadow: 2px 2px 4px #333;
+			margin-top: 4px;
+		}
+		.filter-list-item:last-child {
+			border-bottom: none;
+		}
+
+		.filter-name {
+			position: absolute;
+			top: 2px;
+			left: 20px;
+			font-weight: bold;
+		}
+		.filter-count {
+			position: absolute;
+			top: 2px;
+			right: 20px;
+		}
+		.filter-new-count {
+			color: #FF6666;
+		}
+
+		#game-today {
+			background-color: #FF0066;
+		}
+		#game-filter {
+			margin: 3px 0;
+			background-color: #0099FF;
+		}
+		#game-follow {
+			background-color: #FFCC66;
+		}
+
+		.list-item {
+			position: relative;
+			padding: 10px 10px;
+			border-bottom: 1px solid #000;
+		}
+		.list-item>figure {
+			display: -webkit-box;
+			-webkit-box-align: center;
+		}
+		.list-item-icon {
+			display: block;
+			width: 60px;
+			height: 60px;
+			margin: 0 10px 0 0;
+			border-radius: 8px;
+		}
+		.list-item-body {
+			-webkit-box-flex: 1;
+			display: block;
+		}
+		.list-item-title {
+			font-size: 15px;
+			height: 20px;
+			line-height: 20px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.list-item-body>p {
+			height: 20px;
+			line-height: 20px;
+			font-size: 12px;
+			color: #FFF;
+		}
+		.list-item-button {
+			font-size: 13px;
+			display: block;
+			line-height: 26px;
+			height: 26px;
+			width: 56px;
+			background-color: #1BC29B;
+			text-decoration: none;
+			text-align: center;
+			color: #FFF;
+		}
+
+		#content-list {
+			position: relative;
+			height: 100%;
+		}
+		#block-click-cover {
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		#block-click-cover.opened {
+			display: block;
+		}
+
+		#content-header {
+			height: 20px;
+			color: #FFF;
+		}
+		#content-header .content-header-inner {
+			height: 100%;
+			padding: 0 10px;
+			border-left: 5px solid #1BC29B;
+		}
+		</style>
+	</head>
+	<body screen_capture_injected="true">
+		
+		<header id="header-bar">
+			<img style="width:100%;" src="./image/head_bar.jpg">
+		</header>
+		<section id="header-section">
+			<div id="header-section-fixed">
+				<div class="header-block pull-left">
+					<div class="header-block-inner" id="game-today">
+						<span><img class="header-block-icon glow glow-flat" src="./image/hot.png" alt="">今日热门</span>
+					</div>
+				</div>
+				<div class="header-block pull-left">
+					<div class="header-block-inner" id="game-filter">
+						<span><img class="header-block-icon glow glow-flat" src="./image/filter.png" style="width:18px;height:18px;margin-bottom:-3px;" alt="">游戏分类</span>
+					</div>
+					<ul id="game-filter-list"></ul>
+				</div>
+				<div class="header-block pull-left">
+					<div class="header-block-inner" id="game-follow">
+						<span><img class="header-block-icon glow glow-flat" src="./image/follow.png" alt="">关注我们</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="content-list">
+			<div id="block-click-cover"></div>
+			<div id="content-header">
+				<div class="content-header-inner">
+					< <span id="content-header-title">今日热门</span> >
+				</div>
+			</div>
+			<ul></ul>
+		</section>
+
+		<footer></footer>
+		
+		<!--<script language="javascript" src="js/public.js"></script>-->
+
+		<script>
+		$("#game-follow").on('click',function(){
+			window.location = DDL_CONFIG.follow_url;
+		});
+		$('#game-today').on('click',function(){
+			$("#content-header-title").text("今日热门");
+			_renderHotList();
+		});
+		</script>
+
+		<script>
+		function _dealFilter() {
+			for (var i = 0; i < data.sort_type.length; i++) {
+				var $type = data.sort_type[i];
+				var $item = {
+					title : $type.title,
+					has_new : 0,
+					array : _filterGames($type.title),
+					count : 0
+				};
+				$item.count = $item.array.length;
+				$sort_array.push($item);
+			};
+		}
+
+		function _renderHotList() {
+			var $array = new Array();
+			for (var i = 0; i < data.hot.length; i++) {
+				$array.push(data.hot[i]);
+			};
+			_renderGameList($array);
+		}
+
+		function _renderExtremeList() {
+			var $array = new Array();
+			for (var i = 0; i < data.extreme.length; i++) {
+				$array.push(data.extreme[i]);
+			};
+			_renderGameList($array);
+		}
+
+		function _renderGameList($array) {
+			var $list = $("#content-list>ul").empty();
+			for (var i = 0; i < $array.length; i++) {
+				var $project = $array[i];
+				var $li = $('<li class="list-item">').data('url',$project.src),
+					$figure = $('<figure>'),
+					$icon = $('<img class="list-item-icon lazy">').attr('data-original',$project.icon),
+					$figcaption = $('<figcaption class="list-item-body">'),
+					$h3 = $('<h3 class="list-item-title">'),
+					$type = $('<p class="list-item-type">'),
+					$score = $('<p class="list-item-score">'),
+					$button = $('<a class="list-item-button glow">').attr("href","#");
+				$figcaption.append(
+					$h3.text($project.name),
+					$type.text($project.type),
+					$score.text("人气指数 : "+$project.score)
+				);
+				$li.append(
+					$figure.append(
+						$icon,
+						$figcaption,
+						$button.text("开始玩")
+					)
+				).appendTo($list).on('click',function(){
+					window.location = $(this).data('url');
+				});
+			};
+			$("img.lazy").lazyload();
+		}
+
+		function _renderFilterList($array) {
+			var $total = 0;
+			for (var i = 0; i < $array.length; i++) {
+				var $sort = $array[i];
+				var $li = $('<li class="filter-list-item">').data("filter-id",i),
+					$title = $('<span class="filter-name">').text($sort.title),
+					$count = $('<span class="filter-count">').text($sort.count+" 款");
+				
+				$total = $total + $sort.count;
+
+				if ($sort.has_new!=0) {
+					var $plus = $('<span class="filter-new">'),
+						$plus_count = $('<span class="filter-new-count">').text(" + "+$sort.has_new),
+						$plus_img = $('<img>').attr("src","./image/new.png").css({
+							marginBottom : "-11px",
+							marginLeft : "4px"
+						});
+					$title.append(
+						$plus.append($plus_count,$plus_img)
+					);
+				};
+				$li.append($title,$count)
+				.on('click',function(){
+					$("#content-header-title").text($array[$(this).data('filter-id')].title);
+					$filter.parent(".header-block").toggleClass("actived");
+					$filterList.toggleClass("opened");
+					$block_cover.toggleClass("opened");
+					_renderGameList($array[$(this).data('filter-id')].array);
+					$('body').animate({scrollTop: '0px'}, 300);
+				});
+				$filterList.append($li);
+			};
+
+			var $li = $('<li class="filter-list-item">').data("filter-id",i),
+				$title = $('<span class="filter-name">').text("爽快版游戏"),
+				$count = $('<span class="filter-count">').text(data.extreme.length+" 款");
+			$li.append($title,$count)
+			.on('click',function(){
+				$("#content-header-title").text("爽快版游戏");
+				$filter.parent(".header-block").toggleClass("actived");
+				$filterList.toggleClass("opened");
+				$block_cover.toggleClass("opened");
+				_renderExtremeList();
+				$('body').animate({scrollTop: '0px'}, 300);
+			})
+			.appendTo($filterList);
+
+			var $li = $('<li class="filter-list-item">').data("filter-id",i),
+				$title = $('<span class="filter-name">').text("全部"),
+				$count = $('<span class="filter-count">').text($total+" 款");
+			$li.append($title,$count)
+			.on('click',function(){
+				$("#content-header-title").text("全部游戏");
+				$filter.parent(".header-block").toggleClass("actived");
+				$filterList.toggleClass("opened");
+				$block_cover.toggleClass("opened");
+				_renderGameList($projects);
+				$('body').animate({scrollTop: '0px'}, 300);
+			})
+			.appendTo($filterList);
+
+		}
+
+		function _filterGames($type) {
+			var $array = new Array();
+			for (var i = 0; i < $projects.length; i++) {
+				var $project = $projects[i];
+				if ($project.type==$type) {
+					$array.push($project);
+				};
+			};
+			return $array;
+		}
+		</script>
+
+		<script>
+		var $sort_array = new Array();
+		var $sort_type = data.sort_type,
+			$projects = data.projects;
+		var $filter = $("#game-filter");
+		var $filterList = $("#game-filter-list");
+		var $block_cover = $("#block-click-cover");
+
+		//初始化数组
+		_dealFilter();
+
+		$filter.on('click',function(){
+			$filter.parent(".header-block").toggleClass("actived");
+			$filterList.toggleClass("opened");
+			$block_cover.toggleClass("opened");
+		});
+
+		$block_cover.on('click',function(){
+			$filter.parent(".header-block").toggleClass("actived");
+			$filterList.toggleClass("opened");
+			$block_cover.toggleClass("opened");
+		});
+
+		_renderFilterList($sort_array);
+		//_renderHotList();
+		_renderGameList($projects);
+		</script>
+
+		<script>
+		var mywindow = $(window);
+		var mypos = mywindow.scrollTop();
+		var up = false;
+		var newscroll;
+		var sectionFixed = $("#header-section-fixed");
+		var sectionFixed_height = sectionFixed.height();
+		var headerBar = $("#header-bar");
+		var headerBar_height = headerBar.height();
+		mywindow.scroll(function () {
+		    newscroll = mywindow.scrollTop();
+		    if (newscroll > headerBar_height+sectionFixed_height) {
+		    	sectionFixed.addClass("fixed");
+		    } else {
+		    	sectionFixed.removeClass("fixed");
+		    	mypos = newscroll;
+		    	return;
+		    }
+		    // if (newscroll > mypos && !up) {
+		    //     $('#header-section-fixed').stop().hide();
+		    //     up = !up;
+		    // } else if(newscroll < mypos && up) {
+		    //     $('#header-section-fixed').stop().show();
+		    //     up = !up;
+		    // }
+		    mypos = newscroll;
+		});
+		</script>
+	</body>
+</html>

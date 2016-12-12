@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="jelly_color.png">
+	<SubTexture name="jelly_green" x="0" y="0" width="211" height="203"/>
+	<SubTexture name="jelly_orange" x="211" y="0" width="211" height="203"/>
+	<SubTexture name="jelly_violet" x="422" y="0" width="211" height="203"/>
+	<SubTexture name="jelly_blue" x="0" y="203" width="211" height="203"/>
+	<SubTexture name="jelly_yellow" x="211" y="203" width="211" height="203"/>
+</TextureAtlas>

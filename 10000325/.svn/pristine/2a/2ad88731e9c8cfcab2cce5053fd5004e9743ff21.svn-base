@@ -1,0 +1,110 @@
+{
+  "hud_player": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 81,
+    "tileh": 71,
+    "frames": 1
+  },
+  "hud_zombie_player": {
+    "sx": 81,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 81,
+    "tileh": 71,
+    "frames": 1
+  },
+  "hud_zombie": {
+    "sx": 162,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 76,
+    "tileh": 63,
+    "frames": 1
+  },
+
+  "hud_health": {
+    "sx": 60,
+    "sy": 119,
+    "cols": 1,
+    "tilew": 45,
+    "tileh": 29,
+    "frames": 1
+  },
+  "hud_health_half": {
+    "sx": 105,
+    "sy": 119,
+    "cols": 1,
+    "tilew": 45,
+    "tileh": 29,
+    "frames": 1
+  },
+
+  "hud_bullets": {
+    "sx": 0,
+    "sy": 119,
+    "cols": 1,
+    "tilew": 60,
+    "tileh": 29,
+    "frames": 1
+  },
+
+  "hud_key_empty": {
+    "sx": 162,
+    "sy": 121,
+    "cols": 1,
+    "tilew": 30,
+    "tileh": 31,
+    "frames": 1
+  },
+  "hud_key_collected": {
+    "sx": 192,
+    "sy": 121,
+    "cols": 1,
+    "tilew": 30,
+    "tileh": 31,
+    "frames": 1
+  },
+
+  "hud_settings_button": {
+    "sx": 44,
+    "sy": 71,
+    "cols": 1,
+    "tilew": 44,
+    "tileh": 47,
+    "frames": 1
+  },
+  "hud_back_button": {
+    "sx": 88,
+    "sy": 71,
+    "cols": 1,
+    "tilew": 44,
+    "tileh": 47,
+    "frames": 1
+  },
+  "hud_pause_button": {
+    "sx": 0,
+    "sy": 71,
+    "cols": 1,
+    "tilew": 44,
+    "tileh": 47,
+    "frames": 1
+  },
+  "hud_audio_on_button": {
+    "sx": 132,
+    "sy": 71,
+    "cols": 1,
+    "tilew": 44,
+    "tileh": 47,
+    "frames": 1
+  },
+  "hud_audio_off_button": {
+    "sx": 176,
+    "sy": 71,
+    "cols": 1,
+    "tilew": 44,
+    "tileh": 47,
+    "frames": 1
+  }
+}

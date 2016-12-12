@@ -1,0 +1,30 @@
+{
+	"missiles": [
+		{
+			"type":"dumb",
+			"rotation": 270,
+			"speed": 0.7,
+			"screenSide": "right",
+			"position": 0,
+			"delay": 0
+		},
+		{
+			"type":"dumb",
+			"rotation": 272,
+			"speed": 0.7,
+			"screenSide": "right",
+			"position":0,
+			"delay": 0.5
+		},
+		{
+			"type":"dumb",
+			"rotation": 268,
+			"speed": 0.7,
+			"screenSide": "right",
+			"position": 0,
+			"delay": 1.0
+		}
+	], 
+
+	"timeLength": 3.5
+}

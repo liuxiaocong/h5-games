@@ -1,0 +1,142 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>集游策小游戏</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+
+	<script>document.write("<script type='text/javascript' src='http://wx.jyc.17188.com/h5/zqdn/config.js?v="  + Math.floor(Math.random()*10000000) + "' charset='UTF-8'><\/script>");</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35420161" charset="UTF-8"></script>
+</head>
+<body style="padding:0; margin: 0; background: #F1C238;" >
+
+<div id="foot_ad"  align="center" style="display:inline;position:absolute; bottom:5px;text-align:center;width:100%;z-index:999999">
+	<a align="center" style="color:red;font-size:16px" href="http://wx.jyc.17188.com/index.html?from=zqdn">更多游戏</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a align="center" style="color:red;font-size:16px" href="http://mp.weixin.qq.com/s?__biz=MzA3NzkwNTQyOA==&mid=202279998&idx=1&sn=b072a555111d5ce45c5b4ce9c8e913bd#rd">关注我们</a>
+	<br/><br/>
+	<a align="center" style="text-decoration:underline;color:blue;font-size:14px;" href="javascript:location.href=game_50_01_url"><script>document.write(game_50_01_txt);</script></a>
+</div>
+<script>
+	function setFootAdvDisplay(str) {
+		document.getElementById("foot_ad").style.display=str;
+}
+</script>
+<canvas id="gameCanvas" width="420" height="600"></canvas>
+
+<script src="game.min.js"></script>
+<script>
+var VER = 9;
+var PREFIX = 10;
+function getDesc(score){
+	var lineOne;
+    if(score > 120*PREFIX)
+        lineOne = "神啊！还能更高吗？！";
+    else if(score > 90*PREFIX)
+        lineOne = "牛人啊，你是传说中的专家吗？";
+    else if(score > 70*PREFIX)
+        lineOne = "哇塞！你已经逼近天才的水平了！";
+    else if(score > 40*PREFIX)
+        lineOne = "厉害！你已经超过大部分人了～";
+    else if(score > 25*PREFIX)
+        lineOne = "加油！你已经超过不少朋友了～";
+    else if(score > 10*PREFIX)
+        lineOne = "不错！你这么快就掌握技巧了！";
+    else
+        lineOne = "深呼吸，放松一下大脑，再来一次！";
+
+	return lineOne;// + "\n据说真正的飞行员能拿到" + 200*PREFIX + "分";
+}
+</script>
+<script language=javascript>
+		var mebtnopenurl = aboutus;
+		window.shareData = {
+		        "imgUrl": "http://wx.jyc.17188.com/tupian/zqdnicon.png",
+		        "timeLineLink": "http://wx.jyc.17188.com/h5/zqdn/zqdn.html?v="+ Math.floor(Math.random()*10000000),
+		        "tTitle": "最强大脑-集游策小游戏",
+		        "tContent": "最强大脑-集游策小游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+				window.location = "http://wx.jyc.17188.com/index.html?from=zqdn";
+		}
+		function dp_share(){
+			document.title ="你了解自己的左右脑协调指数吗?我是"+myData.score+"分，你来试试吧!"
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://wx.jyc.17188.com/tupian/fenxiang.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "zqdn",score:0 };
+			 
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName ="获得"+score+"分";
+				if(score>0){
+					if (confirm("经测试你获得了"+score+"分！看看小伙伴的大脑能力如何？")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+	        }
+			</script>
+			<script src="http://s95.cnzz.com/z_stat.php?id=1253010806&web_id=1253010806" language="JavaScript"></script>
+</body>
+</html>

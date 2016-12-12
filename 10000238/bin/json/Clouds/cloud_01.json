@@ -1,0 +1,84 @@
+{ "height":6,
+ "layers":[
+        {
+         "data":[1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":6,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":8,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":6,
+         "name":"Bounding Box",
+         "objects":[
+                {
+                 "height":0,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":764,
+                         "y":2
+                        }, 
+                        {
+                         "x":516,
+                         "y":253
+                        }, 
+                        {
+                         "x":221,
+                         "y":253
+                        }, 
+                        {
+                         "x":2,
+                         "y":10
+                        }],
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":3,
+                 "y":3
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":8,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "tileheight":256,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"..\/..\/..\/..\/Assets\/Tiled\/Clouds\/Cloud_SpriteSheet.png",
+         "imageheight":256,
+         "imagewidth":768,
+         "margin":0,
+         "name":"Cloud_SpriteSheet",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":256,
+         "tilewidth":256
+        }],
+ "tilewidth":256,
+ "version":1,
+ "width":8
+}
